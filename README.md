@@ -34,9 +34,11 @@ and an ordered implementation backlog.
 
 Implementation issues are intentionally ordered. An agent taking an issue
 should read the architecture, platform limitations, evaluation strategy, and
-all accepted decision records; confirm that the preceding issue is complete;
+all accepted decision records; confirm its explicit dependencies are complete;
 keep the change scoped to one issue; and attach the required automated and
-device evidence to its pull request.
+device evidence to its pull request. Product-slice issues preserve an
+end-to-end user workflow; focused infrastructure issues prove their behavior
+through the nearest working slice.
 
 An implementation change that weakens an evaluation gate requires an explicit
 architecture-decision update. A bug fix must add a minimized regression fixture

@@ -23,7 +23,9 @@ For every issue, the coding agent follows this loop:
    baselines.
 2. Reproduce the failing/missing behavior with a test or fixture first when
    practical.
-3. Implement the smallest vertical change that can satisfy the issue.
+3. For a product slice, implement the smallest end-to-end change that reaches
+   its user-visible checkpoint. For focused infrastructure, exercise the change
+   through the nearest already-working product path.
 4. Run the narrow unit/contract suite on each meaningful iteration.
 5. Run the issue's browser/device/eval gates before declaring completion.
 6. Compare generated metrics with the checked-in baseline and budgets.
@@ -39,7 +41,10 @@ threshold, or mark a target unsupported without an explicit reviewed ADR.
 
 ## 3. Standard commands
 
-The bootstrap issue provides stable root commands with these responsibilities:
+The bootstrap issue provides the fast commands needed immediately. Subsystem
+issues add their eval commands when the corresponding implementation first
+exists. A command must not be introduced as a passing no-op or placeholder.
+The intended stable root command set is:
 
 ```text
 pnpm check                 typecheck + formatting + lint

@@ -381,20 +381,37 @@ test and a documented reason.
 - Backups are local downloads; if optional encryption is later added, it needs a
   separate reviewed design.
 
-## 16. Delivery phases
+## 16. Delivery strategy
 
-1. PWA shell, browser matrix, domain contracts, and durable-storage foundation.
-2. Local import, PDF reader, and scored EPUB renderer selection.
-3. Shared overlay and offline recognition evaluation.
-4. PDF/EPUB hotspots and manual fallback.
-5. Editable board, single line, durable sessions, and branches.
-6. Stockfish portable/threaded engine paths and analysis UI.
-7. Offline/update/storage recovery hardening.
-8. Capacitor Android wrapper and cross-platform release qualification.
+Implementation uses a walking skeleton followed by alternating product slices
+and focused hardening:
 
-The ordered GitHub issues implement these phases. Every issue leaves the app
-deployable, and experimental results must update the relevant ADR and evaluation
-baseline.
+1. Deploy the responsive PWA shell and browser test loop.
+2. Cross PDF rendering, manual capture, fenshot, and a basic editable overlay in
+   one deliberately narrow in-memory slice.
+3. Make that exact path installable, offline, restorable, and test it on a real
+   iPad before generalizing the storage and reader layers.
+4. Harden storage, PDF reading, and recognition, then add automatic PDF taps,
+   the full editor, and one legal line.
+5. Evaluate Readium Web and EPUB.js through the already-working study workflow,
+   then add production EPUB reading and automatic EPUB taps.
+6. Add branches, a portable one-PV Stockfish slice, and only then configurable
+   MultiPV/threaded engine variants.
+7. Harden updates, storage recovery, accessibility, performance, security, and
+   licensing against the complete web product.
+8. Package that qualified web build in Capacitor and perform cross-platform
+   release qualification.
+
+The early slice may use narrow concrete code where a generalized contract would
+be speculative. Stable adapters are extracted as the second implementation or
+failure mode makes the boundary real. Conversely, import journaling, the EPUB
+renderer comparison, security, and recovery remain focused tasks where forcing
+a user-facing slice would hide rather than reduce their risk.
+
+The ordered GitHub issues and checkpoint table in `docs/issue-plan.md` implement
+this strategy. A vertical-slice issue must preserve its complete path; a focused
+infrastructure issue must prove itself through the nearest existing path. Every
+experimental result updates the relevant ADR and evaluation baseline.
 
 ## 17. Out of scope
 
