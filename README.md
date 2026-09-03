@@ -5,8 +5,7 @@ chess books. It detects diagrams on the page being read, makes them tappable,
 and opens a movable analysis board over the still-active book reader.
 
 The project currently contains architecture and an ordered implementation
-backlog. Android project bootstrapping is intentionally tracked as the first
-implementation issue because this workstation does not have the Android SDK.
+backlog.
 
 ## Product boundaries
 
@@ -30,4 +29,3 @@ Implementation issues are intentionally ordered. An agent taking an issue
 should read the architecture and all accepted decision records, confirm that
 the preceding issue is complete, keep the change scoped to one issue, and
 include the verification required by that issue in its pull request.
-
