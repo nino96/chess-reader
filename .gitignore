@@ -1,0 +1,23 @@
+# Dependency and build output
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+*.log
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+local.properties
+
+# Tool-local agent preferences; shared instructions are committed separately
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Operating-system and editor state
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*.local.json

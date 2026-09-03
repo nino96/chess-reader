@@ -43,3 +43,13 @@ through the nearest working slice.
 An implementation change that weakens an evaluation gate requires an explicit
 architecture-decision update. A bug fix must add a minimized regression fixture
 whenever the input can be legally committed.
+
+## AI agent entry points
+
+- `AGENTS.md` is the only maintained project policy. Codex, OpenCode, and
+  GitHub Copilot coding agents discover it directly.
+- `CLAUDE.md` contains only Claude Code's supported `@AGENTS.md` import because
+  Claude Code does not discover `AGENTS.md` directly.
+
+Update only `AGENTS.md`; never duplicate its rules into a harness-specific
+instruction file.
