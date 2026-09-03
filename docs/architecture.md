@@ -1,463 +1,420 @@
 # Chess Reader architecture
 
-Status: proposed architecture for the first usable product  
+Status: proposed web-first architecture
 Last updated: 2026-09-03
 
 ## 1. Product definition
 
-Chess Reader is a local-first Android reader for DRM-free PDF and EPUB chess
-books. The reader remains usable while an analysis board floats above it.
-When the current page or EPUB viewport contains a chess diagram, the app finds
-the diagram on-device and creates a tappable hotspot. Tapping it loads the
-recognized position into the analysis board. The user can correct the position,
-choose missing FEN state, and play legal moves.
+Chess Reader is a local-first progressive web application for DRM-free PDF and
+EPUB chess books. It runs in laptop browsers and Safari on iPad and is packaged
+unchanged inside a thin Capacitor Android wrapper. The reader remains usable
+while a movable analysis board floats above it.
 
-The first usable recognition workflow is deliberately page-local:
+For visible content, the application finds chess diagrams on the user's device,
+projects tappable hotspots over them, and caches the result. Tapping a hotspot
+loads the recognized position into an editable board. The user can correct the
+position, choose FEN state that an image cannot prove, explore legal variations,
+and later run local Stockfish analysis.
+
+There is no whole-book scan in the initial product:
 
 1. Open or navigate a book normally.
-2. After the viewport settles, look for a cached result for the visible page or
-   EPUB resource.
-3. If none exists, render only the current content and recognize it off the UI
-   thread.
-4. Project each detected board rectangle back into reader coordinates.
-5. Make each rectangle tappable and cache the result.
-6. If detection fails, let the user select a rectangular region and run the
-   same recognizer on that crop.
+2. After the viewport settles, check the recognition cache.
+3. If needed, render only visible/current content and recognize it in a worker.
+4. Project each detected rectangle back into reader coordinates.
+5. Make each rectangle tappable and persist the result.
+6. If automatic detection fails, let the user select a rectangular region.
 
-There is no whole-book scan in the initial product. This keeps import fast,
-memory bounded, battery use predictable, and every intermediate milestone
-useful.
+## 2. Architecture principles
 
-## 2. Experience and acceptance goals
-
-### Reader
-
-- Import files with Android's Storage Access Framework without broad storage
-  permission.
-- Display PDF and EPUB content with zoom/reflow, table of contents when exposed
-  by the format, and restoration of the last reading location.
-- Keep the underlying reader mounted and navigable while the board is open.
-- Recognize only after scrolling, zooming, or EPUB reflow has settled. Cancel
-  obsolete work when the user moves elsewhere.
-
-### Diagram interaction
-
-- A detected diagram is a single-tap target; taps elsewhere keep their normal
-  reader behavior.
-- A subtle chess affordance may mark a ready hotspot without obscuring the
-  printed diagram.
-- Loading a cached diagram should feel immediate.
-- Uncached recognition must never block gestures or rendering. The benchmark
-  issue will set a device-tested latency budget; the working target is a warm
-  result around one second on a representative Android 12+ phone.
-- Low-confidence squares are visible in the editor. No recognition result is
-  treated as infallible.
-
-### Analysis board overlay
-
-- The book is the base layer. The analysis panel is a movable, resizable, and
-  collapsible layer above it, following the useful mobile behavior of readers
-  such as Chessvision.
-- Touches inside the panel belong to the board; touches outside it belong to
-  the reader. A dedicated drag handle moves/resizes the panel so board moves do
-  not accidentally reposition it.
-- The default phone layout is a bottom-anchored panel occupying roughly half
-  the screen. On larger widths it may default to a right-side floating panel.
-- Opening or closing the panel must not reset the book locator.
-
-### Chess position and play
-
-- The recognizer supplies piece placement and a likely orientation. The user
-  confirms or changes side to move because it is not reliably present in a
-  printed diagram.
-- The editor supports piece placement/removal, clear/reset, orientation, side
-  to move, castling rights, and en-passant state. Halfmove/fullmove fields may
-  default safely and remain available in an advanced section.
-- The first move feature stores one legal, undoable/redoable line.
-- A later issue enables branches without replacing the persisted model.
-- A still later issue adds Stockfish through a replaceable UCI engine boundary.
+- **One product, one UI:** the PWA is the primary application. Android adds
+  native file/lifecycle affordances only when the browser contract is
+  insufficient.
+- **Local-first, not cache-only:** app state has an authoritative local store,
+  explicit durability status, re-linking, and backup/restore.
+- **Capability-driven:** feature availability follows runtime probes, not user
+  agent strings. Multi-threaded Stockfish and persistent file handles degrade
+  to supported alternatives.
+- **Adapters around volatile dependencies:** PDF, EPUB, recognition, storage,
+  chess rules, and Stockfish are independently replaceable.
+- **Workers for heavy work:** PDF rendering where possible, recognition,
+  hashing, imports, and Stockfish must not block the UI thread.
+- **Tests are product contracts:** compatibility, accuracy, coordinate
+  alignment, persistence, and recovery are executable gates.
 
 ## 3. System context
 
 ```mermaid
 flowchart LR
-    File[PDF or EPUB via SAF] --> Library[Book library]
-    Library --> Reader[Reader surface]
+    File[Local PDF or EPUB] --> Import[Import/re-link adapter]
+    Import --> Books[(OPFS managed files)]
+    Import --> Data[(IndexedDB metadata)]
+    Books --> Reader[PDF or EPUB reader]
     Reader --> Capture[Visible-content capture]
-    Capture --> Recognition[Offline diagram recognizer]
-    Recognition --> Cache[(Room database)]
-    Cache --> Hotspot[Diagram hotspot]
-    Hotspot --> Board[Overlay analysis board]
+    Capture --> Rec[Recognition worker]
+    Rec --> Data
+    Data --> Hotspot[Tappable hotspot]
+    Hotspot --> Board[Overlay chess board]
     Board --> Rules[Chess rules adapter]
-    Board --> Cache
-    Board -. later .-> UCI[UCI engine boundary]
-    UCI -. later .-> Stockfish[Bundled Stockfish]
+    Board --> Data
+    Board --> Engine[Stockfish worker]
+    Shell[Service worker app shell] --> Reader
+    Backup[Backup/re-link recovery] <--> Data
 ```
 
-Everything inside the solid-line path operates without a network connection.
-No book page or position leaves the device. A LAN recognizer can be added behind
-the same recognition interface only if the on-device benchmark is unacceptable.
+No book content, recognition input, position, or engine request leaves the
+device. The deployed origin is needed to install/update the application, but a
+verified installed copy works offline.
 
-## 4. Technology choices
+## 4. Target platforms
 
-### Platform
+The supported baseline is:
 
-- Kotlin, coroutines, Flow, and Jetpack Compose
-- A single-activity application with Navigation Compose
-- Minimum SDK 31 (Android 12)
-- Version catalog and Kotlin DSL Gradle files
-- Hilt for composition only if the bootstrap issue confirms its cost is useful;
-  otherwise use a small explicit application container
-- Room for structured local state and DataStore for small user preferences
+- current and previous stable Chromium desktop;
+- current and previous stable Firefox desktop;
+- current and previous stable Safari on macOS;
+- iPadOS 17+ Safari and installed Home Screen web app;
+- Android 12+ through current Chrome and the Capacitor wrapper.
 
-Dependency versions must be pinned by the bootstrap issue after a build against
-the then-current Android toolchain. Architecture documents intentionally avoid
-`latest.release` declarations.
+Automated WebKit emulation is useful but does not replace a real iPad gate.
+Private/incognito browsing is an explicitly unsupported durability mode; the
+application should warn and remain usable for the current session.
 
-### EPUB: Readium Kotlin
+## 5. Technology stack
 
-Readium Kotlin is the EPUB publication and navigation layer. Its chromeless
-Navigator fragments allow the app to own the surrounding UI, it exposes
-locators for restoration, and it supports JavaScript/native integration needed
-to identify visible image elements.
+### Application
 
-For EPUB recognition, prefer original image resources over screenshots:
+- TypeScript in strict mode
+- React with a Vite-built PWA
+- pnpm workspaces and a committed lockfile
+- standards-first responsive CSS with pointer and keyboard support
+- service worker with an explicit, testable update protocol
+- Vitest for unit/contract tests and Playwright for browser integration/E2E
 
-1. Inject a small, versioned script into the navigator to report visible image
-   elements, stable DOM identifiers, and viewport rectangles.
-2. Resolve the corresponding publication resource through Readium.
-3. Recognize the original image off-thread.
-4. Project the DOM rectangle to the Android overlay.
+Dependency versions are pinned at bootstrap. Production dependencies never use
+floating tags.
 
-For SVG, CSS-rendered, or otherwise non-image diagrams, fall back to a rendered
-viewport capture and, if needed, manual region selection. Cache EPUB results by
-book hash plus resource href/DOM anchor and image hash, not by screen pixels;
-font size and orientation must not invalidate the recognized position.
+### Repository layout
 
-### PDF: AndroidX PDF
+```text
+apps/web                 PWA shell, routes, responsive UI, service worker
+apps/android             added later: Capacitor wrapper and native adapters
+packages/core            identifiers, locators, FEN/move/session models
+packages/storage         IndexedDB, OPFS, import, backup, migrations
+packages/reader          ReaderSurface contract and shared coordination
+packages/reader-pdf      PDF.js adapter
+packages/reader-epub     selected EPUB adapter
+packages/recognition     fenshot/ONNX Runtime Web worker
+packages/chess           ChessRules adapter
+packages/engine          Stockfish worker and UCI parser
+packages/test-fixtures   generated/licensed PDF, EPUB, image, FEN fixtures
+```
 
-Use AndroidX PDF rather than Readium's Pdfium adapter. The Readium adapter is
-built on an upstream it describes as unmaintained. AndroidX PDF now provides:
+Do not create all packages merely to fill the tree. Each issue introduces its
+package when its independent contract or heavy dependency becomes real.
 
-- page bitmap sources suitable for recognition;
-- PDF-coordinate rectangles and point conversion;
-- visible-page and zoom callbacks; and
-- a Compose-facing viewer.
+## 6. Reader architecture
 
-Keep this behind `PdfReaderAdapter`, because the AndroidX API is still evolving.
-A PDF diagram rectangle is stored in normalized page coordinates and transformed
-to view coordinates whenever the viewport changes. The recognizer should render
-a page to a bounded long edge (initially 1600-2000 px, tuned by benchmark), not
-recognize an arbitrarily large zoomed screen bitmap.
+### Shared contract
 
-### Recognition: fenshot-derived native pipeline
+`ReaderSurface` exposes format-native locators, viewport changes, coordinate
+projection, bounded recognizable input, table of contents, preferences, and
+cleanup. A PDF page number is never used as a fake EPUB locator.
 
-The primary candidate is the MIT-licensed `scoriiu/fenshot` pipeline. It is a
-particularly good fit because it combines classical page-level board detection,
-a small 1.3 MB ONNX square classifier trained on book styles, orientation
-resolution, and per-square confidence.
+```text
+ReaderSurface
+  currentLocator()
+  goTo(locator)
+  observeViewport()
+  project(sourceRect)
+  captureVisibleContent(limit)
+  tableOfContents()
+  dispose()
+```
 
-The app will not embed a JavaScript/WebView runtime just to recognize diagrams.
-Instead, the recognition spike will:
+### PDF
 
-- port the deterministic board-detection and preprocessing code to Kotlin;
-- run the supplied model with ONNX Runtime Android;
-- validate Kotlin tensors and results against upstream golden fixtures;
-- benchmark CPU/XNNPACK first and NNAPI only if useful; and
-- record the upstream commit/model checksum and license.
+Use Mozilla PDF.js behind `PdfJsReaderAdapter`. PDF.js supplies canvas rendering,
+page viewports, and transformations that map normalized PDF rectangles to the
+displayed page. Rendering/capture uses a dedicated worker and a bounded long
+edge initially around 1600-2000 pixels, tuned by evaluation.
 
-The boundary is:
+Store zero-based page plus normalized page coordinates. Reproject hotspots
+after zoom, scroll, rotation, responsive layout, or analysis-panel resizing.
+Release canvases and image bitmaps promptly; an unbounded rendered-page cache is
+forbidden.
 
-```kotlin
+### EPUB selection spike
+
+The EPUB dependency is deliberately not selected by assertion. An early issue
+implements the same local sample with both:
+
+- Readium Web/Thorium Web; and
+- EPUB.js.
+
+The scorecard covers local Blob/ArrayBuffer opening without a required server,
+offline use, reflowable and fixed-layout rendering, stable locator restore,
+visible-image discovery, coordinate mapping, accessibility, iPad memory,
+maintenance, and hostile-publication isolation.
+
+Current evidence favors EPUB.js for the local-only product because it directly
+accepts an ArrayBuffer. Readium Web's normal design consumes a Readium Web
+Publication Manifest, commonly supplied by its Go HTTP toolkit, and its own
+maintainers note that arbitrary local-publication opening is not yet a simple
+production path. Readium remains in the spike because its navigator and
+accessibility model may justify an in-browser manifest adapter.
+
+The winning implementation is hidden behind `EpubReaderAdapter`; the scored ADR
+is the deliverable. If neither safely meets the gate, EPUB is held behind an
+experimental flag rather than weakening security or offline requirements.
+
+### Untrusted EPUB isolation
+
+EPUB content is active web content and must be treated as untrusted even for a
+personal reader. The selected adapter must:
+
+- disable publication scripts by default;
+- block forms, popups, top navigation, downloads, and external network loads;
+- sanitize markup and dangerous URL schemes before rendering;
+- apply a restrictive iframe sandbox and injected Content Security Policy;
+- use a versioned, schema-validated `postMessage` bridge if frame communication
+  is needed;
+- keep application storage inaccessible to publication code; and
+- pass the malicious-EPUB evaluation corpus.
+
+The security model must also remain compatible with cross-origin isolation used
+by threaded WebAssembly. This interaction is a required spike test.
+
+## 7. Analysis-panel interaction
+
+The book is the base layer. The analysis board is a movable, resizable,
+collapsible layer above it.
+
+- Compact screens default to a bottom-anchored panel around half height.
+- Larger screens default to a right-side/floating panel.
+- Pointer events inside the panel belong to the board; events outside remain
+  with the reader.
+- A dedicated handle moves/resizes the panel so chess gestures do not move it.
+- Opening/closing the panel does not recreate the reader or change its locator.
+- Browser safe-area insets, iPad multitasking widths, orientation changes,
+  keyboard navigation, and touch targets are tested.
+
+A detected diagram is a single-tap target. A subtle affordance marks readiness
+without covering the printed position. Cached candidates are immediately
+tappable; uncached work always exposes progress and cancellation.
+
+## 8. Offline recognition
+
+Use the MIT-licensed `scoriiu/fenshot` package rather than porting it to Kotlin.
+It combines page-level board detection, a roughly 1.3 MB ONNX tile classifier
+trained on book styles, orientation resolution, and per-square confidence.
+
+Run recognition through ONNX Runtime Web in a dedicated worker. WebAssembly is
+the baseline because ONNX Runtime documents it across Chromium, Firefox, and
+Safari/iOS. WebGPU is an optional measured acceleration and never a requirement.
+Self-host and version the ONNX model and runtime assets.
+
+```ts
 interface DiagramRecognizer {
-    val version: String
-    suspend fun recognize(input: RecognitionInput): List<DiagramCandidate>
+  readonly version: string;
+  recognize(input: RecognitionInput, signal: AbortSignal):
+    Promise<readonly DiagramCandidate[]>;
 }
 ```
 
-`DiagramCandidate` contains a normalized rectangle, piece placement, proposed
-orientation, aggregate confidence, and 64 square confidences. Full FEN fields
-that an image cannot prove are explicitly supplied by the user/defaults.
+Each candidate contains a normalized rectangle, piece placement, proposed
+orientation, aggregate confidence, and 64 square confidences. Image recognition
+does not invent side-to-move, castling, en-passant, or move counters.
 
-The recognizer loads lazily, keeps at most one inference active, reuses its
-session, and closes it on application teardown. Recognition failures are values
-(`NoBoard`, `LowConfidence`, `Unsupported`, `Internal`) rather than crashes.
+The coordinator debounces stable viewports, checks cache first, allows only one
+active inference per client, cancels obsolete work, and rejects late results by
+content key. User corrections always win over model updates.
 
-The LAN alternative, if ever needed, implements the same interface and is an
-optional build/runtime feature. It is not required by any first-release issue.
+## 9. Chess model and position editing
 
-### Chess rules
+Put FEN validation, legal move generation, SAN, undo/redo, and PGN boundaries
+behind `ChessRules`. Evaluate a maintained, permissively licensed TypeScript
+library using perft and special-move contract tests before choosing it.
 
-Put move generation, legality, SAN, and FEN parsing behind `ChessRules`. Start
-with a pinned, permissively licensed JVM chess library after a small contract
-test proves it works on Android. The current leading candidate is
-`bhlangonijr/chesslib` (Apache-2.0), but the adapter is intentional: upstream
-bugs must not leak into UI or persistence contracts.
+The editor supports pieces, empty squares, orientation, side to move, castling,
+en-passant, and move counters. It accepts legal study positions that need not be
+reachable from the starting position while rejecting internally inconsistent
+state.
 
-Contract tests cover perft positions, check, castling, en passant, promotion,
-undo/redo, SAN ambiguity, and arbitrary legal FEN starting positions. The app's
-persisted move representation is UCI plus the initial full FEN; SAN is derived
-for display.
+Persist an immutable initial full FEN and parent-linked UCI move nodes. The
+first move issue enforces one child per node; the variation issue later permits
+multiple ordered children. SAN is derived presentation, not authoritative data.
 
-### Stockfish
+## 10. Stockfish in browsers and on iPad
 
-Stockfish is a separate, later capability behind an asynchronous `AnalysisEngine`
-interface. The implementation communicates using UCI and owns exactly one engine
-session. It must support cancellation and lifecycle-safe `stop`/shutdown.
+Run a pinned Stockfish WebAssembly build in a dedicated Web Worker behind
+`AnalysisEngine`. Keep UCI parsing shared and engine-variant details internal.
 
-Initial settings:
+Ship and test two capability paths:
 
-- MultiPV: 1 by default, user configurable
-- Threads: 1 by default, capped to a safe device-derived maximum
-- Hash: conservative default such as 64 MB, bounded by device memory
-- Analysis: infinite until stopped, with optional depth/time limits later
+1. a portable single-thread WebAssembly build that needs no shared memory; and
+2. a threaded SIMD build used only when `crossOriginIsolated`,
+   `SharedArrayBuffer`, WebAssembly thread probes, and a worker self-test pass.
 
-Package reproducible ABI-specific binaries or a native wrapper, include the
-GPLv3 license, Stockfish authors, exact source/version, NNUE provenance, build
-instructions, and the source pointer required for the distributed binary. An
-integration spike must choose the safest Android process/JNI approach before
-the feature issue lands.
+The hosting configuration sends `Cross-Origin-Opener-Policy: same-origin` and
+`Cross-Origin-Embedder-Policy: require-corp`; all application, worker, WASM,
+model, font, and engine assets are self-hosted with compatible policies. Startup
+tests fail if production headers do not actually yield the expected capability.
 
-## 5. Module and package boundaries
+iPad uses conservative defaults even when threads work: one thread, small NNUE,
+modest hash, and MultiPV 1. The UI exposes threads only when the runtime supports
+them and caps them below reported logical processors. Engine activity stops on
+explicit stop, panel close according to preference, `visibilitychange`,
+`pagehide`, worker failure, or a watchdog timeout. The session can be rebuilt
+from FEN plus UCI path after Safari suspends or terminates the page.
 
-Use modules where a native/heavy dependency or independently testable contract
-justifies one; avoid a module per screen.
+The service worker caches the selected engine/NNUE assets by content hash. An
+offline-readiness check proves that the exact configured variant is locally
+available before promising offline analysis.
 
-```text
-:app                  Compose UI, navigation, application composition
-:core:model           Pure Kotlin identifiers, locators, FEN/move/session models
-:core:data            Room, DataStore, repositories, file identity
-:core:chess           ChessRules contract and library adapter
-:reader               ReaderSurface contract, PDF and EPUB adapters
-:recognition          Recognition contract, capture coordinator, ONNX implementation
-:engine               Added later: AnalysisEngine contract and Stockfish implementation
-```
+## 11. Durable local storage
 
-Within `:app`, use feature packages for `library`, `reader`, `board`, and
-`settings`. UI talks to use cases/view models, never directly to Room, Readium,
-ONNX Runtime, or Stockfish.
+Storage behavior is detailed in `docs/platform-limitations.md`.
 
-Important interfaces:
+Use distinct stores for distinct jobs:
 
-```text
-BookRepository          import/open/delete books and persist locators
-ReaderSurface           navigate, expose viewport, capture recognizable content
-DiagramRepository       cache and update recognized/corrected diagrams
-DiagramRecognizer       bitmap/resource -> diagram candidates
-RecognitionCoordinator  debounce/cancel/deduplicate visible-content work
-ChessRules              validate/edit/play/undo/format
-AnalysisRepository      persist initial FEN, move nodes, and current cursor
-AnalysisEngine          later: stream UCI analysis for a position
-```
+- Cache Storage: versioned application shell, workers, WASM, model, and NNUE;
+- IndexedDB: structured metadata, settings, locators, recognition records,
+  corrections, analysis sessions, and move nodes;
+- Origin Private File System (OPFS): optional managed copies of PDF/EPUB bytes;
+- transient `File`/file handles: user-selected source documents.
 
-## 6. State and data model
+### Import modes
 
-Room is the source of truth for durable app-owned data. Reader widgets and
-native sessions are runtime state, reconstructed from persisted locators and
-models.
+`Managed copy` is the recommended iPad mode. After a user gesture, request
+persistent storage, inspect `navigator.storage.estimate()`, verify headroom,
+stream the file into an OPFS staging location, calculate a chunked SHA-256, and
+atomically publish the metadata only after the copy succeeds.
 
-### Core tables
+`Reference/re-link` keeps no durable book bytes. It remembers content identity
+and app data; when the browser cannot retain an external handle (notably Safari),
+the user selects the original again. A matching content hash reconnects all
+locators, corrections, and analysis automatically.
+
+Chromium may retain a File System Access handle when supported, but that is an
+optimization. The standard file input and re-link flow is always available.
+
+### Failure and recovery
+
+- Handle `QuotaExceededError`, denied persistence, missing OPFS entries,
+  partial imports, database migration failure, and cleared site data explicitly.
+- Use a two-phase import journal because IndexedDB and OPFS cannot share one
+  atomic transaction.
+- Check managed-file existence on open and offer re-link/repair.
+- Offer a versioned backup export for metadata, corrections, and move trees;
+  recognition caches are optional and book bytes are excluded by default.
+- Restore into a staging database, validate schema/checksums/references, then
+  swap; a failed restore leaves existing data intact.
+- Display storage mode, persistence grant, usage/quota estimate, offline asset
+  readiness, and last successful backup in a storage-health screen.
+
+No browser API can protect data after the user clears website data. The product
+solution is visible durability state plus backup and content-hash re-linking,
+not a false promise.
+
+## 12. Data model
 
 `books`
 
-- `id` UUID
-- `content_uri`
-- `persisted_permission` flag
-- `content_hash` SHA-256, unique with format
-- `format` (`PDF`, `EPUB`)
-- title/author/cover cache metadata
-- `last_locator_json`
-- import/open timestamps
-
-If a provider cannot grant durable URI access, import the file into app-private
-storage with explicit progress instead of silently depending on a temporary URI.
+- UUID, content SHA-256, format, title/author
+- storage mode and OPFS path or optional retained handle reference
+- byte size, availability status, import journal id
+- last format-native locator and timestamps
 
 `diagrams`
 
-- `id`, `book_id`
-- stable content locator (`page_index` for PDF; href/anchor for EPUB)
-- source image/resource hash
-- normalized source rectangle
-- recognized piece placement and proposed orientation
-- aggregate and per-square confidence
-- recognizer version and model checksum
-- corrected full FEN and `is_user_corrected`
-- created/updated timestamps
-
-User-corrected rows always win over new model output. A model upgrade may mark
-uncorrected cache entries stale, but never overwrites corrections.
+- book id and stable PDF page or EPUB resource/anchor locator
+- source fingerprint and normalized rectangle
+- recognized placement/orientation/confidence/per-square confidences
+- recognizer/model version
+- corrected full FEN and correction flag
 
 `analysis_sessions`
 
-- `id`, `diagram_id`
-- immutable initial full FEN
-- current node id
-- panel geometry/collapsed state if scoped to the session
-- created/updated timestamps
+- diagram id, immutable initial full FEN, current node id
+- panel state and timestamps
 
 `move_nodes`
 
-- `id`, `session_id`, nullable `parent_id`
-- UCI move, sibling order, optional comment/NAG fields for future use
+- session id, nullable parent id, UCI move, sibling order
+- future-compatible comment/NAG fields
 
-The single-line issue enforces at most one child per node in its use case. The
-later variation issue removes that restriction and adds branch UI; no database
-replacement is required.
+Book identity uses bytes, not filename. A model upgrade may invalidate only
+uncorrected recognition rows. Re-linking identical bytes never loses study data.
 
-### Identity and cache invalidation
+## 13. Service-worker update protocol
 
-- Book identity is based on content hash, not display name or URI.
-- PDF cache key: book hash + zero-based page + page-content/render fingerprint.
-- EPUB cache key: book hash + resource href/DOM anchor + source resource hash.
-- Recognition cache key includes recognizer version/model checksum.
-- Manual corrections are separately flagged and retained across recognizer
-  upgrades.
+- Generate a build manifest containing hashes for the shell, workers, PDF.js,
+  recognition model/runtime, Stockfish variants, and NNUE.
+- Download into a versioned cache and verify every required response before
+  marking the version ready.
+- Never delete the active cache until the replacement is complete.
+- Do not force-reload while a book has unsaved state; show an update prompt.
+- Keep one rollback-compatible previous asset set when quota allows.
+- Run an offline boot and engine/recognizer asset self-check in release CI.
 
-## 7. Runtime flows
+## 14. Android wrapper
 
-### Import and open
+Capacitor packages the production web build for Android 12+. The wrapper may
+provide native file picking, durable app-private book copies, back handling,
+safe-area/status-bar integration, and APK signing. Domain, reader, recognition,
+board, persistence schema, and engine UI remain web code.
 
-```text
-SAF open document
-  -> retain URI permission or copy privately
-  -> hash stream on Dispatchers.IO
-  -> parse metadata
-  -> upsert Book
-  -> open reader at saved locator
-```
+Native adapters implement the same capability interfaces as browsers. They do
+not become a second product fork. Any Android-only behavior requires a contract
+test and a documented reason.
 
-### Visible-page recognition
+## 15. Privacy and security
 
-```text
-viewport settles
-  -> build stable content key
-  -> cached diagrams? -> project hotspots immediately
-  -> otherwise capture bounded bitmap/resource
-  -> recognize on limited worker dispatcher
-  -> persist candidates/confidence
-  -> project hotspots if viewport is still current
-```
+- No analytics, accounts, upload endpoint, or required application API.
+- Production Content Security Policy permits only self-hosted app assets and
+  controlled blob workers/resources.
+- No third-party CDN is used at runtime.
+- Imported files are validated by content and size limits, not only extension.
+- EPUB active content and network requests are blocked.
+- Release logs exclude book text/images, full file names/paths, FENs, and URIs.
+- Backups are local downloads; if optional encryption is later added, it needs a
+  separate reviewed design.
 
-Stale tasks are cancelled and their UI result discarded. A completed result may
-still be cached if its content key is valid. OOM and corrupted-book failures are
-reported without closing the reader.
+## 16. Delivery phases
 
-### Tap and study
+1. PWA shell, browser matrix, domain contracts, and durable-storage foundation.
+2. Local import, PDF reader, and scored EPUB renderer selection.
+3. Shared overlay and offline recognition evaluation.
+4. PDF/EPUB hotspots and manual fallback.
+5. Editable board, single line, durable sessions, and branches.
+6. Stockfish portable/threaded engine paths and analysis UI.
+7. Offline/update/storage recovery hardening.
+8. Capacitor Android wrapper and cross-platform release qualification.
 
-```text
-tap hotspot
-  -> load corrected FEN or recognition proposal
-  -> require/confirm side to move when first opened
-  -> create/resume AnalysisSession
-  -> show panel without recreating ReaderSurface
-  -> edit or play legal move
-  -> persist move node and cursor transactionally
-  -> later: submit the same position/moves to AnalysisEngine
-```
+The ordered GitHub issues implement these phases. Every issue leaves the app
+deployable, and experimental results must update the relevant ADR and evaluation
+baseline.
 
-## 8. Concurrency, memory, and lifecycle
+## 17. Out of scope
 
-- Reader rendering owns the foreground priority; recognition and engine work
-  may not starve it.
-- One recognition inference at a time, with a conflated queue keyed by visible
-  content.
-- Use bounded bitmaps and release them promptly. Do not retain rendered PDF
-  pages in Room or in an unbounded memory cache.
-- Keep only small thumbnails/covers in disk cache.
-- Stop Stockfish when analysis is disabled and pause it when the app backgrounds;
-  restore from FEN and UCI moves rather than serializing native state.
-- All long-running work exposes progress/error/cancellation via sealed state.
-- Current-page recognition does not use WorkManager; it is user-visible,
-  cancellable work tied to the reader lifecycle.
+- DjVu and DRM circumvention
+- whole-book recognition
+- cloud accounts, sync, remote library, or server recognition
+- automatic parsing of surrounding move text
+- game/video database search
+- Play Store or App Store publication
+- relying on private/incognito storage
 
-## 9. Security and privacy
+## 18. Primary references
 
-- No `INTERNET` permission is needed for the first offline release.
-- Use SAF grants rather than all-files access.
-- Treat EPUB HTML/JavaScript as untrusted: disable arbitrary network loading,
-  expose a minimal JavaScript bridge, validate bridge payloads, and never enable
-  filesystem access beyond publication resources.
-- Validate MIME type and parser result; do not trust filename extensions.
-- Keep engine and recognizer inputs app-local.
-- Do not log book text, page images, FENs, or full content URIs in release builds.
-
-## 10. Testing and quality gates
-
-### Unit and contract tests
-
-- normalized rectangle transformations at zoom/rotation/reflow boundaries
-- cache identity and migration behavior
-- recognition pre/postprocessing golden vectors
-- chess perft and special-move behavior
-- line/tree persistence and cursor restoration
-- UCI parsing, cancellation, and stale-output rejection
-
-### Instrumented tests
-
-- import and reopen through representative SAF providers
-- PDF hotspot alignment after zoom, scroll, rotation, and two visible pages
-- EPUB hotspot alignment after font/margin/orientation changes
-- overlay pointer routing: book navigation works outside the panel
-- process death and recreation restore book locator, panel, FEN, and moves
-- malformed and large-book failure handling
-
-### Fixture policy
-
-Keep a small, legally redistributable corpus containing:
-
-- digital and scanned PDF pages;
-- reflowable and fixed-layout EPUB samples;
-- diagrams with coordinates, reversed orientation, hatching, grayscale, and
-  low-resolution scans;
-- pages with zero, one, and multiple boards.
-
-Every recognition bug should add a minimized, licensable regression fixture or
-a synthetic equivalent. Do not commit copyrighted user books.
-
-### Performance gates
-
-The recognition spike establishes baselines on at least one Android 12-class
-physical device. Track cold model load, warm page recognition, peak Java/native
-memory, APK size, and interaction jank. A LAN fallback is considered only after
-model quantization/runtime tuning is measured and recorded.
-
-## 11. Delivery phases
-
-1. Buildable Android shell and quality gates.
-2. Library/import plus PDF and EPUB reading with restoration.
-3. Stable overlay/coordinate contracts.
-4. Offline recognition proof and golden tests.
-5. PDF and EPUB diagram hotspots plus fallback selection.
-6. Editable board and one-line legal move exploration.
-7. Durable sessions and branching variations.
-8. Stockfish integration and settings.
-9. Device hardening, notices, and reproducible sideloaded APK.
-
-The GitHub issues implement these phases in strict dependency order. Each issue
-must leave the app buildable and must not pull later features forward unless the
-later issue's contract requires a small seam.
-
-## 12. Out of scope for the planned backlog
-
-- DjVu
-- DRM circumvention or proprietary bookstore integration
-- whole-book background scanning
-- cloud accounts, sync, analytics, or remote storage
-- automatic recognition of surrounding move text
-- game-database or video-position search
-- annotations/bookmarks beyond what the selected reader exposes by default
-- Play Store release automation
-
-## 13. Primary references
-
-- [Readium Kotlin toolkit](https://github.com/readium/kotlin-toolkit)
-- [Readium PDF adapter limitations](https://github.com/readium/kotlin-toolkit/blob/develop/readium/adapters/pdfium/README.md)
-- [AndroidX PDF releases](https://developer.android.com/jetpack/androidx/releases/pdf)
-- [AndroidX PDF document API](https://developer.android.com/reference/kotlin/androidx/pdf/PdfDocument)
-- [AndroidX PDF viewport API](https://developer.android.com/reference/androidx/pdf/view/PdfView.OnViewportChangedListener)
-- [fenshot recognition pipeline](https://github.com/scoriiu/fenshot)
-- [ONNX Runtime mobile guidance](https://onnxruntime.ai/docs/tutorials/mobile/)
-- [Stockfish source and licensing](https://github.com/official-stockfish/Stockfish)
-- [Android Storage Access Framework](https://developer.android.com/guide/topics/providers/document-provider)
-- [Room](https://developer.android.com/training/data-storage/room)
-
+- [PDF.js](https://github.com/mozilla/pdf.js)
+- [Readium Web](https://github.com/readium/web)
+- [Thorium Web](https://github.com/edrlab/thorium-web)
+- [EPUB.js](https://github.com/futurepress/epub.js)
+- [fenshot](https://github.com/scoriiu/fenshot)
+- [ONNX Runtime Web](https://onnxruntime.ai/docs/get-started/with-javascript/web.html)
+- [Lichess Stockfish Web](https://github.com/lichess-org/stockfish-web)
+- [WebKit storage policy](https://webkit.org/blog/14403/updates-to-storage-policy/)
+- [WebKit OPFS support](https://webkit.org/blog/12257/the-file-system-access-api-with-origin-private-file-system/)
+- [Capacitor](https://capacitorjs.com/docs)

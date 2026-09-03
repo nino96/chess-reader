@@ -1,6 +1,6 @@
 # ADR 0001: Separate EPUB and PDF renderers behind one reader contract
 
-Status: accepted  
+Status: superseded by ADR 0004
 Date: 2026-09-03
 
 ## Context
@@ -25,4 +25,3 @@ The app avoids an unmaintained PDF renderer and gets first-class recognition
 inputs, but it integrates two navigation implementations. Contract and
 instrumentation tests are required to make reader behavior consistent. The
 AndroidX PDF dependency must remain isolated because its API is still maturing.
-

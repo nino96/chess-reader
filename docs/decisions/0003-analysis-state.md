@@ -1,6 +1,6 @@
 # ADR 0003: Persist a move tree while initially exposing a single line
 
-Status: accepted  
+Status: accepted
 Date: 2026-09-03
 
 ## Context
@@ -23,4 +23,3 @@ would require a disruptive migration when branches arrive.
 The initial UI stays simple while storage is already compatible with analysis
 trees. The first implementation must test tree persistence even though it only
 creates a line.
-

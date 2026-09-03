@@ -1,6 +1,6 @@
 # ADR 0002: Prove an offline fenshot-derived recognizer before considering LAN
 
-Status: accepted  
+Status: superseded by ADR 0005
 Date: 2026-09-03
 
 ## Context
@@ -31,4 +31,3 @@ The default app remains private, offline, and simple to operate. The recognition
 spike has more native integration work than calling a server, but it is bounded
 by a small model and reproducible upstream tests. The interface preserves a LAN
 escape hatch without making it part of the initial product.
-
