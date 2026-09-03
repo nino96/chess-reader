@@ -20,9 +20,11 @@ The issue defines delivery scope, while accepted ADRs define architectural
 constraints. If they conflict, stop and make the conflict explicit. Update or
 supersede the ADR in the same change after review; do not silently diverge.
 
-The repository is architecture-only until issue #1 is implemented. Do not claim
-that build or test commands work before their scripts exist, and do not add
-passing placeholder commands to simulate a bootstrapped project.
+Issue #1 bootstrapped the workspace, so `check`, `test:unit`, `test:e2e`,
+`check:licenses`, `build`, and `preview` are real commands (see
+`docs/testing.md`). Do not claim that any other command works before its script
+exists, and do not add passing placeholder commands to simulate a subsystem
+that is not implemented yet.
 
 ## Product contract
 

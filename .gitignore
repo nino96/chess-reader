@@ -21,3 +21,6 @@ CLAUDE.local.md
 Thumbs.db
 .idea/
 .vscode/*.local.json
+
+# Local-only fixture corpus (see docs/fixtures.md); never commit real books
+fixtures-local/

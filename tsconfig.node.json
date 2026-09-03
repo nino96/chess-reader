@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "allowJs": true,
+    "checkJs": true,
+    "outDir": "./node_modules/.tsbuild/root",
+    "tsBuildInfoFile": "./node_modules/.tsbuild/root.tsbuildinfo",
+    "lib": ["ES2022"],
+    "types": ["node"]
+  },
+  "include": [
+    "eslint.config.js",
+    "vitest.config.ts",
+    "scripts/**/*.mjs",
+    "scripts/**/*.ts",
+    "types/**/*.d.ts"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "_template": true,
+  "schemaVersion": 1,
+  "issue": 1,
+  "commit": "REPLACE_WITH_COMMIT",
+  "date": "REPLACE_WITH_YYYY-MM-DD",
+  "deviceClass": "ipad",
+  "os": "REPLACE_WITH_IPADOS_VERSION",
+  "browser": "REPLACE_WITH_SAFARI_VERSION",
+  "installed": false,
+  "url": "REPLACE_WITH_DEPLOYED_ORIGIN",
+  "capabilities": {
+    "indexeddb": "unknown",
+    "opfs": "unknown",
+    "workers": "unknown",
+    "webassembly": "unknown",
+    "storage-estimate": "unknown",
+    "storage-persistence": "unknown",
+    "touch": "unknown",
+    "cross-origin-isolation": "unknown"
+  },
+  "crossOriginIsolated": false,
+  "widthsTried": [
+    {
+      "mode": "REPLACE_WITH_MODE_e.g._full-screen",
+      "cssWidth": 0
+    }
+  ],
+  "result": "REPLACE_WITH_pass_fail_or_partial",
+  "notes": "REPLACE_WITH_FREEFORM_NOTES",
+  "evidence": [],
+  "limitations": []
+}

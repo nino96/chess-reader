@@ -1,0 +1,70 @@
+name: Deploy Pages preview
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # GitHub Pages serves this build from a project subpath
+      # (https://nino96.github.io/chess-reader/), so Vite must emit
+      # asset URLs rooted at that subpath rather than at "/". The commit SHA
+      # is stamped into the build so the running app can show which commit is
+      # deployed; nothing else identifies the build or the user.
+      - name: Build
+        env:
+          CHESS_READER_BASE_PATH: /chess-reader/
+          VITE_APP_VERSION: ${{ github.sha }}
+        run: pnpm build
+
+      # actions/upload-pages-artifact tars the given path itself and Pages
+      # serves the result directly; it does not run Jekyll processing, so a
+      # `.nojekyll` marker file is unnecessary here (that file only matters
+      # for the classic branch-based Pages deployment source).
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

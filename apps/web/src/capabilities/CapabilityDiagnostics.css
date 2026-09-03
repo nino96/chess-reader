@@ -1,0 +1,125 @@
+.capability-diagnostics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  color: var(--color-fg);
+  background: var(--color-bg);
+}
+
+.capability-summary {
+  font-weight: 600;
+}
+
+.capability-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.capability-actions button {
+  min-height: var(--touch-target);
+  min-width: var(--touch-target);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font: inherit;
+  cursor: pointer;
+}
+
+.capability-actions button:disabled {
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.capability-actions button:hover:not(:disabled) {
+  border-color: var(--color-accent);
+}
+
+.capability-actions button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.capability-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.capability-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-1) var(--space-2);
+  align-items: center;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.capability-label {
+  font-weight: 600;
+  grid-column: 1;
+}
+
+.capability-badge {
+  grid-column: 2;
+  justify-self: end;
+  padding: 0 var(--space-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.85em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.capability-badge--supported {
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.capability-badge--unsupported {
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.capability-badge--error {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.capability-badge--unknown,
+.capability-badge--probing {
+  border-color: var(--color-muted);
+  color: var(--color-muted);
+}
+
+.capability-detail {
+  grid-column: 1 / -1;
+  color: var(--color-muted);
+  font-size: 0.9em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .capability-actions button {
+    transition:
+      border-color 120ms ease,
+      color 120ms ease;
+  }
+}
+
+@media (max-width: 20rem) {
+  .capability-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .capability-badge {
+    justify-self: start;
+  }
+}
