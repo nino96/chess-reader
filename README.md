@@ -8,8 +8,38 @@ The same web application is intended to run in laptop browsers, as an installed
 web app on iPad, and inside a thin Capacitor wrapper for a sideloaded Android
 application.
 
-The project currently contains architecture, risk analysis, evaluation gates,
-and an ordered implementation backlog.
+The project contains the architecture, risk analysis, evaluation gates, an
+ordered implementation backlog, and the bootstrapped application shell from
+issue #1: a responsive, installable start screen with a local capability
+diagnostic. It does not read books yet.
+
+## Getting started
+
+Prerequisites: Node.js 22.12 or newer and pnpm 11 (Corepack honours the
+`packageManager` field). Browser tests also need the Playwright browsers.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm --filter @chess-reader/web exec playwright install chromium firefox webkit
+pnpm dev            # Vite dev server on http://localhost:5173 (also on the LAN)
+pnpm build          # production build in apps/web/dist
+pnpm preview        # serve the production build on http://127.0.0.1:4173
+```
+
+Quality gates that exist today:
+
+```sh
+pnpm check          # typecheck + Prettier + ESLint
+pnpm test:unit      # Vitest unit/component tests
+pnpm test:e2e       # Playwright in Chromium, Firefox, WebKit, iPad and phone profiles
+pnpm check:licenses # production dependency license allowlist
+```
+
+`test:contract` and the `eval:*` commands do not exist yet. They are added by
+the issue that first makes the corresponding subsystem real, never as passing
+placeholders. See [docs/testing.md](docs/testing.md) for details and
+[docs/deployment.md](docs/deployment.md) for HTTPS deployment and the GitHub
+Pages preview.
 
 ## Product boundaries
 
@@ -29,6 +59,12 @@ and an ordered implementation backlog.
 - [Test and evaluation strategy](docs/evaluation.md)
 - [Architecture decisions](docs/decisions/)
 - [Ordered GitHub issue plan](docs/issue-plan.md)
+- [Testing commands and evidence](docs/testing.md)
+- [Deployment and HTTPS hosting](docs/deployment.md)
+- [Dependency and license policy](docs/dependency-policy.md)
+- [Fixture provenance rules](docs/fixtures.md)
+- [Real-device evidence records](docs/device-evidence/README.md)
+- [Contributing workflow](CONTRIBUTING.md)
 
 ## Working agreement for coding agents
 

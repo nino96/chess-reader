@@ -58,20 +58,20 @@ one PV; configuration and threaded/SIMD variants follow in #17.
 
 ## Product checkpoints
 
-| After issue | What the owner can test |
-| --- | --- |
-| #1 | Open the deployed responsive shell and capability diagnostics on laptop/iPad |
-| #2 | Select a PDF diagram, recognize locally, and correct the floating board |
-| #3 | Install it, go offline, relaunch, and recover that PDF/board |
-| #7 | Tap PDF diagrams directly, with manual selection as fallback |
-| #9 | Play and undo one legal continuation |
-| #12 | Use the same manual study flow with EPUB |
-| #13 | Tap EPUB diagrams directly |
-| #15 | Explore branch variations |
-| #16 | Run basic offline Stockfish analysis |
-| #17 | Configure MultiPV/engine resources and add a PV explicitly |
-| #20 | Complete the same workflow in a sideloaded Android APK |
-| #22 | Install the qualified reproducible release |
+| After issue | What the owner can test                                                      |
+| ----------- | ---------------------------------------------------------------------------- |
+| #1          | Open the deployed responsive shell and capability diagnostics on laptop/iPad |
+| #2          | Select a PDF diagram, recognize locally, and correct the floating board      |
+| #3          | Install it, go offline, relaunch, and recover that PDF/board                 |
+| #7          | Tap PDF diagrams directly, with manual selection as fallback                 |
+| #9          | Play and undo one legal continuation                                         |
+| #12         | Use the same manual study flow with EPUB                                     |
+| #13         | Tap EPUB diagrams directly                                                   |
+| #15         | Explore branch variations                                                    |
+| #16         | Run basic offline Stockfish analysis                                         |
+| #17         | Configure MultiPV/engine resources and add a PV explicitly                   |
+| #20         | Complete the same workflow in a sideloaded Android APK                       |
+| #22         | Install the qualified reproducible release                                   |
 
 ## Recommended agent workflow
 

@@ -1,0 +1,38 @@
+{
+  "name": "chess-reader",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first PWA for studying DRM-free PDF and EPUB chess books",
+  "packageManager": "pnpm@11.11.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @chess-reader/web dev",
+    "build": "pnpm --filter @chess-reader/web build",
+    "preview": "pnpm --filter @chess-reader/web preview",
+    "check": "pnpm check:types && pnpm check:format && pnpm check:lint",
+    "check:types": "tsc -b --pretty false",
+    "check:format": "prettier --check .",
+    "check:lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "test:unit": "vitest run",
+    "test:e2e": "pnpm --filter @chess-reader/web test:e2e",
+    "check:licenses": "node scripts/check-licenses.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@types/node": "26.4.1",
+    "eslint": "9.39.5",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.6",
+    "globals": "17.12.0",
+    "prettier": "3.9.6",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.69.0",
+    "vitest": "5.0.0"
+  }
+}

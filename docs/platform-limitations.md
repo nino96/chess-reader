@@ -43,11 +43,11 @@ estimate output size and never be the only recovery path.
 
 ### Storage modes
 
-| Mode | Book bytes | Best use | Recovery |
-| --- | --- | --- | --- |
-| Managed | OPFS | Recommended on iPad and shared computers | Re-link original if missing; restore study backup if origin was cleared |
-| Referenced | External file/temporary `File` | Avoid duplicate large files | Reselect on a later session; reconnect by SHA-256 |
-| Retained handle | Browser file handle where supported | Chromium convenience | Re-authorize or fall back to re-link |
+| Mode            | Book bytes                          | Best use                                 | Recovery                                                                |
+| --------------- | ----------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------- |
+| Managed         | OPFS                                | Recommended on iPad and shared computers | Re-link original if missing; restore study backup if origin was cleared |
+| Referenced      | External file/temporary `File`      | Avoid duplicate large files              | Reselect on a later session; reconnect by SHA-256                       |
+| Retained handle | Browser file handle where supported | Chromium convenience                     | Re-authorize or fall back to re-link                                    |
 
 The standard `<input type="file">` path is authoritative because
 `showOpenFilePicker()` is not universally available. Persisted Chromium handles
@@ -191,6 +191,15 @@ emulate viewport/input. It is not the branded Safari binary and cannot reproduce
 all iPadOS process, Files picker, storage, memory, Home Screen, and multitasking
 behavior.
 
+Measured during issue #1: the Playwright WebKit build (Windows host, Playwright
+1.62) exposes no `navigator.storage` object at all, so its OPFS, storage
+estimate, and persistence rows report unsupported/unknown even though shipping
+Safari 17+ implements them. The E2E suite therefore asserts that those rows
+match the engine's real API surface rather than assuming support, and the
+real-iPad record in `docs/device-evidence/` is the only evidence for storage
+capabilities on iPadOS. WebKit also omits plain links from the Tab order unless
+they carry an explicit `tabindex`, which the skip link now does.
+
 ### Product solution
 
 - Run Playwright on Chromium, Firefox, WebKit desktop, and tablet viewport in CI.
@@ -202,19 +211,19 @@ behavior.
 
 ## 8. Platform failure matrix
 
-| Failure | User-visible response | Required regression gate |
-| --- | --- | --- |
-| Persistence denied | Explain best-effort mode; recommend managed copy and backup | Capability/storage contract test |
-| Quota exhausted mid-import | Cancel cleanly, remove staging bytes, keep existing library | Quota fault injection |
-| Managed book missing | Offer re-link; reconnect by hash | OPFS deletion/re-link E2E |
-| Site data cleared | Empty-state restore/reimport guidance | Fresh-profile recovery drill |
-| Private mode | Session-only warning; no durability promise | Browser-mode smoke test |
-| Service-worker partial update | Continue last complete version | Interrupted-cache update test |
-| `crossOriginIsolated` false | Select portable Stockfish and hide threads | Header/capability E2E |
-| Engine allocation failure | Retry conservative profile and report limitation | Worker fault injection |
-| iPad suspends worker | Restore state and recreate worker | Real-device background drill |
-| EPUB attempts network/script | Block and report unsupported active content | Malicious EPUB corpus |
-| Recognition worker unavailable | Tested degraded path or actionable unsupported message | Capability test |
+| Failure                        | User-visible response                                       | Required regression gate         |
+| ------------------------------ | ----------------------------------------------------------- | -------------------------------- |
+| Persistence denied             | Explain best-effort mode; recommend managed copy and backup | Capability/storage contract test |
+| Quota exhausted mid-import     | Cancel cleanly, remove staging bytes, keep existing library | Quota fault injection            |
+| Managed book missing           | Offer re-link; reconnect by hash                            | OPFS deletion/re-link E2E        |
+| Site data cleared              | Empty-state restore/reimport guidance                       | Fresh-profile recovery drill     |
+| Private mode                   | Session-only warning; no durability promise                 | Browser-mode smoke test          |
+| Service-worker partial update  | Continue last complete version                              | Interrupted-cache update test    |
+| `crossOriginIsolated` false    | Select portable Stockfish and hide threads                  | Header/capability E2E            |
+| Engine allocation failure      | Retry conservative profile and report limitation            | Worker fault injection           |
+| iPad suspends worker           | Restore state and recreate worker                           | Real-device background drill     |
+| EPUB attempts network/script   | Block and report unsupported active content                 | Malicious EPUB corpus            |
+| Recognition worker unavailable | Tested degraded path or actionable unsupported message      | Capability test                  |
 
 ## 9. Sources
 

@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chess-reader.local/schemas/device-evidence.json",
+  "title": "Real-device smoke evidence record",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "issue",
+    "commit",
+    "date",
+    "deviceClass",
+    "os",
+    "browser",
+    "installed",
+    "url",
+    "capabilities",
+    "crossOriginIsolated",
+    "widthsTried",
+    "result",
+    "notes",
+    "evidence",
+    "limitations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "issue": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "GitHub issue number this record provides evidence for."
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{7,40}$",
+      "description": "Application commit hash the deployed build was built from."
+    },
+    "date": { "type": "string", "format": "date" },
+    "deviceClass": { "type": "string", "enum": ["ipad", "android", "laptop"] },
+    "os": {
+      "type": "string",
+      "minLength": 1,
+      "description": "OS name and version, e.g. \"iPadOS 17.5\". No serial numbers or device names."
+    },
+    "browser": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Browser name and version, e.g. \"Safari 17.5\"."
+    },
+    "installed": {
+      "type": "boolean",
+      "description": "True when tested as an installed/Home-Screen app, not just a browser tab."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://[^/]+/?$",
+      "description": "Deployed origin only, e.g. \"https://example.pages.dev/\" - no path beyond the base."
+    },
+    "capabilities": {
+      "type": "object",
+      "required": [
+        "indexeddb",
+        "opfs",
+        "workers",
+        "webassembly",
+        "storage-estimate",
+        "storage-persistence",
+        "touch",
+        "cross-origin-isolation"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "indexeddb": { "$ref": "#/$defs/capabilityStatus" },
+        "opfs": { "$ref": "#/$defs/capabilityStatus" },
+        "workers": { "$ref": "#/$defs/capabilityStatus" },
+        "webassembly": { "$ref": "#/$defs/capabilityStatus" },
+        "storage-estimate": { "$ref": "#/$defs/capabilityStatus" },
+        "storage-persistence": { "$ref": "#/$defs/capabilityStatus" },
+        "touch": { "$ref": "#/$defs/capabilityStatus" },
+        "cross-origin-isolation": { "$ref": "#/$defs/capabilityStatus" }
+      }
+    },
+    "crossOriginIsolated": {
+      "type": "boolean",
+      "description": "Value of self.crossOriginIsolated observed on the deployed, installed app."
+    },
+    "widthsTried": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["mode", "cssWidth"],
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "type": "string",
+            "minLength": 1,
+            "description": "e.g. \"full-screen\", \"split-view 70/30\", \"split-view 50/50\", \"slide-over\"."
+          },
+          "cssWidth": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "result": { "type": "string", "enum": ["pass", "fail", "partial"] },
+    "notes": { "type": "string" },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Relative link to a screenshot/video/log stored alongside this record."
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "capabilityStatus": {
+      "type": "string",
+      "enum": ["supported", "unsupported", "unknown", "error"]
+    }
+  }
+}

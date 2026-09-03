@@ -217,8 +217,7 @@ Self-host and version the ONNX model and runtime assets.
 ```ts
 interface DiagramRecognizer {
   readonly version: string;
-  recognize(input: RecognitionInput, signal: AbortSignal):
-    Promise<readonly DiagramCandidate[]>;
+  recognize(input: RecognitionInput, signal: AbortSignal): Promise<readonly DiagramCandidate[]>;
 }
 ```
 
