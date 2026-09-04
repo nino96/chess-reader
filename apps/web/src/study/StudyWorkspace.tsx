@@ -145,7 +145,7 @@ export function StudyWorkspace({
   capture = capturePdfRegion,
   openDocument,
 }: StudyWorkspaceProps = {}) {
-  const [recognizer] = useState<DiagramRecognizer>(() => (recognizerFactory ?? createRecognizer)());
+  const [recognizer, setRecognizer] = useState<DiagramRecognizer | null>(null);
   const [documentHandle, setDocumentHandle] = useState<PdfDocumentHandle | null>(null);
   const [pageInfo, setPageInfo] = useState<PageDisplayInfo | null>(null);
   const [selectionActive, setSelectionActive] = useState(false);
@@ -156,12 +156,35 @@ export function StudyWorkspace({
   const requestCounter = useRef(0);
   const activeRequest = useRef<ActiveRequest | null>(null);
 
+  // Captured once, at first render, and deliberately never refreshed: this effect
+  // must create the recognizer exactly once per real mount and always use whichever
+  // factory the component was first given, not react to `recognizerFactory` changing
+  // identity across re-renders (which never legitimately happens here — production
+  // never passes it, and every test passes one factory for the component's whole
+  // life). A ref, not a dependency, is also what keeps this effect's dependency
+  // array `[]` correct rather than needing an exhaustive-deps suppression.
+  const recognizerFactoryRef = useRef(recognizerFactory);
+
+  // Creates the recognizer and disposes it on unmount. The creation happens
+  // *inside* this effect rather than via a `useState` lazy initializer on purpose:
+  // React's StrictMode deliberately runs a mount -> cleanup -> mount rehearsal in
+  // development to catch effects that don't clean up safely. With the recognizer
+  // created once outside this effect and only *disposed* here, that rehearsal's
+  // phantom cleanup permanently disposed the one and only instance, with nothing
+  // recreating it — so every real recognition request afterward failed instantly
+  // and silently as "aborted" (surfaced to the user as "Recognition cancelled").
+  // Creating a fresh instance here means the rehearsal's sequence (create A,
+  // dispose A, create B) always leaves a live, undisposed instance by the time a
+  // user can possibly interact with the page. In a production build, and in this
+  // component's own tests, there is no rehearsal, so this simply runs once.
   useEffect(() => {
+    const instance = (recognizerFactoryRef.current ?? createRecognizer)();
+    setRecognizer(instance);
     return () => {
       activeRequest.current?.controller.abort();
-      recognizer.dispose();
+      instance.dispose();
     };
-  }, [recognizer]);
+  }, []);
 
   const cancelActiveRequest = useCallback((reason: 'cancelled' | 'silent') => {
     const active = activeRequest.current;
@@ -200,9 +223,16 @@ export function StudyWorkspace({
 
   const handleSelect = useCallback(
     (rect: DisplayRect) => {
-      if (!documentHandle || !pageInfo) {
+      // `recognizer` is briefly null between mount and the recognizer-creation
+      // effect settling; unreachable in practice (selecting requires a book to
+      // already be open and displayed, which takes far longer), but this keeps
+      // the type honest and fails safe if it ever were reached.
+      if (!documentHandle || !pageInfo || !recognizer) {
         return;
       }
+      // TypeScript cannot carry the null-check above through the async closure
+      // below on its own; a freshly bound local const makes the narrowing stick.
+      const activeRecognizer = recognizer;
       cancelActiveRequest('silent');
       setSelectionActive(false);
 
@@ -230,7 +260,7 @@ export function StudyWorkspace({
             return;
           }
           setStatus({ phase: 'recognizing', message: PHASE_MESSAGES.recognizing });
-          const result = await recognizer.recognize(
+          const result = await activeRecognizer.recognize(
             { requestId: id, region },
             controller.signal,
             (phase) => {
@@ -309,7 +339,7 @@ export function StudyWorkspace({
     status.phase === 'capturing' ||
     status.phase === 'loading-model' ||
     status.phase === 'recognizing';
-  const selectionAvailable = documentHandle !== null && pageInfo !== null;
+  const selectionAvailable = documentHandle !== null && pageInfo !== null && recognizer !== null;
 
   return (
     <div className="study-workspace" data-testid="study-workspace" ref={workspaceRef}>
@@ -341,7 +371,7 @@ export function StudyWorkspace({
           }
           data-cold-start={status.timing ? String(status.timing.coldStart) : undefined}
           data-reliable={status.reliable === undefined ? undefined : String(status.reliable)}
-          data-recognizer-version={status.recognizerVersion ?? recognizer.version}
+          data-recognizer-version={status.recognizerVersion ?? recognizer?.version}
         >
           {status.message}
         </p>
