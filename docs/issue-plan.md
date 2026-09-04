@@ -8,21 +8,27 @@ prerequisites are merged.
 
 ## First usable PDF loop
 
-1. [#1 Bootstrap a runnable PWA, preview deployment, and fast test loop](https://github.com/nino96/chess-reader/issues/1) (implemented)
-2. [#2 Walking slice: turn a selected PDF diagram into an editable board](https://github.com/nino96/chess-reader/issues/2) (implemented)
-3. [#3 Make the PDF-to-board slice installable, offline, and restorable](https://github.com/nino96/chess-reader/issues/3)
+1. [#1 Bootstrap a runnable PWA, preview deployment, and fast test loop](https://github.com/nino96/chess-reader/issues/1) (implementation merged; physical-iPad evidence reopened)
+2. [#2 Walking slice: turn a selected PDF diagram into an editable board](https://github.com/nino96/chess-reader/issues/2) (implementation merged; physical-iPad verification reopened)
+3. [#24 P0 spike: prove printed-book recognition viability](https://github.com/nino96/chess-reader/issues/24)
+4. [#27 Add Strict Mode and development-server regression coverage](https://github.com/nino96/chess-reader/issues/27)
+5. [#29 Fix physical-iPad floating board sizing, touch movement, and control overlap](https://github.com/nino96/chess-reader/issues/29)
+6. [#28 Make acceptance evidence and reviewability explicit in the PR workflow](https://github.com/nino96/chess-reader/issues/28)
+7. [#3 Make the PDF-to-board slice installable, offline, and restorable](https://github.com/nino96/chess-reader/issues/3)
 
 Issue #2 deliberately crosses the reader, capture, recognition, and board
-layers with temporary in-memory state. It exists to expose integration,
-performance, and interaction risks before the project invests in generalized
-infrastructure. Issue #3 makes that same path a useful offline prototype.
+layers with temporary in-memory state. It exposed recognition feasibility,
+React development-lifecycle, and physical-iPad interaction risks before the
+project invested in generalized infrastructure. Issues #24, #27, #29, and #28
+resolve those findings and make their evidence enforceable before issue #3
+makes the same path an offline prototype.
 
 ## Durable and low-friction PDF product
 
 4. [#4 Harden browser book storage, import journaling, and re-linking](https://github.com/nino96/chess-reader/issues/4)
 5. [#5 Grow the PDF slice into a usable local book reader](https://github.com/nino96/chess-reader/issues/5)
 6. [#6 Harden offline recognition and its durable result cache](https://github.com/nino96/chess-reader/issues/6),
-   which also carries [#24 hatched-diagram recognition](https://github.com/nino96/chess-reader/issues/24)
+   consuming the decision and feasibility evidence from #24
 7. [#7 Vertical slice: make PDF diagrams automatically tappable](https://github.com/nino96/chess-reader/issues/7)
 8. [#8 Productionize the overlay board and full position editor](https://github.com/nino96/chess-reader/issues/8)
 9. [#9 Vertical slice: play one legal, undoable line](https://github.com/nino96/chess-reader/issues/9)
