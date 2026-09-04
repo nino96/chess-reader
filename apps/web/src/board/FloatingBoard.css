@@ -121,7 +121,7 @@
 
 .floating-board-toolbar button[aria-pressed='true'] {
   background: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-on-accent);
   border-color: var(--color-accent);
 }
 

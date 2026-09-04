@@ -34,11 +34,16 @@ test('keyboard can reach and activate the Re-run button', async ({ page }) => {
   await page.keyboard.press('Tab'); // skip link
   await page.keyboard.press('Enter'); // activate it, focus moves into main
 
-  const rerunButton = page.getByTestId('capability-rerun');
+  // The reader and its controls now sit before the diagnostics in the tab order, so this
+  // walk is longer than it was when the shell was the whole page. Each step reads the
+  // focused element's own test id in one round trip, instead of one round trip per
+  // candidate, which keeps the walk affordable when the suite runs in parallel.
   let reachedRerun = false;
-  const maxTabStops = 40;
+  const maxTabStops = 60;
   for (let i = 0; i < maxTabStops && !reachedRerun; i += 1) {
-    reachedRerun = await rerunButton.evaluate((el) => el === document.activeElement);
+    reachedRerun =
+      (await page.evaluate(() => document.activeElement?.getAttribute('data-testid') ?? null)) ===
+      'capability-rerun';
     if (!reachedRerun) {
       await page.keyboard.press('Tab');
     }

@@ -134,6 +134,7 @@ export function PdfReader({
   const onPageDisplayedRef = useRef(onPageDisplayed);
 
   const headingId = useId();
+  const openInputId = useId();
 
   useEffect(() => {
     onDocumentChangeRef.current = onDocumentChange;
@@ -376,16 +377,26 @@ export function PdfReader({
     >
       <h2 id={headingId}>Book</h2>
       <div className="pdf-reader-controls">
-        <label className="pdf-open-label">
+        {/*
+          The native file input is visually hidden and its label is styled as the
+          visible control. A rendered `input[type=file]` has an intrinsic width that
+          each engine and font stack decides for itself (measured: ~100 px wider on
+          WebKit/Linux than Chromium/Windows), which overflowed a 320 px viewport.
+          The input keeps its real semantics, stays in the tab order, and shows a
+          focus ring through `:focus-visible + .pdf-open-label`.
+        */}
+        <input
+          className="pdf-open-input"
+          id={openInputId}
+          type="file"
+          accept="application/pdf,.pdf"
+          data-testid="pdf-open-input"
+          onChange={(event) => {
+            void handleFileChange(event);
+          }}
+        />
+        <label className="pdf-open-label" htmlFor={openInputId}>
           Open PDF
-          <input
-            type="file"
-            accept="application/pdf,.pdf"
-            data-testid="pdf-open-input"
-            onChange={(event) => {
-              void handleFileChange(event);
-            }}
-          />
         </label>
         <div className="pdf-reader-pager">
           <button
