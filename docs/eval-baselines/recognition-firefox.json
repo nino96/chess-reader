@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "suite": "eval:recognition",
   "command": "pnpm eval:recognition",
-  "commit": "85415967da5946c57f874aa6a541767f0a5438ba",
-  "date": "2026-09-04T12:58:45.447Z",
+  "commit": "43ab15165cbfc97bbfa78c8ccd8fc94331197492",
+  "date": "2026-09-04T15:30:02.071Z",
   "environment": {
     "os": "win32 10.0.26200",
     "node": "v24.15.0",
@@ -24,8 +24,8 @@
       "orientation": "white",
       "reliable": true,
       "exactMatch": true,
-      "totalMs": 1720,
-      "inferenceMs": 843,
+      "totalMs": 1621,
+      "inferenceMs": 1005,
       "coldStart": true
     },
     {
@@ -35,8 +35,8 @@
       "orientation": "white",
       "reliable": true,
       "exactMatch": true,
-      "totalMs": 846,
-      "inferenceMs": 842,
+      "totalMs": 1086,
+      "inferenceMs": 1081,
       "coldStart": false
     },
     {
@@ -46,8 +46,8 @@
       "orientation": "white",
       "reliable": true,
       "exactMatch": true,
-      "totalMs": 1018,
-      "inferenceMs": 1012,
+      "totalMs": 1080,
+      "inferenceMs": 1074,
       "coldStart": false
     },
     {
@@ -57,8 +57,8 @@
       "orientation": "white",
       "reliable": true,
       "exactMatch": true,
-      "totalMs": 1100,
-      "inferenceMs": 1094,
+      "totalMs": 1037,
+      "inferenceMs": 1034,
       "coldStart": false
     },
     {
@@ -68,8 +68,8 @@
       "orientation": "white",
       "reliable": true,
       "exactMatch": true,
-      "totalMs": 957,
-      "inferenceMs": 951,
+      "totalMs": 1046,
+      "inferenceMs": 1039,
       "coldStart": false
     },
     {
@@ -79,8 +79,8 @@
       "orientation": "white",
       "reliable": true,
       "exactMatch": true,
-      "totalMs": 934,
-      "inferenceMs": 929,
+      "totalMs": 1073,
+      "inferenceMs": 1067,
       "coldStart": false
     }
   ],
@@ -88,24 +88,24 @@
     "exactBoardAccuracy": 1,
     "coldTotalMs": {
       "count": 1,
-      "min": 1720,
-      "p50": 1720,
-      "p95": 1720,
-      "max": 1720
+      "min": 1621,
+      "p50": 1621,
+      "p95": 1621,
+      "max": 1621
     },
     "warmTotalMs": {
       "count": 5,
-      "min": 846,
-      "p50": 957,
-      "p95": 1100,
-      "max": 1100
+      "min": 1037,
+      "p50": 1073,
+      "p95": 1086,
+      "max": 1086
     },
     "warmInferenceMs": {
       "count": 5,
-      "min": 842,
-      "p50": 951,
-      "p95": 1094,
-      "max": 1094
+      "min": 1034,
+      "p50": 1067,
+      "p95": 1081,
+      "max": 1081
     }
   },
   "provisionalTargets": {

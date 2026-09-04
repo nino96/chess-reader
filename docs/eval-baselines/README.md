@@ -30,11 +30,34 @@ Recognizer `fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0`, fixture
 Windows laptop. Times are the full user-visible round trip: capture, worker
 message, inference, and result.
 
+Current, commit `43ab151` (the reader render/capture fixes):
+
+| Engine   | Exact board accuracy | Cold total | Warm total p50 | Warm total p95 |
+| -------- | -------------------- | ---------- | -------------- | -------------- |
+| Chromium | 6/6                  | 593 ms     | 213 ms         | 236 ms         |
+| WebKit   | 6/6                  | 1437 ms    | 334 ms         | 363 ms         |
+| Firefox  | 6/6                  | 1621 ms    | 1073 ms        | 1086 ms        |
+
+Previous, commit `0b12a1b` (first measurement, issue #2 as originally merged):
+
 | Engine   | Exact board accuracy | Cold total | Warm total p50 | Warm total p95 |
 | -------- | -------------------- | ---------- | -------------- | -------------- |
 | Chromium | 6/6                  | 692 ms     | 359 ms         | 571 ms         |
 | WebKit   | 6/6                  | 2197 ms    | 468 ms         | 589 ms         |
 | Firefox  | 6/6                  | 1720 ms    | 957 ms         | 1100 ms        |
+
+Accuracy is unchanged at 6/6 on every engine, which is the point of re-running:
+the reader fixes changed how a page is rasterised, and recognition had to be
+shown not to regress.
+
+The latency differences are **not** attributed to those fixes. Capture
+resolution is chosen by `chooseCaptureScale`, which did not change, and
+`warmInferenceMs` accounts for nearly all of `warmTotalMs` in both runs, so the
+work being timed is the same work. Both runs are single sessions on one loaded
+laptop, and the spread between them is consistent with machine state rather than
+a code effect. Treat these as a re-measurement, not an improvement; a real
+before/after claim would need repeated interleaved runs, which no gate requires
+here.
 
 ### What this baseline does and does not establish
 
