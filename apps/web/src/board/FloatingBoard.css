@@ -1,0 +1,300 @@
+.floating-board {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 22rem;
+  max-width: calc(100vw - var(--safe-left) - var(--safe-right));
+  padding: var(--space-3);
+  padding-top: calc(var(--space-3) + var(--safe-top));
+  padding-right: calc(var(--space-3) + var(--safe-right));
+  padding-bottom: calc(var(--space-3) + var(--safe-bottom));
+  padding-left: calc(var(--space-3) + var(--safe-left));
+  background: var(--color-surface);
+  color: var(--color-fg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  touch-action: manipulation;
+  overscroll-behavior: contain;
+}
+
+.floating-board[data-docked='bottom'] {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  width: auto;
+  max-width: none;
+  max-height: 55vh;
+  overflow-y: auto;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.floating-board[data-docked='none'] {
+  min-width: 18rem;
+  /* A floating panel taller than the space below its top edge scrolls inside itself
+     (the inline `max-height` supplies that space); otherwise its lower controls -- the
+     palette -- would sit off-screen, unreachable by pointer or keyboard. */
+  overflow-y: auto;
+}
+
+.floating-board-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.floating-board-title {
+  margin: 0;
+  font-size: 1rem;
+  flex: 1 0 auto;
+  text-align: center;
+}
+
+.floating-board-close,
+.floating-board-handle {
+  min-height: var(--touch-target);
+  min-width: var(--touch-target);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font: inherit;
+  cursor: pointer;
+}
+
+.floating-board-handle {
+  touch-action: none;
+  cursor: grab;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.floating-board-handle:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.floating-board-status {
+  min-height: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.floating-board-status p {
+  margin: 0;
+}
+
+.floating-board-warning {
+  color: var(--color-warning);
+  font-weight: 600;
+}
+
+.floating-board-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-height: 0;
+  overflow: auto;
+}
+
+.floating-board-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.floating-board-toolbar button {
+  min-height: var(--touch-target);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font: inherit;
+  cursor: pointer;
+}
+
+.floating-board-toolbar button[aria-pressed='true'] {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  border-color: var(--color-accent);
+}
+
+.floating-board-orientation-text {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.floating-board-grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.floating-board-file-labels {
+  display: grid;
+  grid-template-columns: 1.25rem repeat(8, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.floating-board-corner {
+  display: block;
+}
+
+.floating-board-file-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.floating-board-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.floating-board-row {
+  display: grid;
+  grid-template-columns: 1.25rem repeat(8, minmax(0, 1fr));
+  gap: 0;
+}
+
+.floating-board-rank-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.floating-board-square {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.floating-board-square--light {
+  background: #f0d9b5;
+}
+
+.floating-board-square--dark {
+  background: #b58863;
+}
+
+@media (prefers-color-scheme: dark) {
+  .floating-board-square--light {
+    background: #d9c295;
+  }
+
+  .floating-board-square--dark {
+    background: #7a5c3d;
+  }
+}
+
+.floating-board-square--low-confidence::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 0;
+  border-color: transparent var(--color-danger) transparent transparent;
+}
+
+.piece-icon {
+  width: 78%;
+  height: 78%;
+  pointer-events: none;
+}
+
+.piece-icon-disc--white {
+  fill: #f8fafc;
+  stroke: #0f172a;
+  stroke-width: 1.5;
+}
+
+.piece-icon-disc--black {
+  fill: #1e293b;
+  stroke: #f8fafc;
+  stroke-width: 1.5;
+}
+
+.piece-icon-letter {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: system-ui, sans-serif;
+}
+
+.piece-icon-letter--white {
+  fill: #0f172a;
+}
+
+.piece-icon-letter--black {
+  fill: #f8fafc;
+}
+
+.floating-board-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--touch-target), 1fr));
+  gap: var(--space-1);
+}
+
+.floating-board-palette-item {
+  min-height: var(--touch-target);
+  min-width: var(--touch-target);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  padding: var(--space-1);
+  cursor: pointer;
+}
+
+.floating-board-palette-item .piece-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.floating-board-palette-item--selected {
+  border-color: var(--color-accent);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 2px var(--color-accent) inset;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .floating-board-toolbar button,
+  .floating-board-palette-item {
+    transition:
+      border-color 120ms ease,
+      background-color 120ms ease;
+  }
+}
+
+@media (max-width: 320px) {
+  .floating-board {
+    width: 100vw;
+  }
+}

@@ -1,7 +1,7 @@
 # Testing
 
-Status: bootstrap-issue command surface
-Last updated: 2026-09-03
+Status: current command surface
+Last updated: 2026-09-04
 
 See `docs/evaluation.md` for the full test strategy and gates. This document
 covers the commands that exist today and how to work with them locally.
@@ -9,22 +9,30 @@ covers the commands that exist today and how to work with them locally.
 ## Commands that exist now
 
 ```sh
-pnpm check      # typecheck (tsc -b) + Prettier check + ESLint
-pnpm test:unit  # Vitest: unit/component tests
-pnpm test:e2e   # Playwright: chromium, firefox, webkit, ipad-webkit,
-                # ipad-split-webkit, phone-chromium projects
-pnpm build      # production build (apps/web/dist)
-pnpm preview    # serve the production build on 127.0.0.1:4173
-pnpm dev        # Vite dev server
+pnpm check             # typecheck (tsc -b) + Prettier check + ESLint
+pnpm test:unit         # Vitest: unit/component tests (web app and fixtures)
+pnpm test:e2e          # Playwright: chromium, firefox, webkit, ipad-webkit,
+                       # ipad-split-webkit, phone-chromium projects
+pnpm eval:recognition  # real-model recognition accuracy/latency report
+pnpm build             # production build (apps/web/dist)
+pnpm preview           # serve the production build on 127.0.0.1:4173
+pnpm dev               # Vite dev server
 ```
 
-`pnpm test:contract` and every `pnpm eval:*` command from
-`docs/evaluation.md` section 3 (`eval:recognition`, `eval:reader`,
-`eval:storage`, `eval:engine`, `eval:offline`, `eval:all`) do not exist yet.
-Per AGENTS.md, a subsystem eval is only introduced by the issue that first
-makes that subsystem real — there is nothing to evaluate yet for recognition,
-the book reader, durable storage, or the engine, so no placeholder command is
-added to fake green CI.
+`pnpm eval:recognition` arrived with issue #2, the first issue in which
+recognition became real. It runs the production build through the actual
+product path (open the fixture PDF, drag a selection, recognize in the worker
+with the pinned ONNX model), asserts the fixture's ground-truth placement and
+orientation, and writes a JSON report per engine under
+`apps/web/eval-results/`. Latency is reported as a distribution and is not
+asserted; see [docs/eval-baselines/](eval-baselines/README.md) for the
+recorded issue #2 baseline and for what it does and does not establish.
+
+`pnpm test:contract` and the remaining `pnpm eval:*` commands from
+`docs/evaluation.md` section 3 (`eval:reader`, `eval:storage`, `eval:engine`,
+`eval:offline`, `eval:all`) do not exist yet. Per AGENTS.md, a subsystem eval
+is only introduced by the issue that first makes that subsystem real, so no
+placeholder command is added to fake green CI.
 
 ## Running a single Playwright project
 
@@ -39,6 +47,12 @@ Project names: `chromium`, `firefox`, `webkit` (desktop), `ipad-webkit`
 (iPad Pro 11 viewport/touch), `ipad-split-webkit` (320×1024 split-view
 approximation), `phone-chromium` (narrow touch phone). See
 `apps/web/playwright.config.ts` for exact device settings.
+
+Playwright worker concurrency is capped in `apps/web/playwright.config.ts`
+(4 locally, 2 on CI). Each study test loads the self-hosted ONNX runtime
+(~14 MB of WebAssembly) plus the model and renders real PDF pages, so one
+worker per core starved the machine and made unrelated capability probes time
+out. The cap is the fix for that, rather than loosening those tests' timeouts.
 
 Every spec imports `test`/`expect` from `apps/web/e2e/fixtures.ts`, not
 `@playwright/test` directly. That fixture aborts and fails the test on any
@@ -64,6 +78,20 @@ images in the HTML report and confirm the layout is actually acceptable at
 that width/mode, in line with AGENTS.md's "reviewed visual evidence" standard.
 Do not add pixel-baseline screenshot assertions without an ADR describing how
 flakiness and cross-platform font rendering are handled.
+
+## Deterministic recognition in browser tests
+
+`apps/web/e2e/study.spec.ts` drives the diagram-to-board journey twice over:
+
+- Most cases install a **scripted recognizer** through the
+  `window.__chessReaderTestHooks.recognizerScript` seam (see
+  `apps/web/src/recognition/testHooks.ts`) with Playwright's `addInitScript`.
+  The script is plain JSON describing per-request delays, progress phases, and
+  outcomes, which makes cancellation, staleness, and out-of-order completion
+  testable without depending on real inference timing. The seam is inert in a
+  normal run and rejects a malformed value at runtime.
+- Two cases install nothing and exercise the **real worker and model**, so
+  every engine proves the true integration, not only the fake.
 
 ## Real-iPad smoke expectation
 

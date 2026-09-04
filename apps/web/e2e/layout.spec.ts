@@ -6,7 +6,7 @@ const HEIGHT = 900;
 const SECTION_TEST_IDS = [
   'app-shell',
   'app-header',
-  'library-empty',
+  'pdf-reader',
   'install-panel',
   'capability-diagnostics',
 ];

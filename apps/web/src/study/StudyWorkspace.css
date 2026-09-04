@@ -1,0 +1,33 @@
+.study-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.study-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.recognition-status {
+  margin: 0;
+  flex: 1 1 16rem;
+  min-width: 0;
+  color: var(--color-muted);
+}
+
+.recognition-status[data-phase='error'] {
+  color: var(--color-danger);
+}
+
+.recognition-status[data-phase='done'] {
+  color: var(--color-success);
+}
+
+.recognition-status[data-phase='no-board'],
+.recognition-status[data-phase='cancelled'] {
+  color: var(--color-warning);
+}

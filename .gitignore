@@ -24,3 +24,9 @@ Thumbs.db
 
 # Local-only fixture corpus (see docs/fixtures.md); never commit real books
 fixtures-local/
+
+# Eval JSON artifacts (baselines are copied into docs/eval-baselines/ deliberately)
+eval-results/
+
+# Crash dumps from tooling
+*.stackdump

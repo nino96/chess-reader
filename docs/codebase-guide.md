@@ -4,8 +4,8 @@ Audience: project owners and contributors who are new to React
 
 Maintenance status: living document
 
-Current implementation baseline: issue #1, the PWA shell and capability
-diagnostic
+Current implementation baseline: issue #2, the PDF-diagram-to-editable-board
+walking slice
 
 ## How to use this guide
 
@@ -37,19 +37,25 @@ positions on an editable chess board. The same React application will run in
 laptop browsers, as an installed iPad web app, and eventually inside a thin
 Android wrapper.
 
-At present, issue #1 has implemented only the foundation:
+Issue #1 built the foundation: a responsive installable page shell, a local
+capability diagnostic, and the build, test, license-check, CI, and preview
+plumbing.
 
-- a responsive page shell;
-- PWA name, icon, and install metadata;
-- browser install guidance;
-- a diagnostic that tests browser capabilities locally;
-- accessibility and responsive styling; and
-- build, unit-test, browser-test, license-check, CI, and preview-deployment
-  plumbing.
+Issue #2 added the first working study path, deliberately narrow but complete
+end to end:
 
-There is no book import, PDF/EPUB renderer, diagram recognition, chess board,
-study persistence, service worker, offline-ready state, or Stockfish engine
-yet. The empty Library panel says this deliberately.
+- open one local PDF through a standard file input and render its pages;
+- turn on selection mode and drag, or keyboard-drive, a rectangle around a
+  printed diagram;
+- capture that region at a bounded resolution and recognize it in a dedicated
+  worker, entirely on the device; and
+- correct the recognized position on a board floating above the still-usable
+  reader.
+
+All of that state lives in memory. There is still no library, book import,
+persistence, service worker, offline-ready state, EPUB reader, automatic
+diagram hotspot, legal-move logic, or Stockfish engine. Reloading the page
+loses the open book and the board.
 
 The current browser flow is small enough to see as one diagram:
 
@@ -63,13 +69,23 @@ src/main.tsx creates the React root
 src/App.tsx composes the screen
         |
         +--> AppFrame (header, main area, footer, skip link)
-        +--> LibraryEmptyState (honest placeholder)
+        +--> StudyWorkspace          the issue #2 slice, wired end to end
+        |         |
+        |         +--> PdfReader ----> pdfDocument.ts (PDF.js adapter)
+        |         |        `--------> SelectionLayer (drag/keyboard rectangle)
+        |         +--> capturePdfRegion -> geometry.ts (coordinate math)
+        |         +--> recognizerFactory -> recognition.worker.ts (ONNX + fenshot)
+        |         `--> FloatingBoard --> placement.ts (FEN piece placement)
         +--> InstallPanel (installed/installable state)
         +--> CapabilityDiagnostics
                   |
                   +--> probes.ts (testable browser checks)
                   +--> probe.worker.ts (real worker round trip)
 ```
+
+The study path in one line: **PDF page, selected rectangle, bounded pixel
+capture, worker recognition, editable board.** Each step is a module boundary,
+and `apps/web/src/study/contracts.ts` holds the types that cross them.
 
 ## A React translation for non-React developers
 
@@ -81,6 +97,9 @@ export function LibraryEmptyState() {
   return <section>...</section>;
 }
 ```
+
+(That component was the issue #1 placeholder; the reader replaced it. The shape
+of a component is the point here, not the name.)
 
 JSX looks like HTML, but it is written inside TypeScript and compiled into
 React element creation. A capitalized tag such as `<InstallPanel />` refers to
@@ -127,8 +146,10 @@ inside `AppFrame`:
 
 - [`AppFrame.tsx`](../apps/web/src/app/AppFrame.tsx) owns page landmarks,
   header/footer, build version, and the keyboard skip link.
-- [`LibraryEmptyState.tsx`](../apps/web/src/app/LibraryEmptyState.tsx) explains
-  that book import has not been implemented.
+- [`StudyWorkspace.tsx`](../apps/web/src/study/StudyWorkspace.tsx) owns the
+  issue #2 slice: it holds the open document, the current page, the selection
+  mode, the recognition status, and the board position, and it enforces the
+  rules that keep late results from winning (see Recognition below).
 - [`InstallPanel.tsx`](../apps/web/src/app/InstallPanel.tsx) detects standalone
   display mode and handles Chromium's optional `beforeinstallprompt` event.
 - [`CapabilityDiagnostics.tsx`](../apps/web/src/capabilities/CapabilityDiagnostics.tsx)
@@ -179,7 +200,90 @@ The persistence button deserves one nuance: reading persistence state is a
 probe, but requesting persistence is a user action. The app therefore calls
 `navigator.storage.persist()` only after the user presses the button.
 
-### 4. Styling, layout, and accessibility
+### 4. Reading a PDF
+
+[`pdfDocument.ts`](../apps/web/src/reader/pdfDocument.ts) is the only module
+that imports PDF.js. It validates the chosen file before trusting it (size
+ceiling and a real `%PDF-` header), maps PDF.js's exceptions onto a small set
+of error codes (`too-large`, `not-a-pdf`, `password`, `corrupt`, `aborted`,
+`unsupported`), and hands back a handle exposing page count, page size, and a
+cancellable `renderPage`. Error messages never contain the file's name, per the
+project's logging rules.
+
+[`PdfReader.tsx`](../apps/web/src/reader/PdfReader.tsx) renders the current page
+onto a canvas sized to fit both the container width and the viewport height, so
+a whole page and its diagrams are visible without scrolling. Only the current
+page is kept, and a generation counter makes a slow render for an old page
+unable to overwrite a newer one. It renders an overlay (the selection layer, and
+above it the board) positioned exactly over the page.
+
+The page is rasterised exactly once, at the device resolution it will be shown
+at, and nothing rescales it afterwards: pdf.js's bitmap is blitted 1:1, and the
+canvas's CSS size is set from that bitmap divided by `devicePixelRatio`, so the
+backing-store-to-CSS ratio is always exactly `devicePixelRatio`. This matters
+more than it sounds — letting CSS stretch an integer backing store to a
+fractional parent size, or blitting to independently-rounded dimensions,
+resamples the whole page and visibly blurs book text. Render size is bounded by
+a total device-pixel budget rather than a long-edge limit; see
+`MAX_RENDER_DEVICE_PIXELS` for why, and for the iPad constraint that sets it.
+
+There is no zoom control yet. A page is fitted to the window, which is legible
+but small for a dense book page; zoom, rotation and continuous scrolling belong
+to the reader issue (#5).
+
+### 5. Selecting and capturing a diagram
+
+[`SelectionLayer.tsx`](../apps/web/src/capture/SelectionLayer.tsx) is inert
+until selection mode is on, so ordinary reading gestures reach the page
+untouched. Active, it supports a pointer drag and a full keyboard path: arrows
+move, Shift plus arrows resize, Enter confirms, Escape cancels.
+
+[`geometry.ts`](../apps/web/src/capture/geometry.ts) holds the coordinate math
+as pure functions: drag to rectangle, clamping, display to normalized to source
+pixels, and the render scale that keeps a captured region's long edge at or
+under the documented ceiling. Keeping it free of the DOM is what makes the
+crop-coordinate tests meaningful.
+
+[`capturePdfRegion.ts`](../apps/web/src/capture/capturePdfRegion.ts) renders the
+page at that bounded scale, crops the selected rectangle, copies the pixels out,
+and releases the canvas immediately.
+
+### 6. Recognizing the position
+
+Recognition runs in [a dedicated worker](../apps/web/src/recognition/recognition.worker.ts)
+so the reader never blocks. The worker's logic lives in
+[`workerCore.ts`](../apps/web/src/recognition/workerCore.ts) with its
+dependencies injected, which is how it is unit tested without ONNX Runtime.
+
+Three things are worth understanding:
+
+- **The assets are pinned and verified.** The ONNX model and the WebAssembly
+  runtime ship inside this app's own build; nothing is fetched from a CDN.
+  Before a session is created, the worker hashes the fetched model and refuses
+  to run if it does not match the recorded SHA-256
+  ([`assets.ts`](../apps/web/src/recognition/assets.ts)).
+- **Late results can never win.** Every request carries an id and an
+  `AbortSignal`. A result is applied only if it is still the newest request and
+  the page it was captured from is still displayed. A user's edit therefore
+  survives a slow result that arrives afterwards.
+- **A scripted fake stands in during browser tests.** `createRecognizer` returns
+  a deterministic fake when a validated test hook is present on `window`, which
+  makes cancellation and out-of-order completion testable without depending on
+  real inference timing. The seam is inert in normal use.
+
+### 7. Editing the position
+
+[`placement.ts`](../apps/web/src/board/placement.ts) is the pure model: parse
+and serialize the FEN piece-placement field, set a square immutably, and map
+squares to visual order for either orientation.
+
+[`FloatingBoard.tsx`](../apps/web/src/board/FloatingBoard.tsx) is a fully
+controlled panel floating above the reader. It docks to the bottom on compact
+screens and floats beside the page on wider ones, moves only by its dedicated
+handle so board gestures never drag the panel, marks low-confidence squares,
+and stops its own pointer events from reaching the reader beneath.
+
+### 8. Styling, layout, and accessibility
 
 [`global.css`](../apps/web/src/styles/global.css) defines the shared color,
 spacing, radius, touch-target, safe-area, focus, dark-mode, and reduced-motion
@@ -223,13 +327,23 @@ Accessibility is part of the implementation rather than a later cleanup:
 |   `-- src/
 |       |-- main.tsx          Browser-to-React entry point
 |       |-- App.tsx           Current screen composition
-|       |-- app/              Shell, empty state, install UI
+|       |-- app/              Shell and install UI
 |       |-- capabilities/     Diagnostic UI, pure probes, worker
+|       |-- reader/           PDF.js adapter and the reader UI
+|       |-- capture/          Selection overlay, coordinate math, region capture
+|       |-- recognition/      Worker, ONNX/fenshot pipeline, scripted fake, assets
+|       |-- board/            Floating editable board and the placement model
+|       |-- study/            Shared contracts and the workspace that wires them
 |       |-- styles/           Global responsive/accessibility CSS
 |       `-- test/             Shared Vitest DOM setup
+|-- packages/test-fixtures/   Synthetic fixture PDF, generator, provenance manifest
 |-- docs/                     Architecture, constraints, issue plan, evidence
 `-- types/                    Narrow declarations for otherwise untyped tools
 ```
+
+`apps/web/eval/` holds the recognition evaluation that `pnpm eval:recognition`
+runs, with its own Playwright config (`playwright.eval.config.ts`) so the
+ordinary browser suite stays fast and deterministic.
 
 The architecture lists future `packages/*` directories for core models,
 storage, readers, recognition, chess rules, the engine, and fixtures. They do
@@ -254,20 +368,26 @@ pnpm dev
 
 The commands that actually exist now are:
 
-| Command               | Purpose                                                      |
-| --------------------- | ------------------------------------------------------------ |
-| `pnpm dev`            | Start Vite's development server on port 5173.                |
-| `pnpm build`          | Bundle the production web application into `apps/web/dist`.  |
-| `pnpm preview`        | Serve that bundle on port 4173, including isolation headers. |
-| `pnpm check`          | Run TypeScript, Prettier check, and ESLint.                  |
-| `pnpm format`         | Apply Prettier formatting.                                   |
-| `pnpm test:unit`      | Run Vitest unit and component tests.                         |
-| `pnpm test:e2e`       | Build/serve the app and run the Playwright matrix.           |
-| `pnpm check:licenses` | Check shipped dependency licenses against policy.            |
+| Command                 | Purpose                                                      |
+| ----------------------- | ------------------------------------------------------------ |
+| `pnpm dev`              | Start Vite's development server on port 5173.                |
+| `pnpm build`            | Bundle the production web application into `apps/web/dist`.  |
+| `pnpm preview`          | Serve that bundle on port 4173, including isolation headers. |
+| `pnpm check`            | Run TypeScript, Prettier check, and ESLint.                  |
+| `pnpm format`           | Apply Prettier formatting.                                   |
+| `pnpm test:unit`        | Run Vitest unit and component tests.                         |
+| `pnpm test:e2e`         | Build/serve the app and run the Playwright matrix.           |
+| `pnpm check:licenses`   | Check shipped dependency licenses against policy.            |
+| `pnpm eval:recognition` | Measure real-model recognition accuracy and latency.         |
 
-`test:contract` and all `eval:*` commands described in the evaluation strategy
-do **not** exist yet. Each will be added only when there is a real subsystem to
-evaluate. A green placeholder command would violate project policy.
+`pnpm eval:recognition` exists because issue #2 made recognition real. It
+drives the production build through the actual product path with the real
+worker and model, asserts the fixture's ground-truth position, and writes a
+per-engine JSON report (baselines: [`docs/eval-baselines/`](eval-baselines/README.md)).
+`test:contract` and the other `eval:*` commands described in the evaluation
+strategy do **not** exist yet. Each will be added only when there is a real
+subsystem to evaluate. A green placeholder command would violate project
+policy.
 
 ### What Vite, TypeScript, pnpm, Vitest, and Playwright each do
 

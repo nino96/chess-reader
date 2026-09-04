@@ -1,4 +1,14 @@
 {
   "files": [],
-  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./apps/web" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./apps/web"
+    },
+    {
+      "path": "./packages/test-fixtures"
+    }
+  ]
 }

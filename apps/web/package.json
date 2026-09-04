@@ -9,9 +9,13 @@
     "preview": "vite preview --host --strictPort --port 4173",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "icons": "node scripts/generate-icons.mjs"
+    "icons": "node scripts/generate-icons.mjs",
+    "eval:recognition": "playwright test --config playwright.eval.config.ts"
   },
   "dependencies": {
+    "@scoriiu/fenshot": "0.1.4",
+    "onnxruntime-web": "1.29.0",
+    "pdfjs-dist": "6.3.289",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },

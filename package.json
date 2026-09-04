@@ -19,7 +19,8 @@
     "format": "prettier --write .",
     "test:unit": "vitest run",
     "test:e2e": "pnpm --filter @chess-reader/web test:e2e",
-    "check:licenses": "node scripts/check-licenses.mjs"
+    "check:licenses": "node scripts/check-licenses.mjs",
+    "eval:recognition": "pnpm --filter @chess-reader/web eval:recognition"
   },
   "devDependencies": {
     "@eslint/js": "9.39.5",

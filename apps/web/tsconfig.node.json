@@ -15,6 +15,7 @@
     "vite.config.ts",
     "vitest.config.ts",
     "playwright.config.ts",
+    "playwright.eval.config.ts",
     "scripts/**/*.ts",
     "scripts/**/*.mjs",
     "src/app/icons.test.ts"

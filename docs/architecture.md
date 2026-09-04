@@ -136,8 +136,31 @@ ReaderSurface
 
 Use Mozilla PDF.js behind `PdfJsReaderAdapter`. PDF.js supplies canvas rendering,
 page viewports, and transformations that map normalized PDF rectangles to the
-displayed page. Rendering/capture uses a dedicated worker and a bounded long
-edge initially around 1600-2000 pixels, tuned by evaluation.
+displayed page. Rendering and capture are bounded, but by different measures,
+because they answer different questions:
+
+- **Capture** bounds the _long edge_ (currently 1024 px, `MAX_CAPTURE_LONG_EDGE_PX`),
+  because the recognizer's input size is what matters there.
+- **Display** bounds the _total device-pixel area_ (currently 8 MP,
+  `MAX_RENDER_DEVICE_PIXELS`), because what matters there is the canvas
+  allocation. A long-edge cap bounds only one axis and so does not bound the
+  allocation at all; it also capped ordinary pages on high-DPI screens, forcing
+  a downscale-then-upscale that visibly blurred text. The page is rasterised
+  once at exactly the device resolution it will be shown at, and the on-screen
+  canvas's backing-store-to-CSS ratio is kept exactly equal to
+  `devicePixelRatio`, so nothing resamples the page after pdf.js draws it.
+
+The display budget's binding constraint is iPad Safari's undocumented canvas
+ceiling, not desktop memory; see `MAX_RENDER_DEVICE_PIXELS` in
+`apps/web/src/reader/PdfReader.tsx` for the arithmetic and the unrun
+physical-iPad gate that would be needed to raise it.
+
+pdf.js decodes JBIG2 and JPEG 2000 images in WebAssembly that it fetches at
+runtime. Those binaries are self-hosted from the pinned package with fail-closed
+hash verification; leaving them unconfigured makes affected images silently
+render as blank space. Standard fonts and CMaps are deliberately _not_ shipped
+(see `apps/web/src/reader/NOTICE.md` for the licensing and security reasons);
+that is a reader-quality decision belonging to the reader issue.
 
 Store zero-based page plus normalized page coordinates. Reproject hotspots
 after zoom, scroll, rotation, responsive layout, or analysis-panel resizing.

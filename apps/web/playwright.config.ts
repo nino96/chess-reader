@@ -7,6 +7,14 @@ const isCI = !!process.env['CI'];
 export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
+  /**
+   * Each study test loads the self-hosted ONNX runtime (~14 MB of WebAssembly) and the
+   * recognition model, and renders real PDF pages, so a worker is far heavier than it
+   * was for the issue #1 shell suite. Running one worker per core starved the machine
+   * and made unrelated capability probes time out, so concurrency is capped here rather
+   * than by loosening those tests' timeouts.
+   */
+  workers: isCI ? 2 : 4,
   forbidOnly: isCI,
   retries: 0,
   outputDir: 'test-results',

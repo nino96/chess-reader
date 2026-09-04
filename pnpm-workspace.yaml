@@ -1,6 +1,9 @@
 packages:
   - apps/*
   - packages/*
+allowBuilds:
+  # protobufjs postinstall only prints a version-scheme warning; nothing to build.
+  protobufjs: false
 minimumReleaseAgeExclude:
   - '@types/react-dom@19.2.7'
   - '@vitest/mocker@5.0.0'
