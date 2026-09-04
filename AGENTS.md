@@ -145,6 +145,9 @@ unrun gate, and do not describe the issue as fully verified.
 ## Git and pull-request handoff
 
 - Keep the diff scoped to the issue and retain unrelated user changes.
+- Update `docs/codebase-guide.md` when a change alters the current repository
+  map, command surface, runtime flow, implemented subsystem list, testing
+  layers, or build/deployment behavior. Keep planned behavior clearly labeled.
 - Use descriptive commits; never rewrite shared history or bypass checks to make
   a branch appear green.
 - Update architecture, platform limitations, evaluation baselines, fixture

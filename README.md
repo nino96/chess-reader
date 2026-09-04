@@ -54,6 +54,7 @@ Pages preview.
 
 ## Project documents
 
+- [Codebase guide for non-React developers](docs/codebase-guide.md)
 - [Architecture](docs/architecture.md)
 - [Browser and iPad limitations](docs/platform-limitations.md)
 - [Test and evaluation strategy](docs/evaluation.md)
