@@ -436,6 +436,203 @@ describe('PdfDocumentHandle.renderPage', () => {
   });
 });
 
+/**
+ * Regression coverage for the defect where a reader re-render (always
+ * `purpose: 'display'`, the default) silently killed an in-flight diagram
+ * capture (`purpose: 'capture'`): starting recognition swapped toolbar text,
+ * which could change the measured page width and re-trigger the reader's
+ * display render, cancelling the capture's render out from under it and
+ * showing "Recognition cancelled." on a perfectly good diagram. Each `it`
+ * below is named after the numbered rule it exists to pin down.
+ */
+describe('PdfDocumentHandle.renderPage queue (purpose semantics)', () => {
+  it('rule 1: at most one pdf.js render task runs at a time, even across purposes', async () => {
+    const fakeDoc = createFakeDoc();
+    mockSuccessfulOpen(fakeDoc);
+    const handle = await openPdfDocument(makeFile(VALID_PDF_BYTES), {
+      createCanvas: createFakeCanvas,
+    });
+
+    const displayPromise = handle.renderPage(0, { scale: 1, purpose: 'display' });
+    await flushMicrotasks();
+    const capturePromise = handle.renderPage(0, { scale: 2, purpose: 'capture' });
+    await flushMicrotasks();
+
+    // The capture is queued, not started: only the display render's task exists.
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(1);
+
+    fakeDoc.pageFor(1).renderTasks[0]?.resolve();
+    await displayPromise;
+    await flushMicrotasks();
+
+    // Only now, with the display render finished, does the capture's task start.
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(2);
+
+    fakeDoc.pageFor(1).renderTasks[1]?.resolve();
+    const capture = await capturePromise;
+    expect(capture.width).toBe(1224); // scale 2 * 612pt
+  });
+
+  it('rule 3/4: a capture render is never cancelled by a later display render', async () => {
+    const fakeDoc = createFakeDoc();
+    mockSuccessfulOpen(fakeDoc);
+    const handle = await openPdfDocument(makeFile(VALID_PDF_BYTES), {
+      createCanvas: createFakeCanvas,
+    });
+
+    const capturePromise = handle.renderPage(0, { scale: 1, purpose: 'capture' });
+    await flushMicrotasks();
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(1);
+
+    // A display render arrives while the capture is actually running. It must
+    // queue behind the capture, not cancel it.
+    const displayPromise = handle.renderPage(0, { scale: 2, purpose: 'display' });
+    await flushMicrotasks();
+
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(1);
+    expect(fakeDoc.pageFor(1).renderTasks[0]?.cancel).not.toHaveBeenCalled();
+
+    fakeDoc.pageFor(1).renderTasks[0]?.resolve();
+    const capture = await capturePromise;
+    expect(capture.width).toBe(612); // scale 1
+
+    await flushMicrotasks();
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(2);
+    fakeDoc.pageFor(1).renderTasks[1]?.resolve();
+    const display = await displayPromise;
+    expect(display.width).toBe(1224); // scale 2
+  });
+
+  it('rule 2: a later display render still cancels a running or queued display render', async () => {
+    const fakeDoc = createFakeDoc();
+    mockSuccessfulOpen(fakeDoc);
+    const handle = await openPdfDocument(makeFile(VALID_PDF_BYTES), {
+      createCanvas: createFakeCanvas,
+    });
+
+    // Occupy the runner with a capture so both display renders below start out queued.
+    const capturePromise = handle.renderPage(0, { scale: 1, purpose: 'capture' });
+    await flushMicrotasks();
+
+    const firstDisplayPromise = handle.renderPage(0, { scale: 2, purpose: 'display' });
+    const secondDisplayPromise = handle.renderPage(0, { scale: 3, purpose: 'display' });
+    await flushMicrotasks();
+
+    // The first (queued, not yet started) display render is cancelled immediately,
+    // without ever creating a pdf.js render task for it.
+    await expect(firstDisplayPromise).rejects.toMatchObject({ name: 'AbortError' });
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(1);
+
+    fakeDoc.pageFor(1).renderTasks[0]?.resolve();
+    await capturePromise;
+    await flushMicrotasks();
+
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(2);
+    fakeDoc.pageFor(1).renderTasks[1]?.resolve();
+    const secondDisplay = await secondDisplayPromise;
+    expect(secondDisplay.width).toBe(1836); // scale 3
+  });
+
+  it('rule 5: multiple queued captures run in FIFO order', async () => {
+    const fakeDoc = createFakeDoc();
+    mockSuccessfulOpen(fakeDoc);
+    const handle = await openPdfDocument(makeFile(VALID_PDF_BYTES), {
+      createCanvas: createFakeCanvas,
+    });
+
+    const occupantPromise = handle.renderPage(0, { scale: 1, purpose: 'display' });
+    await flushMicrotasks();
+
+    const firstCapturePromise = handle.renderPage(0, { scale: 2, purpose: 'capture' });
+    const secondCapturePromise = handle.renderPage(0, { scale: 3, purpose: 'capture' });
+    await flushMicrotasks();
+
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(1);
+    fakeDoc.pageFor(1).renderTasks[0]?.resolve();
+    await occupantPromise;
+    await flushMicrotasks();
+
+    // The first-queued capture (scale 2), not the second (scale 3), starts next.
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(2);
+
+    fakeDoc.pageFor(1).renderTasks[1]?.resolve();
+    const firstCapture = await firstCapturePromise;
+    expect(firstCapture.width).toBe(1224); // scale 2
+    await flushMicrotasks();
+
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(3);
+    fakeDoc.pageFor(1).renderTasks[2]?.resolve();
+    const secondCapture = await secondCapturePromise;
+    expect(secondCapture.width).toBe(1836); // scale 3
+  });
+
+  it("rule 7: a queued capture's own signal cancels only that capture, not a sibling", async () => {
+    const fakeDoc = createFakeDoc();
+    mockSuccessfulOpen(fakeDoc);
+    const handle = await openPdfDocument(makeFile(VALID_PDF_BYTES), {
+      createCanvas: createFakeCanvas,
+    });
+
+    const occupantPromise = handle.renderPage(0, { scale: 1, purpose: 'display' });
+    await flushMicrotasks();
+
+    const controllerA = new AbortController();
+    const capturePromiseA = handle.renderPage(0, {
+      scale: 2,
+      purpose: 'capture',
+      signal: controllerA.signal,
+    });
+    const capturePromiseB = handle.renderPage(0, { scale: 3, purpose: 'capture' });
+
+    // Cancel A while it is still queued (not yet started): it must reject
+    // right away, without waiting for its turn, and without touching B or the
+    // still-running occupant.
+    controllerA.abort();
+    await expect(capturePromiseA).rejects.toMatchObject({ name: 'AbortError' });
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(1);
+    expect(fakeDoc.pageFor(1).renderTasks[0]?.cancel).not.toHaveBeenCalled();
+
+    fakeDoc.pageFor(1).renderTasks[0]?.resolve();
+    await occupantPromise;
+    await flushMicrotasks();
+
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(2);
+    fakeDoc.pageFor(1).renderTasks[1]?.resolve();
+    const captureB = await capturePromiseB;
+    expect(captureB.width).toBe(1836); // scale 3, unaffected by A's cancellation
+  });
+
+  it('rule 7 (running): a signal still cancels only its own render once it is running', async () => {
+    const fakeDoc = createFakeDoc();
+    mockSuccessfulOpen(fakeDoc);
+    const handle = await openPdfDocument(makeFile(VALID_PDF_BYTES), {
+      createCanvas: createFakeCanvas,
+    });
+
+    const controllerA = new AbortController();
+    const capturePromiseA = handle.renderPage(0, {
+      scale: 1,
+      purpose: 'capture',
+      signal: controllerA.signal,
+    });
+    await flushMicrotasks();
+    const capturePromiseB = handle.renderPage(0, { scale: 2, purpose: 'capture' });
+    await flushMicrotasks();
+
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(1);
+    controllerA.abort();
+
+    await expect(capturePromiseA).rejects.toMatchObject({ name: 'AbortError' });
+    expect(fakeDoc.pageFor(1).renderTasks[0]?.cancel).toHaveBeenCalled();
+
+    await flushMicrotasks();
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(2);
+    fakeDoc.pageFor(1).renderTasks[1]?.resolve();
+    const captureB = await capturePromiseB;
+    expect(captureB.width).toBe(1224); // scale 2, unaffected by A's cancellation
+  });
+});
+
 describe('PdfDocumentHandle.dispose', () => {
   it('destroys the loading task and cancels an in-flight render', async () => {
     const fakeDoc = createFakeDoc();
@@ -473,5 +670,31 @@ describe('PdfDocumentHandle.dispose', () => {
     handle.dispose();
 
     await expect(handle.getPageSize(0)).rejects.toThrow(/disposed/);
+  });
+
+  it('rule 6/8: cancels a running render and rejects every queued render (of either purpose) rather than hanging', async () => {
+    const fakeDoc = createFakeDoc();
+    mockSuccessfulOpen(fakeDoc);
+    const handle = await openPdfDocument(makeFile(VALID_PDF_BYTES), {
+      createCanvas: createFakeCanvas,
+    });
+
+    const runningPromise = handle.renderPage(0, { scale: 1, purpose: 'capture' });
+    await flushMicrotasks();
+    // These two never even get a pdf.js render task created before dispose():
+    // their "turn" in the queue never comes.
+    const queuedDisplayPromise = handle.renderPage(0, { scale: 2, purpose: 'display' });
+    const queuedCapturePromise = handle.renderPage(0, { scale: 3, purpose: 'capture' });
+
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(1);
+
+    handle.dispose();
+
+    await expect(runningPromise).rejects.toMatchObject({ name: 'AbortError' });
+    await expect(queuedDisplayPromise).rejects.toMatchObject({ name: 'AbortError' });
+    await expect(queuedCapturePromise).rejects.toMatchObject({ name: 'AbortError' });
+    expect(fakeDoc.pageFor(1).renderTasks[0]?.cancel).toHaveBeenCalled();
+    // The queued renders were rejected outright; pdf.js never rendered them.
+    expect(fakeDoc.pageFor(1).renderTasks).toHaveLength(1);
   });
 });

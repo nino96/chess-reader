@@ -327,6 +327,62 @@ test.describe('PDF diagram to editable board (scripted recognizer)', () => {
     await expect(error).toBeVisible();
     await expect(error).not.toContainText('secret-title');
   });
+
+  /*
+   * Regression test for a user-reported bug: selecting a diagram in a real book
+   * reported "Recognition cancelled." on a perfectly good diagram.
+   *
+   * `capturePdfRegion` rasterises the selected region through the same
+   * `PdfDocumentHandle` the reader renders pages with. That handle used to allow
+   * only one render in flight and let ANY new render cancel the previous one, so
+   * a page re-render during a capture silently killed the capture and the user
+   * saw a cancellation. The reader re-renders whenever its measured width or the
+   * viewport height changes, and that happens naturally mid-selection: starting
+   * recognition swaps the status text and mounts a Cancel button, which reflows
+   * the toolbar and can toggle the page's scrollbar. Resizing here forces the
+   * same re-render deterministically instead of waiting for that reflow.
+   *
+   * Capture renders now queue instead of being cancelled, so recognition must
+   * still complete.
+   */
+  test('a page re-render during capture does not cancel recognition', async ({ page }) => {
+    await installScriptedRecognizer(page, {
+      steps: [{ delayMs: 50, outcome: 'board', placement: SCRIPTED_PLACEMENT, reliable: true }],
+    });
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await openFixture(page, fixture.expected.locator.pageIndex);
+
+    await enableSelection(page);
+    const container = page.getByTestId('pdf-page-container');
+    await container.scrollIntoViewIfNeeded();
+    const box = await container.boundingBox();
+    if (!box) {
+      throw new Error('page container must be laid out');
+    }
+    const margin = 0.03;
+    const rect = fixture.expected.boardRect;
+    const x0 = box.x + (rect.x - margin) * box.width;
+    const y0 = box.y + (rect.y - margin) * box.height;
+    const x1 = box.x + (rect.x + rect.width + margin) * box.width;
+    const y1 = box.y + (rect.y + rect.height + margin) * box.height;
+    await page.mouse.move(x0, y0);
+    await page.mouse.down();
+    await page.mouse.move((x0 + x1) / 2, (y0 + y1) / 2, { steps: 4 });
+    await page.mouse.move(x1, y1, { steps: 4 });
+    await expect(page.getByTestId('selection-rect')).toBeVisible();
+    await page.mouse.up();
+
+    // Re-render the page while the capture is still in flight. Two changes, so a
+    // slow machine that finishes capturing before the first still gets a second.
+    await page.setViewportSize({ width: 1180, height: 860 });
+    await page.setViewportSize({ width: 1240, height: 880 });
+
+    await expect(page.getByTestId('recognition-status')).toHaveAttribute('data-phase', 'done');
+    await expect(page.getByTestId('floating-board')).toHaveAttribute(
+      'data-placement',
+      SCRIPTED_PLACEMENT,
+    );
+  });
 });
 
 test.describe('PDF diagram to editable board (real recognizer)', () => {
@@ -362,5 +418,51 @@ test.describe('PDF diagram to editable board (real recognizer)', () => {
       timeout: 90_000,
     });
     await expect(page.getByTestId('floating-board')).toHaveCount(0);
+  });
+});
+
+/*
+ * The page must be rasterised once, at exactly the resolution it is displayed at.
+ * A user reported that real book text rendered "hazy like it was out of focus";
+ * the cause was the page being resampled twice — an integer canvas backing store
+ * stretched by CSS to a fractional parent size, and a blit to independently
+ * rounded dimensions. jsdom cannot show this, so it is asserted here in real
+ * engines.
+ *
+ * A device pixel ratio of 2 is requested because a hi-DPI mismatch is the most
+ * damaging case, but Firefox ignores Playwright's `deviceScaleFactor` and runs
+ * this at 1. That is still worth running rather than skipping: the clamped-parent
+ * class of bug this caught distorts the page at any ratio. The assertions below
+ * therefore check against the ratio actually in effect, not a hardcoded 2.
+ */
+test.describe('page rasterisation is pixel-exact', () => {
+  test.use({ deviceScaleFactor: 2 });
+
+  test('canvas backing store is exactly devicePixelRatio times its CSS size', async ({ page }) => {
+    await openFixture(page, 0);
+
+    const measured = await page.evaluate(() => {
+      const canvas = document.querySelector<HTMLCanvasElement>('[data-testid="pdf-page-canvas"]');
+      if (!canvas) {
+        throw new Error('page canvas must be present');
+      }
+      const box = canvas.getBoundingClientRect();
+      return {
+        dpr: window.devicePixelRatio,
+        backingWidth: canvas.width,
+        backingHeight: canvas.height,
+        cssWidth: box.width,
+        cssHeight: box.height,
+      };
+    });
+
+    expect(measured.dpr).toBeGreaterThan(0);
+    expect(measured.backingWidth).toBeGreaterThan(0);
+    // Exact, not approximate: any drift at all means the browser is rescaling the
+    // page bitmap on every paint, which is what caused the blur. This assertion
+    // has already caught one real cause — a 1px border on the page container
+    // shrinking its content box and clamping the canvas two pixels narrower.
+    expect(measured.backingWidth / measured.cssWidth).toBe(measured.dpr);
+    expect(measured.backingHeight / measured.cssHeight).toBe(measured.dpr);
   });
 });

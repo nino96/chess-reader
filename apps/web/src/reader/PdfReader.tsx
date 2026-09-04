@@ -24,8 +24,48 @@ function measureAvailableHeight(): number {
   return Math.max(MIN_FIT_HEIGHT_PX, window.innerHeight - VIEWPORT_HEIGHT_RESERVE_PX);
 }
 
-/** Render resolution ceiling in device pixels, per docs/architecture.md §6. */
-const MAX_RENDER_DEVICE_LONG_EDGE_PX = 2000;
+/**
+ * Render resolution ceiling, per docs/architecture.md §6 ("release canvases promptly";
+ * an unbounded rendered-page allocation is forbidden). Expressed as a total device-pixel
+ * budget (`width * height`) rather than a long-edge limit: a long-edge cap only bounds
+ * one axis, so a page whose other axis is not proportionally reduced can still allocate
+ * far more memory than the long-edge number suggests, while a pixel-count budget bounds
+ * the actual canvas allocation directly.
+ *
+ * Budget: 8,000,000 device pixels (8 MP). The binding constraint is iPad Safari, a named
+ * target platform (`docs/platform-limitations.md` §7), which enforces an undocumented
+ * ceiling on canvas area and total canvas memory and *silently yields a blank canvas*
+ * when a page crosses it. A blank page is precisely the failure mode this reader was
+ * just fixed for, so the budget deliberately sits well below any plausible ceiling
+ * rather than as close to it as a desktop could tolerate. Two canvases of this size
+ * exist simultaneously during a render (pdf.js's own render target and this on-screen
+ * one), so the budget must be read as half of the real peak.
+ *
+ * The budget is chosen so a *normal* page on a real target device is never capped. This
+ * app's shell caps displayed content to 72rem (~1120 CSS px after padding; see
+ * `styles/global.css` `.app-main`), so the largest realistic page is bounded:
+ *   - dpr 2 (Retina laptop, iPad), a ~1120x1584 CSS page (A4 aspect at the shell's
+ *     width cap) -> 2240x3168 device px -> ~7.1M px: under budget, no cap.
+ *     Reaching that width at all needs a window over ~1800 CSS px tall, since the page
+ *     is fitted to viewport height first; an ordinary laptop lands far below it.
+ *   - dpr 3 only exceeds the budget when the window is simultaneously as wide as the
+ *     shell cap and unusually tall. Capping there costs a little sharpness on hardware
+ *     we do not target, which is the right trade against a blank page on hardware we do.
+ * A pathological page (an extreme aspect ratio in a very tall window) is scaled back
+ * down by `capFactor` below to fit the budget.
+ *
+ * Worst-case allocation at the budget: 8,000,000 px * 4 bytes/px (RGBA8) = 32,000,000
+ * bytes (~30.5 MiB) for the on-screen canvas, plus an equal-sized transient allocation
+ * for pdf.js's own render target (released immediately after the 1:1 blit in
+ * `drawRenderedPage` below), for a transient peak of ~61 MiB for that one page.
+ *
+ * The exact iPad ceiling is not verified here; it is an unrun gate until the physical
+ * iPad smoke record for issue #2 exists. Raising this number needs that measurement.
+ *
+ * Exported so tests assert against this budget rather than a copy of the number that
+ * could silently drift away from it.
+ */
+export const MAX_RENDER_DEVICE_PIXELS = 8_000_000;
 
 type ReaderPhase = 'idle' | 'loading' | 'rendering' | 'ready' | 'error';
 
@@ -87,23 +127,26 @@ function getDevicePixelRatio(): number {
   return Number.isFinite(ratio) && ratio > 0 ? ratio : 1;
 }
 
-function drawRenderedPage(
-  canvas: HTMLCanvasElement | null,
-  rendered: RenderedPage,
-  deviceWidth: number,
-  deviceHeight: number,
-): void {
+/**
+ * Blits the pdf.js bitmap onto the on-screen canvas with no resampling. `rendered.width`
+ * / `rendered.height` are the exact backing-store size pdf.js rasterised at (see
+ * `pdfDocument.ts`: it rounds each axis once via `Math.round(viewport.width/height)` and
+ * creates its own canvas at that same size), so setting this canvas's backing store to
+ * that identical size and calling `drawImage` with no destination width/height performs
+ * a plain 1:1 pixel copy instead of a second, independently-rounded resample.
+ */
+function drawRenderedPage(canvas: HTMLCanvasElement | null, rendered: RenderedPage): void {
   if (!canvas) {
     return;
   }
-  canvas.width = deviceWidth;
-  canvas.height = deviceHeight;
+  canvas.width = rendered.width;
+  canvas.height = rendered.height;
   const context = canvas.getContext('2d');
   if (!context) {
     return;
   }
-  context.clearRect(0, 0, deviceWidth, deviceHeight);
-  context.drawImage(rendered.canvas, 0, 0, deviceWidth, deviceHeight);
+  context.clearRect(0, 0, rendered.width, rendered.height);
+  context.drawImage(rendered.canvas, 0, 0);
 }
 
 export function PdfReader({
@@ -231,18 +274,23 @@ export function PdfReader({
           aspect > 0 && Number.isFinite(availableHeight)
             ? availableHeight / aspect
             : containerWidth;
-        const displayWidth = Math.max(1, Math.min(containerWidth, widthFittingHeight));
-        const displayHeight = displayWidth * aspect;
+        // Geometric fit only: the CSS size actually shown is derived after rendering,
+        // below, from what pdf.js actually rasterised.
+        const fittedWidth = Math.max(1, Math.min(containerWidth, widthFittingHeight));
+        const fittedHeight = fittedWidth * aspect;
 
         const dpr = getDevicePixelRatio();
-        const rawDeviceWidth = displayWidth * dpr;
-        const rawDeviceHeight = displayHeight * dpr;
-        const longEdge = Math.max(rawDeviceWidth, rawDeviceHeight);
+        const rawDeviceWidth = fittedWidth * dpr;
+        const rawDeviceHeight = fittedHeight * dpr;
+        const rawDevicePixels = rawDeviceWidth * rawDeviceHeight;
         const capFactor =
-          longEdge > MAX_RENDER_DEVICE_LONG_EDGE_PX ? MAX_RENDER_DEVICE_LONG_EDGE_PX / longEdge : 1;
-        const deviceWidth = Math.max(1, Math.round(rawDeviceWidth * capFactor));
-        const deviceHeight = Math.max(1, Math.round(rawDeviceHeight * capFactor));
-        const scale = pageSizePt.widthPt > 0 ? deviceWidth / pageSizePt.widthPt : 1;
+          rawDevicePixels > MAX_RENDER_DEVICE_PIXELS
+            ? Math.sqrt(MAX_RENDER_DEVICE_PIXELS / rawDevicePixels)
+            : 1;
+        // Only the width needs to be handed to pdf.js as a target: `renderPage`'s scale
+        // is uniform, so pdf.js derives its own height from the page's own aspect ratio.
+        const targetDeviceWidth = Math.max(1, Math.round(rawDeviceWidth * capFactor));
+        const scale = pageSizePt.widthPt > 0 ? targetDeviceWidth / pageSizePt.widthPt : 1;
 
         const rendered = await documentHandle.renderPage(targetPageIndex, {
           scale,
@@ -254,7 +302,19 @@ export function PdfReader({
           return;
         }
 
-        drawRenderedPage(canvasRef.current, rendered, deviceWidth, deviceHeight);
+        drawRenderedPage(canvasRef.current, rendered);
+
+        // Derived from `rendered.width`/`rendered.height` (what pdf.js actually
+        // rasterised), not from `fittedWidth`/`fittedHeight` above: this guarantees the
+        // canvas's CSS size is always exactly `rendered.width / dpr` x
+        // `rendered.height / dpr`, an exact backing-store-to-CSS ratio of `dpr` with no
+        // independent rounding of the two sizes to disagree. The difference from the
+        // pre-render geometric fit is at most one device pixel per axis (i.e. well under
+        // one CSS pixel), and this is the single source of truth for both the canvas's
+        // own displayed size and `PageDisplayInfo.displayWidth`/`displayHeight`, which
+        // `capture/geometry.ts` and `SelectionLayer` rely on as the page's true CSS size.
+        const displayWidth = rendered.width / dpr;
+        const displayHeight = rendered.height / dpr;
         rendered.release();
 
         const info: PageDisplayInfo = {
@@ -445,7 +505,23 @@ export function PdfReader({
           data-testid="pdf-page-container"
           style={displaySize ? { width: displaySize.width, height: displaySize.height } : undefined}
         >
-          <canvas ref={canvasRef} className="pdf-page-canvas" data-testid="pdf-page-canvas" />
+          {/*
+            The canvas's CSS width/height are set explicitly in device-independent
+            pixels from `displaySize` (in turn derived from the canvas's own backing
+            store divided by devicePixelRatio; see the render effect above), rather than
+            `width:100%/height:100%` of the container: that would stretch an
+            integer-pixel backing store to whatever fractional size the parent happens
+            to have, resampling the whole page on every paint. Setting both from the same
+            numbers keeps the backing-store-to-CSS ratio exactly `devicePixelRatio`.
+          */}
+          <canvas
+            ref={canvasRef}
+            className="pdf-page-canvas"
+            data-testid="pdf-page-canvas"
+            style={
+              displaySize ? { width: displaySize.width, height: displaySize.height } : undefined
+            }
+          />
           {documentHandle && pageDisplayInfo ? renderOverlay?.(pageDisplayInfo) : null}
         </div>
       </div>

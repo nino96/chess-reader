@@ -3,11 +3,34 @@
  * `pdfjs-dist` lives in this module; `reader/PdfReader.tsx`, `capture/*`, and every
  * other module in the app depend only on the plain types exported here.
  *
- * Deferred to issue #5 (per docs/architecture.md §6): CMap, standard-font, and
- * WASM (JBIG2/JPX) self-hosting. `cMapUrl`, `standardFontDataUrl`, and `wasmUrl`
- * are intentionally left unset so pdf.js never attempts a network request; PDFs
- * that need embedded CMaps/standard fonts or wasm-accelerated image codecs may
- * render with degraded text/images until issue #5 self-hosts those assets.
+ * `wasmUrl` and `iccUrl` are self-hosted from the pinned `pdfjs-dist` package
+ * (see `pdfAssets.ts` for the URL policy, `vite.config.ts`'s
+ * `pdfjsAssetsPlugin` for how the bytes are copied out of
+ * `node_modules/pdfjs-dist` at dev/build time from an explicit, hash-verified
+ * allow-list — never committed to the repo, never a whole directory — and
+ * `NOTICE.md` for the full per-file license review). Leaving `wasmUrl` unset
+ * is not a safe "just degrades text/images" fallback: pdfjs-dist 6.3.289's
+ * worker decodes JBIG2 (bitonal scans — what scanned chess books use) and
+ * JPX/JPEG2000 images with WebAssembly loaded from `wasmUrl`, and with the
+ * option unset the worker requests the literal URL `"nulljbig2.wasm"`, that
+ * fetch fails, its `import("nulljbig2_nowasm_fallback.js")` fallback also
+ * fails, and the decoder silently resolves to `null` — so the image is never
+ * drawn at all and the page renders as blank white space (confirmed in
+ * `pdf.worker.mjs`'s `WasmImage#instantiateWasm`/`#getJsModule`). `iccUrl`
+ * covers the one CMYK ICC profile qcms reads and is self-hosted the same way.
+ *
+ * `cMapUrl` and `standardFontDataUrl` are deliberately still left unset: this
+ * app does not self-host Adobe CMaps or standard fonts. CMaps are 1.5 MB of
+ * CJK/multi-byte support not needed by either reported defect. Standard fonts
+ * are GPLv2-licensed Liberation fonts whose "document embedding" exception
+ * covers documents that embed the font, not an app redistributing the font
+ * files themselves to browsers — that is a genuine copyleft obligation this
+ * change does not take on as a side effect of a bug fix. `useSystemFonts`
+ * defaults to `true` in browsers, so non-embedded standard fonts still fall
+ * back to a system font rather than failing to render. See `NOTICE.md`.
+ *
+ * No network fetch is ever made for either self-hosted asset: every URL is
+ * same-origin and base-relative, so this still holds even offline.
  *
  * `isEvalSupported` is deliberately not passed to `getDocument`: pdfjs-dist
  * 6.3.289 removed that option (its `DocumentInitParameters` type no longer
@@ -37,9 +60,16 @@ import type {
 } from 'pdfjs-dist';
 import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
+import { getPdfjsAssetUrls } from './pdfAssets';
+
 // Configured once at module load. `getDocument` creates a `PDFWorker` lazily using
 // this URL; every worker/session shares the same self-hosted, offline-safe script.
 GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
+
+// Resolved once at module load from the deployed `base` (never a hardcoded
+// `/`), so this still points at the right same-origin path when the app is
+// served from a sub-path such as GitHub Pages' `/chess-reader/`.
+const pdfjsAssetUrls = getPdfjsAssetUrls(import.meta.env.BASE_URL);
 
 /** The five leading bytes of every valid PDF file: `"%PDF-"`. */
 const PDF_HEADER_BYTES = new Uint8Array([0x25, 0x50, 0x44, 0x46, 0x2d]);
@@ -87,9 +117,23 @@ export interface PdfPageSize {
   readonly heightPt: number;
 }
 
+/**
+ * `'display'` (the default) is the reader's own on-screen page render:
+ * "latest wins", so starting one cancels any other `'display'` render that is
+ * running or still queued. `'capture'` is a diagram/region capture: it must
+ * never be cancelled by unrelated `'display'` activity (a toolbar reflow
+ * mid-selection must not silently kill an in-flight capture — see
+ * `capture/capturePdfRegion.ts`), so it only queues behind whatever is
+ * currently rendering and is cancelled solely by its own `signal` or by
+ * `dispose()`.
+ */
+export type RenderPurpose = 'display' | 'capture';
+
 export interface RenderPageOptions {
   readonly scale: number;
   readonly signal?: AbortSignal;
+  /** Defaults to `'display'`. */
+  readonly purpose?: RenderPurpose;
 }
 
 export interface RenderedPage {
@@ -104,13 +148,24 @@ export interface PdfDocumentHandle {
   readonly pageCount: number;
   getPageSize(pageIndex: number): Promise<PdfPageSize>;
   /**
-   * Renders `pageIndex` (zero-based) at `scale`. Only one render may be in
-   * flight per handle: starting a new render cancels whatever render was
-   * previously in flight, and that previous call's promise rejects with an
-   * `AbortError`-named error. Cancelling via `signal` behaves the same way.
+   * Renders `pageIndex` (zero-based) at `scale`. Renders queue rather than
+   * cross-cancel: at most one pdf.js render task ever runs at a time per
+   * handle (pdf.js cannot run two concurrent `render()` calls against the
+   * same cached `PDFPageProxy`), but a `'capture'` render is never cancelled
+   * by a later call of either purpose — only its own `signal` or `dispose()`
+   * cancels it. A later `'display'` render still cancels any running or
+   * queued `'display'` render (including this one), rejecting the superseded
+   * call(s) with an `AbortError`-named error, so paging quickly still feels
+   * instant. Multiple queued `'capture'` renders run in FIFO order. See
+   * `RenderPurpose`.
    */
   renderPage(pageIndex: number, options: RenderPageOptions): Promise<RenderedPage>;
-  /** Cancels any in-flight render and destroys the underlying document/worker. */
+  /**
+   * Cancels every running and queued render (of either purpose) and destroys
+   * the underlying document/worker. Every render promise still pending at
+   * that point settles — rejecting with an `AbortError`-named error — rather
+   * than hanging forever, even one whose turn in the queue had not yet come.
+   */
   dispose(): void;
 }
 
@@ -209,21 +264,6 @@ function get2dContext(
   return (canvas as unknown as Canvas2DLike).getContext('2d');
 }
 
-/**
- * Takes the disposed flag and render counter as fresh parameters (rather than reading
- * the `disposed`/`renderCounter` closure variables directly in an `if`) for the same
- * reason as `isActiveRender` above: both are shared handle-level state that a
- * concurrent `dispose()` or a newer `renderPage()` call can change while this call is
- * suspended at `await`, which TypeScript's local flow narrowing does not account for.
- */
-function isRenderSuperseded(
-  isDisposedFlag: boolean,
-  currentRenderCounter: number,
-  expectedRenderId: number,
-): boolean {
-  return isDisposedFlag || currentRenderCounter !== expectedRenderId;
-}
-
 function releaseCanvas(canvas: HTMLCanvasElement | OffscreenCanvas): void {
   // Shrinking the backing store releases GPU/CPU memory immediately rather than
   // waiting for garbage collection (docs/architecture.md §6: "release canvases promptly").
@@ -258,22 +298,35 @@ function assertValidPageIndex(pageIndex: number, pageCount: number): void {
   }
 }
 
-interface ActiveRender {
-  readonly id: number;
-  readonly task: RenderTask;
-  readonly page: PDFPageProxy;
-}
-
 /**
- * Takes `candidate` as a fresh parameter (rather than inlining `activeRender?.id`) so
- * TypeScript re-checks its declared `ActiveRender | null` type instead of narrowing it to
- * non-null from an assignment earlier in `renderPage` — that narrowing would be unsound
- * here, since `activeRender` is shared closure state that a *different*, concurrently
- * in-flight call to `renderPage` can null out (via `cancelActiveRender`) while this call
- * is suspended at `await`.
+ * One `renderPage()` call's queue entry. A handle keeps these in a single
+ * FIFO array (`queue` in `createHandle`); the entry at index 0 is either
+ * about to run or already running (it stays at index 0, not removed, until it
+ * settles), everything behind it is still waiting its turn.
+ *
+ * `settled`/`task` are read fresh from this object at every checkpoint inside
+ * `runJob` rather than trusted from a value captured before an `await` — a
+ * concurrent `dispose()`, a sibling `renderPage()` display-sweep, or this same
+ * job's own `signal` can all call `settleJob`/mutate `task` while `runJob` is
+ * suspended, and TypeScript's local flow narrowing does not account for that.
  */
-function isActiveRender(candidate: ActiveRender | null, id: number): boolean {
-  return candidate !== null && candidate.id === id;
+interface RenderJob {
+  readonly purpose: RenderPurpose;
+  readonly pageIndex: number;
+  readonly scale: number;
+  // Always explicitly assigned (possibly to `undefined`) when a job is
+  // created, so this is a required field typed `AbortSignal | undefined`
+  // rather than an optional `signal?: AbortSignal` -- under
+  // `exactOptionalPropertyTypes`, an optional property may not be assigned a
+  // value of type `T | undefined`, only omitted entirely or given a `T`.
+  readonly signal: AbortSignal | undefined;
+  readonly resolve: (page: RenderedPage) => void;
+  readonly reject: (error: unknown) => void;
+  /** Once true, this job's promise has settled; it must never settle again. */
+  settled: boolean;
+  /** Set once `page.render()` has actually been called for this job. */
+  task: RenderTask | null;
+  abortListener: (() => void) | null;
 }
 
 function createHandle(
@@ -282,14 +335,198 @@ function createHandle(
   createCanvas: CanvasFactory,
 ): PdfDocumentHandle {
   let disposed = false;
-  let renderCounter = 0;
-  let activeRender: ActiveRender | null = null;
+  // FIFO queue of every render not yet settled. `queue[0]`, once `runnerActive`
+  // is true, is the one job actually inside a pdf.js `render()` call; it is
+  // deliberately left in the array (not shifted out) until it settles, so
+  // "is this job still running or waiting its turn" is just "is it still in
+  // `queue`" for every other piece of code here.
+  const queue: RenderJob[] = [];
+  let runnerActive = false;
 
-  function cancelActiveRender(): void {
-    if (activeRender) {
-      activeRender.task.cancel();
-      activeRender.page.cleanup();
-      activeRender = null;
+  function removeFromQueue(job: RenderJob): void {
+    const index = queue.indexOf(job);
+    if (index !== -1) {
+      queue.splice(index, 1);
+    }
+  }
+
+  /**
+   * Takes `job` and the disposed flag as fresh parameters (rather than
+   * inlining `job.settled || disposed` at each call site) for the same
+   * reason the original single-slot implementation's `isActiveRender`/
+   * `isRenderSuperseded` helpers did: both are shared state that a
+   * *different*, concurrently in-flight `cancelJob`/`dispose()` call can
+   * change while `runJob` is suspended at an `await` -- TypeScript's flow
+   * narrowing does not invalidate an earlier `if (!isJobSupersededOrDisposed(...))`
+   * check across that `await`, so inlining the same expression again later in
+   * the same function gets (incorrectly, for this concurrent case) narrowed
+   * to a constant.
+   */
+  function isJobSupersededOrDisposed(job: RenderJob, isDisposedFlag: boolean): boolean {
+    return job.settled || isDisposedFlag;
+  }
+
+  /**
+   * The single place a job's promise is allowed to settle. Guarded by
+   * `job.settled` so a job cancelled early (while merely queued, or while
+   * still awaiting `doc.getPage()` before it has a `task`) can never be
+   * settled a second time by `runJob` catching up with it later.
+   */
+  function settleJob(job: RenderJob, settle: () => void): void {
+    if (job.settled) {
+      return;
+    }
+    job.settled = true;
+    removeFromQueue(job);
+    if (job.abortListener) {
+      job.signal?.removeEventListener('abort', job.abortListener);
+      job.abortListener = null;
+    }
+    settle();
+  }
+
+  /**
+   * Cancels `job` regardless of whether it is currently running, still
+   * queued, or (a narrow window) already dequeued-but-not-yet-marked-settled.
+   * Running jobs are cancelled through pdf.js itself (`task.cancel()`); its
+   * resulting `RenderingCancelledException` is caught inside `runJob`, which
+   * settles the job there. Anything without a `task` yet is settled directly
+   * here — rejecting it now rather than waiting for its turn (which may never
+   * come, or may be arbitrarily delayed by whatever runs first).
+   */
+  function cancelJob(job: RenderJob): void {
+    if (job.settled) {
+      return;
+    }
+    if (job.task) {
+      job.task.cancel();
+      return;
+    }
+    settleJob(job, () => {
+      job.reject(new PdfRenderAbortError());
+    });
+  }
+
+  function processQueue(): void {
+    if (runnerActive) {
+      return;
+    }
+    const next = queue[0];
+    if (!next) {
+      return;
+    }
+    runnerActive = true;
+    void runJob(next);
+  }
+
+  async function runJob(job: RenderJob): Promise<void> {
+    try {
+      if (job.settled) {
+        // Already cancelled while queued, before ever getting its turn.
+        return;
+      }
+      if (disposed) {
+        settleJob(job, () => {
+          job.reject(new PdfRenderAbortError());
+        });
+        return;
+      }
+
+      let page: PDFPageProxy;
+      try {
+        page = await doc.getPage(job.pageIndex + 1);
+      } catch (error) {
+        settleJob(job, () => {
+          job.reject(disposed ? new PdfRenderAbortError() : error);
+        });
+        return;
+      }
+
+      // `job.settled`/`disposed` may have changed while the `await` above was
+      // suspended (a sibling display-sweep, this job's own `signal`, or
+      // `dispose()`); pdf.js has no `RenderTask` to cancel yet, so check
+      // explicitly (through `isJobSupersededOrDisposed`, not by inlining
+      // `job.settled || disposed` again -- see that helper's comment) rather
+      // than relying on a cancellation event that already fired with nothing
+      // listening.
+      if (isJobSupersededOrDisposed(job, disposed)) {
+        page.cleanup();
+        settleJob(job, () => {
+          job.reject(new PdfRenderAbortError());
+        });
+        return;
+      }
+
+      const viewport = page.getViewport({ scale: job.scale });
+      const width = Math.max(1, Math.round(viewport.width));
+      const height = Math.max(1, Math.round(viewport.height));
+      const canvas = createCanvas(width, height);
+      const context = get2dContext(canvas);
+      if (!context) {
+        page.cleanup();
+        settleJob(job, () => {
+          job.reject(new Error('Unable to obtain a 2D rendering context to render this page.'));
+        });
+        return;
+      }
+
+      const task = page.render({
+        canvas,
+        canvasContext: context,
+        viewport,
+      } as unknown as RenderParams);
+      job.task = task;
+
+      try {
+        await task.promise;
+      } catch (error) {
+        page.cleanup();
+        if (isRenderCancelled(error) || isJobSupersededOrDisposed(job, disposed)) {
+          settleJob(job, () => {
+            job.reject(new PdfRenderAbortError());
+          });
+        } else {
+          settleJob(job, () => {
+            job.reject(error);
+          });
+        }
+        return;
+      }
+
+      page.cleanup();
+
+      if (isJobSupersededOrDisposed(job, disposed)) {
+        releaseCanvas(canvas);
+        settleJob(job, () => {
+          job.reject(new PdfRenderAbortError());
+        });
+        return;
+      }
+
+      settleJob(job, () => {
+        job.resolve({
+          canvas,
+          width,
+          height,
+          release(): void {
+            releaseCanvas(canvas);
+          },
+        });
+      });
+    } catch (error) {
+      // Any unexpected synchronous failure above (for example `page.render()`
+      // throwing outright rather than rejecting its task) must still settle
+      // this job's promise -- nothing else awaits `runJob`'s own returned
+      // promise, so an unsettled job here would otherwise hang forever.
+      settleJob(job, () => {
+        job.reject(error);
+      });
+    } finally {
+      runnerActive = false;
+      // Keep draining even once `disposed` is true: every job still in
+      // `queue` needs its turn at the `if (disposed)` check above so its
+      // promise actually settles instead of hanging.
+      processQueue();
     }
   }
 
@@ -307,78 +544,70 @@ function createHandle(
     async renderPage(pageIndex: number, options: RenderPageOptions): Promise<RenderedPage> {
       assertNotDisposed(disposed);
       assertValidPageIndex(pageIndex, doc.numPages);
-      const { scale, signal } = options;
+      const { scale, signal, purpose = 'display' } = options;
 
-      // Only one render may be in flight per handle; starting a new one cancels the
-      // previous one (its `renderPage` promise rejects with an AbortError below).
-      cancelActiveRender();
+      let resolveJob!: (page: RenderedPage) => void;
+      let rejectJob!: (error: unknown) => void;
+      const promise = new Promise<RenderedPage>((resolve, reject) => {
+        resolveJob = resolve;
+        rejectJob = reject;
+      });
 
+      const job: RenderJob = {
+        purpose,
+        pageIndex,
+        scale,
+        signal,
+        resolve: resolveJob,
+        reject: rejectJob,
+        settled: false,
+        task: null,
+        abortListener: null,
+      };
+
+      if (signal) {
+        const abortListener = (): void => {
+          cancelJob(job);
+        };
+        job.abortListener = abortListener;
+        signal.addEventListener('abort', abortListener, { once: true });
+      }
+
+      if (purpose === 'display') {
+        // "Latest display wins": cancel every OTHER display render that is
+        // currently running or still waiting its turn (rule: a 'display'
+        // render cancels running/queued 'display' renders). `job` itself is
+        // not in `queue` yet, so this can never cancel itself. Capture
+        // renders are deliberately left untouched here.
+        //
+        // Iterates a copy because `cancelJob` can settle a not-yet-started job
+        // synchronously, and `settleJob` splices it out of `queue` — mutating
+        // the array mid-iteration would shift an unvisited entry into an index
+        // the loop has already passed, silently skipping it. Today the push
+        // below keeps at most one display job in `queue`, so no two removable
+        // display jobs can be adjacent and the skip is unreachable; the copy
+        // keeps it that way if that invariant is ever relaxed.
+        for (const other of [...queue]) {
+          if (other.purpose === 'display') {
+            cancelJob(other);
+          }
+        }
+      }
+      // A 'capture' render cancels nothing: it simply queues behind whatever
+      // is running, exactly like a second capture would.
+
+      queue.push(job);
+
+      // An already-aborted signal never fires a fresh 'abort' event (the
+      // listener above only catches an abort that happens *after* this
+      // call), so check explicitly too.
       if (signal?.aborted) {
-        throw new PdfRenderAbortError();
+        cancelJob(job);
       }
 
-      const renderId = ++renderCounter;
-      const page = await doc.getPage(pageIndex + 1);
+      processQueue();
 
-      // The abort listener is only attached below (pdf.js needs a `RenderTask` to
-      // cancel), so a signal that fires during this `await` would otherwise go
-      // unnoticed: the 'abort' event does not replay for a listener added after it
-      // fires. Re-check explicitly to close that gap.
-      if (isRenderSuperseded(disposed, renderCounter, renderId) || signal?.aborted) {
-        page.cleanup();
-        throw new PdfRenderAbortError();
-      }
-
-      const viewport = page.getViewport({ scale });
-      const width = Math.max(1, Math.round(viewport.width));
-      const height = Math.max(1, Math.round(viewport.height));
-      const canvas = createCanvas(width, height);
-      const context = get2dContext(canvas);
-      if (!context) {
-        page.cleanup();
-        throw new Error('Unable to obtain a 2D rendering context to render this page.');
-      }
-
-      const task = page.render({
-        canvas,
-        canvasContext: context,
-        viewport,
-      } as unknown as RenderParams);
-      activeRender = { id: renderId, task, page };
-
-      const abortListener = (): void => {
-        task.cancel();
-      };
-      signal?.addEventListener('abort', abortListener, { once: true });
-
-      try {
-        await task.promise;
-      } catch (error) {
-        if (isRenderCancelled(error) || signal?.aborted === true) {
-          throw new PdfRenderAbortError();
-        }
-        throw error;
-      } finally {
-        signal?.removeEventListener('abort', abortListener);
-        page.cleanup();
-        if (isActiveRender(activeRender, renderId)) {
-          activeRender = null;
-        }
-      }
-
-      if (isRenderSuperseded(disposed, renderCounter, renderId)) {
-        releaseCanvas(canvas);
-        throw new PdfRenderAbortError();
-      }
-
-      return {
-        canvas,
-        width,
-        height,
-        release(): void {
-          releaseCanvas(canvas);
-        },
-      };
+      return promise;
     },
 
     dispose(): void {
@@ -386,7 +615,14 @@ function createHandle(
         return;
       }
       disposed = true;
-      cancelActiveRender();
+      // Cancelling the one running job (if any) is enough to start the
+      // cascade: its settlement triggers `runJob`'s `finally`, which calls
+      // `processQueue()` again, and every remaining queued job now hits the
+      // `if (disposed)` check at the top of `runJob` and settles in turn.
+      const running = queue[0];
+      if (running?.task) {
+        running.task.cancel();
+      }
       void loadingTask.destroy();
     },
   };
@@ -421,7 +657,12 @@ export async function openPdfDocument(
   const data = await readAllBytes(source);
   throwIfAborted(signal);
 
-  const loadingTask = getDocument({ data, disableAutoFetch: true });
+  const loadingTask = getDocument({
+    data,
+    disableAutoFetch: true,
+    wasmUrl: pdfjsAssetUrls.wasmUrl,
+    iccUrl: pdfjsAssetUrls.iccUrl,
+  });
 
   if (signal?.aborted) {
     void loadingTask.destroy();

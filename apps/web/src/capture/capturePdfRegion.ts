@@ -62,7 +62,7 @@ export async function capturePdfRegion(
   throwIfAborted(signal);
 
   const scale = chooseCaptureScale(normalizedRect, pageSizePt, maxLongEdgePx);
-  const rendered = await doc.renderPage(locator.pageIndex, { scale, signal });
+  const rendered = await doc.renderPage(locator.pageIndex, { scale, signal, purpose: 'capture' });
 
   try {
     throwIfAborted(signal);

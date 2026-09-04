@@ -217,6 +217,20 @@ page is kept, and a generation counter makes a slow render for an old page
 unable to overwrite a newer one. It renders an overlay (the selection layer, and
 above it the board) positioned exactly over the page.
 
+The page is rasterised exactly once, at the device resolution it will be shown
+at, and nothing rescales it afterwards: pdf.js's bitmap is blitted 1:1, and the
+canvas's CSS size is set from that bitmap divided by `devicePixelRatio`, so the
+backing-store-to-CSS ratio is always exactly `devicePixelRatio`. This matters
+more than it sounds — letting CSS stretch an integer backing store to a
+fractional parent size, or blitting to independently-rounded dimensions,
+resamples the whole page and visibly blurs book text. Render size is bounded by
+a total device-pixel budget rather than a long-edge limit; see
+`MAX_RENDER_DEVICE_PIXELS` for why, and for the iPad constraint that sets it.
+
+There is no zoom control yet. A page is fitted to the window, which is legible
+but small for a dense book page; zoom, rotation and continuous scrolling belong
+to the reader issue (#5).
+
 ### 5. Selecting and capturing a diagram
 
 [`SelectionLayer.tsx`](../apps/web/src/capture/SelectionLayer.tsx) is inert

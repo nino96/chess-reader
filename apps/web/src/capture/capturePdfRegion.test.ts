@@ -121,6 +121,22 @@ describe('capturePdfRegion', () => {
     expect(getImageDataCalls).toHaveLength(1);
   });
 
+  it('renders with purpose "capture" so an unrelated display render never cancels it', async () => {
+    // The whole point of this option (see pdfDocument.ts's render queue): a
+    // reader re-render triggered by a toolbar reflow mid-selection must not
+    // silently kill an in-flight capture. Regression test for that defect.
+    const { doc } = createFakeDoc({ pageSizePt });
+    const renderPageSpy = vi.spyOn(doc, 'renderPage');
+    const controller = new AbortController();
+
+    await capturePdfRegion(doc, locator, fullPageRect, { signal: controller.signal });
+
+    expect(renderPageSpy).toHaveBeenCalledWith(
+      locator.pageIndex,
+      expect.objectContaining({ purpose: 'capture' }),
+    );
+  });
+
   it('never exceeds the bounded capture ceiling', async () => {
     const { doc } = createFakeDoc({ pageSizePt });
     const controller = new AbortController();

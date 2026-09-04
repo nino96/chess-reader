@@ -66,16 +66,38 @@
   margin: 0 auto;
   max-width: 100%;
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  /*
+   * An outset ring rather than `border: 1px`. Everything here is `box-sizing:
+   * border-box` (styles/global.css), so a border is subtracted from this element's
+   * content box — which then clamped the canvas's `max-width: 100%` to two pixels
+   * under its own explicit CSS width, resampling *and* slightly horizontally
+   * squashing the page, and making the `displayWidth` reported to
+   * `capture/geometry.ts` disagree with the page's real painted width. `box-shadow`
+   * draws the same 1px frame without participating in layout at all, and does not
+   * contribute to scrollable overflow.
+   */
+  box-shadow: 0 0 0 1px var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
 }
 
+/*
+ * No width/height here at all: the canvas's CSS size is set explicitly in pixels via
+ * inline style (from `PdfReader`'s `displaySize`, itself derived from the canvas's own
+ * backing store divided by devicePixelRatio) so the backing-store-to-CSS ratio is always
+ * exactly devicePixelRatio, never a resample against a fractional parent size.
+ *
+ * Deliberately no `max-width` either. A clamp here cannot preserve the page's aspect
+ * ratio (the height is a fixed inline pixel value), so it would silently distort the
+ * page and break the invariant that `PageDisplayInfo.displayWidth`/`displayHeight` are
+ * the page's true painted CSS size — which is what selection rectangles are mapped
+ * through. The container above already clamps with `max-width` plus `overflow: hidden`,
+ * so a viewport too narrow for the page clips it instead of squashing it, and the page
+ * can never widen the document. `e2e/study.spec.ts` asserts the exact ratio in real
+ * browsers, and `e2e/layout.spec.ts` asserts no horizontal overflow down to 320px.
+ */
 .pdf-page-canvas {
   display: block;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
 }
 
 .pdf-reader-status {

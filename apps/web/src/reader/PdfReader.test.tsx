@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import type { ReactNode } from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { PdfReader } from './PdfReader';
+import { MAX_RENDER_DEVICE_PIXELS, PdfReader } from './PdfReader';
 import type { PageDisplayInfo, PdfReaderProps } from './PdfReader';
 import type {
   PdfDocumentHandle,
@@ -300,4 +300,136 @@ describe('PdfReader overlay + document lifecycle', () => {
     unmount();
     expect(second.disposeMock).toHaveBeenCalledTimes(1);
   });
+});
+
+describe('PdfReader render resolution', () => {
+  const originalDevicePixelRatio = window.devicePixelRatio;
+  const originalInnerHeight = window.innerHeight;
+
+  afterEach(() => {
+    Object.defineProperty(window, 'devicePixelRatio', {
+      value: originalDevicePixelRatio,
+      configurable: true,
+    });
+    Object.defineProperty(window, 'innerHeight', {
+      value: originalInnerHeight,
+      configurable: true,
+    });
+  });
+
+  function setDevicePixelRatio(ratio: number): void {
+    Object.defineProperty(window, 'devicePixelRatio', { value: ratio, configurable: true });
+  }
+
+  function setInnerHeight(height: number): void {
+    Object.defineProperty(window, 'innerHeight', { value: height, configurable: true });
+  }
+
+  /** Narrows `renders[index]`, failing the test immediately (not silently) if absent. */
+  function requireRender(renders: RenderCall[], index: number): RenderCall {
+    const call = renders[index];
+    expect(call).toBeDefined();
+    if (!call) {
+      throw new Error(`Expected a render call at index ${String(index)}.`);
+    }
+    return call;
+  }
+
+  it.each([1, 2, 3])(
+    'keeps the canvas backing store an exact devicePixelRatio (%i) multiple of its CSS size, blits with no scaling, and reports that CSS size as displayWidth/displayHeight',
+    async (dpr) => {
+      setDevicePixelRatio(dpr);
+      const { handle, renders } = createFakeHandle({ pageCount: 1 });
+      const openDocument = vi.fn().mockResolvedValue(handle);
+      let lastInfo: PageDisplayInfo | undefined;
+      await openAndReachReady(openDocument, renders, (info) => {
+        lastInfo = info;
+        return null;
+      });
+
+      const canvas = screen.getByTestId<HTMLCanvasElement>('pdf-page-canvas');
+      const cssWidth = Number.parseFloat(canvas.style.width);
+      const cssHeight = Number.parseFloat(canvas.style.height);
+      expect(cssWidth).toBeGreaterThan(0);
+      expect(cssHeight).toBeGreaterThan(0);
+
+      // Backing store is an exact devicePixelRatio multiple of the CSS size: nothing
+      // stretches an integer backing store against a fractional CSS parent, so nothing
+      // resamples the bitmap on paint.
+      expect(canvas.width).toBeCloseTo(cssWidth * dpr, 9);
+      expect(canvas.height).toBeCloseTo(cssHeight * dpr, 9);
+
+      // `PageDisplayInfo` reports exactly the canvas's own CSS size, so
+      // `capture/geometry.ts` and `SelectionLayer` stay aligned with what is shown.
+      expect(lastInfo?.displayWidth).toBeCloseTo(cssWidth, 9);
+      expect(lastInfo?.displayHeight).toBeCloseTo(cssHeight, 9);
+
+      // The blit is a plain 1:1 copy: `drawImage` is called with no destination
+      // width/height, i.e. no second resample after pdf.js's own rasterisation.
+      const context = canvas.getContext('2d') as unknown as {
+        drawImage: ReturnType<typeof vi.fn>;
+      };
+      expect(context.drawImage).toHaveBeenCalledWith(expect.anything(), 0, 0);
+    },
+  );
+
+  it.each([1, 2, 3])(
+    'renders an ordinary page at full native device resolution (no cap) at devicePixelRatio %i',
+    async (dpr) => {
+      setDevicePixelRatio(dpr);
+      // Defaults: containerWidth stays at the jsdom fallback (800px, since clientWidth
+      // is 0 in jsdom) and window.innerHeight defaults to 768, giving availableHeight
+      // 548. US Letter (612x792pt) is comfortably within the pixel budget even at
+      // devicePixelRatio 3 (see MAX_RENDER_DEVICE_PIXELS's own worked example).
+      const pageSizePt = { widthPt: 612, heightPt: 792 };
+      const { handle, renders } = createFakeHandle({ pageCount: 1, pageSizePt });
+      const openDocument = vi.fn().mockResolvedValue(handle);
+      await openAndReachReady(openDocument, renders);
+
+      const containerWidth = 800;
+      const availableHeight = Math.max(320, window.innerHeight - 220);
+      const aspect = pageSizePt.heightPt / pageSizePt.widthPt;
+      const fittedWidth = Math.min(containerWidth, availableHeight / aspect);
+      const idealUncappedDeviceWidth = fittedWidth * dpr;
+
+      const actualDeviceWidth = requireRender(renders, 0).scale * pageSizePt.widthPt;
+      // Uncapped: within one rounded device pixel of the ideal (uncapped) target width.
+      expect(Math.abs(actualDeviceWidth - idealUncappedDeviceWidth)).toBeLessThan(1);
+    },
+  );
+
+  it.each([1, 2, 3])(
+    'caps a pathological page to the pixel budget regardless of devicePixelRatio %i',
+    async (dpr) => {
+      setDevicePixelRatio(dpr);
+      // A window tall enough that both the container-width bound (800px, the jsdom
+      // fallback) and the available-height bound (50,000px) are reached at once, via a
+      // page whose aspect ratio matches that box: fittedWidth=800, fittedHeight=50,000.
+      // At devicePixelRatio 1 alone this is 800*50,000 = 40,000,000 device px, already
+      // several times MAX_RENDER_DEVICE_PIXELS before devicePixelRatio is even applied.
+      setInnerHeight(50_220);
+      const containerWidth = 800;
+      const availableHeight = 50_000;
+      const aspect = availableHeight / containerWidth;
+      const pageSizePt = { widthPt: 612, heightPt: 612 * aspect };
+      const { handle, renders } = createFakeHandle({ pageCount: 1, pageSizePt });
+      const openDocument = vi.fn().mockResolvedValue(handle);
+      await openAndReachReady(openDocument, renders);
+
+      const idealUncappedDeviceWidth = containerWidth * dpr;
+      const actualDeviceWidth = requireRender(renders, 0).scale * pageSizePt.widthPt;
+
+      // Capped: the achieved width is well short of the (unbounded) ideal...
+      expect(actualDeviceWidth).toBeLessThan(idealUncappedDeviceWidth * 0.9);
+      // ...and matches what the pixel budget predicts for this box's aspect ratio
+      // (fittedWidth/fittedHeight), independent of devicePixelRatio: once capped,
+      // requesting more devicePixelRatio is scaled straight back down to the same
+      // budget-limited resolution rather than allocating more. Imported rather than
+      // written out, so the assertion tracks the budget instead of drifting from it.
+      const budgetPredictedWidth = Math.sqrt(
+        MAX_RENDER_DEVICE_PIXELS * (containerWidth / availableHeight),
+      );
+      expect(actualDeviceWidth).toBeCloseTo(budgetPredictedWidth, 0);
+    },
+  );
 });
