@@ -28,10 +28,11 @@ pnpm check             typecheck + formatting + lint
 pnpm format            apply formatting fixes
 pnpm test:unit         unit/component tests (vitest)
 pnpm test:e2e          Chromium + Firefox + WebKit browser tests (playwright)
+pnpm eval:recognition  real-model recognition accuracy/latency report
 pnpm check:licenses    verify production dependency licenses (see docs/dependency-policy.md)
 ```
 
-`pnpm test:contract` and the `pnpm eval:*` commands listed in
+`pnpm test:contract` and the remaining `pnpm eval:*` commands listed in
 `docs/evaluation.md` §3 do not exist yet. Per `AGENTS.md`, a later issue adds
 each one only when the subsystem it evaluates first becomes real; do not add
 a placeholder or no-op version ahead of that.

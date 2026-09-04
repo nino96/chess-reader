@@ -60,10 +60,10 @@ test.describe('app shell', () => {
     await expect(page.locator('main#main')).toHaveCount(1);
   });
 
-  test('shows the library empty state and install panel', async ({ page }) => {
+  test('shows the book reader and install panel', async ({ page }) => {
     await page.goto('/');
 
-    await expect(page.getByTestId('library-empty')).toBeVisible();
+    await expect(page.getByTestId('pdf-reader')).toBeVisible();
     await expect(page.getByTestId('install-panel')).toBeVisible();
   });
 

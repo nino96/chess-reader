@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "id": "pdf-synthetic-diagram-01",
+      "sha256": "d5d80caf72ebe645d0932576cb55b9f28c6faffea2666e09ca713f1d8af6c95f",
+      "path": "pdf/pdf-synthetic-diagram-01.pdf",
+      "contentType": "application/pdf",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-diagram-pdf.mjs",
+        "license": "CC0-1.0",
+        "retrieved": "2026-09-04"
+      },
+      "tags": ["pdf", "synthetic", "diagram", "book-style", "flat-gray", "single-diagram"],
+      "expected": {
+        "locator": {
+          "format": "pdf",
+          "pageIndex": 1
+        },
+        "boardRect": {
+          "x": 0.2,
+          "y": 0.3625,
+          "width": 0.6,
+          "height": 0.39375
+        },
+        "placement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+        "orientation": "white",
+        "negativePages": [0],
+        "negativeRect": {
+          "x": 0.1,
+          "y": 0.04,
+          "width": 0.8,
+          "height": 0.08
+        }
+      },
+      "tolerance": {
+        "rectangleIou": 0.9
+      },
+      "limitations": [
+        "Single synthetic diagram style (flat light-gray dark squares, chessnut piece set); does not cover hatched, photographic, scanned, or hand-drawn book diagram styles.",
+        "No drawn outer board border: a border (even 0.5pt) pulled fenshot's gradient-peak board detector off by a fraction of a square, shifting the read by whole ranks. Piece scale is 88% of the square. See the generator's style docstring.",
+        "The hatched dark-square variant (CHESS_READER_FIXTURE_STYLE=hatched) is NOT recognized reliably by the pinned model: measured 1/48 correct reads across six selection margins and eight capture resolutions, versus 48/48 for this flat-gray fixture. Tracked in https://github.com/nino96/chess-reader/issues/24; see the generator's style docstring for the measurement.",
+        "Piece glyphs are redistributed from the chessnut-pieces set (Apache-2.0); see assets/pieces/chessnut/PROVENANCE.md for full attribution."
+      ],
+      "consumers": [
+        "packages/test-fixtures/tests/diagram-recognition.test.ts",
+        "apps/web/e2e",
+        "eval:recognition"
+      ],
+      "addedInIssue": 2
+    }
+  ]
+}

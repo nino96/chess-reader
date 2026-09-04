@@ -9,5 +9,5 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["node"]
   },
-  "include": ["e2e/**/*.ts"]
+  "include": ["e2e/**/*.ts", "eval/**/*.ts"]
 }

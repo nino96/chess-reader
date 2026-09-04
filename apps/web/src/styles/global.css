@@ -189,6 +189,11 @@ button:disabled {
   }
 }
 
+.app-main-full {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
 .app-main-primary {
   display: flex;
   flex-direction: column;

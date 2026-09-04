@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "suite": "eval:recognition",
+  "command": "pnpm eval:recognition",
+  "commit": "85415967da5946c57f874aa6a541767f0a5438ba",
+  "date": "2026-09-04T12:58:45.447Z",
+  "environment": {
+    "os": "win32 10.0.26200",
+    "node": "v24.15.0",
+    "ci": false
+  },
+  "browser": "firefox",
+  "fixture": {
+    "id": "pdf-synthetic-diagram-01",
+    "sha256": "d5d80caf72ebe645d0932576cb55b9f28c6faffea2666e09ca713f1d8af6c95f",
+    "manifestSchemaVersion": 1
+  },
+  "recognizerVersion": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0",
+  "runs": [
+    {
+      "run": 0,
+      "phase": "done",
+      "placement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 1720,
+      "inferenceMs": 843,
+      "coldStart": true
+    },
+    {
+      "run": 1,
+      "phase": "done",
+      "placement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 846,
+      "inferenceMs": 842,
+      "coldStart": false
+    },
+    {
+      "run": 2,
+      "phase": "done",
+      "placement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 1018,
+      "inferenceMs": 1012,
+      "coldStart": false
+    },
+    {
+      "run": 3,
+      "phase": "done",
+      "placement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 1100,
+      "inferenceMs": 1094,
+      "coldStart": false
+    },
+    {
+      "run": 4,
+      "phase": "done",
+      "placement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 957,
+      "inferenceMs": 951,
+      "coldStart": false
+    },
+    {
+      "run": 5,
+      "phase": "done",
+      "placement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 934,
+      "inferenceMs": 929,
+      "coldStart": false
+    }
+  ],
+  "summary": {
+    "exactBoardAccuracy": 1,
+    "coldTotalMs": {
+      "count": 1,
+      "min": 1720,
+      "p50": 1720,
+      "p95": 1720,
+      "max": 1720
+    },
+    "warmTotalMs": {
+      "count": 5,
+      "min": 846,
+      "p50": 957,
+      "p95": 1100,
+      "max": 1100
+    },
+    "warmInferenceMs": {
+      "count": 5,
+      "min": 842,
+      "p50": 951,
+      "p95": 1094,
+      "max": 1094
+    }
+  },
+  "provisionalTargets": {
+    "note": "docs/evaluation.md §6 targets apply to the reference iPad/Android devices; this run is a laptop-browser baseline and is recorded, not asserted.",
+    "warmP50MsTarget": 1000,
+    "warmP95MsTarget": 2000
+  },
+  "nonSameOriginRequests": []
+}

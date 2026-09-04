@@ -9,9 +9,12 @@ web app on iPad, and inside a thin Capacitor wrapper for a sideloaded Android
 application.
 
 The project contains the architecture, risk analysis, evaluation gates, an
-ordered implementation backlog, and the bootstrapped application shell from
-issue #1: a responsive, installable start screen with a local capability
-diagnostic. It does not read books yet.
+ordered implementation backlog, the installable application shell with its
+local capability diagnostic (issue #1), and the first working study path
+(issue #2): open a local PDF, drag a rectangle around a printed diagram,
+recognize it on this device, and correct the position on a board floating
+over the page. That state is held in memory only; durability, offline
+relaunch, automatic diagram hotspots, legal moves, and EPUB are later issues.
 
 ## Getting started
 
@@ -32,12 +35,14 @@ Quality gates that exist today:
 pnpm check          # typecheck + Prettier + ESLint
 pnpm test:unit      # Vitest unit/component tests
 pnpm test:e2e       # Playwright in Chromium, Firefox, WebKit, iPad and phone profiles
+pnpm eval:recognition # real-model recognition accuracy and latency report
 pnpm check:licenses # production dependency license allowlist
 ```
 
-`test:contract` and the `eval:*` commands do not exist yet. They are added by
-the issue that first makes the corresponding subsystem real, never as passing
-placeholders. See [docs/testing.md](docs/testing.md) for details and
+`test:contract` and the remaining `eval:*` commands do not exist yet. They are
+added by the issue that first makes the corresponding subsystem real, never as
+passing placeholders. Measured results live in
+[docs/eval-baselines/](docs/eval-baselines/README.md). See [docs/testing.md](docs/testing.md) for details and
 [docs/deployment.md](docs/deployment.md) for HTTPS deployment and the GitHub
 Pages preview.
 
@@ -64,6 +69,7 @@ Pages preview.
 - [Deployment and HTTPS hosting](docs/deployment.md)
 - [Dependency and license policy](docs/dependency-policy.md)
 - [Fixture provenance rules](docs/fixtures.md)
+- [Measured evaluation baselines](docs/eval-baselines/README.md)
 - [Real-device evidence records](docs/device-evidence/README.md)
 - [Contributing workflow](CONTRIBUTING.md)
 

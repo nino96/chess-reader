@@ -155,6 +155,19 @@ ONNX Runtime Web supports WebAssembly across target browsers, including Safari
 on iOS. WebGPU is not a portable Safari/iPad requirement and WebGL is not the
 preferred future path.
 
+Measured during issue #2 on one Windows laptop (Playwright engines, six runs
+each, full user-visible round trip): warm recognition p50/p95 was 359/571 ms on
+Chromium, 468/589 ms on WebKit, and 957/1100 ms on Firefox, with cold model
+initialization between 0.7 s and 2.2 s. No iPad numbers exist yet. See
+`docs/eval-baselines/README.md`; the §6 provisional device gates in
+`docs/evaluation.md` are neither met nor waived by that laptop run.
+
+Also measured during issue #2: the pinned model reads flat-gray printed
+diagrams reliably (48/48 across selection margins and capture resolutions) but
+fails on diagonally hatched dark squares (1/48), returning a rank-shifted
+placement rather than a low-confidence result. That is the dangerous failure
+direction, and it is tracked as issue #24.
+
 ### Product solution
 
 - WASM is the acceptance baseline for the small fenshot model.

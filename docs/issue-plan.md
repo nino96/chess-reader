@@ -8,8 +8,8 @@ prerequisites are merged.
 
 ## First usable PDF loop
 
-1. [#1 Bootstrap a runnable PWA, preview deployment, and fast test loop](https://github.com/nino96/chess-reader/issues/1)
-2. [#2 Walking slice: turn a selected PDF diagram into an editable board](https://github.com/nino96/chess-reader/issues/2)
+1. [#1 Bootstrap a runnable PWA, preview deployment, and fast test loop](https://github.com/nino96/chess-reader/issues/1) (implemented)
+2. [#2 Walking slice: turn a selected PDF diagram into an editable board](https://github.com/nino96/chess-reader/issues/2) (implemented)
 3. [#3 Make the PDF-to-board slice installable, offline, and restorable](https://github.com/nino96/chess-reader/issues/3)
 
 Issue #2 deliberately crosses the reader, capture, recognition, and board
@@ -21,7 +21,8 @@ infrastructure. Issue #3 makes that same path a useful offline prototype.
 
 4. [#4 Harden browser book storage, import journaling, and re-linking](https://github.com/nino96/chess-reader/issues/4)
 5. [#5 Grow the PDF slice into a usable local book reader](https://github.com/nino96/chess-reader/issues/5)
-6. [#6 Harden offline recognition and its durable result cache](https://github.com/nino96/chess-reader/issues/6)
+6. [#6 Harden offline recognition and its durable result cache](https://github.com/nino96/chess-reader/issues/6),
+   which also carries [#24 hatched-diagram recognition](https://github.com/nino96/chess-reader/issues/24)
 7. [#7 Vertical slice: make PDF diagrams automatically tappable](https://github.com/nino96/chess-reader/issues/7)
 8. [#8 Productionize the overlay board and full position editor](https://github.com/nino96/chess-reader/issues/8)
 9. [#9 Vertical slice: play one legal, undoable line](https://github.com/nino96/chess-reader/issues/9)
