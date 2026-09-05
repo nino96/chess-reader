@@ -239,7 +239,7 @@ also retain min/max, all per-board observations, confidence and per-class errors
 | [webkit / tilenet-full-3801](reports/browser-webkit-tilenet-full-3801-print-held-out-v1.json)     |                     1852.0 / 1953.0 |                 35.0 / 48.0 |                  18.0 / 18.0 |                 18.0 / 18.0 |
 | [webkit / tilenet-full-3802](reports/browser-webkit-tilenet-full-3802-print-held-out-v1.json)     |                     1864.0 / 1882.0 |                 56.0 / 65.0 |                  17.0 / 18.0 |                 18.0 / 18.0 |
 
-Each candidate is 1,288,448 bytes. Pinned ORT WASM is 13,961,845 bytes;
+Each experimental candidate is 1,288,448 bytes. Pinned ORT WASM is 13,961,845 bytes;
 candidate plus WASM is 15,250,293 bytes. Including the deployed evaluation
 HTML/JS/WASM yields 15,330,706 bytes per candidate, versus 15,331,741 bytes
 for the shipped control. No experimental model is bundled into the product.
