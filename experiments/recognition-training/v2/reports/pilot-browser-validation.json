@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "commit": "ac5bc3086375bf6a9a73de0367c94a5a83303756",
+  "command": "CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/v2/runs/browser-pilot.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts",
+  "tests": 9,
+  "passed": 9,
+  "elapsedSeconds": 38.7,
+  "browserEngines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "physicalIpad": "deferred/unrun",
+  "artifacts": {
+    "browser-chromium-tilenet-pilot-381-pilot-development.json": "510ecdd8376636c3a3775fe1d952318ad07135bdb051f22b0f0a33278027969f",
+    "browser-firefox-tilenet-pilot-381-pilot-development.json": "6310b1fc7bdaa3bf67dde8215fb075103dbcd21d9c7dabb23da2ddc20a9e4ac3",
+    "browser-faults-webkit-tilenet-pilot-381.json": "eccb7c55eced09f9d270805fbe3d9ff3620091a59d23008cdd21e359d03efcb2",
+    "browser-faults-chromium-tilenet-pilot-381.json": "b97a12c6db33202fa01c8da6059de833d2445386d878b8e84bbe0521a55d3927",
+    "browser-faults-firefox-tilenet-pilot-381.json": "4a5eb1ceac62c2d5b279d781ad6684b12086c8e75fe8c228d97105cdc9021c7f",
+    "browser-webkit-tilenet-pilot-381-pilot-development.json": "2d1237af9d31375ad725af88aec5e4228aa11df92fdac49eead063c45c1a3641"
+  }
+}

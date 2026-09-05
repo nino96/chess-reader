@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "command": "python3 experiments/recognition-training/v2/verify_preservation.py",
+  "baseCommit": "9240d93d91487dcaedbff5f7108479a342dcd8d6",
+  "commit": "ac5bc3086375bf6a9a73de0367c94a5a83303756",
+  "protectedFiles": 328,
+  "inventorySha256": "59c98dc96a6f67feeb3e45fbfb7633ce15c44d282d63d408764f81e381936734",
+  "historicalSyntheticData": "byte-identical",
+  "historicalFullCandidates": "byte-identical",
+  "productionCodeFixturesBaselinesLock": "byte-identical"
+}
