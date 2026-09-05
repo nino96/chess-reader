@@ -1,7 +1,7 @@
 import { execFileSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { arch, platform, release } from 'node:os';
-import { basename, resolve } from 'node:path';
+import { basename, relative, resolve } from 'node:path';
 import { mkdirSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 
 import type * as Playwright from '@playwright/test';
@@ -293,8 +293,17 @@ for (const candidate of evaluation.freeze.candidates) {
       writeReport(browserName, candidate, vectorSet, {
         schemaVersion: 1,
         suite: 'recognition-training-browser',
-        command:
-          'CHESS_READER_TRAINING_BROWSER_CONFIG=experiments/recognition-training/runs/local-config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts',
+        command: {
+          fromRepositoryRoot:
+            'pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts',
+          environment: {
+            CHESS_READER_TRAINING_BROWSER_CONFIG: relative(
+              resolve(import.meta.dirname, '../../../apps/web'),
+              evaluation.configPath,
+            ),
+          },
+          environmentPathBase: 'apps/web (pnpm exec working directory)',
+        },
         commit: currentCommit(),
         date: new Date().toISOString(),
         environment: {
