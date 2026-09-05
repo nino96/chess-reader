@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "commit": "be9fa313bee3f2f5bb1b70dd48873d78fa94fb18",
+  "date": "2026-09-05T20:28:49.143995+00:00",
+  "environment": {
+    "os": "Ubuntu 24.04.4",
+    "architecture": "aarch64",
+    "device": "local NVIDIA GB10"
+  },
+  "status": "passed",
+  "checks": [
+    {
+      "command": "pnpm check",
+      "result": "types, formatting and lint passed after final report edits"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "python3 experiments/recognition-training/v2/verify_preservation.py",
+      "result": "328 protected files, historical synthetic data and candidates byte-identical"
+    },
+    {
+      "command": "local Markdown link scan",
+      "result": "42 relative links resolve across the four changed documents"
+    },
+    {
+      "command": "report JSON parse and privacy scan",
+      "result": "64 reports parsed, no private absolute paths or placement fields"
+    }
+  ],
+  "review": "Lead reviewed integration; independent Terra review found no remaining consequential discrepancy. Final browser metrics and 27 artifact hashes checked.",
+  "artifacts": {
+    "experiments/recognition-training/v2/REPORT.md": "76fd1c245e065e1ce9be23b7b36c282b269622b0721eb407257d25b2fcdbdb53",
+    "experiments/recognition-training/v2/reports/comparison.json": "8a252175a20227c8242a5df448ade02144bc673baaec068bafaeaa5b2bae259a",
+    "experiments/recognition-training/v2/reports/full-browser-validation.json": "86ddd9dbe08926f0690aeeddc4eb757e5b4d117bb6ef5b7fc827bfd7ce17ba75",
+    "experiments/recognition-training/v2/reports/preservation.json": "3caf391beb1d7f0248ab0800c3de97da2d1ad8bb82bf7288368234bc0a3184d0"
+  },
+  "limitations": [
+    "Physical iPad and manual VoiceOver deferred/unrun",
+    "Model qualification fails; measurement checks passing does not qualify a candidate",
+    "No further training after frozen held-out exposure"
+  ]
+}

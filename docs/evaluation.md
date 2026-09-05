@@ -407,3 +407,13 @@ checkpoint. Experiment commands, source locks, failed attempts, confidence-aware
 metrics, raw timing distributions and provenance are retained under
 `experiments/recognition-training/`. No production recognizer, threshold or
 qualification command changes. #24 remains open and physical iPad is deferred/unrun.
+
+The [separately locked v2 replication](../experiments/recognition-training/v2/REPORT.md)
+corrects SVG decoding and verifies all glyphs, tile/label ordering, degradation
+pixels, full deterministic replay and reviewed tensor images before training.
+Both bounded CUDA seeds still fail the held-out classifier gate; the original
+experiment and historical inputs remain intact. Newly generated test boards
+use previously exposed source artwork, so they are not blind new-family
+validation. Hatch and degradation results are reported separately. This finding
+supports further independent corpus-coverage research, not production adoption
+or an architecture-limit claim. #24 and its deferred physical-iPad gate remain.

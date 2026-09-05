@@ -7,6 +7,10 @@ dataset seed, test lock, pilot (381), and full seeds (3811/3812). Production
 recognition is unchanged; [#24](https://github.com/nino96/chess-reader/issues/24)
 stays open and physical-iPad testing remains deferred/unrun.
 
+The [result report](REPORT.md) records both seeds failing promotion despite passing
+source fidelity and data correctness checks. All failed attempts and raw metrics
+remain reviewable; this is a completed bounded experiment, not model adoption.
+
 ## Data correctness before training
 
 The [protocol](protocol.json) retains the original TileNet, optimizer, twelve

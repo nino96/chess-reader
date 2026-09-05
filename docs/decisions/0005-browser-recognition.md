@@ -138,3 +138,22 @@ unchanged production recognition, and all existing confidence, accuracy,
 privacy, offline and device gates. Experiment tooling and weights remain
 separate from the PWA runtime. #24 stays open; physical-iPad testing remains
 deferred/unrun. This evidence note changes no architectural decision or gate.
+
+## Issue #38 corrected-renderer replication (2026-09-05)
+
+The [versioned v2 experiment](../../experiments/recognition-training/v2/REPORT.md)
+uses fidelity-verified SVG/PNG rendering and a new predeclared board/test lock.
+Both full seeds completed but still produced zero exact held-out boards, with
+systematic glyph/color transfer errors across plain and degraded conditions.
+Source fidelity and full-data replay now pass. The original failed experiment
+and corpus v1 remain unchanged; the test source family was previously exposed
+and is explicitly not presented as blind independent validation.
+
+Retain STOP production adoption. The shipped TileNet reads the identical inputs
+substantially better, so these failures do not prove an architecture limit or
+justify a whole-board model by themselves. Further licensed grayscale/glyph
+coverage research needs a new independent test design. The heuristic localizer
+remains unqualified; learned localization, including multiple-board pages,
+remains a separate experiment. Dedicated worker/WASM inference, all existing
+gates, unchanged production recognition and #24's deferred physical-iPad
+requirement remain in force. No architectural decision or threshold changes.

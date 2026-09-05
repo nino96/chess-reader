@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "suite": "recognition-training-browser",
+  "command": {
+    "fromRepositoryRoot": "pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/v2/browser/playwright.config.ts",
+    "environment": {
+      "CHESS_READER_TRAINING_BROWSER_CONFIG": "../../experiments/recognition-training/v2/runs/browser-full.config.json"
+    },
+    "environmentPathBase": "apps/web (pnpm exec working directory)"
+  },
+  "commit": "be9fa313bee3f2f5bb1b70dd48873d78fa94fb18",
+  "date": "2026-09-05T20:13:38.099Z",
+  "environment": {
+    "os": "linux",
+    "release": "6.17.0-1021-nvidia",
+    "arch": "arm64",
+    "node": "v24.19.0",
+    "browser": {
+      "name": "firefox",
+      "version": "153.0"
+    }
+  },
+  "freeze": {
+    "runKind": "full",
+    "protocolSha256": "242d07996ecab07a0b65402ea776317ecf23bbee246d975d3575003e392e1890",
+    "testManifestSha256": "bb238034a433e50345a0a06f377a658dc953e080fb674ccc77b23c354bb2408b"
+  },
+  "candidate": {
+    "id": "shipped",
+    "seed": null,
+    "modelSha256": "883f6a8e639e6d6b6399b3fda0508ad772e3c6f9cefa2e678a13f27b9fa6248d",
+    "modelBytes": 1289483
+  },
+  "vectors": {
+    "id": "corpus-v1-regression",
+    "role": "corpus-v1-regression",
+    "sha256": "7c2edc21aef5b2b1f9d994e31cd72f968f2b93aac6ed992a4a89062fc97e9974",
+    "bytes": 3670016,
+    "boards": 14
+  },
+  "contract": {
+    "input": {
+      "name": "tiles",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        1024
+      ]
+    },
+    "output": {
+      "name": "probs",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        13
+      ]
+    },
+    "classLabels": "1KQRBNPkqrbnp",
+    "reliabilityFloor": 0.7,
+    "executionProvider": "wasm",
+    "threads": 1
+  },
+  "runtime": {
+    "ortWasmSha256": "ec8580a9d7b9476ceee52e10a7f94124e4dc71a019d666ed6d4726697c109a4d",
+    "ortWasmBytes": 13961845,
+    "modelAndOrtWasmBytes": 15251328,
+    "deployedEvaluationBuildBytes": 14042258,
+    "totalEvaluationRuntimeBytes": 15331741,
+    "byteDefinition": "modelAndOrtWasmBytes is candidate ONNX plus pinned ORT WASM. totalEvaluationRuntimeBytes adds the candidate to deployed harness HTML/JS/WASM and excludes source maps/build metadata."
+  },
+  "timing": {
+    "coldInitializationMs": {
+      "count": 3,
+      "min": 671,
+      "p50": 678,
+      "p95": 695,
+      "max": 695
+    },
+    "firstBoardAfterFreshInitializationMs": {
+      "count": 3,
+      "min": 449,
+      "p50": 450,
+      "p95": 450,
+      "max": 450
+    },
+    "fullPassInferenceMs": {
+      "count": 14,
+      "min": 440,
+      "p50": 442,
+      "p95": 450,
+      "max": 450
+    },
+    "warmSubsetInferenceMs": {
+      "count": 12,
+      "min": 440,
+      "p50": 441,
+      "p95": 444,
+      "max": 444
+    },
+    "coldSessions": 3,
+    "warmRepeatsPerBoard": 3,
+    "warmBoardLimit": 4,
+    "fullPassMaximumBoardsPerRequest": 16,
+    "fullPassRequestCount": 1
+  },
+  "rawTiming": {
+    "coldInitializationMs": [
+      695,
+      678,
+      671
+    ],
+    "firstBoardAfterFreshInitializationMs": [
+      450,
+      450,
+      449
+    ],
+    "fullPassInferenceMs": [
+      450,
+      441,
+      442,
+      447,
+      445,
+      442,
+      441,
+      443,
+      441,
+      447,
+      442,
+      441,
+      442,
+      440
+    ],
+    "warmSubsetInferenceMs": [
+      442,
+      441,
+      441,
+      441,
+      441,
+      441,
+      441,
+      444,
+      442,
+      441,
+      441,
+      440
+    ]
+  },
+  "summary": {
+    "exactBoards": 8,
+    "totalBoards": 14,
+    "exactBoardAccuracy": 0.5714285714285714,
+    "correctSquares": 881,
+    "confidentCorrectSquares": 799,
+    "totalSquares": 896,
+    "squareAccuracy": 0.9832589285714286,
+    "confidenceQualifiedSquareAccuracy": 0.8917410714285714,
+    "reliableExact": 4,
+    "reliableWrong": 0,
+    "minimumConfidence": 0.2179151326417923,
+    "meanConfidence": 0.8724418012924227,
+    "perClassErrors": [
+      4,
+      3,
+      0,
+      2,
+      0,
+      1,
+      1,
+      1,
+      2,
+      1,
+      0,
+      0,
+      0
+    ],
+    "confusion": [
+      [
+        592,
+        2,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        11,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        20,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        75,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        13,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        19,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        74
+      ]
+    ]
+  },
+  "observations": [
+    {
+      "boardId": "v1-1b8957ff15091c95",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.583591639995575,
+      "meanConfidence": 0.9447369240224361
+    },
+    {
+      "boardId": "v1-5187bf1833030b74",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.7714840173721313,
+      "meanConfidence": 0.9444606266915798
+    },
+    {
+      "boardId": "v1-02944e2bcda00047",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2660226821899414,
+      "meanConfidence": 0.8077924866229296
+    },
+    {
+      "boardId": "v1-9ddf5b3c192ebd5d",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.8597238659858704,
+      "meanConfidence": 0.9522418109700084
+    },
+    {
+      "boardId": "v1-6077af891e893aed",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.33221423625946045,
+      "meanConfidence": 0.7901201536878943
+    },
+    {
+      "boardId": "v1-266c56ea80f5b6bb",
+      "exact": false,
+      "correctSquares": 63,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2851937711238861,
+      "meanConfidence": 0.8546107639558613
+    },
+    {
+      "boardId": "v1-e5cbdff5c28ac53b",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.8388515710830688,
+      "meanConfidence": 0.9054908761754632
+    },
+    {
+      "boardId": "v1-3c21c57642da432c",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2179151326417923,
+      "meanConfidence": 0.7786450129933655
+    },
+    {
+      "boardId": "v1-a2ed37ed149f359d",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3028211295604706,
+      "meanConfidence": 0.7913930313661695
+    },
+    {
+      "boardId": "v1-99ddbe5d70f4cfab",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.865222692489624,
+      "meanConfidence": 0.9402779340744019
+    },
+    {
+      "boardId": "v1-729e60ff0d10aea4",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.34679022431373596,
+      "meanConfidence": 0.8631474249996245
+    },
+    {
+      "boardId": "v1-ea4917fb76f5c31e",
+      "exact": false,
+      "correctSquares": 63,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2366512268781662,
+      "meanConfidence": 0.8393529697787017
+    },
+    {
+      "boardId": "v1-ba1d22971755d89f",
+      "exact": false,
+      "correctSquares": 63,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22421050071716309,
+      "meanConfidence": 0.855612279381603
+    },
+    {
+      "boardId": "v1-52f88b410451088a",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.583591639995575,
+      "meanConfidence": 0.946302923373878
+    }
+  ],
+  "nonSameOriginRequests": [],
+  "privacy": "No vectors, class sequences, FENs, source filenames or absolute paths are persisted in this report.",
+  "limitations": [
+    "Classifier-stage frozen-vector evidence only; it is not end-to-end recognition qualification.",
+    "Physical iPad deferred/unrun."
+  ]
+}
