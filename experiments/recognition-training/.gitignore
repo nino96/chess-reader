@@ -3,5 +3,12 @@ data/
 cache/
 runs/
 .venv/
+.bootstrap/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+*.onnx
+*.pt
+*.pth
+*.tsbuildinfo
+local-config.json

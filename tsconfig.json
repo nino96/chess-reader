@@ -9,6 +9,12 @@
     },
     {
       "path": "./packages/test-fixtures"
+    },
+    {
+      "path": "./experiments/recognition-training"
+    },
+    {
+      "path": "./experiments/recognition-training/browser"
     }
   ]
 }

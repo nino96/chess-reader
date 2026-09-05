@@ -1,0 +1,45 @@
+# Generated for CPython 3.12.3 on Linux ARM64 from requirements.in.
+# pip-tools 7.5.1 could resolve this CUDA multi-index graph but crashed while
+# enumerating hashes; each exact resolved ARM64 wheel was downloaded and hashed
+# locally before this lock was written. Recreate only with the documented
+# wheel-download procedure in environment.md.
+--index-url https://pypi.org/simple
+--extra-index-url https://download.pytorch.org/whl/cu128
+--only-binary=:all:
+
+coloredlogs==15.0.1 --hash=sha256:612ee75c546f53e92e70049c9dbfcc18c935a2b9a53b66085ce9ef6a6e5c0934
+cuda-bindings==12.9.4 --hash=sha256:694ba35023846625ef471257e6b5a4bc8af690f961d197d77d34b1d1db393f56
+cuda-pathfinder==1.8.1 --hash=sha256:ae0137ff9e56ea97499bcbf54f5f2778ec25f3266715ac86da192a795af982a8
+filelock==3.32.5 --hash=sha256:142cd9fa77a872c5e78c62329a0d15278fadc686eb89e760017968961a4fd6b2
+flatbuffers==25.12.19 --hash=sha256:7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4
+fsspec==2026.7.0 --hash=sha256:b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279
+humanfriendly==10.0 --hash=sha256:1697e1a8a8f550fd43c2865cd84542fc175a61dcb779b6fee18cf6b6ccba1477
+jinja2==3.1.6 --hash=sha256:85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67
+markupsafe==3.0.3 --hash=sha256:3a7e8ae81ae39e62a41ec302f972ba6ae23a5c5396c8e60113e9066ef893da0d
+mpmath==1.3.0 --hash=sha256:a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c
+networkx==3.6.1 --hash=sha256:d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762
+numpy==2.2.6 --hash=sha256:f2618db89be1b4e05f7a1a847a9c1c0abd63e63a1607d892dd54668dd92faf87
+nvidia-cublas-cu12==12.8.4.1 --hash=sha256:b86f6dd8935884615a0683b663891d43781b819ac4f2ba2b0c9604676af346d0
+nvidia-cuda-cupti-cu12==12.8.90 --hash=sha256:4412396548808ddfed3f17a467b104ba7751e6b58678a4b840675c56d21cf7ed
+nvidia-cuda-nvrtc-cu12==12.8.93 --hash=sha256:fc1fec1e1637854b4c0a65fb9a8346b51dd9ee69e61ebaccc82058441f15bce8
+nvidia-cuda-runtime-cu12==12.8.90 --hash=sha256:52bf7bbee900262ffefe5e9d5a2a69a30d97e2bc5bb6cc866688caa976966e3d
+nvidia-cudnn-cu12==9.10.2.21 --hash=sha256:c9132cc3f8958447b4910a1720036d9eff5928cc3179b0a51fb6d167c6cc87d8
+nvidia-cufft-cu12==11.3.3.83 --hash=sha256:848ef7224d6305cdb2a4df928759dca7b1201874787083b6e7550dd6765ce69a
+nvidia-cufile-cu12==1.13.1.3 --hash=sha256:4beb6d4cce47c1a0f1013d72e02b0994730359e17801d395bdcbf20cfb3bb00a
+nvidia-curand-cu12==10.3.9.90 --hash=sha256:dfab99248034673b779bc6decafdc3404a8a6f502462201f2f31f11354204acd
+nvidia-cusolver-cu12==11.7.3.90 --hash=sha256:db9ed69dbef9715071232caa9b69c52ac7de3a95773c2db65bdba85916e4e5c0
+nvidia-cusparse-cu12==12.5.8.93 --hash=sha256:9b6c161cb130be1a07a27ea6923df8141f3c295852f4b260c65f18f3e0a091dc
+nvidia-cusparselt-cu12==0.7.1 --hash=sha256:8878dce784d0fac90131b6817b607e803c36e629ba34dc5b433471382196b6a5
+nvidia-nccl-cu12==2.27.5 --hash=sha256:31432ad4d1fb1004eb0c56203dc9bc2178a1ba69d1d9e02d64a6938ab5e40e7a
+nvidia-nvjitlink-cu12==12.8.93 --hash=sha256:adccd7161ace7261e01bb91e44e88da350895c270d23f744f0820c818b7229e7
+nvidia-nvshmem-cu12==3.4.5 --hash=sha256:0b48363fc6964dede448029434c6abed6c5e37f823cb43c3bcde7ecfc0457e15
+nvidia-nvtx-cu12==12.8.90 --hash=sha256:d7ad891da111ebafbf7e015d34879f7112832fc239ff0d7d776b6cb685274615
+onnx==1.18.0 --hash=sha256:e4da451bf1c5ae381f32d430004a89f0405bc57a8471b0bddb6325a5b334aa40
+onnxruntime==1.22.1 --hash=sha256:984cea2a02fcc5dfea44ade9aca9fe0f7a8a2cd6f77c258fc4388238618f3928
+packaging==26.3 --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c
+protobuf==7.36.1 --hash=sha256:43d3d37b1eb24c113b9b7d02008cac44e423f00b611b7781ae998d7623972969
+setuptools==84.0.0 --hash=sha256:51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670
+sympy==1.14.0 --hash=sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5
+torch==2.10.0+cu128 --hash=sha256:6f09cdf2415516be028ae82e6b985bcfc3eac37bc52ab401142689f6224516ca
+triton==3.6.0 --hash=sha256:6e42d084864d12b8784736fe51a0cd05f6cc56775b25c8102c9d80c421f4e298
+typing-extensions==4.16.0 --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "command": "node experiments/recognition-training/verify-preservation.ts",
+  "commit": "5f6233476bdc09d0ea28da715142cbf3bc5a9b7e",
+  "baseCommit": "ccc575ffecbc98dd10bd8f497887d0e481bc1b77",
+  "status": "passed",
+  "protectedFiles": 140,
+  "inventorySha256": "02866a36c9c0d5b38ae8207d96638cfe96b969ee7eb007dd10ff3a92e83771e2",
+  "protectedPaths": [
+    "packages/test-fixtures",
+    "docs/eval-baselines",
+    "apps/web/src",
+    "pnpm-lock.yaml"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "role": "held-out-test",
+  "id": "print-held-out-v1",
+  "command": "node experiments/recognition-training/lock-test.ts",
+  "commit": "5f6233476bdc09d0ea28da715142cbf3bc5a9b7e",
+  "datasetManifestSha256": "10b347f5f88693fd18d63b49b4b2f81156cf673820145c82949e1d425743a401",
+  "classOrder": "1KQRBNPkqrbnp",
+  "tileOrder": "A1..H8",
+  "dtype": "float32-le",
+  "vectors": {
+    "path": "test.vectors.f32le",
+    "sha256": "a9a14d8a2f406d1e6d1a12cdaf35ab962f7aaff724dc694c0f398699888c9882",
+    "byteLength": 67108864,
+    "shape": [
+      256,
+      64,
+      1024
+    ]
+  },
+  "labels": {
+    "path": "test.labels.json",
+    "sha256": "39ec56786e7d78b1b85c72947247335186bf1b18ded2a7e3d57ff34934351383",
+    "byteLength": 209652
+  },
+  "familyMembership": [
+    "rhosgfx"
+  ],
+  "source": {
+    "split": "test",
+    "authorFamily": "RhosGFX",
+    "license": "CC0-1.0",
+    "lilaPath": "public/piece/rhosgfx",
+    "sourceSha256": "f9af3057d37f6e2a8639afa548b03bb63881c8279cc81955987f3702fb8b701f",
+    "fileSha256": {
+      "bB.svg": "2d93c7f0dd47f4bf5f05f8eae7a6fb47fb68d9578245f36b20e14a71d10b635a",
+      "bK.svg": "74acb4e12ab8f6e19da483fae136c3b0618336ed73f96feb22ae0adb445f39b3",
+      "bN.svg": "07420189a69e58a46f4d8df18b95608c6d1c2051e105c2e3cf80e1c3ea45a08d",
+      "bP.svg": "fe06f8e42ca883c2a79535514670862f37228980da7de5028213a6b7b388044b",
+      "bQ.svg": "416b21a850bff5676c2a052341419783feba9569163803589e4fb4c07d4e19e1",
+      "bR.svg": "9a43817e05067a2fc35dc760faec21732ec66c8a72d262374dc031fadb40eca7",
+      "wB.svg": "e9c00b057672ec693e2da7808873085aee2f6f7c61cc8f68386d01a7e94d6859",
+      "wK.svg": "5a5bb397e8f8b08fee64a98a83a07dd287eb1557ffef31b22453ea80ed03d500",
+      "wN.svg": "38adc3f8293e186386b1be2a7e489648027f68866c22e64fdaa39f2582047ab2",
+      "wP.svg": "ec9cc7778fe148cd740586964ee3f789ef22dcda77f3ce5ee3ddf47f76c210b8",
+      "wQ.svg": "e937921417c5a5d3fd4881183821594ed5afe0892cb492fe74f4f33bc81bb37f",
+      "wR.svg": "26963e5f4fc8d324be998c654d9822644100702e48e49ddac74596d7bc0fffa2"
+    },
+    "actualSha256": "f9af3057d37f6e2a8639afa548b03bb63881c8279cc81955987f3702fb8b701f"
+  },
+  "sourceRevision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+  "sourceUrl": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/rhosgfx",
+  "generator": {
+    "path": "scripts/generate-dataset.mjs",
+    "sha256": "49c9cf1f2ef609b5ffe7485133513589dc0000d2ff9a74cad73025158c45acef"
+  },
+  "generatorLock": {
+    "path": "source-lock.mjs",
+    "sha256": "a6e2f57d0de3a022f904eaaa0331cdd716c959772048cdd2f6a4b06a9404aa05"
+  },
+  "policy": "No checkpoint selection, tuning, early stopping or inference until both predeclared full-run candidates are frozen."
+}

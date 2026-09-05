@@ -337,6 +337,7 @@ Accessibility is part of the implementation rather than a later cleanup:
 |       |-- styles/           Global responsive/accessibility CSS
 |       `-- test/             Shared Vitest DOM setup
 |-- packages/test-fixtures/   Synthetic fixture PDF, generator, provenance manifest
+|-- experiments/recognition-training/  Isolated TileNet data, CUDA runs and browser evaluation
 |-- docs/                     Architecture, constraints, issue plan, evidence
 `-- types/                    Narrow declarations for otherwise untyped tools
 ```
@@ -344,6 +345,13 @@ Accessibility is part of the implementation rather than a later cleanup:
 `apps/web/eval/` holds the recognition evaluation that `pnpm eval:recognition`
 runs, with its own Playwright config (`playwright.eval.config.ts`) so the
 ordinary browser suite stays fast and deterministic.
+
+`experiments/recognition-training/` is issue #38's synthetic training experiment.
+It uses an isolated, hash-locked Python environment for CUDA training and the
+existing pinned JavaScript dependencies for generation and a separate browser
+evaluation build. Its data, caches and candidate weights are ignored; recipes,
+source identities and reviewable metric reports are retained. It is outside
+the PWA dependency graph and never replaces the production model.
 
 The architecture lists future `packages/*` directories for core models,
 storage, readers, recognition, chess rules, the engine, and fixtures. They do
@@ -471,6 +479,14 @@ qualification JSON under `eval-results/qualification/` and traces under
 `eval-results/playwright-qualification/`. CI measures all three browser engines.
 See the [candidate protocol and evidence](investigations/issue-35-comparison.md)
 and [gate policy](evaluation.md#issue-35-research-measurement-and-qualification).
+
+The [TileNet experiment](../experiments/recognition-training/README.md) adds
+family-disjoint synthetic training/development/test data and CUDA recovery,
+ONNX parity and three-browser classifier checks. Both training seeds freeze
+before held-out inference; corpus v1 is used only afterward for regression.
+These classifier checks supplement the unchanged PDF-to-editable-board eval.
+The experiment's TypeScript/JavaScript sources join `pnpm check`; Python and
+browser execution use the commands documented inside the experiment.
 
 Layout screenshots attached by `layout.spec.ts` are evidence for human review,
 not auto-approved pixel snapshots. Playwright's WebKit engine is useful early
