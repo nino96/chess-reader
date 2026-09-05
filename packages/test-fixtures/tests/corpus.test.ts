@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { basename, join } from 'node:path';
 import { promisify } from 'node:util';
 
-import { loadImage } from '@napi-rs/canvas';
+import { createCanvas, loadImage } from '@napi-rs/canvas';
 import { describe, expect, it } from 'vitest';
 
 import { PAGE_SPECS } from '../generators/recognition-corpus-spec.mjs';
@@ -167,11 +167,46 @@ describe('printed-book recognition corpus v1', () => {
         'OVERVIEW.md',
         ...corpus.pages.map((page) => join('pages', basename(page.path))),
       ];
+      const mismatches: {
+        file: string;
+        expectedSha256: string;
+        actualSha256: string;
+        changedChannels: number | null;
+        maximumChannelDifference: number | null;
+      }[] = [];
       for (const relativePath of generatedFiles) {
         const regenerated = await readFile(join(tempDir, relativePath));
         const committed = await readFile(corpusPath(join('corpus/v1', relativePath)));
-        expect(regenerated.equals(committed), relativePath).toBe(true);
+        if (regenerated.equals(committed)) continue;
+        let changedChannels: number | null = null;
+        let maximumChannelDifference: number | null = null;
+        if (relativePath.endsWith('.png')) {
+          const pixels = async (bytes: Buffer) => {
+            const image = await loadImage(bytes);
+            const canvas = createCanvas(image.width, image.height);
+            const context = canvas.getContext('2d');
+            context.drawImage(image, 0, 0);
+            return context.getImageData(0, 0, image.width, image.height).data;
+          };
+          const [expected, actual] = await Promise.all([pixels(committed), pixels(regenerated)]);
+          changedChannels = 0;
+          maximumChannelDifference = 0;
+          for (let index = 0; index < expected.length; index += 1) {
+            const difference = Math.abs((expected[index] ?? 0) - (actual[index] ?? 0));
+            if (difference > 0) changedChannels += 1;
+            maximumChannelDifference = Math.max(maximumChannelDifference, difference);
+          }
+        }
+        mismatches.push({
+          file: relativePath,
+          expectedSha256: createHash('sha256').update(committed).digest('hex'),
+          actualSha256: createHash('sha256').update(regenerated).digest('hex'),
+          changedChannels,
+          maximumChannelDifference,
+        });
       }
+      // Retain exact-byte enforcement while distinguishing encoding from raster drift.
+      expect(mismatches, JSON.stringify({ corpusRegenerationMismatches: mismatches })).toEqual([]);
     } finally {
       await rm(tempDir, { recursive: true, force: true });
     }
