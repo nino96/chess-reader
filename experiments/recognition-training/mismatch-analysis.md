@@ -76,16 +76,26 @@ flat/hatch/halftone, 87/80/89 for 1.0/0.82/0.64 reduction, and 133 speckled
 boards. The failure therefore cannot be explained by a render regime that is
 exclusive to test.
 
-The class-specific, cross-seed collapses are consistent with missing glyph or
-print-family coverage. That is an inference from one held-out family, not a
-demonstration that the glyphs alone cause the failures: this evaluation cannot
-separate source artwork from its interaction with the synthetic print
-transformations. It also does not identify a particular additional family or
-transform that would remedy the mismatch.
+The class-specific, cross-seed collapses initially suggested missing glyph or
+print-family coverage. Subsequent post-freeze visual review exposed a stronger
+confound: [the SVG fidelity diagnostic](reports/svg-fidelity.json) proves that
+the pinned native decoder ignores embedded CSS class fills. That mechanism is
+used by 36/48 training glyphs and 9/12 held-out glyphs, but no development glyphs.
+The source-family distinction is therefore confounded by a renderer capability
+difference. It cannot support a clean conclusion about family generalization.
 
-The reports contain no evidence sufficient to justify a context-model
-experiment. The generated boards do not encode legal chess-position
-constraints, and the observed collisions combine several distinct classes into
-the same predicted class. Context could be evaluated in a separately designed,
-frozen experiment, but these results neither establish its benefit nor rule it
-out.
+A local contact sheet extracted seven existing frozen 32×32 square vectors,
+without inference or regeneration. Selected Q/q/P/p silhouettes were visible,
+but nominally white shapes looked unexpectedly dark. The diagnostic then
+compared identical source bytes in native canvas and Chromium, with synthetic
+class-fill and explicit-fill controls. The controlled fill failure, not the
+qualitative contact sheet alone, establishes the defect. Generated images stay
+ignored; raw diagnostic counts and hashes are retained.
+
+The models still fail the declared numeric gate on the exact frozen rasters.
+These measurements neither establish an architectural limitation nor justify a
+whole-board/context model. The generated positions are not constrained to legal
+games, and the available evidence does not show context can restore the lost
+source appearance. First correct and verify rendering in a separately declared
+data-quality experiment under #24, with a new untouched test lock; do not revise
+this experiment's data or rerun training after seeing its outcomes.

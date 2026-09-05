@@ -114,3 +114,27 @@ revise a numeric threshold, the frozen candidate, corpus v1 or any historical
 baseline. The original 25-pass/two-failure run is retained unchanged, with the
 new contract and its validation recorded separately in the comparison report.
 #24 remains open; physical-iPad testing is deferred/unrun.
+
+## Issue #38 bounded classifier training (2026-09-05)
+
+The [synthetic-first TileNet experiment](../../experiments/recognition-training/REPORT.md)
+completed the bounded local GB10 CUDA pilot and both predeclared full seeds.
+Neither retrained classifier produced an exact board on the locked held-out
+source family (0/256 each; raw square accuracy 79.72%/80.12%). Improvements on
+public corpus v1 do not establish generalization or permit production adoption.
+The STOP recommendation remains in force.
+
+A post-freeze diagnostic confirmed that the pinned native SVG renderer ignores
+embedded CSS fills, affecting source appearance in training and held-out data.
+This confounds the generalization interpretation; the results cannot establish
+a TileNet architecture limit. Correct and verify rendering under a new
+predeclared test lock before further training or architecture comparison.
+Neither the learned-localizer nor whole-board context trigger is supported.
+The original corpus and failed diagnostic remain intact; no second architecture
+is trained here.
+
+Reaffirm dedicated browser-worker/WASM inference, pinned self-hosted assets,
+unchanged production recognition, and all existing confidence, accuracy,
+privacy, offline and device gates. Experiment tooling and weights remain
+separate from the PWA runtime. #24 stays open; physical-iPad testing remains
+deferred/unrun. This evidence note changes no architectural decision or gate.

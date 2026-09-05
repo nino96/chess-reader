@@ -199,11 +199,11 @@ if (verifyOnly) {
     throw new Error('Existing held-out vector manifest differs from the canonical freeze');
   const existingFreeze = await readJson(freezePath);
   if (
-    existingFreeze['schemaVersion'] !== freeze['schemaVersion'] ||
-    existingFreeze['runKind'] !== freeze['runKind'] ||
-    existingFreeze['protocolSha256'] !== freeze['protocolSha256'] ||
-    existingFreeze['testManifestSha256'] !== freeze['testManifestSha256'] ||
-    JSON.stringify(existingFreeze['candidates']) !== JSON.stringify(freeze['candidates']) ||
+    existingFreeze['schemaVersion'] !== freeze.schemaVersion ||
+    existingFreeze['runKind'] !== freeze.runKind ||
+    existingFreeze['protocolSha256'] !== freeze.protocolSha256 ||
+    existingFreeze['testManifestSha256'] !== freeze.testManifestSha256 ||
+    JSON.stringify(existingFreeze['candidates']) !== JSON.stringify(freeze.candidates) ||
     typeof existingFreeze['frozenAt'] !== 'string'
   )
     throw new Error('Existing candidate freeze differs from the validated artifacts');
@@ -211,7 +211,7 @@ if (verifyOnly) {
   const existingFreezeBytes = await readFile(freezePath);
   if (
     existingEvidence['schemaVersion'] !== 1 ||
-    existingEvidence['runKind'] !== freeze['runKind'] ||
+    existingEvidence['runKind'] !== freeze.runKind ||
     existingEvidence['protocolSha256'] !== protocolSha256 ||
     existingEvidence['testManifestSha256'] !== testManifestSha256 ||
     existingEvidence['datasetSha256'] !== datasetSha256 ||

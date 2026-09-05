@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "commit": "e0303680548f6b461e4848aa72ca6c3903229e48",
+  "environment": {
+    "os": "Ubuntu 24.04.4 LTS",
+    "kernel": "6.17.0-1021-nvidia",
+    "arch": "arm64",
+    "node": "24.19.0",
+    "python": "3.12.3"
+  },
+  "checks": [
+    {
+      "command": "pnpm check",
+      "status": "passed",
+      "details": "TypeScript, Prettier and full ESLint passed after integration fixes."
+    },
+    {
+      "command": "node --test experiments/recognition-training/tests/*.test.mjs",
+      "status": "passed",
+      "tests": 7
+    },
+    {
+      "command": "pnpm --dir apps/web exec vitest run --config ../../experiments/recognition-training/browser/vitest.config.ts",
+      "status": "passed",
+      "files": 3,
+      "tests": 10
+    },
+    {
+      "command": "PYTHONPATH=experiments/recognition-training experiments/recognition-training/.venv/bin/python -m unittest discover -s experiments/recognition-training/tests -v",
+      "status": "passed",
+      "tests": 11
+    },
+    {
+      "command": "node experiments/recognition-training/freeze.ts --verify-only",
+      "status": "passed",
+      "details": "Validates original immutable freeze and complete earliest-minimum development checkpoint selection without writes."
+    },
+    {
+      "command": "node experiments/recognition-training/regression.ts",
+      "status": "passed",
+      "details": "Repeated preparation accepts identical bytes and preserves original regression vector hash."
+    },
+    {
+      "command": "python3 experiments/recognition-training/summarize.py --reports experiments/recognition-training/reports --output experiments/recognition-training/runs/comparison.json",
+      "status": "passed",
+      "decision": "STOP"
+    },
+    {
+      "command": "node experiments/recognition-training/scripts/svg-fidelity.mjs --output runs/svg-fidelity.json",
+      "status": "failed",
+      "exitCode": 1,
+      "details": "Confirmed native embedded CSS fill loss; retained actual failing diagnostic, no corpus/model changes."
+    }
+  ],
+  "earlierCheckFailures": [
+    {
+      "command": "pnpm exec vitest run experiments/recognition-training/browser/config.test.ts",
+      "result": "No files selected by product Vitest config; corrected to isolated experiment config."
+    },
+    {
+      "command": "pnpm check",
+      "result": "Nested raw report formatting then report formatting failures fixed; raw evidence bytes preserved under recursive existing ignore."
+    },
+    {
+      "command": "pnpm check",
+      "result": "New test/freeze lint errors fixed without rule changes; final full check passed."
+    }
+  ],
+  "sourceNote": "Final experiment browser runtime was committed at this HEAD; test-style/provenance and documentation fixes were validated in the working tree and committed in follow-up history.",
+  "physicalIpad": "deferred/unrun",
+  "overallExperimentStatus": "STOP: numeric promotion failed and source fidelity confounds generalization.",
+  "finalArtifactAudit": {
+    "markdownFiles": 10,
+    "localLinksChecked": 110,
+    "brokenLinks": 0,
+    "privacyPatternMatches": 0,
+    "trackedOrUnignoredLargeArtifacts": 0,
+    "protectedFilesUnchanged": 140,
+    "method": "Read changed Markdown local links; scan tracked and unignored experiment source/reports for absolute personal paths and placement strings; compare protected Git blobs to merged #37."
+  }
+}

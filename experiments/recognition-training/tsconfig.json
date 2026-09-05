@@ -10,7 +10,9 @@
     "outDir": "node_modules/.tsbuild/training",
     "paths": {
       "@napi-rs/canvas": ["../../packages/test-fixtures/node_modules/@napi-rs/canvas"],
-      "@scoriiu/fenshot": ["../../packages/test-fixtures/node_modules/@scoriiu/fenshot"]
+      "@scoriiu/fenshot": ["../../packages/test-fixtures/node_modules/@scoriiu/fenshot"],
+      "@playwright/test": ["../../apps/web/node_modules/@playwright/test"],
+      "playwright": ["../../node_modules/.pnpm/node_modules/playwright"]
     },
     "rewriteRelativeImportExtensions": true
   },

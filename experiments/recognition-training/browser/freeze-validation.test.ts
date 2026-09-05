@@ -59,14 +59,14 @@ describe('freeze validation', () => {
   it('rejects a held-out lock whose artifact metadata is changed', () => {
     const { dataset, testLock } = lockedInputs();
     testLock.labels = { ...testLock.labels, byteLength: testLock.labels.byteLength + 1 };
-    expect(() =>
+    expect(() => {
       validateCanonicalLocks({
         datasetManifestSha256: CANONICAL_DATASET_MANIFEST_SHA256,
         testLockSha256: CANONICAL_TEST_LOCK_SHA256,
         dataset,
         testLock,
-      }),
-    ).toThrow('Held-out label metadata');
+      });
+    }).toThrow('Held-out label metadata');
   });
 
   it('selects the earliest epoch when development losses tie', () => {
@@ -75,12 +75,12 @@ describe('freeze validation', () => {
       { epoch: 2, trainMeanCrossEntropy: 0.8, devMeanCrossEntropy: 0.4 },
       { epoch: 3, trainMeanCrossEntropy: 0.7, devMeanCrossEntropy: 0.4 },
     ];
-    expect(() =>
-      validateCheckpointSelection(losses, { selectedEpoch: 2, selectedDevLoss: 0.4 }, 3),
-    ).not.toThrow();
-    expect(() =>
-      validateCheckpointSelection(losses, { selectedEpoch: 3, selectedDevLoss: 0.4 }, 3),
-    ).toThrow('minimum development loss');
+    expect(() => {
+      validateCheckpointSelection(losses, { selectedEpoch: 2, selectedDevLoss: 0.4 }, 3);
+    }).not.toThrow();
+    expect(() => {
+      validateCheckpointSelection(losses, { selectedEpoch: 3, selectedDevLoss: 0.4 }, 3);
+    }).toThrow('minimum development loss');
   });
 
   it('rejects non-contiguous loss history', () => {
@@ -88,8 +88,8 @@ describe('freeze validation', () => {
       { epoch: 1, trainMeanCrossEntropy: 1, devMeanCrossEntropy: 0.5 },
       { epoch: 3, trainMeanCrossEntropy: 0.8, devMeanCrossEntropy: 0.4 },
     ];
-    expect(() =>
-      validateCheckpointSelection(losses, { selectedEpoch: 2, selectedDevLoss: 0.4 }, 2),
-    ).toThrow('contiguous');
+    expect(() => {
+      validateCheckpointSelection(losses, { selectedEpoch: 2, selectedDevLoss: 0.4 }, 2);
+    }).toThrow('contiguous');
   });
 });

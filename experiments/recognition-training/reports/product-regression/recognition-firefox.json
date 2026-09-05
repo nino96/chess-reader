@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "suite": "eval:recognition",
+  "command": "pnpm eval:recognition",
+  "commit": "e0303680548f6b461e4848aa72ca6c3903229e48",
+  "date": "2026-09-05T18:39:17.488Z",
+  "environment": {
+    "os": "linux 6.17.0-1021-nvidia",
+    "node": "v24.19.0",
+    "ci": false
+  },
+  "browser": "firefox",
+  "fixture": {
+    "id": "pdf-synthetic-diagram-01",
+    "sha256": "d5d80caf72ebe645d0932576cb55b9f28c6faffea2666e09ca713f1d8af6c95f",
+    "manifestSchemaVersion": 1
+  },
+  "recognizerVersion": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0",
+  "runs": [
+    {
+      "run": 0,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 1514,
+      "inferenceMs": 918,
+      "coldStart": true
+    },
+    {
+      "run": 1,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 906,
+      "inferenceMs": 903,
+      "coldStart": false
+    },
+    {
+      "run": 2,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 906,
+      "inferenceMs": 903,
+      "coldStart": false
+    },
+    {
+      "run": 3,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 919,
+      "inferenceMs": 916,
+      "coldStart": false
+    },
+    {
+      "run": 4,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 908,
+      "inferenceMs": 905,
+      "coldStart": false
+    },
+    {
+      "run": 5,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 912,
+      "inferenceMs": 908,
+      "coldStart": false
+    }
+  ],
+  "summary": {
+    "exactBoardAccuracy": 1,
+    "coldTotalMs": {
+      "count": 1,
+      "min": 1514,
+      "p50": 1514,
+      "p95": 1514,
+      "max": 1514
+    },
+    "warmTotalMs": {
+      "count": 5,
+      "min": 906,
+      "p50": 908,
+      "p95": 919,
+      "max": 919
+    },
+    "warmInferenceMs": {
+      "count": 5,
+      "min": 903,
+      "p50": 905,
+      "p95": 916,
+      "max": 916
+    }
+  },
+  "provisionalTargets": {
+    "note": "docs/evaluation.md \u00a76 targets apply to the reference iPad/Android devices; this run is a laptop-browser baseline and is recorded, not asserted.",
+    "warmP50MsTarget": 1000,
+    "warmP95MsTarget": 2000
+  },
+  "nonSameOriginRequests": [],
+  "originalRawSha256": "46d4522df158f5e4dfa963e013a6a9317a77a88f473e3a61ff3b831c98fc1cac",
+  "redaction": "Removed placement strings from every run for repository evidence privacy; metrics/timings unchanged."
+}

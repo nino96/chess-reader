@@ -388,3 +388,22 @@ corpus accuracy, detection, confidence, latency and device gates remain required
 for #24; a candidate below them remains ineligible. The technical recommendation
 is STOP production adoption pending the bounded classifier/localizer research
 and device qualifications tracked in #24. Physical iPad remains deferred/unrun.
+
+## Issue #38 isolated training evidence
+
+The [TileNet training report](../experiments/recognition-training/REPORT.md)
+applies a [predeclared protocol](../experiments/recognition-training/protocol.json)
+to a separate licensed synthetic train/development/test corpus. Corpus v1 and
+all historical baselines remain unchanged and are used only for post-freeze
+regression. Neither seed meets held-out promotion criteria. Improved public
+regression scores do not override that failure. A post-freeze SVG fidelity
+diagnostic also fails: the native decoder drops embedded CSS fills, so the
+held-out failure is not clean evidence of architecture/generalization limits.
+The original data stays frozen; rendering correction requires a new test lock.
+
+CUDA training, CPU parity/inference and isolated three-browser classifier
+measurements supplement the existing PDF selection -> worker -> editable-board
+checkpoint. Experiment commands, source locks, failed attempts, confidence-aware
+metrics, raw timing distributions and provenance are retained under
+`experiments/recognition-training/`. No production recognizer, threshold or
+qualification command changes. #24 remains open and physical iPad is deferred/unrun.

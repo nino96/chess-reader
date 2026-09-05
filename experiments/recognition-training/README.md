@@ -8,6 +8,12 @@ and [ADR 0005](../../docs/decisions/0005-browser-recognition.md) remain the
 architectural constraints. [#24](https://github.com/nino96/chess-reader/issues/24)
 stays open; physical-iPad execution is **deferred/unrun**.
 
+The [completed report](REPORT.md) records a **STOP** result for both seeds,
+including every failed attempt and a confirmed native SVG CSS-rendering
+confound. This directory reproduces that frozen experiment; its corpus must not
+be treated as verified faithful source rendering. Correcting the renderer and
+training again requires a new predeclared test lock.
+
 ## Predeclared experiment
 
 [protocol.json](protocol.json) freezes seeds, budgets, architecture, export
@@ -150,3 +156,43 @@ After freeze, CPU evaluation uses `evaluate_onnx.py --model <frozen ONNX>
 <new report>`, from this directory with `.venv/bin/python`. The model must be
 one of the three frozen identities. The shipped control path is recorded in
 the local freeze alongside both candidates.
+
+## Auditing retained evidence
+
+After generating local inputs, `node experiments/recognition-training/freeze.ts
+--verify-only` validates the existing freeze without rewriting it. The additional
+canonical-lock and minimum-development-loss guards were added during post-freeze
+review and checked against the already frozen artifacts. `regression.ts` now
+refuses to replace different vector/wrapper bytes and writes separate local
+source/preprocessing provenance, explicitly marked as recorded after initial
+inference. These checks do not change the original freeze timestamp or candidate
+identities.
+
+The complete browser pass uses sequential requests of at most 16 boards within
+each initialized session. This bounds work under the unchanged 60-second
+watchdog; per-board timings and complete input order are retained. See the
+failed unchunked attempt and measured Firefox explanation in the report.
+
+The following commands validate experiment boundaries and derive the promotion
+decision from the committed raw browser evidence:
+
+```sh
+pnpm --dir apps/web exec vitest run --config ../../experiments/recognition-training/browser/vitest.config.ts
+python3 experiments/recognition-training/summarize.py --reports experiments/recognition-training/reports --output experiments/recognition-training/runs/comparison.json
+```
+
+The ordinary `pnpm test:unit` command covers the product tests; the isolated
+experiment's Node, Python and browser unit commands above must also be run.
+
+After fetching source assets, reproduce the post-freeze source-fidelity diagnostic:
+
+```sh
+node experiments/recognition-training/scripts/svg-fidelity.mjs
+```
+
+It exits **1** on the pinned environment because native SVG decoding loses
+embedded CSS class fills. Its synthetic explicit-fill and browser controls
+identify the defect; `runs/svg-fidelity.json` retains the measured failure.
+This is an actual data-quality failure, not a passing test or an unsupported
+browser exception. Resolve it under a new corpus/test lock before starting new
+training; do not silently repair or relabel the frozen historical data here.

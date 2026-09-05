@@ -95,7 +95,9 @@ it('rejects repeated annotation identities across historical pages', () => {
   };
   writeJson(manifestPath, manifest);
   expect(() => parseVectorManifest(manifestPath, vectorsPath)).toThrow('board identities');
-  manifest.labels[1]!.boardId = 'v1-distinct-page-board';
+  const secondBoard = manifest.labels[1];
+  if (!secondBoard) throw new Error('Missing second regression board');
+  secondBoard.boardId = 'v1-distinct-page-board';
   writeJson(manifestPath, manifest);
   expect(parseVectorManifest(manifestPath, vectorsPath).labels).toHaveLength(2);
 });

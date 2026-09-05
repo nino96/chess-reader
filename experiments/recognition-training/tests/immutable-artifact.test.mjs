@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { writeImmutable } from '../immutable-artifact.ts';
 
-test('reproduction verifies identical bytes and rejects replacement without data loss', async () => {
+await test('reproduction verifies identical bytes and rejects replacement without data loss', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'training-immutable-'));
   try {
     const path = join(directory, 'artifact');

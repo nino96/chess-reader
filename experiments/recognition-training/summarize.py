@@ -32,13 +32,20 @@ def summarize(directory: Path) -> dict:
         raw = (directory / name).read_bytes()
         output['artifacts'][name] = hashlib.sha256(raw).hexdigest()
         return json.loads(raw)
+    fidelity = read('svg-fidelity.json')
+    output['sourceFidelityStatus'] = fidelity['status']
+    output['interpretation'] = 'Rendering defect confounds generalization; retain frozen results and require a new data-quality/test-lock experiment.' if fidelity['status'] == 'failed' else 'See retained source fidelity and promotion evidence.'
+    provenance = read('regression-provenance.json')
+    if provenance['freezeFileSha256'] != freeze['freezeFileSha256']:
+        raise ValueError('Regression provenance does not bind the candidate freeze')
     for browser in ('chromium', 'firefox', 'webkit'):
         rows = {}
         for candidate_id, identity in candidates.items():
             for role, count in (('print-held-out-v1', 256), ('corpus-v1-regression', 14)):
                 report = read(f'browser-{browser}-{candidate_id}-{role}.json')
                 summary = report['summary']
-                if (report['candidate']['modelSha256'] != identity['sha256'] or
+                if (report['candidate']['id'] != candidate_id or report['candidate']['seed'] != identity['seed'] or
+                    report['candidate']['modelSha256'] != identity['sha256'] or
                     report['freeze']['protocolSha256'] != output['protocolSha256'] or
                     report['freeze']['testManifestSha256'] != freeze['testManifestSha256'] or
                     report['environment']['browser']['name'] != browser or
@@ -48,6 +55,8 @@ def summarize(directory: Path) -> dict:
                     sum(map(sum, summary['confusion'])) != count * 64 or
                     len(report['rawTiming']['fullPassInferenceMs']) != count):
                     raise ValueError('Incomplete or inconsistent browser evidence')
+                if role == 'corpus-v1-regression' and report['vectors']['sha256'] != provenance['vectorsSha256']:
+                    raise ValueError('Regression vectors differ from retained preprocessing provenance')
                 rows[(candidate_id, role)] = report
             faults = read(f'browser-faults-{browser}-{candidate_id}.json')
             if (faults['candidate']['sha256'] != identity['sha256'] or faults['nonSameOriginRequests'] or

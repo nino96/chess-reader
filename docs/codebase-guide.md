@@ -486,7 +486,13 @@ ONNX parity and three-browser classifier checks. Both training seeds freeze
 before held-out inference; corpus v1 is used only afterward for regression.
 These classifier checks supplement the unchanged PDF-to-editable-board eval.
 The experiment's TypeScript/JavaScript sources join `pnpm check`; Python and
-browser execution use the commands documented inside the experiment.
+browser execution use the commands documented inside the experiment. The
+[completed report](../experiments/recognition-training/REPORT.md) retains both
+failed promotion results; `freeze.ts --verify-only` audits immutable inputs and
+checkpoint selection, and `summarize.py` derives the decision from raw reports.
+The isolated `svg:fidelity` diagnostic records the native SVG CSS-fill failure;
+its nonzero result is retained and requires a new data-quality/test-lock
+experiment before further training.
 
 Layout screenshots attached by `layout.spec.ts` are evidence for human review,
 not auto-approved pixel snapshots. Playwright's WebKit engine is useful early

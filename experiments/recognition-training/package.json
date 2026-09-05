@@ -6,6 +6,7 @@
   "scripts": {
     "fetch:sources": "node scripts/fetch-sources.mjs",
     "generate:data": "node scripts/generate-dataset.mjs",
+    "svg:fidelity": "node scripts/svg-fidelity.mjs",
     "verify:data": "node scripts/verify-dataset.mjs",
     "test": "node --test tests/*.test.mjs"
   }
