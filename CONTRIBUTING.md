@@ -7,14 +7,16 @@ first; this file does not repeat it.
 
 ## Prerequisites
 
-- Node.js >= 22.12 (see `engines.node` in the root `package.json`).
+- Node.js 24 LTS is recommended; Node.js >= 22.12 is required (see
+  `engines.node` in the root `package.json`).
 - pnpm, via Corepack, pinned by the root `packageManager` field. Run
-  `corepack enable` once, then `pnpm install` picks up the pinned version
-  automatically — do not install a different pnpm globally for this repo.
-- After `pnpm install`, run
-  `pnpm --filter @chess-reader/web exec playwright install chromium firefox webkit`
-  once per machine to fetch the browser binaries used by `test:e2e`
-  (Playwright is a dependency of `apps/web`, not of the workspace root).
+  `corepack enable` once, then `corepack install` in the repository root to
+  install the pinned version — do not install a different pnpm globally for
+  this repo.
+- Follow the platform-specific first-time setup in
+  [`README.md`](README.md#getting-started). In particular, supported Linux
+  systems need Playwright's operating-system dependencies as well as its
+  browser binaries; Windows and macOS only need the browser download.
 
 ## Command set
 

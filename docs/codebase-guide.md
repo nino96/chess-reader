@@ -357,14 +357,22 @@ This is a pnpm workspace. Root commands delegate to `@chess-reader/web` where
 appropriate, which gives contributors one command surface even as more
 packages are added later.
 
-Prerequisites are Node.js 22.12 or newer and the exact pnpm version named in
-the root `packageManager` field.
+Prerequisites are Node.js 22.12 or newer (Node.js 24 LTS is recommended) and
+the exact pnpm version named in the root `packageManager` field. The complete
+platform-specific setup and troubleshooting path lives in the root
+[`README.md`](../README.md#getting-started).
 
 ```sh
+corepack enable
+corepack install
 pnpm install --frozen-lockfile
 pnpm --filter @chess-reader/web exec playwright install chromium firefox webkit
 pnpm dev
 ```
+
+That browser-install command is for Windows and macOS. On supported
+Debian/Ubuntu systems, including ARM64, add `--with-deps` after `install` so
+Playwright also installs its required operating-system libraries.
 
 The commands that actually exist now are:
 
