@@ -1,0 +1,870 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "command": "../.venv/bin/python verify_quality.py",
+  "commit": "9240d93d91487dcaedbff5f7108479a342dcd8d6",
+  "datasetManifestSha256": "509d7ebb604e02f23eb354d16bfead096c7b224d100c7d1a9213e102bf4f5544",
+  "protocolSha256": "242d07996ecab07a0b65402ea776317ecf23bbee246d975d3575003e392e1890",
+  "checks": {
+    "exactReplay": true,
+    "splitDisjointness": true,
+    "historicalSyntheticExclusion": true,
+    "allClasses": true,
+    "allDegradationCombinations": true,
+    "distributionRecount": true,
+    "finitePixelRange": true,
+    "generatorHashes": true
+  },
+  "splits": {
+    "train": {
+      "boards": 4096,
+      "classes": [
+        188625,
+        4096,
+        4607,
+        4627,
+        4666,
+        4633,
+        14034,
+        4096,
+        4663,
+        4664,
+        4648,
+        4669,
+        14116
+      ],
+      "textures": {
+        "flat": 1213,
+        "halftone": 1540,
+        "hatch": 1343
+      },
+      "reductions": {
+        "1": 1375,
+        "0.82": 1372,
+        "0.64": 1349
+      },
+      "speckledBoards": 2073,
+      "crossTab": [
+        {
+          "family": "celtic",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 44
+        },
+        {
+          "family": "celtic",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 48
+        },
+        {
+          "family": "celtic",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 49
+        },
+        {
+          "family": "celtic",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 55
+        },
+        {
+          "family": "celtic",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 51
+        },
+        {
+          "family": "celtic",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 45
+        },
+        {
+          "family": "celtic",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 54
+        },
+        {
+          "family": "celtic",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 57
+        },
+        {
+          "family": "celtic",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 61
+        },
+        {
+          "family": "celtic",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 69
+        },
+        {
+          "family": "celtic",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 77
+        },
+        {
+          "family": "celtic",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 81
+        },
+        {
+          "family": "celtic",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 51
+        },
+        {
+          "family": "celtic",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 60
+        },
+        {
+          "family": "celtic",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 48
+        },
+        {
+          "family": "celtic",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 54
+        },
+        {
+          "family": "celtic",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 67
+        },
+        {
+          "family": "celtic",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 53
+        },
+        {
+          "family": "chessnut",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 56
+        },
+        {
+          "family": "chessnut",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 39
+        },
+        {
+          "family": "chessnut",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 50
+        },
+        {
+          "family": "chessnut",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 52
+        },
+        {
+          "family": "chessnut",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 59
+        },
+        {
+          "family": "chessnut",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 53
+        },
+        {
+          "family": "chessnut",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 62
+        },
+        {
+          "family": "chessnut",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 70
+        },
+        {
+          "family": "chessnut",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 58
+        },
+        {
+          "family": "chessnut",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 68
+        },
+        {
+          "family": "chessnut",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 57
+        },
+        {
+          "family": "chessnut",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 67
+        },
+        {
+          "family": "chessnut",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 62
+        },
+        {
+          "family": "chessnut",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 59
+        },
+        {
+          "family": "chessnut",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 54
+        },
+        {
+          "family": "chessnut",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 53
+        },
+        {
+          "family": "chessnut",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 52
+        },
+        {
+          "family": "chessnut",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 53
+        },
+        {
+          "family": "fantasy",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 46
+        },
+        {
+          "family": "fantasy",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 45
+        },
+        {
+          "family": "fantasy",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 44
+        },
+        {
+          "family": "fantasy",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 49
+        },
+        {
+          "family": "fantasy",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 51
+        },
+        {
+          "family": "fantasy",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 61
+        },
+        {
+          "family": "fantasy",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 74
+        },
+        {
+          "family": "fantasy",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 57
+        },
+        {
+          "family": "fantasy",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 62
+        },
+        {
+          "family": "fantasy",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 75
+        },
+        {
+          "family": "fantasy",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 55
+        },
+        {
+          "family": "fantasy",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 64
+        },
+        {
+          "family": "fantasy",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 72
+        },
+        {
+          "family": "fantasy",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 60
+        },
+        {
+          "family": "fantasy",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 56
+        },
+        {
+          "family": "fantasy",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 55
+        },
+        {
+          "family": "fantasy",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 51
+        },
+        {
+          "family": "fantasy",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 47
+        },
+        {
+          "family": "spatial",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 50
+        },
+        {
+          "family": "spatial",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 53
+        },
+        {
+          "family": "spatial",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 57
+        },
+        {
+          "family": "spatial",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 55
+        },
+        {
+          "family": "spatial",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 54
+        },
+        {
+          "family": "spatial",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 47
+        },
+        {
+          "family": "spatial",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 45
+        },
+        {
+          "family": "spatial",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 61
+        },
+        {
+          "family": "spatial",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 69
+        },
+        {
+          "family": "spatial",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 75
+        },
+        {
+          "family": "spatial",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 59
+        },
+        {
+          "family": "spatial",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 63
+        },
+        {
+          "family": "spatial",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 65
+        },
+        {
+          "family": "spatial",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 59
+        },
+        {
+          "family": "spatial",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 49
+        },
+        {
+          "family": "spatial",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 55
+        },
+        {
+          "family": "spatial",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 52
+        },
+        {
+          "family": "spatial",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 56
+        }
+      ]
+    },
+    "dev": {
+      "boards": 256,
+      "classes": [
+        11808,
+        256,
+        275,
+        276,
+        278,
+        280,
+        877,
+        256,
+        299,
+        320,
+        315,
+        283,
+        861
+      ],
+      "textures": {
+        "halftone": 94,
+        "flat": 102,
+        "hatch": 60
+      },
+      "reductions": {
+        "0.64": 87,
+        "1": 82,
+        "0.82": 87
+      },
+      "speckledBoards": 134,
+      "crossTab": [
+        {
+          "family": "firi",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 18
+        },
+        {
+          "family": "firi",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 14
+        },
+        {
+          "family": "firi",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 20
+        },
+        {
+          "family": "firi",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 17
+        },
+        {
+          "family": "firi",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 13
+        },
+        {
+          "family": "firi",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 20
+        },
+        {
+          "family": "firi",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 11
+        },
+        {
+          "family": "firi",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 25
+        },
+        {
+          "family": "firi",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 10
+        },
+        {
+          "family": "firi",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 14
+        },
+        {
+          "family": "firi",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 17
+        },
+        {
+          "family": "firi",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 17
+        },
+        {
+          "family": "firi",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 9
+        },
+        {
+          "family": "firi",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 10
+        },
+        {
+          "family": "firi",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 16
+        },
+        {
+          "family": "firi",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 10
+        },
+        {
+          "family": "firi",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 8
+        },
+        {
+          "family": "firi",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 7
+        }
+      ]
+    },
+    "test": {
+      "boards": 256,
+      "classes": [
+        11704,
+        256,
+        295,
+        273,
+        290,
+        293,
+        958,
+        256,
+        332,
+        295,
+        299,
+        266,
+        867
+      ],
+      "textures": {
+        "flat": 87,
+        "halftone": 100,
+        "hatch": 69
+      },
+      "reductions": {
+        "0.82": 77,
+        "1": 86,
+        "0.64": 93
+      },
+      "speckledBoards": 123,
+      "crossTab": [
+        {
+          "family": "rhosgfx",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 22
+        },
+        {
+          "family": "rhosgfx",
+          "style": "flat",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 16
+        },
+        {
+          "family": "rhosgfx",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 11
+        },
+        {
+          "family": "rhosgfx",
+          "style": "flat",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 13
+        },
+        {
+          "family": "rhosgfx",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 11
+        },
+        {
+          "family": "rhosgfx",
+          "style": "flat",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 14
+        },
+        {
+          "family": "rhosgfx",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 19
+        },
+        {
+          "family": "rhosgfx",
+          "style": "halftone",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 15
+        },
+        {
+          "family": "rhosgfx",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 15
+        },
+        {
+          "family": "rhosgfx",
+          "style": "halftone",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 17
+        },
+        {
+          "family": "rhosgfx",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 18
+        },
+        {
+          "family": "rhosgfx",
+          "style": "halftone",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 16
+        },
+        {
+          "family": "rhosgfx",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": false,
+          "boards": 13
+        },
+        {
+          "family": "rhosgfx",
+          "style": "hatch",
+          "reduction": 0.64,
+          "speckled": true,
+          "boards": 8
+        },
+        {
+          "family": "rhosgfx",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": false,
+          "boards": 7
+        },
+        {
+          "family": "rhosgfx",
+          "style": "hatch",
+          "reduction": 0.82,
+          "speckled": true,
+          "boards": 14
+        },
+        {
+          "family": "rhosgfx",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": false,
+          "boards": 17
+        },
+        {
+          "family": "rhosgfx",
+          "style": "hatch",
+          "reduction": 1,
+          "speckled": true,
+          "boards": 10
+        }
+      ]
+    }
+  },
+  "scriptSha256": "cb23956bca925732b0eb58f8cd202e06c9b3783b1731ac2b582b83edbeca128d"
+}

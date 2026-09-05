@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "issue": 38,
+  "baseCommit": "ccc575ffecbc98dd10bd8f497887d0e481bc1b77",
+  "upstreamRevision": "f964fd16de798f73db3ea0f9f1e374e4052a2665",
+  "architecture": "TileNet-321805-unchanged",
+  "classes": "1KQRBNPkqrbnp",
+  "confidenceFloor": 0.7,
+  "dtype": "float32",
+  "onnx": {
+    "opset": 17,
+    "input": "tiles",
+    "output": "probs",
+    "atol": 1e-5,
+    "rtol": 0.0001
+  },
+  "pilot": {
+    "seed": 381,
+    "trainBoards": 38,
+    "devBoards": 16,
+    "epochs": 2,
+    "wallSeconds": 600
+  },
+  "full": {
+    "seeds": [3811, 3812],
+    "trainBoards": 4096,
+    "devBoards": 256,
+    "testBoards": 256,
+    "epochs": 12,
+    "batchSize": 2048,
+    "learningRate": 0.002,
+    "weightDecay": 0.0001,
+    "labelSmoothing": 0.05,
+    "scheduler": "cosine",
+    "checkpointSelection": "minimum development mean cross-entropy; earliest epoch wins ties",
+    "wallSecondsPerSeed": 2700
+  },
+  "totalTrainingWallSeconds": 6000,
+  "generationWallSecondsPerSplit": 1200,
+  "testPolicy": "No held-out or corpus-v1 inference until both full-seed candidates and selection rule are frozen. No post-test tuning or training extensions.",
+  "promotion": {
+    "minimumExactBoardAccuracy": 0.95,
+    "minimumSquareAccuracy": 0.995,
+    "maximumReliableWrong": 0,
+    "lowConfidenceCountsAsFailure": true,
+    "exactBoardNumerator": "reliable exact boards (all 64 squares at confidence >= 0.7)",
+    "squareNumerator": "correct squares at confidence >= 0.7",
+    "corpusV1Regression": "No loss of reliable exact boards or correct squares and no increase in reliable wrong compared with shipped weights on identical frozen vectors."
+  },
+  "physicalIpad": "deferred/unrun",
+  "productionAdoption": false,
+  "experimentId": "synthetic-tilenet-v2",
+  "dataQuality": {
+    "renderer": "pinned Chromium SVG to RGBA/PNG; native PNG compositing only",
+    "requiredBeforeTraining": "Canonical data-quality.json with automated correctness checks and lead visual review bound to dataset hash",
+    "datasetSeed": 941363198,
+    "textures": ["flat", "hatch", "halftone"],
+    "reductions": [1, 0.82, 0.64],
+    "speckleDensity": [0, 0.0015],
+    "priorExposure": "New boards and vectors from the same source families. RhosGFX source family and v1 test outcomes were previously exposed; this is corrected-renderer replication, not blind independent source-family validation."
+  },
+  "preservation": {
+    "priorExperimentCommit": "9240d93d91487dcaedbff5f7108479a342dcd8d6",
+    "policy": "Original protocol, generator, sources, manifests, reports, vectors and candidates remain byte-identical."
+  }
+}

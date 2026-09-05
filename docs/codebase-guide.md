@@ -658,3 +658,15 @@ Maintenance checklist for agents:
 - **ADR:** an architecture decision record under `docs/decisions`.
 - **Fixture:** controlled test input with recorded provenance and expected
   behavior.
+
+### Renderer-corrected training replication (#38)
+
+[`experiments/recognition-training/v2/`](../experiments/recognition-training/v2/README.md)
+contains the new, separately locked synthetic experiment. Its pinned browser SVG
+renderer feeds PNGs to the native compositor. Pretraining gates verify every source,
+class and tile order, exact full-data replay, all hatch/halftone/degradation combinations,
+and reviewed source/actual-tensor images. Its trainer and freeze bind those reports
+and image hashes before allowing CUDA runs. The original experiment remains intact.
+The model/data loader, Python environment and isolated ORT-Web browser harness are
+shared; production recognition is unaffected. See the v2 README for exact commands,
+repeat-family test limitations and the separate learned-localizer decision trigger.

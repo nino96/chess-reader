@@ -20,6 +20,8 @@ export default defineConfig(
     'experiments/recognition-training/cache/**',
     'experiments/recognition-training/data/**',
     'experiments/recognition-training/runs/**',
+    'experiments/recognition-training/v2/data/**',
+    'experiments/recognition-training/v2/runs/**',
   ]),
   js.configs.recommended,
   tseslint.configs.strictTypeChecked,

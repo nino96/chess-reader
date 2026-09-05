@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "sourceCommit": "9240d93d91487dcaedbff5f7108479a342dcd8d6",
+  "preTraining": true,
+  "generationSeconds": 26.73,
+  "replaySeconds": 26.37,
+  "datasetManifestSha256": "509d7ebb604e02f23eb354d16bfead096c7b224d100c7d1a9213e102bf4f5544",
+  "preservedPreflight": "Two data pairs retained ignored: preflight-full/replay exposed nondeterministic object key order with identical artifact contents; prelock-full/replay passed exact replay before a formatting-only dependency hash changed. Final pair regenerated from final source and passed exact replay. No training or test inference occurred.",
+  "visualEvidenceSha256": "a4ade8a8b2f9d1cb5e9a490c3e1fbe39ec20793aef8133711aaa2ee69add799b",
+  "nodeTests": "6 passed, including real 72-source browser fidelity gate, 10.06 seconds",
+  "pythonTests": "7 passed, including missing/tampered evidence and v1/v2 freeze isolation"
+}

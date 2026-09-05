@@ -1,0 +1,1779 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "commit": "9240d93d91487dcaedbff5f7108479a342dcd8d6",
+  "sourceCache": {
+    "path": "../data/source-cache",
+    "verifiedFamilySha256": {
+      "chessnut": "569456b1ccd41a5f5787101ca05f622e65e1435485d490d1bf5c357c90cc02fb",
+      "fantasy": "4053a01a604fa643a35a7a9fb5d97e4f917e624ca5020c26f40b0841b7c47be7",
+      "spatial": "85b182d35bc6d871337c43e8746e14860d24a16cd221527038423ae7e74e0478",
+      "celtic": "3efc5aebd5a21c9a2c7a95f75b61016720c86e57ef842dbb4000e047b9affe12",
+      "firi": "814b6e2cd6e0cfaf91d85dfa5788712331f0a5e020e14a67d76e2a7e3b7d1c53",
+      "rhosgfx": "f9af3057d37f6e2a8639afa548b03bb63881c8279cc81955987f3702fb8b701f"
+    }
+  },
+  "renderer": {
+    "pixels": 72,
+    "chromium": "151.0.7922.34",
+    "firefox": "153.0",
+    "canonical": "Chromium SVG image decoded to transparent PNG; native compositing reads PNG only"
+  },
+  "limits": {
+    "normalizedWhiteCompositeMae": 0.06,
+    "normalizedAlphaMae": 0.03
+  },
+  "controls": {
+    "chromium": {
+      "classCssRgbaSha256": "34d1822494e64ec96a1e1a8b080584308b452b8be2e351320d0dcd0ce138ac89",
+      "explicitFillRgbaSha256": "34d1822494e64ec96a1e1a8b080584308b452b8be2e351320d0dcd0ce138ac89",
+      "exact": true
+    },
+    "firefox": {
+      "classCssRgbaSha256": "34d1822494e64ec96a1e1a8b080584308b452b8be2e351320d0dcd0ce138ac89",
+      "explicitFillRgbaSha256": "34d1822494e64ec96a1e1a8b080584308b452b8be2e351320d0dcd0ce138ac89",
+      "exact": true
+    }
+  },
+  "assetCount": 72,
+  "assets": [
+    {
+      "family": "chessnut",
+      "code": "wK",
+      "file": "wK.svg",
+      "sourceSha256": "31bffcebab6aedc808680824571641625ecd263804bd6a6963be78d5962a7935",
+      "chromium": {
+        "rgbaSha256": "a43e68e44d1438f6cc8457830836164a6aebacb00e10bd908e1dc3a6c98158db",
+        "pngSha256": "1b4200d1cfb14814f1eb81ffb75b0fbaf969bc6b9d40d0a3b1952515c6ffda93",
+        "nonTransparentPixels": 2027,
+        "darkPixels": 801,
+        "lightPixels": 1006,
+        "alphaTotal": 493205
+      },
+      "firefox": {
+        "rgbaSha256": "f1e6e0a0af2fe11e2fae7e59d314b3c014ebcfb4af6fde1c51af2854a70f556f",
+        "pngSha256": "0d46ade98692ddc1c4eab1099e95526016e2e416d279013f20cd5ef7e524c07e"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0008726611559656543,
+        "normalizedAlphaMae": 0.00037142943597191964
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "wQ",
+      "file": "wQ.svg",
+      "sourceSha256": "21d84a10b2d0f7ebeff93bc452a12e66dd6928b35d7db21d20b59fcc520584fb",
+      "chromium": {
+        "rgbaSha256": "2dc0fc489706d1906eab6d2145744b51c6c6e5ac180a505cb183fceda13039ae",
+        "pngSha256": "3111c771ecf52449f25ccb89e1ebfb61eecf0f668ed39886a056c51ae67b2a66",
+        "nonTransparentPixels": 2227,
+        "darkPixels": 1231,
+        "lightPixels": 765,
+        "alphaTotal": 512090
+      },
+      "firefox": {
+        "rgbaSha256": "dd6561579e58166d48e63122c3a817d13d2380adb9d3f71e7f947bf88635f4a1",
+        "pngSha256": "49d5ab1f04d95871fef7c737fc286f1b3fa01ede8b6aa09d8afb0184d3b5d370"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.003715949705953548,
+        "normalizedAlphaMae": 0.002848886468167514
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "wR",
+      "file": "wR.svg",
+      "sourceSha256": "0bb5bc1be4100f5f3158cc568df44ae16b5f9110a342c4186aba007729a65052",
+      "chromium": {
+        "rgbaSha256": "b4c4ee30aeb837120a168ba2bd6a487e705ae60cd2dc2c98a54060c1c0aade0b",
+        "pngSha256": "e476571cb521150d711e2d12073d0981d91d276b5770e4d1521e35c3918f5701",
+        "nonTransparentPixels": 1794,
+        "darkPixels": 682,
+        "lightPixels": 928,
+        "alphaTotal": 437529
+      },
+      "firefox": {
+        "rgbaSha256": "8948469725e6ccee2c107e356c817b5713712fa60c2ecadb310f88badf7f5d1c",
+        "pngSha256": "ca93fecee9a82c85c91773e8f3eaa50530e00027f05dc444d0d7b5a83a08dcd8"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.000652728532710591,
+        "normalizedAlphaMae": 0.00040320140401839746
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "wB",
+      "file": "wB.svg",
+      "sourceSha256": "fdac5e5848b67aed513416d347c6b6479dbf86a2be3f6fdd44555d724ae1b7a7",
+      "chromium": {
+        "rgbaSha256": "222d017fcec36c554bc18873b0ee1ed020391fc97901642506da73ae237e6792",
+        "pngSha256": "b02f9864b52bba6e3bdb3f1f38383ccd4a09fdcdf781be83e1664df49fd47bd0",
+        "nonTransparentPixels": 1851,
+        "darkPixels": 885,
+        "lightPixels": 800,
+        "alphaTotal": 436455
+      },
+      "firefox": {
+        "rgbaSha256": "4281c1689acbb9835768d79c44725c7f6102a3a204df411ce8581f83f1b1d221",
+        "pngSha256": "cc856d341da8a585c97efbfaed0ec80f1f0033262887ba3809cad58109c077a9"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0007692316820216347,
+        "normalizedAlphaMae": 0.0006339264100702009
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "wN",
+      "file": "wN.svg",
+      "sourceSha256": "73a4860e4f73034ca1579e952240e8cce57affec677e87b7e1dd8cf9c3dbcdd1",
+      "chromium": {
+        "rgbaSha256": "9cf16def2315c085a93ef6774e014d6449edd8d5a6d56e23ccefc5b25bda78bf",
+        "pngSha256": "d94239437152804857a0604a185eaa3082093f162adb97c218f543df47d496cc",
+        "nonTransparentPixels": 2023,
+        "darkPixels": 715,
+        "lightPixels": 1221,
+        "alphaTotal": 484287
+      },
+      "firefox": {
+        "rgbaSha256": "44c7906819fe719fed658ea260e7fbbe57b3c88165e66888c48e7001be4de14c",
+        "pngSha256": "90500ae650fa13a31b72a7337d7611911d216da25f6ea3fd8d9c0ccc2428ceaf"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00017096344710723795,
+        "normalizedAlphaMae": 0.00005597918179617526
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "wP",
+      "file": "wP.svg",
+      "sourceSha256": "423f9a04ff6a18ed129d90269e15b7a0d5390ac775e8d3468d09feb33f92ea0e",
+      "chromium": {
+        "rgbaSha256": "88a3c9846e9e519a0e795ac9baba5958c15de77224384464c616b22dc6177aeb",
+        "pngSha256": "fd2a9f875c781d3b64b25f4825a7ee8666131ecae400e97fc559f9f0e3d5e6ed",
+        "nonTransparentPixels": 1348,
+        "darkPixels": 592,
+        "lightPixels": 643,
+        "alphaTotal": 321916
+      },
+      "firefox": {
+        "rgbaSha256": "130e9ef9cd83b6b9ed0ca3302fcae29fb4d5c9418282b5e6708e7e5b7364d15a",
+        "pngSha256": "062d285256f410f79aec31c1b645bf814b1078d8a2d3e18ea63755a18424eb40"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00023375090777051562,
+        "normalizedAlphaMae": 0.00019517066085693535
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "bK",
+      "file": "bK.svg",
+      "sourceSha256": "b0fd61530fb2ea35f10ff59456b18b845a306110d9ba3220ce7d0b7f68167eab",
+      "chromium": {
+        "rgbaSha256": "3a641d46b3a7755cff90f27083560f9aafaffcfd468dce21bbdade7ac1803580",
+        "pngSha256": "4bd6442493ca5ef13cd516b7f296ddbc3a74e4f58de95f863d8d1d0e1cb9b7ae",
+        "nonTransparentPixels": 2039,
+        "darkPixels": 1511,
+        "lightPixels": 260,
+        "alphaTotal": 493408
+      },
+      "firefox": {
+        "rgbaSha256": "3653765cf88ec655213977d7229850f56ea87b3fc50effc751f38a5636529e87",
+        "pngSha256": "ab202fcb140a4182b90db298cd3830a2c828f3e5fafb70bc197333be1c63a371"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005959424437894256,
+        "normalizedAlphaMae": 0.00041227910917453404
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "bQ",
+      "file": "bQ.svg",
+      "sourceSha256": "c3973c41730ae03038501329b84d061040fc8c72b0ce24940ada07a3e8379c18",
+      "chromium": {
+        "rgbaSha256": "89200327e3cf3591dad2e96d9a5ec61d8afd58a68b09a27eb59907b99a5991cb",
+        "pngSha256": "f3bbf1f070ef6fc830d052f50e96c6fd038a21c42eb964938de125e20ae6a10d",
+        "nonTransparentPixels": 2170,
+        "darkPixels": 1650,
+        "lightPixels": 220,
+        "alphaTotal": 501560
+      },
+      "firefox": {
+        "rgbaSha256": "045b78f412072fa16997a3fbc73d7f49368439e2f839fd54983a4156e6f707ff",
+        "pngSha256": "b8c3f32c310e26341acedbb19f375aeb1f00413bcac4f41fc88c1eb8d3ce22cc"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0008939848633716379,
+        "normalizedAlphaMae": 0.0006384652626482692
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "bR",
+      "file": "bR.svg",
+      "sourceSha256": "c40f0c10b21635703b050d2996d4cbfe3b443e2573304ee91ed29fd7be61caa1",
+      "chromium": {
+        "rgbaSha256": "31dcd6a19315dd86379fa243dbf5bd74eeb8815cb27484234a6787979d88bd5c",
+        "pngSha256": "1ccfe85139cd4d7c7f41c6a81a2fa617e91b11728b0dabf283874b828712f389",
+        "nonTransparentPixels": 1785,
+        "darkPixels": 1431,
+        "lightPixels": 145,
+        "alphaTotal": 429200
+      },
+      "firefox": {
+        "rgbaSha256": "63fe560fc0d0d1d19aa857dbba3f723db8ca9ed0905fd79644934c1159f4767f",
+        "pngSha256": "924d5b4f47a2197d510c4648f075557ab9b835ede6c303ada750e715f7150d2f"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00044101924236167474,
+        "normalizedAlphaMae": 0.00007186516581941418
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "bB",
+      "file": "bB.svg",
+      "sourceSha256": "1660d01f51eea3bd4a7677920b8f261481e5d5758b372ce062a508c8a1026175",
+      "chromium": {
+        "rgbaSha256": "6c568f6d5900fd03634f7dc2cb1928d40415db26b165d80b4ed995a768addc88",
+        "pngSha256": "daa73ef1a0a48670a7523b299c57468cc0534a77b56c7f422f42bb5adfeb87f1",
+        "nonTransparentPixels": 1880,
+        "darkPixels": 1413,
+        "lightPixels": 209,
+        "alphaTotal": 442213
+      },
+      "firefox": {
+        "rgbaSha256": "a8598ff2204b9bb24acc64abd17992ceb3f767086f25e5bbcea293a17850ddb6",
+        "pngSha256": "485809f0352f78e40d5ece35b8ca2d32f76286267ec4456c24c4cb78f7c57755"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005104488539545569,
+        "normalizedAlphaMae": 0.000360082304526749
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "bN",
+      "file": "bN.svg",
+      "sourceSha256": "078ef9a73782e35deea380a11e9918ee1bc38f1302c384bab9354bbe89a9e338",
+      "chromium": {
+        "rgbaSha256": "70484d5aa9788e6c675ee449870e2c5652bb3f8ffe52e334f088261d62904eec",
+        "pngSha256": "5e9a3c007df0c1accd53f453f10f7d96c5566e5539da11b495a800bb05a14676",
+        "nonTransparentPixels": 1935,
+        "darkPixels": 1835,
+        "lightPixels": 53,
+        "alphaTotal": 466114
+      },
+      "firefox": {
+        "rgbaSha256": "626621d3f952cca6cbd440c7b508c509853ac6695bbbbb5d35300cc7957fa454",
+        "pngSha256": "7c804c849ff47a1eabc018e3b578d7436c0aea266ba771c37b00b21af851c940"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0003109114015976761,
+        "normalizedAlphaMae": 0.0003041031227305737
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "chessnut",
+      "code": "bP",
+      "file": "bP.svg",
+      "sourceSha256": "b3a9c2a3d949c74a5dbe0882631086fdcf02309ed8ba941718b91d550ca35c8e",
+      "chromium": {
+        "rgbaSha256": "64ada8ee4aa658e2d0edc6021fed9bbaa78698c71fc2ce6365f4fa76bfbcec0a",
+        "pngSha256": "dcaabcf3496998013f724edc083790fbaffce7d39b2dcf49dc5dfca1cb7d74c8",
+        "nonTransparentPixels": 1331,
+        "darkPixels": 1226,
+        "lightPixels": 52,
+        "alphaTotal": 312958
+      },
+      "firefox": {
+        "rgbaSha256": "be8621cfde341c465f668d7d17cff4e8d3b0c5d3f64ebf650585fde224e05b81",
+        "pngSha256": "6bca819a87e1e114fdd9c1e3d4672911ae25aa49de3f99318e78cae25bc08373"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00016264221738077948,
+        "normalizedAlphaMae": 0.00014221738077947228
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "wK",
+      "file": "wK.svg",
+      "sourceSha256": "b5f2e7efce1f40a6733c6e22b7016e8699ddb89807a9e9539f837e4c4b7b4d1d",
+      "chromium": {
+        "rgbaSha256": "a2a789da0e2adef7353fc953b7eba5eaa8a04a4d496905a24207c287bfef6459",
+        "pngSha256": "0546ae5c9196d29f9a00696c2e2f5c1eaa176427bc5cbc10c6d8d815c06b503d",
+        "nonTransparentPixels": 2410,
+        "darkPixels": 996,
+        "lightPixels": 1097,
+        "alphaTotal": 579654
+      },
+      "firefox": {
+        "rgbaSha256": "37c4ab1a2ac5e11d0ec2f4185a1567c4e531fa124de43a6c44cdb91f38990a62",
+        "pngSha256": "21ac80a49a7e6c1bfe2193dc76ae8514c783c3f7525ad159e03e70e47fd01483"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0007189038166707012,
+        "normalizedAlphaMae": 0.00011347131445170662
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "wQ",
+      "file": "wQ.svg",
+      "sourceSha256": "f97490b5b60a6978a15c40d86b69ce06df36bf3869b2bd82382819a724fd84a4",
+      "chromium": {
+        "rgbaSha256": "ead8567f41e9367ccb40a572efdc606919841cb72a454b8f6e959fec13f67e30",
+        "pngSha256": "215ec3fdd79e019f5c83991c8bfe05a1eca13bd2737490c646ba960ccf4784f1",
+        "nonTransparentPixels": 2065,
+        "darkPixels": 1145,
+        "lightPixels": 683,
+        "alphaTotal": 476411
+      },
+      "firefox": {
+        "rgbaSha256": "ee03bed97a966fb7d0233af6fa71005e36d2c0ff2638e43d8b23a45ce339aaa2",
+        "pngSha256": "e03d41dc64ba9f1e17c1c7bb14435e300d4d6f45a5fc0cd2fa5b4e2a42e35077"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005752486381464554,
+        "normalizedAlphaMae": 0.00024509803921568627
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "wR",
+      "file": "wR.svg",
+      "sourceSha256": "957efd4929507a4e3230912cab678baa2c308e6c4714cc094052543438458ab8",
+      "chromium": {
+        "rgbaSha256": "4e8adb458b2091584cc6e66e20f2c0e73cb889c110bb0d803e8e62a2f61dd865",
+        "pngSha256": "9c92a7ae87ab2a37f253e607e895bb8fe97bdf229a305033b34c97c4a8a97621",
+        "nonTransparentPixels": 2428,
+        "darkPixels": 888,
+        "lightPixels": 1189,
+        "alphaTotal": 590327
+      },
+      "firefox": {
+        "rgbaSha256": "f477cb245237da79d95ad4625d359b2976247b0c7b0f7c2bba4ab8fea2d08a85",
+        "pngSha256": "0f87feb3c39417106449f864671557a313cf39b71297be309fe569150000b4dc"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0006302933502942048,
+        "normalizedAlphaMae": 0.0002647664003873154
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "wB",
+      "file": "wB.svg",
+      "sourceSha256": "793d3de1262d36f1dcf2d298c3924fca6976cd2337583f41480dadcfb2afc18e",
+      "chromium": {
+        "rgbaSha256": "5a0f5a4029e69af623a5fa94c0479860eddacb25b267ba4624e0c3e0fe0af4a3",
+        "pngSha256": "d4c91ef1c0237ea1917cae94b1cf6b948d706ac6b4568040ad13427ddef55021",
+        "nonTransparentPixels": 2189,
+        "darkPixels": 1014,
+        "lightPixels": 859,
+        "alphaTotal": 518570
+      },
+      "firefox": {
+        "rgbaSha256": "aab8980aab2f6549fb94f31b5eb6a2b390da49385f604ec5f09b92cd32604a52",
+        "pngSha256": "6b171a9ed000231435367129e30540b62d5729ab612e0ed2feb232fea93bb9d9"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0007458798293786973,
+        "normalizedAlphaMae": 0.00013692205277172597
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "wN",
+      "file": "wN.svg",
+      "sourceSha256": "84b5e7701b6d8fca62b610380620042e9737b8276cf17f829a64f6c8645ea38d",
+      "chromium": {
+        "rgbaSha256": "10fd0dcca42571c6c92ab78946dd48bc1d2a6146cc219aa4baa7a39ed7bbdcdb",
+        "pngSha256": "6b50f10af30bdf52840f24a78962e05885dc6377d5624a67c5819b0023e63f16",
+        "nonTransparentPixels": 2541,
+        "darkPixels": 784,
+        "lightPixels": 1561,
+        "alphaTotal": 615432
+      },
+      "firefox": {
+        "rgbaSha256": "75157f401e5f9127e61daf3812a5886175ba8b50f29f7ff8909b02dcf643f776",
+        "pngSha256": "67283ec7c6225ca21b6a95f05f8a8b7c4b37ce338cb1c3f06282003d2f44730a"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005486741012874125,
+        "normalizedAlphaMae": 0.0001323832001936577
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "wP",
+      "file": "wP.svg",
+      "sourceSha256": "ed5080fc4cd1d5b14d6acc77afabcdd99c225f3ce5c082015490394ea0676831",
+      "chromium": {
+        "rgbaSha256": "144f083f45b4967b067e7545092ba88d36da1bc43d4c2229dc75f77cd5b6d8a8",
+        "pngSha256": "de3816a87c6d47713e2d32ebf76d4c41855811eee3a4cc8e1da2885786e1d7e4",
+        "nonTransparentPixels": 1145,
+        "darkPixels": 500,
+        "lightPixels": 534,
+        "alphaTotal": 268886
+      },
+      "firefox": {
+        "rgbaSha256": "bdda04349fe153406ebe3aaa1d80957e4c2e13b575657c990543711f38e74fad",
+        "pngSha256": "d3723042f544ff3bb322f4591a7c2477dacb13fbfebe3bcd303fbd282be0912f"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00028065238441055433,
+        "normalizedAlphaMae": 0.00006430041152263375
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "bK",
+      "file": "bK.svg",
+      "sourceSha256": "63ac211b7584a80739ac0ce4788f5b6421dfc854216d4950cae7015947d5e3d0",
+      "chromium": {
+        "rgbaSha256": "86d6401adb315f54289d5f9180c28278bcfcc49d1e61090c6b99e755bebbd27e",
+        "pngSha256": "6338ea24972eb5a31fbd6c79b5e9164de463b534ec66b418628a5f9d34e742d7",
+        "nonTransparentPixels": 2410,
+        "darkPixels": 1348,
+        "lightPixels": 0,
+        "alphaTotal": 579654
+      },
+      "firefox": {
+        "rgbaSha256": "6e54d1648cd5aeb1536d91f9a4ea14a81deec281a3b9a9f861da29e3251d50d2",
+        "pngSha256": "cb56af4014b61ecac11dc5703034d38b1a046fa7eedbb129185cbae433109875"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00048742233518921975,
+        "normalizedAlphaMae": 0.00011347131445170662
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "bQ",
+      "file": "bQ.svg",
+      "sourceSha256": "89dfc276f1336c44b5fc260803cad7beb2bc3e5e0faea3395c0118312ab53052",
+      "chromium": {
+        "rgbaSha256": "808a041e75092db0f1987c3e8daba2fef175a2c7def98f590001cca3bd9a3625",
+        "pngSha256": "1341199b34e0f91184671943f6085d2453490774428d63190f205cd623abad99",
+        "nonTransparentPixels": 2065,
+        "darkPixels": 1450,
+        "lightPixels": 0,
+        "alphaTotal": 476411
+      },
+      "firefox": {
+        "rgbaSha256": "13df4c942ad1e02dbfb64aea55facba0194be7b2de11fe3f4764efa480bc4de5",
+        "pngSha256": "5995955ac025adbf3ee1660b948703ca9e0b6bf923880beb9a6d7bf87ac56b53"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.000451794814593311,
+        "normalizedAlphaMae": 0.00024509803921568627
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "bR",
+      "file": "bR.svg",
+      "sourceSha256": "e2ffb1b77780e2a744c4f9b00d4a1feff7da52e39bad0d357fc0b695856be9f8",
+      "chromium": {
+        "rgbaSha256": "f35b82afdd3889cb15e058320bcd1a362012b561b13b2103422e09cd88318359",
+        "pngSha256": "cb232c2ca7a643046ef6b74e7144a39d609e1c27b91ca0ccead256eda3335593",
+        "nonTransparentPixels": 2428,
+        "darkPixels": 1157,
+        "lightPixels": 0,
+        "alphaTotal": 590327
+      },
+      "firefox": {
+        "rgbaSha256": "4bdafd0f3395a7095f073b4c7b42cf02332ff23af2c65dee0aa877a440e0ed4c",
+        "pngSha256": "fe543117fe249e5a7741480ec89ec4fd658121e0437f6ecd7a636d106467b624"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005703132540032878,
+        "normalizedAlphaMae": 0.0002647664003873154
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "bB",
+      "file": "bB.svg",
+      "sourceSha256": "39788f0768af3955015b67e2fb9a8cac1412f12a173cfe055afdaa06b652cc8b",
+      "chromium": {
+        "rgbaSha256": "64e02f0a30c843a880c1f83b47aec5ee357473b469cee83280835e51e150a49b",
+        "pngSha256": "09cbd178cefbab35408c1a30da62520028b88601fcfd233ac4f7ec8ec40c2772",
+        "nonTransparentPixels": 2189,
+        "darkPixels": 1267,
+        "lightPixels": 0,
+        "alphaTotal": 518570
+      },
+      "firefox": {
+        "rgbaSha256": "ff3138fa87b69ecf2296bd8d6aa41ea5b7a864ba7d2e1e4b80458d7aaff7e717",
+        "pngSha256": "000b8c52aad95ce5034ba40b020ee008b64de2b64d4d62b84695cb6876f4a5d8"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005141511337045106,
+        "normalizedAlphaMae": 0.00013692205277172597
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "bN",
+      "file": "bN.svg",
+      "sourceSha256": "6068614e192901fa8b65ce78d5b604bddb901688278f65569ebf9ff86ef9fc93",
+      "chromium": {
+        "rgbaSha256": "bade9b951a720cf7755140a634eea2c665c6c351838f98d032350caa6887f62d",
+        "pngSha256": "c891b4498e80b90bb16afcddc10397462f0b0ede7732e73f88fa695b26e98fe2",
+        "nonTransparentPixels": 2541,
+        "darkPixels": 1160,
+        "lightPixels": 0,
+        "alphaTotal": 615432
+      },
+      "firefox": {
+        "rgbaSha256": "ab72fbc29b6911b6fbf0c850bfdfb9da61b4e8787325934a16a24c4d18e51cd3",
+        "pngSha256": "603aeec77bde6112483e6ac1cd0999459d4f9f70c1f7bfa8e33cf0104b33757b"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0004909406875798008,
+        "normalizedAlphaMae": 0.0001323832001936577
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "fantasy",
+      "code": "bP",
+      "file": "bP.svg",
+      "sourceSha256": "cb86603c9036bc5d64561fa909df80e27888e1716f73c5ebe61035e3ecb3a266",
+      "chromium": {
+        "rgbaSha256": "7efba70fdac09ba38e12e6f08c4558e568c2fe099dc6181100fc1b948909a7c0",
+        "pngSha256": "086870a9a3956d880a0abf12e4ab81496ac0c6df49d8a1ac88279bd57b8d1250",
+        "nonTransparentPixels": 1145,
+        "darkPixels": 570,
+        "lightPixels": 0,
+        "alphaTotal": 268886
+      },
+      "firefox": {
+        "rgbaSha256": "984c930a15ee5964e2f25707575c7ffdada07959713b97e07351438ed783b798",
+        "pngSha256": "0475c73ae9cbbc72c6d02d998e0b4886275d5d92636d9432c9b6a7fcbd167f3b"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00021988219155975148,
+        "normalizedAlphaMae": 0.00006430041152263375
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "wK",
+      "file": "wK.svg",
+      "sourceSha256": "76d3d9903c3e38f277dff4410c08e78ab71aec83724583d9e893c6a7d8330675",
+      "chromium": {
+        "rgbaSha256": "630c1eff85ae88d315be8b7706588c8257a8b8fc5ec40521dcf74f1ab9ac153d",
+        "pngSha256": "71b5acaa5086b8b9027c573f79e9594db4cc5bb4c224f65f78476dd7cc33b883",
+        "nonTransparentPixels": 2347,
+        "darkPixels": 1001,
+        "lightPixels": 1101,
+        "alphaTotal": 551384
+      },
+      "firefox": {
+        "rgbaSha256": "16d69fed840266d706050bf37484f36f85839b29ce2c12a0f3bbaded4db62f13",
+        "pngSha256": "06444e89fb4d32d5dda9e695ef18aff7f2c3a0c3f8e7760a25db801e01e50978"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0004479531060386714,
+        "normalizedAlphaMae": 0.00012784434761558945
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "wQ",
+      "file": "wQ.svg",
+      "sourceSha256": "c5013e96e48b05e6617da93525d0f3d03779d60af76b93608d197f4c272043a9",
+      "chromium": {
+        "rgbaSha256": "149994d396f9cd9eb8803b96c7ebbf599a674a2d9f284812a9ce8d88e4825707",
+        "pngSha256": "ede7892ab42335e2a1917323b371f5314c7740ce5804af3a7e0e39ddb277df17",
+        "nonTransparentPixels": 2320,
+        "darkPixels": 1183,
+        "lightPixels": 907,
+        "alphaTotal": 526344
+      },
+      "firefox": {
+        "rgbaSha256": "5accf109894402978478d00161a37432369bf46a84bb339331825ec140a41324",
+        "pngSha256": "8a1cfc4621ecf4819a2bdcd588cc05c4a26f34259f37f26ca430d7bd4bd4b774"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0006066932946017914,
+        "normalizedAlphaMae": 0.00025114984265311064
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "wR",
+      "file": "wR.svg",
+      "sourceSha256": "a5540a32c24da5c86e97eef8881a6d6dc0b71c1a022f017df2ad76adbd87cb7d",
+      "chromium": {
+        "rgbaSha256": "1fbecfe2a041cf57e35ec1a8af645686074f753ea56d5321cd49ad9e83536256",
+        "pngSha256": "c0198298a12c8e8326d95cc86500399e81936a4bed46b55cc33a2084fd3174c8",
+        "nonTransparentPixels": 2154,
+        "darkPixels": 767,
+        "lightPixels": 1254,
+        "alphaTotal": 517204
+      },
+      "firefox": {
+        "rgbaSha256": "5f001131e86277169ddb7765f6ff08d583dbf8f000470e98f737a4ed985e3e8c",
+        "pngSha256": "a88e305728f59fbf2f28be280f56b5cee779253fe362e38554984d50c068b272"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00044487281719756425,
+        "normalizedAlphaMae": 0.00014826918421689665
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "wB",
+      "file": "wB.svg",
+      "sourceSha256": "f20f4a5e0d0913a2bf68b30706c77b3f4d234e9dbe858dc4a033da2a6a32163d",
+      "chromium": {
+        "rgbaSha256": "fff278305548f17e8b3c69c8e916e720a5c0e22f8e916ceeebf7a80490cbdf78",
+        "pngSha256": "2759b446b3c42a68ab36df2a30dbb63e1f92c71f06b9f0691e2726bca8cb8487",
+        "nonTransparentPixels": 1972,
+        "darkPixels": 800,
+        "lightPixels": 970,
+        "alphaTotal": 462542
+      },
+      "firefox": {
+        "rgbaSha256": "8c83995f50b95e0c593c340deeac4f3fa4021e50fb115adeef7eb50b0f15b028",
+        "pngSha256": "13ef56cce4d4e3811d2c6e99353605e440cf23c4faa618fb38db138e8134079e"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0006445160772289227,
+        "normalizedAlphaMae": 0.00015810336480271122
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "wN",
+      "file": "wN.svg",
+      "sourceSha256": "44e7658217f2f2f0221b8c75dc19740678e4a53827f142fae663e5f85f1d3604",
+      "chromium": {
+        "rgbaSha256": "98700232fcee1f0044b35236373791a32052e57b6aa50bfe40170004a71466af",
+        "pngSha256": "963a179ca3d15ed7f27159fbf0b34517972110353594c51f8d5f9c76770c47b5",
+        "nonTransparentPixels": 2472,
+        "darkPixels": 635,
+        "lightPixels": 1708,
+        "alphaTotal": 597869
+      },
+      "firefox": {
+        "rgbaSha256": "0cbfed149ab3206947560dd5b2cc8179dbaf697789b74168522df1d7dfbc31e2",
+        "pngSha256": "cd6030fa965faee16369e02cd0c4c97ec7b26cacb3b57fee883b6ba0a8a16aa0"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005728496716204436,
+        "normalizedAlphaMae": 0.00012254901960784314
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "wP",
+      "file": "wP.svg",
+      "sourceSha256": "cb9f97da483350296ce4df3bbe053d86c3ef9a588a9452b9833e1f3a56c10c5f",
+      "chromium": {
+        "rgbaSha256": "3958e70cccb3a332dee4a9a4bcfe6a9c549077a65f44a14ee91ddc87a007f158",
+        "pngSha256": "d502d7e05b4445f95cb5b9dbcf048c3639f545f0526ceb319d8cc682f701249f",
+        "nonTransparentPixels": 997,
+        "darkPixels": 416,
+        "lightPixels": 520,
+        "alphaTotal": 231833
+      },
+      "firefox": {
+        "rgbaSha256": "dcbff21cd7e19904134ef7cc79e3068af776a0d0cf00eb76ed49d7a4e5e3c821",
+        "pngSha256": "ff4c8bcaff405937986c9cf6501f26c7b94e5a760f895fd2c3b425f47139514e"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0002698095699185024,
+        "normalizedAlphaMae": 0.00007640401839748245
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "bK",
+      "file": "bK.svg",
+      "sourceSha256": "bf91ce1bead0bc273621ed8ebb112542d94b34254dac84ffdd623b81e44205ef",
+      "chromium": {
+        "rgbaSha256": "8202ef4a9c9089856bbd075bb462d03c7327b6a17f5f86bbad9bd70529584398",
+        "pngSha256": "1e6c6e085742b27cd909950fbc4bf880ffa25fc335b6df48922683c62929cc69",
+        "nonTransparentPixels": 2347,
+        "darkPixels": 1547,
+        "lightPixels": 0,
+        "alphaTotal": 551384
+      },
+      "firefox": {
+        "rgbaSha256": "35d56eeeac679b3ea2d2dd5887ba05dc4069758d1d8efe2ca93afa05359f7d09",
+        "pngSha256": "e8e1335ca38788cfff0fa7c54353d649dd7a908e4fd1364388c3c4b81fecfae3"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0004011841362059227,
+        "normalizedAlphaMae": 0.00012784434761558945
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "bQ",
+      "file": "bQ.svg",
+      "sourceSha256": "517f98be7cd7b6a71d5aadebbdfe868a244b491e5101fa79fbd861d2cc5ce4de",
+      "chromium": {
+        "rgbaSha256": "733e23fe64ab520b8daa09250ffe10ca68e9f7fd071e3b32c183aa49ea239180",
+        "pngSha256": "5e91e848877a9b0f4aa79b27bce5242277c2585f5709e33b50cc2f5180c4a190",
+        "nonTransparentPixels": 2320,
+        "darkPixels": 1682,
+        "lightPixels": 0,
+        "alphaTotal": 526344
+      },
+      "firefox": {
+        "rgbaSha256": "7273e24f45137dfb736d2d136c18864050bf5a90d10bf1c9e6b1dfe700c84ffd",
+        "pngSha256": "6540cefb8e3b35d0c3efc19b264d90cd9780e0c907eeb833773f3054ab6f6fda"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005053255870249335,
+        "normalizedAlphaMae": 0.00025114984265311064
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "bR",
+      "file": "bR.svg",
+      "sourceSha256": "447b8c7e36dc2533c30721ab7766a48c70981aa89c55ffbcb5df62f91cab61f4",
+      "chromium": {
+        "rgbaSha256": "659c5f2c8b9cd39fd844d3e86c6b6d4cc20c85b130c3458a46df2208ef44e98d",
+        "pngSha256": "f6f6aea9e8bde75e8e9911a7e90f8fd721a39ba050bfa9c9c69b196b467fd255",
+        "nonTransparentPixels": 2154,
+        "darkPixels": 1122,
+        "lightPixels": 0,
+        "alphaTotal": 517204
+      },
+      "firefox": {
+        "rgbaSha256": "d506ae67df56f5cbf6b30f840481c43e85e1811f6b66a94450bdcea89ae67f9f",
+        "pngSha256": "eedee03d1b2fd195f93ab5624e3a79ea430936044e7c615c856169e0d241c759"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0004191358420234067,
+        "normalizedAlphaMae": 0.00014826918421689665
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "bB",
+      "file": "bB.svg",
+      "sourceSha256": "e38bd48cd497da74e9b3d9c3ae69cf7c7a0dc9ede73d735ba3b957a7dfbc47f8",
+      "chromium": {
+        "rgbaSha256": "23606c45e6b5b3ae80ddf1fd37bc996f2dc913b5240719e0411d0ae2825b330b",
+        "pngSha256": "dbfd0f4ac58b889e0cf00b7c8bfcb2aef5e681a32fc07fbe12d81dbd46fc4b39",
+        "nonTransparentPixels": 1972,
+        "darkPixels": 1145,
+        "lightPixels": 0,
+        "alphaTotal": 462542
+      },
+      "firefox": {
+        "rgbaSha256": "dfc20fdd67b5b35d71f61f3a8dccd6878fc7e8202211e34a8ac4d3985b243761",
+        "pngSha256": "afb7dc0b809a3e8e2e03c49ba4b15142a471c24594ce3bbf3ca00c516ed6b799"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0004729514052050256,
+        "normalizedAlphaMae": 0.00015810336480271122
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "bN",
+      "file": "bN.svg",
+      "sourceSha256": "803bf14ffa22c6584a99ab0d2e3fb91879bfdf0ceee0f938c1c43e05f3538399",
+      "chromium": {
+        "rgbaSha256": "7f5bd08978b1be93a3eb17b6e7e75d3f973dac81c604f668a8a9327edcf16950",
+        "pngSha256": "dd354600420fa749abb924a65f1a226a2674cdecbd52ea87ba84c3291e020b4c",
+        "nonTransparentPixels": 2472,
+        "darkPixels": 1071,
+        "lightPixels": 0,
+        "alphaTotal": 597869
+      },
+      "firefox": {
+        "rgbaSha256": "fee51f5843ab5c368d88d3673c729195a30be53d6721264270f27f58f23cd8b8",
+        "pngSha256": "1913ebf4cb3862f29a2342aae9bd82114e43e014751319d4fdd503075043e819"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00047928898824921724,
+        "normalizedAlphaMae": 0.00012254901960784314
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "spatial",
+      "code": "bP",
+      "file": "bP.svg",
+      "sourceSha256": "30db84b20f2d50c10bc7d03536be524d81e5d3bdc2a36c0ab6951ece5f3b6788",
+      "chromium": {
+        "rgbaSha256": "c8d27ac7e505a77feb1dbdf290c88c06b162bed37de75448131e85ded888e275",
+        "pngSha256": "1964e32896bc2f4d7f4d67476e30dc3a2b22123d37cd4d065a36a28b0e85f95f",
+        "nonTransparentPixels": 997,
+        "darkPixels": 555,
+        "lightPixels": 0,
+        "alphaTotal": 231833
+      },
+      "firefox": {
+        "rgbaSha256": "0e32b3cd940f681148b89c15d3a3c73313339d4920977c713702d72f40e0b709",
+        "pngSha256": "84cb8210f0ace07a860dd073ab5fc3fc8b75f2d19c465c0a8031514bfef93ca4"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00021156096183329298,
+        "normalizedAlphaMae": 0.00007640401839748245
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "wK",
+      "file": "wK.svg",
+      "sourceSha256": "bc4625aa000be804de4782cf4a6eae5daf4dccd25f74673052805d04557af3d4",
+      "chromium": {
+        "rgbaSha256": "bbf3cf626c0e4d9d26232e1885feb2514b4ce8ecb25bac25ee86c612fd73b4c7",
+        "pngSha256": "7d0f50d2c6515d76c0dff3cc906d9d4f5aa187e63c6e34837e33ce1536fdeb79",
+        "nonTransparentPixels": 2622,
+        "darkPixels": 679,
+        "lightPixels": 1407,
+        "alphaTotal": 638018
+      },
+      "firefox": {
+        "rgbaSha256": "9fd22395b260f800abc0c4dba0d0efbd490ea9b22e3842e29672245a892c0431",
+        "pngSha256": "0c1021401bb6c95e8fdbd5ab99478402fcebf19b98c2795324eda6f6a2cc452e"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00047582304526748974,
+        "normalizedAlphaMae": 0.00009153352699104333
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "wQ",
+      "file": "wQ.svg",
+      "sourceSha256": "677aa5b7f5d876595d4b7edbf7977ed9d8131dea96ff5ff2cf92c0915a0a7eb8",
+      "chromium": {
+        "rgbaSha256": "5b0c756154f1574b307f067eed36f7ce9b1dab391a485d069798eed0ec5b8a10",
+        "pngSha256": "f95e85157fa1900c660ea08a3f0c279faafc7a0f5ac5b1a84ab2599580e487e7",
+        "nonTransparentPixels": 2542,
+        "darkPixels": 879,
+        "lightPixels": 1206,
+        "alphaTotal": 605133
+      },
+      "firefox": {
+        "rgbaSha256": "c058f72c187b7ee45fbdf8444748f12229b1bf4f6c53222711ea9344001ba8be",
+        "pngSha256": "311c4549cc772e2ca5e2dff81abf898c017ddf7ed09bd0eb18337cbf139db5b7"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005671044137819737,
+        "normalizedAlphaMae": 0.00017625877511498426
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "wR",
+      "file": "wR.svg",
+      "sourceSha256": "d431e99d9e14932393ee41cd0ca83132aa15f684991a905d160a2dd437063945",
+      "chromium": {
+        "rgbaSha256": "8e3f68d38b41cdf1666dfd4153f96d4365d9f615268e2ae62be015b728831d11",
+        "pngSha256": "64ff2c95f46b47ff5f8be6fcbe19360cf1adcb798118ace03c54856a3c01928f",
+        "nonTransparentPixels": 2408,
+        "darkPixels": 611,
+        "lightPixels": 1361,
+        "alphaTotal": 586628
+      },
+      "firefox": {
+        "rgbaSha256": "7e98036a6745b205b34e29dda15bd76c5a83f96efd0fd1659999270dd93b167b",
+        "pngSha256": "96494089edd70884c8965b1a5cb3917490e2bb1b14b5333cad1b453732377e8a"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0009747912721128152,
+        "normalizedAlphaMae": 0.0005128903413217138
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "wB",
+      "file": "wB.svg",
+      "sourceSha256": "cb8c52171ae7698c84b21c519e1cd565475157a9132e451f91b28d6ac5da68e8",
+      "chromium": {
+        "rgbaSha256": "eca978f02d8aecff792942359bc84ebe8c9a679ae817288badcb36a3cce0acd2",
+        "pngSha256": "a118cffc7029ee376d94a31129d6b88a1f8a3393b5b25348cdcfe10a3f0a1c95",
+        "nonTransparentPixels": 1831,
+        "darkPixels": 619,
+        "lightPixels": 906,
+        "alphaTotal": 432475
+      },
+      "firefox": {
+        "rgbaSha256": "25ebf10455efd0e768042459b959928de6cd8246dbabfc9a18f66ac221fd6bfe",
+        "pngSha256": "47e876a63f2649347e3ffc132c3472815b832a015898b47b6961bafd397779e3"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005635741951101428,
+        "normalizedAlphaMae": 0.00030864197530864197
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "wN",
+      "file": "wN.svg",
+      "sourceSha256": "426c1e7f5d7377b398774a4133b1fb4e9b0dfcacd30347321f6ecf7eae4aaf64",
+      "chromium": {
+        "rgbaSha256": "d3eb05e33db72a377bad5db53e516377d1e36b5ac1f3d60de78ae58cc2187be3",
+        "pngSha256": "b8f7679b75aa3d68ef973b01fe55645a808cc2ea70432331dd0891d003a624ed",
+        "nonTransparentPixels": 2511,
+        "darkPixels": 660,
+        "lightPixels": 1519,
+        "alphaTotal": 606263
+      },
+      "firefox": {
+        "rgbaSha256": "189e9628265ee0fbbbbd232a891884bc6fc4c6a31f2e2616b386ff9f4c640192",
+        "pngSha256": "097edbefe781e2f6ce7c7614b1ea410a42d07fbe066e3cf2ceae5a8b47cf8846"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005141511337045106,
+        "normalizedAlphaMae": 0.00009077705156136529
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "wP",
+      "file": "wP.svg",
+      "sourceSha256": "6c09cdd783a12cd995f702ad2f7bd0ce2b61a5d6fe6296d05b1c0cb8172d71fc",
+      "chromium": {
+        "rgbaSha256": "5e97829aea7fa327ad8bce718f6020d21554113e633787a36368018024c0e3cf",
+        "pngSha256": "b92f61e028092a0ac2610231b7f1c3383096e8714cf2fff097af36df74f42681",
+        "nonTransparentPixels": 1260,
+        "darkPixels": 421,
+        "lightPixels": 593,
+        "alphaTotal": 302193
+      },
+      "firefox": {
+        "rgbaSha256": "2611154d4ce1fd41c80a10836013e01b3af962d3a3a414e756379bbeb14f72c4",
+        "pngSha256": "ab89665dee28da841aa6345d46e895bdf14987bc18c99b7648f3d0ec0dc5454d"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00032629306866779634,
+        "normalizedAlphaMae": 0.00006808278867102397
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "bK",
+      "file": "bK.svg",
+      "sourceSha256": "5bf1d8951c2591ee1b5136288f93adb0c391b8d5f3d546541b1f4e85605e767b",
+      "chromium": {
+        "rgbaSha256": "d48f23c58bdfa4de9bbce8c3b5c6b671cac281bad3c93117edc4849829bcb5d4",
+        "pngSha256": "25a179b67b6cb8170aefcd0fef80e1ac1ce019c7cd47b88d082a9294ec5d84fc",
+        "nonTransparentPixels": 2622,
+        "darkPixels": 1501,
+        "lightPixels": 0,
+        "alphaTotal": 638018
+      },
+      "firefox": {
+        "rgbaSha256": "1865d2b02bc1990bbb26d04004d83738bdb69ed9a4c3bf7908a4a80f81b6c921",
+        "pngSha256": "d47878f1fd017cd58be41c24bfc904e47338c2724abb49686bac450662f0f117"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00043194747034616313,
+        "normalizedAlphaMae": 0.00009153352699104333
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "bQ",
+      "file": "bQ.svg",
+      "sourceSha256": "867d05d3d7c06de0fa3ce50fa1aa3e7587e9b1e5672db540477187508949b889",
+      "chromium": {
+        "rgbaSha256": "0fc73c9dbb2c62e8c082e25992f56677af3bdb6e68e4aaefcdbfaf20f3f84620",
+        "pngSha256": "b67ff4cdddf2449b1090e5eeddac6bbb3bd6e9a7d848b83028f09e361a149210",
+        "nonTransparentPixels": 2542,
+        "darkPixels": 1589,
+        "lightPixels": 0,
+        "alphaTotal": 605133
+      },
+      "firefox": {
+        "rgbaSha256": "29e2e550b9d1096964cfab54161103c247180a1dcfd2ed3435e9fc4c6f68a8b3",
+        "pngSha256": "1c50f040fb401999c7baaa25bd45a00a665be36ccd4564f61808f1d709149937"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00048288348261115143,
+        "normalizedAlphaMae": 0.00017625877511498426
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "bR",
+      "file": "bR.svg",
+      "sourceSha256": "d2c551bf7bab9e636f6304dcc6eff372fe397377a5deedd14cd724205754ff09",
+      "chromium": {
+        "rgbaSha256": "e8416637f0eb718a2a8cbae63b49cb78989e180c582809f230765c7830d369ea",
+        "pngSha256": "494fa8b59a9b7843e1a7991293d1be487c354b31675e9771b65dca6914aeee63",
+        "nonTransparentPixels": 2408,
+        "darkPixels": 1283,
+        "lightPixels": 0,
+        "alphaTotal": 586628
+      },
+      "firefox": {
+        "rgbaSha256": "2a36308aaaa64e39029a8cb58316c4ada0e8001cb77ff7491f04efc59ecf338c",
+        "pngSha256": "73c65ec120a1c9106ede1be549a6ece7ca20ee90afd6ec190d9cb4935803be9d"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0008858327281529896,
+        "normalizedAlphaMae": 0.0005128903413217138
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "bB",
+      "file": "bB.svg",
+      "sourceSha256": "ff64c9ed5215a204a30fe2d865fdcada4cc99612572af64f5f86b250891badfa",
+      "chromium": {
+        "rgbaSha256": "8b4f44ff81cff39f50c63eef43d8407717e102b44a3d767f25f2cb45b96350d3",
+        "pngSha256": "5cb5364149ab5fc04f2d4eb63c7cdace7e2982b7ea7d50a388b8c713bb5f8c8d",
+        "nonTransparentPixels": 1831,
+        "darkPixels": 960,
+        "lightPixels": 0,
+        "alphaTotal": 432475
+      },
+      "firefox": {
+        "rgbaSha256": "966633cb510f2ca05bf23e2414cb6aea74bc1b49b59efb85ecfd1fd3f6a5ce9f",
+        "pngSha256": "d9b7d0762a0c4d56a3dbc949b58939b4ef09747ff6c9c793e344dea3007ef048"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005156640845638667,
+        "normalizedAlphaMae": 0.00030864197530864197
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "bN",
+      "file": "bN.svg",
+      "sourceSha256": "b8478a90e1b930e0e6edc50d5e28d202112d5008ef9716fdd487abc8050f6758",
+      "chromium": {
+        "rgbaSha256": "36bcbc7d1fe546829088f2930cf42b000c4369e76a1331999a4d84fe7fe20481",
+        "pngSha256": "c6335742560b45e261d3f3732cfb2145d9b22961288d4c5d935eb758af25fb9f",
+        "nonTransparentPixels": 2511,
+        "darkPixels": 1265,
+        "lightPixels": 0,
+        "alphaTotal": 606263
+      },
+      "firefox": {
+        "rgbaSha256": "520831b77745f3039035ff5ce90994d898c26765c9d8de66842e51039739970a",
+        "pngSha256": "45c92d26d0e711b94b7df4248d3b804eb51155016095384fd0ff5249c92d5a14"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00045489389171306385,
+        "normalizedAlphaMae": 0.00009077705156136529
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "celtic",
+      "code": "bP",
+      "file": "bP.svg",
+      "sourceSha256": "fdfb9bc177cea6e8e3da18b2f9424190639a73f8ab4fa769f0db5bc27c0e8a21",
+      "chromium": {
+        "rgbaSha256": "53a6317b91ef23454c16ddef0e594528d9086ac9da98f2e9e3ec91792919b98a",
+        "pngSha256": "cd16ea6bccc7de74c125a26a17f05203f3cd37843c1d7463d8ace4021770e540",
+        "nonTransparentPixels": 1259,
+        "darkPixels": 659,
+        "lightPixels": 0,
+        "alphaTotal": 302142
+      },
+      "firefox": {
+        "rgbaSha256": "528f286dc8e4f975bf0b8971606733182ae0efcaeefecde7f10fd9691862d7a9",
+        "pngSha256": "184114ccd623d3b82015c124a475fbd709662997d1e920426b958bb2224a1e50"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0002158476559348019,
+        "normalizedAlphaMae": 0.00005597918179617526
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "wK",
+      "file": "wK.svg",
+      "sourceSha256": "6418419479bf0e3a60f01a1a925ec09b0e9783c305da6d22ec6657498ea554b1",
+      "chromium": {
+        "rgbaSha256": "03eee7329d073d316bf8cb891dd2d8075cc932e382f2eeecaf5a1c2717986f6f",
+        "pngSha256": "23bf3c95a73b39f903885af54adf7ec15551c0b43e30a506faacc20d49352590",
+        "nonTransparentPixels": 2163,
+        "darkPixels": 1163,
+        "lightPixels": 409,
+        "alphaTotal": 506577
+      },
+      "firefox": {
+        "rgbaSha256": "7c173613fb70073804084abbe1080b2e42ce21ab2ff1097f58b043456612d56c",
+        "pngSha256": "2ab712d6b756f2724e163d352956bb921935f310cca70108d233d4d497813854"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.000419642136690067,
+        "normalizedAlphaMae": 0.0001354091019123699
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "wQ",
+      "file": "wQ.svg",
+      "sourceSha256": "0d60559a476f0b0882a4bacbeea861b74ca96abae7df1481379c088a8644187f",
+      "chromium": {
+        "rgbaSha256": "e71b38868930df5f1f3a17097095d78b65195bf8980ac7d72336a0fa2dc593b4",
+        "pngSha256": "63b9eabe17ee02a63cee2329ce240d9e0a80a5cb4ef588cb4d9f9038a7568c67",
+        "nonTransparentPixels": 1921,
+        "darkPixels": 1011,
+        "lightPixels": 519,
+        "alphaTotal": 445881
+      },
+      "firefox": {
+        "rgbaSha256": "63dc3d267fd21465208f97f45b8272c80945965ccbd91fda2bf6c8591fa4e496",
+        "pngSha256": "882357761b1fb44d72bc9474ee4be1c809b37a93e2cd903192f638a4a5555a65"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005029968293296501,
+        "normalizedAlphaMae": 0.0002435850883563302
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "wR",
+      "file": "wR.svg",
+      "sourceSha256": "fe3e322e86db6dbd1c3677dd7763333f011afc0323272de4e9598996752cdc9e",
+      "chromium": {
+        "rgbaSha256": "efc151a570f1ce8a1f86f8b826728237dc36fb6855947485797eceb92d7391dc",
+        "pngSha256": "489d0432666e8853fe18c15857513b850acfcc71e8497cdcbdc7dc0a490f28f0",
+        "nonTransparentPixels": 1635,
+        "darkPixels": 873,
+        "lightPixels": 414,
+        "alphaTotal": 380982
+      },
+      "firefox": {
+        "rgbaSha256": "54df45a094f2c4615f314e86fe1c877f77d4fd99fb838e76812345b32ec385d9",
+        "pngSha256": "ecf29d29a7433f9a077acc1054a50e405d34be8f997fc72b4f3e86466dc8c1ae"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00034570927136286613,
+        "normalizedAlphaMae": 0.0001974400871459695
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "wB",
+      "file": "wB.svg",
+      "sourceSha256": "294ec8d0a3afa6a279f3a7e23515f13f318fa553e395a0552c4559a1fc831e85",
+      "chromium": {
+        "rgbaSha256": "5f3bd25e30caee7693b9e152d9be93c01ae931b413db0271ca8144b0028422bf",
+        "pngSha256": "3b60069b6fe37d01508d5bda93d8af37b61f941a7992e985304a4c75b3f1f145",
+        "nonTransparentPixels": 1584,
+        "darkPixels": 749,
+        "lightPixels": 621,
+        "alphaTotal": 372817
+      },
+      "firefox": {
+        "rgbaSha256": "ed9a352404b1943da5816ab17abb432dbbcd6a2f422ba7ee7f32485193834d5a",
+        "pngSha256": "33c086d430e023c63fcc25bb526cd8f67489fea0bfbc8087442c4e1292cf9929"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0004137801937526403,
+        "normalizedAlphaMae": 0.00008018639554587267
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "wN",
+      "file": "wN.svg",
+      "sourceSha256": "16d0d2be7dae0e0cafb9b109cffb62e6e657c2a646edf5194ad032a3f3c74702",
+      "chromium": {
+        "rgbaSha256": "64f10a0a166f84f7fa0df1880faca5e5acf23bd2ed91c096e85d21f6789dad41",
+        "pngSha256": "05a2f4e34e59e6bccee60de67cbe90a14920c4a5337c6ab632f9451f6e72f63a",
+        "nonTransparentPixels": 2163,
+        "darkPixels": 819,
+        "lightPixels": 955,
+        "alphaTotal": 513655
+      },
+      "firefox": {
+        "rgbaSha256": "96f3cb41691f06fea1d747e8dbd82677fb88538a9be92909b8a5647517347a32",
+        "pngSha256": "7687b5b6b7010b88879e0c5ae84d4c6fc9ea3da4da1e37d7043dfbc8cb5cc8fb"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0007965626943103554,
+        "normalizedAlphaMae": 0.00033890099249576374
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "wP",
+      "file": "wP.svg",
+      "sourceSha256": "1f61376106f1b8d80ddb8b6c0bcc476d49c625845adc57ba660c86649dabe11d",
+      "chromium": {
+        "rgbaSha256": "cef1aef87bd6e38c4a8b356c15ed8e224e6c9be1eb4145bb15bed2aa55b6d588",
+        "pngSha256": "ab0a1c173eed30561173679994012ebca42eb201fbac5d3787ad75798d95d766",
+        "nonTransparentPixels": 1135,
+        "darkPixels": 489,
+        "lightPixels": 400,
+        "alphaTotal": 262583
+      },
+      "firefox": {
+        "rgbaSha256": "71d77d4ca94b3ec0550f05f8fe92a0b08de7f54fa3948bf7e2ade5e4664c917a",
+        "pngSha256": "5cfc8c50f69131974573a6ad1e47e679ef8c0305cebc97695bc754cba94fd1da"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00043134723428627474,
+        "normalizedAlphaMae": 0.00005900508351488744
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "bK",
+      "file": "bK.svg",
+      "sourceSha256": "6b34a83659387767723e36da10223c9b927839e0944456b69312b0887c5ea0bd",
+      "chromium": {
+        "rgbaSha256": "e291514565e28601c912e8b217d2502cffea97db200f06742251fe0e0cac97c8",
+        "pngSha256": "d804c076b3c389bc17c9a1f0b7ccdf1ccdb5ac5a726bbb23520d4632db2daa70",
+        "nonTransparentPixels": 2163,
+        "darkPixels": 1234,
+        "lightPixels": 232,
+        "alphaTotal": 506577
+      },
+      "firefox": {
+        "rgbaSha256": "2a6feb74a017eab793285cc9b8c13a8b518cf9f516dd563a83680047dc20caaa",
+        "pngSha256": "dda5ebd0b015336285a0f943000b60514906ffddd632f80c19eeebbe7fa24f52"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0003514406852065445,
+        "normalizedAlphaMae": 0.0001354091019123699
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "bQ",
+      "file": "bQ.svg",
+      "sourceSha256": "2d8beeb54e5357876b1e5621b468dbb49bcf3a5e84f656f3938c2b53027620f6",
+      "chromium": {
+        "rgbaSha256": "8ea69f353e2bf2c78fda2b6c28377941867511d2ee3391aab4221be991356be3",
+        "pngSha256": "495346eefd888baff7507130af7eb7463843a67668627a56906d5996692a5f52",
+        "nonTransparentPixels": 1921,
+        "darkPixels": 1054,
+        "lightPixels": 184,
+        "alphaTotal": 445881
+      },
+      "firefox": {
+        "rgbaSha256": "77468c27faf2dcf51de90f27eeb1ee3bf36cd3d416780b4314471ea2cc1b68dd",
+        "pngSha256": "902b4ad37d05248cedf77e616dedba3bc97e9843cebecb4babca3c523ab31b8f"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0004641921119290935,
+        "normalizedAlphaMae": 0.0002435850883563302
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "bR",
+      "file": "bR.svg",
+      "sourceSha256": "54a67fef52cccbbb7af52f28ec930255bf2203ff01adb7e3363605f421e99dd2",
+      "chromium": {
+        "rgbaSha256": "589733f881cd6028fbf5592fd10500b52a717c2ee1f1651f86f6d620925e75da",
+        "pngSha256": "21e78748b8c14fd64cdf49af63f74025c08ed175e67c4395279ea0b6b62f840a",
+        "nonTransparentPixels": 1633,
+        "darkPixels": 904,
+        "lightPixels": 0,
+        "alphaTotal": 380492
+      },
+      "firefox": {
+        "rgbaSha256": "9239cc71eac3ece59172120d1ca851d71200138f63997853347b48a28528d1d1",
+        "pngSha256": "8683bdf294b383bbccbcb5132afffbce782c3066e3e873a319ab9833e277fb6e"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00022139514241910756,
+        "normalizedAlphaMae": 0.00007413459210844832
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "bB",
+      "file": "bB.svg",
+      "sourceSha256": "c380cb80afc4a91f9a6827b4cad04848f9f171976ae4493660bb280d2279c7b3",
+      "chromium": {
+        "rgbaSha256": "19311a56734655afdd11a093b863eed8497309b146f922cb345e3f0aa25ad757",
+        "pngSha256": "b3c3302b434e671ef458c156691365df2502adff1cea3ea74617c625503a6ed8",
+        "nonTransparentPixels": 1584,
+        "darkPixels": 771,
+        "lightPixels": 123,
+        "alphaTotal": 372817
+      },
+      "firefox": {
+        "rgbaSha256": "4b05d8b1faf22717dabcc78bc2a884be555d849dc93b1648f55903549cd7fa58",
+        "pngSha256": "d30b63171f6693355cee2eff276d40e91aa520162bf9decec98607cb55e5caf0"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.000339109641274407,
+        "normalizedAlphaMae": 0.00008018639554587267
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "bN",
+      "file": "bN.svg",
+      "sourceSha256": "1d6132f68578f346b85e5096d3cd57dc97a58349cebd6c5884c4c73c412ae6d6",
+      "chromium": {
+        "rgbaSha256": "a39c3715e2e7e0d618029ed2188c9a69356d48497d76b73ce62baa5dbcfa37de",
+        "pngSha256": "c6d744ab1005258be6dbfae3e33add61c8f2d884df5b806d57dfcde2e94e253b",
+        "nonTransparentPixels": 2163,
+        "darkPixels": 854,
+        "lightPixels": 173,
+        "alphaTotal": 513665
+      },
+      "firefox": {
+        "rgbaSha256": "bb973dfe71d557442083a7860ddd4ba819beda567e8e07ba33942d1304f0bb7c",
+        "pngSha256": "c5b720bbabe1a8cdf1dc65a08dd23f90bd8567708fabbe86f7e510d692f1d895"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0007312595820221093,
+        "normalizedAlphaMae": 0.00030107722101186155
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "firi",
+      "code": "bP",
+      "file": "bP.svg",
+      "sourceSha256": "dbe57bae29c3566661cdb6a62e828681a017e7bbea3da3570c00dbb131c34ee8",
+      "chromium": {
+        "rgbaSha256": "8e76c83e4b1a67c069a1b9b65866675748f00cda9aa713005cbd7606a7704e3a",
+        "pngSha256": "a449f9f68b400da366355973f929470fb9c2743b9b6f65d988bba3d300790dbd",
+        "nonTransparentPixels": 1135,
+        "darkPixels": 506,
+        "lightPixels": 0,
+        "alphaTotal": 262583
+      },
+      "firefox": {
+        "rgbaSha256": "c5f301d65b1d22949feba13c56f722efc629487f0686012103f3fee3b86d3d9a",
+        "pngSha256": "bb5acde28567a70ff40629618bfb09f3788d6bf74f4b301cbac05efb491088b3"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00033225389728230506,
+        "normalizedAlphaMae": 0.00005900508351488744
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "wK",
+      "file": "wK.svg",
+      "sourceSha256": "5a5bb397e8f8b08fee64a98a83a07dd287eb1557ffef31b22453ea80ed03d500",
+      "chromium": {
+        "rgbaSha256": "9639272821ef74464114391e09f5eda633763d28e102d0ae7e14bc6cf7c495dd",
+        "pngSha256": "5f0ad067548c0ff9caad8bb08dbada20ebbb3636242ce97cddf28ed00065f6d9",
+        "nonTransparentPixels": 2389,
+        "darkPixels": 845,
+        "lightPixels": 1418,
+        "alphaTotal": 583513
+      },
+      "firefox": {
+        "rgbaSha256": "1a7d10ca49029a07485352d4816f4a28eb4752fc4bf256c36397e8dd80fae973",
+        "pngSha256": "adbaf2383ace060ff5165acce473e1b7ddd1d5329143f5fc5ec1216b16033b0c"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00024190600955947616,
+        "normalizedAlphaMae": 0.00011498426531106269
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "wQ",
+      "file": "wQ.svg",
+      "sourceSha256": "e937921417c5a5d3fd4881183821594ed5afe0892cb492fe74f4f33bc81bb37f",
+      "chromium": {
+        "rgbaSha256": "569646deda08b7cc7bb8dfda6a6a47cda25f3723adee46485a35a3664239d989",
+        "pngSha256": "ca2f29b38ab232876b4c0d2445ce8c5b191eed65614f227c446afee363ccb66d",
+        "nonTransparentPixels": 2568,
+        "darkPixels": 811,
+        "lightPixels": 1636,
+        "alphaTotal": 626883
+      },
+      "firefox": {
+        "rgbaSha256": "f76efe6f2c410da59f65c6f9606fe48d36396ce8614db413f4f3329652d3819a",
+        "pngSha256": "4abe1767fdb188e373b20c2115d7a951abe4f2947cf86cacc15ae0b792e97d4e"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0008290051072474496,
+        "normalizedAlphaMae": 0.0001475127087872186
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "wR",
+      "file": "wR.svg",
+      "sourceSha256": "26963e5f4fc8d324be998c654d9822644100702e48e49ddac74596d7bc0fffa2",
+      "chromium": {
+        "rgbaSha256": "b292515f0d3913ac84b062c53963fda53a351d1d54fd35a08d65f104ebf3d260",
+        "pngSha256": "98801415771c0ffb312c1be1fbb9420b750448eadda8d68dd20e60694e2a779e",
+        "nonTransparentPixels": 2406,
+        "darkPixels": 810,
+        "lightPixels": 1264,
+        "alphaTotal": 584242
+      },
+      "firefox": {
+        "rgbaSha256": "f8094e59b9746f65dcbf9c430653a6eee80f1e866be315b65e97ed0337fd037a",
+        "pngSha256": "b95804d6d8db7ed9b8f435ef79f16c7a4a701dc7c3e90fbb343337623f64ad72"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0004402301346585592,
+        "normalizedAlphaMae": 0.0004084967320261438
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "wB",
+      "file": "wB.svg",
+      "sourceSha256": "e9c00b057672ec693e2da7808873085aee2f6f7c61cc8f68386d01a7e94d6859",
+      "chromium": {
+        "rgbaSha256": "70ff470b01627b2c441644c91bed30c5da39a398d7d7b0fee88ad00dfdf5fd71",
+        "pngSha256": "dc7cdf3111acf1251c934897e2b86bab28dc83481995c9d53e1b1498cab2bacf",
+        "nonTransparentPixels": 2128,
+        "darkPixels": 760,
+        "lightPixels": 1124,
+        "alphaTotal": 516533
+      },
+      "firefox": {
+        "rgbaSha256": "43cf82093f6c43850b552bde555dc568c5407a50eefc28c77bb0deba5cc9795d",
+        "pngSha256": "b75b4e94be9249b9d38ea86890dc2b955025ff8ee2a1fdbc955f0732dd4fd32a"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00022907559295807405,
+        "normalizedAlphaMae": 0.00008623819898329703
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "wN",
+      "file": "wN.svg",
+      "sourceSha256": "38adc3f8293e186386b1be2a7e489648027f68866c22e64fdaa39f2582047ab2",
+      "chromium": {
+        "rgbaSha256": "240901deb064e114b0700d8297e540fcaad262c48704ffadfa73b10c3431b73a",
+        "pngSha256": "380cb3d1e7ca26ad7559eedd3ec27120bef1905f3ad867d9999e978ed066655e",
+        "nonTransparentPixels": 2368,
+        "darkPixels": 820,
+        "lightPixels": 1411,
+        "alphaTotal": 576367
+      },
+      "firefox": {
+        "rgbaSha256": "479b4d82bbb12bf67a960170d8b1ee14fff84f3d09e3b2f09eacee0585a3b33f",
+        "pngSha256": "749cec2027110f4d717191ba7df8cd5cd0b3c131e10ed1dddbc224dc5b4558e4"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0002698718678950642,
+        "normalizedAlphaMae": 0.0001664245945291697
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "wP",
+      "file": "wP.svg",
+      "sourceSha256": "ec9cc7778fe148cd740586964ee3f789ef22dcda77f3ce5ee3ddf47f76c210b8",
+      "chromium": {
+        "rgbaSha256": "40160a7a7ca0590468bbaf1c250b56c4c01edbc9a61458da88982353b36f30dc",
+        "pngSha256": "474c63b713d856fc99be82935d9dd1c034bd579a456744b8ebe238ef9657b02c",
+        "nonTransparentPixels": 1465,
+        "darkPixels": 599,
+        "lightPixels": 776,
+        "alphaTotal": 353529
+      },
+      "firefox": {
+        "rgbaSha256": "f261e5985f631225e128910f579db9ca5b551b3be03b91ab57281a4e476d2acb",
+        "pngSha256": "54f8e7b323cd8080ad019796f11a6edc8f68c63c9362ae412f1cb070b71d30df"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0008674340590750952,
+        "normalizedAlphaMae": 0.000034797869765190025
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "bK",
+      "file": "bK.svg",
+      "sourceSha256": "74acb4e12ab8f6e19da483fae136c3b0618336ed73f96feb22ae0adb445f39b3",
+      "chromium": {
+        "rgbaSha256": "9908c40e23d1290cd699df721aa3df90e1300790b2b72f76de6162d2a8a33df6",
+        "pngSha256": "61edb9626c35ddd64824b6441379cbc35339ea9b91a9a34ac4fa0eeb0c06dc1f",
+        "nonTransparentPixels": 2389,
+        "darkPixels": 867,
+        "lightPixels": 0,
+        "alphaTotal": 583513
+      },
+      "firefox": {
+        "rgbaSha256": "36aa4a3924ef62b7f4fbcb0dc1b1ff7f9fd4809b39843adfe988368d86faa00a",
+        "pngSha256": "ca2cadd765d9f7b51bd7b5e34411cbdde55f649af273f85a6d0dbf548fbd7172"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00019752611768503083,
+        "normalizedAlphaMae": 0.00011498426531106269
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "bQ",
+      "file": "bQ.svg",
+      "sourceSha256": "416b21a850bff5676c2a052341419783feba9569163803589e4fb4c07d4e19e1",
+      "chromium": {
+        "rgbaSha256": "4f19355537591358e5e1ad950b08b58ee56d2d5c31e71307b399eaedbf88ac07",
+        "pngSha256": "74791f9a230a02912391b2b94d6af7f854d9731dedd1d48745d626295ab50f67",
+        "nonTransparentPixels": 2568,
+        "darkPixels": 843,
+        "lightPixels": 0,
+        "alphaTotal": 626883
+      },
+      "firefox": {
+        "rgbaSha256": "1c13ca0e5f61487ac0605a1826712da40b03bc664e7e8638119ff522c6d5a796",
+        "pngSha256": "7db9b12493d2c6539201d71ed2f2b024d4d9e709b895cf78a999c9674078d293"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0005488570397900145,
+        "normalizedAlphaMae": 0.0001475127087872186
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "bR",
+      "file": "bR.svg",
+      "sourceSha256": "9a43817e05067a2fc35dc760faec21732ec66c8a72d262374dc031fadb40eca7",
+      "chromium": {
+        "rgbaSha256": "de8cb52b4dda2a4f1847070e4e9c28269a9a8cd8d8f1a9d46b440ec6e0331b1d",
+        "pngSha256": "055e59a2b44096e7f4cb2ce4546786feddebe2ccfec71f1f1efc5e4883a19972",
+        "nonTransparentPixels": 2406,
+        "darkPixels": 864,
+        "lightPixels": 0,
+        "alphaTotal": 584242
+      },
+      "firefox": {
+        "rgbaSha256": "9d9182f62d1febb0242e5d2abd3f69d96ded2d67c781ea81e0df6732a730b29f",
+        "pngSha256": "b267e10321ac59122a4ca1c849cb13bcb06261dd1ffc28c2b03532ee7febd9bc"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00042157040739316745,
+        "normalizedAlphaMae": 0.0004084967320261438
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "bB",
+      "file": "bB.svg",
+      "sourceSha256": "2d93c7f0dd47f4bf5f05f8eae7a6fb47fb68d9578245f36b20e14a71d10b635a",
+      "chromium": {
+        "rgbaSha256": "1af3958f3ec58a420b7e8ea4c5d75d97e2731120d01c0c63dffdac5d0c628a66",
+        "pngSha256": "ac542051f0042ee1420b97e60f82101072d9cffbf2d61d3604598eaec55e895a",
+        "nonTransparentPixels": 2128,
+        "darkPixels": 787,
+        "lightPixels": 0,
+        "alphaTotal": 516533
+      },
+      "firefox": {
+        "rgbaSha256": "e3d9ba0278e1375ba7870abd3fcb0934aa04d436c8165900e3ceb5b85b8bd337",
+        "pngSha256": "6a3adab4513f0fc17275e3fb5dbed06f6c1cb501fcea3b466b6fbded917d4597"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00018040900698211985,
+        "normalizedAlphaMae": 0.00008623819898329703
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "bN",
+      "file": "bN.svg",
+      "sourceSha256": "07420189a69e58a46f4d8df18b95608c6d1c2051e105c2e3cf80e1c3ea45a08d",
+      "chromium": {
+        "rgbaSha256": "f751fd896d57308303c2ac558fa7aae194ac43f8b328a8d5651742d385e01556",
+        "pngSha256": "de747071eb067ea5cddfdb7e1d8515a286996e0da6b9a6e80bcebba99b07caca",
+        "nonTransparentPixels": 2368,
+        "darkPixels": 885,
+        "lightPixels": 0,
+        "alphaTotal": 576367
+      },
+      "firefox": {
+        "rgbaSha256": "e88a7c2d8d727e6bea9afac2ca32c2fd1f5fef6ff91963dfd20d5ff19b059e11",
+        "pngSha256": "c0b2c2b5da67a1f0e1d3bf5e8b004e44f9540512c53def2eac8a594a3da9bce6"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.0002315437794580432,
+        "normalizedAlphaMae": 0.0001664245945291697
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    },
+    {
+      "family": "rhosgfx",
+      "code": "bP",
+      "file": "bP.svg",
+      "sourceSha256": "fe06f8e42ca883c2a79535514670862f37228980da7de5028213a6b7b388044b",
+      "chromium": {
+        "rgbaSha256": "f656812425f14a8f00f811779dff6837876c568b86e522a7308c94b12dbe9d2f",
+        "pngSha256": "062549ec8e223cd1c6588761aa1a134d33b281741ee2b076cfb500142b50db7b",
+        "nonTransparentPixels": 1465,
+        "darkPixels": 618,
+        "lightPixels": 0,
+        "alphaTotal": 353529
+      },
+      "firefox": {
+        "rgbaSha256": "606c68312988f21a89425658df48dc882a774dfc6b6bf397815fff42de8f8d67",
+        "pngSha256": "6a9a9040de6bd21a6cf8b6a26b41d51bcf0e8862be0994685039a379191834e3"
+      },
+      "crossEngine": {
+        "normalizedWhiteCompositeMae": 0.00047860568822058035,
+        "normalizedAlphaMae": 0.000034797869765190025
+      },
+      "nativePngVisiblePixelsExact": true,
+      "freshChromiumRenderExact": true
+    }
+  ],
+  "noExternalRequests": true,
+  "environment": {
+    "node": "v24.19.0",
+    "operatingSystem": "linux",
+    "architecture": "arm64"
+  },
+  "contactSheet": {
+    "path": "runs/svg-contact-sheet.png",
+    "sha256": "3062d27f4b8f292c02a8ebebb2898b58e66e970680aface16fb41aff72a6a7d1"
+  }
+}
