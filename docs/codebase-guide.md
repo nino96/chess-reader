@@ -470,7 +470,12 @@ beyond ordinary React compilation:
 - `CHESS_READER_BASE_PATH` lets the build emit URLs for a subpath such as
   `/chess-reader/` on GitHub Pages.
 
-CI builds and tests on every push to `main` and every pull request. A separate
+CI builds and tests on every push to `main` and every pull request. The full
+check/unit/license/build job uses `ubuntu-24.04-arm` and Node 24.19.0 so the
+locked corpus regenerates byte-for-byte with its native Skia producer. E2E
+and real-model recognition evaluation jobs remain on x64 `ubuntu-latest`.
+The [measured cross-architecture drift](investigations/issue-34-corpus.md#canonical-regeneration-environment)
+is a fixture-generation constraint, not a product support exclusion. A separate
 workflow publishes `main` to GitHub Pages and stamps `VITE_APP_VERSION` with the
 commit SHA shown in the footer.
 

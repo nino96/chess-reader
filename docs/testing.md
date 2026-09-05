@@ -68,6 +68,15 @@ pnpm test:unit --project test-fixtures corpus
 pnpm --filter @chess-reader/test-fixtures generate:corpus
 ```
 
+Exact v1 regeneration requires the canonical Linux ARM64 GNU environment,
+Node 24.19.0, pnpm 11.11.0 and the frozen lockfile (native
+`@napi-rs/canvas-linux-arm64-gnu` 1.0.8). CI runs the entire unchanged
+check/unit/license/build job on `ubuntu-24.04-arm`; browser E2E and the
+Chromium recognition evaluation remain on x64. Native x64 regeneration fails
+exact equality because Skia rounds some channels differently; it must not
+replace the locked images. See the [measured CI failures and rationale](investigations/issue-34-corpus.md#canonical-regeneration-environment).
+The test still requires byte-for-byte equality, with no pixel tolerance.
+
 Do not regenerate version 1 to improve a candidate's score. Preserve the
 original inputs/results and record any corpus revision explicitly in
 [#35](https://github.com/nino96/chess-reader/issues/35).

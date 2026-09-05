@@ -194,6 +194,14 @@ the existing real-worker product golden assertions. Physical-iPad testing is
 deferred for #34/#35 by owner instruction, with final device acceptance still
 tracked on [#24](https://github.com/nino96/chess-reader/issues/24).
 
+Corpus v1 byte regeneration is a required gate in the canonical Linux ARM64
+GNU / Node 24.19.0 environment, with the frozen dependency lockfile. Native
+x64 Skia rendering has measured one-level channel drift; the committed
+inputs, exact hash assertions and accuracy targets remain unchanged.
+The complete check/unit/license/build CI job runs on ARM64, while the
+existing E2E and real-model evaluation jobs run on x64. See the
+[regeneration evidence](investigations/issue-34-corpus.md#canonical-regeneration-environment).
+
 ## 7. Reader and hotspot evaluation
 
 ### PDF gates

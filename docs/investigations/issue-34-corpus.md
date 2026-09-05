@@ -203,6 +203,35 @@ cold observation, not a cold-start distribution. See the
 [product reports](../eval-baselines/issue-34-product-goldens.json); predicted
 placements are omitted in the retained copy, with other fields unchanged.
 
+## Canonical regeneration environment
+
+The original v1 corpus was generated on Linux ARM64 GNU with Node 24.19.0,
+pnpm 11.11.0 and lock-pinned `@napi-rs/canvas` 1.0.8. Its native Skia renderer
+is architecture-sensitive. The initial x64 Ubuntu CI
+[run 33971033248](https://github.com/nino96/chess-reader/actions/runs/33971033248)
+failed only the exact regeneration test (374 other unit tests passed).
+A [diagnostic rerun at `86e225f`](https://github.com/nino96/chess-reader/actions/runs/33971403486)
+compared decoded pixels as well as file hashes: 12/16 pages differed, with
+39–42,746 changed channels per affected page, each by exactly one intensity
+level. The contact sheet differed in 1,781 channels. Four page PNGs and the
+overview Markdown were byte-identical; embedded PNG hashes accounted for
+the manifest difference. Both failures are retained in the linked logs.
+The minimized test now reports every differing file and decoded-pixel counts,
+while retaining its original strict byte-equality assertion.
+
+The required check/unit/license/build CI job therefore uses
+`ubuntu-24.04-arm` and Node 24.19.0 as the canonical native producer. It runs
+the same complete suite and checks: no assertion, fixture, test or step is
+skipped, and no pixel tolerance is introduced. The original v1 bytes, manifest
+hash and recorded baseline inputs remain unchanged. Existing Chromium,
+Firefox, WebKit E2E and Chromium real-model evaluation CI jobs remain on x64
+and consume the committed, hash-validated corpus. Native x64 regeneration is
+not a valid replacement for the canonical producer; this does not exclude
+x64 product/runtime support. Host-image updates still need to pass exact
+regeneration; a future mismatch must be investigated, not rebaselined without
+an explicitly reviewed corpus revision in
+[#35](https://github.com/nino96/chess-reader/issues/35).
+
 ## Verification and handoff
 
 | Command/check                                   | Result                                                                                                                                                                                                                       |
