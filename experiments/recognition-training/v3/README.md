@@ -53,20 +53,10 @@ reused by relevant hashes, not reported as a new pass.
 
 ## Current status
 
-The source/data gate passed: all 4,864 boards replay identically against the final
-renderer and all 36 family/condition groups contain every class. The pretraining
-lock binds reviewed source/tensor sheets, manifests, protocol and trainer inputs.
-Data operations used a conservatively recorded 199.39 seconds of the 600-second
-ceiling. Root `pnpm check` and focused data/trainer tests pass.
-
-The [Fenify smoke](reports/native-smoke-fenify.json) stopped offline: 5/12 raw
-exact boards, 111/147 occupied squares correct, and no error-free covered threshold
-on the declared grid. The [NAKST smoke](reports/native-smoke-nakst.json) produced
-5/12 exact boards and 100/147 occupied squares correct, advancing only to bounded
-development screening. Two retained infrastructure attempts exposed tiny sigmoid
-rounding drift and normalized output coordinates; the final adapter corrects both
-with regression tests. The earlier geometry observations are superseded. These
-small development screens are not fresh qualification or product acceptance.
-
-No GPU training or fresh qualification has started at this lock. Commands,
-learning curves, outcomes and unrun stages will be recorded when reached.
+The bounded comparison is complete: both fine-tuning seeds and both pretrained
+alternatives stop offline. See the [result and verification report](REPORT.md),
+[aggregate comparison](reports/comparison.json), and
+[learning curves](reports/learning-curves.csv). The selected fine-tuned models
+slightly improve raw exact-board counts while increasing confidently wrong boards.
+No candidate qualifies for fresh-test or browser evaluation. Production, frozen
+experiments and corpus v1 remain unchanged; #24 stays open and iPad is deferred/unrun.

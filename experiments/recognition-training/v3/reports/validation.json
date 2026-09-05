@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "baseCommit": "c38ffb56076a1f4db1383ae56551b7229f6dba78",
+  "environment": {
+    "system": "Linux",
+    "machine": "aarch64",
+    "python": "3.12.3"
+  },
+  "checks": [
+    {
+      "command": "pnpm check",
+      "result": "passed: TypeScript, Prettier, ESLint; final integrated tree"
+    },
+    {
+      "command": "node --test experiments/recognition-training/v3/tests/*.test.mjs",
+      "result": "passed: 2 test files"
+    },
+    {
+      "command": "experiments/recognition-training/.venv/bin/python -m unittest discover -s experiments/recognition-training/v3/tests -p 'test_*.py'",
+      "result": "passed: 27 tests, 3.052 seconds"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "Python local-link and aggregate recounts",
+      "result": "passed: 71 links; all 3 same-input models counts consistent"
+    },
+    {
+      "command": "Source/model/data/implementation hash audit and preservation diff versus f9c6d19",
+      "result": "passed: current generator dependencies and source lock match manifests; original/v2, corpus v1, product/dependencies unchanged"
+    }
+  ],
+  "sha256": {
+    "REPORT.md": "4a0124f730b3eb2213d5f80a3a001210a4e2f0a39643a3b2420dfb367f14e27c",
+    "README.md": "2941b053f38aa4dd91a17cea2c16ee26b264a9f6eeb22a9e97571072c2cd6267",
+    "reports/comparison.json": "947a28d5b285161223aa74c20cfbc2eb7e1226aa57ae4e9d28f29d76194266da",
+    "manifests/candidate-freeze.json": "4b2cc1392adefacb0f46e631e9393f931d9e0cf09beceddaa072495da541c16d",
+    "trainer.py": "cac5c9bb47b7d78a0f53e4c3aded8a82cd46ddca667f75745b1a2cdc22761538",
+    "diagnostic.py": "4e445216564481755a73707a2ed6e6edd8d5c3937fa4e7478d4e064098e89f2a",
+    "alternatives.py": "f2bb0a27464b84158d3f2eba6ea091882b45e2d4f3c58e33382ffd5739345455",
+    "native_smoke.py": "bfabf17676f5ac0cf6066846413827e33c8784ac980c1a3a10f567e50281276a",
+    "nakst_development.py": "5407fcdf87ddbfa1b8378aadf8d042f178869b0c7bafad9622693737223f661d"
+  },
+  "unrun": {
+    "qualificationAndBrowser": "not reached: offline rejection",
+    "productSuites": "not applicable: production unchanged",
+    "physicalIpad": "deferred/unrun"
+  },
+  "limitations": [
+    "Selected-best checkpoints contain weights and selection metadata; optimizer/RNG recovery uses the separate last-state checkpoint.",
+    "Torch warns about GB10 compute capability outside its advertised upper bound; measured recovery and export checks passed.",
+    "No candidate is production-qualified."
+  ]
+}
