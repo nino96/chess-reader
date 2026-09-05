@@ -684,3 +684,10 @@ records the scratch-training limitation, development-only CPU diagnostic and
 proposed shipped-weight adaptation comparison. Its diagnostic command is in
 `experiments/recognition-training/v2/analysis/dev_color_diagnostic.py`; it reads
 existing Firi development vectors only and is not a promotion or product eval.
+
+The [bounded comparison preparation](../experiments/recognition-training/planning/COMPARISON.md)
+records the requested shipped-weight adaptation arm, retained scratch controls,
+two pretrained shortlist entries, provenance blockers and proposed compute/stop
+rules. The separate `planning/` directory keeps reconstruction feasibility work
+outside the frozen experiments. It adds no product command or runtime behavior;
+training requires a separately scoped experiment under #24 and a fresh data lock.

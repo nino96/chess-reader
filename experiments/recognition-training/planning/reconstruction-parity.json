@@ -1,0 +1,198 @@
+{
+  "command": "timeout 120s experiments/recognition-training/.venv/bin/python experiments/recognition-training/planning/reconstruct_parity.py",
+  "commit": "e9370789f4c2fdc115265a1c478ac0fbaee8e234",
+  "elapsedSeconds": 1.5181920938193798,
+  "environment": {
+    "interOpThreads": 1,
+    "intraOpThreads": 1,
+    "machine": "aarch64",
+    "onnx": "1.18.0",
+    "onnxruntime": "1.22.1",
+    "platform": "Linux-6.17.0-1021-nvidia-aarch64-with-glibc2.39",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128"
+  },
+  "inputs": {
+    "boards": 15,
+    "hashes": {
+      "datasetManifest": "509d7ebb604e02f23eb354d16bfead096c7b224d100c7d1a9213e102bf4f5544",
+      "devLabels": "ad14fe628fa947ea6457c09599dc8b1792fd6a55e1639421a99ecb16862e8f6f",
+      "devVectors": "f2c8862b5d69c5f6798d041e6a96e6d28c874b1ed078aad5e8b44dd4c0938b57",
+      "fixedVectors": "3ca39de8721f835d6b2d202e6c3ab2c210fa947d1ae4ea1bc581a8643484f734",
+      "trainLabels": "14a3797930258fb66064d6936b3b9f35101cf717aec4e1a28f91c6b7894de5f7",
+      "trainVectors": "3d6af0040a203b2ae3fef7d4d368670e0be72b9793f15ffd71b11948f2290a93"
+    },
+    "selectedBoards": [
+      {
+        "classes": [0, 1, 3, 5, 6, 7, 10],
+        "family": "celtic",
+        "index": 3,
+        "split": "train",
+        "style": "flat",
+        "vectorSha256": "6aa217ebe884ac97772bf060d8c7b80a6d2fc7e9a0f22d8f6e52e96c4cc2307b"
+      },
+      {
+        "classes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12],
+        "family": "celtic",
+        "index": 11,
+        "split": "train",
+        "style": "hatch",
+        "vectorSha256": "607e40a92c7f64923dbec9987e4f923ee67e3d0b749985b907f237fbf3e01d67"
+      },
+      {
+        "classes": [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 12],
+        "family": "celtic",
+        "index": 7,
+        "split": "train",
+        "style": "halftone",
+        "vectorSha256": "24334d87aa94a2f1518bdf4b2141e9001f426f663dec6ee63ce7bae9694450ff"
+      },
+      {
+        "classes": [0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        "family": "chessnut",
+        "index": 0,
+        "split": "train",
+        "style": "flat",
+        "vectorSha256": "fa8e3b69d5fd22e87b88e2fd5285e54c7ae858b68d2b53be217c64c5b9be67a6"
+      },
+      {
+        "classes": [0, 1, 3, 4, 6, 7, 12],
+        "family": "chessnut",
+        "index": 12,
+        "split": "train",
+        "style": "hatch",
+        "vectorSha256": "6490a0532bc187609eac44021fea3273e703c54bc518690bc6d98f35423f7d6c"
+      },
+      {
+        "classes": [0, 1, 6, 7, 8, 9, 12],
+        "family": "chessnut",
+        "index": 20,
+        "split": "train",
+        "style": "halftone",
+        "vectorSha256": "ee41fa28144ce39cc8f8e32a3182fc7b29bd1848ce3d9faafe25bfcf28206fff"
+      },
+      {
+        "classes": [0, 1, 2, 5, 6, 7, 9, 11, 12],
+        "family": "fantasy",
+        "index": 1,
+        "split": "train",
+        "style": "flat",
+        "vectorSha256": "79eebac8138e0bec979bd967e7da951cf52c9de8a1a79415ba68ebd1303f6e9e"
+      },
+      {
+        "classes": [0, 1, 6, 7, 8, 10, 12],
+        "family": "fantasy",
+        "index": 5,
+        "split": "train",
+        "style": "hatch",
+        "vectorSha256": "3fbed93a66f2e254d086b3b4ef1a85b801627fb19dfbc07e1c68137f2607a52d"
+      },
+      {
+        "classes": [0, 1, 2, 3, 6, 7, 8, 10, 11, 12],
+        "family": "fantasy",
+        "index": 13,
+        "split": "train",
+        "style": "halftone",
+        "vectorSha256": "882a863173f3fbb64eceb7ca1f9679123257e5d3e581c8a08fe866ff79e6a9d6"
+      },
+      {
+        "classes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12],
+        "family": "spatial",
+        "index": 18,
+        "split": "train",
+        "style": "flat",
+        "vectorSha256": "54cd1c221dc27e7b5ca336e36f2232d7682141b7ef6e3068b6888c3f7b7b6427"
+      },
+      {
+        "classes": [0, 1, 6, 7, 10, 12],
+        "family": "spatial",
+        "index": 10,
+        "split": "train",
+        "style": "hatch",
+        "vectorSha256": "4b6ddc4b489e1222df24272f6ad5a7f24d080c0e81e27770f178ad0998ce0d3f"
+      },
+      {
+        "classes": [0, 1, 3, 7, 9, 11, 12],
+        "family": "spatial",
+        "index": 2,
+        "split": "train",
+        "style": "halftone",
+        "vectorSha256": "0cccf49e943bab5e68329ddf4b01c9899116da53aa1a8b71268d22d7fdec1d0c"
+      },
+      {
+        "classes": [0, 1, 3, 6, 7, 9, 10, 12],
+        "family": "firi",
+        "index": 2,
+        "split": "dev",
+        "style": "flat",
+        "vectorSha256": "df4c20c05885ddb6dfcd9982f75ecd6495f6f853145bd2541d5039ad91158693"
+      },
+      {
+        "classes": [0, 1, 2, 6, 7, 9],
+        "family": "firi",
+        "index": 3,
+        "split": "dev",
+        "style": "hatch",
+        "vectorSha256": "c90690723b60274324a7eedba4e25614b944a2cb753d04c691f07b827c1f049c"
+      },
+      {
+        "classes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12],
+        "family": "firi",
+        "index": 0,
+        "split": "dev",
+        "style": "halftone",
+        "vectorSha256": "44d59fecb78e2c6d95abe4d01930a6ed4f332a2503417c18d2ca0d02665c5343"
+      }
+    ],
+    "tiles": 960
+  },
+  "kind": "shipped-fenshot-pre-update-reconstruction-parity",
+  "model": {
+    "batchNormalization": "absent/fused",
+    "bytes": 1289483,
+    "classOrder": "1KQRBNPkqrbnp",
+    "dropout": "absent",
+    "mapping": {
+      "net.conv1.bias": "conv1.bias",
+      "net.conv1.weight": "conv1.weight",
+      "net.conv2.bias": "conv2.bias",
+      "net.conv2.weight": "conv2.weight",
+      "net.conv3.bias": "conv3.bias",
+      "net.conv3.weight": "conv3.weight",
+      "net.fc1.bias": "fc1.bias",
+      "net.fc1.weight": "fc1.weight",
+      "net.fc2.bias": "fc2.bias",
+      "net.fc2.weight": "fc2.weight"
+    },
+    "opset": 17,
+    "pathRole": "@scoriiu/fenshot@0.1.4 shipped chess-tiles-v2.onnx",
+    "sha256": "883f6a8e639e6d6b6399b3fda0508ad772e3c6f9cefa2e678a13f27b9fa6248d",
+    "trainableParameters": 321485
+  },
+  "parity": {
+    "allClose": true,
+    "atol": 1e-5,
+    "identicalArgmax": true,
+    "maxAbsoluteDifference": 8.642673492431641e-7,
+    "meanAbsoluteDifference": 1.3392905902247338e-8,
+    "rtol": 1e-5,
+    "trainEvalByteIdentical": true
+  },
+  "schemaVersion": 1,
+  "scope": {
+    "corpusV1Loaded": false,
+    "coverageLimitation": "Existing v2 train/dev families and render styles only; no new pristine styles were acquired.",
+    "heldOutTestLoaded": false,
+    "optimizationSteps": 0,
+    "productionChanged": false,
+    "weightsWritten": false
+  },
+  "scriptSha256": "412de92f96df0f3658d8ba59bc62a2ea0e8dbec8f7103fb953cfb93b24c0a352",
+  "status": "passed",
+  "validation": {
+    "allTenFloatingPointParametersMapped": true,
+    "changedAttributeRejected": true,
+    "missingInitializerRejected": true
+  }
+}
