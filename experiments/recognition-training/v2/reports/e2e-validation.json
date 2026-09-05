@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "command": "pnpm test:e2e",
+  "startedAt": "2026-09-05T19:49:07Z",
+  "endedAt": "2026-09-05T19:52:41Z",
+  "durationSeconds": 214,
+  "exitCode": 0,
+  "sourceCommit": "fa020295cdafd97cc131cc990362d02f1c7a9520",
+  "concurrentWork": "Local CUDA training was active; this E2E evidence contains correctness only and no classifier latency evaluation."
+}

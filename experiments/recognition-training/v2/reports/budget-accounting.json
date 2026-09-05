@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "trainingElapsedSeconds": 495.38812814233825,
+  "attemptWallSeconds": 499.7139900852926,
+  "totalCeilingSeconds": 6000,
+  "runs": [
+    {
+      "seed": 381,
+      "elapsedSeconds": 1.9963210350833833,
+      "attemptWallSeconds": 3.3905890360474586,
+      "ceilingSeconds": 600
+    },
+    {
+      "seed": 3811,
+      "elapsedSeconds": 245.87256689509377,
+      "attemptWallSeconds": 247.33352504530922,
+      "ceilingSeconds": 2700
+    },
+    {
+      "seed": 3812,
+      "elapsedSeconds": 247.5192402121611,
+      "attemptWallSeconds": 248.98987600393593,
+      "ceilingSeconds": 2700
+    }
+  ],
+  "failedTrainingAttempts": 0,
+  "concurrency": "Product correctness E2E overlapped full training; product recognition regression overlapped part of second seed. These training throughputs are observed on this host, not isolated hardware benchmarks. Experimental browser comparison runs separately."
+}

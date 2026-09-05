@@ -1,0 +1,184 @@
+{
+  "attemptWallSeconds": 248.98987600393593,
+  "candidate": {
+    "bytes": 1288448,
+    "id": "tilenet-full-3812",
+    "modelPath": "candidate.onnx",
+    "seed": 3812,
+    "sha256": "d34f9c95e0d2770ea1a2b74205396738b85f45fbc013b2e574ae8659df3f5a79"
+  },
+  "checkpoint": {
+    "selectedDevLoss": 0.30237048491835594,
+    "selectedEpoch": 7,
+    "sha256": "65d44220d1f8718be6112a6efe9d1751f4c8e2dde345576783ec6597f5c3fc21"
+  },
+  "command": [
+    "python",
+    "trainer.py",
+    "--protocol",
+    "<protocol>",
+    "--data-dir",
+    "<data-dir>",
+    "--run-dir",
+    "<run-dir>",
+    "--mode",
+    "full",
+    "--seed",
+    "3812",
+    "--device",
+    "cuda"
+  ],
+  "commit": "fa020295cdafd97cc131cc990362d02f1c7a9520",
+  "data": {
+    "dev": {
+      "boards": 256,
+      "datasetManifestSha256": "509d7ebb604e02f23eb354d16bfead096c7b224d100c7d1a9213e102bf4f5544",
+      "familyCount": 1,
+      "generatorSha256": "9cadf99f8d12b20a7f8ef1b157959dcc09f9c2f4a07866ef7c87f45a639b8b01",
+      "labelsSha256": "ad14fe628fa947ea6457c09599dc8b1792fd6a55e1639421a99ecb16862e8f6f",
+      "sourceLockSha256": "15a77ebc51c5b285c8e436baca3d344ff87b4bcb188f4bcee07108b7cd46b551",
+      "vectorSha256": "f2c8862b5d69c5f6798d041e6a96e6d28c874b1ed078aad5e8b44dd4c0938b57"
+    },
+    "train": {
+      "boards": 4096,
+      "datasetManifestSha256": "509d7ebb604e02f23eb354d16bfead096c7b224d100c7d1a9213e102bf4f5544",
+      "familyCount": 4,
+      "generatorSha256": "9cadf99f8d12b20a7f8ef1b157959dcc09f9c2f4a07866ef7c87f45a639b8b01",
+      "labelsSha256": "14a3797930258fb66064d6936b3b9f35101cf717aec4e1a28f91c6b7894de5f7",
+      "sourceLockSha256": "15a77ebc51c5b285c8e436baca3d344ff87b4bcb188f4bcee07108b7cd46b551",
+      "vectorSha256": "3d6af0040a203b2ae3fef7d4d368670e0be72b9793f15ffd71b11948f2290a93"
+    }
+  },
+  "dataQualitySha256": "a4ade8a8b2f9d1cb5e9a490c3e1fbe39ec20793aef8133711aaa2ee69add799b",
+  "elapsedSeconds": 247.5192402121611,
+  "environment": {
+    "cudaAvailable": true,
+    "cudaDevice": "NVIDIA GB10",
+    "device": "cuda",
+    "machine": "aarch64",
+    "nvidiaSmi": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version",
+        "--format=csv,noheader"
+      ],
+      "hostCuda": "13.0",
+      "result": "NVIDIA GB10, 580.159.03"
+    },
+    "onnx": "1.18.0",
+    "onnxruntime": "1.22.1",
+    "platform": "Linux-6.17.0-1021-nvidia-aarch64-with-glibc2.39",
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "torchCuda": "12.8"
+  },
+  "implementationSha256": {
+    "shared/dataset.py": "c735d38f887a443af76a117d1a8fbecafdc5bfa558a98f11850f01e74ad593ba",
+    "shared/requirements.lock": "ed509ea41b0d5a754dd774024f284ffd63ebd037babd959c611ee477e103f0c9",
+    "shared/tilenet_model.py": "bcaf25a8bcf95c5342f15c8b8197c3101890657d17a08d6d7b00b3384547e213",
+    "trainer.py": "14ba05a9f6c77f6dcb47a971bb5751740684bcd26adff8a775f31e3843254cb0"
+  },
+  "losses": [
+    {
+      "devMeanCrossEntropy": 0.35694504901766777,
+      "epoch": 1.0,
+      "trainMeanCrossEntropy": 0.4897113861516118
+    },
+    {
+      "devMeanCrossEntropy": 0.330926526337862,
+      "epoch": 2.0,
+      "trainMeanCrossEntropy": 0.31975525873713195
+    },
+    {
+      "devMeanCrossEntropy": 0.3247666172683239,
+      "epoch": 3.0,
+      "trainMeanCrossEntropy": 0.31406503543257713
+    },
+    {
+      "devMeanCrossEntropy": 0.3107208050787449,
+      "epoch": 4.0,
+      "trainMeanCrossEntropy": 0.3120895365718752
+    },
+    {
+      "devMeanCrossEntropy": 0.31138863787055016,
+      "epoch": 5.0,
+      "trainMeanCrossEntropy": 0.31096963747404516
+    },
+    {
+      "devMeanCrossEntropy": 0.30940500274300575,
+      "epoch": 6.0,
+      "trainMeanCrossEntropy": 0.3103741933591664
+    },
+    {
+      "devMeanCrossEntropy": 0.30237048491835594,
+      "epoch": 7.0,
+      "trainMeanCrossEntropy": 0.30987198813818395
+    },
+    {
+      "devMeanCrossEntropy": 0.30750836804509163,
+      "epoch": 8.0,
+      "trainMeanCrossEntropy": 0.30958615173585713
+    },
+    {
+      "devMeanCrossEntropy": 0.306747242808342,
+      "epoch": 9.0,
+      "trainMeanCrossEntropy": 0.3094156829174608
+    },
+    {
+      "devMeanCrossEntropy": 0.3030863255262375,
+      "epoch": 10.0,
+      "trainMeanCrossEntropy": 0.3092740091960877
+    },
+    {
+      "devMeanCrossEntropy": 0.30326979979872704,
+      "epoch": 11.0,
+      "trainMeanCrossEntropy": 0.30919981421902776
+    },
+    {
+      "devMeanCrossEntropy": 0.30298375710844994,
+      "epoch": 12.0,
+      "trainMeanCrossEntropy": 0.3091983515769243
+    }
+  ],
+  "measuredTrainingTiles": 3145728,
+  "measuredTrainingTilesPerSecond": 12709.024144158004,
+  "model": {
+    "bytes": 1288448,
+    "cpuOnnxRuntime": "passed",
+    "externalData": false,
+    "modelPath": "candidate.onnx",
+    "onnxChecker": "passed",
+    "onnxParity": {
+      "atol": 1e-05,
+      "maximumAbsoluteError": 2.384185791015625e-07,
+      "passed": true,
+      "rtol": 0.0001,
+      "vectors": 64,
+      "vectorsSha256": "fa8e3b69d5fd22e87b88e2fd5285e54c7ae858b68d2b53be217c64c5b9be67a6"
+    },
+    "operators": [
+      "Constant",
+      "Conv",
+      "Flatten",
+      "Gemm",
+      "MaxPool",
+      "Relu",
+      "Reshape",
+      "Softmax"
+    ],
+    "sha256": "d34f9c95e0d2770ea1a2b74205396738b85f45fbc013b2e574ae8659df3f5a79"
+  },
+  "protocolSha256": "242d07996ecab07a0b65402ea776317ecf23bbee246d975d3575003e392e1890",
+  "recovery": {
+    "performed": false
+  },
+  "run": {
+    "batchSize": 2048,
+    "epochs": 12,
+    "mode": "full",
+    "seed": 3812,
+    "wallSeconds": 2700
+  },
+  "schemaVersion": 1,
+  "status": "completed"
+}

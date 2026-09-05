@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "role": "post-freeze-regression-provenance",
+  "command": "node experiments/recognition-training/v2/regression.ts",
+  "preparationCommit": "fa020295cdafd97cc131cc990362d02f1c7a9520",
+  "recordedAfterInitialInference": false,
+  "note": "Provenance recorded after both full candidates were frozen and before the first v2 regression inference. Corpus v1 remains historical regression, not a fresh test lock.",
+  "corpusManifestSha256": "767c0e91c7c685495a8d1be37fc8605208ca9e2dc6b672c39ea2d47567189b7a",
+  "regressionScriptSha256": "788b3b6cd40ae3dcbb8ac6a1e8b2edd613875b1ba87e1613bf016f5697d09c37",
+  "preprocessingSha256": "cc8f81d47423aee036c27c84656cea6c7a081fc461bda94f8abd4320fb68b2d9",
+  "canvasPackageSha256": "e454ceeaa41fb647f8ecbeb6862380b1ee104d2c4d8b0b368dad55456f170033",
+  "vectorsSha256": "7c2edc21aef5b2b1f9d994e31cd72f968f2b93aac6ed992a4a89062fc97e9974",
+  "labelsSha256": "0c8498a3bc4c13b229e242c39920d5a41de07df1f4900f07c1d7cb5bd9afcfa5",
+  "wrapperSha256": "1a7ad3c7ff851f9b564306cbf07a253ffb2dbacc2b07e0b9513be81ce21fe6e2",
+  "freezeFileSha256": "b5fbc07bf8db7f26ed6a3d8c5a45f56906b79687f6d48813bb8febc3ac0b28dc",
+  "boards": 14,
+  "node": "v24.19.0",
+  "platform": "linux",
+  "arch": "arm64"
+}
