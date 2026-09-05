@@ -670,3 +670,17 @@ and image hashes before allowing CUDA runs. The original experiment remains inta
 The model/data loader, Python environment and isolated ORT-Web browser harness are
 shared; production recognition is unaffected. See the v2 README for exact commands,
 repeat-family test limitations and the separate learned-localizer decision trigger.
+
+### Staged research validation
+
+Isolated model experiments follow [the staged evaluation policy](evaluation.md#staged-isolated-model-experiments):
+verify data, screen offline, smoke-test changed export/runtime compatibility,
+and run full browser qualification only for qualifying frozen candidates.
+Unchanged product checks are reused by relevant input hashes; integration still
+requires the product gates. Analysis-only changes use documentation checks.
+
+The [post-freeze failure analysis](../experiments/recognition-training/v2/FAILURE_ANALYSIS.md)
+records the scratch-training limitation, development-only CPU diagnostic and
+proposed shipped-weight adaptation comparison. Its diagnostic command is in
+`experiments/recognition-training/v2/analysis/dev_color_diagnostic.py`; it reads
+existing Firi development vectors only and is not a promotion or product eval.

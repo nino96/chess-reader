@@ -157,3 +157,26 @@ remains unqualified; learned localization, including multiple-board pages,
 remains a separate experiment. Dedicated worker/WASM inference, all existing
 gates, unchanged production recognition and #24's deferred physical-iPad
 requirement remain in force. No architectural decision or threshold changes.
+
+## Staged isolated research evaluation (2026-09-05)
+
+At the owner's explicit request, adopt the [staged research policy](../evaluation.md#staged-isolated-model-experiments)
+for subsequent isolated experiments and analysis. This revises when full
+research browser/product gates apply, not their assertions or promotion targets.
+Issue #38's explicit completed gates and historical records remain unchanged.
+
+Measured rationale: v2 CPU inference already found 0/256 exact boards for both
+candidates. The subsequent full browser matrix took 605.48 seconds for 30 checks
+and reproduced all CPU confusion matrices and aggregate accuracy counts exactly.
+The product E2E run took 214 seconds and recognition measurement 567 seconds;
+those checked unchanged product behavior. These durations are individual runs,
+not a measured hour-long sequential total; some work overlapped. They did not
+resolve the cause of the training failure. See the [v2 report](../../experiments/recognition-training/v2/REPORT.md).
+
+Reject offline accuracy failures before full browser qualification; require a
+small compatibility smoke when the architecture/export/runtime changes. Reuse
+hash-matched data, runtime and product evidence. Full product gates attach to
+integration or affected product changes, not every research seed. Explicit
+issue-specific requirements must still be satisfied or explicitly amended.
+All model qualification, provenance, privacy, offline and physical-device
+requirements remain unchanged. #24 stays open and iPad testing remains unrun.

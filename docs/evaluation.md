@@ -39,6 +39,51 @@ For every issue, the coding agent follows this loop:
 Agents may improve a baseline. They may not delete a failing fixture, loosen a
 threshold, or mark a target unsupported without an explicit reviewed ADR.
 
+## Staged isolated model experiments
+
+This policy applies to research tooling/data/models kept outside the production
+runtime, with no changed production code, assets, preprocessing, dependencies,
+worker contracts, security/offline behavior or product fixtures. Declare that
+scope with a diff and input hashes before choosing checks. A shared dependency,
+build or runtime change invalidates the isolation claim for the affected path.
+Documentation and analysis alone use documentation checks.
+
+| Stage                                     | Required evidence                                                                                                                                                                            | Stop / advance rule                                                                                                                                                                                                                                                 |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0. Data and protocol                      | Source/license hashes, split isolation, labels and preprocessing tests, renderer fidelity, reviewed tensors, reproducible data; frozen budget, metrics and selection rule                    | Run affected checks when generator/source/preprocessing changes. Reuse unchanged evidence by hash. Bad data stops training.                                                                                                                                         |
+| 1. Bounded training and offline screening | Narrow trainer/recovery tests when changed; declared GPU runs; learning curves, per-class/color/family and degradation metrics on development data; CPU/PyTorch/ONNX validation and parity   | Reject inadequate candidates here. Do not spend browser or product time confirming an already decisive accuracy failure.                                                                                                                                            |
+| 2. Browser compatibility smoke            | Small fixed-vector export/schema/parity smoke through the intended worker/runtime                                                                                                            | Required when architecture, export operators, runtime or preprocessing compatibility changes. Reuse runtime/fault evidence only when relevant inputs match; a new architecture needs its own compatibility evidence. This is not a full corpus/latency/product run. |
+| 3. Frozen candidate qualification         | Lock all selected candidates before fresh test exposure; complete offline accuracy/confidence gate, then full required browser accuracy/latency/fault matrix only for candidates clearing it | A failed held-out gate stops promotion and full browser benchmarking. Preserve results; no post-test tuning. One shared protocol may compare multiple frozen candidates.                                                                                            |
+| 4. Product integration                    | Relevant unit/contract, product recognition, real end-to-end, offline/security and named device gates                                                                                        | Run when integrating a candidate or changing an affected product path. Consolidate at handoff after narrow checks pass, not once per seed.                                                                                                                          |
+
+Stage 1 uses development data for iteration, never the fresh test. An exposed
+test becomes diagnostic evidence, not a future untouched test. Corpus v1 stays
+excluded from all training/tuning and remains post-freeze regression only.
+No stage lowers numeric accuracy/confidence thresholds or substitutes a green
+measurement command for qualification. Model-size limits are not memory proof.
+Physical-device requirements remain in force for product acceptance.
+
+Before each expensive command, record its question, changed inputs, previous
+reusable evidence, expected duration and stop condition. Cache/reuse evidence
+by source, data/model, runtime/dependency, configuration and environment hashes
+appropriate to that check. Cite the original commit/command/artifact when reused;
+never call it a fresh pass. New weights invalidate accuracy/parity evidence but
+do not automatically invalidate unchanged product goldens. Infrastructure
+errors, discrepant parity or relevant changes require a targeted rerun. Do not
+repeat successful suites just to refresh a commit identifier.
+
+For an isolated research PR, run `pnpm check`, affected narrow tests and the
+stages actually reached. Record later stages as **not reached: offline rejection**
+or **not applicable: production unchanged**, with evidence, rather than passing
+or silently skipped. No full `test:e2e`, `eval:recognition`, release/device matrix
+or per-candidate browser benchmark is required solely because training occurred.
+Existing CI remains configured as-is; this policy does not disable checks or
+rewrite historical results. Explicit issue-specific gates take precedence until
+amended: #38 already required and completed its full matrix. This prospective
+policy prevents repeating it for analysis/docs or every subsequent experiment.
+The accompanying [ADR 0005 update](decisions/0005-browser-recognition.md#staged-isolated-research-evaluation-2026-09-05)
+records the measured rationale and scope of this gate change.
+
 ## 3. Standard commands
 
 The bootstrap issue provides the fast commands needed immediately. Subsystem
