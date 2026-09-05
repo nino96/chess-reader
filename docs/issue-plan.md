@@ -23,6 +23,14 @@ project invested in generalized infrastructure. Issues #24, #27, #29, and #28
 resolve those findings and make their evidence enforceable before issue #3
 makes the same path an offline prototype.
 
+Issue #24's remaining software investigation is split into reviewable slices:
+[#34 Lock printed-book corpus and stage-separated baselines](https://github.com/nino96/chess-reader/issues/34),
+then [#35 Compare localization fixes and alternatives](https://github.com/nino96/chess-reader/issues/35)
+after #34 merges. #24 retains the final decision and downstream blocking role.
+These slices evaluate full-page detection without implementing #7's tappable
+hotspots. Physical-iPad testing is deferred for the immediate slices per owner
+priority; #24 still records its outstanding final device criterion.
+
 ## Durable and low-friction PDF product
 
 4. [#4 Harden browser book storage, import journaling, and re-linking](https://github.com/nino96/chess-reader/issues/4)

@@ -34,6 +34,22 @@ recorded issue #2 baseline and for what it does and does not establish.
 is only introduced by the issue that first makes that subsystem real, so no
 placeholder command is added to fake green CI.
 
+Issue #24's classifier/localizer diagnostic runs in the existing fixture
+Vitest project. The default is a four-case regression; the explicit sweep
+records 96 controlled captures. It is separate from the browser product eval:
+
+```sh
+pnpm test:unit --project test-fixtures localization-diagnostic
+CHESS_READER_DIAGNOSTIC_SWEEP=1 pnpm test:unit --project test-fixtures localization-diagnostic
+```
+
+The environment-variable prefix above uses POSIX shell syntax. In PowerShell,
+set `$env:CHESS_READER_DIAGNOSTIC_SWEEP = '1'` before the command and remove it
+afterward with `Remove-Item Env:CHESS_READER_DIAGNOSTIC_SWEEP`.
+Reports land in `packages/test-fixtures/eval-results/`. See the
+[diagnosis](investigations/issue-24-localization.md) for evidence and limits;
+a passing diagnostic does not mean the full #24 recognition gate passed.
+
 ## Running a single Playwright project
 
 ```sh

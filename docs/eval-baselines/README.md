@@ -13,6 +13,15 @@ Every record identifies the commit, the fixture and its SHA-256, the command,
 the environment, the browser, the recognizer/model version, every individual
 run, and the distribution summary.
 
+## `issue-24-localization-sweep.json`
+
+Raw Node/WASM controlled experiment copied from
+`packages/test-fixtures/eval-results/localization-diagnostic-sweep.json`.
+The [issue #24 diagnosis](../investigations/issue-24-localization.md) explains
+its matched flat/hatch pair, oracle and bounds-rejection controls, results,
+and outstanding feasibility gates. This preserves a separate diagnostic
+baseline and does not replace the browser product baselines below.
+
 ## `recognition-{chromium,firefox,webkit}.json`
 
 Written by `pnpm eval:recognition` (see `apps/web/eval/recognition.spec.ts`).

@@ -429,6 +429,13 @@ The current layers are:
    privacy/offline-safety evidence.
 5. CI also checks formatting/types/lint, licenses, and the production build.
 
+Issue #24 adds a matched flat/hatch fixture and a Node/WASM
+`localization-diagnostic.test.ts` experiment in `packages/test-fixtures`.
+It compares detected corners, a bounds-rejection control, and known true
+corners with identical classifier inputs. See the
+[diagnosis and reproduction commands](investigations/issue-24-localization.md).
+This is partial feasibility evidence; production recognition is unchanged.
+
 Layout screenshots attached by `layout.spec.ts` are evidence for human review,
 not auto-approved pixel snapshots. Playwright's WebKit engine is useful early
 evidence, but it is not Safari on a physical iPad. Real-device results use the

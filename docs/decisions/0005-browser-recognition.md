@@ -23,3 +23,17 @@ implementation and its small ONNX model directly.
 The implementation stays close to upstream golden behavior and works offline
 on Safari/iPad without a Kotlin port. Worker, canvas, and asset-cache behavior
 must be evaluated on real iPad hardware.
+
+## Issue #24 diagnostic evidence (2026-09-05)
+
+The [controlled flat/hatch experiment](../investigations/issue-24-localization.md)
+finds localization to be the dominant failure for the matched fixture pair:
+the same classifier reads 47/48 hatch captures exactly with true corners,
+versus 2/48 through unchanged detection. A bounds-rejection control removes
+the four reliable wrong reads but does not recover reliable hatch recognition.
+
+The browser-worker/WASM decision remains in force; no production implementation
+changes here. Investigate a selection-aware localization patch/fork before
+retraining or replacing the classifier. The final keep/patch/replace decision
+remains blocked on #24's broader corpus, alternative comparison, and physical
+iPad evidence. This note is diagnostic evidence, not that final decision.
