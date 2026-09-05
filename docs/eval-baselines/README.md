@@ -135,3 +135,11 @@ separates valid measurement from successful candidate recognition. Those origina
 raw reports remain unchanged. `pnpm eval:recognition:qualify` retains the failed
 experimental exactness checks; passing the default measurement command does not
 qualify a recognizer.
+
+[Handoff product records](issue-35-handoff-product-selection.json) retain the
+separate measurement and qualification reports from clean `17b06e9`.
+[Handoff validation](issue-35-handoff-validation.json) records 42 measurement
+checks passing and qualification finishing 40 passed/two failed, plus raw timing
+observations and byte-identical non-timing comparisons for all 1,656 rerun
+observations against their frozen corpus references. These are additional evidence files,
+not replacements for the frozen reports.

@@ -448,3 +448,46 @@ byte-for-byte unchanged. An abstention is valid measurement data and a failed
 recognition result. Numeric corpus gates and physical-device acceptance remain
 unchanged; even a passing product qualification command alone cannot satisfy
 #24. The STOP recommendation remains in force.
+
+### Handoff validation
+
+Both full commands ran from clean commit
+`17b06e9b38b18003f40459d138f871e178e48821` on the same Linux ARM64 host and pinned
+browser/runtime versions as the frozen experiment:
+
+| Command/check                      | Actual result                                                                                                                                                                                                                                                                                                                                 |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm check`                       | Passed: types, formatting and lint.                                                                                                                                                                                                                                                                                                           |
+| `pnpm test:unit`                   | 386 passed in 29 files, including existing contracts.                                                                                                                                                                                                                                                                                         |
+| `pnpm eval:recognition`            | **42 passed**, 9.1 minutes, all three browsers.                                                                                                                                                                                                                                                                                               |
+| `pnpm eval:recognition:qualify`    | **40 passed, 2 failed**, 9.2 minutes, exit 1. Firefox and WebKit hatch selections each abstain 6/6; all original product goldens pass.                                                                                                                                                                                                        |
+| `pnpm check:licenses`              | Passed: 25 production packages.                                                                                                                                                                                                                                                                                                               |
+| Full E2E and builds                | [All source-commit CI jobs passed](https://github.com/nino96/chess-reader/actions/runs/33977684876), including the three E2E jobs covering all six configured projects and the expanded three-browser measurement matrix. The earlier local 219-pass/15-existing-skip E2E evidence remains applicable; this revision changes no product code. |
+| Frozen evidence integrity          | 41 corpus/baseline/source/report files checked byte-for-byte against `04c3adf`; no changes.                                                                                                                                                                                                                                                   |
+| Local links and `git diff --check` | Passed.                                                                                                                                                                                                                                                                                                                                       |
+| Physical iPad                      | **Deferred/unrun**; #24 remains open.                                                                                                                                                                                                                                                                                                         |
+
+The extra 15 checks are five meaningful assessment regressions in each browser
+project: explicit mode, malformed/error data, the actual no-board contract,
+reliable-wrong safety, and run completeness/cold sequence. They do not replace
+a browser selection, corpus observation or production golden.
+
+The [handoff product records](../eval-baselines/issue-35-handoff-product-selection.json)
+retain all 12 per-fixture/browser/mode reports, including raw observations and
+qualification FAIL reasons. The
+[validation artifact](../eval-baselines/issue-35-handoff-validation.json) records
+command exits, source/environment, hashes, raw rerun timings and distributions.
+All 1,656 corpus observations across both commands have identical non-timing
+fields, including full scored geometry/confidence records, to the original
+`issue-35-control-*` and `issue-35-localized-*` references. Those original files
+remain the retained raw accuracy evidence; rerun JSON paths/hashes are recorded
+without replacing them. CI uploads the measurement reports as separate
+per-browser artifacts. Qualification JSON and traces remain in their distinct
+local directories described in [testing](../testing.md#issue-35-comparison).
+
+A delegated implementation worker validated the harness, and an independent
+read-only reviewer approved the explicit policy and final code contract. The
+lead inspected the diffs, corrected no-board/version validation during review,
+verified preserved bytes and ran both full commands. This approves the research
+handoff with its STOP outcome; it does not approve a recognizer or waive #24's
+unmet accuracy/resource/device criteria. #38 owns the next training experiment.
