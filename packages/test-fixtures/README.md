@@ -43,6 +43,15 @@ must follow.
   ground-truth corners and a bounds-rejection control on identical pixels.
   See the [diagnosis](../../docs/investigations/issue-24-localization.md) for
   the optional 96-capture sweep and recorded evidence.
+- `corpus/v1/` -- the issue #34 locked printed-book feasibility corpus: 16
+  deterministic 768 x 1024 PNG pages, runtime-validated ground truth, and a
+  [visual overview](corpus/v1/OVERVIEW.md). Its 14 complete boards cover
+  multiple positions, orientations, layouts, grayscale, hatch, halftone, and
+  seeded scan degradation; two partial boards and two no-board pages preserve
+  negative/challenge inputs.
+- `src/corpus.ts` -- `loadCorpus()` and the typed, strict runtime boundary for
+  corpus v1. Page paths are package-root-relative and resolve with
+  `corpusPath()`.
 
 ## Regenerating the PDF
 
@@ -59,6 +68,17 @@ computed geometry (`boardRect`, `placement`, `negativeTextRect`) as JSON.
 
 If you change the generator, `manifest.json`'s `sha256` field must be updated
 to match (`tests/manifest.test.ts` enforces this).
+
+Regenerate corpus v1 separately with:
+
+```sh
+pnpm --filter @chess-reader/test-fixtures generate:corpus
+```
+
+`tests/corpus.test.ts` verifies byte-for-byte regeneration of every page, the
+contact sheet, overview, and corpus manifest. Corpus v1 was locked before
+candidate measurement; representativeness changes create a new corpus version
+instead of altering v1.
 
 ## Running the tests
 

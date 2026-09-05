@@ -6,6 +6,7 @@
   "description": "Synthetic and licensed fixtures with a provenance manifest (see docs/fixtures.md)",
   "scripts": {
     "generate": "node generators/make-diagram-pdf.mjs",
+    "generate:corpus": "node generators/make-recognition-corpus.mjs",
     "test:unit": "vitest run"
   },
   "devDependencies": {

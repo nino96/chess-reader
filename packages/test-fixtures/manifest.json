@@ -96,6 +96,578 @@
       ],
       "consumers": ["packages/test-fixtures/tests/localization-diagnostic.test.ts"],
       "addedInIssue": 24
+    },
+    {
+      "id": "recognition-corpus-v1-manifest",
+      "sha256": "767c0e91c7c685495a8d1be37fc8605208ca9e2dc6b672c39ea2d47567189b7a",
+      "path": "corpus/v1/manifest.json",
+      "contentType": "application/json",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0",
+        "retrieved": "2026-09-05"
+      },
+      "tags": ["recognition-corpus-v1", "ground-truth", "locked-before-tuning"],
+      "expected": {
+        "corpusId": "printed-book-recognition",
+        "corpusVersion": 1,
+        "pages": 16,
+        "completeBoards": 14,
+        "partialBoards": 2
+      },
+      "tolerance": {},
+      "limitations": [
+        "Bounded synthetic feasibility corpus; representativeness exclusions are documented in corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-contact-sheet",
+      "sha256": "59362011fa418b5d4362665b080b695f812d6aaf3f96554dd3edac8d87ca78e4",
+      "path": "corpus/v1/contact-sheet.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": ["recognition-corpus-v1", "contact-sheet", "visual-overview"],
+      "expected": { "corpusManifest": "corpus/v1/manifest.json", "width": 768, "height": 1024 },
+      "tolerance": {},
+      "limitations": ["Reduced thumbnails are for visual review, not recognition measurement."],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "owner-review"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-flat-gray-middlegame-white",
+      "sha256": "c7dce6c24ecf9fc560585bb37a1f1a8942d4eb0beedbd4ec19b27d19e92dba59",
+      "path": "corpus/v1/pages/flat-gray-middlegame-white.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "flat",
+        "grayscale",
+        "middlegame",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "flat-gray-middlegame-white"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-flat-dark-endgame-black",
+      "sha256": "20bbc87d9608df9b96fbba9c828fca69ae473e39733557447741a7b0bec46340",
+      "path": "corpus/v1/pages/flat-dark-endgame-black.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "flat",
+        "grayscale",
+        "endgame",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "flat-dark-endgame-black"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-hatch-0-dense-opening-white",
+      "sha256": "de9f897bdfc6f9599fae9c5821eb80c5cd392c8aa3d4411f0b5499dee93405f8",
+      "path": "corpus/v1/pages/hatch-0-dense-opening-white.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "hatch",
+        "hatch-0",
+        "dense",
+        "opening",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "hatch-0-dense-opening-white"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-hatch-45-sparse-middlegame-black",
+      "sha256": "a03dd2f9728b547c0c7a30d0223682d88b06b865da75b43ee11bb45587188400",
+      "path": "corpus/v1/pages/hatch-45-sparse-middlegame-black.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "hatch",
+        "hatch-45",
+        "sparse",
+        "middlegame",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "hatch-45-sparse-middlegame-black"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-hatch-90-medium-endgame-white",
+      "sha256": "254cf349bee8bc0793feb5a0dddc0214a16774f51576757a3ef0cc243ebf88bb",
+      "path": "corpus/v1/pages/hatch-90-medium-endgame-white.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "hatch",
+        "hatch-90",
+        "medium",
+        "endgame",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "hatch-90-medium-endgame-white"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-hatch-135-dense-pawnless-black",
+      "sha256": "bbd7fdc515b39472e486a1b4fbe49a41a50a835da73c8d8eeb8ba1b649d83d00",
+      "path": "corpus/v1/pages/hatch-135-dense-pawnless-black.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "hatch",
+        "hatch-135",
+        "dense",
+        "pawnless",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "hatch-135-dense-pawnless-black"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-halftone-middlegame-white",
+      "sha256": "15e5667a5313e209857dcc934b14242f797aacb5ed921da8c91ae00393e47448",
+      "path": "corpus/v1/pages/halftone-middlegame-white.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "halftone",
+        "medium",
+        "middlegame",
+        "white-orientation",
+        "labels",
+        "no-border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "halftone-middlegame-white"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-scan-low-resolution-flat-black",
+      "sha256": "78700c57b97c99c194513fcea9bb98d44a41aaeddf41c6147b5f2b2a93d8ffdf",
+      "path": "corpus/v1/pages/scan-low-resolution-flat-black.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "flat",
+        "low-resolution",
+        "scan-degraded",
+        "speckle",
+        "endgame",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "scan-low-resolution-flat-black"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-scan-hatch-45-white",
+      "sha256": "b8283e16b6cb87f5d79e897d2d75a2d6bfef19fef5314d76b1642b304cb1928a",
+      "path": "corpus/v1/pages/scan-hatch-45-white.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "hatch",
+        "hatch-45",
+        "medium",
+        "scan-degraded",
+        "low-contrast",
+        "speckle",
+        "middlegame",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "scan-hatch-45-white"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-two-boards-flat-hatch",
+      "sha256": "66763ee4557109f4a6198b743487a49120f5dec45b93d5d7303251119e8081d7",
+      "path": "corpus/v1/pages/two-boards-flat-hatch.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "multiple-boards",
+        "flat",
+        "hatch",
+        "hatch-90",
+        "sparse",
+        "white-orientation",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "two-boards-flat-hatch"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-two-boards-halftone-ambiguous",
+      "sha256": "ff5f2962082f3bfd8fd9c44ed75a6974b664aed7758d986213cf6bc0f3101415",
+      "path": "corpus/v1/pages/two-boards-halftone-ambiguous.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "multiple-boards",
+        "halftone",
+        "hatch",
+        "hatch-135",
+        "dense",
+        "pawnless",
+        "ambiguous-orientation",
+        "piece-only-ambiguity",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "two-boards-halftone-ambiguous"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-negative-text-only",
+      "sha256": "646e68d5c0258daa9e2914686fa07a5d58ad4112ad810923f9e3ee424e989b38",
+      "path": "corpus/v1/pages/negative-text-only.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": ["recognition-corpus-v1", "complete-page", "negative", "text-only", "no-board"],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "negative-text-only"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-negative-table-grid",
+      "sha256": "90b11124ca729b64fb812110972bee2677f051decbcee1e14b1edf5a26d3085a",
+      "path": "corpus/v1/pages/negative-table-grid.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": ["recognition-corpus-v1", "complete-page", "negative", "grid", "table", "no-board"],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "negative-table-grid"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-partial-board-crop",
+      "sha256": "5e646dae6c8ca43663622a3e8d67c62982989d1ace137de8381cfadcf65884f0",
+      "path": "corpus/v1/pages/partial-board-crop.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "partial-board",
+        "hatch",
+        "hatch-45",
+        "sparse",
+        "not-complete-truth"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "partial-board-crop"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-matched-hatch-45-middlegame-white",
+      "sha256": "6c03f87e2e76396102efa3f729ff2ac2b3553d55703f36c62615ecab0edf004c",
+      "path": "corpus/v1/pages/matched-hatch-45-middlegame-white.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "matched-style-pair",
+        "hatch",
+        "hatch-45",
+        "medium",
+        "middlegame",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "matched-hatch-45-middlegame-white"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
+    },
+    {
+      "id": "recognition-corpus-v1-partial-board-bottom-ranks",
+      "sha256": "dccb15921c68592de8320abb05f6722a3882a43de5a37ad13517fc7349e9aa7e",
+      "path": "corpus/v1/pages/partial-board-bottom-ranks.png",
+      "contentType": "image/png",
+      "source": {
+        "kind": "synthetic",
+        "generator": "generators/make-recognition-corpus.mjs",
+        "license": "CC0-1.0 (synthetic content); Apache-2.0 (Chessnut glyphs)",
+        "retrieved": "2026-09-05"
+      },
+      "tags": [
+        "recognition-corpus-v1",
+        "complete-page",
+        "partial-board",
+        "flat",
+        "grayscale",
+        "missing-bottom-ranks",
+        "not-complete-truth"
+      ],
+      "expected": {
+        "corpusManifest": "corpus/v1/manifest.json",
+        "corpusVersion": 1,
+        "pageId": "partial-board-bottom-ranks"
+      },
+      "tolerance": { "rectangleIou": 0.9, "gridErrorSquares": 0.08, "rectanglePixels": 1 },
+      "limitations": [
+        "Bounded synthetic printed-page feasibility input using the single locally provenance-verified Chessnut piece style; see corpus/v1/OVERVIEW.md."
+      ],
+      "consumers": ["packages/test-fixtures/tests/corpus.test.ts", "eval:recognition"],
+      "addedInIssue": 34
     }
   ]
 }

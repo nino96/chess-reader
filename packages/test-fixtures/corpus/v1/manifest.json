@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 1,
+  "corpusId": "printed-book-recognition",
+  "corpusVersion": 1,
+  "lockedBeforeTuning": true,
+  "coordinateSystem": "top-left-image-pixels",
+  "pageWidth": 768,
+  "pageHeight": 1024,
+  "matching": {
+    "rule": "one-to-one-descending-iou",
+    "iouThreshold": 0.9,
+    "tieBreakers": ["prediction-index", "annotation-index"],
+    "duplicatePredictions": "failure",
+    "partialAnnotations": "excluded-from-complete-truth"
+  },
+  "tolerance": { "rectanglePixels": 1, "gridErrorSquares": 0.08 },
+  "generation": {
+    "generator": "generators/make-recognition-corpus.mjs",
+    "spec": "generators/recognition-corpus-spec.mjs",
+    "seed": 885063662,
+    "renderer": "@napi-rs/canvas@1.0.8",
+    "pieceStyles": [
+      {
+        "id": "chessnut",
+        "license": "Apache-2.0",
+        "provenance": "assets/pieces/chessnut/PROVENANCE.md"
+      }
+    ],
+    "exclusions": [
+      "A second piece style was excluded because no other complete, provenance-verified set was locally available."
+    ]
+  },
+  "contactSheet": {
+    "path": "corpus/v1/contact-sheet.png",
+    "sha256": "59362011fa418b5d4362665b080b695f812d6aaf3f96554dd3edac8d87ca78e4",
+    "width": 768,
+    "height": 1024
+  },
+  "pages": [
+    {
+      "id": "flat-gray-middlegame-white",
+      "path": "corpus/v1/pages/flat-gray-middlegame-white.png",
+      "sha256": "c7dce6c24ecf9fc560585bb37a1f1a8942d4eb0beedbd4ec19b27d19e92dba59",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "flat",
+        "grayscale",
+        "middlegame",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063663,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 184, "y": 270, "width": 400, "height": 400 },
+          "canonicalPlacement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+          "renderedPlacement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+          "orientation": "white",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "flat", "gray": 0.68 },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 2
+        }
+      ]
+    },
+    {
+      "id": "flat-dark-endgame-black",
+      "path": "corpus/v1/pages/flat-dark-endgame-black.png",
+      "sha256": "20bbc87d9608df9b96fbba9c828fca69ae473e39733557447741a7b0bec46340",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "flat",
+        "grayscale",
+        "endgame",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063663,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 398, "y": 410, "width": 320, "height": 320 },
+          "canonicalPlacement": "8/2p2pk1/3p2p1/1p1P4/1P3P2/2P3P1/5K2/4R3",
+          "renderedPlacement": "3R4/2K5/1P3P2/2P3P1/4P1p1/1p2p3/1kp2p2/8",
+          "orientation": "black",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "flat", "gray": 0.48 },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 3
+        }
+      ]
+    },
+    {
+      "id": "hatch-0-dense-opening-white",
+      "path": "corpus/v1/pages/hatch-0-dense-opening-white.png",
+      "sha256": "de9f897bdfc6f9599fae9c5821eb80c5cd392c8aa3d4411f0b5499dee93405f8",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "hatch",
+        "hatch-0",
+        "dense",
+        "opening",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063664,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 92, "y": 350, "width": 384, "height": 384 },
+          "canonicalPlacement": "rnbqk2r/pppp1ppp/5n2/4p3/2B1P1b1/5N2/PPPP1PPP/RNBQ1RK1",
+          "renderedPlacement": "rnbqk2r/pppp1ppp/5n2/4p3/2B1P1b1/5N2/PPPP1PPP/RNBQ1RK1",
+          "orientation": "white",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "hatch", "angle": 0, "density": "dense" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 2
+        }
+      ]
+    },
+    {
+      "id": "hatch-45-sparse-middlegame-black",
+      "path": "corpus/v1/pages/hatch-45-sparse-middlegame-black.png",
+      "sha256": "a03dd2f9728b547c0c7a30d0223682d88b06b865da75b43ee11bb45587188400",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "hatch",
+        "hatch-45",
+        "sparse",
+        "middlegame",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063665,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 160, "y": 245, "width": 448, "height": 448 },
+          "canonicalPlacement": "2r2rk1/pp1b1ppp/2n1pn2/2pp4/3P4/2PBPN2/PP3PPP/2R2RK1",
+          "renderedPlacement": "1KR2R2/PPP3PP/2NPBP2/4P3/4pp2/2np1n2/ppp1b1pp/1kr2r2",
+          "orientation": "black",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "hatch", "angle": 45, "density": "sparse" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 2
+        }
+      ]
+    },
+    {
+      "id": "hatch-90-medium-endgame-white",
+      "path": "corpus/v1/pages/hatch-90-medium-endgame-white.png",
+      "sha256": "254cf349bee8bc0793feb5a0dddc0214a16774f51576757a3ef0cc243ebf88bb",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "hatch",
+        "hatch-90",
+        "medium",
+        "endgame",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063666,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 430, "y": 320, "width": 288, "height": 288 },
+          "canonicalPlacement": "8/5pk1/3p2p1/3Pp3/4P3/5P2/5KPP/8",
+          "renderedPlacement": "8/5pk1/3p2p1/3Pp3/4P3/5P2/5KPP/8",
+          "orientation": "white",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "hatch", "angle": 90, "density": "medium" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 1
+        }
+      ]
+    },
+    {
+      "id": "hatch-135-dense-pawnless-black",
+      "path": "corpus/v1/pages/hatch-135-dense-pawnless-black.png",
+      "sha256": "bbd7fdc515b39472e486a1b4fbe49a41a50a835da73c8d8eeb8ba1b649d83d00",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "hatch",
+        "hatch-135",
+        "dense",
+        "pawnless",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063667,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 90, "y": 300, "width": 352, "height": 352 },
+          "canonicalPlacement": "4r1k1/2q2rb1/2n3n1/8/3N4/2N2Q2/2R3B1/4R1K1",
+          "renderedPlacement": "1K1R4/1B3R2/2Q2N2/4N3/8/1n3n2/1br2q2/1k1r4",
+          "orientation": "black",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "hatch", "angle": 135, "density": "dense" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 3
+        }
+      ]
+    },
+    {
+      "id": "halftone-middlegame-white",
+      "path": "corpus/v1/pages/halftone-middlegame-white.png",
+      "sha256": "15e5667a5313e209857dcc934b14242f797aacb5ed921da8c91ae00393e47448",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "halftone",
+        "medium",
+        "middlegame",
+        "white-orientation",
+        "labels",
+        "no-border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063668,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 176, "y": 300, "width": 416, "height": 416 },
+          "canonicalPlacement": "2r2rk1/pp1b1ppp/2n1pn2/2pp4/3P4/2PBPN2/PP3PPP/2R2RK1",
+          "renderedPlacement": "2r2rk1/pp1b1ppp/2n1pn2/2pp4/3P4/2PBPN2/PP3PPP/2R2RK1",
+          "orientation": "white",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "halftone", "density": "medium" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 0
+        }
+      ]
+    },
+    {
+      "id": "scan-low-resolution-flat-black",
+      "path": "corpus/v1/pages/scan-low-resolution-flat-black.png",
+      "sha256": "78700c57b97c99c194513fcea9bb98d44a41aaeddf41c6147b5f2b2a93d8ffdf",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "flat",
+        "low-resolution",
+        "scan-degraded",
+        "speckle",
+        "endgame",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063669,
+        "degradation": { "lowResolution": 192, "contrast": 0.82, "speckle": 0.008, "seedOffset": 8 }
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 450, "y": 360, "width": 256, "height": 256 },
+          "canonicalPlacement": "8/2p2pk1/3p2p1/1p1P4/1P3P2/2P3P1/5K2/4R3",
+          "renderedPlacement": "3R4/2K5/1P3P2/2P3P1/4P1p1/1p2p3/1kp2p2/8",
+          "orientation": "black",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "flat", "gray": 0.58 },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 2
+        }
+      ]
+    },
+    {
+      "id": "scan-hatch-45-white",
+      "path": "corpus/v1/pages/scan-hatch-45-white.png",
+      "sha256": "b8283e16b6cb87f5d79e897d2d75a2d6bfef19fef5314d76b1642b304cb1928a",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "hatch",
+        "hatch-45",
+        "medium",
+        "scan-degraded",
+        "low-contrast",
+        "speckle",
+        "middlegame",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063670,
+        "degradation": { "lowResolution": 384, "contrast": 0.72, "speckle": 0.014, "seedOffset": 9 }
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 216, "y": 300, "width": 336, "height": 336 },
+          "canonicalPlacement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+          "renderedPlacement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+          "orientation": "white",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "hatch", "angle": 45, "density": "medium" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 2
+        }
+      ]
+    },
+    {
+      "id": "two-boards-flat-hatch",
+      "path": "corpus/v1/pages/two-boards-flat-hatch.png",
+      "sha256": "66763ee4557109f4a6198b743487a49120f5dec45b93d5d7303251119e8081d7",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "multiple-boards",
+        "flat",
+        "hatch",
+        "hatch-90",
+        "sparse",
+        "white-orientation",
+        "black-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063671,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 80, "y": 155, "width": 280, "height": 280 },
+          "canonicalPlacement": "rnbqk2r/pppp1ppp/5n2/4p3/2B1P1b1/5N2/PPPP1PPP/RNBQ1RK1",
+          "renderedPlacement": "rnbqk2r/pppp1ppp/5n2/4p3/2B1P1b1/5N2/PPPP1PPP/RNBQ1RK1",
+          "orientation": "white",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "flat", "gray": 0.64 },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 2
+        },
+        {
+          "id": "board-2",
+          "kind": "complete",
+          "pixelRect": { "x": 444, "y": 615, "width": 240, "height": 240 },
+          "canonicalPlacement": "8/5pk1/3p2p1/3Pp3/4P3/5P2/5KPP/8",
+          "renderedPlacement": "8/PPK5/2P5/3P4/3pP3/1p2p3/1kp5/8",
+          "orientation": "black",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "hatch", "angle": 90, "density": "sparse" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 2
+        }
+      ]
+    },
+    {
+      "id": "two-boards-halftone-ambiguous",
+      "path": "corpus/v1/pages/two-boards-halftone-ambiguous.png",
+      "sha256": "ff5f2962082f3bfd8fd9c44ed75a6974b664aed7758d986213cf6bc0f3101415",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "multiple-boards",
+        "halftone",
+        "hatch",
+        "hatch-135",
+        "dense",
+        "pawnless",
+        "ambiguous-orientation",
+        "piece-only-ambiguity",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063672,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 60, "y": 180, "width": 320, "height": 320 },
+          "canonicalPlacement": "r5kr/8/8/3Nn3/3nN3/8/8/R5KR",
+          "renderedPlacement": "r5kr/8/8/3Nn3/3nN3/8/8/R5KR",
+          "orientation": "ambiguous",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "halftone", "density": "dense" },
+          "hasCoordinateLabels": false,
+          "borderWidthPx": 1
+        },
+        {
+          "id": "board-2",
+          "kind": "complete",
+          "pixelRect": { "x": 420, "y": 620, "width": 280, "height": 280 },
+          "canonicalPlacement": "4r1k1/2q2rb1/2n3n1/8/3N4/2N2Q2/2R3B1/4R1K1",
+          "renderedPlacement": "4r1k1/2q2rb1/2n3n1/8/3N4/2N2Q2/2R3B1/4R1K1",
+          "orientation": "white",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "hatch", "angle": 135, "density": "dense" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 3
+        }
+      ]
+    },
+    {
+      "id": "negative-text-only",
+      "path": "corpus/v1/pages/negative-text-only.png",
+      "sha256": "646e68d5c0258daa9e2914686fa07a5d58ad4112ad810923f9e3ee424e989b38",
+      "width": 768,
+      "height": 1024,
+      "tags": ["complete-page", "negative", "text-only", "no-board"],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063673,
+        "degradation": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "negative-table-grid",
+      "path": "corpus/v1/pages/negative-table-grid.png",
+      "sha256": "90b11124ca729b64fb812110972bee2677f051decbcee1e14b1edf5a26d3085a",
+      "width": 768,
+      "height": 1024,
+      "tags": ["complete-page", "negative", "grid", "table", "no-board"],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063674,
+        "degradation": null
+      },
+      "annotations": []
+    },
+    {
+      "id": "partial-board-crop",
+      "path": "corpus/v1/pages/partial-board-crop.png",
+      "sha256": "5e646dae6c8ca43663622a3e8d67c62982989d1ace137de8381cfadcf65884f0",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "partial-board",
+        "hatch",
+        "hatch-45",
+        "sparse",
+        "not-complete-truth"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063675,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "partial-1",
+          "kind": "partial",
+          "pixelRect": { "x": 0, "y": 300, "width": 310, "height": 400 },
+          "canonicalPlacement": null,
+          "renderedPlacement": null,
+          "orientation": "ambiguous",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "hatch", "angle": 45, "density": "sparse" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 2
+        }
+      ]
+    },
+    {
+      "id": "matched-hatch-45-middlegame-white",
+      "path": "corpus/v1/pages/matched-hatch-45-middlegame-white.png",
+      "sha256": "6c03f87e2e76396102efa3f729ff2ac2b3553d55703f36c62615ecab0edf004c",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "matched-style-pair",
+        "hatch",
+        "hatch-45",
+        "medium",
+        "middlegame",
+        "white-orientation",
+        "labels",
+        "border"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063663,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "board-1",
+          "kind": "complete",
+          "pixelRect": { "x": 184, "y": 270, "width": 400, "height": 400 },
+          "canonicalPlacement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+          "renderedPlacement": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+          "orientation": "white",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "hatch", "angle": 45, "density": "medium" },
+          "hasCoordinateLabels": true,
+          "borderWidthPx": 2
+        }
+      ]
+    },
+    {
+      "id": "partial-board-bottom-ranks",
+      "path": "corpus/v1/pages/partial-board-bottom-ranks.png",
+      "sha256": "dccb15921c68592de8320abb05f6722a3882a43de5a37ad13517fc7349e9aa7e",
+      "width": 768,
+      "height": 1024,
+      "tags": [
+        "complete-page",
+        "partial-board",
+        "flat",
+        "grayscale",
+        "missing-bottom-ranks",
+        "not-complete-truth"
+      ],
+      "generator": {
+        "spec": "generators/recognition-corpus-spec.mjs",
+        "seed": 885063677,
+        "degradation": null
+      },
+      "annotations": [
+        {
+          "id": "partial-1",
+          "kind": "partial",
+          "pixelRect": { "x": 192, "y": 842, "width": 384, "height": 182 },
+          "canonicalPlacement": null,
+          "renderedPlacement": null,
+          "orientation": "ambiguous",
+          "pieceStyle": "chessnut",
+          "squareStyle": { "kind": "flat", "gray": 0.58 },
+          "hasCoordinateLabels": false,
+          "borderWidthPx": 0
+        }
+      ]
+    }
+  ]
+}
