@@ -92,10 +92,10 @@ node prepare-browser.ts full
 
 The pilot also requires `prepare-browser.ts pilot` and the shared browser suite
 with the pilot configuration before full training. From repository root, run
-the unchanged browser harness with the new full configuration:
+the versioned browser entry with the new full configuration:
 
 ```sh
-CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/v2/runs/browser-full.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts
+CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/v2/runs/browser-full.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/v2/browser/playwright.config.ts
 ```
 
 CPU evaluation uses `evaluate_onnx.py` and each exact frozen model path. The
@@ -114,3 +114,9 @@ clears the classifier gate, #38 calls for a separate learned-localizer experimen
 including multiple-board pages. If it fails, mismatch evidence determines whether
 more licensed style coverage or whole-board context is the appropriate next
 experiment. Neither alternative is trained here, and no weights are published.
+
+The v2 browser entry retains the original worker, runtime, Vite build and all
+measurement/fault assertions. Its configuration explicitly permits the declared
+3811/3812 seeds. The original entry remains frozen for 3801/3802 reproduction;
+an attempted full v2 run through it failed at collection before any inference.
+The new entry has a regression test rejecting the old seed pair.

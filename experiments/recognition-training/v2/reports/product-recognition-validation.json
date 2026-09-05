@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "command": "pnpm eval:recognition",
+  "startedAt": "2026-09-05T19:54:13Z",
+  "endedAt": "2026-09-05T20:03:40Z",
+  "durationSeconds": 567,
+  "exitCode": 0,
+  "sourceCommit": "8998d9c2a389cbe66110b994346caa3efbec83be",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "arm64"
+  },
+  "rawArtifactPaths": [
+    "apps/web/eval-results/corpus-chromium.json",
+    "apps/web/eval-results/corpus-comparison-chromium.json",
+    "apps/web/eval-results/corpus-comparison-firefox.json",
+    "apps/web/eval-results/corpus-comparison-webkit.json",
+    "apps/web/eval-results/corpus-firefox.json",
+    "apps/web/eval-results/corpus-localized-chromium.json",
+    "apps/web/eval-results/corpus-localized-firefox.json",
+    "apps/web/eval-results/corpus-localized-webkit.json",
+    "apps/web/eval-results/corpus-webkit.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-diagram-01-chromium.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-diagram-01-firefox.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-diagram-01-webkit.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-hatched-01-chromium.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-hatched-01-firefox.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-hatched-01-webkit.json",
+    "apps/web/eval-results/playwright/.last-run.json",
+    "apps/web/eval-results/recognition-chromium.json",
+    "apps/web/eval-results/recognition-firefox.json",
+    "apps/web/eval-results/recognition-webkit.json"
+  ],
+  "concurrentWork": "Full CUDA training overlapped only the early phase. After it completed, held-out CPU evaluation of frozen candidates overlapped the remaining phase. This validates the unchanged product workflow and regression only; it is not an isolated classifier latency comparison.",
+  "testCounts": {
+    "passed": 42,
+    "failed": 0,
+    "skipped": 0
+  },
+  "logSha256": "5f365070e3af422d0752592b8a37dc3680297eabc474867bc34652c40158a9cc",
+  "commandStartCommit": "fa020295cdafd97cc131cc990362d02f1c7a9520",
+  "commandCompletionCommit": "8998d9c2a389cbe66110b994346caa3efbec83be",
+  "sourceCommitClarification": "sourceCommit is the completion commit. The command began at fa020295cdafd97cc131cc990362d02f1c7a9520 and completed at 8998d9c2a389cbe66110b994346caa3efbec83be; the apps/web baseline was unchanged between those commits.",
+  "appsWebBaselineVerified": true,
+  "rawArtifacts": [
+    {
+      "path": "apps/web/eval-results/corpus-chromium.json",
+      "sha256": "6b9d052164d4c026800166bcf22ffb82b2e494415220a51efa0948353af2d516"
+    },
+    {
+      "path": "apps/web/eval-results/corpus-comparison-chromium.json",
+      "sha256": "d4efe352e8b38a917192cb15bbd81f0f642adde4119e1c85285d49f5a8b9dfd8"
+    },
+    {
+      "path": "apps/web/eval-results/corpus-comparison-firefox.json",
+      "sha256": "403fb203a1d5d845e434e05634533f459699390e382132f8142d0972f1d658ee"
+    },
+    {
+      "path": "apps/web/eval-results/corpus-comparison-webkit.json",
+      "sha256": "c5244db5e00515085d0e0a99be8fb121ea15a78d4eb5fd111cceb9f45d637d4a"
+    },
+    {
+      "path": "apps/web/eval-results/corpus-firefox.json",
+      "sha256": "801418d7441a03e60ece626f4b70283fc063963880fad86824b1b63b3ba15ecd"
+    },
+    {
+      "path": "apps/web/eval-results/corpus-localized-chromium.json",
+      "sha256": "447db24645667e6728aae1c2df5d5fb05d13e85d91e680740342b163307f21b7"
+    },
+    {
+      "path": "apps/web/eval-results/corpus-localized-firefox.json",
+      "sha256": "f62dfc202697e0431549e96c8a6dfb75597424944d06bbf79d5069b213ab80eb"
+    },
+    {
+      "path": "apps/web/eval-results/corpus-localized-webkit.json",
+      "sha256": "b36a1693b011d8a3c29674208c5310418404765aee466f6050f5d89ae5affcb9"
+    },
+    {
+      "path": "apps/web/eval-results/corpus-webkit.json",
+      "sha256": "ad8dc41b820144dd6ac7befb29f669b6db44db9dec2f9fe97aa82fd646ac0127"
+    },
+    {
+      "path": "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-diagram-01-chromium.json",
+      "sha256": "76f5c98a759651fa5dd578763e88d70b76bf95c60725a2b471c4486c941d8fb5"
+    },
+    {
+      "path": "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-diagram-01-firefox.json",
+      "sha256": "8b0c04768d0e5e2dbf0dbb736e6aa61120292ff599245a0a8de5e007ef229f4b"
+    },
+    {
+      "path": "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-diagram-01-webkit.json",
+      "sha256": "fbf4a410153a76d956afdbcd8ade6700c01c0692458b08a147eb6e6d9be4ea8e"
+    },
+    {
+      "path": "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-hatched-01-chromium.json",
+      "sha256": "cd96420f7a84279ba72aa4a7cc9fc9de1b2c19aa93693c14c23d02c4e1100a26"
+    },
+    {
+      "path": "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-hatched-01-firefox.json",
+      "sha256": "d3554e6261eb2d9ffc9be3e3a27a6219ddfa13b97673194b9f4b059e1e507a58"
+    },
+    {
+      "path": "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-hatched-01-webkit.json",
+      "sha256": "e2fdf74c1693df213390d38916b76649faa1140e38cfe1e22d4de6ae5c851125"
+    },
+    {
+      "path": "apps/web/eval-results/playwright/.last-run.json",
+      "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903"
+    },
+    {
+      "path": "apps/web/eval-results/recognition-chromium.json",
+      "sha256": "d98bb70b1a13e335370894c44a777d6feb6a9ec1343cc1cbcbc686e0b36cac11"
+    },
+    {
+      "path": "apps/web/eval-results/recognition-firefox.json",
+      "sha256": "59154acc084e879ad5d7959aa5ff0d897f24cabaa5574a5d0c70a043d0f05d1d"
+    },
+    {
+      "path": "apps/web/eval-results/recognition-webkit.json",
+      "sha256": "4175536f2f0aeaaca74b30e48c21af54ae3fc15c776e3069110cd1e7eff015f7"
+    }
+  ]
+}

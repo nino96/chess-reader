@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "suite": "issue-35-product-selection",
+  "command": "pnpm eval:recognition",
+  "evaluationMode": "measurement",
+  "commit": "e0303680548f6b461e4848aa72ca6c3903229e48",
+  "date": "2026-09-05T18:33:49.215Z",
+  "environment": {
+    "node": "v24.19.0",
+    "os": "linux",
+    "release": "6.17.0-1021-nvidia",
+    "arch": "arm64"
+  },
+  "browser": {
+    "name": "chromium",
+    "version": "151.0.7922.34"
+  },
+  "fixture": {
+    "id": "pdf-synthetic-hatched-01",
+    "sha256": "8072ddfad47d5b640a8f3c70de8b66c7d520483d32cc9c6308816e236c14821c",
+    "manifestSchemaVersion": 1
+  },
+  "observations": [
+    {
+      "session": 0,
+      "run": 0,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 1239,
+      "stageMs": 930,
+      "cold": true,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 0,
+      "run": 1,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 891,
+      "stageMs": 887,
+      "cold": false,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 1,
+      "run": 0,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 1328,
+      "stageMs": 1011,
+      "cold": true,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 1,
+      "run": 1,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 989,
+      "stageMs": 984,
+      "cold": false,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 2,
+      "run": 0,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 1251,
+      "stageMs": 932,
+      "cold": true,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 2,
+      "run": 1,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 915,
+      "stageMs": 910,
+      "cold": false,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    }
+  ],
+  "summary": {
+    "exactBoards": 6,
+    "reliableExact": 6,
+    "reliableWrong": 0,
+    "coldWorkerRoundTripMs": {
+      "count": 3,
+      "min": 1239,
+      "p50": 1251,
+      "p95": 1328,
+      "max": 1328
+    },
+    "warmWorkerRoundTripMs": {
+      "count": 3,
+      "min": 891,
+      "p50": 915,
+      "p95": 989,
+      "max": 989
+    },
+    "warmStageMs": {
+      "count": 3,
+      "min": 887,
+      "p50": 910,
+      "p95": 984,
+      "max": 984
+    }
+  },
+  "assessment": {
+    "infrastructure": {
+      "status": "PASS",
+      "failures": []
+    },
+    "safety": {
+      "status": "PASS",
+      "failures": []
+    },
+    "qualification": {
+      "status": "PASS",
+      "failures": []
+    }
+  },
+  "nonSameOriginRequests": [],
+  "limitations": [
+    "Development fixtures; not held-out accuracy.",
+    "Round trip begins after PDF capture and excludes editor paint; cold sessions do not clear disk/browser caches.",
+    "Physical iPad deferred/unrun."
+  ],
+  "sourceReport": {
+    "path": "experiments/recognition-training/reports/product-regression/issue-35-product-measurement-pdf-synthetic-hatched-01-chromium.json",
+    "sha256": "8ea821a651d74db7a20a856233affeed751aaf14e901e1a29dcc36d472391c14"
+  }
+}

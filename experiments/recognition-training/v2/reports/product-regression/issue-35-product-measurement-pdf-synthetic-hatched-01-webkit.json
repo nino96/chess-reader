@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "suite": "issue-35-product-selection",
+  "command": "pnpm eval:recognition",
+  "evaluationMode": "measurement",
+  "commit": "e0303680548f6b461e4848aa72ca6c3903229e48",
+  "date": "2026-09-05T18:41:04.449Z",
+  "environment": {
+    "node": "v24.19.0",
+    "os": "linux",
+    "release": "6.17.0-1021-nvidia",
+    "arch": "arm64"
+  },
+  "browser": {
+    "name": "webkit",
+    "version": "26.5"
+  },
+  "fixture": {
+    "id": "pdf-synthetic-hatched-01",
+    "sha256": "8072ddfad47d5b640a8f3c70de8b66c7d520483d32cc9c6308816e236c14821c",
+    "manifestSchemaVersion": 1
+  },
+  "observations": [
+    {
+      "session": 0,
+      "run": 0,
+      "phase": "no-board",
+      "exact": false,
+      "reliable": null,
+      "totalMs": 1584,
+      "stageMs": 1302,
+      "cold": true,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": [
+        "candidate-not-exact"
+      ]
+    },
+    {
+      "session": 0,
+      "run": 1,
+      "phase": "no-board",
+      "exact": false,
+      "reliable": null,
+      "totalMs": 1273,
+      "stageMs": 1270,
+      "cold": false,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": [
+        "candidate-not-exact"
+      ]
+    },
+    {
+      "session": 1,
+      "run": 0,
+      "phase": "no-board",
+      "exact": false,
+      "reliable": null,
+      "totalMs": 1534,
+      "stageMs": 1324,
+      "cold": true,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": [
+        "candidate-not-exact"
+      ]
+    },
+    {
+      "session": 1,
+      "run": 1,
+      "phase": "no-board",
+      "exact": false,
+      "reliable": null,
+      "totalMs": 1315,
+      "stageMs": 1312,
+      "cold": false,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": [
+        "candidate-not-exact"
+      ]
+    },
+    {
+      "session": 2,
+      "run": 0,
+      "phase": "no-board",
+      "exact": false,
+      "reliable": null,
+      "totalMs": 1512,
+      "stageMs": 1325,
+      "cold": true,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": [
+        "candidate-not-exact"
+      ]
+    },
+    {
+      "session": 2,
+      "run": 1,
+      "phase": "no-board",
+      "exact": false,
+      "reliable": null,
+      "totalMs": 1314,
+      "stageMs": 1311,
+      "cold": false,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": [
+        "candidate-not-exact"
+      ]
+    }
+  ],
+  "summary": {
+    "exactBoards": 0,
+    "reliableExact": 0,
+    "reliableWrong": 0,
+    "coldWorkerRoundTripMs": {
+      "count": 3,
+      "min": 1512,
+      "p50": 1534,
+      "p95": 1584,
+      "max": 1584
+    },
+    "warmWorkerRoundTripMs": {
+      "count": 3,
+      "min": 1273,
+      "p50": 1314,
+      "p95": 1315,
+      "max": 1315
+    },
+    "warmStageMs": {
+      "count": 3,
+      "min": 1270,
+      "p50": 1311,
+      "p95": 1312,
+      "max": 1312
+    }
+  },
+  "assessment": {
+    "infrastructure": {
+      "status": "PASS",
+      "failures": []
+    },
+    "safety": {
+      "status": "PASS",
+      "failures": []
+    },
+    "qualification": {
+      "status": "FAIL",
+      "failures": [
+        "session-0-run-0:candidate-not-exact",
+        "session-0-run-1:candidate-not-exact",
+        "session-1-run-0:candidate-not-exact",
+        "session-1-run-1:candidate-not-exact",
+        "session-2-run-0:candidate-not-exact",
+        "session-2-run-1:candidate-not-exact"
+      ]
+    }
+  },
+  "nonSameOriginRequests": [],
+  "limitations": [
+    "Development fixtures; not held-out accuracy.",
+    "Round trip begins after PDF capture and excludes editor paint; cold sessions do not clear disk/browser caches.",
+    "Physical iPad deferred/unrun."
+  ],
+  "sourceReport": {
+    "path": "experiments/recognition-training/reports/product-regression/issue-35-product-measurement-pdf-synthetic-hatched-01-webkit.json",
+    "sha256": "6600dda85c419848d56b4844bd95d0f919177f5c56f00df8c5c9796fd571b7da"
+  }
+}

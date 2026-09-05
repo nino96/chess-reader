@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "suite": "issue-35-product-selection",
+  "command": "pnpm eval:recognition",
+  "evaluationMode": "measurement",
+  "commit": "e0303680548f6b461e4848aa72ca6c3903229e48",
+  "date": "2026-09-05T18:38:34.979Z",
+  "environment": {
+    "node": "v24.19.0",
+    "os": "linux",
+    "release": "6.17.0-1021-nvidia",
+    "arch": "arm64"
+  },
+  "browser": {
+    "name": "firefox",
+    "version": "153.0"
+  },
+  "fixture": {
+    "id": "pdf-synthetic-diagram-01",
+    "sha256": "d5d80caf72ebe645d0932576cb55b9f28c6faffea2666e09ca713f1d8af6c95f",
+    "manifestSchemaVersion": 1
+  },
+  "observations": [
+    {
+      "session": 0,
+      "run": 0,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 3338,
+      "stageMs": 2698,
+      "cold": true,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 0,
+      "run": 1,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 2719,
+      "stageMs": 2714,
+      "cold": false,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 1,
+      "run": 0,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 3313,
+      "stageMs": 2694,
+      "cold": true,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 1,
+      "run": 1,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 2733,
+      "stageMs": 2729,
+      "cold": false,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 2,
+      "run": 0,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 3311,
+      "stageMs": 2704,
+      "cold": true,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    },
+    {
+      "session": 2,
+      "run": 1,
+      "phase": "done",
+      "exact": true,
+      "reliable": true,
+      "totalMs": 2742,
+      "stageMs": 2738,
+      "cold": false,
+      "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1",
+      "infrastructureFailures": [],
+      "safetyFailures": [],
+      "qualificationFailures": []
+    }
+  ],
+  "summary": {
+    "exactBoards": 6,
+    "reliableExact": 6,
+    "reliableWrong": 0,
+    "coldWorkerRoundTripMs": {
+      "count": 3,
+      "min": 3311,
+      "p50": 3313,
+      "p95": 3338,
+      "max": 3338
+    },
+    "warmWorkerRoundTripMs": {
+      "count": 3,
+      "min": 2719,
+      "p50": 2733,
+      "p95": 2742,
+      "max": 2742
+    },
+    "warmStageMs": {
+      "count": 3,
+      "min": 2714,
+      "p50": 2729,
+      "p95": 2738,
+      "max": 2738
+    }
+  },
+  "assessment": {
+    "infrastructure": {
+      "status": "PASS",
+      "failures": []
+    },
+    "safety": {
+      "status": "PASS",
+      "failures": []
+    },
+    "qualification": {
+      "status": "PASS",
+      "failures": []
+    }
+  },
+  "nonSameOriginRequests": [],
+  "limitations": [
+    "Development fixtures; not held-out accuracy.",
+    "Round trip begins after PDF capture and excludes editor paint; cold sessions do not clear disk/browser caches.",
+    "Physical iPad deferred/unrun."
+  ],
+  "sourceReport": {
+    "path": "experiments/recognition-training/reports/product-regression/issue-35-product-measurement-pdf-synthetic-diagram-01-firefox.json",
+    "sha256": "73df092e7656a851e0df848bd87c647760589024eb0096e0e8d6318aa1c6d7a3"
+  }
+}

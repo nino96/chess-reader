@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "elapsedSeconds": 10.015601981896907,
+  "candidates": 3,
+  "commit": "8998d9c2a389cbe66110b994346caa3efbec83be",
+  "concurrency": "Ordinary product recognition regression ran concurrently. CPU timings are observed under shared host load; isolated experimental browser metrics follow separately."
+}

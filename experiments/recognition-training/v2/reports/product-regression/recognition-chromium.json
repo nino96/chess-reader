@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "suite": "eval:recognition",
+  "command": "pnpm eval:recognition",
+  "commit": "e0303680548f6b461e4848aa72ca6c3903229e48",
+  "date": "2026-09-05T18:33:53.709Z",
+  "environment": {
+    "os": "linux 6.17.0-1021-nvidia",
+    "node": "v24.19.0",
+    "ci": false
+  },
+  "browser": "chromium",
+  "fixture": {
+    "id": "pdf-synthetic-diagram-01",
+    "sha256": "d5d80caf72ebe645d0932576cb55b9f28c6faffea2666e09ca713f1d8af6c95f",
+    "manifestSchemaVersion": 1
+  },
+  "recognizerVersion": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0",
+  "runs": [
+    {
+      "run": 0,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 393,
+      "inferenceMs": 86,
+      "coldStart": true
+    },
+    {
+      "run": 1,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 65,
+      "inferenceMs": 62,
+      "coldStart": false
+    },
+    {
+      "run": 2,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 74,
+      "inferenceMs": 71,
+      "coldStart": false
+    },
+    {
+      "run": 3,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 70,
+      "inferenceMs": 66,
+      "coldStart": false
+    },
+    {
+      "run": 4,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 70,
+      "inferenceMs": 66,
+      "coldStart": false
+    },
+    {
+      "run": 5,
+      "phase": "done",
+      "orientation": "white",
+      "reliable": true,
+      "exactMatch": true,
+      "totalMs": 66,
+      "inferenceMs": 63,
+      "coldStart": false
+    }
+  ],
+  "summary": {
+    "exactBoardAccuracy": 1,
+    "coldTotalMs": {
+      "count": 1,
+      "min": 393,
+      "p50": 393,
+      "p95": 393,
+      "max": 393
+    },
+    "warmTotalMs": {
+      "count": 5,
+      "min": 65,
+      "p50": 70,
+      "p95": 74,
+      "max": 74
+    },
+    "warmInferenceMs": {
+      "count": 5,
+      "min": 62,
+      "p50": 66,
+      "p95": 71,
+      "max": 71
+    }
+  },
+  "provisionalTargets": {
+    "note": "docs/evaluation.md §6 targets apply to the reference iPad/Android devices; this run is a laptop-browser baseline and is recorded, not asserted.",
+    "warmP50MsTarget": 1000,
+    "warmP95MsTarget": 2000
+  },
+  "nonSameOriginRequests": [],
+  "originalRawSha256": "41cde9c603cd6e035302904debf2cc54c40e1eed6cc75cdbc44d6356cc307b4d",
+  "redaction": "Removed placement strings from every run for repository evidence privacy; metrics/timings unchanged.",
+  "sourceReport": {
+    "path": "experiments/recognition-training/reports/product-regression/recognition-chromium.json",
+    "sha256": "120ce65e923db4b4b70c425aa66e02a4a4d99562cc4f74e2cc8b4b889c133da8"
+  }
+}

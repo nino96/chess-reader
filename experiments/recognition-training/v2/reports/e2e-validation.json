@@ -6,5 +6,43 @@
   "durationSeconds": 214,
   "exitCode": 0,
   "sourceCommit": "fa020295cdafd97cc131cc990362d02f1c7a9520",
-  "concurrentWork": "Local CUDA training was active; this E2E evidence contains correctness only and no classifier latency evaluation."
+  "concurrentWork": "Local CUDA training was active; this E2E evidence contains correctness only and no classifier latency evaluation.",
+  "logSha256": "6a5b2bcb0a722daaa2c582f1bf7d35aab6318d451cf2c1d123e692c4ff07f786",
+  "testCounts": {
+    "passed": 219,
+    "failed": 0,
+    "skipped": 15
+  },
+  "skipBreakdown": {
+    "desktopProjects": {
+      "skipped": 6,
+      "reason": "touch journey runs on touch-capable projects only",
+      "projects": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "testsPerProject": 2
+    },
+    "touchProjects": {
+      "skipped": 9,
+      "reasons": [
+        {
+          "reason": "keyboard journey runs on desktop projects",
+          "skipped": 6,
+          "testsPerProject": 2
+        },
+        {
+          "reason": "keyboard selection is a desktop journey",
+          "skipped": 3,
+          "testsPerProject": 1
+        }
+      ],
+      "projects": [
+        "ipad-webkit",
+        "ipad-split-webkit",
+        "phone-chromium"
+      ]
+    }
+  }
 }
