@@ -34,6 +34,53 @@ recorded issue #2 baseline and for what it does and does not establish.
 is only introduced by the issue that first makes that subsystem real, so no
 placeholder command is added to fake green CI.
 
+Issue #24's classifier/localizer diagnostic runs in the existing fixture
+Vitest project. The default is a four-case regression; the explicit sweep
+records 96 controlled captures. It is separate from the browser product eval:
+
+```sh
+pnpm test:unit --project test-fixtures localization-diagnostic
+CHESS_READER_DIAGNOSTIC_SWEEP=1 pnpm test:unit --project test-fixtures localization-diagnostic
+```
+
+The environment-variable prefix above uses POSIX shell syntax. In PowerShell,
+set `$env:CHESS_READER_DIAGNOSTIC_SWEEP = '1'` before the command and remove it
+afterward with `Remove-Item Env:CHESS_READER_DIAGNOSTIC_SWEEP`.
+Reports land in `packages/test-fixtures/eval-results/`. See the
+[diagnosis](investigations/issue-24-localization.md) for evidence and limits;
+a passing diagnostic does not mean the full #24 recognition gate passed.
+
+Issue #34 also extends `pnpm eval:recognition` with a separate, observational
+printed-page corpus run in Chromium, Firefox and WebKit. It builds an
+evaluation-only page/worker with `vite.corpus.config.ts` alongside the normal
+application build; ordinary `pnpm build` does not include that harness.
+The original real-worker PDF golden assertions still run unchanged.
+Exact-bound classifier controls, loose selections and full pages are reported
+separately. Recognition failures are measurements; infrastructure failures
+still fail the command. See the
+[protocol, locked corpus and evidence](investigations/issue-34-corpus.md).
+
+The corpus generator and hash/geometry checks are under
+`packages/test-fixtures`; measurement accounting has its own minimized tests:
+
+```sh
+pnpm test:unit --project test-fixtures corpus
+pnpm --filter @chess-reader/test-fixtures generate:corpus
+```
+
+Exact v1 regeneration requires the canonical Linux ARM64 GNU environment,
+Node 24.19.0, pnpm 11.11.0 and the frozen lockfile (native
+`@napi-rs/canvas-linux-arm64-gnu` 1.0.8). CI runs the entire unchanged
+check/unit/license/build job on `ubuntu-24.04-arm`; browser E2E and the
+Chromium recognition evaluation remain on x64. Native x64 regeneration fails
+exact equality because Skia rounds some channels differently; it must not
+replace the locked images. See the [measured CI failures and rationale](investigations/issue-34-corpus.md#canonical-regeneration-environment).
+The test still requires byte-for-byte equality, with no pixel tolerance.
+
+Do not regenerate version 1 to improve a candidate's score. Preserve the
+original inputs/results and record any corpus revision explicitly in
+[#35](https://github.com/nino96/chess-reader/issues/35).
+
 ## Running a single Playwright project
 
 ```sh

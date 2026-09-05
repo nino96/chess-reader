@@ -75,17 +75,30 @@ describe('manifest.json', () => {
     expect(negativeRect.height).toBeGreaterThan(0);
   });
 
-  it('regenerates pdf-synthetic-diagram-01.pdf byte-for-byte', async () => {
-    const generatorPath = fixturePath('generators/make-diagram-pdf.mjs');
-    const tempDir = await mkdtemp(join(tmpdir(), 'chess-reader-fixture-regen-'));
-    const outputPath = join(tempDir, 'pdf-synthetic-diagram-01.pdf');
-    try {
-      await execFileAsync(process.execPath, [generatorPath, outputPath]);
-      const regenerated = await readFile(outputPath);
-      const committed = await readFile(fixturePath('pdf/pdf-synthetic-diagram-01.pdf'));
-      expect(regenerated.equals(committed)).toBe(true);
-    } finally {
-      await rm(tempDir, { recursive: true, force: true });
-    }
-  }, 30_000);
+  it.each([
+    ['pdf-synthetic-diagram-01', 'flat'],
+    ['pdf-synthetic-hatched-01', 'hatched'],
+  ])(
+    'regenerates %s.pdf byte-for-byte',
+    async (id, style) => {
+      const generatorPath = fixturePath('generators/make-diagram-pdf.mjs');
+      const tempDir = await mkdtemp(join(tmpdir(), 'chess-reader-fixture-regen-'));
+      const outputPath = join(tempDir, `${id}.pdf`);
+      try {
+        await execFileAsync(process.execPath, [generatorPath, outputPath], {
+          env: {
+            ...process.env,
+            CHESS_READER_FIXTURE_STYLE: style,
+            CHESS_READER_FIXTURE_GRAY: '0.7',
+          },
+        });
+        const regenerated = await readFile(outputPath);
+        const committed = await readFile(fixturePath(`pdf/${id}.pdf`));
+        expect(regenerated.equals(committed)).toBe(true);
+      } finally {
+        await rm(tempDir, { recursive: true, force: true });
+      }
+    },
+    30_000,
+  );
 });

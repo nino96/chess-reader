@@ -30,7 +30,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
   webServer: {
-    command: 'pnpm build && pnpm preview',
+    command: 'pnpm build && pnpm exec vite build --config vite.corpus.config.ts && pnpm preview',
     url: baseURL,
     reuseExistingServer: !isCI,
     timeout: 120_000,

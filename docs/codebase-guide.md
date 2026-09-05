@@ -429,6 +429,28 @@ The current layers are:
    privacy/offline-safety evidence.
 5. CI also checks formatting/types/lint, licenses, and the production build.
 
+Issue #24 adds a matched flat/hatch fixture and a Node/WASM
+`localization-diagnostic.test.ts` experiment in `packages/test-fixtures`.
+It compares detected corners, a bounds-rejection control, and known true
+corners with identical classifier inputs. See the
+[diagnosis and reproduction commands](investigations/issue-24-localization.md).
+This is partial feasibility evidence; production recognition is unchanged.
+
+Issue #34 adds a versioned synthetic printed-page corpus under
+`packages/test-fixtures/corpus/v1`, with a contact sheet, deterministic
+generator, manifest validation and measurement-accounting tests.
+`apps/web/eval/corpus.*` runs the unchanged classifier with exact bounds,
+unchanged recognition on loose selections, and unchanged full-page detection.
+These observational reports retain errors separately from the existing PDF
+product golden assertions. See the
+[corpus protocol and evidence](investigations/issue-34-corpus.md).
+
+`vite.corpus.config.ts` builds the dedicated evaluation page and worker only
+when the recognition Playwright configuration starts its server. It adds
+evaluation artifacts to `dist` after a normal application build; ordinary
+production builds remain unchanged and do not contain the harness. Detection
+evaluation does not implement automatic product hotspots; those remain #7.
+
 Layout screenshots attached by `layout.spec.ts` are evidence for human review,
 not auto-approved pixel snapshots. Playwright's WebKit engine is useful early
 evidence, but it is not Safari on a physical iPad. Real-device results use the
@@ -448,7 +470,12 @@ beyond ordinary React compilation:
 - `CHESS_READER_BASE_PATH` lets the build emit URLs for a subpath such as
   `/chess-reader/` on GitHub Pages.
 
-CI builds and tests on every push to `main` and every pull request. A separate
+CI builds and tests on every push to `main` and every pull request. The full
+check/unit/license/build job uses `ubuntu-24.04-arm` and Node 24.19.0 so the
+locked corpus regenerates byte-for-byte with its native Skia producer. E2E
+and real-model recognition evaluation jobs remain on x64 `ubuntu-latest`.
+The [measured cross-architecture drift](investigations/issue-34-corpus.md#canonical-regeneration-environment)
+is a fixture-generation constraint, not a product support exclusion. A separate
 workflow publishes `main` to GitHub Pages and stamps `VITE_APP_VERSION` with the
 commit SHA shown in the footer.
 

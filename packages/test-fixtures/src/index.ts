@@ -8,6 +8,24 @@ import { readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+export {
+  CORPUS_MANIFEST_PATH,
+  corpusPath,
+  expandCorpusPlacement,
+  loadCorpus,
+  parseCorpusManifest,
+} from './corpus.js';
+export type {
+  CorpusAnnotation,
+  CorpusAnnotationKind,
+  CorpusManifest,
+  CorpusOrientation,
+  CorpusPage,
+  CorpusPatternDensity,
+  CorpusPixelRect,
+  CorpusSquareStyle,
+} from './corpus.js';
+
 export const FIXTURES_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 export function fixturePath(relativePath: string): string {

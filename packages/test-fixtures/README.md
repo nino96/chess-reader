@@ -12,8 +12,10 @@ must follow.
   here with its sha256, provenance, and expected/tolerance values.
 - `pdf/pdf-synthetic-diagram-01.pdf` -- a deterministic, synthetic 2-page PDF:
   page 0 is plain text with no diagram (a negative fixture); page 1 has a
-  printed-book-style chess diagram (hatched dark squares, vector piece
+  printed-book-style chess diagram (flat-gray dark squares, vector piece
   glyphs) between two paragraphs of text.
+- `pdf/pdf-synthetic-hatched-01.pdf` -- the same layout, position, and glyphs
+  with 45-degree hatched dark squares; a locked diagnostic pair for issue #24.
 - `generators/make-diagram-pdf.mjs` -- the committed generator that produces
   the PDF above, byte-for-byte reproducibly. `generators/lib/layout.mjs`
   holds the page/board geometry as the single source of truth shared by the
@@ -37,6 +39,19 @@ must follow.
   pipeline against it -- the same core `apps/web/src/recognition/pipeline.ts`
   calls. A second case crops page 0's title line and asserts no board is
   found there.
+- `tests/localization-diagnostic.test.ts` -- compares unchanged FENShot with
+  ground-truth corners and a bounds-rejection control on identical pixels.
+  See the [diagnosis](../../docs/investigations/issue-24-localization.md) for
+  the optional 96-capture sweep and recorded evidence.
+- `corpus/v1/` -- the issue #34 locked printed-book feasibility corpus: 16
+  deterministic 768 x 1024 PNG pages, runtime-validated ground truth, and a
+  [visual overview](corpus/v1/OVERVIEW.md). Its 14 complete boards cover
+  multiple positions, orientations, layouts, grayscale, hatch, halftone, and
+  seeded scan degradation; two partial boards and two no-board pages preserve
+  negative/challenge inputs.
+- `src/corpus.ts` -- `loadCorpus()` and the typed, strict runtime boundary for
+  corpus v1. Page paths are package-root-relative and resolve with
+  `corpusPath()`.
 
 ## Regenerating the PDF
 
@@ -53,6 +68,17 @@ computed geometry (`boardRect`, `placement`, `negativeTextRect`) as JSON.
 
 If you change the generator, `manifest.json`'s `sha256` field must be updated
 to match (`tests/manifest.test.ts` enforces this).
+
+Regenerate corpus v1 separately with:
+
+```sh
+pnpm --filter @chess-reader/test-fixtures generate:corpus
+```
+
+`tests/corpus.test.ts` verifies byte-for-byte regeneration of every page, the
+contact sheet, overview, and corpus manifest. Corpus v1 was locked before
+candidate measurement; representativeness changes create a new corpus version
+instead of altering v1.
 
 ## Running the tests
 
@@ -74,6 +100,12 @@ measured latency (`totalMs`, `inferenceMs`, `inferenceCalls`); there is no
 latency threshold, only a correctness assertion.
 
 ## Diagram style: what worked and what did not
+
+The notes below describe the original style exploration, not evidence that
+hatched recognition passes. The committed issue #2 golden fixture is flat
+gray. The issue #24 [controlled experiment](../../docs/investigations/issue-24-localization.md)
+now distinguishes localization failure from the classifier's smaller residual
+error and confidence limitations on the separate hatched fixture.
 
 The issue's style guidance suggested a thin outer board border and ~80%
 piece scale. Empirically:
@@ -104,7 +136,9 @@ piece scale. Empirically:
   visible on tiles farthest from the board's near edge. The classifier is
   trained to be robust to exactly this kind of resize artifact (its corpus
   includes "resize round-trips" as a degradation), and the final result
-  reads every one of the 64 tiles correctly with `minConfidence > 0.84`.
+  on the committed flat-gray golden fixture reads all 64 tiles correctly.
+  This does not establish hatch robustness or prove the source of residual
+  low-resolution errors.
 
 ## Provenance summary
 

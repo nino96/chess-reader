@@ -184,6 +184,24 @@ optimization; it does not silently change the threshold.
 Every wrong confident square is higher priority than an honest low-confidence
 result because the editor can recover the latter.
 
+Issue #34's [locked feasibility protocol](investigations/issue-34-corpus.md)
+extends the existing recognition command with observational browser reports
+for exact-bound classification, loose selection and full-page detection.
+Oracle geometry is excluded from detection scores, and missed boards remain
+in accuracy denominators. These reports expose candidate failures; their
+successful execution does not waive the provisional gates above or replace
+the existing real-worker product golden assertions. Physical-iPad testing is
+deferred for #34/#35 by owner instruction, with final device acceptance still
+tracked on [#24](https://github.com/nino96/chess-reader/issues/24).
+
+Corpus v1 byte regeneration is a required gate in the canonical Linux ARM64
+GNU / Node 24.19.0 environment, with the frozen dependency lockfile. Native
+x64 Skia rendering has measured one-level channel drift; the committed
+inputs, exact hash assertions and accuracy targets remain unchanged.
+The complete check/unit/license/build CI job runs on ARM64, while the
+existing E2E and real-model evaluation jobs run on x64. See the
+[regeneration evidence](investigations/issue-34-corpus.md#canonical-regeneration-environment).
+
 ## 7. Reader and hotspot evaluation
 
 ### PDF gates

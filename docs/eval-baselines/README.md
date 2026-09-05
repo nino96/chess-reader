@@ -3,7 +3,7 @@
 Status: measured results, updated only with a new measurement
 Last updated: 2026-09-04
 
-Each file here is the raw JSON artifact a `pnpm eval:*` run wrote, copied from
+This directory retains raw JSON artifacts from `pnpm eval:*`, copied from
 `apps/web/eval-results/` (which is git-ignored) into the repository so a later
 change can be compared against what was actually measured, not against a
 remembered number. Per `docs/evaluation.md` §2 an agent may improve a baseline;
@@ -12,6 +12,31 @@ it may not weaken a threshold or replace a measurement with an estimate.
 Every record identifies the commit, the fixture and its SHA-256, the command,
 the environment, the browser, the recognizer/model version, every individual
 run, and the distribution summary.
+
+## Issue #34 corpus baseline
+
+The [per-input/confidence summary](issue-34-corpus-summary.md) links three raw
+`issue-34-corpus-{browser}.json` artifacts from clean source commit `d6753bd`.
+They report exact-bound classification, loose selections and full pages
+separately on the 16-page v1 corpus locked at `89c224b`. Each browser completed
+138 observations, with identical accuracy: 24/42 oracle exact boards and 9/42
+on each recognizer path. These fail the expanded accuracy/detection targets.
+See the [protocol, visual overview and handoff](../investigations/issue-34-corpus.md).
+
+`issue-34-product-goldens.json` retains the simultaneous original product golden
+results, with predicted placements omitted and other fields unchanged. All
+six runs per browser remained exact and reliable. These synthetic flat-gray
+results do not qualify the expanded corpus. The earlier baselines below are
+preserved; performance across different machines is not a before/after claim.
+
+## `issue-24-localization-sweep.json`
+
+Raw Node/WASM controlled experiment copied from
+`packages/test-fixtures/eval-results/localization-diagnostic-sweep.json`.
+The [issue #24 diagnosis](../investigations/issue-24-localization.md) explains
+its matched flat/hatch pair, oracle and bounds-rejection controls, results,
+and outstanding feasibility gates. This preserves a separate diagnostic
+baseline and does not replace the browser product baselines below.
 
 ## `recognition-{chromium,firefox,webkit}.json`
 
@@ -68,9 +93,10 @@ here.
   Those gates are **not** met, waived, or claimed here; issue #2 records this
   first measurement rather than asserting a device target.
 - Accuracy here is one synthetic fixture in one diagram style, not the corpus
-  §6 describes. Board-detection precision/recall, square accuracy, confidence
-  calibration, worker memory, and long-task measurements are not yet
-  implemented; they belong to the recognition hardening issue (#6).
+  §6 describes. Issue #34 separately adds detection/square metrics and
+  confidence evidence on its synthetic feasibility corpus. Worker memory and
+  long-task qualification remain unmeasured, tracked by #24/#35 and production
+  hardening in #6.
 - Playwright's WebKit build is an early signal, never a substitute for Safari
   on a physical iPad (`docs/platform-limitations.md` §7). No iPad numbers
   exist yet; the real-device record for issue #2 is still owed.
@@ -83,6 +109,7 @@ pnpm --filter @chess-reader/web exec playwright test \
   --config playwright.eval.config.ts --project=chromium
 ```
 
-`CHESS_READER_EVAL_RUNS` (default 6) sets the number of runs per engine.
+`CHESS_READER_EVAL_RUNS` (default 6) sets the product golden runs per engine;
+the issue #34 corpus keeps its predeclared three passes per engine.
 Results land in `apps/web/eval-results/`; copy them here only together with
 the commit that produced them.

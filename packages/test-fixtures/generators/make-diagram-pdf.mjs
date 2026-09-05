@@ -21,8 +21,8 @@
  * mode of hatched book diagrams), which either shifted the whole read by one
  * rank/file or pushed enough tiles' confidence below fenshot's 0.7 reliability
  * floor to fail `reliable === true`. No border, plus a slightly larger 88%
- * piece scale (more piece, less hatch per occupied tile), passes the golden
- * test with minConfidence > 0.84 on every tile. This is recorded as a fixture
+ * piece scale (more piece, less hatch per occupied tile), and flat-gray fill
+ * passes the golden test. This is recorded as a fixture
  * limitation in manifest.json rather than silently diverging from the issue's
  * suggested style.
  *
@@ -114,10 +114,13 @@ const HATCH_INK = rgb(0, 0, 0);
  * lines, so the detected grid lands a fraction of a square off and the read shifts by
  * whole ranks. Upstream documents this as a known failure mode of hatched diagrams and
  * mitigates it with a grid-snap candidate, which is not sufficient for this synthetic
- * pattern. Keeping `hatched` available (and out of the committed fixture) preserves the
+ * pattern. Keeping `hatched` available preserves the
  * reproduction for the follow-up issue without tuning the corpus to a single operating
  * point that only passes by luck. Tracked as
  * https://github.com/nino96/chess-reader/issues/24.
+ * Issue #24 now commits it as the separate pdf-synthetic-hatched-01 diagnostic
+ * fixture. Exact-bound classification and limitations are recorded in
+ * docs/investigations/issue-24-localization.md; the issue #2 golden stays flat.
  */
 const DARK_SQUARE_STYLE = process.env['CHESS_READER_FIXTURE_STYLE'] ?? 'flat';
 const FLAT_DARK_GRAY = Number(process.env['CHESS_READER_FIXTURE_GRAY'] ?? '0.7');
