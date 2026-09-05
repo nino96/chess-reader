@@ -7,7 +7,7 @@
     "rootDir": "../..",
     "outDir": "./node_modules/.tsbuild/eval",
     "tsBuildInfoFile": "./node_modules/.tsbuild/eval.tsbuildinfo",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable", "WebWorker"],
     "types": ["node", "vite/client"]
   },
   "include": [
@@ -15,6 +15,11 @@
     "eval/report.ts",
     "src/recognition/assets.ts",
     "../../packages/test-fixtures/src/corpus.ts",
-    "../../packages/test-fixtures/src/corpus-metrics.ts"
-  ]
+    "../../packages/test-fixtures/src/corpus-metrics.ts",
+    "eval/localized*.ts",
+    "src/recognition/*.ts",
+    "src/study/contracts.ts",
+    "src/board/placement.ts"
+  ],
+  "exclude": ["src/**/*.test.ts"]
 }

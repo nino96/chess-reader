@@ -1,9 +1,9 @@
 /**
- * Issue #34 stage-separated browser observations over the locked printed-page
- * corpus. Accuracy is recorded, never asserted: these are the unchanged
- * FENShot baselines that issue #35 will compare against.
+ * Stage-separated browser observations over the locked printed-page corpus.
+ * Issue #34's unchanged FENShot control and issue #35's bounded localization
+ * candidate use one runner, but retain separate tests and reports.
  */
-import { expect, test } from '@playwright/test';
+import { expect, test, type Browser, type Page } from '@playwright/test';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { statSync } from 'node:fs';
@@ -27,11 +27,13 @@ import {
   type CorpusAnnotation,
   type CorpusPage,
 } from '../../../packages/test-fixtures/src/corpus';
+import { LOCALIZATION_VERSION } from '../src/recognition/experimentalLocalization';
 import { currentCommit, sha256OfFile, summarize, writeJsonReport } from './report';
 import {
   isCorpusWorkerRequest,
   isCorpusWorkerResponse,
   type CorpusBrowserRun,
+  type CorpusCandidate,
   type CorpusStage,
   type PixelRect,
 } from './corpus.protocol';
@@ -47,7 +49,46 @@ const RUNTIME_PATH = fileURLToPath(
 );
 const PINNED_MODEL_SHA256 = '883f6a8e639e6d6b6399b3fda0508ad772e3c6f9cefa2e678a13f27b9fa6248d';
 const PINNED_RUNTIME_SHA256 = 'ec8580a9d7b9476ceee52e10a7f94124e4dc71a019d666ed6d4726697c109a4d';
+const LOCKED_CORPUS_MANIFEST_SHA256 =
+  '767c0e91c7c685495a8d1be37fc8605208ca9e2dc6b672c39ea2d47567189b7a';
+const ISSUE_34_BASELINE_SHA256: Readonly<Record<string, string>> = {
+  chromium: 'b77771e51053af396deebd0abd9cd89123eaa86c34dcaa5ed446eb1b6df8ba78',
+  firefox: '2ab1105682173cee9adc5166bc14eea835e65187c84a7496806be72e01038756',
+  webkit: '7c5c01bc518873aacaefced816a4967b20ed786ab5f166f2dd82a2c4e332884d',
+};
+const DEVELOPMENT_PAGE_IDS = [
+  'flat-gray-middlegame-white',
+  'matched-hatch-45-middlegame-white',
+] as const;
+const DEVELOPMENT_PAGE_ID_SET = new Set<string>(DEVELOPMENT_PAGE_IDS);
 
+type CorpusSplit = 'development' | 'held-out';
+
+interface CandidateDefinition {
+  readonly option: CorpusCandidate;
+  readonly id: string;
+  readonly suite: string;
+  readonly testName: string;
+  readonly reportName: (browserName: string) => string;
+  readonly maximumPredictions: 1 | 4;
+}
+
+const UPSTREAM_CANDIDATE: CandidateDefinition = {
+  option: 'upstream',
+  id: 'fenshot-0.1.4-upstream-control',
+  suite: 'issue-34-corpus',
+  testName: 'records unchanged FENShot stages on the locked printed corpus',
+  reportName: (browserName) => `corpus-${browserName}.json`,
+  maximumPredictions: 1,
+};
+const LOCALIZED_CANDIDATE: CandidateDefinition = {
+  option: 'localized',
+  id: `fenshot-0.1.4/${LOCALIZATION_VERSION}`,
+  suite: 'issue-35-localization-candidate',
+  testName: 'records the bounded localization candidate on the locked printed corpus',
+  reportName: (browserName) => `corpus-localized-${browserName}.json`,
+  maximumPredictions: 4,
+};
 interface PlannedInput {
   readonly id: string;
   readonly stage: CorpusStage;
@@ -60,7 +101,9 @@ interface PlannedInput {
 }
 
 interface Observation {
+  readonly candidate: CorpusCandidate;
   readonly pageId: string;
+  readonly split: CorpusSplit;
   readonly tags: readonly string[];
   readonly inputId: string;
   readonly stage: CorpusStage;
@@ -78,6 +121,17 @@ interface Observation {
   };
   readonly metrics: InputMetrics;
 }
+
+type AggregateObservation = Pick<Observation, 'coldStart' | 'metrics' | 'timing'>;
+
+interface CandidateSummary {
+  readonly byStage: Record<string, ReturnType<typeof aggregate>>;
+  readonly byStageStyle: Record<string, ReturnType<typeof aggregate>>;
+  readonly bySplitStage: Record<string, ReturnType<typeof aggregate>>;
+  readonly bySplitStageStyle: Record<string, ReturnType<typeof aggregate>>;
+}
+
+const completedSummaries = new Map<string, Partial<Record<CorpusCandidate, CandidateSummary>>>();
 
 interface InfrastructureFailure {
   readonly pageId: string;
@@ -116,6 +170,66 @@ function corpusSetSha256(corpus: ReturnType<typeof loadCorpus>): string {
       }),
     )
     .digest('hex');
+}
+
+function sourceSha256(sourceRoot: string): Record<string, string> {
+  return {
+    spec: sha256OfFile(fileURLToPath(import.meta.url)),
+    browser: sha256OfFile(resolve(sourceRoot, 'corpus.ts')),
+    worker: sha256OfFile(resolve(sourceRoot, 'corpus.worker.ts')),
+    protocol: sha256OfFile(resolve(sourceRoot, 'corpus.protocol.ts')),
+    reportWriter: sha256OfFile(resolve(sourceRoot, 'report.ts')),
+    viteConfig: sha256OfFile(resolve(sourceRoot, '../vite.corpus.config.ts')),
+    recognitionAssets: sha256OfFile(resolve(sourceRoot, '../src/recognition/assets.ts')),
+    corpusManifestParser: sha256OfFile(
+      resolve(sourceRoot, '../../../packages/test-fixtures/src/corpus.ts'),
+    ),
+    metrics: sha256OfFile(
+      resolve(sourceRoot, '../../../packages/test-fixtures/src/corpus-metrics.ts'),
+    ),
+    candidateLocalization: sha256OfFile(
+      resolve(sourceRoot, '../src/recognition/experimentalLocalization.ts'),
+    ),
+  };
+}
+
+function corpusInputPlanSha256(corpus: ReturnType<typeof loadCorpus>): string {
+  return createHash('sha256')
+    .update(
+      JSON.stringify(
+        corpus.pages.map((page) => ({
+          pageId: page.id,
+          inputs: inputsFor(page).map((input) => ({
+            id: input.id,
+            stage: input.stage,
+            annotationId: input.annotationId,
+            oracle: input.oracle,
+            mode: input.mode,
+            cropRect: input.cropRect,
+            truthAnnotationIds: input.annotations.map((annotation) => annotation.id),
+          })),
+        })),
+      ),
+    )
+    .digest('hex');
+}
+
+function corpusSplit(pageId: string): CorpusSplit {
+  return DEVELOPMENT_PAGE_ID_SET.has(pageId) ? 'development' : 'held-out';
+}
+
+function splitStageGroups<T extends { readonly split: CorpusSplit; readonly stage: CorpusStage }>(
+  values: readonly T[],
+): Record<string, readonly T[]> {
+  const stages: readonly CorpusStage[] = ['classifier', 'manual', 'full-page'];
+  return Object.fromEntries(
+    (['development', 'held-out'] as const).flatMap((split) =>
+      stages.map((stage) => [
+        `${split}/${stage}`,
+        values.filter((value) => value.split === split && value.stage === stage),
+      ]),
+    ),
+  );
 }
 
 function metricAnnotation(annotation: CorpusAnnotation, crop: PixelRect): MetricAnnotation {
@@ -208,7 +322,26 @@ function inputsFor(page: CorpusPage): PlannedInput[] {
   return inputs;
 }
 
-function aggregate(selected: readonly Observation[]) {
+function plannedMetrics(input: PlannedInput): InputMetrics {
+  const predictions: readonly MetricPrediction[] = input.oracle
+    ? input.annotations.map((annotation) => ({
+        corners: annotation.corners,
+        placement: annotation.renderedPlacement,
+        minConfidence: 1,
+        meanConfidence: 1,
+        confidences: Array<number>(64).fill(1),
+        orientation: annotation.orientation === 'black' ? 'black' : 'white',
+        orientationAmbiguous: false,
+      }))
+    : [];
+  return measureInput(input.annotations, predictions, {
+    width: input.cropRect.width,
+    height: input.cropRect.height,
+    oracle: input.oracle,
+  });
+}
+
+function aggregate(selected: readonly AggregateObservation[]) {
   const oracle = selected[0]?.metrics.oracle ?? null;
   if (selected.some((run) => run.metrics.oracle !== oracle)) {
     throw new Error('Cannot aggregate oracle and recognizer observations together');
@@ -303,29 +436,159 @@ function failureReasons(observation: Observation): string[] {
   return reasons;
 }
 
+const COMPARISON_METRICS = [
+  'predictions',
+  'matchedBoards',
+  'missedBoards',
+  'falsePositiveBoards',
+  'duplicateBoards',
+  'detectionPrecision',
+  'detectionRecall',
+  'gridAlignedBoards',
+  'exactBoards',
+  'exactBoardAccuracy',
+  'correctSquares',
+  'squareAccuracy',
+  'reliablePredictions',
+  'unreliablePredictions',
+  'reliableExactBoards',
+  'reliableWrongBoards',
+  'reliableWrongStudyPositions',
+  'outOfImagePredictions',
+  'correctOrientations',
+  'orientationAccuracy',
+] as const;
+
+function compareAggregate(
+  upstream: ReturnType<typeof aggregate>,
+  localized: ReturnType<typeof aggregate>,
+) {
+  return {
+    upstream,
+    localized,
+    localizedMinusUpstream: Object.fromEntries(
+      COMPARISON_METRICS.map((metric) => {
+        const upstreamValue = upstream[metric];
+        const localizedValue = localized[metric];
+        return [
+          metric,
+          typeof upstreamValue === 'number' && typeof localizedValue === 'number'
+            ? localizedValue - upstreamValue
+            : null,
+        ];
+      }),
+    ),
+  };
+}
+
+function compareGroups(
+  upstream: Record<string, ReturnType<typeof aggregate>>,
+  localized: Record<string, ReturnType<typeof aggregate>>,
+) {
+  const keys = [...new Set([...Object.keys(upstream), ...Object.keys(localized)])].sort();
+  return Object.fromEntries(
+    keys.map((key) => {
+      const upstreamGroup = upstream[key];
+      const localizedGroup = localized[key];
+      if (!upstreamGroup || !localizedGroup) {
+        throw new Error(`Candidate summaries do not share comparison group ${key}`);
+      }
+      return [key, compareAggregate(upstreamGroup, localizedGroup)];
+    }),
+  );
+}
+
 test('worker boundary rejects oversized or malformed evidence', () => {
   const request = {
     type: 'run',
     inputId: 'probe',
+    candidate: 'upstream',
     mode: 'recognizer',
     width: 1,
     height: 1,
     data: new Uint8ClampedArray(4),
   };
   expect(isCorpusWorkerRequest(request)).toBe(true);
+  const requestWithoutCandidate: Record<string, unknown> = { ...request };
+  delete requestWithoutCandidate['candidate'];
+  expect(isCorpusWorkerRequest(requestWithoutCandidate)).toBe(false);
+  expect(isCorpusWorkerRequest({ ...request, candidate: 'unknown' })).toBe(false);
+  expect(isCorpusWorkerRequest({ ...request, expectedBoardCount: 1 })).toBe(false);
   expect(
     isCorpusWorkerRequest({ ...request, width: 1025, data: new Uint8ClampedArray(4100) }),
   ).toBe(false);
   expect(isCorpusWorkerRequest({ ...request, data: new Uint8Array(4) })).toBe(false);
   expect(isCorpusWorkerRequest({ ...request, height: 0 })).toBe(false);
+  expect(isCorpusWorkerRequest({ type: 'dispose', inputId: 'dispose' })).toBe(true);
+  expect(
+    isCorpusWorkerRequest({ type: 'dispose', inputId: 'dispose', candidate: 'upstream' }),
+  ).toBe(false);
   expect(isCorpusWorkerResponse({ type: 'result', inputId: 'probe', predictions: [] })).toBe(false);
   expect(isCorpusWorkerResponse({ type: 'disposed', inputId: 'wrong-request' })).toBe(false);
+});
+
+test('worker boundary accepts no more than four identified candidate predictions', () => {
+  const prediction = {
+    corners: { x0: 0, y0: 0, x1: 8, y1: 8 },
+    placement: '8/8/8/8/8/8/8/8',
+    confidences: Array<number>(64).fill(0.9),
+    minConfidence: 0.9,
+    meanConfidence: 0.9,
+    orientation: 'white',
+    orientationAmbiguous: false,
+  };
+  const response = {
+    type: 'result',
+    inputId: 'probe',
+    candidate: 'localized',
+    predictions: Array(4).fill(prediction),
+    initializationMs: null,
+    recognitionMs: 1,
+    modelSha256: 'a'.repeat(64),
+    runtimeSha256: 'b'.repeat(64),
+  };
+  expect(isCorpusWorkerResponse(response)).toBe(true);
+  expect(isCorpusWorkerResponse({ ...response, predictions: Array(5).fill(prediction) })).toBe(
+    false,
+  );
+  expect(isCorpusWorkerResponse({ ...response, candidate: 'unknown' })).toBe(false);
+  const responseWithoutCandidate: Record<string, unknown> = { ...response };
+  delete responseWithoutCandidate['candidate'];
+  expect(isCorpusWorkerResponse(responseWithoutCandidate)).toBe(false);
 });
 
 test('input plan keeps partial boards out of complete truth', () => {
   const corpus = loadCorpus();
   expect(corpus.matching.iouThreshold).toBe(MATCH_IOU);
   expect(corpus.tolerance.gridErrorSquares).toBe(GRID_ERROR_SQUARES);
+  expect(
+    corpus.pages.filter((page) => corpusSplit(page.id) === 'development').map((page) => page.id),
+  ).toEqual(DEVELOPMENT_PAGE_IDS);
+  expect(corpus.pages.filter((page) => corpusSplit(page.id) === 'held-out')).toHaveLength(14);
+  expect(corpus.pages.reduce((total, page) => total + inputsFor(page).length, 0)).toBe(46);
+  const plannedGroups = splitStageGroups(
+    corpus.pages.flatMap((page) =>
+      inputsFor(page).map((input) => ({
+        split: corpusSplit(page.id),
+        stage: input.stage,
+        oracle: input.oracle,
+        coldStart: false,
+        timing: { workerTotalMs: 0, initializationMs: null, recognitionMs: 0 },
+        metrics: plannedMetrics(input),
+      })),
+    ),
+  );
+  for (const [key, inputs] of Object.entries(plannedGroups)) {
+    expect(inputs, `${key} must be represented in the 46-input plan`).not.toHaveLength(0);
+    expect(
+      [...new Set(inputs.map((input) => input.oracle))],
+      `${key} must not mix oracle and recognizer measurements`,
+    ).toHaveLength(1);
+    expect(
+      () => aggregate(inputs),
+      `${key} summary must accept its planned observations`,
+    ).not.toThrow();
+  }
   for (const corpusPage of corpus.pages) {
     const inputs = inputsFor(corpusPage);
     const complete = corpusPage.annotations.filter((annotation) => annotation.kind === 'complete');
@@ -350,15 +613,31 @@ test('input plan keeps partial boards out of complete truth', () => {
   }
 });
 
-test('records unchanged FENShot stages on the locked printed corpus', async ({
-  page,
-  browser,
-  browserName,
-  baseURL,
-}) => {
+async function runCorpusCandidate(
+  candidate: CandidateDefinition,
+  fixtures: {
+    readonly page: Page;
+    readonly browser: Browser;
+    readonly browserName: string;
+    readonly baseURL: string | undefined;
+  },
+): Promise<void> {
+  const { page, browser, browserName, baseURL } = fixtures;
   test.setTimeout(30 * 60_000);
   if (!baseURL) throw new Error('baseURL must be configured');
   const corpus = loadCorpus();
+  const sourceRoot = dirname(fileURLToPath(import.meta.url));
+  const sourceSha256BeforeRun = sourceSha256(sourceRoot);
+  const manifestSha256 = sha256OfFile(CORPUS_MANIFEST_PATH);
+  const historicalBaselinePath = resolve(
+    sourceRoot,
+    `../../../docs/eval-baselines/issue-34-corpus-${browserName}.json`,
+  );
+  const historicalBaselineSha256 = sha256OfFile(historicalBaselinePath);
+  const expectedHistoricalBaselineSha256 = ISSUE_34_BASELINE_SHA256[browserName];
+  if (!expectedHistoricalBaselineSha256) {
+    throw new Error(`No locked issue #34 baseline hash is declared for ${browserName}`);
+  }
   expect(corpus.lockedBeforeTuning, 'corpus must be locked before observations').toBe(true);
 
   const pageFiles = new Map<string, string>();
@@ -389,8 +668,15 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
 
   const observations: Observation[] = [];
   const infrastructureFailures: InfrastructureFailure[] = [];
+  let workerRequestToken = 0;
   let stop = false;
   try {
+    expect(manifestSha256, 'corpus v1 manifest must remain byte-identical').toBe(
+      LOCKED_CORPUS_MANIFEST_SHA256,
+    );
+    expect(historicalBaselineSha256, 'issue #34 browser baseline must remain byte-identical').toBe(
+      expectedHistoricalBaselineSha256,
+    );
     expect(sha256OfFile(MODEL_PATH), 'installed model bytes must match the pinned hash').toBe(
       PINNED_MODEL_SHA256,
     );
@@ -427,10 +713,13 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
 
           for (const input of inputsFor(corpusPage)) {
             activeInputId = input.id;
+            const opaqueWorkerInputId = String(workerRequestToken);
+            workerRequestToken += 1;
             const browserRun: CorpusBrowserRun = await page.evaluate(
               (request) => globalThis.__chessReaderCorpus.run(request),
               {
-                inputId: `${corpusPage.id}/${input.id}/${String(repetition)}`,
+                inputId: opaqueWorkerInputId,
+                candidate: candidate.option,
                 mode: input.mode,
                 cropRect: input.cropRect,
               },
@@ -441,9 +730,17 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
             ) {
               throw new Error('Worker reported an unexpected model or runtime hash');
             }
+            if (browserRun.result.candidate !== candidate.option) {
+              throw new Error('Worker reported an unexpected candidate identity');
+            }
+            if (browserRun.result.predictions.length > candidate.maximumPredictions) {
+              throw new Error('Worker returned more predictions than the candidate permits');
+            }
             const predictions: readonly MetricPrediction[] = browserRun.result.predictions;
             observations.push({
+              candidate: candidate.option,
               pageId: corpusPage.id,
+              split: corpusSplit(corpusPage.id),
               tags: corpusPage.tags,
               inputId: input.id,
               stage: input.stage,
@@ -492,6 +789,9 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
       }
       if (stop) break;
     }
+    if (JSON.stringify(sourceSha256(sourceRoot)) !== JSON.stringify(sourceSha256BeforeRun)) {
+      throw new Error('Evaluation source changed during the corpus run');
+    }
   } catch (error) {
     infrastructureFailures.push({
       pageId: 'harness',
@@ -508,10 +808,9 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
         corpus.pages.flatMap((corpusPage) => inputsFor(corpusPage).map((input) => input.style)),
       ),
     ].sort();
-    const sourceRoot = dirname(fileURLToPath(import.meta.url));
     const report = {
-      schemaVersion: 1,
-      suite: 'issue-34-corpus',
+      schemaVersion: 2,
+      suite: candidate.suite,
       command: 'pnpm eval:recognition',
       commit: currentCommit(),
       workingTreeDirty: workingTreeDirty(),
@@ -528,8 +827,9 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
         id: corpus.corpusId,
         version: corpus.corpusVersion,
         manifestSchemaVersion: corpus.schemaVersion,
-        manifestSha256: sha256OfFile(CORPUS_MANIFEST_PATH),
+        manifestSha256,
         fixtureSetSha256: corpusSetSha256(corpus),
+        inputPlanSha256: corpusInputPlanSha256(corpus),
         lockedBeforeTuning: corpus.lockedBeforeTuning,
         pages: corpus.pages.map(({ id, sha256, width, height, tags: pageTags }) => ({
           id,
@@ -538,6 +838,13 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
           height,
           tags: pageTags,
         })),
+      },
+      historicalIssue34Baseline: {
+        status: 'preserved-reference',
+        file: `issue-34-corpus-${browserName}.json`,
+        sha256: historicalBaselineSha256,
+        caveat:
+          'This known baseline is retained for auditability; the current comparison reruns the control from the same harness and is not blind validation.',
       },
       recognizer: {
         version: 'fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0',
@@ -549,15 +856,22 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
         runtimeSha256: sha256OfFile(RUNTIME_PATH),
         runtimeBytes: statSync(RUNTIME_PATH).size,
       },
-      sourceSha256: {
-        spec: sha256OfFile(fileURLToPath(import.meta.url)),
-        browser: sha256OfFile(resolve(sourceRoot, 'corpus.ts')),
-        worker: sha256OfFile(resolve(sourceRoot, 'corpus.worker.ts')),
-        protocol: sha256OfFile(resolve(sourceRoot, 'corpus.protocol.ts')),
-        metrics: sha256OfFile(
-          resolve(sourceRoot, '../../../packages/test-fixtures/src/corpus-metrics.ts'),
-        ),
+      candidate: {
+        option: candidate.option,
+        id: candidate.id,
+        maximumPredictionsPerInput: candidate.maximumPredictions,
+        localizationVersion: candidate.option === 'localized' ? LOCALIZATION_VERSION : null,
+        sourceSha256BeforeRun:
+          candidate.option === 'localized' ? sourceSha256BeforeRun['candidateLocalization'] : null,
+        localizationModuleLoad:
+          candidate.option === 'localized'
+            ? 'lazy; first recognizer-stage load/evaluation is included in recognitionMs'
+            : 'not loaded by the control path',
+        exactBoundClassifier: 'unchanged-and-shared',
+        manualSelectionHint: 'crop-pixels-only; no geometry or annotation is sent to the worker',
+        fullPageHints: 'none',
       },
+      sourceSha256: sourceSha256BeforeRun,
       repetitions: REPETITIONS,
       manualPaddingFractionPerSide: MANUAL_PADDING_FRACTION,
       workerTimeoutMs: INPUT_TIMEOUT_MS,
@@ -567,6 +881,16 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
         reliabilityFloor: RELIABILITY_FLOOR,
         partialAnnotations: 'excluded-from-complete-truth',
         duplicatePredictions: 'failure',
+        split: {
+          developmentPageIds: DEVELOPMENT_PAGE_IDS,
+          heldOutPageIds: corpus.pages
+            .map((corpusPage) => corpusPage.id)
+            .filter((id) => !DEVELOPMENT_PAGE_ID_SET.has(id)),
+          declaration:
+            'Only the matched flat/hatch page pair and separate synthetic unit images may tune localization. All other corpus pages are held out from mitigation tuning.',
+          historicalBaselineKnown:
+            'The issue #34 upstream results were known before this split, so held-out candidate results are historical-baseline comparisons, not blind validation.',
+        },
       },
       summary: {
         overall: {
@@ -604,6 +928,26 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
             }),
           ),
         ),
+        bySplitStage: Object.fromEntries(
+          Object.entries(splitStageGroups(observations)).map(([key, selected]) => [
+            key,
+            aggregate(selected),
+          ]),
+        ),
+        bySplitStageStyle: Object.fromEntries(
+          (['development', 'held-out'] as const).flatMap((split) =>
+            stages.flatMap((stage) =>
+              styles.flatMap((style) => {
+                const selected = observations.filter(
+                  (run) => run.split === split && run.stage === stage && run.style === style,
+                );
+                return selected.length === 0
+                  ? []
+                  : [[`${split}/${stage}/${style}`, aggregate(selected)]];
+              }),
+            ),
+          ),
+        ),
         byInput: Object.fromEntries(
           corpus.pages.flatMap((corpusPage) =>
             inputsFor(corpusPage).map((input) => {
@@ -635,14 +979,19 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
       nonSameOriginRequests: blocked,
       limitations: [
         'Oracle classifier inputs use locked ground-truth geometry and are diagnostic only.',
-        'Laptop Playwright browsers are not physical-iPad evidence.',
-        'FENShot returns at most one board per recognizer input; misses and duplicate behavior remain visible in the metrics.',
+        'Host Playwright browsers are not physical-iPad evidence.',
+        `${candidate.id} returns at most ${String(candidate.maximumPredictions)} board(s) per recognizer input; misses and duplicate behavior remain visible in the metrics.`,
         'Pinned FENShot always proposes white or black and has no orientation-abstention signal.',
         'Page tags overlap; byStageStyle uses the target board style or an explicit mixed full-page style.',
-        'Stage timing excludes RGBA-to-gray conversion, image decode/crop, transport, initialization and the product editor; peak worker memory is unmeasured.',
+        'Stage timing excludes RGBA-to-gray conversion, image decode/crop, transport, initialization and the product editor.',
+        'For localized sessions, the first recognizer-stage recognitionMs includes lazy candidate-module loading and evaluation; model coldStart may already have been recorded by the preceding classifier control.',
+        'Peak dedicated-worker/WASM memory is unavailable through a reliable cross-browser API and is not inferred from main-page JavaScript heap samples.',
       ],
     };
-    writeJsonReport(resolve(REPORT_DIR, `corpus-${browserName}.json`), report);
+    writeJsonReport(resolve(REPORT_DIR, candidate.reportName(browserName)), report);
+    const previous = completedSummaries.get(browserName) ?? {};
+    previous[candidate.option] = report.summary;
+    completedSummaries.set(browserName, previous);
     console.log(JSON.stringify(report.summary.byStage));
   }
 
@@ -659,4 +1008,80 @@ test('records unchanged FENShot stages on the locked printed corpus', async ({
       observations.filter((run) => run.repetition === repetition && run.coldStart),
     ).toHaveLength(1);
   }
+}
+
+test.describe.serial('locked corpus candidate comparison', () => {
+  test(UPSTREAM_CANDIDATE.testName, ({ page, browser, browserName, baseURL }) =>
+    runCorpusCandidate(UPSTREAM_CANDIDATE, { page, browser, browserName, baseURL }),
+  );
+  test(LOCALIZED_CANDIDATE.testName, ({ page, browser, browserName, baseURL }) =>
+    runCorpusCandidate(LOCALIZED_CANDIDATE, { page, browser, browserName, baseURL }),
+  );
+
+  test('writes a paired control/localization comparison by stage, style, and split', ({
+    browser,
+    browserName,
+  }) => {
+    const summaries = completedSummaries.get(browserName);
+    const upstream = summaries?.upstream;
+    const localized = summaries?.localized;
+    expect(upstream, 'the unchanged control report must complete first').toBeDefined();
+    expect(localized, 'the localization candidate report must complete first').toBeDefined();
+    if (!upstream || !localized) return;
+
+    const sourceRoot = dirname(fileURLToPath(import.meta.url));
+    const corpus = loadCorpus();
+    const report = {
+      schemaVersion: 1,
+      suite: 'issue-35-candidate-comparison',
+      command: 'pnpm eval:recognition',
+      commit: currentCommit(),
+      workingTreeDirty: workingTreeDirty(),
+      date: new Date().toISOString(),
+      browser: { name: browserName, version: browser.version() },
+      corpus: {
+        id: corpus.corpusId,
+        version: corpus.corpusVersion,
+        manifestSha256: sha256OfFile(CORPUS_MANIFEST_PATH),
+        fixtureSetSha256: corpusSetSha256(corpus),
+        inputPlanSha256: corpusInputPlanSha256(corpus),
+        inputsPerCandidatePerPass: corpus.pages.reduce(
+          (total, page) => total + inputsFor(page).length,
+          0,
+        ),
+        repetitionsPerCandidate: REPETITIONS,
+      },
+      candidates: {
+        upstream: {
+          option: UPSTREAM_CANDIDATE.option,
+          id: UPSTREAM_CANDIDATE.id,
+          maximumPredictionsPerInput: UPSTREAM_CANDIDATE.maximumPredictions,
+        },
+        localized: {
+          option: LOCALIZED_CANDIDATE.option,
+          id: LOCALIZED_CANDIDATE.id,
+          maximumPredictionsPerInput: LOCALIZED_CANDIDATE.maximumPredictions,
+          localizationVersion: LOCALIZATION_VERSION,
+        },
+      },
+      sourceSha256: sourceSha256(sourceRoot),
+      split: {
+        developmentPageIds: DEVELOPMENT_PAGE_IDS,
+        heldOutStatus:
+          'Historical upstream outcomes were known; mitigation tuning excluded these pages, but this is not blind validation.',
+      },
+      comparison: {
+        byStage: compareGroups(upstream.byStage, localized.byStage),
+        byStageStyle: compareGroups(upstream.byStageStyle, localized.byStageStyle),
+        bySplitStage: compareGroups(upstream.bySplitStage, localized.bySplitStage),
+        bySplitStageStyle: compareGroups(upstream.bySplitStageStyle, localized.bySplitStageStyle),
+      },
+      limitations: [
+        'Exact-bound classifier measurements are shared diagnostics and do not establish implementable detection.',
+        'Host Playwright browsers are not physical-iPad evidence.',
+        'Peak dedicated-worker/WASM memory is unavailable and remains unmeasured.',
+      ],
+    };
+    writeJsonReport(resolve(REPORT_DIR, `corpus-comparison-${browserName}.json`), report);
+  });
 });

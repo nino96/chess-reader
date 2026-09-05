@@ -82,6 +82,120 @@ describe('workerCore', () => {
     }
   });
 
+  it('runs an injected evaluation pipeline with the verified session and version', async () => {
+    const recognize = vi.fn(() => Promise.resolve({ kind: 'no-board' as const }));
+    const core = createWorkerCore({ ...deps, recognize, recognizerVersion: 'evaluation-v1' });
+    core.handleMessage({
+      type: 'recognize',
+      requestId: 1,
+      width: 8,
+      height: 8,
+      data: createFlatRegionBytes(8, 8),
+    });
+    await vi.waitFor(() => {
+      expect(posted.some((message) => message.type === 'result')).toBe(true);
+    });
+    expect(createSessionCalls).toBe(1);
+    expect(recognize).toHaveBeenCalledOnce();
+    expect(posted.find((message) => message.type === 'result')).toMatchObject({
+      recognizerVersion: 'evaluation-v1',
+      outcome: { kind: 'no-board' },
+    });
+  });
+
+  it('drops an injected pipeline completion after cancellation', async () => {
+    let finish: (() => void) | undefined;
+    const recognize = vi.fn(
+      () =>
+        new Promise<{ kind: 'no-board' }>((resolve) => {
+          finish = () => {
+            resolve({ kind: 'no-board' });
+          };
+        }),
+    );
+    const core = createWorkerCore({ ...deps, recognize });
+    core.handleMessage({
+      type: 'recognize',
+      requestId: 1,
+      width: 8,
+      height: 8,
+      data: createFlatRegionBytes(8, 8),
+    });
+    await vi.waitFor(() => {
+      expect(recognize).toHaveBeenCalledOnce();
+    });
+    core.handleMessage({ type: 'cancel', requestId: 1 });
+    finish?.();
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    expect(
+      posted.filter((message) => message.type === 'result' || message.type === 'error'),
+    ).toEqual([]);
+  });
+
+  it('reports an injected pipeline failure and permits recovery', async () => {
+    const recognize = vi
+      .fn()
+      .mockRejectedValueOnce(new Error('evaluation failure'))
+      .mockResolvedValue({ kind: 'no-board' });
+    const core = createWorkerCore({ ...deps, recognize });
+    const request = {
+      type: 'recognize',
+      requestId: 1,
+      width: 8,
+      height: 8,
+      data: createFlatRegionBytes(8, 8),
+    };
+    core.handleMessage(request);
+    await vi.waitFor(() => {
+      expect(posted.some((message) => message.type === 'error')).toBe(true);
+    });
+    core.handleMessage({ ...request, requestId: 2 });
+    await vi.waitFor(() => {
+      expect(posted.some((message) => message.type === 'result' && message.requestId === 2)).toBe(
+        true,
+      );
+    });
+    expect(createSessionCalls).toBe(1);
+  });
+
+  it('stops remaining candidate inference after cancellation during the first classifier call', async () => {
+    let finish: ((value: Float32Array) => void) | undefined;
+    const run = vi.fn(
+      () =>
+        new Promise<Float32Array>((resolve) => {
+          finish = resolve;
+        }),
+    );
+    const recognize: NonNullable<WorkerCoreDeps['recognize']> = async (_region, classify) => {
+      const corners = { x0: 0, y0: 0, x1: 8, y1: 8 };
+      await classify(corners);
+      await classify(corners);
+      return { kind: 'no-board' };
+    };
+    const core = createWorkerCore({
+      ...deps,
+      recognize,
+      createSession: () => Promise.resolve({ run }),
+    });
+    core.handleMessage({
+      type: 'recognize',
+      requestId: 9,
+      width: 8,
+      height: 8,
+      data: createFlatRegionBytes(8, 8),
+    });
+    await vi.waitFor(() => {
+      expect(run).toHaveBeenCalledOnce();
+    });
+    core.handleMessage({ type: 'cancel', requestId: 9 });
+    finish?.(new Float32Array(64 * 13));
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    expect(run).toHaveBeenCalledOnce();
+    expect(
+      posted.filter((message) => message.type === 'result' || message.type === 'error'),
+    ).toEqual([]);
+  });
+
   it('reports coldStart true on the first request and false on a later one', async () => {
     const core = createWorkerCore(deps);
 

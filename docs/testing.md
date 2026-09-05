@@ -81,6 +81,24 @@ Do not regenerate version 1 to improve a candidate's score. Preserve the
 original inputs/results and record any corpus revision explicitly in
 [#35](https://github.com/nino96/chess-reader/issues/35).
 
+## Issue #35 comparison
+
+`pnpm eval:recognition` also runs the bounded localization candidate against
+exactly the same corpus inputs, retaining separate upstream and candidate tests.
+It writes `corpus-localized-{browser}.json` and
+`corpus-comparison-{browser}.json` alongside the unchanged-control output.
+The comparison separates classifier diagnostics, loose selections, full pages,
+styles, and development/held-out groups. Metrics below the provisional targets
+remain failures in the report even when the measurement job succeeds.
+
+The evaluation build adds `/localized.html`, which reuses the real React PDF
+selection and editable board with the candidate worker. `eval/localized.spec.ts`
+checks the original synthetic flat/hatch development PDFs and saves separate
+round-trip reports and screenshots. This entry is excluded from normal builds.
+No production flag, hotspot UI, prefetch or durable recognition cache is added.
+The [comparison report](investigations/issue-35-comparison.md) records the frozen
+candidate, source/asset hashes, commands, results and physical-iPad status.
+
 ## Running a single Playwright project
 
 ```sh

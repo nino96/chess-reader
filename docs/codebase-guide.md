@@ -451,6 +451,20 @@ evaluation artifacts to `dist` after a normal application build; ordinary
 production builds remain unchanged and do not contain the harness. Detection
 evaluation does not implement automatic product hotspots; those remain #7.
 
+Issue #35 extends that same corpus runner with a separately identified bounded
+checkerboard localizer retaining the pinned classifier. Control, candidate and
+paired comparison JSON files keep exact-bound diagnostics separate from manual
+and full-page detection. The declared development pair and 14 held-out pages
+remain distinct; v1 inputs and historical baselines are unchanged.
+
+`eval/localized.html` builds the existing React app with an evaluation-only
+recognizer factory and worker. The worker injects the candidate pipeline into
+`workerCore.ts`; ordinary workers retain the upstream default. The core checks
+cancellation between candidate classifier calls as well as before posting a
+result. The evaluation build's factory alias is absent from normal builds, so
+this is neither a production recognition switch nor #7's automatic hotspots.
+See the [candidate protocol and evidence](investigations/issue-35-comparison.md).
+
 Layout screenshots attached by `layout.spec.ts` are evidence for human review,
 not auto-approved pixel snapshots. Playwright's WebKit engine is useful early
 evidence, but it is not Safari on a physical iPad. Real-device results use the

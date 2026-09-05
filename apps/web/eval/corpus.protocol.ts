@@ -1,6 +1,7 @@
 import type { BoardCorners } from '@scoriiu/fenshot';
 
 export type CorpusStage = 'classifier' | 'manual' | 'full-page';
+export type CorpusCandidate = 'upstream' | 'localized';
 
 export interface PixelRect {
   readonly x: number;
@@ -12,6 +13,7 @@ export interface PixelRect {
 export interface CorpusWorkerRequest {
   readonly type: 'run';
   readonly inputId: string;
+  readonly candidate: CorpusCandidate;
   readonly mode: 'classifier' | 'recognizer';
   readonly width: number;
   readonly height: number;
@@ -40,6 +42,7 @@ export interface CorpusWorkerPrediction {
 export interface CorpusWorkerSuccess {
   readonly type: 'result';
   readonly inputId: string;
+  readonly candidate: CorpusCandidate;
   readonly predictions: readonly CorpusWorkerPrediction[];
   /** Non-null only for the first input in this fresh worker session. */
   readonly initializationMs: number | null;
@@ -78,6 +81,11 @@ function isFiniteNumber(value: unknown): value is number {
   return typeof value === 'number' && Number.isFinite(value);
 }
 
+function hasExactKeys(value: Record<string, unknown>, expected: readonly string[]): boolean {
+  const actual = Object.keys(value);
+  return actual.length === expected.length && expected.every((key) => actual.includes(key));
+}
+
 function isCorners(value: unknown): value is BoardCorners {
   return (
     isRecord(value) &&
@@ -108,6 +116,11 @@ function isPrediction(value: unknown): value is CorpusWorkerPrediction {
 
 const SHA256_PATTERN = /^[0-9a-f]{64}$/;
 const MAX_CORPUS_DIMENSION_PX = 1024;
+export const MAX_CORPUS_PREDICTIONS = 4;
+
+function isCandidate(value: unknown): value is CorpusCandidate {
+  return value === 'upstream' || value === 'localized';
+}
 
 export function isCorpusWorkerResponse(value: unknown): value is CorpusWorkerResponse {
   if (!isRecord(value) || typeof value['inputId'] !== 'string') return false;
@@ -119,8 +132,9 @@ export function isCorpusWorkerResponse(value: unknown): value is CorpusWorkerRes
   const predictions = value['predictions'];
   return (
     Array.isArray(predictions) &&
-    predictions.length <= 1 &&
+    predictions.length <= MAX_CORPUS_PREDICTIONS &&
     predictions.every(isPrediction) &&
+    isCandidate(value['candidate']) &&
     (value['initializationMs'] === null ||
       (isFiniteNumber(value['initializationMs']) && value['initializationMs'] >= 0)) &&
     isFiniteNumber(value['recognitionMs']) &&
@@ -134,13 +148,17 @@ export function isCorpusWorkerResponse(value: unknown): value is CorpusWorkerRes
 
 export function isCorpusWorkerRequest(value: unknown): value is CorpusWorkerMessage {
   if (!isRecord(value)) return false;
-  if (value['type'] === 'dispose') return value['inputId'] === 'dispose';
+  if (value['type'] === 'dispose') {
+    return value['inputId'] === 'dispose' && hasExactKeys(value, ['type', 'inputId']);
+  }
   const width = value['width'];
   const height = value['height'];
   const data = value['data'];
   return (
+    hasExactKeys(value, ['type', 'inputId', 'candidate', 'mode', 'width', 'height', 'data']) &&
     value['type'] === 'run' &&
     typeof value['inputId'] === 'string' &&
+    isCandidate(value['candidate']) &&
     (value['mode'] === 'classifier' || value['mode'] === 'recognizer') &&
     typeof width === 'number' &&
     Number.isInteger(width) &&

@@ -97,6 +97,9 @@ loose manual selections and full pages. See the
 [corpus overview and baseline](docs/investigations/issue-34-corpus.md).
 A passing measurement run does not mean those recognition results pass the
 product accuracy gates.
+Issue #35 adds a separately identified localization candidate and an evaluation-only
+PDF selection path. See the [comparison protocol and recommendation](docs/investigations/issue-35-comparison.md);
+ordinary production recognition remains the pinned upstream implementation.
 
 ## Product boundaries
 
