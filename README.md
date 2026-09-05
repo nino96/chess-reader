@@ -18,12 +18,57 @@ relaunch, automatic diagram hotspots, legal moves, and EPUB are later issues.
 
 ## Getting started
 
-Prerequisites: Node.js 22.12 or newer and pnpm 11 (Corepack honours the
-`packageManager` field). Browser tests also need the Playwright browsers.
+### Prerequisites
+
+- Git.
+- Node.js 24 LTS (recommended), or Node.js 22.12 or newer. The standard Node.js
+  24 distribution includes Corepack; confirm both tools are available with
+  `node --version` and `corepack --version`.
+
+The repository pins pnpm in the root `packageManager` field. Enable Corepack
+and let it install that exact pnpm version instead of installing pnpm globally:
+
+```sh
+corepack enable
+corepack install
+pnpm --version # must match the packageManager version in package.json
+```
+
+If `corepack` is unavailable, install a Node.js distribution that includes it
+before continuing. Run all remaining commands from the repository root.
+
+### Install project dependencies
 
 ```sh
 pnpm install --frozen-lockfile
+```
+
+This is enough to run the development server, build, and unit checks. Browser
+and end-to-end tests additionally require Playwright's browser binaries.
+
+### Install browser-test dependencies
+
+On Windows and macOS, download the browsers:
+
+```sh
 pnpm --filter @chess-reader/web exec playwright install chromium firefox webkit
+```
+
+On supported Debian/Ubuntu systems, including ARM64 machines, also install the
+required operating-system libraries (the command may request `sudo` access):
+
+```sh
+pnpm --filter @chess-reader/web exec playwright install --with-deps chromium firefox webkit
+```
+
+Playwright publishes its current supported operating systems in its
+[system requirements](https://playwright.dev/docs/intro#system-requirements).
+Re-run the appropriate browser-install command after the pinned Playwright
+version changes.
+
+### Run the application
+
+```sh
 pnpm dev            # Vite dev server on http://localhost:5173 (also on the LAN)
 pnpm build          # production build in apps/web/dist
 pnpm preview        # serve the production build on http://127.0.0.1:4173
