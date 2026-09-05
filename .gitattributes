@@ -3,3 +3,7 @@
 *.ico binary
 *.pdf binary
 *.epub binary
+
+# Retain raw #35 evidence, but collapse generated JSON in the PR diff.
+# Human-readable findings and direct raw-data links remain in the report.
+docs/eval-baselines/issue-35-*.json linguist-generated=true

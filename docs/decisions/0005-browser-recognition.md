@@ -52,3 +52,65 @@ production recognition unchanged. It is not approval of FENShot's viability.
 [#35](https://github.com/nino96/chess-reader/issues/35) owns candidate comparison
 and the technical recommendation; #24 stays open with final physical-iPad
 evidence explicitly deferred/unrun. No gate is lowered here.
+
+## Issue #35 candidate decision (2026-09-05)
+
+The [frozen comparison](../investigations/issue-35-comparison.md) recommends
+**STOP production adoption for now**: neither unchanged FENShot nor the bounded
+localization prototype meets the unchanged accuracy gate. The prototype raises
+exact boards from 9/42 to 15/42 on each non-oracle path and removes v1
+negative/partial false outputs, but misses boards and retains classifier errors.
+True-bound classification is still only 24/42 exact. The prototype's hatch
+PDF path additionally abstains in Firefox and WebKit; those two exactness
+assertions remain failing. The unchanged production goldens and E2E pass.
+2d-chess-ocr YOLO is disqualified before execution because the downstream MIT
+labels do not reconcile with identified upstream model license terms.
+
+Reaffirm the dedicated browser-worker, pinned self-hosted assets and WASM
+constraints. The prototype is evaluation-only and is not a selected replacement;
+the production pipeline continues using pinned upstream FENShot. Neither this
+continuity nor a passing Chromium-only CI job establishes recognition viability.
+No accuracy, negative, confidence or device gate is lowered. #24 stays open,
+continues blocking #3/#6, and retains physical-iPad evidence as deferred/unrun.
+
+Exact-bound failures justify a separately scoped TileNet training experiment
+using pinned, fully licensed data and a new unseen validation set. The available
+GB10 is training hardware, not a proposed inference service. A learned localizer
+is appropriate when full-page coverage/alignment remains inadequate; a small
+whole-board CNN is a later comparison if tile classification still fails with
+correct geometry. Footprints and deployment suitability for hypothetical models
+must be measured, not assumed. See the comparison's decision triggers and
+provenance requirements. Production hotspots remain #7.
+
+## Research measurement and candidate qualification (2026-09-05)
+
+The owner authorized merging #35 as a completed investigation, retaining its
+STOP decision and creating [training issue #38](https://github.com/nino96/chess-reader/issues/38). The frozen run measured
+all 828 corpus observations without infrastructure failures, while experimental
+hatch selections abstained 6/6 times in Firefox and WebKit. Requiring a research
+candidate to recognize those inputs exactly conflated an experiment's delivery
+with eligibility to adopt its result.
+
+Make that distinction explicit in the executable evaluation contract:
+
+- `pnpm eval:recognition` remains the required research measurement gate. It
+  runs all three browser engines, the unchanged production goldens, the complete corpus
+  comparison and the real experimental PDF path. Missing/malformed observations,
+  inference errors, invalid timings/version, external requests and reliable
+  wrong experimental outputs fail this command. Honest candidate abstentions
+  remain reported qualification failures.
+- `pnpm eval:recognition:qualify` runs the same suite and additionally requires
+  the experimental PDF selections to return exact boards. Its reports and exit
+  status retain the two failing browser cases; no expected-failure annotation,
+  skip or browser exception is used. Passing this small product checkpoint is
+  necessary but insufficient for adoption: all existing corpus, reliability,
+  resource and device criteria still apply.
+- CI measures all three engines. Research infrastructure may merge with valid
+  measurements and a STOP decision; production adoption may not use that green
+  measurement result to waive red qualification evidence.
+
+This explicitly revises the research merge gate introduced in #35. It does not
+revise a numeric threshold, the frozen candidate, corpus v1 or any historical
+baseline. The original 25-pass/two-failure run is retained unchanged, with the
+new contract and its validation recorded separately in the comparison report.
+#24 remains open; physical-iPad testing is deferred/unrun.

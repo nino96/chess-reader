@@ -1,0 +1,734 @@
+[
+  {
+    "schemaVersion": 1,
+    "suite": "issue-35-product-selection",
+    "command": "pnpm eval:recognition",
+    "commit": "0bd66cf6a8ac2ec5966b2457bb179cb4a2ca0687",
+    "date": "2026-09-05T15:29:49.390Z",
+    "environment": {
+      "node": "v24.19.0",
+      "os": "linux",
+      "release": "6.17.0-1021-nvidia",
+      "arch": "arm64"
+    },
+    "browser": {
+      "name": "chromium",
+      "version": "151.0.7922.34"
+    },
+    "fixture": {
+      "id": "pdf-synthetic-diagram-01",
+      "sha256": "d5d80caf72ebe645d0932576cb55b9f28c6faffea2666e09ca713f1d8af6c95f",
+      "manifestSchemaVersion": 1
+    },
+    "observations": [
+      {
+        "session": 0,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1142,
+        "stageMs": 842,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 0,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 833,
+        "stageMs": 828,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1185,
+        "stageMs": 895,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 829,
+        "stageMs": 824,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1132,
+        "stageMs": 837,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 821,
+        "stageMs": 816,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      }
+    ],
+    "summary": {
+      "exactBoards": 6,
+      "reliableExact": 6,
+      "reliableWrong": 0,
+      "coldWorkerRoundTripMs": {
+        "count": 3,
+        "min": 1132,
+        "p50": 1142,
+        "p95": 1185,
+        "max": 1185
+      },
+      "warmWorkerRoundTripMs": {
+        "count": 3,
+        "min": 821,
+        "p50": 829,
+        "p95": 833,
+        "max": 833
+      },
+      "warmStageMs": {
+        "count": 3,
+        "min": 816,
+        "p50": 824,
+        "p95": 828,
+        "max": 828
+      }
+    },
+    "nonSameOriginRequests": [],
+    "limitations": [
+      "Development fixtures; not held-out accuracy.",
+      "Round trip begins after PDF capture and excludes editor paint; cold sessions do not clear disk/browser caches.",
+      "Physical iPad deferred/unrun."
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "suite": "issue-35-product-selection",
+    "command": "pnpm eval:recognition",
+    "commit": "0bd66cf6a8ac2ec5966b2457bb179cb4a2ca0687",
+    "date": "2026-09-05T15:30:02.057Z",
+    "environment": {
+      "node": "v24.19.0",
+      "os": "linux",
+      "release": "6.17.0-1021-nvidia",
+      "arch": "arm64"
+    },
+    "browser": {
+      "name": "chromium",
+      "version": "151.0.7922.34"
+    },
+    "fixture": {
+      "id": "pdf-synthetic-hatched-01",
+      "sha256": "8072ddfad47d5b640a8f3c70de8b66c7d520483d32cc9c6308816e236c14821c",
+      "manifestSchemaVersion": 1
+    },
+    "observations": [
+      {
+        "session": 0,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1263,
+        "stageMs": 969,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 0,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 906,
+        "stageMs": 902,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1283,
+        "stageMs": 984,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 910,
+        "stageMs": 907,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1251,
+        "stageMs": 946,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 912,
+        "stageMs": 907,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      }
+    ],
+    "summary": {
+      "exactBoards": 6,
+      "reliableExact": 6,
+      "reliableWrong": 0,
+      "coldWorkerRoundTripMs": {
+        "count": 3,
+        "min": 1251,
+        "p50": 1263,
+        "p95": 1283,
+        "max": 1283
+      },
+      "warmWorkerRoundTripMs": {
+        "count": 3,
+        "min": 906,
+        "p50": 910,
+        "p95": 912,
+        "max": 912
+      },
+      "warmStageMs": {
+        "count": 3,
+        "min": 902,
+        "p50": 907,
+        "p95": 907,
+        "max": 907
+      }
+    },
+    "nonSameOriginRequests": [],
+    "limitations": [
+      "Development fixtures; not held-out accuracy.",
+      "Round trip begins after PDF capture and excludes editor paint; cold sessions do not clear disk/browser caches.",
+      "Physical iPad deferred/unrun."
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "suite": "issue-35-product-selection",
+    "command": "pnpm eval:recognition",
+    "commit": "0bd66cf6a8ac2ec5966b2457bb179cb4a2ca0687",
+    "date": "2026-09-05T15:34:47.676Z",
+    "environment": {
+      "node": "v24.19.0",
+      "os": "linux",
+      "release": "6.17.0-1021-nvidia",
+      "arch": "arm64"
+    },
+    "browser": {
+      "name": "firefox",
+      "version": "153.0"
+    },
+    "fixture": {
+      "id": "pdf-synthetic-diagram-01",
+      "sha256": "d5d80caf72ebe645d0932576cb55b9f28c6faffea2666e09ca713f1d8af6c95f",
+      "manifestSchemaVersion": 1
+    },
+    "observations": [
+      {
+        "session": 0,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 3338,
+        "stageMs": 2717,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 0,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 2753,
+        "stageMs": 2749,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 3299,
+        "stageMs": 2729,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 2763,
+        "stageMs": 2759,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 3269,
+        "stageMs": 2726,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 2771,
+        "stageMs": 2768,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      }
+    ],
+    "summary": {
+      "exactBoards": 6,
+      "reliableExact": 6,
+      "reliableWrong": 0,
+      "coldWorkerRoundTripMs": {
+        "count": 3,
+        "min": 3269,
+        "p50": 3299,
+        "p95": 3338,
+        "max": 3338
+      },
+      "warmWorkerRoundTripMs": {
+        "count": 3,
+        "min": 2753,
+        "p50": 2763,
+        "p95": 2771,
+        "max": 2771
+      },
+      "warmStageMs": {
+        "count": 3,
+        "min": 2749,
+        "p50": 2759,
+        "p95": 2768,
+        "max": 2768
+      }
+    },
+    "nonSameOriginRequests": [],
+    "limitations": [
+      "Development fixtures; not held-out accuracy.",
+      "Round trip begins after PDF capture and excludes editor paint; cold sessions do not clear disk/browser caches.",
+      "Physical iPad deferred/unrun."
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "suite": "issue-35-product-selection",
+    "command": "pnpm eval:recognition",
+    "commit": "0bd66cf6a8ac2ec5966b2457bb179cb4a2ca0687",
+    "date": "2026-09-05T15:35:18.585Z",
+    "environment": {
+      "node": "v24.19.0",
+      "os": "linux",
+      "release": "6.17.0-1021-nvidia",
+      "arch": "arm64"
+    },
+    "browser": {
+      "name": "firefox",
+      "version": "153.0"
+    },
+    "fixture": {
+      "id": "pdf-synthetic-hatched-01",
+      "sha256": "8072ddfad47d5b640a8f3c70de8b66c7d520483d32cc9c6308816e236c14821c",
+      "manifestSchemaVersion": 1
+    },
+    "observations": [
+      {
+        "session": 0,
+        "run": 0,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 4455,
+        "stageMs": 3899,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 0,
+        "run": 1,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 3896,
+        "stageMs": 3892,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 0,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 4462,
+        "stageMs": 3912,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 1,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 3880,
+        "stageMs": 3877,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 0,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 4461,
+        "stageMs": 3911,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 1,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 3906,
+        "stageMs": 3902,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      }
+    ],
+    "summary": {
+      "exactBoards": 0,
+      "reliableExact": 0,
+      "reliableWrong": 0,
+      "coldWorkerRoundTripMs": {
+        "count": 3,
+        "min": 4455,
+        "p50": 4461,
+        "p95": 4462,
+        "max": 4462
+      },
+      "warmWorkerRoundTripMs": {
+        "count": 3,
+        "min": 3880,
+        "p50": 3896,
+        "p95": 3906,
+        "max": 3906
+      },
+      "warmStageMs": {
+        "count": 3,
+        "min": 3877,
+        "p50": 3892,
+        "p95": 3902,
+        "max": 3902
+      }
+    },
+    "nonSameOriginRequests": [],
+    "limitations": [
+      "Development fixtures; not held-out accuracy.",
+      "Round trip begins after PDF capture and excludes editor paint; cold sessions do not clear disk/browser caches.",
+      "Physical iPad deferred/unrun."
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "suite": "issue-35-product-selection",
+    "command": "pnpm eval:recognition",
+    "commit": "0bd66cf6a8ac2ec5966b2457bb179cb4a2ca0687",
+    "date": "2026-09-05T15:37:03.271Z",
+    "environment": {
+      "node": "v24.19.0",
+      "os": "linux",
+      "release": "6.17.0-1021-nvidia",
+      "arch": "arm64"
+    },
+    "browser": {
+      "name": "webkit",
+      "version": "26.5"
+    },
+    "fixture": {
+      "id": "pdf-synthetic-diagram-01",
+      "sha256": "d5d80caf72ebe645d0932576cb55b9f28c6faffea2666e09ca713f1d8af6c95f",
+      "manifestSchemaVersion": 1
+    },
+    "observations": [
+      {
+        "session": 0,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1544,
+        "stageMs": 1323,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 0,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1284,
+        "stageMs": 1282,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1555,
+        "stageMs": 1334,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1290,
+        "stageMs": 1287,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 0,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1557,
+        "stageMs": 1338,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 1,
+        "phase": "done",
+        "exact": true,
+        "reliable": true,
+        "totalMs": 1297,
+        "stageMs": 1294,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      }
+    ],
+    "summary": {
+      "exactBoards": 6,
+      "reliableExact": 6,
+      "reliableWrong": 0,
+      "coldWorkerRoundTripMs": {
+        "count": 3,
+        "min": 1544,
+        "p50": 1555,
+        "p95": 1557,
+        "max": 1557
+      },
+      "warmWorkerRoundTripMs": {
+        "count": 3,
+        "min": 1284,
+        "p50": 1290,
+        "p95": 1297,
+        "max": 1297
+      },
+      "warmStageMs": {
+        "count": 3,
+        "min": 1282,
+        "p50": 1287,
+        "p95": 1294,
+        "max": 1294
+      }
+    },
+    "nonSameOriginRequests": [],
+    "limitations": [
+      "Development fixtures; not held-out accuracy.",
+      "Round trip begins after PDF capture and excludes editor paint; cold sessions do not clear disk/browser caches.",
+      "Physical iPad deferred/unrun."
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "suite": "issue-35-product-selection",
+    "command": "pnpm eval:recognition",
+    "commit": "0bd66cf6a8ac2ec5966b2457bb179cb4a2ca0687",
+    "date": "2026-09-05T15:37:18.736Z",
+    "environment": {
+      "node": "v24.19.0",
+      "os": "linux",
+      "release": "6.17.0-1021-nvidia",
+      "arch": "arm64"
+    },
+    "browser": {
+      "name": "webkit",
+      "version": "26.5"
+    },
+    "fixture": {
+      "id": "pdf-synthetic-hatched-01",
+      "sha256": "8072ddfad47d5b640a8f3c70de8b66c7d520483d32cc9c6308816e236c14821c",
+      "manifestSchemaVersion": 1
+    },
+    "observations": [
+      {
+        "session": 0,
+        "run": 0,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 1542,
+        "stageMs": 1327,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 0,
+        "run": 1,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 1293,
+        "stageMs": 1291,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 0,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 1722,
+        "stageMs": 1505,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 1,
+        "run": 1,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 1283,
+        "stageMs": 1281,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 0,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 1528,
+        "stageMs": 1306,
+        "cold": true,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      },
+      {
+        "session": 2,
+        "run": 1,
+        "phase": "no-board",
+        "exact": false,
+        "reliable": false,
+        "totalMs": 1266,
+        "stageMs": 1263,
+        "cold": false,
+        "version": "fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/integral-checkerboard-v1"
+      }
+    ],
+    "summary": {
+      "exactBoards": 0,
+      "reliableExact": 0,
+      "reliableWrong": 0,
+      "coldWorkerRoundTripMs": {
+        "count": 3,
+        "min": 1528,
+        "p50": 1542,
+        "p95": 1722,
+        "max": 1722
+      },
+      "warmWorkerRoundTripMs": {
+        "count": 3,
+        "min": 1266,
+        "p50": 1283,
+        "p95": 1293,
+        "max": 1293
+      },
+      "warmStageMs": {
+        "count": 3,
+        "min": 1263,
+        "p50": 1281,
+        "p95": 1291,
+        "max": 1291
+      }
+    },
+    "nonSameOriginRequests": [],
+    "limitations": [
+      "Development fixtures; not held-out accuracy.",
+      "Round trip begins after PDF capture and excludes editor paint; cold sessions do not clear disk/browser caches.",
+      "Physical iPad deferred/unrun."
+    ]
+  }
+]

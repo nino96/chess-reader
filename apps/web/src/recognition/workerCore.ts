@@ -40,6 +40,8 @@ export interface WorkerCoreDeps {
   readonly now?: () => number;
   /** Overrides `RECOGNIZER_VERSION` for tests; defaults to the pinned constant. */
   readonly recognizerVersion?: string;
+  /** Evaluation injection; normal workers always use the unchanged pipeline. */
+  readonly recognize?: typeof runRecognition;
 }
 
 export interface WorkerCore {
@@ -138,13 +140,17 @@ export function createWorkerCore(deps: WorkerCoreDeps): WorkerCore {
       // pipeline.ts free of any tile-extraction/session concerns.
       const gray = rgbaToGray(data, width, height);
       const classify: TileClassifier = async (corners) => {
+        // A candidate search may classify several boxes. Cancellation must
+        // prevent subsequent inference as well as suppress the final result.
+        if (isCancelled(requestId)) throw new Error('Recognition cancelled.');
         const tiles = extractTiles(gray, corners);
         const probs = await session.run(tiles);
+        if (isCancelled(requestId)) throw new Error('Recognition cancelled.');
         return probsToPlacement(probs);
       };
 
       const start = now();
-      const outcome = await runRecognition({ width, height, data }, classify);
+      const outcome = await (deps.recognize ?? runRecognition)({ width, height, data }, classify);
       const inferenceMs = now() - start;
 
       if (isCancelled(requestId)) {

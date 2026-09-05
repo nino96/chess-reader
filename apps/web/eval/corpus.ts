@@ -2,6 +2,7 @@
 import {
   isCorpusWorkerResponse,
   type CorpusBrowserRun,
+  type CorpusCandidate,
   type CorpusWorkerMessage,
   type CorpusWorkerRequest,
   type CorpusWorkerResponse,
@@ -18,6 +19,7 @@ interface CorpusPageSource {
 
 interface CorpusRunRequest {
   readonly inputId: string;
+  readonly candidate: CorpusCandidate;
   readonly mode: 'classifier' | 'recognizer';
   readonly cropRect: PixelRect;
 }
@@ -108,6 +110,14 @@ async function sendToWorker(
           reject(new Error('Corpus worker returned a response for the wrong input'));
           return;
         }
+        if (
+          event.data.type === 'result' &&
+          (message.type !== 'run' || event.data.candidate !== message.candidate)
+        ) {
+          workerFailed = true;
+          reject(new Error('Corpus worker returned a result for the wrong candidate'));
+          return;
+        }
         if (event.data.type === 'infrastructure-error') {
           workerFailed = true;
           reject(new Error(event.data.message));
@@ -138,6 +148,7 @@ async function run(request: CorpusRunRequest): Promise<CorpusBrowserRun> {
   const message: CorpusWorkerRequest = {
     type: 'run',
     inputId: request.inputId,
+    candidate: request.candidate,
     mode: request.mode,
     width: pixels.width,
     height: pixels.height,

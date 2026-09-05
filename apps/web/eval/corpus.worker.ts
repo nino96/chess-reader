@@ -1,9 +1,9 @@
 /// <reference types="vite/client" />
 
 /**
- * Evaluation-only real-model worker for issue #34. Exact crops call only the
- * unchanged classifier; manual and full-page inputs call unchanged FENShot
- * `recognizeGray`. One session is cached for a complete corpus pass.
+ * Evaluation-only real-model worker for issues #34/#35. Exact crops always
+ * call the unchanged classifier. Manual and full-page inputs explicitly select
+ * either unchanged FENShot or the bounded localization candidate.
  */
 import {
   extractTiles,
@@ -20,6 +20,7 @@ import * as ort from 'onnxruntime-web/wasm';
 import { MODEL_SHA256, ORT_WASM_SHA256, modelUrl, ortWasmUrl } from '../src/recognition/assets';
 import {
   isCorpusWorkerRequest,
+  MAX_CORPUS_PREDICTIONS,
   type CorpusWorkerPrediction,
   type CorpusWorkerResponse,
 } from './corpus.protocol';
@@ -179,15 +180,25 @@ async function processMessage(data: unknown): Promise<void> {
     if (data.mode === 'classifier') {
       const read = await runClassifier(runtime.session, gray, fullCorners);
       predictions.push(toPrediction(read, fullCorners));
-    } else {
+    } else if (data.candidate === 'upstream') {
       const scan = await recognizeGray(gray, (corners) =>
         runClassifier(runtime.session, gray, corners),
       );
       if (scan) predictions.push(toPrediction(scan, scan.corners));
+    } else {
+      const { recognizeLocalized } = await import('../src/recognition/experimentalLocalization');
+      const scans = await recognizeLocalized(gray, (corners) =>
+        runClassifier(runtime.session, gray, corners),
+      );
+      if (scans.length > MAX_CORPUS_PREDICTIONS) {
+        throw new Error('CandidateOutputBoundError');
+      }
+      predictions.push(...scans.map((scan) => toPrediction(scan, scan.corners)));
     }
     workerScope.postMessage({
       type: 'result',
       inputId: data.inputId,
+      candidate: data.candidate,
       predictions,
       initializationMs,
       recognitionMs: performance.now() - recognitionStart,
