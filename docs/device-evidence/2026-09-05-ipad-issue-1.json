@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "issue": 1,
+  "commit": "534fade96e855b114ec5a2d0ef15d8abeed7fe13",
+  "date": "2026-09-05",
+  "deviceClass": "ipad",
+  "os": "iPadOS 26.6.1",
+  "browser": "Safari bundled with iPadOS 26.6.1",
+  "installed": true,
+  "url": "https://nino96.github.io/",
+  "capabilities": {
+    "indexeddb": "unknown",
+    "opfs": "unknown",
+    "workers": "supported",
+    "webassembly": "supported",
+    "storage-estimate": "unknown",
+    "storage-persistence": "supported",
+    "touch": "supported",
+    "cross-origin-isolation": "unsupported"
+  },
+  "crossOriginIsolated": false,
+  "widthsTried": [
+    {
+      "mode": "full-screen portrait",
+      "cssWidth": 744
+    }
+  ],
+  "result": "partial",
+  "notes": "Physical iPad mini (A17 Pro). Tested the deployed app at /chess-reader/ as an installed Home-Screen app created with Open as Web App selected. Request persistent storage succeeded in installed mode but did not succeed from an ordinary Safari tab. Workers and WebAssembly are recorded as supported because the real recognition worker completed local ONNX inference during the same session. GitHub Pages does not provide the cross-origin-isolation headers required by the application architecture.",
+  "evidence": [],
+  "limitations": [
+    "The remaining capability-diagnostic rows were not recorded and therefore remain unknown.",
+    "Only full-screen portrait was tested; landscape and split-view widths remain unrun.",
+    "The supplied screenshot contains a user-owned chess-book page and was intentionally not copied into the repository.",
+    "Safari-tab persistence failure may be expected iPadOS behavior; this record does not classify it as an application defect."
+  ]
+}

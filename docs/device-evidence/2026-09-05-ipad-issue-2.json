@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "issue": 2,
+  "commit": "534fade96e855b114ec5a2d0ef15d8abeed7fe13",
+  "date": "2026-09-05",
+  "deviceClass": "ipad",
+  "os": "iPadOS 26.6.1",
+  "browser": "Safari bundled with iPadOS 26.6.1",
+  "installed": true,
+  "url": "https://nino96.github.io/",
+  "capabilities": {
+    "indexeddb": "unknown",
+    "opfs": "unknown",
+    "workers": "supported",
+    "webassembly": "supported",
+    "storage-estimate": "unknown",
+    "storage-persistence": "supported",
+    "touch": "supported",
+    "cross-origin-isolation": "unsupported"
+  },
+  "crossOriginIsolated": false,
+  "widthsTried": [
+    {
+      "mode": "full-screen portrait",
+      "cssWidth": 744
+    }
+  ],
+  "result": "fail",
+  "notes": "Physical iPad mini (A17 Pro), installed Home-Screen app with Open as Web App selected, deployed at /chess-reader/. A local PDF opened and the selected diagram completed real worker/WASM recognition in 1342 ms with a low-confidence result. The editor then occupied most of the lower screen, showed only about three ranks without scrolling, presented a six-dot movement handle that did not respond to touch, and placed the Flip, Clear board, and Start position controls over the recognition/confidence text. Tracked by GitHub issue #29.",
+  "evidence": [],
+  "limitations": [
+    "Only full-screen portrait was tested; landscape and split-view widths remain unrun.",
+    "The recognition result was low confidence and the source used hatched chessboard squares; recognition feasibility is tracked separately by GitHub issue #24.",
+    "The supplied screenshot contains a user-owned chess-book page and was intentionally not copied into the repository.",
+    "The workflow must be rerun after issue #29 before issue #2 can pass its physical-iPad acceptance criterion."
+  ]
+}
