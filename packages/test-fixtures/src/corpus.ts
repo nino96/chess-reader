@@ -160,7 +160,7 @@ export function expandCorpusPlacement(placement: string): readonly (string | nul
         fail(`placement.rank[${String(rankIndex)}]`, `invalid token "${token}"`);
       if (/^[1-8]$/.test(token)) {
         const count = Number(token);
-        squares.push(...Array(count).fill(null));
+        squares.push(...Array<null>(count).fill(null));
         rankWidth += count;
       } else {
         squares.push(token);
@@ -278,8 +278,8 @@ function validateAnnotation(
     id,
     kind,
     pixelRect,
-    canonicalPlacement: canonicalPlacement as string | null,
-    renderedPlacement: renderedPlacement as string | null,
+    canonicalPlacement: canonicalPlacement,
+    renderedPlacement: renderedPlacement,
     orientation,
     pieceStyle: 'chessnut',
     squareStyle: validateSquareStyle(annotation['squareStyle'], `${path}.squareStyle`),
@@ -337,7 +337,7 @@ function validatePage(
     width,
     height,
     tags,
-    generator: { spec, seed, degradation: degradation as Readonly<Record<string, unknown>> | null },
+    generator: { spec, seed, degradation: degradation },
     annotations,
   };
 }

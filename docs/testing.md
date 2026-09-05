@@ -50,6 +50,27 @@ Reports land in `packages/test-fixtures/eval-results/`. See the
 [diagnosis](investigations/issue-24-localization.md) for evidence and limits;
 a passing diagnostic does not mean the full #24 recognition gate passed.
 
+Issue #34 also extends `pnpm eval:recognition` with a separate, observational
+printed-page corpus run in Chromium, Firefox and WebKit. It builds an
+evaluation-only page/worker with `vite.corpus.config.ts` alongside the normal
+application build; ordinary `pnpm build` does not include that harness.
+The original real-worker PDF golden assertions still run unchanged.
+Exact-bound classifier controls, loose selections and full pages are reported
+separately. Recognition failures are measurements; infrastructure failures
+still fail the command. See the
+[protocol, locked corpus and evidence](investigations/issue-34-corpus.md).
+
+The corpus generator and hash/geometry checks are under
+`packages/test-fixtures`; measurement accounting has its own minimized tests:
+
+```sh
+pnpm test:unit --project test-fixtures corpus
+```
+
+Do not regenerate version 1 to improve a candidate's score. Preserve the
+original inputs/results and record any corpus revision explicitly in
+[#35](https://github.com/nino96/chess-reader/issues/35).
+
 ## Running a single Playwright project
 
 ```sh

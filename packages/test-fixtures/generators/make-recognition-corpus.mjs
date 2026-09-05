@@ -109,7 +109,7 @@ export function expandPlacement(placement) {
   const squares = [];
   for (const rank of ranks) {
     for (const token of rank) {
-      if (/^[1-8]$/.test(token)) squares.push(...Array(Number(token)).fill(null));
+      if (/^[1-8]$/.test(token)) squares.push(...Array.from({ length: Number(token) }, () => null));
       else if (/^[prnbqkPRNBQK]$/.test(token)) squares.push(token);
       else throw new Error(`Invalid placement token ${token}`);
     }
@@ -177,7 +177,9 @@ function drawWrappedPixelText(context, text, x, y, maxWidth, scale = 1) {
     } else current = candidate;
   }
   if (current.length > 0) lines.push(current);
-  lines.forEach((line, index) => drawPixelText(context, line, x, y + index * 10 * scale, scale));
+  lines.forEach((line, index) => {
+    drawPixelText(context, line, x, y + index * 10 * scale, scale);
+  });
   return y + lines.length * 10 * scale;
 }
 

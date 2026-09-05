@@ -184,6 +184,16 @@ optimization; it does not silently change the threshold.
 Every wrong confident square is higher priority than an honest low-confidence
 result because the editor can recover the latter.
 
+Issue #34's [locked feasibility protocol](investigations/issue-34-corpus.md)
+extends the existing recognition command with observational browser reports
+for exact-bound classification, loose selection and full-page detection.
+Oracle geometry is excluded from detection scores, and missed boards remain
+in accuracy denominators. These reports expose candidate failures; their
+successful execution does not waive the provisional gates above or replace
+the existing real-worker product golden assertions. Physical-iPad testing is
+deferred for #34/#35 by owner instruction, with final device acceptance still
+tracked on [#24](https://github.com/nino96/chess-reader/issues/24).
+
 ## 7. Reader and hotspot evaluation
 
 ### PDF gates

@@ -36,7 +36,7 @@ function squares(placement: string): string[] {
     throw new Error('Invalid placement in measurement input');
   }
   const expanded = ranks.map((rank) =>
-    [...rank].flatMap((piece) =>
+    Array.from(rank).flatMap((piece) =>
       /^[1-8]$/.test(piece) ? Array<string>(Number(piece)).fill('.') : [piece],
     ),
   );

@@ -10,6 +10,11 @@ are retained. Issue #2 implementation dependencies are merged: PRs
 
 ## Corpus review
 
+Corpus lock commit: `89c224b52cf2dfb2fa260faf8f36085659b8a011`.
+Corpus manifest SHA-256:
+`767c0e91c7c685495a8d1be37fc8605208ca9e2dc6b672c39ea2d47567189b7a`.
+This commit precedes the first new-corpus inference run.
+
 Start with the [contact sheet and coverage table](../../packages/test-fixtures/corpus/v1/OVERVIEW.md)
 and [full-resolution pages](../../packages/test-fixtures/corpus/v1/pages/).
 Version 1 contains 16 pages at 768 × 1024 pixels, 14 complete diagrams and two
@@ -99,6 +104,9 @@ matched boards with any wrong square. Orientation mistakes are separate.
 `reliableWrongStudyPositions` additionally includes identifiable orientation
 errors/abstentions on reliable boards, so the image-relative score cannot hide
 a wrong final orientation. Ambiguous-truth decisions remain a separate count.
+The pinned upstream orientation resolver always chooses white or black; it
+has no ambiguity/abstention output. The baseline records that limitation rather
+than adding a new orientation heuristic.
 Unreliable candidates, no-board outcomes, external corners, and all raw
 failures remain in the report. Reliability is a recognizer score, not user
 acceptance; a passing measurement job does not mean recognition passed.

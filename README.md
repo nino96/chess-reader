@@ -91,6 +91,13 @@ passing placeholders. Measured results live in
 [docs/deployment.md](docs/deployment.md) for HTTPS deployment and the GitHub
 Pages preview.
 
+The recognition eval also records unchanged FENShot observations on the
+versioned printed-page feasibility corpus: exact-bound classifier controls,
+loose manual selections and full pages. See the
+[corpus overview and baseline](docs/investigations/issue-34-corpus.md).
+A passing measurement run does not mean those recognition results pass the
+product accuracy gates.
+
 ## Product boundaries
 
 - Modern Chromium, Firefox, and Safari, including iPadOS 17+
