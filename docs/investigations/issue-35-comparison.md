@@ -18,8 +18,10 @@ checkpoint on this evidence. Keep the existing demo and the prototype as
 research artifacts; this is **not approval of upstream FENShot**.
 
 The software comparison is complete, with failing candidate evidence retained.
-`pnpm eval:recognition` finished **25 passed, 2 failed**: the experimental hatch
-PDF abstains in Firefox and WebKit. Its exact-board assertions remain intact.
+The original frozen `pnpm eval:recognition` run finished **25 passed, 2 failed**: the experimental hatch
+PDF abstains in Firefox and WebKit. These exactness failures are retained under
+`pnpm eval:recognition:qualify`; the revised default command validates research
+measurements under the explicit [ADR 0005 policy](../decisions/0005-browser-recognition.md).
 The unchanged product goldens pass in all three browsers. Physical iPad is
 **deferred/unrun**, and #24 remains open with final acceptance blocked.
 The next bounded research step is the TileNet training experiment below;
@@ -370,7 +372,7 @@ negative/partial abstention, complete download size, cold/warm and observable
 memory measurements, cancellation/recovery, offline requests and the real PDF
 selection/editor path. Physical-iPad qualification remains outstanding on #24.
 
-## Verification and #24 acceptance mapping
+## Frozen-run verification and #24 acceptance mapping
 
 | Command/check                                                             | Result                                                                                                                                                                                                                                                               |
 | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -386,10 +388,9 @@ selection/editor path. Physical-iPad qualification remains outstanding on #24.
 | Peak worker memory, full user-latency and gesture long-task qualification | Unrun/unmeasured; stage and worker round-trip timings are explicitly narrower. Tracked by #24.                                                                                                                                                                       |
 
 The failed experimental checks are deliberate retained evidence of the candidate
-failing its proposed product behavior, not approved new baselines. The PR is a
-draft for review of a STOP recommendation and the next bounded experiment;
-it must not be described as fully verified or merge-ready. Existing CI's
-Chromium-only recognition job does not waive the local Firefox/WebKit failures.
+failing its proposed product behavior, not approved new baselines. The original draft was not merge-ready with its conflated research/qualification
+gate. The explicit research handoff policy below separates these contracts;
+it does not qualify the candidate or alter this frozen run's outcome.
 
 | Parent #24 criterion                                                               | Evidence/status                                                                                                                                                                                                                         |
 | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -427,3 +428,23 @@ cancellation correction, source freeze, diff/visual review, full commands and
 recommendation. Hardware access required host-context execution; no models were
 trained. Reviewed synthetic screenshots show the existing scrollable editor;
 no layout redesign or physical-iPad sizing claim is made (#29 remains separate).
+
+## Research handoff contract
+
+After reviewing the failed experiment, the owner authorized a research handoff,
+merge and [a separate in-repository TileNet training issue (#38)](https://github.com/nino96/chess-reader/issues/38).
+[ADR 0005](../decisions/0005-browser-recognition.md) and
+[the evaluation policy](../evaluation.md#issue-35-research-measurement-and-qualification)
+explicitly revise the research merge gate: `pnpm eval:recognition` requires
+complete valid measurements, safe candidate outputs and unchanged production
+goldens. `pnpm eval:recognition:qualify` additionally retains exact experimental
+PDF assertions. Both run the complete three-browser suite, with qualification
+PASS/FAIL and reasons in product reports regardless of the command's exit status.
+CI now measures all three engines.
+
+This changes the test contract, not the candidate or its measured accuracy.
+The frozen localizer, corpus v1 and all previously committed raw JSON remain
+byte-for-byte unchanged. An abstention is valid measurement data and a failed
+recognition result. Numeric corpus gates and physical-device acceptance remain
+unchanged; even a passing product qualification command alone cannot satisfy
+#24. The STOP recommendation remains in force.

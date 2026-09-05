@@ -3,6 +3,13 @@ import { expect, test, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { arch, release } from 'node:os';
+import { LOCALIZATION_VERSION } from '../src/recognition/experimentalLocalization';
+import {
+  assessCandidateCase,
+  assessCandidateObservation,
+  candidateEvaluationContext,
+  type CandidateObservation,
+} from './localized.assessment';
 import { currentCommit, sha256OfFile, summarize, writeJsonReport } from './report';
 
 const fixtureRoot = resolve(import.meta.dirname, '../../../packages/test-fixtures');
@@ -45,8 +52,20 @@ for (const fixtureId of ['pdf-synthetic-diagram-01', 'pdf-synthetic-hatched-01']
     browser,
     browserName,
     baseURL,
-  }) => {
+  }, testInfo) => {
     test.setTimeout(180_000);
+    const evaluation = candidateEvaluationContext(
+      testInfo.config.metadata['candidateEvaluationMode'],
+    );
+    const reportDirectory = resolve(
+      import.meta.dirname,
+      '../eval-results',
+      evaluation.reportSubdirectory,
+    );
+    // Keep the complete model/runtime/candidate identity frozen without importing
+    // assets.ts here: its Vite `?url` imports cannot be evaluated by Playwright's
+    // Node-side spec loader.
+    const expectedVersion = `fenshot-0.1.4/chess-tiles-v2/ort-web-1.29.0/${LOCALIZATION_VERSION}`;
     const fixture = manifest.fixtures.find((entry) => entry.id === fixtureId);
     if (!fixture || !baseURL) throw new Error('Missing fixture or baseURL');
     const fixturePath = resolve(fixtureRoot, fixture.path);
@@ -58,17 +77,7 @@ for (const fixtureId of ['pdf-synthetic-diagram-01', 'pdf-synthetic-hatched-01']
         await route.abort();
       } else await route.continue();
     });
-    const observations: {
-      session: number;
-      run: number;
-      exact: boolean;
-      reliable: boolean;
-      phase: string | null;
-      totalMs: number;
-      stageMs: number;
-      cold: boolean;
-      version: string | null;
-    }[] = [];
+    const observations: CandidateObservation[] = [];
     for (let session = 0; session < 3; session++) {
       await page.goto('/localized.html');
       await page.getByTestId('pdf-open-input').setInputFiles(fixturePath);
@@ -82,19 +91,25 @@ for (const fixtureId of ['pdf-synthetic-diagram-01', 'pdf-synthetic-hatched-01']
         await expect(status).toHaveAttribute('data-phase', /^(done|no-board|error)$/);
         const board = page.getByTestId('floating-board');
         const phase = await status.getAttribute('data-phase');
-        observations.push({
-          session,
-          run,
-          phase,
-          exact:
-            phase === 'done' &&
-            (await board.getAttribute('data-placement')) === fixture.expected.placement,
-          reliable: (await status.getAttribute('data-reliable')) === 'true',
-          totalMs: Number(await status.getAttribute('data-total-ms')),
-          stageMs: Number(await status.getAttribute('data-inference-ms')),
-          cold: (await status.getAttribute('data-cold-start')) === 'true',
-          version: await status.getAttribute('data-recognizer-version'),
-        });
+        const placement =
+          (await board.count()) === 0 ? null : await board.getAttribute('data-placement');
+        observations.push(
+          assessCandidateObservation(
+            {
+              session,
+              run,
+              phase,
+              placement,
+              reliable: await status.getAttribute('data-reliable'),
+              totalMs: await status.getAttribute('data-total-ms'),
+              stageMs: await status.getAttribute('data-inference-ms'),
+              cold: await status.getAttribute('data-cold-start'),
+              version: await status.getAttribute('data-recognizer-version'),
+            },
+            fixture.expected.placement,
+            expectedVersion,
+          ),
+        );
         if (phase === 'done') {
           await page.getByTestId('palette-wN').click();
           await page.getByTestId('board-square-e4').click();
@@ -104,8 +119,8 @@ for (const fixtureId of ['pdf-synthetic-diagram-01', 'pdf-synthetic-hatched-01']
           if (session === 0 && run === 0)
             await page.screenshot({
               path: resolve(
-                import.meta.dirname,
-                `../eval-results/localized-${fixtureId}-${browserName}.png`,
+                reportDirectory,
+                `localized-${evaluation.mode}-${fixtureId}-${browserName}.png`,
               ),
               fullPage: true,
             });
@@ -113,10 +128,15 @@ for (const fixtureId of ['pdf-synthetic-diagram-01', 'pdf-synthetic-hatched-01']
         }
       }
     }
+    const assessment = assessCandidateCase(
+      observations,
+      blocked.map((_, index) => `non-same-origin-request-${String(index + 1)}`),
+    );
     const report = {
-      schemaVersion: 1,
+      schemaVersion: 2,
       suite: 'issue-35-product-selection',
-      command: 'pnpm eval:recognition',
+      command: evaluation.command,
+      evaluationMode: evaluation.mode,
       commit: currentCommit(),
       date: new Date().toISOString(),
       environment: {
@@ -132,10 +152,17 @@ for (const fixtureId of ['pdf-synthetic-diagram-01', 'pdf-synthetic-hatched-01']
         exactBoards: observations.filter((o) => o.exact).length,
         reliableExact: observations.filter((o) => o.exact && o.reliable).length,
         reliableWrong: observations.filter((o) => !o.exact && o.reliable).length,
-        coldWorkerRoundTripMs: summarize(observations.filter((o) => o.cold).map((o) => o.totalMs)),
-        warmWorkerRoundTripMs: summarize(observations.filter((o) => !o.cold).map((o) => o.totalMs)),
-        warmStageMs: summarize(observations.filter((o) => !o.cold).map((o) => o.stageMs)),
+        coldWorkerRoundTripMs: summarize(
+          observations.flatMap((o) => (o.cold === true && o.totalMs !== null ? [o.totalMs] : [])),
+        ),
+        warmWorkerRoundTripMs: summarize(
+          observations.flatMap((o) => (o.cold === false && o.totalMs !== null ? [o.totalMs] : [])),
+        ),
+        warmStageMs: summarize(
+          observations.flatMap((o) => (o.cold === false && o.stageMs !== null ? [o.stageMs] : [])),
+        ),
       },
+      assessment,
       nonSameOriginRequests: blocked,
       limitations: [
         'Development fixtures; not held-out accuracy.',
@@ -145,16 +172,16 @@ for (const fixtureId of ['pdf-synthetic-diagram-01', 'pdf-synthetic-hatched-01']
     };
     writeJsonReport(
       resolve(
-        import.meta.dirname,
-        `../eval-results/issue-35-product-${fixtureId}-${browserName}.json`,
+        reportDirectory,
+        `issue-35-product-${evaluation.mode}-${fixtureId}-${browserName}.json`,
       ),
       report,
     );
     expect(blocked).toEqual([]);
-    for (const observation of observations) {
-      expect(observation.phase).toBe('done');
-      expect(observation.exact).toBe(true);
-      expect(observation.version).toContain('integral-checkerboard');
+    expect(assessment.infrastructure.failures).toEqual([]);
+    expect(assessment.safety.failures).toEqual([]);
+    if (evaluation.mode === 'qualification') {
+      expect(assessment.qualification.failures).toEqual([]);
     }
   });
 }

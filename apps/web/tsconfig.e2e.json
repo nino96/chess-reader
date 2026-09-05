@@ -9,5 +9,12 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["node"]
   },
-  "include": ["e2e/**/*.ts", "eval/recognition.spec.ts", "eval/report.ts"]
+  "include": [
+    "e2e/**/*.ts",
+    "eval/recognition.spec.ts",
+    "eval/localized.assessment.ts",
+    "eval/report.ts",
+    "src/board/placement.ts",
+    "src/study/contracts.ts"
+  ]
 }

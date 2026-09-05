@@ -28,6 +28,10 @@ import {
   type CorpusPage,
 } from '../../../packages/test-fixtures/src/corpus';
 import { LOCALIZATION_VERSION } from '../src/recognition/experimentalLocalization';
+import {
+  candidateEvaluationContext,
+  type CandidateEvaluationContext,
+} from './localized.assessment';
 import { currentCommit, sha256OfFile, summarize, writeJsonReport } from './report';
 import {
   isCorpusWorkerRequest,
@@ -187,6 +191,7 @@ function sourceSha256(sourceRoot: string): Record<string, string> {
     metrics: sha256OfFile(
       resolve(sourceRoot, '../../../packages/test-fixtures/src/corpus-metrics.ts'),
     ),
+    candidateAssessment: sha256OfFile(resolve(sourceRoot, 'localized.assessment.ts')),
     candidateLocalization: sha256OfFile(
       resolve(sourceRoot, '../src/recognition/experimentalLocalization.ts'),
     ),
@@ -615,6 +620,7 @@ test('input plan keeps partial boards out of complete truth', () => {
 
 async function runCorpusCandidate(
   candidate: CandidateDefinition,
+  evaluation: CandidateEvaluationContext,
   fixtures: {
     readonly page: Page;
     readonly browser: Browser;
@@ -623,6 +629,7 @@ async function runCorpusCandidate(
   },
 ): Promise<void> {
   const { page, browser, browserName, baseURL } = fixtures;
+  const reportDirectory = resolve(REPORT_DIR, evaluation.reportSubdirectory);
   test.setTimeout(30 * 60_000);
   if (!baseURL) throw new Error('baseURL must be configured');
   const corpus = loadCorpus();
@@ -811,7 +818,7 @@ async function runCorpusCandidate(
     const report = {
       schemaVersion: 2,
       suite: candidate.suite,
-      command: 'pnpm eval:recognition',
+      command: evaluation.command,
       commit: currentCommit(),
       workingTreeDirty: workingTreeDirty(),
       date: new Date().toISOString(),
@@ -988,7 +995,7 @@ async function runCorpusCandidate(
         'Peak dedicated-worker/WASM memory is unavailable through a reliable cross-browser API and is not inferred from main-page JavaScript heap samples.',
       ],
     };
-    writeJsonReport(resolve(REPORT_DIR, candidate.reportName(browserName)), report);
+    writeJsonReport(resolve(reportDirectory, candidate.reportName(browserName)), report);
     const previous = completedSummaries.get(browserName) ?? {};
     previous[candidate.option] = report.summary;
     completedSummaries.set(browserName, previous);
@@ -1003,6 +1010,22 @@ async function runCorpusCandidate(
     0,
   );
   expect(observations).toHaveLength(plannedInputs * REPETITIONS);
+  expect(
+    observations
+      .filter(
+        (observation) =>
+          observation.metrics.reliableWrongBoards > 0 ||
+          observation.metrics.reliableWrongStudyPositions > 0,
+      )
+      .map((observation) => ({
+        pageId: observation.pageId,
+        inputId: observation.inputId,
+        repetition: observation.repetition,
+        reliableWrongBoards: observation.metrics.reliableWrongBoards,
+        reliableWrongStudyPositions: observation.metrics.reliableWrongStudyPositions,
+      })),
+    'reliable-wrong corpus results are unsafe in measurement and qualification modes',
+  ).toEqual([]);
   for (let repetition = 0; repetition < REPETITIONS; repetition += 1) {
     expect(
       observations.filter((run) => run.repetition === repetition && run.coldStart),
@@ -1011,17 +1034,28 @@ async function runCorpusCandidate(
 }
 
 test.describe.serial('locked corpus candidate comparison', () => {
-  test(UPSTREAM_CANDIDATE.testName, ({ page, browser, browserName, baseURL }) =>
-    runCorpusCandidate(UPSTREAM_CANDIDATE, { page, browser, browserName, baseURL }),
+  test(UPSTREAM_CANDIDATE.testName, ({ page, browser, browserName, baseURL }, testInfo) =>
+    runCorpusCandidate(
+      UPSTREAM_CANDIDATE,
+      candidateEvaluationContext(testInfo.config.metadata['candidateEvaluationMode']),
+      { page, browser, browserName, baseURL },
+    ),
   );
-  test(LOCALIZED_CANDIDATE.testName, ({ page, browser, browserName, baseURL }) =>
-    runCorpusCandidate(LOCALIZED_CANDIDATE, { page, browser, browserName, baseURL }),
+  test(LOCALIZED_CANDIDATE.testName, ({ page, browser, browserName, baseURL }, testInfo) =>
+    runCorpusCandidate(
+      LOCALIZED_CANDIDATE,
+      candidateEvaluationContext(testInfo.config.metadata['candidateEvaluationMode']),
+      { page, browser, browserName, baseURL },
+    ),
   );
 
   test('writes a paired control/localization comparison by stage, style, and split', ({
     browser,
     browserName,
-  }) => {
+  }, testInfo) => {
+    const evaluation = candidateEvaluationContext(
+      testInfo.config.metadata['candidateEvaluationMode'],
+    );
     const summaries = completedSummaries.get(browserName);
     const upstream = summaries?.upstream;
     const localized = summaries?.localized;
@@ -1034,7 +1068,7 @@ test.describe.serial('locked corpus candidate comparison', () => {
     const report = {
       schemaVersion: 1,
       suite: 'issue-35-candidate-comparison',
-      command: 'pnpm eval:recognition',
+      command: evaluation.command,
       commit: currentCommit(),
       workingTreeDirty: workingTreeDirty(),
       date: new Date().toISOString(),
@@ -1082,6 +1116,9 @@ test.describe.serial('locked corpus candidate comparison', () => {
         'Peak dedicated-worker/WASM memory is unavailable and remains unmeasured.',
       ],
     };
-    writeJsonReport(resolve(REPORT_DIR, `corpus-comparison-${browserName}.json`), report);
+    writeJsonReport(
+      resolve(REPORT_DIR, evaluation.reportSubdirectory, `corpus-comparison-${browserName}.json`),
+      report,
+    );
   });
 });

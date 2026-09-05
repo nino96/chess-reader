@@ -15,6 +15,7 @@ const baseURL = `http://127.0.0.1:${port}`;
 const isCI = !!process.env['CI'];
 
 export default defineConfig({
+  metadata: { candidateEvaluationMode: 'measurement' },
   testDir: './eval',
   fullyParallel: false,
   workers: 1,

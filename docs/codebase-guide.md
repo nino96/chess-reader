@@ -376,17 +376,18 @@ Playwright also installs its required operating-system libraries.
 
 The commands that actually exist now are:
 
-| Command                 | Purpose                                                      |
-| ----------------------- | ------------------------------------------------------------ |
-| `pnpm dev`              | Start Vite's development server on port 5173.                |
-| `pnpm build`            | Bundle the production web application into `apps/web/dist`.  |
-| `pnpm preview`          | Serve that bundle on port 4173, including isolation headers. |
-| `pnpm check`            | Run TypeScript, Prettier check, and ESLint.                  |
-| `pnpm format`           | Apply Prettier formatting.                                   |
-| `pnpm test:unit`        | Run Vitest unit and component tests.                         |
-| `pnpm test:e2e`         | Build/serve the app and run the Playwright matrix.           |
-| `pnpm check:licenses`   | Check shipped dependency licenses against policy.            |
-| `pnpm eval:recognition` | Measure real-model recognition accuracy and latency.         |
+| Command                         | Purpose                                                                                   |
+| ------------------------------- | ----------------------------------------------------------------------------------------- |
+| `pnpm dev`                      | Start Vite's development server on port 5173.                                             |
+| `pnpm build`                    | Bundle the production web application into `apps/web/dist`.                               |
+| `pnpm preview`                  | Serve that bundle on port 4173, including isolation headers.                              |
+| `pnpm check`                    | Run TypeScript, Prettier check, and ESLint.                                               |
+| `pnpm format`                   | Apply Prettier formatting.                                                                |
+| `pnpm test:unit`                | Run Vitest unit and component tests.                                                      |
+| `pnpm test:e2e`                 | Build/serve the app and run the Playwright matrix.                                        |
+| `pnpm check:licenses`           | Check shipped dependency licenses against policy.                                         |
+| `pnpm eval:recognition`         | Validate research measurements and production goldens.                                    |
+| `pnpm eval:recognition:qualify` | Also require exact experimental PDF recognition; currently fails hatch in Firefox/WebKit. |
 
 `pnpm eval:recognition` exists because issue #2 made recognition real. It
 drives the production build through the actual product path with the real
@@ -463,7 +464,13 @@ recognizer factory and worker. The worker injects the candidate pipeline into
 cancellation between candidate classifier calls as well as before posting a
 result. The evaluation build's factory alias is absent from normal builds, so
 this is neither a production recognition switch nor #7's automatic hotspots.
-See the [candidate protocol and evidence](investigations/issue-35-comparison.md).
+The default Playwright evaluation config explicitly selects measurement mode;
+`playwright.qualification.config.ts` selects qualification mode over the same
+suite. Candidate reports retain qualification failures in both modes, with
+qualification JSON under `eval-results/qualification/` and traces under
+`eval-results/playwright-qualification/`. CI measures all three browser engines.
+See the [candidate protocol and evidence](investigations/issue-35-comparison.md)
+and [gate policy](evaluation.md#issue-35-research-measurement-and-qualification).
 
 Layout screenshots attached by `layout.spec.ts` are evidence for human review,
 not auto-approved pixel snapshots. Playwright's WebKit engine is useful early

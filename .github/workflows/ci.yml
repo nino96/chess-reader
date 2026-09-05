@@ -111,7 +111,11 @@ jobs:
           retention-days: 14
 
   eval-recognition:
-    name: Recognition evaluation (chromium)
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    name: Recognition measurement (${{ matrix.browser }})
     needs: check-and-unit
     runs-on: ubuntu-latest
     env:
@@ -132,21 +136,21 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Install Playwright browser (chromium)
+      - name: Install Playwright browser (${{ matrix.browser }})
         working-directory: apps/web
-        run: pnpm exec playwright install --with-deps chromium
+        run: pnpm exec playwright install --with-deps ${{ matrix.browser }}
 
-      # Runs the real ONNX model through the real product path against the
-      # fixture's ground truth. Accuracy is asserted; latency is recorded as a
-      # distribution and compared by a human against docs/eval-baselines/.
+      # Original product goldens still assert exactness. Experimental candidates
+      # must yield valid, safe measurements; their qualification remains a
+      # separate command and decision (ADR 0005, docs/evaluation.md).
       - name: Recognition evaluation
         working-directory: apps/web
-        run: pnpm exec playwright test --config playwright.eval.config.ts --project=chromium
+        run: pnpm exec playwright test --config playwright.eval.config.ts --project=${{ matrix.browser }}
 
       - name: Upload recognition evaluation report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: eval-recognition
+          name: eval-recognition-${{ matrix.browser }}
           path: apps/web/eval-results
           retention-days: 14

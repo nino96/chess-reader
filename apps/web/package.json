@@ -10,7 +10,8 @@
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
     "icons": "node scripts/generate-icons.mjs",
-    "eval:recognition": "playwright test --config playwright.eval.config.ts"
+    "eval:recognition": "playwright test --config playwright.eval.config.ts",
+    "eval:recognition:qualify": "playwright test --config playwright.qualification.config.ts"
   },
   "dependencies": {
     "@scoriiu/fenshot": "0.1.4",

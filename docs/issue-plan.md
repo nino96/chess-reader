@@ -31,6 +31,14 @@ These slices evaluate full-page detection without implementing #7's tappable
 hotspots. Physical-iPad testing is deferred for the immediate slices per owner
 priority; #24 still records its outstanding final device criterion.
 
+The #35 STOP recommendation leads to
+[#38 Recognition training: retrain TileNet on a licensed print corpus](https://github.com/nino96/chess-reader/issues/38),
+a separate experiment under `experiments/recognition-training/` after PR #37
+merges. It uses the local GX10/GB10 with isolated training dependencies and
+keeps corpus v1 out of training/tuning. Its decision triggers separate later
+learned-localizer and whole-board CNN experiments; none authorizes production
+adoption or closes #24.
+
 ## Durable and low-friction PDF product
 
 4. [#4 Harden browser book storage, import journaling, and re-linking](https://github.com/nino96/chess-reader/issues/4)

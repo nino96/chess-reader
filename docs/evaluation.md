@@ -361,12 +361,30 @@ ADR updated (yes/no, link):
 “Tests pass” without command, environment, and artifact detail is not sufficient
 for a reader/recognition/storage/engine issue.
 
-## Issue #35 recorded qualification failure
+## Issue #35 research measurement and qualification
 
 The [frozen candidate comparison](investigations/issue-35-comparison.md) retains
-the existing thresholds and all v1 baseline inputs. Its corpus measurement
-completes, but the full recognition command reports 25 passed and two failed
-experimental hatch-PDF exactness checks (Firefox/WebKit abstain). These failures
-are not skipped, converted into passing assertions or waived by Chromium CI.
-The technical recommendation is STOP production adoption pending the bounded
-classifier/localizer research and device qualifications tracked in #24.
+the existing thresholds and all v1 baseline inputs. The original full command
+reported 25 passed and two failed experimental hatch-PDF exactness checks
+(Firefox/WebKit abstain). Those historical records remain unchanged.
+
+The explicit [ADR 0005 update](decisions/0005-browser-recognition.md) separates
+the research merge gate from candidate qualification:
+
+| Command                         | Required outcome                                                                                                                                      | Meaning                                                                                                 |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `pnpm eval:recognition`         | Complete, well-formed measurements, zero infrastructure/privacy failures and zero reliable wrong candidate outputs; unchanged production goldens pass | The investigation is reproducible. Candidate misses and inaccurate/unreliable reads are still recorded. |
+| `pnpm eval:recognition:qualify` | All measurement requirements plus exact experimental PDF recognition                                                                                  | A necessary product checkpoint for this candidate; the current Firefox/WebKit hatch cases still fail.   |
+
+Both commands execute the real three-browser corpus and PDF paths. Explicit
+configuration metadata selects the contract; qualification uses separate product
+report filenames. Reports expose qualification PASS/FAIL and reasons independently
+of measurement exit status. No skip, expected failure, browser exception or
+threshold reduction is permitted. CI runs the measurement contract in Chromium,
+Firefox and WebKit, preserving production-golden assertions.
+
+Passing either command does not establish production viability. All provisional
+corpus accuracy, detection, confidence, latency and device gates remain required
+for #24; a candidate below them remains ineligible. The technical recommendation
+is STOP production adoption pending the bounded classifier/localizer research
+and device qualifications tracked in #24. Physical iPad remains deferred/unrun.

@@ -123,9 +123,15 @@ retains separate `issue-35-control-*`, `issue-35-localized-*` and paired
 baseline files are unchanged. The [per-input table](issue-35-summary.md) exposes
 gains, regressions, misses and confidence limits.
 
-The measurement covers all 828 planned corpus observations, but the overall
+The frozen measurement covers all 828 planned corpus observations, but its original overall
 recognition command **fails two experimental hatch PDF tests** in Firefox and
 WebKit (25 passed, 2 failed). See [product selections](issue-35-product-selection.json)
 and the passing [unchanged product goldens](issue-35-product-goldens.json).
 The prototype is not a production replacement. Physical-iPad evidence remains
 deferred/unrun and #24 remains open.
+
+The subsequent [research handoff policy](../evaluation.md#issue-35-research-measurement-and-qualification)
+separates valid measurement from successful candidate recognition. Those original
+raw reports remain unchanged. `pnpm eval:recognition:qualify` retains the failed
+experimental exactness checks; passing the default measurement command does not
+qualify a recognizer.

@@ -81,6 +81,7 @@ pnpm check          # typecheck + Prettier + ESLint
 pnpm test:unit      # Vitest unit/component tests
 pnpm test:e2e       # Playwright in Chromium, Firefox, WebKit, iPad and phone profiles
 pnpm eval:recognition # real-model recognition accuracy and latency report
+pnpm eval:recognition:qualify # experimental candidate exactness; currently fails hatch in Firefox/WebKit
 pnpm check:licenses # production dependency license allowlist
 ```
 

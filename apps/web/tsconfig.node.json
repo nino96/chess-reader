@@ -16,6 +16,7 @@
     "vitest.config.ts",
     "playwright.config.ts",
     "playwright.eval.config.ts",
+    "playwright.qualification.config.ts",
     "vite.corpus.config.ts",
     "scripts/**/*.ts",
     "scripts/**/*.mjs",

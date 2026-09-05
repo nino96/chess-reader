@@ -14,6 +14,7 @@ pnpm test:unit         # Vitest: unit/component tests (web app and fixtures)
 pnpm test:e2e          # Playwright: chromium, firefox, webkit, ipad-webkit,
                        # ipad-split-webkit, phone-chromium projects
 pnpm eval:recognition  # real-model recognition accuracy/latency report
+pnpm eval:recognition:qualify # experimental candidate exactness; currently fails hatch in Firefox/WebKit
 pnpm build             # production build (apps/web/dist)
 pnpm preview           # serve the production build on 127.0.0.1:4173
 pnpm dev               # Vite dev server
@@ -95,6 +96,16 @@ The evaluation build adds `/localized.html`, which reuses the real React PDF
 selection and editable board with the candidate worker. `eval/localized.spec.ts`
 checks the original synthetic flat/hatch development PDFs and saves separate
 round-trip reports and screenshots. This entry is excluded from normal builds.
+The default command requires valid measurements and safe outputs, while each
+report separately records candidate qualification PASS/FAIL with reasons.
+`pnpm eval:recognition:qualify` runs the same complete suite and additionally
+asserts exact experimental PDF recognition. The known Firefox/WebKit hatch
+abstentions fail that command. Its JSON and screenshots go under
+`apps/web/eval-results/qualification/`, with traces under
+`apps/web/eval-results/playwright-qualification/`, preserving measurement output.
+Both modes retain the unchanged production-golden assertions. See the explicit
+[measurement/qualification policy](evaluation.md#issue-35-research-measurement-and-qualification).
+
 No production flag, hotspot UI, prefetch or durable recognition cache is added.
 The [comparison report](investigations/issue-35-comparison.md) records the frozen
 candidate, source/asset hashes, commands, results and physical-iPad status.

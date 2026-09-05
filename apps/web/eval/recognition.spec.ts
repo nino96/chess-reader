@@ -13,6 +13,7 @@ import { fileURLToPath } from 'node:url';
 import { release } from 'node:os';
 import { platform, version as nodeVersion } from 'node:process';
 
+import { candidateEvaluationContext } from './localized.assessment';
 import { currentCommit, sha256OfFile, summarize, writeJsonReport } from './report';
 
 const FIXTURES_ROOT = resolve(
@@ -75,7 +76,10 @@ test('real recognizer reads the fixture diagram; latency distribution is recorde
   page,
   browserName,
   baseURL,
-}) => {
+}, testInfo) => {
+  const evaluation = candidateEvaluationContext(
+    testInfo.config.metadata['candidateEvaluationMode'],
+  );
   if (!baseURL) {
     throw new Error('baseURL must be configured');
   }
@@ -174,7 +178,7 @@ test('real recognizer reads the fixture diagram; latency distribution is recorde
   const report = {
     schemaVersion: 1,
     suite: 'eval:recognition',
-    command: 'pnpm eval:recognition',
+    command: evaluation.command,
     commit: currentCommit(),
     date: new Date().toISOString(),
     environment: {
@@ -202,7 +206,9 @@ test('real recognizer reads the fixture diagram; latency distribution is recorde
   writeJsonReport(
     resolve(
       dirname(fileURLToPath(import.meta.url)),
-      `../eval-results/recognition-${browserName}.json`,
+      '../eval-results',
+      evaluation.reportSubdirectory,
+      `recognition-${browserName}.json`,
     ),
     report,
   );
