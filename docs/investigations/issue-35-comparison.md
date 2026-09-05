@@ -6,6 +6,26 @@ Issue: [#35](https://github.com/nino96/chess-reader/issues/35), execution slice 
 `ae4e9061b812c07ee6a84e448050cf5de6ccc9a8`, confirmed before branching from updated
 `origin/main`. Physical-iPad testing is deferred/unrun by owner instruction.
 
+## Recommendation: STOP production adoption for now
+
+Neither executed candidate meets the unchanged accuracy gate. The bounded
+localizer improves detection and rejects the tested negative/partial inputs,
+but reaches only **15/42 exact boards (35.71%)** on either non-oracle path.
+The retained classifier also fails with true geometry (24/42, 57.14%). The
+alternative is disqualified before execution by unresolved model licensing.
+Do not replace the production recognizer or advance #24's downstream viability
+checkpoint on this evidence. Keep the existing demo and the prototype as
+research artifacts; this is **not approval of upstream FENShot**.
+
+The software comparison is complete, with failing candidate evidence retained.
+`pnpm eval:recognition` finished **25 passed, 2 failed**: the experimental hatch
+PDF abstains in Firefox and WebKit. Its exact-board assertions remain intact.
+The unchanged product goldens pass in all three browsers. Physical iPad is
+**deferred/unrun**, and #24 remains open with final acceptance blocked.
+The next bounded research step is the TileNet training experiment below;
+localization coverage and capture sensitivity also justify testing a learned
+localizer. Whole-board classification has a later, explicit trigger.
+
 ## Protocol declared before candidate measurement
 
 Preserve [corpus v1](../../packages/test-fixtures/corpus/v1/OVERVIEW.md), manifest
@@ -104,6 +124,109 @@ These are development observations, not independent accuracy evidence. The
 existing 0.7 confidence floor, accuracy targets, corpus bytes, upstream baseline
 and product golden assertions were never lowered. The new PDF exactness checks
 failed during development and passed after the geometric correction.
+
+## Frozen comparison results
+
+The first and only full-corpus candidate run used clean freeze commit
+`0bd66cf6a8ac2ec5966b2457bb179cb4a2ca0687`. No candidate source changed after
+viewing held-out results. All 828 planned observations completed: two candidates
+× 46 inputs × three sessions × three browsers. Corpus workers had zero
+infrastructure failures and zero recorded external requests. The command's two
+failures are separate experimental PDF-product assertions, not missing corpus
+measurements. Counts are identical across Chromium 151.0.7922.34, Firefox 153.0
+and Playwright WebKit 26.5 on Linux ARM64, Node 24.19.0, the GB10 host, CPU/WASM
+single-thread inference. These are 14 board designs repeated three times per
+browser, not 42 independent examples.
+
+| Input/candidate                             | Exact boards |     Square accuracy | Matched / expected | Detection precision | Reliable exact | Reliable wrong |
+| ------------------------------------------- | -----------: | ------------------: | -----------------: | ------------------: | -------------: | -------------: |
+| Exact bounds, either candidate (diagnostic) |        24/42 | 2643/2688 (98.326%) |                N/A |                 N/A |          12/42 |              0 |
+| Loose selection, unchanged                  |         9/42 | 1479/2688 (55.022%) |              24/42 |      24/45 (53.33%) |           6/42 |              0 |
+| Loose selection, prototype                  |        15/42 | 2052/2688 (76.339%) |              33/42 |        33/33 (100%) |           6/42 |              0 |
+| Full page, unchanged                        |         9/42 | 1320/2688 (49.107%) |              21/42 |      21/39 (53.85%) |           3/42 |              0 |
+| Full page, prototype                        |        15/42 | 1881/2688 (69.978%) |              30/42 |        30/30 (100%) |           9/42 |              0 |
+
+Prototype misses remain 9/42 manual and 12/42 full-page, with grid-aligned
+counts 30/42 and 27/42 respectively. It returns no candidates on any of the
+text/table negatives or partial-board inputs. It has no external boxes,
+duplicates or reliable wrong study positions on v1. However, each multi-board
+page still produces just one candidate, so both pages miss a complete board.
+Zero false positives and zero reliable wrong results do not compensate for
+low useful coverage. Upstream's four reliable wrong shifted reads in the
+preserved #24 diagnostic remain a known defect of the unchanged demo; the v1
+counts do not erase them or establish that this prototype fixes every legacy
+capture condition.
+
+The six development board observations are exact on both prototype paths.
+The held-out 36 board observations are only 9/36 exact, versus 6/36 for upstream,
+with 18/36 exact in the oracle. A useful held-out gain is sparse 45-degree hatch
+localization. A regression remains: the small flat diagram's loose selection
+on `two-boards-flat-hatch` was 3/3 exact/reliable upstream and is now missed 3/3.
+Dense hatch, degraded and halftone failures remain visible. All per-input/style
+results are in the [comparison table](../eval-baselines/issue-35-summary.md)
+and raw [Chromium](../eval-baselines/issue-35-localized-chromium.json),
+[Firefox](../eval-baselines/issue-35-localized-firefox.json), and
+[WebKit](../eval-baselines/issue-35-localized-webkit.json) reports. The rerun
+controls are retained separately as `issue-35-control-*.json`; none of the
+historical #34 baseline files is overwritten.
+
+Identifiable orientation is correct on 27/39 expected prototype boards for
+each recognizer path, versus 18/39 upstream and 36/39 in the oracle. The
+pawnless black oracle still gets orientation wrong, and the pinned resolver
+still cannot acknowledge the three ambiguous-truth observations. Recognition
+never invents side-to-move, castling or other non-image FEN state. Geometry
+improvement is not proof of orientation or classifier qualification.
+
+### Cost and browser product path
+
+| Browser  | Prototype model initialization p50/p95 (n=3), ms | Manual model-warm stage p50/p95 (n=48), ms | Full-page model-warm stage p50/p95 (n=48), ms |
+| -------- | -----------------------------------------------: | -----------------------------------------: | --------------------------------------------: |
+| Chromium |                                    498.7 / 529.4 |                              492.2 / 991.7 |                                 856.1 / 968.2 |
+| Firefox  |                                    589.6 / 626.0 |                            1225.7 / 2076.6 |                               1854.5 / 1983.7 |
+| WebKit   |                                    542.6 / 570.1 |                             409.2 / 1203.0 |                                 732.0 / 828.5 |
+
+The first manual call in each session includes deferred candidate-module
+initialization. Vite bundles worker dynamic imports into the worker artifact,
+so the control worker still parses the candidate code; it does not execute
+candidate localization. The rerun shares that harness environment. Historical
+cold timings are therefore references, not a byte-identical worker-start
+comparison. Timings exclude decode/crop, grayscale conversion, transport,
+initialization and editor paint. They are not iPad or training throughput.
+Firefox's host timings exceed the numeric p50 target, but the actual reference
+physical-device latency gate remains unrun.
+
+No new weights/runtime are downloaded: the unchanged ONNX is 1,289,483 bytes
+and WASM is 13,961,845 bytes (15,251,328 binary bytes combined), with pinned
+hashes reverified in every corpus worker. This is not the total application
+transfer size. The frozen build's ordinary worker is 82,373 bytes and its
+experimental product worker 89,202 bytes (uncompressed JavaScript); the prototype
+also adds maintenance of a 551-line geometry implementation. That complexity
+and runtime cost are not justified for production by the observed accuracy.
+Peak worker/WASM memory and UI long-task distributions were not measured; no
+main-page heap or host RAM value is substituted for them. Those qualifications
+remain on #24. Existing offline asset packaging/readiness remains #3; local,
+self-hosted inference is not a claim of offline reload readiness today.
+
+The separate [real-PDF product records](../eval-baselines/issue-35-product-selection.json)
+use three fresh worker/page sessions and two captures each. Flat PDFs are
+6/6 exact and reliable in every browser; hatch is 6/6 in Chromium and **0/6
+(no-board) in both Firefox and WebKit**. The existing upstream flat golden
+remains 6/6 exact/reliable in each browser
+([retained records](../eval-baselines/issue-35-product-goldens.json)). This is a
+real capture-path sensitivity despite identical corpus-PNG results; the cause
+was not isolated after the freeze and must not be labelled a browser defect or
+hidden by tuning against these failures. Flat selection/edit/flip works through
+the shared reader and board in all three browsers. The candidate's hatch
+exactness checks remain failing rather than being weakened or skipped.
+
+Prototype flat worker-round-trip cold p50/p95 is 1142/1185 ms Chromium,
+3299/3338 ms Firefox and 1555/1557 ms WebKit (n=3 each); warm p50/p95 is
+829/833, 2763/2771 and 1290/1297 ms (n=3 each). Chromium hatch cold is
+1263/1283 ms and warm 910/912 ms. Failed hatch abstentions still consume warm
+p50/p95 3896/3906 ms Firefox and 1283/1293 ms WebKit. These round trips start
+**after PDF capture**, exclude editor paint, and preserve failed outcomes;
+they are not complete end-to-end user latency. Fresh sessions do not purge
+browser/disk caches. See raw records for every observation and distribution.
 
 ## Alternative: pre-execution disqualification
 
@@ -246,3 +369,61 @@ ORT-Web execution in Chromium/Firefox/WebKit, exact/loose/full-page accuracy,
 negative/partial abstention, complete download size, cold/warm and observable
 memory measurements, cancellation/recovery, offline requests and the real PDF
 selection/editor path. Physical-iPad qualification remains outstanding on #24.
+
+## Verification and #24 acceptance mapping
+
+| Command/check                                                             | Result                                                                                                                                                                                                                                                               |
+| ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm check`                                                              | Passed: strict TypeScript, Prettier and ESLint. Initial lint issues in new tests were fixed without changing assertions.                                                                                                                                             |
+| `pnpm test:unit`                                                          | Passed: 386 tests in 29 files, including existing adapter contracts, exact corpus regeneration, seven localizer tests and cancellation-between-classifier regression.                                                                                                |
+| `pnpm test:e2e`                                                           | Passed: 219 tests; 15 existing conditional touch/keyboard skips. All six configured projects ran, including Chromium, Firefox and WebKit real-model product paths.                                                                                                   |
+| `pnpm eval:recognition`                                                   | **Failed: 25 passed, 2 failed.** All 828 corpus observations and paired reports completed. Experimental hatch PDF exactness fails in Firefox/WebKit (6/6 abstentions each); original product goldens pass 6/6 per browser. No candidate gate is weakened or skipped. |
+| `pnpm check:licenses`                                                     | Passed: 25 production packages; no added dependency/model/runtime/font. Alternative weight execution was disqualified before download.                                                                                                                               |
+| Production/evaluation build                                               | Passed as part of browser commands. Ordinary output excludes the evaluation entries and candidate module.                                                                                                                                                            |
+| Changed-document links, formatting, `git diff --check`                    | Passed on final evidence documentation.                                                                                                                                                                                                                              |
+| Physical supported iPad                                                   | **Deferred/unrun** by owner instruction; final #24 acceptance remains blocked.                                                                                                                                                                                       |
+| Separate contracts/other subsystem evals                                  | Not present; contracts ran in `test:unit`. No placeholder command added.                                                                                                                                                                                             |
+| Peak worker memory, full user-latency and gesture long-task qualification | Unrun/unmeasured; stage and worker round-trip timings are explicitly narrower. Tracked by #24.                                                                                                                                                                       |
+
+The failed experimental checks are deliberate retained evidence of the candidate
+failing its proposed product behavior, not approved new baselines. The PR is a
+draft for review of a STOP recommendation and the next bounded experiment;
+it must not be described as fully verified or merge-ready. Existing CI's
+Chromium-only recognition job does not waive the local Firefox/WebKit failures.
+
+| Parent #24 criterion                                                               | Evidence/status                                                                                                                                                                                                                         |
+| ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Locked corpus and provenance                                                       | Met by #34; all v1 bytes and historical baselines preserved and hash-asserted.                                                                                                                                                          |
+| Per-style localization, placement, orientation, confidence, abstention and latency | Met for software measurement: separate control/candidate/oracle reports, all misses and unreliable results retained. Numeric accuracy criteria fail.                                                                                    |
+| Three candidate paths or precise pre-execution failure                             | Met: upstream and mitigation executed on identical inputs; 2d-chess-ocr YOLO disqualified by specific incompatible/unresolved license provenance. No alternative accuracy claimed.                                                      |
+| Physical-iPad result for recommended browser path                                  | **Unmet/deferred.** No production candidate recommended; parent final acceptance stays blocked.                                                                                                                                         |
+| Explicit keep/patch/replace/stop recommendation                                    | **STOP production adoption**; a patch is promising research evidence but not a qualified recognizer. TileNet training is justified now, learned localization has a defined trigger, and whole-board CNN comparison has a later trigger. |
+| ADR 0005 updated                                                                   | Reaffirm browser-worker/WASM constraints with this failure evidence and no production recognizer replacement.                                                                                                                           |
+
+The exact remaining #24 blockers are low exact/square accuracy even with true
+bounds, prototype misses and capture-path sensitivity, poor Firefox host
+latency, unqualified memory/interaction costs, no licensed executed replacement,
+and final physical-device evidence. #24 remains open and continues blocking
+#3/#6. No #7 hotspots or #6 cache work is included.
+
+For later device work, once a browser candidate clears software qualification:
+
+1. Record supported physical iPad model, iPadOS, Safari/Home Screen mode, commit,
+   asset hashes and worker/WASM capabilities.
+2. Run the same synthetic flat/hatch and negative/partial selections through
+   real PDF capture, editing and orientation correction; retain failures.
+3. Measure at least three fresh sessions and a declared warm-repeat matrix,
+   separating capture, initialization, inference, transport and editor response;
+   record available memory evidence and gesture long tasks.
+4. Cancel/reselect during work, edit before a late result, and background/resume;
+   prove stale output cannot replace a correction. Offline reload/durability
+   requirements remain with their implementing issues, not assumed here.
+
+Delegation: one worker implemented localization on declared development inputs;
+one implemented and reviewed comparison accounting/protocol/source integrity;
+a read-only explorer verified alternative/training provenance and reviewed the
+product seam. The lead owned the design, experimental product integration,
+cancellation correction, source freeze, diff/visual review, full commands and
+recommendation. Hardware access required host-context execution; no models were
+trained. Reviewed synthetic screenshots show the existing scrollable editor;
+no layout redesign or physical-iPad sizing claim is made (#29 remains separate).

@@ -360,3 +360,13 @@ ADR updated (yes/no, link):
 
 “Tests pass” without command, environment, and artifact detail is not sufficient
 for a reader/recognition/storage/engine issue.
+
+## Issue #35 recorded qualification failure
+
+The [frozen candidate comparison](investigations/issue-35-comparison.md) retains
+the existing thresholds and all v1 baseline inputs. Its corpus measurement
+completes, but the full recognition command reports 25 passed and two failed
+experimental hatch-PDF exactness checks (Firefox/WebKit abstain). These failures
+are not skipped, converted into passing assertions or waived by Chromium CI.
+The technical recommendation is STOP production adoption pending the bounded
+classifier/localizer research and device qualifications tracked in #24.

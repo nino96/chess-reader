@@ -52,3 +52,32 @@ production recognition unchanged. It is not approval of FENShot's viability.
 [#35](https://github.com/nino96/chess-reader/issues/35) owns candidate comparison
 and the technical recommendation; #24 stays open with final physical-iPad
 evidence explicitly deferred/unrun. No gate is lowered here.
+
+## Issue #35 candidate decision (2026-09-05)
+
+The [frozen comparison](../investigations/issue-35-comparison.md) recommends
+**STOP production adoption for now**: neither unchanged FENShot nor the bounded
+localization prototype meets the unchanged accuracy gate. The prototype raises
+exact boards from 9/42 to 15/42 on each non-oracle path and removes v1
+negative/partial false outputs, but misses boards and retains classifier errors.
+True-bound classification is still only 24/42 exact. The prototype's hatch
+PDF path additionally abstains in Firefox and WebKit; those two exactness
+assertions remain failing. The unchanged production goldens and E2E pass.
+2d-chess-ocr YOLO is disqualified before execution because the downstream MIT
+labels do not reconcile with identified upstream model license terms.
+
+Reaffirm the dedicated browser-worker, pinned self-hosted assets and WASM
+constraints. The prototype is evaluation-only and is not a selected replacement;
+the production pipeline continues using pinned upstream FENShot. Neither this
+continuity nor a passing Chromium-only CI job establishes recognition viability.
+No accuracy, negative, confidence or device gate is lowered. #24 stays open,
+continues blocking #3/#6, and retains physical-iPad evidence as deferred/unrun.
+
+Exact-bound failures justify a separately scoped TileNet training experiment
+using pinned, fully licensed data and a new unseen validation set. The available
+GB10 is training hardware, not a proposed inference service. A learned localizer
+is appropriate when full-page coverage/alignment remains inadequate; a small
+whole-board CNN is a later comparison if tile classification still fails with
+correct geometry. Footprints and deployment suitability for hypothetical models
+must be measured, not assumed. See the comparison's decision triggers and
+provenance requirements. Production hotspots remain #7.

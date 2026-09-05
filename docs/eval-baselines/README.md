@@ -113,3 +113,19 @@ pnpm --filter @chess-reader/web exec playwright test \
 the issue #34 corpus keeps its predeclared three passes per engine.
 Results land in `apps/web/eval-results/`; copy them here only together with
 the commit that produced them.
+
+## Issue #35 candidate comparison
+
+The [comparison and STOP recommendation](../investigations/issue-35-comparison.md)
+retains separate `issue-35-control-*`, `issue-35-localized-*` and paired
+`issue-35-comparison-*` JSON reports from clean freeze commit
+`0bd66cf6a8ac2ec5966b2457bb179cb4a2ca0687`. Corpus v1 and the historical #34
+baseline files are unchanged. The [per-input table](issue-35-summary.md) exposes
+gains, regressions, misses and confidence limits.
+
+The measurement covers all 828 planned corpus observations, but the overall
+recognition command **fails two experimental hatch PDF tests** in Firefox and
+WebKit (25 passed, 2 failed). See [product selections](issue-35-product-selection.json)
+and the passing [unchanged product goldens](issue-35-product-goldens.json).
+The prototype is not a production replacement. Physical-iPad evidence remains
+deferred/unrun and #24 remains open.
