@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 
 import { describe, expect, it } from 'vitest';
 
-import { loadBrowserEvaluationConfig, sha256File } from './config';
+import { loadBrowserEvaluationConfig, parseVectorManifest, sha256File } from './config';
 
 function writeJson(path: string, value: unknown): void {
   writeFileSync(path, `${JSON.stringify(value)}\n`, 'utf8');
@@ -73,4 +73,29 @@ describe('browser evaluation frozen configuration', () => {
     writeFileSync(input.vectorManifestPath, '{}\n', 'utf8');
     expect(() => loadBrowserEvaluationConfig(input.configPath)).toThrow();
   });
+});
+
+it('rejects repeated annotation identities across historical pages', () => {
+  const root = mkdtempSync(resolve(tmpdir(), 'recognition-regression-ids-'));
+  const vectorsPath = resolve(root, 'vectors.f32');
+  const manifestPath = resolve(root, 'vectors.json');
+  writeFileSync(vectorsPath, new Uint8Array(2 * 64 * 1024 * 4));
+  const manifest = {
+    schemaVersion: 1,
+    id: 'corpus-v1-regression',
+    role: 'corpus-v1-regression',
+    dtype: 'float32-le',
+    shape: [2, 64, 1024],
+    byteLength: 2 * 64 * 1024 * 4,
+    sha256: sha256File(vectorsPath),
+    labels: ['v1-board', 'v1-board'].map((boardId) => ({
+      boardId,
+      classes: Array<number>(64).fill(0),
+    })),
+  };
+  writeJson(manifestPath, manifest);
+  expect(() => parseVectorManifest(manifestPath, vectorsPath)).toThrow('board identities');
+  manifest.labels[1]!.boardId = 'v1-distinct-page-board';
+  writeJson(manifestPath, manifest);
+  expect(parseVectorManifest(manifestPath, vectorsPath).labels).toHaveLength(2);
 });

@@ -107,9 +107,15 @@ for (const page of manifest.pages) {
       );
     if (labels.length !== 64 || labels.some((label) => label < 0))
       throw new Error('Invalid regression labels');
-    boards.push({ id: `v1-${annotation.id}`, family: 'historical-corpus-v1', labels });
+    boards.push({
+      id: `v1-${hash(Buffer.from(`${page.id}/${annotation.id}`)).slice(0, 16)}`,
+      family: 'historical-corpus-v1',
+      labels,
+    });
   }
 }
+if (new Set(boards.map(({ id }) => id)).size !== boards.length)
+  throw new Error('Duplicate historical board identity');
 if (boards.length !== 14) throw new Error('Incomplete historical exact-bound set');
 const output = resolve(root, 'data/regression');
 await mkdir(output, { recursive: true });

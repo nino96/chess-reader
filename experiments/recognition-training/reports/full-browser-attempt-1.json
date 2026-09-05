@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "commit": "7039fcfc5c28495a51012a0b2d9ebb888ec6e937",
+  "status": "failed-before-test-execution",
+  "command": "CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/runs/browser-full.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts",
+  "error": "Vector bytes or board identities do not match manifest corpus-v1-regression",
+  "cause": "Annotation IDs repeat across pages; wrapper omitted page identity.",
+  "correction": "Use opaque hashes of page plus annotation identity; validate uniqueness. No model or vector changes.",
+  "unchangedRegressionVectorSha256": "7c2edc21aef5b2b1f9d994e31cd72f968f2b93aac6ed992a4a89062fc97e9974",
+  "elapsedSeconds": null
+}
