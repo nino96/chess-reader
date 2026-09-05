@@ -352,7 +352,7 @@ def train(
             xb = torch.from_numpy(train_vectors[indices]).to(device=device, dtype=torch.float32)
             yb = torch.from_numpy(train_labels[indices]).to(device=device)
             optimizer.zero_grad(set_to_none=True)
-            loss = F.cross_entropy(augment(xb, augmentation_rng), yb, label_smoothing=recipe.label_smoothing)
+            loss = F.cross_entropy(model(augment(xb, augmentation_rng)), yb, label_smoothing=recipe.label_smoothing)
             loss.backward()
             optimizer.step()
             scheduler.step()
@@ -605,6 +605,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         if attempt.exists():
             return 2
         os.replace(report_path, attempt)
+    attempt_started = time.monotonic()
+    run_started: float | None = None
     base_report: dict[str, Any] = {"schemaVersion": 1, "status": "failed", "command": _redacted_command(args), "commit": _commit()}
     try:
         if platform.python_version() != "3.12.3":
@@ -666,6 +668,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
     except (DatasetError, TrainingError, OSError, RuntimeError) as error:
         base_report["error"] = str(error)
+        if run_started is not None:
+            base_report["elapsedSeconds"] = time.monotonic() - run_started
+    base_report["attemptWallSeconds"] = time.monotonic() - attempt_started
     _write_report(report_path, base_report)
     return 0 if base_report["status"] == "completed" else 1
 

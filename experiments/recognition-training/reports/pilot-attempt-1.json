@@ -1,0 +1,78 @@
+{
+  "command": [
+    "python",
+    "trainer.py",
+    "--protocol",
+    "<protocol>",
+    "--data-dir",
+    "<data-dir>",
+    "--run-dir",
+    "<run-dir>",
+    "--mode",
+    "pilot",
+    "--seed",
+    "38",
+    "--device",
+    "cuda",
+    "--verify-resume"
+  ],
+  "commit": "cb634597a314ad34574176b1885a57d1138be350",
+  "data": {
+    "dev": {
+      "boards": 16,
+      "datasetManifestSha256": "10b347f5f88693fd18d63b49b4b2f81156cf673820145c82949e1d425743a401",
+      "familyCount": 1,
+      "generatorSha256": "49c9cf1f2ef609b5ffe7485133513589dc0000d2ff9a74cad73025158c45acef",
+      "labelsSha256": "c58f81a711749956e684f5919c6301cd3655979989e7ef27d46a129076d7c1ce",
+      "sourceLockSha256": "a6e2f57d0de3a022f904eaaa0331cdd716c959772048cdd2f6a4b06a9404aa05",
+      "vectorSha256": "a69d1e26d72cd179eb94608847fc6ae538175dcf203ac0ec1dbd93f2c9d6211b"
+    },
+    "train": {
+      "boards": 38,
+      "datasetManifestSha256": "10b347f5f88693fd18d63b49b4b2f81156cf673820145c82949e1d425743a401",
+      "familyCount": 4,
+      "generatorSha256": "49c9cf1f2ef609b5ffe7485133513589dc0000d2ff9a74cad73025158c45acef",
+      "labelsSha256": "c4b4891ac7cde9925a08bf593d7e6980f3304588f17f7ef92c97df56e58774d8",
+      "sourceLockSha256": "a6e2f57d0de3a022f904eaaa0331cdd716c959772048cdd2f6a4b06a9404aa05",
+      "vectorSha256": "8356c048abb7abddf1322a55616f7099a9b5004e7f92b551a640587c533cc94f"
+    }
+  },
+  "environment": {
+    "cudaAvailable": true,
+    "cudaDevice": "NVIDIA GB10",
+    "device": "cuda",
+    "machine": "aarch64",
+    "nvidiaSmi": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version",
+        "--format=csv,noheader"
+      ],
+      "hostCuda": "13.0",
+      "result": "NVIDIA GB10, 580.159.03"
+    },
+    "onnx": "1.18.0",
+    "onnxruntime": "1.22.1",
+    "platform": "Linux-6.17.0-1021-nvidia-aarch64-with-glibc2.39",
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "torchCuda": "12.8"
+  },
+  "error": "element 0 of tensors does not require grad and does not have a grad_fn",
+  "implementationSha256": {
+    "dataset.py": "c735d38f887a443af76a117d1a8fbecafdc5bfa558a98f11850f01e74ad593ba",
+    "requirements.lock": "ed509ea41b0d5a754dd774024f284ffd63ebd037babd959c611ee477e103f0c9",
+    "tilenet_model.py": "bcaf25a8bcf95c5342f15c8b8197c3101890657d17a08d6d7b00b3384547e213",
+    "trainer.py": "740f39bd7e32923a401b7fd3ad61dd739427273eb9916cc24a684a0e103318df"
+  },
+  "protocolSha256": "bd24a5caaf61d0c37260d84665e0b910dff58aed3e34fc702e6d2e537d5900c5",
+  "run": {
+    "batchSize": 2048,
+    "epochs": 2,
+    "mode": "pilot",
+    "seed": 38,
+    "wallSeconds": 600
+  },
+  "schemaVersion": 1,
+  "status": "failed"
+}
