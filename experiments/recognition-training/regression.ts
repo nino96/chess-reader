@@ -34,7 +34,7 @@ const object = (value: unknown): Record<string, unknown> => {
 const freezeBytes = await readFile(resolve(root, 'runs/candidates.freeze.json'));
 const freeze = object(JSON.parse(freezeBytes.toString()) as unknown);
 const evidence = object(
-  JSON.parse(await readFile(resolve(root, 'reports/candidates-freeze.json'), 'utf8')) as unknown,
+  JSON.parse(await readFile(resolve(root, 'runs/candidates.evidence.json'), 'utf8')) as unknown,
 );
 if (
   evidence['freezeFileSha256'] !== hash(freezeBytes) ||

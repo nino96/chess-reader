@@ -1,4 +1,5 @@
-# Generated training inputs, downloaded source cache, checkpoints and reports are local-only.
+# Generated inputs, source caches, checkpoints and working run artifacts are local-only.
+# Deliberately reviewed metric evidence is copied into tracked reports/.
 data/
 cache/
 runs/

@@ -165,9 +165,8 @@ await writeFile(resolve(runs, 'candidates.freeze.json'), JSON.stringify(freeze, 
   flag: 'wx',
 });
 // Portable review evidence omits local model paths. The executable freeze stays ignored.
-await mkdir(resolve(root, 'reports'), { recursive: true });
 await writeFile(
-  resolve(root, 'reports/candidates-freeze.json'),
+  resolve(runs, 'candidates.evidence.json'),
   JSON.stringify(
     {
       ...freeze,

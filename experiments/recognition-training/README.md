@@ -96,3 +96,57 @@ published, and no result authorizes production adoption.
 
 See [environment.md](environment.md) for the isolated Python setup. Exact
 execution commands and measured outcomes accompany the final evidence report.
+
+## Reproduction order
+
+Use the pinned Node/pnpm workspace and Python environment. From repository root,
+these commands recreate and verify the ignored data without running a model:
+
+```sh
+node experiments/recognition-training/scripts/fetch-sources.mjs
+node experiments/recognition-training/scripts/generate-dataset.mjs --output data/full --preset full
+node experiments/recognition-training/scripts/verify-dataset.mjs --input data/full
+node --test experiments/recognition-training/tests/*.test.mjs
+PYTHONPATH=experiments/recognition-training experiments/recognition-training/.venv/bin/python -m unittest discover -s experiments/recognition-training/tests -v
+```
+
+The generated manifest must byte-match [the committed data lock](manifests/dataset-v1.json).
+[The held-out lock](manifests/test-lock-v1.json) and
+[sample inventory](manifests/samples-v1.json) were recorded before full training.
+Do not overwrite either lock when reproducing. Their Git commit fields identify
+the working HEAD at generation; the generator and dependency hashes bind the
+implementation subsequently committed before the pilot.
+
+Run the pilot command in [environment.md](environment.md), then its browser
+checks from repository root:
+
+```sh
+node experiments/recognition-training/prepare-browser.ts pilot
+CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/runs/browser-pilot.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts
+```
+
+The configuration environment path resolves from `apps/web`, because `pnpm
+--dir apps/web exec` changes the process working directory. A successful pilot
+permits the two full commands in `environment.md`. When both complete:
+
+```sh
+node experiments/recognition-training/freeze.ts
+node experiments/recognition-training/regression.ts
+node experiments/recognition-training/prepare-browser.ts full
+CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/runs/browser-full.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts
+node experiments/recognition-training/verify-preservation.ts
+```
+
+`freeze.ts` creates immutable local candidate identities and a portable
+review record. It refuses incomplete seeds, changed train/development/test
+artifacts, changed checkpoints/models, CPU full runs or failed export gates.
+It refuses to overwrite an existing freeze. Keep every failed attempt in its
+own run directory and report; never replace a failed measurement with a passing
+one silently. Reproduction needs a fresh ignored run area and separately named
+review artifacts; committed evidence is the history of this experiment.
+
+After freeze, CPU evaluation uses `evaluate_onnx.py --model <frozen ONNX>
+--data-dir data/full --split test --freeze runs/candidates.freeze.json --output
+<new report>`, from this directory with `.venv/bin/python`. The model must be
+one of the three frozen identities. The shipped control path is recorded in
+the local freeze alongside both candidates.
