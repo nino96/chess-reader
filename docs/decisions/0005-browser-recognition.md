@@ -37,3 +37,18 @@ changes here. Investigate a selection-aware localization patch/fork before
 retraining or replacing the classifier. The final keep/patch/replace decision
 remains blocked on #24's broader corpus, alternative comparison, and physical
 iPad evidence. This note is diagnostic evidence, not that final decision.
+
+## Issue #34 expanded baseline (2026-09-05)
+
+The [locked 16-page corpus](../investigations/issue-34-corpus.md) records
+unchanged browser-worker/WASM results separately for exact bounds, loose
+selections and full pages. All three browsers measure 24/42 exact oracle
+boards versus 9/42 on each recognizer path. Classification errors remain with
+true corners, and negative/partial pages produce unreliable false detections.
+These results fail the expanded provisional accuracy/detection targets.
+
+This change reaffirms the existing browser-worker/WASM constraints and leaves
+production recognition unchanged. It is not approval of FENShot's viability.
+[#35](https://github.com/nino96/chess-reader/issues/35) owns candidate comparison
+and the technical recommendation; #24 stays open with final physical-iPad
+evidence explicitly deferred/unrun. No gate is lowered here.

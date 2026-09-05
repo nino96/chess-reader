@@ -65,6 +65,7 @@ The corpus generator and hash/geometry checks are under
 
 ```sh
 pnpm test:unit --project test-fixtures corpus
+pnpm --filter @chess-reader/test-fixtures generate:corpus
 ```
 
 Do not regenerate version 1 to improve a candidate's score. Preserve the
