@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "issue": 38,
+  "baseCommit": "ccc575ffecbc98dd10bd8f497887d0e481bc1b77",
+  "upstreamRevision": "f964fd16de798f73db3ea0f9f1e374e4052a2665",
+  "architecture": "TileNet-321805-unchanged",
+  "classes": "1KQRBNPkqrbnp",
+  "confidenceFloor": 0.7,
+  "dtype": "float32",
+  "onnx": { "opset": 17, "input": "tiles", "output": "probs", "atol": 0.00001, "rtol": 0.0001 },
+  "pilot": { "seed": 38, "trainBoards": 38, "devBoards": 16, "epochs": 2, "wallSeconds": 600 },
+  "full": {
+    "seeds": [3801, 3802],
+    "trainBoards": 4096,
+    "devBoards": 256,
+    "testBoards": 256,
+    "epochs": 12,
+    "batchSize": 2048,
+    "learningRate": 0.002,
+    "weightDecay": 0.0001,
+    "labelSmoothing": 0.05,
+    "scheduler": "cosine",
+    "checkpointSelection": "minimum development mean cross-entropy; earliest epoch wins ties",
+    "wallSecondsPerSeed": 2700
+  },
+  "totalTrainingWallSeconds": 6000,
+  "generationWallSecondsPerSplit": 1200,
+  "testPolicy": "No held-out or corpus-v1 inference until both full-seed candidates and selection rule are frozen. No post-test tuning or training extensions.",
+  "promotion": {
+    "minimumExactBoardAccuracy": 0.95,
+    "minimumSquareAccuracy": 0.995,
+    "maximumReliableWrong": 0,
+    "lowConfidenceCountsAsFailure": true,
+    "exactBoardNumerator": "reliable exact boards (all 64 squares at confidence >= 0.7)",
+    "squareNumerator": "correct squares at confidence >= 0.7",
+    "corpusV1Regression": "No loss of reliable exact boards or correct squares and no increase in reliable wrong compared with shipped weights on identical frozen vectors."
+  },
+  "physicalIpad": "deferred/unrun",
+  "productionAdoption": false
+}

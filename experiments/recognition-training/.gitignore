@@ -1,0 +1,7 @@
+# Generated training inputs, downloaded source cache, checkpoints and reports are local-only.
+data/
+cache/
+runs/
+.venv/
+__pycache__/
+*.py[cod]
