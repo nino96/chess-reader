@@ -2,7 +2,7 @@
 import { createHash } from 'node:crypto';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { createRequire } from 'node:module';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
 import type * as Canvas from '@napi-rs/canvas';
 import type * as Fenshot from '@scoriiu/fenshot';
 
@@ -10,7 +10,11 @@ const root = import.meta.dirname;
 const fixtures = resolve(root, '../../packages/test-fixtures');
 const requireFixture = createRequire(resolve(fixtures, 'package.json'));
 const canvas = requireFixture('@napi-rs/canvas') as typeof Canvas;
-const fenshot = (await import(requireFixture.resolve('@scoriiu/fenshot'))) as typeof Fenshot;
+const fenshotModelPath = requireFixture.resolve('@scoriiu/fenshot/model/chess-tiles-v2.onnx');
+const fenshot = (await import(resolve(dirname(fenshotModelPath), '../dist/tiles.js'))) as Pick<
+  typeof Fenshot,
+  'extractTiles' | 'rgbaToGray'
+>;
 const hash = (bytes: Uint8Array): string => createHash('sha256').update(bytes).digest('hex');
 const classes = '1KQRBNPkqrbnp';
 
