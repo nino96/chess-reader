@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "candidate": "nakst",
+  "errorType": "AlternativeError",
+  "error": "NAKST graph output class scores are not probabilities"
+}

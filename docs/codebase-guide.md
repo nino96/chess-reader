@@ -691,3 +691,13 @@ two pretrained shortlist entries, provenance blockers and proposed compute/stop
 rules. The separate `planning/` directory keeps reconstruction feasibility work
 outside the frozen experiments. It adds no product command or runtime behavior;
 training requires a separately scoped experiment under #24 and a fresh data lock.
+
+The executable follow-up [#40](https://github.com/nino96/chess-reader/issues/40)
+is isolated in [`experiments/recognition-training/v3/`](../experiments/recognition-training/v3/README.md).
+It adds source-locked synthetic data tooling, shipped-weight fine-tuning with
+recovery and export checks, detailed development diagnostics, and native smoke
+adapters for the two pretrained alternatives. Its JavaScript tools participate
+in the root TypeScript/ESLint checks; generated data, caches and run artifacts
+are excluded from source formatting. The v3 protocol and pretraining manifests
+bind each run. Failed offline candidates stop before browser qualification;
+production, frozen experiments and corpus v1 remain unchanged.

@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 1,
+  "status": "completed",
+  "candidate": "nakst",
+  "command": "timeout 44s experiments/recognition-training/.venv/bin/python experiments/recognition-training/v3/native_smoke.py --candidate nakst --ceiling 44",
+  "commit": "f9c6d198a559069f16c3c5d635c7f6c7e478cc90",
+  "scriptSha256": "bfabf17676f5ac0cf6066846413827e33c8784ac980c1a3a10f567e50281276a",
+  "adapterSha256": "f2bb0a27464b84158d3f2eba6ea091882b45e2d4f3c58e33382ffd5739345455",
+  "modelSha256": "6fdef8213ab818a71c69250e61e213a7b5471ffb05c0fae485e7d96040f9642c",
+  "manifestSha256": "68a7c266d2b1dba564d793b7eeb9f068d60934a754ed7e36aa29c518f796b92e",
+  "developmentLabelsSha256": "af604db705654cb906b86b276400f90eca987f5b46b8a4bbc2446e58d5bb2815",
+  "preprocessingLockSha256": "525f917f52848666630b34f17e20e51b39d0d05266771be26ca1d251e53a7cd5",
+  "environment": {
+    "python": "3.12.3",
+    "machine": "aarch64",
+    "torch": "2.10.0+cu128",
+    "onnxruntime": "1.22.1",
+    "threads": 1,
+    "provider": "CPUExecutionProvider"
+  },
+  "inputsRun": 24,
+  "rawExactBoards": 5,
+  "exactBoardInputs": 12,
+  "observations": [
+    {
+      "inputIndex": 0,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 0,
+      "correctSquares": 64,
+      "occupiedCorrect": 25,
+      "occupiedTotal": 25,
+      "exact": true,
+      "truthBoardBestIoU": [
+        0.993504308744647
+      ]
+    },
+    {
+      "inputIndex": 1,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 0,
+      "correctSquares": 62,
+      "occupiedCorrect": 12,
+      "occupiedTotal": 14,
+      "exact": false,
+      "truthBoardBestIoU": [
+        0.996474670947691
+      ]
+    },
+    {
+      "inputIndex": 2,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 4,
+      "correctSquares": 58,
+      "occupiedCorrect": 2,
+      "occupiedTotal": 8,
+      "exact": false,
+      "truthBoardBestIoU": [
+        0.9950890735830171
+      ]
+    },
+    {
+      "inputIndex": 3,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 0,
+      "correctSquares": 64,
+      "occupiedCorrect": 8,
+      "occupiedTotal": 8,
+      "exact": true,
+      "truthBoardBestIoU": [
+        0.9974311837685548
+      ]
+    },
+    {
+      "inputIndex": 4,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 0,
+      "correctSquares": 64,
+      "occupiedCorrect": 12,
+      "occupiedTotal": 12,
+      "exact": true,
+      "truthBoardBestIoU": [
+        0.9934029808308439
+      ]
+    },
+    {
+      "inputIndex": 5,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 2,
+      "correctSquares": 60,
+      "occupiedCorrect": 1,
+      "occupiedTotal": 5,
+      "exact": false,
+      "truthBoardBestIoU": [
+        0.9918106616547181
+      ]
+    },
+    {
+      "inputIndex": 6,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 0,
+      "correctSquares": 64,
+      "occupiedCorrect": 8,
+      "occupiedTotal": 8,
+      "exact": true,
+      "truthBoardBestIoU": [
+        0.99404726601648
+      ]
+    },
+    {
+      "inputIndex": 7,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 2,
+      "correctSquares": 50,
+      "occupiedCorrect": 4,
+      "occupiedTotal": 11,
+      "exact": false,
+      "truthBoardBestIoU": [
+        0.9965988272994951
+      ]
+    },
+    {
+      "inputIndex": 8,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 4,
+      "correctSquares": 52,
+      "occupiedCorrect": 2,
+      "occupiedTotal": 11,
+      "exact": false,
+      "truthBoardBestIoU": [
+        0.9966318884537841
+      ]
+    },
+    {
+      "inputIndex": 9,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 0,
+      "correctSquares": 64,
+      "occupiedCorrect": 7,
+      "occupiedTotal": 7,
+      "exact": true,
+      "truthBoardBestIoU": [
+        0.9979740157946895
+      ]
+    },
+    {
+      "inputIndex": 10,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 0,
+      "correctSquares": 63,
+      "occupiedCorrect": 7,
+      "occupiedTotal": 8,
+      "exact": false,
+      "truthBoardBestIoU": [
+        0.9954061288753734
+      ]
+    },
+    {
+      "inputIndex": 11,
+      "kind": "positive-exact-board",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 9,
+      "correctSquares": 46,
+      "occupiedCorrect": 12,
+      "occupiedTotal": 30,
+      "exact": false,
+      "truthBoardBestIoU": [
+        0.9970802457312722
+      ]
+    },
+    {
+      "inputIndex": 12,
+      "kind": "negative-page",
+      "detectedBoards": 0,
+      "expectedCompleteBoards": 0,
+      "pieceConflicts": 0,
+      "partialOrNegativeBoardScores": [],
+      "truthBoardBestIoU": []
+    },
+    {
+      "inputIndex": 13,
+      "kind": "negative-page",
+      "detectedBoards": 0,
+      "expectedCompleteBoards": 0,
+      "pieceConflicts": 0,
+      "partialOrNegativeBoardScores": [],
+      "truthBoardBestIoU": []
+    },
+    {
+      "inputIndex": 14,
+      "kind": "negative-page",
+      "detectedBoards": 0,
+      "expectedCompleteBoards": 0,
+      "pieceConflicts": 0,
+      "partialOrNegativeBoardScores": [],
+      "truthBoardBestIoU": []
+    },
+    {
+      "inputIndex": 15,
+      "kind": "negative-page",
+      "detectedBoards": 0,
+      "expectedCompleteBoards": 0,
+      "pieceConflicts": 0,
+      "partialOrNegativeBoardScores": [],
+      "truthBoardBestIoU": []
+    },
+    {
+      "inputIndex": 16,
+      "kind": "negative-page",
+      "detectedBoards": 0,
+      "expectedCompleteBoards": 0,
+      "pieceConflicts": 0,
+      "partialOrNegativeBoardScores": [],
+      "truthBoardBestIoU": []
+    },
+    {
+      "inputIndex": 17,
+      "kind": "negative-page",
+      "detectedBoards": 0,
+      "expectedCompleteBoards": 0,
+      "pieceConflicts": 0,
+      "partialOrNegativeBoardScores": [],
+      "truthBoardBestIoU": []
+    },
+    {
+      "inputIndex": 18,
+      "kind": "loose-selection",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 0,
+      "truthBoardBestIoU": [
+        0.990872377277986
+      ]
+    },
+    {
+      "inputIndex": 19,
+      "kind": "loose-selection",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 1,
+      "pieceConflicts": 0,
+      "truthBoardBestIoU": [
+        0.9942551405317938
+      ]
+    },
+    {
+      "inputIndex": 20,
+      "kind": "multiple-board-page",
+      "detectedBoards": 2,
+      "expectedCompleteBoards": 2,
+      "pieceConflicts": 5,
+      "truthBoardBestIoU": [
+        0.9956391236978237,
+        0.9971928815043396
+      ]
+    },
+    {
+      "inputIndex": 21,
+      "kind": "multiple-board-page",
+      "detectedBoards": 2,
+      "expectedCompleteBoards": 2,
+      "pieceConflicts": 0,
+      "truthBoardBestIoU": [
+        0.9955948135662007,
+        0.993599617948109
+      ]
+    },
+    {
+      "inputIndex": 22,
+      "kind": "partial-board-selection",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 0,
+      "pieceConflicts": 0,
+      "partialOrNegativeBoardScores": [
+        0.325873464345932
+      ],
+      "truthBoardBestIoU": []
+    },
+    {
+      "inputIndex": 23,
+      "kind": "partial-board-selection",
+      "detectedBoards": 1,
+      "expectedCompleteBoards": 0,
+      "pieceConflicts": 0,
+      "partialOrNegativeBoardScores": [
+        0.2998977303504944
+      ],
+      "truthBoardBestIoU": []
+    }
+  ],
+  "classifierDiagnostic": null,
+  "detectorDiagnostic": {
+    "boards": 12,
+    "exactBoards": 5,
+    "squares": 768,
+    "correctSquares": 711,
+    "occupiedTotal": 147,
+    "occupiedCorrect": 100,
+    "perClass": {
+      "1": {
+        "total": 621,
+        "correct": 611
+      },
+      "K": {
+        "total": 12,
+        "correct": 8
+      },
+      "Q": {
+        "total": 11,
+        "correct": 7
+      },
+      "R": {
+        "total": 9,
+        "correct": 3
+      },
+      "B": {
+        "total": 10,
+        "correct": 4
+      },
+      "N": {
+        "total": 3,
+        "correct": 3
+      },
+      "P": {
+        "total": 27,
+        "correct": 20
+      },
+      "k": {
+        "total": 12,
+        "correct": 8
+      },
+      "q": {
+        "total": 8,
+        "correct": 5
+      },
+      "r": {
+        "total": 11,
+        "correct": 6
+      },
+      "b": {
+        "total": 5,
+        "correct": 1
+      },
+      "n": {
+        "total": 4,
+        "correct": 4
+      },
+      "p": {
+        "total": 35,
+        "correct": 31
+      }
+    },
+    "color": {
+      "white": {
+        "total": 72,
+        "correct": 45
+      },
+      "black": {
+        "total": 75,
+        "correct": 55
+      }
+    },
+    "confusionActualRowsPredictedColumns": [
+      [
+        611,
+        0,
+        9,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        8,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        3,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        0,
+        0,
+        4,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        31,
+        0
+      ]
+    ],
+    "confusionColumns": "1KQRBNPkqrbnp?",
+    "detectedPieceConfidence": {
+      "count": 134,
+      "minimum": 0.3215376138687134,
+      "mean": 0.8672699430095616
+    },
+    "missedBoardSquares": 0,
+    "emptyConfidenceAvailable": false,
+    "orientationInferred": false
+  },
+  "smokeDecision": {
+    "thresholdGrid": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      0.95,
+      0.99
+    ],
+    "feasibleSmokeThresholds": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "passed": true,
+    "reason": "advance to full development only",
+    "finalConfidencePolicyFrozen": false
+  },
+  "latencySeconds": {
+    "samples": [
+      0.6642774199135602,
+      0.6442952263168991,
+      0.6361872577108443,
+      0.6351479170843959,
+      0.635580507107079,
+      0.6363686001859605,
+      0.6353331957943738,
+      0.6361580709926784,
+      0.6362899909727275,
+      0.6356409206055105,
+      0.6353799607604742,
+      0.6378278718329966,
+      0.6358557660132647,
+      0.6356057999655604,
+      0.6357790310867131,
+      0.6355873341672122,
+      0.6356336381286383,
+      0.635860915761441,
+      0.6384253702126443,
+      0.637947419192642,
+      0.6386316558346152,
+      0.6441091857850552,
+      0.6437423871830106,
+      0.6418450330384076
+    ],
+    "p50": 0.6361726643517613,
+    "p95": 0.6442673202371225,
+    "maximum": 0.6642774199135602
+  },
+  "elapsedSeconds": 15.79199735308066,
+  "ceilingSeconds": 44,
+  "numericProbabilityBounds": {
+    "minimumPreClip": -1.1920928955078125e-07,
+    "maximumPreClip": 0.993949294090271,
+    "clippedScores": 2251642
+  },
+  "limitations": {
+    "orientationInferred": false,
+    "localizationTested": true,
+    "emptySquareConfidenceAvailable": false,
+    "notFreshQualification": true,
+    "latencyUse": "smoke observations only; not an isolated performance benchmark"
+  }
+}

@@ -21,6 +21,9 @@
     },
     {
       "path": "./experiments/recognition-training/v2/browser"
+    },
+    {
+      "path": "./experiments/recognition-training/v3"
     }
   ]
 }

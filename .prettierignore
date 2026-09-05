@@ -19,3 +19,9 @@ experiments/recognition-training/v2/data/
 experiments/recognition-training/v2/runs/
 experiments/recognition-training/v2/manifests/*.json
 experiments/recognition-training/v2/reports/**/*.json
+
+experiments/recognition-training/v3/cache/
+experiments/recognition-training/v3/data/
+experiments/recognition-training/v3/runs/
+experiments/recognition-training/v3/manifests/*.json
+experiments/recognition-training/v3/reports/**/*.json
