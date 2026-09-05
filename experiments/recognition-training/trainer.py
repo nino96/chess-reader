@@ -238,7 +238,7 @@ def _restore_rng(state: dict[str, Any]) -> None:
     )
     torch.set_rng_state(state["torch"])
     if state.get("cuda") is not None and torch.cuda.is_available():
-        torch.cuda.set_rng_state_all([value.to("cuda") for value in state["cuda"]])
+        torch.cuda.set_rng_state_all([value.cpu() for value in state["cuda"]])
 
 
 def _atomic_save(value: dict[str, Any], path: Path) -> None:
@@ -666,7 +666,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "measuredTrainingTilesPerSecond": (recipe.train_boards * 64 * recipe.epochs * (2 if recipe.mode == "pilot" else 1)) / measured_elapsed if measured_elapsed else None,
             }
         )
-    except (DatasetError, TrainingError, OSError, RuntimeError) as error:
+    except (DatasetError, TrainingError, OSError, RuntimeError, TypeError, ValueError, KeyError) as error:
         base_report["error"] = str(error)
         if run_started is not None:
             base_report["elapsedSeconds"] = time.monotonic() - run_started
