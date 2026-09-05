@@ -11,7 +11,8 @@
     "paths": {
       "@napi-rs/canvas": ["../../packages/test-fixtures/node_modules/@napi-rs/canvas"],
       "@scoriiu/fenshot": ["../../packages/test-fixtures/node_modules/@scoriiu/fenshot"]
-    }
+    },
+    "rewriteRelativeImportExtensions": true
   },
   "include": [
     "*.mjs",

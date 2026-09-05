@@ -13,4 +13,4 @@ experiments/recognition-training/data/
 experiments/recognition-training/runs/
 # Generated evidence is preserved byte-for-byte, including its hashes.
 experiments/recognition-training/manifests/*.json
-experiments/recognition-training/reports/*.json
+experiments/recognition-training/reports/**/*.json

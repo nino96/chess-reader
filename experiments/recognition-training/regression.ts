@@ -1,6 +1,8 @@
 /** Post-freeze preparation only: corpus v1 never enters development data. */
+import { execFileSync } from 'node:child_process';
+import { writeImmutable } from './immutable-artifact.ts';
 import { createHash } from 'node:crypto';
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, mkdir } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { dirname, resolve } from 'node:path';
 import type * as Canvas from '@napi-rs/canvas';
@@ -120,27 +122,29 @@ if (boards.length !== 14) throw new Error('Incomplete historical exact-bound set
 const output = resolve(root, 'data/regression');
 await mkdir(output, { recursive: true });
 const vectorBytes = Buffer.concat(chunks);
-await writeFile(resolve(output, 'regression.vectors.f32le'), vectorBytes);
-await writeFile(
+await writeImmutable(resolve(output, 'regression.vectors.f32le'), vectorBytes);
+await writeImmutable(
   resolve(output, 'regression.labels.json'),
-  JSON.stringify({ schemaVersion: 1, split: 'corpus-v1-regression', boards }),
+  Buffer.from(JSON.stringify({ schemaVersion: 1, split: 'corpus-v1-regression', boards })),
 );
-await writeFile(
+await writeImmutable(
   resolve(output, 'vectors.manifest.json'),
-  JSON.stringify(
-    {
-      schemaVersion: 1,
-      id: 'corpus-v1-regression',
-      role: 'corpus-v1-regression',
-      dtype: 'float32-le',
-      shape: [boards.length, 64, 1024],
-      byteLength: vectorBytes.length,
-      sha256: hash(vectorBytes),
-      labels: boards.map((board) => ({ boardId: board.id, classes: board.labels })),
-    },
-    null,
-    2,
-  ) + '\n',
+  Buffer.from(
+    JSON.stringify(
+      {
+        schemaVersion: 1,
+        id: 'corpus-v1-regression',
+        role: 'corpus-v1-regression',
+        dtype: 'float32-le',
+        shape: [boards.length, 64, 1024],
+        byteLength: vectorBytes.length,
+        sha256: hash(vectorBytes),
+        labels: boards.map((board) => ({ boardId: board.id, classes: board.labels })),
+      },
+      null,
+      2,
+    ) + '\n',
+  ),
 );
 console.log(
   JSON.stringify({
@@ -149,3 +153,33 @@ console.log(
     corpusManifestSha256: hash(manifestBytes),
   }),
 );
+
+const provenance = {
+  schemaVersion: 1,
+  role: 'post-freeze-regression-provenance',
+  command: 'node experiments/recognition-training/regression.ts',
+  preparationCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+  recordedAfterInitialInference: true,
+  note: 'Provenance guard added after initial regression preparation; hashes verify the bytes used in browser evaluation. This is not a pretraining test lock.',
+  corpusManifestSha256: hash(manifestBytes),
+  regressionScriptSha256: hash(await readFile(new URL('./regression.ts', import.meta.url))),
+  preprocessingSha256: hash(await readFile(resolve(dirname(fenshotModelPath), '../dist/tiles.js'))),
+  canvasPackageSha256: hash(await readFile(requireFixture.resolve('@napi-rs/canvas/package.json'))),
+  vectorsSha256: hash(vectorBytes),
+  labelsSha256: hash(await readFile(resolve(output, 'regression.labels.json'))),
+  wrapperSha256: hash(await readFile(resolve(output, 'vectors.manifest.json'))),
+  freezeFileSha256: hash(freezeBytes),
+  boards: boards.length,
+  node: process.version,
+  platform: process.platform,
+  arch: process.arch,
+};
+// Git HEAD can advance during review; the immutable byte/source identities cannot.
+const evidencePath = resolve(root, 'runs/regression.evidence.json');
+try {
+  const prior = object(JSON.parse(await readFile(evidencePath, 'utf8')) as unknown);
+  provenance.preparationCommit = String(prior['preparationCommit']);
+} catch (error: unknown) {
+  if (!(error instanceof Error) || !('code' in error) || error.code !== 'ENOENT') throw error;
+}
+await writeImmutable(evidencePath, Buffer.from(JSON.stringify(provenance, null, 2) + '\n'));

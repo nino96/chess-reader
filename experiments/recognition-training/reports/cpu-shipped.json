@@ -1,0 +1,2410 @@
+{
+  "candidate": {
+    "id": "shipped",
+    "seed": null
+  },
+  "command": [
+    "python",
+    "evaluate_onnx.py",
+    "--model",
+    "<model>",
+    "--data-dir",
+    "<data-dir>",
+    "--split",
+    "test",
+    "--freeze",
+    "<freeze>"
+  ],
+  "commit": "7039fcfc5c28495a51012a0b2d9ebb888ec6e937",
+  "confidence": {
+    "boardMean": {
+      "max": 0.9437483549118042,
+      "mean": 0.8605890185572207,
+      "min": 0.7048904895782471,
+      "n": 256,
+      "p50": 0.8642366826534271,
+      "p95": 0.918561726808548
+    },
+    "boardMinimum": {
+      "max": 0.7370607256889343,
+      "mean": 0.35460197215434164,
+      "min": 0.1599893867969513,
+      "n": 256,
+      "p50": 0.344711497426033,
+      "p95": 0.5214644521474838
+    }
+  },
+  "confidenceFloor": 0.7,
+  "confidenceQualified": {
+    "confidentCorrectSquares": 13384,
+    "confidentSquareAccuracy": 0.81689453125,
+    "lowConfidenceBoards": 255,
+    "reliableExactBoardAccuracy": 0.0,
+    "reliableExactBoards": 0,
+    "reliableWrongBoards": 1
+  },
+  "confusion": [
+    [
+      11720,
+      0,
+      1,
+      5,
+      2,
+      4,
+      24,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      29,
+      0,
+      0,
+      0,
+      0,
+      0,
+      214,
+      12,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      138,
+      147,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      295,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      2,
+      268,
+      0,
+      6
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      289,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      906
+    ],
+    [
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      247,
+      4,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      221,
+      78,
+      0,
+      1,
+      5,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      266,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      269,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      0,
+      0,
+      0,
+      0,
+      274,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      905
+    ]
+  ],
+  "datasetManifestSha256": "10b347f5f88693fd18d63b49b4b2f81156cf673820145c82949e1d425743a401",
+  "environment": {
+    "onnxruntime": "1.22.1",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.3"
+  },
+  "input": {
+    "boards": 256,
+    "familyCount": 1,
+    "labelsSha256": "39ec56786e7d78b1b85c72947247335186bf1b18ded2a7e3d57ff34934351383",
+    "split": "test",
+    "vectorSha256": "a9a14d8a2f406d1e6d1a12cdaf35ab962f7aaff724dc694c0f398699888c9882"
+  },
+  "latencyMs": {
+    "coldSessionSingleSample": 1.965703908354044,
+    "warmPerBoard": {
+      "max": 12.313583865761757,
+      "mean": 9.307653805080918,
+      "min": 9.266572073101997,
+      "n": 256,
+      "p50": 9.292835835367441,
+      "p95": 9.32266388554126
+    }
+  },
+  "model": {
+    "bytes": 1289483,
+    "sha256": "883f6a8e639e6d6b6399b3fda0508ad772e3c6f9cefa2e678a13f27b9fa6248d"
+  },
+  "observations": [
+    {
+      "index": 0,
+      "latencyMs": 9.607546962797642,
+      "meanConfidence": 0.8964290618896484,
+      "minimumConfidence": 0.477988600730896,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 1,
+      "latencyMs": 12.313583865761757,
+      "meanConfidence": 0.8134903907775879,
+      "minimumConfidence": 0.2779538035392761,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 2,
+      "latencyMs": 9.307323954999447,
+      "meanConfidence": 0.8688814640045166,
+      "minimumConfidence": 0.3915780186653137,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 3,
+      "latencyMs": 9.295420255512,
+      "meanConfidence": 0.8314383029937744,
+      "minimumConfidence": 0.3651711940765381,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 4,
+      "latencyMs": 9.300187695771456,
+      "meanConfidence": 0.8578082323074341,
+      "minimumConfidence": 0.33725619316101074,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 5,
+      "latencyMs": 9.300236124545336,
+      "meanConfidence": 0.8049138188362122,
+      "minimumConfidence": 0.34417659044265747,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 6,
+      "latencyMs": 9.290555957704782,
+      "meanConfidence": 0.8645610809326172,
+      "minimumConfidence": 0.31565263867378235,
+      "rawErrorSquares": 11,
+      "reliable": false
+    },
+    {
+      "index": 7,
+      "latencyMs": 9.299340192228556,
+      "meanConfidence": 0.8777070045471191,
+      "minimumConfidence": 0.38001030683517456,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 8,
+      "latencyMs": 9.290396235883236,
+      "meanConfidence": 0.8579264879226685,
+      "minimumConfidence": 0.3682204484939575,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 9,
+      "latencyMs": 9.302156046032906,
+      "meanConfidence": 0.7885881662368774,
+      "minimumConfidence": 0.1684582531452179,
+      "rawErrorSquares": 19,
+      "reliable": false
+    },
+    {
+      "index": 10,
+      "latencyMs": 9.27690789103508,
+      "meanConfidence": 0.841935932636261,
+      "minimumConfidence": 0.27818170189857483,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 11,
+      "latencyMs": 9.303899947553873,
+      "meanConfidence": 0.8349753618240356,
+      "minimumConfidence": 0.20449337363243103,
+      "rawErrorSquares": 2,
+      "reliable": false
+    },
+    {
+      "index": 12,
+      "latencyMs": 9.308891836553812,
+      "meanConfidence": 0.7626429796218872,
+      "minimumConfidence": 0.2674008011817932,
+      "rawErrorSquares": 14,
+      "reliable": false
+    },
+    {
+      "index": 13,
+      "latencyMs": 9.299019817262888,
+      "meanConfidence": 0.8500673174858093,
+      "minimumConfidence": 0.33918577432632446,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 14,
+      "latencyMs": 9.293020237237215,
+      "meanConfidence": 0.894160270690918,
+      "minimumConfidence": 0.43183520436286926,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 15,
+      "latencyMs": 9.292684029787779,
+      "meanConfidence": 0.8483784794807434,
+      "minimumConfidence": 0.39076071977615356,
+      "rawErrorSquares": 11,
+      "reliable": false
+    },
+    {
+      "index": 16,
+      "latencyMs": 9.280779864639044,
+      "meanConfidence": 0.8627556562423706,
+      "minimumConfidence": 0.20112018287181854,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 17,
+      "latencyMs": 9.300124365836382,
+      "meanConfidence": 0.8845056891441345,
+      "minimumConfidence": 0.24718160927295685,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 18,
+      "latencyMs": 9.298941120505333,
+      "meanConfidence": 0.8862669467926025,
+      "minimumConfidence": 0.3610481917858124,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 19,
+      "latencyMs": 9.290172718465328,
+      "meanConfidence": 0.8012579679489136,
+      "minimumConfidence": 0.25495341420173645,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 20,
+      "latencyMs": 9.276380762457848,
+      "meanConfidence": 0.8306668400764465,
+      "minimumConfidence": 0.34998777508735657,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 21,
+      "latencyMs": 9.281595703214407,
+      "meanConfidence": 0.8236120939254761,
+      "minimumConfidence": 0.35617899894714355,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 22,
+      "latencyMs": 9.28372424095869,
+      "meanConfidence": 0.8895235061645508,
+      "minimumConfidence": 0.25646066665649414,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 23,
+      "latencyMs": 9.293468203395605,
+      "meanConfidence": 0.8416458964347839,
+      "minimumConfidence": 0.35705021023750305,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 24,
+      "latencyMs": 9.266572073101997,
+      "meanConfidence": 0.8790923357009888,
+      "minimumConfidence": 0.39231646060943604,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 25,
+      "latencyMs": 9.32671595364809,
+      "meanConfidence": 0.8742671012878418,
+      "minimumConfidence": 0.3807813227176666,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 26,
+      "latencyMs": 9.271660353988409,
+      "meanConfidence": 0.7976056337356567,
+      "minimumConfidence": 0.20466548204421997,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 27,
+      "latencyMs": 9.296284057199955,
+      "meanConfidence": 0.8570977449417114,
+      "minimumConfidence": 0.5215277075767517,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 28,
+      "latencyMs": 9.289388079196215,
+      "meanConfidence": 0.8548028469085693,
+      "minimumConfidence": 0.3466643691062927,
+      "rawErrorSquares": 14,
+      "reliable": false
+    },
+    {
+      "index": 29,
+      "latencyMs": 9.290363639593124,
+      "meanConfidence": 0.8897486925125122,
+      "minimumConfidence": 0.4042644202709198,
+      "rawErrorSquares": 2,
+      "reliable": false
+    },
+    {
+      "index": 30,
+      "latencyMs": 9.290875867009163,
+      "meanConfidence": 0.8654776215553284,
+      "minimumConfidence": 0.2785766124725342,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 31,
+      "latencyMs": 9.30066779255867,
+      "meanConfidence": 0.9010356068611145,
+      "minimumConfidence": 0.41648682951927185,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 32,
+      "latencyMs": 9.31753171607852,
+      "meanConfidence": 0.9069653749465942,
+      "minimumConfidence": 0.3391009569168091,
+      "rawErrorSquares": 0,
+      "reliable": false
+    },
+    {
+      "index": 33,
+      "latencyMs": 9.291803929954767,
+      "meanConfidence": 0.9077726602554321,
+      "minimumConfidence": 0.3147892653942108,
+      "rawErrorSquares": 2,
+      "reliable": false
+    },
+    {
+      "index": 34,
+      "latencyMs": 9.293596260249615,
+      "meanConfidence": 0.7389116883277893,
+      "minimumConfidence": 0.2060060352087021,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 35,
+      "latencyMs": 9.296732023358345,
+      "meanConfidence": 0.8904893398284912,
+      "minimumConfidence": 0.3354015052318573,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 36,
+      "latencyMs": 9.281964972615242,
+      "meanConfidence": 0.8836224675178528,
+      "minimumConfidence": 0.3600537180900574,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 37,
+      "latencyMs": 9.312189184129238,
+      "meanConfidence": 0.8962101340293884,
+      "minimumConfidence": 0.39024630188941956,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 38,
+      "latencyMs": 9.299820754677057,
+      "meanConfidence": 0.8641214966773987,
+      "minimumConfidence": 0.3532198667526245,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 39,
+      "latencyMs": 9.296173229813576,
+      "meanConfidence": 0.7155525088310242,
+      "minimumConfidence": 0.1863349974155426,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 40,
+      "latencyMs": 9.297803975641727,
+      "meanConfidence": 0.9068370461463928,
+      "minimumConfidence": 0.49990859627723694,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 41,
+      "latencyMs": 9.3147330917418,
+      "meanConfidence": 0.8791351318359375,
+      "minimumConfidence": 0.3760685622692108,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 42,
+      "latencyMs": 9.321404155343771,
+      "meanConfidence": 0.8143096566200256,
+      "minimumConfidence": 0.1889449506998062,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 43,
+      "latencyMs": 9.301756042987108,
+      "meanConfidence": 0.8657633066177368,
+      "minimumConfidence": 0.21884889900684357,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 44,
+      "latencyMs": 9.304508101195097,
+      "meanConfidence": 0.8468717336654663,
+      "minimumConfidence": 0.30836036801338196,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 45,
+      "latencyMs": 9.303196799010038,
+      "meanConfidence": 0.8603981137275696,
+      "minimumConfidence": 0.2929224371910095,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 46,
+      "latencyMs": 9.303004015237093,
+      "meanConfidence": 0.897247314453125,
+      "minimumConfidence": 0.43653202056884766,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 47,
+      "latencyMs": 9.299181401729584,
+      "meanConfidence": 0.8973672389984131,
+      "minimumConfidence": 0.3782615065574646,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 48,
+      "latencyMs": 9.29999677464366,
+      "meanConfidence": 0.8036175966262817,
+      "minimumConfidence": 0.3320651650428772,
+      "rawErrorSquares": 16,
+      "reliable": false
+    },
+    {
+      "index": 49,
+      "latencyMs": 9.305980987846851,
+      "meanConfidence": 0.8590743541717529,
+      "minimumConfidence": 0.4799630641937256,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 50,
+      "latencyMs": 9.291164577007294,
+      "meanConfidence": 0.9165635108947754,
+      "minimumConfidence": 0.31433600187301636,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 51,
+      "latencyMs": 9.288908913731575,
+      "meanConfidence": 0.8571494221687317,
+      "minimumConfidence": 0.2890106439590454,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 52,
+      "latencyMs": 9.285819716751575,
+      "meanConfidence": 0.8173068165779114,
+      "minimumConfidence": 0.3006645441055298,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 53,
+      "latencyMs": 9.32385167106986,
+      "meanConfidence": 0.8423761129379272,
+      "minimumConfidence": 0.38079607486724854,
+      "rawErrorSquares": 16,
+      "reliable": false
+    },
+    {
+      "index": 54,
+      "latencyMs": 9.28004365414381,
+      "meanConfidence": 0.8583996295928955,
+      "minimumConfidence": 0.19927968084812164,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 55,
+      "latencyMs": 9.285228326916695,
+      "meanConfidence": 0.8500444889068604,
+      "minimumConfidence": 0.42239469289779663,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 56,
+      "latencyMs": 9.305340237915516,
+      "meanConfidence": 0.8982928395271301,
+      "minimumConfidence": 0.40925276279449463,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 57,
+      "latencyMs": 9.293644223362207,
+      "meanConfidence": 0.835395872592926,
+      "minimumConfidence": 0.4272393584251404,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 58,
+      "latencyMs": 9.280860424041748,
+      "meanConfidence": 0.8642457723617554,
+      "minimumConfidence": 0.3113563060760498,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 59,
+      "latencyMs": 9.306060150265694,
+      "meanConfidence": 0.8613488674163818,
+      "minimumConfidence": 0.31314077973365784,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 60,
+      "latencyMs": 9.282092098146677,
+      "meanConfidence": 0.7856703996658325,
+      "minimumConfidence": 0.3246551752090454,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 61,
+      "latencyMs": 9.289900306612253,
+      "meanConfidence": 0.8759517073631287,
+      "minimumConfidence": 0.31045782566070557,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 62,
+      "latencyMs": 9.301019832491875,
+      "meanConfidence": 0.893169641494751,
+      "minimumConfidence": 0.3506937026977539,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 63,
+      "latencyMs": 9.28834779188037,
+      "meanConfidence": 0.9014798402786255,
+      "minimumConfidence": 0.4999951720237732,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 64,
+      "latencyMs": 9.293964132666588,
+      "meanConfidence": 0.8241351246833801,
+      "minimumConfidence": 0.34609025716781616,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 65,
+      "latencyMs": 9.301195852458477,
+      "meanConfidence": 0.773369312286377,
+      "minimumConfidence": 0.2615949511528015,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 66,
+      "latencyMs": 9.299180004745722,
+      "meanConfidence": 0.8653914928436279,
+      "minimumConfidence": 0.28370529413223267,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 67,
+      "latencyMs": 9.327755775302649,
+      "meanConfidence": 0.8973889350891113,
+      "minimumConfidence": 0.3480517864227295,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 68,
+      "latencyMs": 9.30513208732009,
+      "meanConfidence": 0.9196004271507263,
+      "minimumConfidence": 0.36840689182281494,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 69,
+      "latencyMs": 9.299356024712324,
+      "meanConfidence": 0.9167419075965881,
+      "minimumConfidence": 0.5343374609947205,
+      "rawErrorSquares": 1,
+      "reliable": false
+    },
+    {
+      "index": 70,
+      "latencyMs": 9.282348211854696,
+      "meanConfidence": 0.8372159004211426,
+      "minimumConfidence": 0.33508971333503723,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 71,
+      "latencyMs": 9.301708079874516,
+      "meanConfidence": 0.8580286502838135,
+      "minimumConfidence": 0.3603723645210266,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 72,
+      "latencyMs": 9.291436057537794,
+      "meanConfidence": 0.8192009329795837,
+      "minimumConfidence": 0.2491840273141861,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 73,
+      "latencyMs": 9.327004197984934,
+      "meanConfidence": 0.8801051378250122,
+      "minimumConfidence": 0.5101783275604248,
+      "rawErrorSquares": 2,
+      "reliable": false
+    },
+    {
+      "index": 74,
+      "latencyMs": 9.309515822678804,
+      "meanConfidence": 0.887182354927063,
+      "minimumConfidence": 0.401224821805954,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 75,
+      "latencyMs": 9.289707988500595,
+      "meanConfidence": 0.8621693849563599,
+      "minimumConfidence": 0.4384724795818329,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 76,
+      "latencyMs": 9.290524292737246,
+      "meanConfidence": 0.8410025835037231,
+      "minimumConfidence": 0.3092988431453705,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 77,
+      "latencyMs": 9.285692125558853,
+      "meanConfidence": 0.8939396142959595,
+      "minimumConfidence": 0.4527171552181244,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 78,
+      "latencyMs": 9.301099926233292,
+      "meanConfidence": 0.9017322063446045,
+      "minimumConfidence": 0.5419660210609436,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 79,
+      "latencyMs": 9.279725141823292,
+      "meanConfidence": 0.8204755187034607,
+      "minimumConfidence": 0.40852487087249756,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 80,
+      "latencyMs": 9.312428068369627,
+      "meanConfidence": 0.8799350261688232,
+      "minimumConfidence": 0.5092405676841736,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 81,
+      "latencyMs": 9.313804097473621,
+      "meanConfidence": 0.8854373693466187,
+      "minimumConfidence": 0.42213401198387146,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 82,
+      "latencyMs": 9.307244326919317,
+      "meanConfidence": 0.8954782485961914,
+      "minimumConfidence": 0.3142082989215851,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 83,
+      "latencyMs": 9.293197188526392,
+      "meanConfidence": 0.8829023838043213,
+      "minimumConfidence": 0.3383256793022156,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 84,
+      "latencyMs": 9.302780963480473,
+      "meanConfidence": 0.9095096588134766,
+      "minimumConfidence": 0.41513791680336,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 85,
+      "latencyMs": 9.299117140471935,
+      "meanConfidence": 0.8431569933891296,
+      "minimumConfidence": 0.34322285652160645,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 86,
+      "latencyMs": 9.295228403061628,
+      "meanConfidence": 0.9130147695541382,
+      "minimumConfidence": 0.5214433670043945,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 87,
+      "latencyMs": 9.303180035203695,
+      "meanConfidence": 0.9221333265304565,
+      "minimumConfidence": 0.3232695162296295,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 88,
+      "latencyMs": 9.273484349250793,
+      "meanConfidence": 0.8566972017288208,
+      "minimumConfidence": 0.2109844982624054,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 89,
+      "latencyMs": 9.282316081225872,
+      "meanConfidence": 0.9089608192443848,
+      "minimumConfidence": 0.5123172402381897,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 90,
+      "latencyMs": 9.300571866333485,
+      "meanConfidence": 0.873233437538147,
+      "minimumConfidence": 0.4561172425746918,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 91,
+      "latencyMs": 9.293627925217152,
+      "meanConfidence": 0.7839309573173523,
+      "minimumConfidence": 0.2779637575149536,
+      "rawErrorSquares": 17,
+      "reliable": false
+    },
+    {
+      "index": 92,
+      "latencyMs": 9.304219856858253,
+      "meanConfidence": 0.8843429684638977,
+      "minimumConfidence": 0.23149549961090088,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 93,
+      "latencyMs": 9.29676415398717,
+      "meanConfidence": 0.9271063804626465,
+      "minimumConfidence": 0.3886874318122864,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 94,
+      "latencyMs": 9.300523903220892,
+      "meanConfidence": 0.8428260087966919,
+      "minimumConfidence": 0.29720816016197205,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 95,
+      "latencyMs": 9.29159577935934,
+      "meanConfidence": 0.8343151807785034,
+      "minimumConfidence": 0.3080707788467407,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 96,
+      "latencyMs": 9.311371948570013,
+      "meanConfidence": 0.8090123534202576,
+      "minimumConfidence": 0.2651168406009674,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 97,
+      "latencyMs": 9.290252346545458,
+      "meanConfidence": 0.7915480732917786,
+      "minimumConfidence": 0.2323845773935318,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 98,
+      "latencyMs": 9.301771875470877,
+      "meanConfidence": 0.8265438079833984,
+      "minimumConfidence": 0.28909894824028015,
+      "rawErrorSquares": 17,
+      "reliable": false
+    },
+    {
+      "index": 99,
+      "latencyMs": 9.286172222346067,
+      "meanConfidence": 0.8923100233078003,
+      "minimumConfidence": 0.4431958496570587,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 100,
+      "latencyMs": 9.306875988841057,
+      "meanConfidence": 0.7653851509094238,
+      "minimumConfidence": 0.2459673136472702,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 101,
+      "latencyMs": 9.316572453826666,
+      "meanConfidence": 0.8066222667694092,
+      "minimumConfidence": 0.22396059334278107,
+      "rawErrorSquares": 11,
+      "reliable": false
+    },
+    {
+      "index": 102,
+      "latencyMs": 9.275851771235466,
+      "meanConfidence": 0.9010564684867859,
+      "minimumConfidence": 0.6141594648361206,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 103,
+      "latencyMs": 9.301547892391682,
+      "meanConfidence": 0.8316559791564941,
+      "minimumConfidence": 0.30823493003845215,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 104,
+      "latencyMs": 9.294203948229551,
+      "meanConfidence": 0.8993332386016846,
+      "minimumConfidence": 0.4755750298500061,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 105,
+      "latencyMs": 9.286204352974892,
+      "meanConfidence": 0.8232568502426147,
+      "minimumConfidence": 0.44367897510528564,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 106,
+      "latencyMs": 9.307067841291428,
+      "meanConfidence": 0.9096800088882446,
+      "minimumConfidence": 0.3825641870498657,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 107,
+      "latencyMs": 9.290475863963366,
+      "meanConfidence": 0.8397340774536133,
+      "minimumConfidence": 0.19558992981910706,
+      "rawErrorSquares": 2,
+      "reliable": false
+    },
+    {
+      "index": 108,
+      "latencyMs": 9.298236109316349,
+      "meanConfidence": 0.8177987933158875,
+      "minimumConfidence": 0.2526024580001831,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 109,
+      "latencyMs": 9.302923921495676,
+      "meanConfidence": 0.7851297855377197,
+      "minimumConfidence": 0.32338079810142517,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 110,
+      "latencyMs": 9.290155954658985,
+      "meanConfidence": 0.908184289932251,
+      "minimumConfidence": 0.38657093048095703,
+      "rawErrorSquares": 2,
+      "reliable": false
+    },
+    {
+      "index": 111,
+      "latencyMs": 9.284268133342266,
+      "meanConfidence": 0.812435507774353,
+      "minimumConfidence": 0.17704783380031586,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 112,
+      "latencyMs": 9.299501311033964,
+      "meanConfidence": 0.8399591445922852,
+      "minimumConfidence": 0.3204306662082672,
+      "rawErrorSquares": 14,
+      "reliable": false
+    },
+    {
+      "index": 113,
+      "latencyMs": 9.285596664994955,
+      "meanConfidence": 0.8251873254776001,
+      "minimumConfidence": 0.36775508522987366,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 114,
+      "latencyMs": 9.287772700190544,
+      "meanConfidence": 0.8569665551185608,
+      "minimumConfidence": 0.4366622269153595,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 115,
+      "latencyMs": 9.298043791204691,
+      "meanConfidence": 0.8002313375473022,
+      "minimumConfidence": 0.297980397939682,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 116,
+      "latencyMs": 9.29229985922575,
+      "meanConfidence": 0.8891026973724365,
+      "minimumConfidence": 0.44200804829597473,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 117,
+      "latencyMs": 9.287164080888033,
+      "meanConfidence": 0.8187881708145142,
+      "minimumConfidence": 0.3350149095058441,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 118,
+      "latencyMs": 9.278427809476852,
+      "meanConfidence": 0.8986729383468628,
+      "minimumConfidence": 0.4298838973045349,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 119,
+      "latencyMs": 9.297115728259087,
+      "meanConfidence": 0.841488778591156,
+      "minimumConfidence": 0.3329836428165436,
+      "rawErrorSquares": 16,
+      "reliable": false
+    },
+    {
+      "index": 120,
+      "latencyMs": 9.29166004061699,
+      "meanConfidence": 0.8594398498535156,
+      "minimumConfidence": 0.49432218074798584,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 121,
+      "latencyMs": 9.280268102884293,
+      "meanConfidence": 0.7359924912452698,
+      "minimumConfidence": 0.24705368280410767,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 122,
+      "latencyMs": 9.290540125221014,
+      "meanConfidence": 0.852338969707489,
+      "minimumConfidence": 0.27136439085006714,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 123,
+      "latencyMs": 9.279707912355661,
+      "meanConfidence": 0.8234266042709351,
+      "minimumConfidence": 0.32088345289230347,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 124,
+      "latencyMs": 9.282731916755438,
+      "meanConfidence": 0.8775430917739868,
+      "minimumConfidence": 0.35784825682640076,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 125,
+      "latencyMs": 9.291499853134155,
+      "meanConfidence": 0.9184156656265259,
+      "minimumConfidence": 0.24889642000198364,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 126,
+      "latencyMs": 9.2807961627841,
+      "meanConfidence": 0.8153176307678223,
+      "minimumConfidence": 0.35258668661117554,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 127,
+      "latencyMs": 9.285069070756435,
+      "meanConfidence": 0.8596144914627075,
+      "minimumConfidence": 0.32198795676231384,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 128,
+      "latencyMs": 9.330220054835081,
+      "meanConfidence": 0.910317063331604,
+      "minimumConfidence": 0.3390050232410431,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 129,
+      "latencyMs": 9.30882804095745,
+      "meanConfidence": 0.8729940056800842,
+      "minimumConfidence": 0.33345749974250793,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 130,
+      "latencyMs": 9.29343607276678,
+      "meanConfidence": 0.9053535461425781,
+      "minimumConfidence": 0.6381651163101196,
+      "rawErrorSquares": 2,
+      "reliable": false
+    },
+    {
+      "index": 131,
+      "latencyMs": 9.287005290389061,
+      "meanConfidence": 0.8800988793373108,
+      "minimumConfidence": 0.36511683464050293,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 132,
+      "latencyMs": 9.290093090385199,
+      "meanConfidence": 0.855248749256134,
+      "minimumConfidence": 0.2877907156944275,
+      "rawErrorSquares": 14,
+      "reliable": false
+    },
+    {
+      "index": 133,
+      "latencyMs": 9.308589156717062,
+      "meanConfidence": 0.9171448945999146,
+      "minimumConfidence": 0.4765162467956543,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 134,
+      "latencyMs": 9.291900787502527,
+      "meanConfidence": 0.8699650764465332,
+      "minimumConfidence": 0.43915432691574097,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 135,
+      "latencyMs": 9.31426789611578,
+      "meanConfidence": 0.8413397669792175,
+      "minimumConfidence": 0.26030153036117554,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 136,
+      "latencyMs": 9.288076777011156,
+      "meanConfidence": 0.8771025538444519,
+      "minimumConfidence": 0.24530081450939178,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 137,
+      "latencyMs": 9.296012111008167,
+      "meanConfidence": 0.8434164524078369,
+      "minimumConfidence": 0.25989800691604614,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 138,
+      "latencyMs": 9.27058793604374,
+      "meanConfidence": 0.8836045265197754,
+      "minimumConfidence": 0.3675931394100189,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 139,
+      "latencyMs": 9.289179928600788,
+      "meanConfidence": 0.8868064880371094,
+      "minimumConfidence": 0.431828111410141,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 140,
+      "latencyMs": 9.301947895437479,
+      "meanConfidence": 0.9000763893127441,
+      "minimumConfidence": 0.6432491540908813,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 141,
+      "latencyMs": 9.285548236221075,
+      "meanConfidence": 0.9106155633926392,
+      "minimumConfidence": 0.28132620453834534,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 142,
+      "latencyMs": 9.329772088676691,
+      "meanConfidence": 0.9316505789756775,
+      "minimumConfidence": 0.7370607256889343,
+      "rawErrorSquares": 4,
+      "reliable": true
+    },
+    {
+      "index": 143,
+      "latencyMs": 9.273659903556108,
+      "meanConfidence": 0.8180475234985352,
+      "minimumConfidence": 0.30093181133270264,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 144,
+      "latencyMs": 9.289884008467197,
+      "meanConfidence": 0.8017983436584473,
+      "minimumConfidence": 0.26965534687042236,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 145,
+      "latencyMs": 9.285212028771639,
+      "meanConfidence": 0.8346579670906067,
+      "minimumConfidence": 0.2999996542930603,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 146,
+      "latencyMs": 9.295227937400341,
+      "meanConfidence": 0.8349280953407288,
+      "minimumConfidence": 0.24562601745128632,
+      "rawErrorSquares": 14,
+      "reliable": false
+    },
+    {
+      "index": 147,
+      "latencyMs": 9.286683984100819,
+      "meanConfidence": 0.88897705078125,
+      "minimumConfidence": 0.4186539649963379,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 148,
+      "latencyMs": 9.294636081904173,
+      "meanConfidence": 0.8219895958900452,
+      "minimumConfidence": 0.3028523921966553,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 149,
+      "latencyMs": 9.28882835432887,
+      "meanConfidence": 0.8174583911895752,
+      "minimumConfidence": 0.2827286124229431,
+      "rawErrorSquares": 14,
+      "reliable": false
+    },
+    {
+      "index": 150,
+      "latencyMs": 9.286059997975826,
+      "meanConfidence": 0.8869180083274841,
+      "minimumConfidence": 0.43932822346687317,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 151,
+      "latencyMs": 9.308075997978449,
+      "meanConfidence": 0.9118964672088623,
+      "minimumConfidence": 0.5245324373245239,
+      "rawErrorSquares": 0,
+      "reliable": false
+    },
+    {
+      "index": 152,
+      "latencyMs": 9.297020267695189,
+      "meanConfidence": 0.8675292730331421,
+      "minimumConfidence": 0.33381223678588867,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 153,
+      "latencyMs": 9.292987640947104,
+      "meanConfidence": 0.8448246121406555,
+      "minimumConfidence": 0.4211387634277344,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 154,
+      "latencyMs": 9.295084048062563,
+      "meanConfidence": 0.8790170550346375,
+      "minimumConfidence": 0.37059587240219116,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 155,
+      "latencyMs": 9.29174106568098,
+      "meanConfidence": 0.8581407070159912,
+      "minimumConfidence": 0.3020487427711487,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 156,
+      "latencyMs": 9.286108892410994,
+      "meanConfidence": 0.9226946830749512,
+      "minimumConfidence": 0.5871337056159973,
+      "rawErrorSquares": 2,
+      "reliable": false
+    },
+    {
+      "index": 157,
+      "latencyMs": 9.297837037593126,
+      "meanConfidence": 0.9269110560417175,
+      "minimumConfidence": 0.4084848463535309,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 158,
+      "latencyMs": 9.28858807310462,
+      "meanConfidence": 0.8390555381774902,
+      "minimumConfidence": 0.35185685753822327,
+      "rawErrorSquares": 11,
+      "reliable": false
+    },
+    {
+      "index": 159,
+      "latencyMs": 9.285307954996824,
+      "meanConfidence": 0.8543065786361694,
+      "minimumConfidence": 0.24251490831375122,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 160,
+      "latencyMs": 9.286892134696245,
+      "meanConfidence": 0.8478416204452515,
+      "minimumConfidence": 0.36818361282348633,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 161,
+      "latencyMs": 9.277259930968285,
+      "meanConfidence": 0.83945631980896,
+      "minimumConfidence": 0.29358193278312683,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 162,
+      "latencyMs": 9.279451798647642,
+      "meanConfidence": 0.8671489953994751,
+      "minimumConfidence": 0.4180958867073059,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 163,
+      "latencyMs": 9.325980208814144,
+      "meanConfidence": 0.8672997951507568,
+      "minimumConfidence": 0.32944369316101074,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 164,
+      "latencyMs": 9.275371674448252,
+      "meanConfidence": 0.8808162808418274,
+      "minimumConfidence": 0.2948342263698578,
+      "rawErrorSquares": 11,
+      "reliable": false
+    },
+    {
+      "index": 165,
+      "latencyMs": 9.282507933676243,
+      "meanConfidence": 0.9200664758682251,
+      "minimumConfidence": 0.374423623085022,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 166,
+      "latencyMs": 9.286923799663782,
+      "meanConfidence": 0.8301000595092773,
+      "minimumConfidence": 0.27228817343711853,
+      "rawErrorSquares": 14,
+      "reliable": false
+    },
+    {
+      "index": 167,
+      "latencyMs": 9.281404316425323,
+      "meanConfidence": 0.9123187065124512,
+      "minimumConfidence": 0.36256143450737,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 168,
+      "latencyMs": 9.273996111005545,
+      "meanConfidence": 0.8344705700874329,
+      "minimumConfidence": 0.33473068475723267,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 169,
+      "latencyMs": 9.280380327254534,
+      "meanConfidence": 0.7728543281555176,
+      "minimumConfidence": 0.30182743072509766,
+      "rawErrorSquares": 11,
+      "reliable": false
+    },
+    {
+      "index": 170,
+      "latencyMs": 9.29730897769332,
+      "meanConfidence": 0.9045326709747314,
+      "minimumConfidence": 0.3354594111442566,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 171,
+      "latencyMs": 9.288301225751638,
+      "meanConfidence": 0.8931570053100586,
+      "minimumConfidence": 0.5830085277557373,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 172,
+      "latencyMs": 9.28398035466671,
+      "meanConfidence": 0.851755678653717,
+      "minimumConfidence": 0.2966528534889221,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 173,
+      "latencyMs": 9.303308092057705,
+      "meanConfidence": 0.895458996295929,
+      "minimumConfidence": 0.4584452211856842,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 174,
+      "latencyMs": 9.293676353991032,
+      "meanConfidence": 0.856407642364502,
+      "minimumConfidence": 0.2858629524707794,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 175,
+      "latencyMs": 9.289915673434734,
+      "meanConfidence": 0.8821456432342529,
+      "minimumConfidence": 0.33304643630981445,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 176,
+      "latencyMs": 9.318731725215912,
+      "meanConfidence": 0.8948043584823608,
+      "minimumConfidence": 0.39974865317344666,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 177,
+      "latencyMs": 9.297019802033901,
+      "meanConfidence": 0.8898241519927979,
+      "minimumConfidence": 0.2651354670524597,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 178,
+      "latencyMs": 9.294555988162756,
+      "meanConfidence": 0.9127213954925537,
+      "minimumConfidence": 0.5056944489479065,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 179,
+      "latencyMs": 9.294092189520597,
+      "meanConfidence": 0.8483192920684814,
+      "minimumConfidence": 0.1965135931968689,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 180,
+      "latencyMs": 9.288747794926167,
+      "meanConfidence": 0.9096471071243286,
+      "minimumConfidence": 0.39443841576576233,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 181,
+      "latencyMs": 9.294027928262949,
+      "meanConfidence": 0.9437483549118042,
+      "minimumConfidence": 0.4829365015029907,
+      "rawErrorSquares": 1,
+      "reliable": false
+    },
+    {
+      "index": 182,
+      "latencyMs": 9.291388094425201,
+      "meanConfidence": 0.878094494342804,
+      "minimumConfidence": 0.3547111451625824,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 183,
+      "latencyMs": 9.286779910326004,
+      "meanConfidence": 0.9044091105461121,
+      "minimumConfidence": 0.4564286470413208,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 184,
+      "latencyMs": 9.340699762105942,
+      "meanConfidence": 0.8963159918785095,
+      "minimumConfidence": 0.5009247064590454,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 185,
+      "latencyMs": 9.311819914728403,
+      "meanConfidence": 0.8501245975494385,
+      "minimumConfidence": 0.2615515887737274,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 186,
+      "latencyMs": 9.285371750593185,
+      "meanConfidence": 0.9065487384796143,
+      "minimumConfidence": 0.41234633326530457,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 187,
+      "latencyMs": 9.297756012529135,
+      "meanConfidence": 0.8635338544845581,
+      "minimumConfidence": 0.22054553031921387,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 188,
+      "latencyMs": 9.299356024712324,
+      "meanConfidence": 0.8238254189491272,
+      "minimumConfidence": 0.3081672787666321,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 189,
+      "latencyMs": 9.28405998274684,
+      "meanConfidence": 0.8800894021987915,
+      "minimumConfidence": 0.5723732113838196,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 190,
+      "latencyMs": 9.337324183434248,
+      "meanConfidence": 0.8839254379272461,
+      "minimumConfidence": 0.4048439860343933,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 191,
+      "latencyMs": 9.288571774959564,
+      "meanConfidence": 0.8259992599487305,
+      "minimumConfidence": 0.3399510085582733,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 192,
+      "latencyMs": 9.28508397191763,
+      "meanConfidence": 0.9212785363197327,
+      "minimumConfidence": 0.48312535881996155,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 193,
+      "latencyMs": 9.281180333346128,
+      "meanConfidence": 0.9035738706588745,
+      "minimumConfidence": 0.4943562150001526,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 194,
+      "latencyMs": 9.281179867684841,
+      "meanConfidence": 0.7915517091751099,
+      "minimumConfidence": 0.28532886505126953,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 195,
+      "latencyMs": 9.273483883589506,
+      "meanConfidence": 0.9034605026245117,
+      "minimumConfidence": 0.37430405616760254,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 196,
+      "latencyMs": 9.284731931984425,
+      "meanConfidence": 0.8807801008224487,
+      "minimumConfidence": 0.26304206252098083,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 197,
+      "latencyMs": 9.29319579154253,
+      "meanConfidence": 0.8438692688941956,
+      "minimumConfidence": 0.34999993443489075,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 198,
+      "latencyMs": 9.28617175668478,
+      "meanConfidence": 0.8095083832740784,
+      "minimumConfidence": 0.3813159167766571,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 199,
+      "latencyMs": 9.306443855166435,
+      "meanConfidence": 0.8585929274559021,
+      "minimumConfidence": 0.3557007908821106,
+      "rawErrorSquares": 11,
+      "reliable": false
+    },
+    {
+      "index": 200,
+      "latencyMs": 9.293612092733383,
+      "meanConfidence": 0.8548924922943115,
+      "minimumConfidence": 0.4078657329082489,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 201,
+      "latencyMs": 9.300603996962309,
+      "meanConfidence": 0.838957667350769,
+      "minimumConfidence": 0.2993408739566803,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 202,
+      "latencyMs": 9.290684014558792,
+      "meanConfidence": 0.8440498113632202,
+      "minimumConfidence": 0.30562692880630493,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 203,
+      "latencyMs": 9.291020222008228,
+      "meanConfidence": 0.8302930593490601,
+      "minimumConfidence": 0.34680280089378357,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 204,
+      "latencyMs": 9.314076043665409,
+      "meanConfidence": 0.7961738109588623,
+      "minimumConfidence": 0.17942437529563904,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 205,
+      "latencyMs": 9.284683968871832,
+      "meanConfidence": 0.8757370710372925,
+      "minimumConfidence": 0.29382407665252686,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 206,
+      "latencyMs": 9.283117018640041,
+      "meanConfidence": 0.7984343767166138,
+      "minimumConfidence": 0.21010421216487885,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 207,
+      "latencyMs": 9.281964972615242,
+      "meanConfidence": 0.880335807800293,
+      "minimumConfidence": 0.25456923246383667,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 208,
+      "latencyMs": 9.297309443354607,
+      "meanConfidence": 0.8714568018913269,
+      "minimumConfidence": 0.30876314640045166,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 209,
+      "latencyMs": 9.284492116421461,
+      "meanConfidence": 0.9028095602989197,
+      "minimumConfidence": 0.27623891830444336,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 210,
+      "latencyMs": 9.285051841288805,
+      "meanConfidence": 0.8463292121887207,
+      "minimumConfidence": 0.18312619626522064,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 211,
+      "latencyMs": 9.28839622065425,
+      "meanConfidence": 0.8882352113723755,
+      "minimumConfidence": 0.4114622175693512,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 212,
+      "latencyMs": 9.278092067688704,
+      "meanConfidence": 0.9046273231506348,
+      "minimumConfidence": 0.6169319152832031,
+      "rawErrorSquares": 2,
+      "reliable": false
+    },
+    {
+      "index": 213,
+      "latencyMs": 9.288492146879435,
+      "meanConfidence": 0.9361149668693542,
+      "minimumConfidence": 0.5385002493858337,
+      "rawErrorSquares": 1,
+      "reliable": false
+    },
+    {
+      "index": 214,
+      "latencyMs": 9.301308076828718,
+      "meanConfidence": 0.8508363962173462,
+      "minimumConfidence": 0.360224187374115,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 215,
+      "latencyMs": 9.289020206779242,
+      "meanConfidence": 0.8889261484146118,
+      "minimumConfidence": 0.2404032200574875,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 216,
+      "latencyMs": 9.294108022004366,
+      "meanConfidence": 0.8800677061080933,
+      "minimumConfidence": 0.4199708104133606,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 217,
+      "latencyMs": 9.30156372487545,
+      "meanConfidence": 0.8412725329399109,
+      "minimumConfidence": 0.3743036091327667,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 218,
+      "latencyMs": 9.277787990868092,
+      "meanConfidence": 0.8921149969100952,
+      "minimumConfidence": 0.2341105192899704,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 219,
+      "latencyMs": 9.28425183519721,
+      "meanConfidence": 0.7245309948921204,
+      "minimumConfidence": 0.2256125658750534,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 220,
+      "latencyMs": 9.289116133004427,
+      "meanConfidence": 0.8604738712310791,
+      "minimumConfidence": 0.3670702576637268,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 221,
+      "latencyMs": 9.299436118453741,
+      "meanConfidence": 0.7048904895782471,
+      "minimumConfidence": 0.19998088479042053,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 222,
+      "latencyMs": 9.279707912355661,
+      "meanConfidence": 0.8426855206489563,
+      "minimumConfidence": 0.30534571409225464,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 223,
+      "latencyMs": 9.290171787142754,
+      "meanConfidence": 0.8854105472564697,
+      "minimumConfidence": 0.3090715706348419,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 224,
+      "latencyMs": 9.275740012526512,
+      "meanConfidence": 0.882378339767456,
+      "minimumConfidence": 0.37414148449897766,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 225,
+      "latencyMs": 9.296779986470938,
+      "meanConfidence": 0.7786373496055603,
+      "minimumConfidence": 0.30874118208885193,
+      "rawErrorSquares": 14,
+      "reliable": false
+    },
+    {
+      "index": 226,
+      "latencyMs": 9.29919583722949,
+      "meanConfidence": 0.8907053470611572,
+      "minimumConfidence": 0.5119805932044983,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 227,
+      "latencyMs": 9.321260266005993,
+      "meanConfidence": 0.827868640422821,
+      "minimumConfidence": 0.3831210732460022,
+      "rawErrorSquares": 18,
+      "reliable": false
+    },
+    {
+      "index": 228,
+      "latencyMs": 9.346907958388329,
+      "meanConfidence": 0.8294256329536438,
+      "minimumConfidence": 0.32896220684051514,
+      "rawErrorSquares": 16,
+      "reliable": false
+    },
+    {
+      "index": 229,
+      "latencyMs": 9.293579962104559,
+      "meanConfidence": 0.9219210147857666,
+      "minimumConfidence": 0.4180457592010498,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 230,
+      "latencyMs": 9.294299874454737,
+      "meanConfidence": 0.8746446371078491,
+      "minimumConfidence": 0.327347993850708,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 231,
+      "latencyMs": 9.2914835549891,
+      "meanConfidence": 0.885388970375061,
+      "minimumConfidence": 0.42564377188682556,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 232,
+      "latencyMs": 9.288812056183815,
+      "meanConfidence": 0.9189999103546143,
+      "minimumConfidence": 0.34524640440940857,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 233,
+      "latencyMs": 9.294155985116959,
+      "meanConfidence": 0.8697724342346191,
+      "minimumConfidence": 0.4597199261188507,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 234,
+      "latencyMs": 9.284171741455793,
+      "meanConfidence": 0.8148788809776306,
+      "minimumConfidence": 0.3179098069667816,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 235,
+      "latencyMs": 9.300380013883114,
+      "meanConfidence": 0.904837429523468,
+      "minimumConfidence": 0.39004138112068176,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 236,
+      "latencyMs": 9.290555957704782,
+      "meanConfidence": 0.8382059335708618,
+      "minimumConfidence": 0.3257550299167633,
+      "rawErrorSquares": 11,
+      "reliable": false
+    },
+    {
+      "index": 237,
+      "latencyMs": 9.284060914069414,
+      "meanConfidence": 0.852482795715332,
+      "minimumConfidence": 0.34814855456352234,
+      "rawErrorSquares": 12,
+      "reliable": false
+    },
+    {
+      "index": 238,
+      "latencyMs": 9.300044737756252,
+      "meanConfidence": 0.8737404346466064,
+      "minimumConfidence": 0.3295978009700775,
+      "rawErrorSquares": 5,
+      "reliable": false
+    },
+    {
+      "index": 239,
+      "latencyMs": 9.333803784102201,
+      "meanConfidence": 0.8642275929450989,
+      "minimumConfidence": 0.3287256360054016,
+      "rawErrorSquares": 9,
+      "reliable": false
+    },
+    {
+      "index": 240,
+      "latencyMs": 9.322267957031727,
+      "meanConfidence": 0.8863407373428345,
+      "minimumConfidence": 0.42196404933929443,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 241,
+      "latencyMs": 9.291067719459534,
+      "meanConfidence": 0.8384972810745239,
+      "minimumConfidence": 0.3265942335128784,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 242,
+      "latencyMs": 9.290044195950031,
+      "meanConfidence": 0.8374021649360657,
+      "minimumConfidence": 0.45559731125831604,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 243,
+      "latencyMs": 9.291292168200016,
+      "meanConfidence": 0.8412461280822754,
+      "minimumConfidence": 0.38001805543899536,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 244,
+      "latencyMs": 9.290299843996763,
+      "meanConfidence": 0.8925554752349854,
+      "minimumConfidence": 0.3765029013156891,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 245,
+      "latencyMs": 9.29802842438221,
+      "meanConfidence": 0.7983294725418091,
+      "minimumConfidence": 0.3274732828140259,
+      "rawErrorSquares": 13,
+      "reliable": false
+    },
+    {
+      "index": 246,
+      "latencyMs": 9.287229273468256,
+      "meanConfidence": 0.8319706916809082,
+      "minimumConfidence": 0.3638436198234558,
+      "rawErrorSquares": 11,
+      "reliable": false
+    },
+    {
+      "index": 247,
+      "latencyMs": 9.283212944865227,
+      "meanConfidence": 0.9268021583557129,
+      "minimumConfidence": 0.48287567496299744,
+      "rawErrorSquares": 3,
+      "reliable": false
+    },
+    {
+      "index": 248,
+      "latencyMs": 9.290652815252542,
+      "meanConfidence": 0.8974947929382324,
+      "minimumConfidence": 0.4419831335544586,
+      "rawErrorSquares": 4,
+      "reliable": false
+    },
+    {
+      "index": 249,
+      "latencyMs": 9.293693117797375,
+      "meanConfidence": 0.8612731099128723,
+      "minimumConfidence": 0.1599893867969513,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 250,
+      "latencyMs": 9.283996187150478,
+      "meanConfidence": 0.8075236678123474,
+      "minimumConfidence": 0.3118102550506592,
+      "rawErrorSquares": 15,
+      "reliable": false
+    },
+    {
+      "index": 251,
+      "latencyMs": 9.298412129282951,
+      "meanConfidence": 0.8660317659378052,
+      "minimumConfidence": 0.3366108238697052,
+      "rawErrorSquares": 8,
+      "reliable": false
+    },
+    {
+      "index": 252,
+      "latencyMs": 9.292251896113157,
+      "meanConfidence": 0.8709484338760376,
+      "minimumConfidence": 0.2984214127063751,
+      "rawErrorSquares": 7,
+      "reliable": false
+    },
+    {
+      "index": 253,
+      "latencyMs": 9.286268148571253,
+      "meanConfidence": 0.8397518396377563,
+      "minimumConfidence": 0.46127602458000183,
+      "rawErrorSquares": 10,
+      "reliable": false
+    },
+    {
+      "index": 254,
+      "latencyMs": 9.304204024374485,
+      "meanConfidence": 0.9021745920181274,
+      "minimumConfidence": 0.35383984446525574,
+      "rawErrorSquares": 6,
+      "reliable": false
+    },
+    {
+      "index": 255,
+      "latencyMs": 9.286188054829836,
+      "meanConfidence": 0.8716509342193604,
+      "minimumConfidence": 0.40019291639328003,
+      "rawErrorSquares": 6,
+      "reliable": false
+    }
+  ],
+  "perClass": [
+    {
+      "accuracy": 0.9969377339231031,
+      "class": 0,
+      "correct": 11720,
+      "total": 11756
+    },
+    {
+      "accuracy": 0.11328125,
+      "class": 1,
+      "correct": 29,
+      "total": 256
+    },
+    {
+      "accuracy": 0.0,
+      "class": 2,
+      "correct": 0,
+      "total": 286
+    },
+    {
+      "accuracy": 0.9866220735785953,
+      "class": 3,
+      "correct": 295,
+      "total": 299
+    },
+    {
+      "accuracy": 0.0,
+      "class": 4,
+      "correct": 0,
+      "total": 296
+    },
+    {
+      "accuracy": 0.9829931972789115,
+      "class": 5,
+      "correct": 289,
+      "total": 294
+    },
+    {
+      "accuracy": 0.0,
+      "class": 6,
+      "correct": 0,
+      "total": 908
+    },
+    {
+      "accuracy": 0.96484375,
+      "class": 7,
+      "correct": 247,
+      "total": 256
+    },
+    {
+      "accuracy": 0.25573770491803277,
+      "class": 8,
+      "correct": 78,
+      "total": 305
+    },
+    {
+      "accuracy": 1.0,
+      "class": 9,
+      "correct": 266,
+      "total": 266
+    },
+    {
+      "accuracy": 0.9781818181818182,
+      "class": 10,
+      "correct": 269,
+      "total": 275
+    },
+    {
+      "accuracy": 0.9750889679715302,
+      "class": 11,
+      "correct": 274,
+      "total": 281
+    },
+    {
+      "accuracy": 0.9988962472406181,
+      "class": 12,
+      "correct": 905,
+      "total": 906
+    }
+  ],
+  "protocolSha256": "bd24a5caaf61d0c37260d84665e0b910dff58aed3e34fc702e6d2e537d5900c5",
+  "raw": {
+    "correctSquares": 14372,
+    "exactBoardAccuracy": 0.0078125,
+    "exactBoards": 2,
+    "squareAccuracy": 0.877197265625
+  },
+  "schemaVersion": 1,
+  "status": "completed"
+}

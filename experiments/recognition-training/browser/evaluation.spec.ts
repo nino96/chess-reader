@@ -30,6 +30,7 @@ type Route = Playwright.Route;
 const ortWasmPath = webRequire.resolve('onnxruntime-web/ort-wasm-simd-threaded.wasm');
 const RELIABILITY_FLOOR = 0.7;
 const WARM_BOARD_LIMIT = 4;
+const FULL_PASS_BOARD_CHUNK = 16;
 
 interface ScoredBoard {
   readonly boardId: string;
@@ -218,13 +219,38 @@ for (const candidate of evaluation.freeze.candidates) {
         initializationMs.push(session.ready.initializationMs);
         if (coldSession === 0) {
           const indexes = Array.from({ length: vectorSet.manifest.shape[0] }, (_, index) => index);
-          fullResult = requireResult(
-            await page.evaluate(
-              ({ sessionId, indexes: requested, timeoutMs }) =>
-                globalThis.__recognitionTrainingBrowser.run(sessionId, requested, timeoutMs),
-              { sessionId: session.id, indexes, timeoutMs: evaluation.timeoutMs },
-            ),
-          );
+          const chunks: Extract<WorkerResponse, { type: 'result' }>[] = [];
+          for (let offset = 0; offset < indexes.length; offset += FULL_PASS_BOARD_CHUNK) {
+            const requested = indexes.slice(offset, offset + FULL_PASS_BOARD_CHUNK);
+            const chunk = requireResult(
+              await page.evaluate(
+                ({ sessionId, indexes: requestedIndexes, timeoutMs }) =>
+                  globalThis.__recognitionTrainingBrowser.run(
+                    sessionId,
+                    requestedIndexes,
+                    timeoutMs,
+                  ),
+                {
+                  sessionId: session.id,
+                  indexes: requested,
+                  timeoutMs: evaluation.timeoutMs,
+                },
+              ),
+            );
+            expect(chunk.boardIndexes).toEqual(requested);
+            chunks.push(chunk);
+          }
+          const firstChunk = chunks[0];
+          if (!firstChunk) throw new Error('Full pass produced no chunks');
+          fullResult = {
+            type: 'result',
+            requestId: firstChunk.requestId,
+            boardIndexes: chunks.flatMap((chunk) => chunk.boardIndexes),
+            classes: chunks.flatMap((chunk) => chunk.classes),
+            confidences: chunks.flatMap((chunk) => chunk.confidences),
+            inferenceMs: chunks.flatMap((chunk) => chunk.inferenceMs),
+          };
+          expect(fullResult.boardIndexes).toEqual(indexes);
           const firstInference = fullResult.inferenceMs[0];
           if (firstInference === undefined) throw new Error('Full pass omitted its first timing');
           firstBoardAfterFreshInitializationMs.push(firstInference);
@@ -356,6 +382,8 @@ for (const candidate of evaluation.freeze.candidates) {
           coldSessions: evaluation.coldSessions,
           warmRepeatsPerBoard: evaluation.warmRepeats,
           warmBoardLimit: WARM_BOARD_LIMIT,
+          fullPassMaximumBoardsPerRequest: FULL_PASS_BOARD_CHUNK,
+          fullPassRequestCount: Math.ceil(vectorSet.manifest.shape[0] / FULL_PASS_BOARD_CHUNK),
         },
         rawTiming: {
           coldInitializationMs: initializationMs,

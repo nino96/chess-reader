@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "commit": "89a0448b4643e40b3f0ae3d0454582aeb9abbc84",
+  "status": "failed",
+  "passed": 27,
+  "failed": 3,
+  "reportedWallMinutes": 7.5,
+  "failedCases": [
+    "firefox shipped held-out full pass",
+    "firefox seed 3801 held-out full pass",
+    "firefox seed 3802 held-out full pass"
+  ],
+  "error": "worker-timeout:60000",
+  "causeEvidence": {
+    "firefoxShippedRegressionP50PerBoardMs": 439,
+    "boardsInSingleRequest": 256,
+    "estimatedRequestSeconds": 112.384
+  },
+  "correction": "One complete pass split into sequential requests of at most 16 boards, same session/order/vectors/models, unchanged 60000 ms watchdog. Validate every returned index.",
+  "command": "CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/runs/browser-full.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts",
+  "rawMetricDirectory": "reports/browser-attempt-2",
+  "localTraceDirectory": "runs/browser-attempt-2-traces",
+  "tracePolicy": "Ignored traces may contain model/vector bytes; sanitized raw metric JSON is committed instead."
+}
