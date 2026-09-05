@@ -307,7 +307,7 @@ Accessibility is part of the implementation rather than a later cleanup:
 
 ```text
 .
-|-- AGENTS.md                 Rules every coding agent must follow
+|-- AGENTS.md                 Shared project rules and agent orchestration policy
 |-- README.md                 Product summary and quickest setup path
 |-- CONTRIBUTING.md           Human/agent workflow mechanics
 |-- package.json              Root commands and pinned tool versions

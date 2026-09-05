@@ -59,6 +59,62 @@ that is not implemented yet.
 - Keep domain and persistence models portable. DOM, browser, and Capacitor APIs
   belong behind platform adapters.
 
+## Agent orchestration
+
+The primary agent is the lead: it owns understanding the request, consequential
+design decisions, task decomposition, integration, review, and final validation.
+Use subagents proactively for useful independent exploration and bounded
+execution; the user should not need to repeat this preference in each prompt.
+Keep trivial tasks and tightly coupled work local when delegation would add
+more coordination than value.
+
+### Roles and model selection
+
+- Use explorers for focused read-only investigation with file/symbol evidence.
+- Use workers for implementation or validation with a clear scope and agreed
+  design. Keep architecture, cross-cutting reasoning, and integration with the
+  lead; a separate reviewer is optional and does not replace lead review.
+- Prefer an available faster or lower-cost model capable of the bounded task;
+  reserve the more capable lead for difficult decisions and review. Follow the
+  user's session preferences and the runtime's supported routing controls.
+  Choose reasoning effort to fit the task and model, not a fixed repository rule.
+- Do not pin provider names, model IDs, reasoning levels, or concurrency limits
+  in shared policy or add model-named roles. Personal/session runtime settings
+  select models; these instructions do not configure or enforce that selection.
+- If delegation or model selection is unavailable, briefly state the limitation
+  and continue with the available agent(s). Do not claim a model was used unless
+  the runtime confirms it, or install/configure another tool just to delegate.
+
+### Bounded assignments and parallel work
+
+Before delegating implementation, resolve consequential design choices. Give
+each worker the objective, relevant context and repository instructions,
+decisions already made, owned files/subsystem, constraints, acceptance criteria,
+checks to run, and expected report. Pass enough context to work independently
+without copying unrelated conversation history.
+
+- Parallelize independent questions and disjoint implementation tasks within
+  available capacity. Avoid duplicate investigations and unnecessary agents.
+- Explorers must not edit files. Use enforced read-only permissions when the
+  runtime supports them; a role description alone is not a sandbox.
+- Assign one writer per file or tightly coupled subsystem. Coordinate shared
+  files, generated outputs, Git operations, and test resources through the lead.
+  Workers must not revert others' changes or switch the shared checkout's branch.
+- Workers inherit the user's task scope and repository rules. Delegation does
+  not grant additional permission or relax privacy, security, or test gates.
+- Workers surface consequential ambiguity or unexpected scope to the lead.
+  The lead resolves it, narrows the assignment, or handles the difficult work;
+  do not repeatedly retry the same poorly understood task with lightweight workers.
+
+### Review and completion
+
+Workers return status (complete, partial, or blocked), findings or changed files,
+commands run and results (including unrun checks), decisions, and remaining risks.
+The lead inspects the actual diffs and supporting evidence, resolves conflicts,
+and validates the integrated result against the original request and applicable
+repository gates. Worker completion alone is not task completion. In the final
+handoff, briefly identify delegated work and any material validation limitations.
+
 ## Implementation standards
 
 - Use strict TypeScript. Validate untrusted data at runtime and keep `unknown`
