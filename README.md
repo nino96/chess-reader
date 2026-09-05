@@ -96,3 +96,8 @@ whenever the input can be legally committed.
 
 Update only `AGENTS.md`; never duplicate its rules into a harness-specific
 instruction file.
+
+The [orchestration policy](AGENTS.md#agent-orchestration) makes bounded delegation
+and lead review persistent across tools without pinning models or reasoning
+levels. See [coding agent setup](CONTRIBUTING.md#coding-agent-setup) for instruction
+discovery and personal runtime routing.
