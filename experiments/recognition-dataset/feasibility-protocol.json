@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "issue": 41,
+  "aggregateNewSeconds": 900,
+  "priorChargedSeconds": 354.078,
+  "dataDir": "work/modern/dataset",
+  "outputDir": "work/modern/feasibility-runs",
+  "baseDir": "work/modern/base",
+  "augmentationDir": "work/modern/augmentation-v3",
+  "shippedModel": "packages/test-fixtures/node_modules/@scoriiu/fenshot/model/chess-tiles-v2.onnx",
+  "recipe": {
+    "optimizer": "AdamW",
+    "learningRate": 0.00001,
+    "minimumLearningRate": 0.000001,
+    "weightDecay": 0.0001,
+    "batchSize": 512,
+    "precision": "fp32",
+    "sampling": "equal artwork-family board sampling, smaller families cycled",
+    "loss": "mean available-class cross-entropy per batch",
+    "selection": "earliest lowest mean per-family/per-class development cross-entropy",
+    "augmentation": "real-only control versus 50% canonical + 50% fixed reviewed print/alignment/combined variants; same seed 4101; dev unchanged",
+    "confidenceFloor": 0.7
+  },
+  "runs": {
+    "pilot": { "seed": 4100, "epochs": 2, "maxSeconds": 60, "minimumUpdates": 1 },
+    "real-only": { "seed": 4101, "epochs": 40, "maxSeconds": 420, "minimumUpdates": 200 },
+    "degraded": { "seed": 4101, "epochs": 40, "maxSeconds": 420, "minimumUpdates": 200 }
+  }
+}

@@ -1,0 +1,2983 @@
+{
+  "duplicates": [
+    {
+      "page": 50,
+      "sameGlyphGridAs": "wikibooks-p048-052"
+    },
+    {
+      "page": 50,
+      "sameGlyphGridAs": "wikibooks-p049-053"
+    },
+    {
+      "page": 51,
+      "sameGlyphGridAs": "wikibooks-p048-052"
+    },
+    {
+      "page": 53,
+      "sameGlyphGridAs": "wikibooks-p048-052"
+    },
+    {
+      "page": 53,
+      "sameGlyphGridAs": "wikibooks-p052-057"
+    },
+    {
+      "page": 54,
+      "sameGlyphGridAs": "wikibooks-p048-052"
+    },
+    {
+      "page": 55,
+      "sameGlyphGridAs": "wikibooks-p048-052"
+    },
+    {
+      "page": 55,
+      "sameGlyphGridAs": "wikibooks-p054-060"
+    },
+    {
+      "page": 60,
+      "sameGlyphGridAs": "wikibooks-p059-069"
+    }
+  ],
+  "records": [
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p006-000",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 6,
+      "placement": "8/6b1/8/8/4K3/8/6k1/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        288,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p006-001",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 6,
+      "placement": "8/8/8/8/4N3/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1553,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p007-002",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 7,
+      "placement": "8/8/8/8/4B3/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        905,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p008-003",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 8,
+      "placement": "8/8/8/8/4R3/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        288,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p008-004",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 8,
+      "placement": "8/8/8/8/4Q3/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1321,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p009-005",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 9,
+      "placement": "8/8/8/3pp3/3P4/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        225,
+        816,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p009-006",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 9,
+      "placement": "8/8/8/3pP3/8/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        837,
+        816,
+        491,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p011-007",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 11,
+      "placement": "8/5p2/8/4P3/8/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        225,
+        461,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p011-008",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 11,
+      "placement": "8/8/8/4Pp2/8/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        837,
+        461,
+        491,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p011-009",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 11,
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1223,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p014-010",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 14,
+      "placement": "8/5k2/8/8/5q2/3B4/8/4K3",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        947,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p015-011",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 15,
+      "placement": "8/5k2/8/8/2B2q2/8/8/4K3",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        407,
+        493,
+        489
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p016-012",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 16,
+      "placement": "8/5k2/8/8/2q5/8/8/4K3",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        367,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p020-013",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 20,
+      "placement": "rnbqr2k/pppp1Npp/5n2/4p3/4P3/8/PPPP1PPP/R1BQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        500,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p021-014",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 21,
+      "placement": "4k3/ppp2ppp/5n2/8/1b2P3/2N5/PPP2PPP/4K3",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        594,
+        386,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p022-015",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 22,
+      "placement": "3q4/pppk1ppp/8/8/8/8/PPP2PPP/R4RK1",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        386,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p023-016",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 23,
+      "placement": "5k2/ppp2ppp/1q6/8/8/7n/PPP3PP/R4R1K",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        463,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p023-017",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 23,
+      "placement": "5k2/ppp2ppp/8/8/8/7n/PPP3PP/R4RqK",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1033,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p023-018",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 23,
+      "placement": "5k2/ppp2ppp/8/8/8/7n/PPP3PP/R5RK",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1603,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p024-019",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 24,
+      "placement": "5k2/ppp2ppp/8/8/8/8/PPP2nPP/R5RK",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        364,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p025-020",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 25,
+      "placement": "6R1/8/8/8/5k2/1p6/1K3p1P/1b6",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        332,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p028-021",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 28,
+      "placement": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        525,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p028-022",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 28,
+      "placement": "rnbqkb1r/ppp1pppp/5n2/8/3PP3/8/PP3PPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1418,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p029-023",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 29,
+      "placement": "rnbqkb1r/ppp2ppp/4p3/4P3/2BP4/2Q5/PP3PPP/R1B1K1NR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        527,
+        493,
+        489
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p031-024",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 31,
+      "placement": "rnbqk2r/ppp1bppp/4pn2/3p2B1/2PP4/2N5/PP3PPP/R2QKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1080,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p033-025",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 33,
+      "placement": "3k4/3P4/2K5/p7/8/P7/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        544,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p033-026",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 33,
+      "placement": "3k4/3P4/2K5/p7/P7/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1280,
+        493,
+        489
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p034-027",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 34,
+      "placement": "8/3Pk3/2K5/p7/P7/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        288,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p034-028",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 34,
+      "placement": "8/2KPk3/8/p7/P7/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1061,
+        493,
+        489
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p035-029",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 35,
+      "placement": "8/2KP4/4k3/p7/P7/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        288,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p035-030",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 35,
+      "placement": "3Q4/2K5/4k3/p7/P7/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        981,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p037-031",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 37,
+      "placement": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1252,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p038-032",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 38,
+      "placement": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        284,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p038-033",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 38,
+      "placement": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1022,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p039-034",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 39,
+      "placement": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        450,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p039-035",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 39,
+      "placement": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1622,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p040-036",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 40,
+      "placement": "rnbqkbnr/ppp2ppp/8/8/2B1P3/5N2/Pp3PPP/RNBQK2R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        721,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p040-037",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 40,
+      "placement": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1656,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p041-038",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 41,
+      "placement": "rnbqkbnr/pp1ppppp/2p5/8/3NP3/8/PPP2PPP/RNBQKB1R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        284,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p041-039",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 41,
+      "placement": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1497,
+        424,
+        423
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p042-040",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 42,
+      "placement": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        761,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p042-041",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 42,
+      "placement": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/2N5/PPP2PPP/R1BQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1299,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p043-042",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 43,
+      "placement": "rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        450,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p043-043",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 43,
+      "placement": "rnbqk1nr/ppppppbp/6p1/8/3PP3/8/PPP2PPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        987,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p044-044",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 44,
+      "placement": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        450,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p044-045",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 44,
+      "placement": "rnbqkb1r/ppp1pppp/3p4/3nP3/3P4/8/PPP2PPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        987,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p045-046",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 45,
+      "placement": "rnb1kbnr/ppp1pppp/8/q7/8/2N5/PPPP1PPP/R1BQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        987,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p046-047",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 46,
+      "placement": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        583,
+        424,
+        423
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p046-048",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 46,
+      "placement": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1120,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p047-049",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 47,
+      "placement": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        364,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p047-050",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 47,
+      "placement": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1060,
+        424,
+        423
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p048-051",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 48,
+      "placement": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        364,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p048-052",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 48,
+      "placement": "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1417,
+        424,
+        423
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p049-053",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 49,
+      "placement": "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        244,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p049-054",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 49,
+      "placement": "rnbqk2r/ppppppbp/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        942,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p049-055",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 49,
+      "placement": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP3PPP/R1BQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1478,
+        424,
+        423
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p051-056",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 51,
+      "placement": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        364,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p052-057",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 52,
+      "placement": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        284,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p052-058",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 52,
+      "placement": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        982,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p053-059",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 53,
+      "placement": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1685,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p054-060",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 54,
+      "placement": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1259,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p055-061",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 55,
+      "placement": "rnbqkb1r/pp1p1ppp/4pn2/2pP4/2P5/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        364,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p056-062",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 56,
+      "placement": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP2PPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        364,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p056-063",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 56,
+      "placement": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1234,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p057-064",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 57,
+      "placement": "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        442,
+        424,
+        423
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p057-065",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 57,
+      "placement": "rnbqkbnr/pp1ppppp/8/2p5/2P5/8/PP1PPPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1139,
+        424,
+        423
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p058-066",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 58,
+      "placement": "rnbqkb1r/pppppppp/5n2/8/2P5/8/PP1PPPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        364,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p058-067",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 58,
+      "placement": "rnbqkbnr/pppp1ppp/4p3/8/2P5/8/PP1PPPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1060,
+        424,
+        423
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p059-068",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 59,
+      "placement": "rnbqkbnr/pp1ppppp/2p5/8/2P5/8/PP1PPPPP/RNBQKBNR",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        364,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p059-069",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 59,
+      "placement": "rnbqkbnr/ppp1pppp/8/3p4/8/5N2/PPPPPPPP/RNBQKB1R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1101,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p059-070",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 59,
+      "placement": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        1639,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p060-071",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 60,
+      "placement": "rnbqkbnr/ppp1pppp/8/3p4/8/5NP1/PPPPPP1P/RNBQKB1R",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        636,
+        987,
+        424,
+        421
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p061-072",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 61,
+      "placement": "8/8/3k4/8/8/8/8/KQ6",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        590,
+        987,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p062-073",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 62,
+      "placement": "8/8/4k3/2Q5/8/8/8/K7",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        367,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p062-074",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 62,
+      "placement": "8/8/7k/8/6Q1/8/1K6/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1610,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p064-075",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 64,
+      "placement": "8/8/8/5k2/4R3/3K4/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        607,
+        493,
+        489
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p065-076",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 65,
+      "placement": "8/5K1k/6R1/8/8/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        367,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p066-077",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 66,
+      "placement": "8/8/8/3k4/8/3K4/8/R7",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        288,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p067-078",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 67,
+      "placement": "8/8/8/8/8/3BBK2/8/4k3",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        288,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p067-079",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 67,
+      "placement": "3k4/8/4K3/1B1N4/8/8/8/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1373,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p068-080",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 68,
+      "placement": "8/8/8/6N1/8/6K1/3N4/7k",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        525,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p069-081",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 69,
+      "placement": "8/8/8/4P3/k7/8/K7/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        373,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p069-082",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 69,
+      "placement": "8/8/2p5/4P3/k7/8/K7/8",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        1654,
+        493,
+        491
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p070-083",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 70,
+      "placement": "8/2p5/8/3P4/5P2/k7/8/K7",
+      "proposal": {
+        "evidence": "64 published image placements plus visually mapped original glyphs; rendered board review still required",
+        "glyphMapSha256": "dce080c104bd2cf3c61a5e46a486e2c987d36f3c19bdf671af2ffd09bf34376f",
+        "layoutSha256": "ce7893d8bb28b6ee79bc79c28598dad7d68b07d8b7986c6346ebb85e369cbed2",
+        "method": "pdf-asset-placement"
+      },
+      "rect": [
+        601,
+        639,
+        493,
+        489
+      ],
+      "review": {
+        "all64": false,
+        "geometry": false,
+        "status": "proposed",
+        "type": "agent-assisted"
+      },
+      "sourceId": "wikibooks-chess",
+      "split": "train",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    }
+  ],
+  "schema": 1
+}

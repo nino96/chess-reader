@@ -1,0 +1,359 @@
+{
+  "boards": [
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "6a06278854981f1bb4b6230974a0ebb63b6e64474ea6d062ad1c037bda3d6dcb",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0001-01",
+      "occupied": 30,
+      "placementSha256": "b36733ff0572bf65ff3216f9dff30d356c8fe6153f3a75fd536e7387ba7467a9",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "cover",
+        "annotated"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "1fd9b7891847931c3e8abdff9a7f1230efc1b4081c717dd1c085dde1d3bc6f7b",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0015-01",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "initial-position",
+        "marker"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "152aea34c879978150cad7ac5d0b1bb0bf2112f23935e851801a5dbfd8fe2b71",
+      "density": "sparse",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0016-02",
+      "occupied": 5,
+      "placementSha256": "6813330c5d101921febf0442e575e4198cddeb0849f260f6c936945fa5177721",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "sparse-position"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "c599cb6ae821321804168db1fcefe5c1216abbf415f6550f338153f9ba7183b3",
+      "density": "medium",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0017-01",
+      "occupied": 12,
+      "placementSha256": "60176f6256839f6542198f6c19928a8c002c7e9581da56a177136bd98a01debf",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "sparse-position",
+        "clear-operations"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "6002954ebda517d789a0bb14b5e60ea5c2bc0dd77d178f7c55ade8a8700483c6",
+      "density": "medium",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0018-01",
+      "occupied": 20,
+      "placementSha256": "fa9cece33d6e66f8416bca708938a414913c82ce2a0b121d9f363b7d8b501998",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "fen-position"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "2ab0a05f042989f76cb5a827c5b57449914dbca1cc93cc0618f9c292186a4dda",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0018-02",
+      "occupied": 32,
+      "placementSha256": "2d6a6fd1f404e94b50f653e6a21d824fa6cfb404622a5d24335b9482ea59d80a",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "fen-file-position"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "faf56826a9f887b4d07358935f209fc74a056eb7ea40fcb922ca85045acd470c",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0019-01",
+      "occupied": 32,
+      "placementSha256": "603c64b290ac73c447a9dd218bc7d2c0ff3d064da7a132e05495f7f9af6e9bb0",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "pgn-step-3"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "0daa584aa7cd38f37976aa512f365d720ba65a8e196a8c350b6fc7f72bacbbb4",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0019-02",
+      "occupied": 32,
+      "placementSha256": "3b941e1ce9d9f3e81d7612a0e865466eeff733a561fd364ae47ea4ba3ed430c0",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "pgn-step-4"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "be252d9712da30478e91aa80bf10300edd50de76ab8db815f4892fbd8c26458d",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0020-01",
+      "occupied": 32,
+      "placementSha256": "603c64b290ac73c447a9dd218bc7d2c0ff3d064da7a132e05495f7f9af6e9bb0",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "pgn-step-3",
+        "last-move"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "61fc1b4952c94aa37c4723434275e5c59dc92d52437c80c943273b3bd09589a6",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0021-01",
+      "occupied": 32,
+      "placementSha256": "603c64b290ac73c447a9dd218bc7d2c0ff3d064da7a132e05495f7f9af6e9bb0",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "pgn-step-3",
+        "arrow-annotation"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "d53ae571ac6e8dba39e5e471804747aab2819b007560e38aafd71fd64820229b",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0022-01",
+      "occupied": 32,
+      "placementSha256": "8d25bd43d4fa02d3c5f4e421f9b6ca850f716b0ba1c4ca32c767723346d34b0e",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "pgn-step-3",
+        "black-view",
+        "arrow-annotation"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "196e7c7d164fb153bc82e9cdba9da09ad7814391f4fe47eb634a8d7cbfb26a2b",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0022-02",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "initial-position",
+        "colored-squares"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "ecfff256bddda4db81bfcdbe0eae2f1d08924b1ae447032d31bd1d461384d21f",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0023-01",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "initial-position",
+        "circle-annotation"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "f282e0f60b8db173b595875aeaff7fe22a07a99b3d7569885751cc2ec2490e53",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0024-01",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "initial-position",
+        "cross-annotation"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "93f1422b6660548d174cfa10cfc4acddcba6ac2864cdad1297f054dcb9a8444c",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0024-02",
+      "occupied": 32,
+      "placementSha256": "603c64b290ac73c447a9dd218bc7d2c0ff3d064da7a132e05495f7f9af6e9bb0",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "pgn-step-3",
+        "comment-annotation"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "6ca4167331f014e3bfc6219c8b88eca4dad3d9023f5b65ed6c201cfeedea6741",
+      "density": "dense",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0025-01",
+      "occupied": 32,
+      "placementSha256": "cdf7c7eb157732d4e90dab8e94d5fa3ac7ccf12b8e2a4520dbddb1ad0bf78a80",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "pgn-step-2",
+        "main-line-annotation"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "printed-document",
+      "cropSha256": "d9d44e89dcbb5cdab0ca6b044c63abc3e171c3d78e540f13a89d97947d6f2ecb",
+      "density": "medium",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0026-01",
+      "occupied": 20,
+      "placementSha256": "61848093c7dd05539b7c04e5e0a8976d7ca7d518c174bc6ad00328830066b6ae",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "fen-position",
+        "black-view",
+        "possible-moves"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "empty-background",
+      "cropSha256": "69abd6f4897e74f107b72c2c1e60e1d5338ba3aabcb7f3085a46c232bec5277a",
+      "density": "empty",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0008-green",
+      "occupied": 0,
+      "placementSha256": "d21a13adc9dfb36aba624fd37c2f34dfbf72e283fd05f8715d3d485c7883bb3a",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "green"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "empty-background",
+      "cropSha256": "29ee4ea39136a006fc60c93f406a53c24479e0ce7d81a152b66fcadb7bfefb6a",
+      "density": "empty",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0008-classical",
+      "occupied": 0,
+      "placementSha256": "d21a13adc9dfb36aba624fd37c2f34dfbf72e283fd05f8715d3d485c7883bb3a",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "classical"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "empty-background",
+      "cropSha256": "bc9e49d66f314d10ae5dd00f29123612f23123e978c649955fd87c32396a904a",
+      "density": "empty",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0008-pinkpyramidal",
+      "occupied": 0,
+      "placementSha256": "d21a13adc9dfb36aba624fd37c2f34dfbf72e283fd05f8715d3d485c7883bb3a",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "pinkpyramidal"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "empty-background",
+      "cropSha256": "433406c519b15d028493eb72f225e3a3fccd6c2f748d1e0ba8e7c67fb6fb3ea0",
+      "density": "empty",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0008-wood",
+      "occupied": 0,
+      "placementSha256": "d21a13adc9dfb36aba624fd37c2f34dfbf72e283fd05f8715d3d485c7883bb3a",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "wood"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "empty-background",
+      "cropSha256": "beb58313013a94a7ec1ee28069304d17fb266394572c8a272d080f22ed5b853c",
+      "density": "empty",
+      "exposed": false,
+      "family": "mpchess-default",
+      "id": "mpchess-p0008-dotted",
+      "occupied": 0,
+      "placementSha256": "d21a13adc9dfb36aba624fd37c2f34dfbf72e283fd05f8715d3d485c7883bb3a",
+      "sourceId": "ctan-mpchess",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "dotted"
+      ]
+    }
+  ],
+  "schema": 1
+}

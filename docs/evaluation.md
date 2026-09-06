@@ -86,6 +86,16 @@ records the measured rationale and scope of this gate change.
 
 ## 3. Standard commands
 
+Issue #41's owner-authorized [feasibility amendment](../experiments/recognition-dataset/EXECUTION.md)
+allows a smaller reviewed real-document training/development collection before
+the full future qualification corpus is ready. Its provisional family groups
+and reserved evaluation are exploratory evidence, not production qualification.
+Source/document/artwork leakage remains prohibited; repeated positions alone
+are audited separately from visual duplication under the amended protocol.
+Successful acquisition or completed training does not waive any numeric
+promotion, confidence, browser or device requirement. Earlier frozen protocols
+and results remain unchanged.
+
 The bootstrap issue provides the fast commands needed immediately. Subsystem
 issues add their eval commands when the corresponding implementation first
 exists. A command must not be introduced as a passing no-op or placeholder.

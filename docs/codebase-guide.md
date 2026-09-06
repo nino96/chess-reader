@@ -338,6 +338,7 @@ Accessibility is part of the implementation rather than a later cleanup:
 |       `-- test/             Shared Vitest DOM setup
 |-- packages/test-fixtures/   Synthetic fixture PDF, generator, provenance manifest
 |-- experiments/recognition-training/  Isolated TileNet data, CUDA runs and browser evaluation
+|-- experiments/recognition-dataset/   Public real-diagram acquisition, visual labels and data gates
 |-- docs/                     Architecture, constraints, issue plan, evidence
 `-- types/                    Narrow declarations for otherwise untyped tools
 ```
@@ -352,6 +353,38 @@ existing pinned JavaScript dependencies for generation and a separate browser
 evaluation build. Its data, caches and candidate weights are ignored; recipes,
 source identities and reviewable metric reports are retained. It is outside
 the PWA dependency graph and never replaces the production model.
+
+`experiments/recognition-dataset/` is [issue #41](https://github.com/nino96/chess-reader/issues/41)'s
+isolated real-document dataset project. Its historical [plan](../experiments/recognition-dataset/PLAN.md),
+owner-authorized [execution amendment](../experiments/recognition-dataset/EXECUTION.md)
+and [commands](../experiments/recognition-dataset/README.md) cover bounded public
+PDF acquisition, source/rights hashes, selected-page extraction, versioned visual
+proposals and decisions, leakage checks and an explicit data-readiness failure.
+Python/Poppler/Pillow tools run outside the PWA; no runtime dependencies or
+recognition behavior change. Downloaded originals, crops and review
+images remain local and ignored. `modern_intake.py`, `modern_extract.py`,
+`wikibooks_proposals.py` and `import_historic.py` prepare public proposals;
+`assemble_feasibility.py` consumes separate hash-bound visual decisions.
+`modern-preprocess.mjs` uses the pinned production tile extractor, with strict
+JS checking and numerical ordering tests. `preflight_feasibility.py` freezes
+data/code/rights before `feasibility_train.py` executes the amended bounded
+adaptation; `compare_feasibility.py` reuses saved probabilities. Neither the
+initial pilot nor this exploratory collection is production qualification.
+`degrade_real.py` and `pack_augmentation.py` build the reviewed train-only
+transform bank. `recover_fenshot.py` preserves and loads the local hash-bound
+base checkpoint instead of reconstructing it for every fine-tune. Actual
+counts, completed runs and limitations are in the
+[execution report](../experiments/recognition-dataset/EXECUTION-REPORT.md).
+
+The active successor is [#42](https://github.com/nino96/chess-reader/issues/42).
+Its [handoff](../experiments/recognition-dataset/handoff/README.md) preserves
+public factual labels/decisions with byte hashes, freeze/provenance evidence,
+and the recovered shipped-base checkpoint with the upstream MIT notice.
+`handoff/export_public_records.py` and `preserve_base.py` verify/restore without
+overwriting conflicting local work. `handoff/acquisition_job.py` provides a
+detached Linux download job with persisted status/stop/resume, source/hash
+allowlists and bounded storage/time/transfers; it does not discover sources,
+approve rights or labels, extract pages, train, or change the PWA.
 
 The architecture lists future `packages/*` directories for core models,
 storage, readers, recognition, chess rules, the engine, and fixtures. They do

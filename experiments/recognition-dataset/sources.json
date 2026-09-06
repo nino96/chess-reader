@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "reviewDate": "2026-09-06",
+  "repositoryTerms": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia",
+  "sources": [
+    {
+      "id": "public-a",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Chess_fundamentals_%28IA_chessfundamental00capa%29.pdf",
+      "rightsUrl": "https://commons.wikimedia.org/wiki/File:Chess_fundamentals_(IA_chessfundamental00capa).pdf",
+      "attribution": "Jose Raul Capablanca, Chess Fundamentals, Harcourt, Brace and Company, New York, 1921; California Digital Library / Internet Archive scan; Commons upload by Fae, 2020-10-10.",
+      "workGroup": "capablanca-fundamentals",
+      "editionGroup": "capablanca-fundamentals-related-editions",
+      "lineageGroup": "unresolved-historic-typefoundry",
+      "lineageStatus": "unresolved",
+      "publisher": "Harcourt, Brace and Company",
+      "publicationYear": 1921,
+      "sourcePageRevision": "966530114",
+      "pretrainedOverlap": {
+        "fenshot": "unknown",
+        "fenify": "unknown",
+        "nakst": "unknown",
+        "chessvision-dev": "unknown"
+      },
+      "rights": {
+        "acquisition": "approved",
+        "training": "public-domain-with-jurisdiction-limit",
+        "distribution": "public-domain-with-jurisdiction-limit",
+        "basis": "File-specific PD-scan and PD-old-80-expired: mechanical reproduction of a public-domain 1921 work; author died 1942. Public-domain work reuse is the training basis, not an AI-specific license. No worldwide model-distribution clearance asserted.",
+        "jurisdictions": [
+          "United States",
+          "country of origin",
+          "life-plus-80-or-shorter jurisdictions as stated on source page"
+        ],
+        "notice": "Retain factual author, edition, scan and source attribution. Rights-page text remains separately licensed; snapshot stays local. Recheck before distribution into longer-term jurisdictions."
+      },
+      "expectedSha256": "e4c5693a3f3ee3d89c0321a4092557fca721b01351effee0f8bb7d6c8fde4a78"
+    },
+    {
+      "id": "public-b",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/The_chess-player%27s_handbook_-_a_popular_and_scientific_introduction_to_the_game_of_chess%2C_exemplified_in_games_actually_played_by_the_greatest_masters_and_illustrated_by_num_%28IA_chessplayershand00stau%29.pdf",
+      "rightsUrl": "https://commons.wikimedia.org/wiki/File:The_chess-player%27s_handbook_-_a_popular_and_scientific_introduction_to_the_game_of_chess,_exemplified_in_games_actually_played_by_the_greatest_masters_and_illustrated_by_num_(IA_chessplayershand00stau).pdf",
+      "attribution": "Howard Staunton, The Chess-Player's Handbook, Henry G. Bohn, London, 1848; Harrison and Sons printer; Harold B. Lee Library / Brigham Young University / Internet Archive scan; Commons upload by Fae, 2026-07-08. Wood-engraved diagrams unsigned.",
+      "workGroup": "staunton-handbook",
+      "editionGroup": "staunton-handbook-related-editions",
+      "lineageGroup": "unresolved-historic-typefoundry",
+      "lineageStatus": "unresolved",
+      "publisher": "Henry G. Bohn",
+      "publicationYear": 1848,
+      "sourcePageRevision": "snapshot-at-intake",
+      "incompleteSource": "Source record reports missing printed pages 35-52 and 71-74; PDF ordinal is not printed page number.",
+      "pretrainedOverlap": {
+        "fenshot": "unknown",
+        "fenify": "unknown",
+        "nakst": "unknown",
+        "chessvision-dev": "unknown"
+      },
+      "rights": {
+        "acquisition": "approved",
+        "training": "public-domain-with-jurisdiction-limit",
+        "distribution": "public-domain-with-jurisdiction-limit",
+        "basis": "File-specific PD-old-100 and expired US copyright for the 1848 work; author died 1874. Training reuse rests on public-domain status, not inferred permission from another model.",
+        "jurisdictions": [
+          "United States",
+          "country of origin",
+          "life-plus-100-or-shorter jurisdictions as stated on source page"
+        ],
+        "notice": "Retain author/publisher/printer and scan attribution. Unsigned engraver lineage unresolved. Snapshot stays local."
+      },
+      "expectedSha256": "806c92594a9ff6d9e08c4b30c69f08c3f427cce0fe2e9283e4a52f7ff81b806e"
+    },
+    {
+      "id": "public-c",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Lasker_%281927%29_-_Manual_of_Chess.pdf",
+      "rightsUrl": "https://commons.wikimedia.org/wiki/File:Lasker_(1927)_-_Manual_of_Chess.pdf",
+      "attribution": "Emanuel Lasker, Manual of Chess, 1927; Internet Archive item bwb_S0-CIH-670; Commons-hosted original. Publisher to be verified against title page.",
+      "workGroup": "lasker-manual",
+      "editionGroup": "lasker-manual-related-editions",
+      "lineageGroup": "unresolved-historic-typefoundry",
+      "lineageStatus": "unresolved",
+      "publisher": "pending-title-page-review",
+      "publicationYear": 1927,
+      "sourcePageRevision": "snapshot-at-intake",
+      "pretrainedOverlap": {
+        "fenshot": "unknown",
+        "fenify": "unknown",
+        "nakst": "unknown",
+        "chessvision-dev": "unknown"
+      },
+      "rights": {
+        "acquisition": "approved",
+        "training": "public-domain-with-jurisdiction-limit",
+        "distribution": "public-domain-with-jurisdiction-limit",
+        "basis": "File-specific US expired and source-country public-domain tags, including life-plus-70/80 determinations; author died 1941. Review exact edition and any separately attributed later additions before extracting. No universal fine-tuned-weight license asserted.",
+        "jurisdictions": [
+          "United States",
+          "country of origin",
+          "life-plus-70-or-shorter jurisdictions as stated on source page"
+        ],
+        "notice": "Preserve source attribution and jurisdiction caveats. No later editorial content is cleared by author death alone. Snapshot stays local."
+      },
+      "expectedSha256": "0bb9ceb9dae0ce24279866d3dcdfa7c4500e8793e8716f6e4a5c5310574c3269"
+    }
+  ]
+}

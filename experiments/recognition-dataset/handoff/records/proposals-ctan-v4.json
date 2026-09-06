@@ -1,0 +1,707 @@
+{
+  "schema": 3,
+  "sourceId": "ctan-chessboard",
+  "records": [
+    {
+      "id": "ctan-chessboard-p0019-01",
+      "sourceId": "ctan-chessboard",
+      "page": 19,
+      "rect": [
+        1101,
+        227,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/pppppppp/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "dense",
+        "notation-store-area"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0020-03",
+      "sourceId": "ctan-chessboard",
+      "page": 20,
+      "rect": [
+        1101,
+        1325,
+        342,
+        342
+      ],
+      "placement": "r2q3b/1b6/8/8/2B4R/8/8/Q5N1",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "sparse",
+        "custom-pieces",
+        "notation"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0032-06",
+      "sourceId": "ctan-chessboard",
+      "page": 32,
+      "rect": [
+        1101,
+        599,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "colored-emphasis"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0032-07",
+      "sourceId": "ctan-chessboard",
+      "page": 32,
+      "rect": [
+        1101,
+        1450,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-lsbc3",
+      "split": "dev",
+      "tags": [
+        "flat-dark",
+        "colored-pieces",
+        "colored-emphasis"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0033-08",
+      "sourceId": "ctan-chessboard",
+      "page": 33,
+      "rect": [
+        1101,
+        957,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-millennia",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "colored-pieces"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0033-09",
+      "sourceId": "ctan-chessboard",
+      "page": 33,
+      "rect": [
+        1101,
+        1428,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-lsbc3",
+      "split": "dev",
+      "tags": [
+        "flat-dark",
+        "colored-pieces"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0034-10",
+      "sourceId": "ctan-chessboard",
+      "page": 34,
+      "rect": [
+        831,
+        770,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-lsbc4",
+      "split": "dev",
+      "tags": [
+        "flat-dark",
+        "opacity",
+        "colored-pieces"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0034-11",
+      "sourceId": "ctan-chessboard",
+      "page": 34,
+      "rect": [
+        831,
+        1214,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-lsbc4",
+      "split": "dev",
+      "tags": [
+        "flat-dark",
+        "opacity",
+        "colored-pieces",
+        "translucent"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0036-12",
+      "sourceId": "ctan-chessboard",
+      "page": 36,
+      "rect": [
+        1101,
+        1465,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "small-labels"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0037-13",
+      "sourceId": "ctan-chessboard",
+      "page": 37,
+      "rect": [
+        1101,
+        893,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "custom-labels"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0039-15",
+      "sourceId": "ctan-chessboard",
+      "page": 39,
+      "rect": [
+        1101,
+        575,
+        342,
+        342
+      ],
+      "placement": "k1K5/8/8/8/8/8/8/8",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "mover-offset",
+        "two-kings"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0048-16",
+      "sourceId": "ctan-chessboard",
+      "page": 48,
+      "rect": [
+        1101,
+        242,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "mark-overlays",
+        "opening"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0048-17",
+      "sourceId": "ctan-chessboard",
+      "page": 48,
+      "rect": [
+        1101,
+        861,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppp1ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "mark-overlays",
+        "notation-opening"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0049-18",
+      "sourceId": "ctan-chessboard",
+      "page": 49,
+      "rect": [
+        1101,
+        276,
+        342,
+        342
+      ],
+      "placement": "RNBKQBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbkqbnr",
+      "orientation": "black-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "inverse-orientation",
+        "opening"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0052-19",
+      "sourceId": "ctan-chessboard",
+      "page": 52,
+      "rect": [
+        1101,
+        370,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "region-markers"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-v2-p0014-22",
+      "sourceId": "ctan-chessboard",
+      "page": 14,
+      "rect": [
+        1101,
+        1153,
+        342,
+        342
+      ],
+      "placement": "r1bqkb1r/8/8/4p3/4P3/5N2/2PP1P1P/2BQK2R",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "notation-clear-area",
+        "sparse"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-v2-p0015-23",
+      "sourceId": "ctan-chessboard",
+      "page": 15,
+      "rect": [
+        1101,
+        258,
+        342,
+        342
+      ],
+      "placement": "4k2r/8/8/8/8/8/8/r2QK1R1",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "notation-add-pieces",
+        "sparse"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-v2-p0015-24",
+      "sourceId": "ctan-chessboard",
+      "page": 15,
+      "rect": [
+        1101,
+        1267,
+        342,
+        342
+      ],
+      "placement": "2k5/p6b/8/8/3P4/2K5/P1N5/8",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "notation-add-white-black",
+        "sparse"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-v2-p0016-25",
+      "sourceId": "ctan-chessboard",
+      "page": 16,
+      "rect": [
+        1101,
+        227,
+        342,
+        342
+      ],
+      "placement": "KKbqkbnr/pppppppp/KK6/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "notation-add-fen",
+        "extra-pieces"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-v2-p0016-26",
+      "sourceId": "ctan-chessboard",
+      "page": 16,
+      "rect": [
+        1101,
+        866,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/ppKKpppp/8/2KK4/8/5KK1/PPPPPPPP/RNBQKKKR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "notation-startfen",
+        "extra-pieces"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-v2-p0016-27",
+      "sourceId": "ctan-chessboard",
+      "page": 16,
+      "rect": [
+        1101,
+        1638,
+        342,
+        342
+      ],
+      "placement": "kqrb4/8/8/KQRB4/5qr1/8/8/8",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "notation-fill-area",
+        "sparse"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": false,
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "ctan-chessboard-p0019-02",
+      "sourceId": "ctan-chessboard",
+      "page": 19,
+      "rect": [
+        1101,
+        698,
+        342,
+        342
+      ],
+      "placement": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "ctan-default",
+      "split": "dev",
+      "tags": [
+        "hatching",
+        "medium-density",
+        "notation-opening"
+      ],
+      "proposal": {
+        "method": "notation+visual",
+        "evidence": "printed-command-and-all-64-square-visual-review"
+      },
+      "review": {
+        "reviewer": "agent-visual-ctan",
+        "type": "agent-assisted",
+        "all64": true,
+        "geometry": true,
+        "status": "proposed"
+      }
+    }
+  ],
+  "leadCorrections": "Pixel-measured inner bounds, image-relative orientation, sparse-piece identity and rank corrections; final crop review required."
+}

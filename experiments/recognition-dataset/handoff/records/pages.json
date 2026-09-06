@@ -1,0 +1,1799 @@
+{
+  "catalogSha256": "25c1568f8d11f67af3098c9c20f8027a1e6bd65d99f32ceddcb1cb5a813f480a",
+  "pages": [
+    {
+      "image": "wikibooks-chess-p0005.png",
+      "page": 5,
+      "sha256": "0c7b1d47885e91cf24f01e335e67a0a08b589b271b37b76373492fe76790c238",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0006.png",
+      "page": 6,
+      "sha256": "68f8918b95912b6f89ba64533fd0f89f162e78087602347b4a589443d939178c",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0007.png",
+      "page": 7,
+      "sha256": "fd59f63ae701f40aacc8e6fcf302a815f49a6e79ee53a236d06669932ca0c0a2",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0008.png",
+      "page": 8,
+      "sha256": "bf2f0ee7b0910060eb49857d451141d74aad2c53d2f806b8e2d3b3bfcd7e4f34",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0009.png",
+      "page": 9,
+      "sha256": "8f65e58c99dea1dd429d5df3ac8680e9090d3d02eefff03ed87c826a3cc66057",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0010.png",
+      "page": 10,
+      "sha256": "fb96ea997b0a1c87a8d01ac98c57e30bf05340e3761ecc2bd7dc2a2e48a4688d",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0011.png",
+      "page": 11,
+      "sha256": "5d292c81f258a8200fa6fbea45f08a103d956db6869d11828a02c498a593ef7b",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0012.png",
+      "page": 12,
+      "sha256": "36030d3e202e0545f162510fc86199819907bca6507ef3bdaf9c637c5db3b011",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0013.png",
+      "page": 13,
+      "sha256": "f92050e1f7022657e3d14161a0d5362b30c0b69abb564cffba370e2825c1f265",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0014.png",
+      "page": 14,
+      "sha256": "e8727ace8d8422c150f31477691505966d03762f00e7ab2da92d7c329f143f44",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0015.png",
+      "page": 15,
+      "sha256": "f471fbfa7b7d0698a5c28533a40223f61b22dd5d5411ca9e75661d78f40ef9a3",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0016.png",
+      "page": 16,
+      "sha256": "e7be153713e99d5c84c4fb71681af7737aa49f6e399d27d068d89c28834da954",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0017.png",
+      "page": 17,
+      "sha256": "2f701ea583a9c59d476ae0cc3374fc5d89dc29bc191d62b3b6111e0211f09e5e",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0018.png",
+      "page": 18,
+      "sha256": "dfd0381da2659eaebd469a085780e6dc689a44dcd5e0b6ca933cef55e04eb6a1",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0019.png",
+      "page": 19,
+      "sha256": "40d536b1dd173f1f1c3086780682f08591d85c4b7de72b7a7dae5d670d61438e",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0020.png",
+      "page": 20,
+      "sha256": "d89fb70784c967d7db429c1b7dc20fcfb9c11d4da27b6ae9a2f005218618bebd",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0021.png",
+      "page": 21,
+      "sha256": "25c8f8797bbee074b062b67c5c8abda4a3e70373a683d40982fdc2160f59c358",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0022.png",
+      "page": 22,
+      "sha256": "c2caff8e8056323934d4ddc007f9cf20c277289ff624a75ffeadb9dff1e45baa",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0023.png",
+      "page": 23,
+      "sha256": "c031d4590d96398d2394a6851130ecec9afe975afd9e9169e26906294578d2b4",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0024.png",
+      "page": 24,
+      "sha256": "5a812cc77c047cc33b33ff533285552f79e28c937b3d85eddd5f5105e00ac3ae",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0025.png",
+      "page": 25,
+      "sha256": "9fb5ef022c2c7500826b4e2d27db7735da0586fc4d4a9a12af87dc4a055e48c3",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0026.png",
+      "page": 26,
+      "sha256": "2c5f5174b0796fe67028bcf5b0c46b267564e622eb14999054230d40cd149e60",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0027.png",
+      "page": 27,
+      "sha256": "8717586ac4e0f55c3e9d51459a42f8690643bca93ef36c79aac0fbc48648d9da",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0028.png",
+      "page": 28,
+      "sha256": "bf9d0846b5d04d04afab33b08775e7e44218b2094f2379a101aa540b91a8493e",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0029.png",
+      "page": 29,
+      "sha256": "550b547dde996a5d3fd9c3b8fe12d09b50d748aabba9b888fb2e541a07962ac8",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0030.png",
+      "page": 30,
+      "sha256": "7614ab3576f4ae82c06f02e9bcdc6318856e22ba5abc5dfd65843607325ffe14",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0031.png",
+      "page": 31,
+      "sha256": "98196c1a77817910f2324a11bdba6b62873b5bbfe0414c94e1cb42959169f843",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0032.png",
+      "page": 32,
+      "sha256": "d157d37729a0c68122a6de3cc004390462f6cfcc492882b82a02089ce86a31b0",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0033.png",
+      "page": 33,
+      "sha256": "191ffd6f144d5bc613feca0c2a0a7a7b62ef78eaa2941f7cebd62a403653f8be",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0034.png",
+      "page": 34,
+      "sha256": "ccbe9f42cfff8c5536e27f199bbaf97b28054a21ada544a38c347f2d492b0334",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0035.png",
+      "page": 35,
+      "sha256": "9e22d3706e1e74dfe7e0210b839e8c915f7b76e9e8feb2d25c39362082d3d7c7",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0036.png",
+      "page": 36,
+      "sha256": "d6d05a6395b9e9c46d6e56d2e92e7a339de9ab06387ca927414b63271cc61cee",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0037.png",
+      "page": 37,
+      "sha256": "e91fdbf07916e50fa986d97b2a2862bcece52855921ae24bfa7456cf3739d346",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0038.png",
+      "page": 38,
+      "sha256": "d5ddb85636aeadadb5dfadddf6ad2757c617e9cc7793f95a691e103134d4082b",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0039.png",
+      "page": 39,
+      "sha256": "1c73c49c385ce3c374cb3b06aa902095e57c58a3cc3279ee6fb1bbffc759298f",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0040.png",
+      "page": 40,
+      "sha256": "3924036f1b6d6bffb586f7154804ad83d4592f786d6d428de9d66d26cbf9da59",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0041.png",
+      "page": 41,
+      "sha256": "dbf722fd064f2436276769f129749796ba88517a1accc6163bab3e9fa183d076",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0042.png",
+      "page": 42,
+      "sha256": "94432411b8b56423b5b6ff7e1b7336d8f84b378c413fb08aaad73e1782db9c78",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0043.png",
+      "page": 43,
+      "sha256": "08c7bb7f1d426d13ebd5bcbefe89f44238927836e3e454e99dff65dc63be4664",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0044.png",
+      "page": 44,
+      "sha256": "a16a8cb629f90dfb237dc94fde2e084d5c917f9d19b2fce187c8782ce31aabe7",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0045.png",
+      "page": 45,
+      "sha256": "d09167ae59fc8fd703aa4ad7227197487b907a5153b41b12967e67cf510feafe",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0046.png",
+      "page": 46,
+      "sha256": "57e27a0cf9de1e78a0411dadfd92c55e0630d6b40f86d3923e8f0a058e500ce8",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0047.png",
+      "page": 47,
+      "sha256": "b82067489eb46ada82ce7e7254862831d5848a43bef9bc76675a53a3786fbcb7",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0048.png",
+      "page": 48,
+      "sha256": "7a9c4252144c2dd37af2275556fa0f590f4103ac3421706b10b0f387234e9782",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0049.png",
+      "page": 49,
+      "sha256": "f892c0f70a36eccb70fde9c9bda2cbb6fab41a24faf1f44f757064202fd4c852",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0050.png",
+      "page": 50,
+      "sha256": "4ffbc33b738910f51c6bee2a5f740b3d4bfd6272c5bf2fbb26956c1a32248d12",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0051.png",
+      "page": 51,
+      "sha256": "5d4d731548325b080c387156924b8e69fcab4a3367db5024b98c7bb1a2437b87",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0052.png",
+      "page": 52,
+      "sha256": "a18770a2533d191b20911d966d8c1515ae02b46d423bdb312d9ccefdcd07bc3e",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0053.png",
+      "page": 53,
+      "sha256": "21b9d0fb32c25b6c4d7b9d7535eedc77474b920d6baab94b0a4843e38cdee2aa",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0054.png",
+      "page": 54,
+      "sha256": "c852163a55240404c142e2718137ffb9576c17673b59197f24ca4081d2153567",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0055.png",
+      "page": 55,
+      "sha256": "6295825e61eb0d366c7c01bf97386f422c8ff4afcffdc8c263ee267f7606b16f",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0056.png",
+      "page": 56,
+      "sha256": "39a1a08ea827b70d398ff806991a988870c84dedcd0fb70959380221b100d512",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0057.png",
+      "page": 57,
+      "sha256": "77702755b169729f979dc0877871944c6d7a6ac277c2fc58845a9b4b719f95db",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0058.png",
+      "page": 58,
+      "sha256": "1b39f7a1855ea45d55de347c560dfb20adead475fbfd6e1ba4e6f9e159f73b6d",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0059.png",
+      "page": 59,
+      "sha256": "f38ac8fe13daa5d3296deee311266da12f3a616291b727438f3b567ede3c37c0",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0060.png",
+      "page": 60,
+      "sha256": "c3ce863a362622eba5cce80ed3462f7a2fdbc5cffae28bdb8c10beba7a471308",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0061.png",
+      "page": 61,
+      "sha256": "7f1539c9b06610ad45c26a7790049f1a75d79a3147857accae46329988a8f90f",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0062.png",
+      "page": 62,
+      "sha256": "ba23a2221e34399c3977497cb67cc48008032148ef29daa87e18b99a3ca26ee8",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0063.png",
+      "page": 63,
+      "sha256": "7682faf120dd2a53d660538e726f9e60aa7fe0af58d5cfa8f7e004578fe348c4",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0064.png",
+      "page": 64,
+      "sha256": "527fa5afe93eb7fd8315c3381dd5b408c7fba15ed7bfda092c2ad7a1ad0d9faf",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0065.png",
+      "page": 65,
+      "sha256": "d7162ede97e30bc2a1c8194c9496e4dd0a2346f3ebc318da19bd17d49998b690",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0066.png",
+      "page": 66,
+      "sha256": "5f9340074014d392ff5eec489e2c0621a67af41fc507750eb45e9021d1208b51",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0067.png",
+      "page": 67,
+      "sha256": "22c409564e1bac54845c5ce4179491d9fab67a2e759a57b97f13abfb58418cd3",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0068.png",
+      "page": 68,
+      "sha256": "98aa4d2ef268fdce6e6a5ff8eabb36c4497c2c929899efde37320ae51bc65b2d",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0069.png",
+      "page": 69,
+      "sha256": "e721343dd5abe43d9664eadf10cdef3fb7cd44bf7434d8b50e3ede43bd1df8fa",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "wikibooks-chess-p0070.png",
+      "page": 70,
+      "sha256": "ce367ced38566726a165efe4b9d84267c2fa749371bc05c964529e51bc98687f",
+      "size": [
+        1696,
+        2400
+      ],
+      "sourceId": "wikibooks-chess",
+      "sourceSha256": null
+    },
+    {
+      "image": "chess-puzzles-p0001.png",
+      "page": 1,
+      "sha256": "2c05bfd55f1e5f88fdfdf4cff065123207e853acf1f938a1d998af5ca17ba82c",
+      "size": [
+        1782,
+        2400
+      ],
+      "sourceId": "chess-puzzles",
+      "sourceSha256": null
+    },
+    {
+      "image": "chess-puzzles-p0003.png",
+      "page": 3,
+      "sha256": "921f3c12591d7bb3baa6a58b920e998f93104b7c339b30bb6426706cab83d082",
+      "size": [
+        1782,
+        2400
+      ],
+      "sourceId": "chess-puzzles",
+      "sourceSha256": null
+    },
+    {
+      "image": "chess-puzzles-p0006.png",
+      "page": 6,
+      "sha256": "139cd033fb569550f20e39349aca51f8248ee1d026a33cdfda58ca975d799ace",
+      "size": [
+        1782,
+        2400
+      ],
+      "sourceId": "chess-puzzles",
+      "sourceSha256": null
+    },
+    {
+      "image": "chess-puzzles-p0010.png",
+      "page": 10,
+      "sha256": "ed217ee772017ed38efdc966cce7c41617e12c8441f1b8c98d8666b1beaffd9d",
+      "size": [
+        1782,
+        2400
+      ],
+      "sourceId": "chess-puzzles",
+      "sourceSha256": null
+    },
+    {
+      "image": "chess-puzzles-p0015.png",
+      "page": 15,
+      "sha256": "c172a644c065562389309a8fab8cc6eb67968be1ecbeae5bb2f590b74a508fa5",
+      "size": [
+        1782,
+        2400
+      ],
+      "sourceId": "chess-puzzles",
+      "sourceSha256": null
+    },
+    {
+      "image": "chess-puzzles-p0020.png",
+      "page": 20,
+      "sha256": "6378f6084f42a9254ec00226a281c2b38f6b6bdb9d0a5576de3592f898e0c696",
+      "size": [
+        1782,
+        2400
+      ],
+      "sourceId": "chess-puzzles",
+      "sourceSha256": null
+    },
+    {
+      "image": "chess-puzzles-p0025.png",
+      "page": 25,
+      "sha256": "7e26357823982a47cd65e69bec1eb1572a15fea220fed866465cd8af6eb4f22d",
+      "size": [
+        1782,
+        2400
+      ],
+      "sourceId": "chess-puzzles",
+      "sourceSha256": null
+    },
+    {
+      "image": "chess-puzzles-p0030.png",
+      "page": 30,
+      "sha256": "cc5423c84f706e29bc53042dbac73b335c9e8efc9065e09c4704985b623be185",
+      "size": [
+        1782,
+        2400
+      ],
+      "sourceId": "chess-puzzles",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0005.png",
+      "page": 5,
+      "sha256": "1681caf505d3e10b18fb6536ac66fa12b567aebe4fdc2d2997cdb9479a654eba",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0006.png",
+      "page": 6,
+      "sha256": "694a06690f8a55f028b28eb8be2c099966bf92438e36dbedc00e433abb307255",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0007.png",
+      "page": 7,
+      "sha256": "826acb4dea2dc26a01f17ccc8887ffd6e36451ff74901b627ce21e60309a25ef",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0008.png",
+      "page": 8,
+      "sha256": "268665d3e3cc8b502bf091b8e34c09f7226d5ac30c4a5e63b9aca860de8134a5",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0009.png",
+      "page": 9,
+      "sha256": "62d5fbf64cd1a97deebaf4ed60ab19866540210d5d691fa50120f957259b0f60",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0010.png",
+      "page": 10,
+      "sha256": "dd097c1af53dcb5b07ab2e564159f5ca1a1d4419fd137bf81a531694f9f4aac5",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0011.png",
+      "page": 11,
+      "sha256": "3b36ffac518fb9c03e56a717982d7d416a19db4a7e4e6fe7e3390b9fe883dbd3",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0012.png",
+      "page": 12,
+      "sha256": "e2993ad60a36491886ec4dfcc66fa621551a9d1acbc5fe2a89271baed7444a66",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0013.png",
+      "page": 13,
+      "sha256": "0423506ec5321dc269427f8e2be5a3a2875fe4e6029081e22cd7ac1b039c4cb4",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0014.png",
+      "page": 14,
+      "sha256": "c7e8e40eca0517eb3a81e97008bd46d91229db410febe9402fc8bd6583afb529",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0015.png",
+      "page": 15,
+      "sha256": "ebcc35518611e827eadb15c3caaae06ed62576508549bab9bd73a9aa1e3e38d1",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0016.png",
+      "page": 16,
+      "sha256": "2ca05e379d0b8403178aab309e4bb919a00177267fd6dd1e882069808e158258",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0017.png",
+      "page": 17,
+      "sha256": "01a4d72286cceca24cc9f9c65cbd9f526c8424a0e09cfb7cf1a00d864e048f43",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0018.png",
+      "page": 18,
+      "sha256": "7be96fefb92dcea05ec2f551c174bc2b4653561395c97549adcb5ebdff1e1588",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0019.png",
+      "page": 19,
+      "sha256": "c41191f2729bab65b9ff7dad6299b2e4f04bec98f8e085c18cccbd66a4367579",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0020.png",
+      "page": 20,
+      "sha256": "d4858069a33c4e52b67c58a2b2d18d1bae3ee10a57d489e6ad681f2f1581c5be",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0021.png",
+      "page": 21,
+      "sha256": "b2c1cca87795ef7dc558a5804cd6382537a5d54875b75cff9d32b5d837a6264d",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0022.png",
+      "page": 22,
+      "sha256": "198958b98b605593c2b73ea2a1c3b1a2c4337e3bfa5169fc0e241dd8059175c6",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0023.png",
+      "page": 23,
+      "sha256": "18862e22a72acb09d80d9dacba429c6d61d925e1fb964b2ab3904c3eb063599e",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0024.png",
+      "page": 24,
+      "sha256": "f58c92cd2b3bf21707eb3baeef6da7e7bc52269239ec33dc0fe29ee38ed79f6a",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0025.png",
+      "page": 25,
+      "sha256": "458dd5a2866b4a157b128c25a20c17deeca8514b202d747630405a503da7faf6",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0026.png",
+      "page": 26,
+      "sha256": "e8f0d7d67175c19004d003af02179123e961c72bcee3e9a68f7ddce66a43e9b5",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0027.png",
+      "page": 27,
+      "sha256": "cce27a061c9d891d49a99073cbfd2ccc7bca45644b95a5f5d14b6754c46ba8a5",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0028.png",
+      "page": 28,
+      "sha256": "766e7145d37c42633e3b2591143af27962f9bf8fa303f9ba5b5eafb4b3f35f8f",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0029.png",
+      "page": 29,
+      "sha256": "d0b8c7c8043ef23a8faccdeadf9be4c138f024f9b46df231650c5567d8fb50ee",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0030.png",
+      "page": 30,
+      "sha256": "c026e237bb7663022224745c5a9bfbdc3acfc1eee6dbf4fed2f1f9b046f63949",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0031.png",
+      "page": 31,
+      "sha256": "ebeb60c75d6bc0990f85e92c72c652625469f79d55f3789a81850942de954c09",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0032.png",
+      "page": 32,
+      "sha256": "ebb7ba450118baf020e3d7e771aaef62e94358184c7e13c070b3d3d4e2b3e679",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0033.png",
+      "page": 33,
+      "sha256": "0991c763ab4693f0cdf5f2a4391d8f429185a055c2f78f51367fc9d9e318266a",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0034.png",
+      "page": 34,
+      "sha256": "abfd1f8648f6be1b69c5b84abdb69df181259ec0a64a20a35abab47eddfd1beb",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0035.png",
+      "page": 35,
+      "sha256": "c8bc4538744e14928f07c36cb68d5b124f394244f80602d04e2cb227cd90b99c",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0036.png",
+      "page": 36,
+      "sha256": "dedcbf5430d1d815ae448b71fdada6629da3fd437f180ac2d21e5ce34b20b722",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0037.png",
+      "page": 37,
+      "sha256": "0ee4d4835d0cbd01f0d3d6273c6d76c903a991de5093c0de4416b7d2ca70dc80",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0038.png",
+      "page": 38,
+      "sha256": "0afcf2492d8f2bf720ef6d485272f4b74208009e36abfa22808d3c9241c329cd",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0039.png",
+      "page": 39,
+      "sha256": "f1e06c1a34f14e39c63264d2880e131b3f1b4ec7274c443c5ac0c76fb5998c11",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0040.png",
+      "page": 40,
+      "sha256": "aed5382013653775704fd6fc8d92857b9af65b6d174a8556e7f3b52c29c15a64",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0041.png",
+      "page": 41,
+      "sha256": "1bb6edcd18b82447406186bfda10cb150aabb7e4ae74a6cebcb8891c607ff28a",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0042.png",
+      "page": 42,
+      "sha256": "7afe56a09605587fa25b2ce3c2518144eef4e60060c2cf7651a582c700d79aca",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0043.png",
+      "page": 43,
+      "sha256": "d2cc086a8b20d2501f73611af0f5e0ddb5b003d4da6754be6272658798ce142c",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0044.png",
+      "page": 44,
+      "sha256": "c26fe39172915a97c32c51aa33251f32003910362a2a374940de346961579d71",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0045.png",
+      "page": 45,
+      "sha256": "190fbbce626234ce5ce2b83864ec2acc1856127946c34bf950adf4626406ec74",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0046.png",
+      "page": 46,
+      "sha256": "d22647891511426e554115847b3ff9d1a5367e85c1431bf50a6aa8a3fc9582c4",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0047.png",
+      "page": 47,
+      "sha256": "0897e08de3c8aaf8d2fbc4dcf36aeb73e7353c169ff742e442b89eb1f5fe6815",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0048.png",
+      "page": 48,
+      "sha256": "1b42f06bfbfb6a6e0b6728799a6306378697aaba1696ba9f61498196d6eb12aa",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0049.png",
+      "page": 49,
+      "sha256": "f919015bef23e521242a46dd7901399bfb0fe728fd117c366084be1cb07d2417",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0050.png",
+      "page": 50,
+      "sha256": "a8e54d16ec738c084aa2e10722c5b2b45943743a8681126d3eaf94cd89e0b209",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0051.png",
+      "page": 51,
+      "sha256": "24c5e01e0bea60063ec08fb100450173dc58c4090ce0ee1fbfdcf4795c7ae472",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0052.png",
+      "page": 52,
+      "sha256": "4721579eac722eac9862d6e327547abd61afcd124562a97f8f61bd00e552b3d6",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0053.png",
+      "page": 53,
+      "sha256": "767c00821db247381796f89f819879939ad5d074683b536256c6a66ccadc688a",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0054.png",
+      "page": 54,
+      "sha256": "3738b5803255d63ace99fd61b79ee21f88b6709f479eec180996a6d07f82c1e9",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0055.png",
+      "page": 55,
+      "sha256": "72cd61c1e597c7c162a4d06442825e0d5e0351cde1b93e22da25afe87093aa19",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0056.png",
+      "page": 56,
+      "sha256": "e787659d044d930446aca0f41053e5e008d125ca9fe4e2d8d661708bfa786b90",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0057.png",
+      "page": 57,
+      "sha256": "826245d86566a5f77d11ad78d72274193172b4b08007d6e53960fed1acfac5b3",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0058.png",
+      "page": 58,
+      "sha256": "dbd0bb6dcee0d0c78bbfcab81cb87fa4d9ff6e7ab6025375e6c0f1bf6db49b64",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0059.png",
+      "page": 59,
+      "sha256": "631794634472ad5f41971677e2edf5a7411866fdedec6a4f7ed3a87de4ddddb6",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0060.png",
+      "page": 60,
+      "sha256": "275cc970a6b52f09b4fdef8f1739994d9fa7f971a23e8f65dcbec24c04c319b1",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0061.png",
+      "page": 61,
+      "sha256": "e9f29531c750924bc7e7b53ef0ee80073e8122ea50fd607aca94e808b94a7940",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0062.png",
+      "page": 62,
+      "sha256": "6f7cac287675d051ca4fb54abcedae83b4f57d9d0b572007544a8925b9a695ca",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0063.png",
+      "page": 63,
+      "sha256": "95593b6f018b39595039965fd68f1ccd49d6edb7cc7557f74744755394ece498",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0064.png",
+      "page": 64,
+      "sha256": "d69d564091588edf9ca9cbcc91985ac974c6bc0f2ddf7a74132d3e60948b3c7e",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0065.png",
+      "page": 65,
+      "sha256": "fcd4adedb3845f49bde1fafdc465a106d03ed912545a07b9428a7531002a2ae8",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0066.png",
+      "page": 66,
+      "sha256": "e9d5d727e673487ab7c09102249b7f72dd1c29bedcf704e02ae2c3e38ac0b5be",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0067.png",
+      "page": 67,
+      "sha256": "3367bfec862b98e96ebd361dfedccf9e3a372707909303f247b84f881fbd9e63",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0068.png",
+      "page": 68,
+      "sha256": "0961205effb53ce33839cd5440d4c26a9c550429933a32152ad4841a457ab00b",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0069.png",
+      "page": 69,
+      "sha256": "e4a74ac19a19025145d0e9ccc3eb00de9f6e7495d1fcd7980dd9c7ec92a872ad",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-chessboard-p0070.png",
+      "page": 70,
+      "sha256": "bcf9fd8586814d01ff25b9a1a6162f893aa817ea23e5fbd9916124c31250be90",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-chessboard",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0001.png",
+      "page": 1,
+      "sha256": "be5e579136a9f0b97ad29c56f01ece5d868ed59c5aa184a9c5088d90781ebd8f",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0008.png",
+      "page": 8,
+      "sha256": "c6d175fe9a93a9d829da0e915990e9b0b2f58dcf704f4d13d7fcf67ab65ef28f",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0012.png",
+      "page": 12,
+      "sha256": "09baab658de054508ca037a6c820b725ccc1bca144c518557503c321d96d09ba",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0013.png",
+      "page": 13,
+      "sha256": "84314d6a83f371671f95d49ba76b61da28e0d5e28f58f8e42d66d590617e245d",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0014.png",
+      "page": 14,
+      "sha256": "451cbce8f0c50588c0fb60b064fad899241f780da82bf4bf268dc1cdf4ad34e9",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0015.png",
+      "page": 15,
+      "sha256": "ee64f2e15fe2b181fa5157316f5383a5650600bfff8901dc6d750ba45c28b828",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0016.png",
+      "page": 16,
+      "sha256": "2069c4fd841443a57027bf103c69d4d60e7167adf5027d44f4efc09e2cfbf77a",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0017.png",
+      "page": 17,
+      "sha256": "76bef3e77e65eb84d7433729061cd7a8cc0eda77c4ae786a422ed28ee9733930",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0018.png",
+      "page": 18,
+      "sha256": "671b4b340387edcd3c2bc2b3bf7df43761748392560289880e84f25cb4641943",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0019.png",
+      "page": 19,
+      "sha256": "907f40832d8e70efa781c549a0fe5e18f2b1e5f9719e48e8afa81a5a7a7e204c",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0020.png",
+      "page": 20,
+      "sha256": "efbf71d0c6c4f2b01ee7bdd92791601c52d419f25308cae50a475e12208b6147",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0021.png",
+      "page": 21,
+      "sha256": "1f754fd3ae5df7f0922f3e61e5f7e43a630145657993b5d2e1dbdf3ebfdf520f",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0022.png",
+      "page": 22,
+      "sha256": "41a34de0ebb71cdd4e20545a82b7716027b3979fbc63108d32a204a526f943b9",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0023.png",
+      "page": 23,
+      "sha256": "32d867353b94fe544de75f7696d25eef5fe35944be9b2abb47270ffe9204a1af",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0024.png",
+      "page": 24,
+      "sha256": "30adabc43b9a11592fdd5cc847f5e305c0324e199ef05bc1e81f26e803dcc28c",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0025.png",
+      "page": 25,
+      "sha256": "25c5ef45fc760e05974de7efee998680adec8888cb879275625f65ea80786b7a",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0026.png",
+      "page": 26,
+      "sha256": "167ec1b2174bfaa7b0e62a84eee1257cd7996b87740aff00f64f3f0a221b288a",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0027.png",
+      "page": 27,
+      "sha256": "8211826d9422bffc5d23eb37fe10e6eb8f6f2e3eaa1f30e2a8ecb63cc01fe4d5",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0028.png",
+      "page": 28,
+      "sha256": "747db80d2e422ef557c2f81eecc7c9b4fca3f99a6335a48187329c3281cdddb5",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0029.png",
+      "page": 29,
+      "sha256": "283454e88e4fd8a8a5726e729fb587fb886f7a87797a86998f5c27db243b91d9",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0030.png",
+      "page": 30,
+      "sha256": "3645750110bc877202dcae36ef7be8f00ce71b733b6aa32ba8b11eacd8686e26",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "ctan-mpchess-p0031.png",
+      "page": 31,
+      "sha256": "fc66afbca3683b5d5a45cbe1940da42ec15e006b330f17cce24d9c0fa8d88f26",
+      "size": [
+        1697,
+        2400
+      ],
+      "sourceId": "ctan-mpchess",
+      "sourceSha256": null
+    },
+    {
+      "image": "plos-optimal-forgetting-p0008.png",
+      "page": 8,
+      "sha256": "fdde73db7155ff5eb0e23107f698f198f1fc7651b6831e0f257bc363636aa2ba",
+      "size": [
+        1855,
+        2400
+      ],
+      "sourceId": "plos-optimal-forgetting",
+      "sourceSha256": null
+    }
+  ],
+  "schema": 1
+}

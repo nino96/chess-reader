@@ -1,0 +1,616 @@
+{
+  "schema": 1,
+  "sourceId": "ctan-mpchess",
+  "family": "mpchess-default",
+  "split": "held-out",
+  "records": [
+    {
+      "id": "mpchess-p0001-01",
+      "page": 1,
+      "rect": [
+        421,
+        594,
+        646,
+        647
+      ],
+      "placement": "rn1qkbnr/ppp2p1p/3p2p1/4N3/2B1P3/2N5/PPPP1PPP/R1BbK2R",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "cover",
+        "annotated"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-document-code",
+        "evidence": "cover board manually read from all 64 squares; same complete-example position family as page 31, with arrows and comments retained"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0015-01",
+      "page": 15,
+      "rect": [
+        962,
+        699,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "initial-position",
+        "marker"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-document-code",
+        "evidence": "Example 9/initialization; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0016-02",
+      "page": 16,
+      "rect": [
+        962,
+        1493,
+        404,
+        404
+      ],
+      "placement": "1k6/4p3/5p2/8/8/8/3K4/4P3",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "sparse-position"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-document-code",
+        "evidence": "Example 11 add_white_pieces/add_black_pieces; e1 is a white pawn (not king), d2 is the white king; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0017-01",
+      "page": 17,
+      "rect": [
+        962,
+        1376,
+        404,
+        404
+      ],
+      "placement": "8/pp2p1p1/8/8/8/8/P3P1P1/1NBQK1N1",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "sparse-position",
+        "clear-operations"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-document-code",
+        "evidence": "Example 12 starts from initial position and clears a1,b2,c2-d7,f,h,8; only rank 7 retains a,b,e,g black pawns; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0018-01",
+      "page": 18,
+      "rect": [
+        962,
+        522,
+        404,
+        404
+      ],
+      "placement": "7r/2p1kp1p/p1B2p2/1pb5/8/2PP4/PP1N1PPP/R5K1",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "fen-position"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-fen",
+        "evidence": "Example 13 FEN printed adjacent to board; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0018-02",
+      "page": 18,
+      "rect": [
+        962,
+        1290,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "fen-file-position"
+      ],
+      "proposal": {
+        "method": "manual-visual",
+        "evidence": "Example 14 external test.fen illustration; all 64 squares visually checked; file contents are not printed, so placement read directly from glyphs (white knight f3, white b1 knight retained)"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0019-01",
+      "page": 19,
+      "rect": [
+        962,
+        875,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "pgn-step-3"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-pgn",
+        "evidence": "Example 15 PGN and chessboard_step(3) (after e4 e5 Nf3); all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0019-02",
+      "page": 19,
+      "rect": [
+        962,
+        1637,
+        404,
+        404
+      ],
+      "placement": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "pgn-step-4"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-pgn",
+        "evidence": "Example 16 test.pgn chessboard_step(4) after ...Nc6; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0020-01",
+      "page": 20,
+      "rect": [
+        962,
+        903,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "pgn-step-3",
+        "last-move"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-pgn",
+        "evidence": "Example 17 step 3 with last-move highlighting; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0021-01",
+      "page": 21,
+      "rect": [
+        962,
+        1289,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "pgn-step-3",
+        "arrow-annotation"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-pgn",
+        "evidence": "Example 18 step 3 with arrows; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0022-01",
+      "page": 22,
+      "rect": [
+        962,
+        568,
+        404,
+        404
+      ],
+      "placement": "R1BKQBNR/PPP1PPPP/2N5/3P4/3p4/8/ppp1pppp/rnbkqbnr",
+      "orientation": "black-bottom",
+      "kind": "board",
+      "tags": [
+        "pgn-step-3",
+        "black-view",
+        "arrow-annotation"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-pgn",
+        "evidence": "Example 19 black view of step 3; image-relative placement rotated 180 degrees from canonical FEN; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0022-02",
+      "page": 22,
+      "rect": [
+        962,
+        1585,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "initial-position",
+        "colored-squares"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-code",
+        "evidence": "Example 20 init_chessboard with square coloring; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0023-01",
+      "page": 23,
+      "rect": [
+        962,
+        862,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "initial-position",
+        "circle-annotation"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-code",
+        "evidence": "Example 21 init_chessboard with circles; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0024-01",
+      "page": 24,
+      "rect": [
+        962,
+        424,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "initial-position",
+        "cross-annotation"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-code",
+        "evidence": "Example 22 init_chessboard with crosses; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0024-02",
+      "page": 24,
+      "rect": [
+        962,
+        1396,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "pgn-step-3",
+        "comment-annotation"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-pgn",
+        "evidence": "Example 23 step 3 with comment at f3; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0025-01",
+      "page": 25,
+      "rect": [
+        962,
+        1252,
+        404,
+        404
+      ],
+      "placement": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "tags": [
+        "pgn-step-2",
+        "main-line-annotation"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-pgn",
+        "evidence": "Example 24 PGN 1.e4 d5, chessboard_step(2); all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0026-01",
+      "page": 26,
+      "rect": [
+        962,
+        811,
+        404,
+        404
+      ],
+      "placement": "1K5R/PPP1N1PP/4PP2/8/5bp1/2p2B1p/p1pk1p2/r7",
+      "orientation": "black-bottom",
+      "kind": "board",
+      "tags": [
+        "fen-position",
+        "black-view",
+        "possible-moves"
+      ],
+      "proposal": {
+        "method": "manual-visual-plus-published-fen",
+        "evidence": "Example 25 repeats printed FEN in black view with possible-move overlay; image-relative placement rotated 180 degrees from canonical FEN; all 64 squares visually checked"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true
+      }
+    },
+    {
+      "id": "mpchess-p0008-green",
+      "page": 8,
+      "rect": [
+        572,
+        653,
+        324,
+        324
+      ],
+      "placement": "8/8/8/8/8/8/8/8",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "mpchess-default",
+      "split": "held-out",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "green"
+      ],
+      "proposal": {
+        "method": "manual-visual",
+        "evidence": "page 8 Table 1 green theme; all 64 empty squares visually checked; separate false-positive background stratum"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true,
+        "stratum": "empty-board-background"
+      }
+    },
+    {
+      "id": "mpchess-p0008-classical",
+      "page": 8,
+      "rect": [
+        1004,
+        653,
+        324,
+        324
+      ],
+      "placement": "8/8/8/8/8/8/8/8",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "mpchess-default",
+      "split": "held-out",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "classical"
+      ],
+      "proposal": {
+        "method": "manual-visual",
+        "evidence": "page 8 Table 1 classical theme; all 64 empty squares visually checked; separate false-positive background stratum"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true,
+        "stratum": "empty-board-background"
+      }
+    },
+    {
+      "id": "mpchess-p0008-pinkpyramidal",
+      "page": 8,
+      "rect": [
+        572,
+        1028,
+        324,
+        324
+      ],
+      "placement": "8/8/8/8/8/8/8/8",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "mpchess-default",
+      "split": "held-out",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "pinkpyramidal"
+      ],
+      "proposal": {
+        "method": "manual-visual",
+        "evidence": "page 8 Table 1 pinkpyramidal theme; all 64 empty squares visually checked; separate false-positive background stratum"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true,
+        "stratum": "empty-board-background"
+      }
+    },
+    {
+      "id": "mpchess-p0008-wood",
+      "page": 8,
+      "rect": [
+        1004,
+        1028,
+        324,
+        324
+      ],
+      "placement": "8/8/8/8/8/8/8/8",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "mpchess-default",
+      "split": "held-out",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "wood"
+      ],
+      "proposal": {
+        "method": "manual-visual",
+        "evidence": "page 8 Table 1 wood theme; all 64 empty squares visually checked; separate false-positive background stratum"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true,
+        "stratum": "empty-board-background"
+      }
+    },
+    {
+      "id": "mpchess-p0008-dotted",
+      "page": 8,
+      "rect": [
+        572,
+        1404,
+        324,
+        324
+      ],
+      "placement": "8/8/8/8/8/8/8/8",
+      "orientation": "white-bottom",
+      "kind": "board",
+      "family": "mpchess-default",
+      "split": "held-out",
+      "tags": [
+        "empty-board",
+        "background-stratum",
+        "dotted"
+      ],
+      "proposal": {
+        "method": "manual-visual",
+        "evidence": "page 8 Table 1 dotted theme; all 64 empty squares visually checked; separate false-positive background stratum"
+      },
+      "review": {
+        "status": "proposed",
+        "all64": true,
+        "geometry": true,
+        "stratum": "empty-board-background"
+      }
+    }
+  ],
+  "separate": [
+    {
+      "page": 12,
+      "kind": "empty-board",
+      "reason": "Examples 7-8 initialize only the backboard; no pieces."
+    },
+    {
+      "page": 27,
+      "kind": "partial-board",
+      "reason": "clip_chessboard intentionally removes board area; not a complete 64-square candidate."
+    },
+    {
+      "page": 13,
+      "kind": "excluded-lineage",
+      "reason": "cburnett and skak panels excluded; only the default mpchess panel is proposed."
+    }
+  ],
+  "notes": "Occupied records exclude near-duplicate unmarked starting positions and page-31/cover repeated midgame. Empty boards are a separate background stratum and must not enter occupied-piece accuracy."
+}
+

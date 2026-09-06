@@ -1,0 +1,628 @@
+{
+  "artifactSha256": {
+    "base/fenshot-recovered.json": "e245ffc0ba7b0639e59a4375f7d0345d946b88bdcf5316eaa93b0859f16df524",
+    "base/fenshot-recovered.pt": "e0e215b88cd0a927aa713953a1e6342ea19b1624d782a81a1ec843fa3882415f",
+    "dataset/dataset-lock.json": "da60b559e5c0ade0bbfdbf85eeab45256fd080bf5efb2c8f0cb5529e14c743e6",
+    "dataset/dev.metadata.json": "6cfd9d55a5862217b7d0c0908e5e32f1b25daada85b4c6c956a6e1a40b40a361",
+    "dataset/dev.npz": "05edb56749d21d7a343e06674e620c63c2a12f16b365e7e26e6f45959381fcaa",
+    "dataset/train.metadata.json": "7fab949a5940073626695e4aac7f58b92fcddd2821f817d3523b25744124f27e",
+    "dataset/train.npz": "2651c4f95830d1fbd0bcb069684275bf083251af470bea1284663611cc3ba3dc",
+    "feasibility-runs/baseline-dev.json": "0db62bf05ff20e2ec177aa84ed42d0def7289af2b2177d34ff616bdeb79478eb",
+    "feasibility-runs/baseline-dev.probabilities.npy": "e5587918b82dfd63e445c7728ce292b5e00dff2ce618fe708b87dfebcf9e01c1",
+    "feasibility-runs/comparison-dev.json": "c400d0938ed84577cde495f999e8c57c15b0f784b17718f04829569c4ea60a6e",
+    "feasibility-runs/degraded/candidate.onnx": "655180e7b0b413329413cf20933f9659e0ddcf5d6dd2e5cadd320e2b4392b04b",
+    "feasibility-runs/degraded/candidate.probabilities.npy": "01ee5a83448fb679cc38be5f7681626e1bfca9521cbe0f6b65671c694ff8143b",
+    "feasibility-runs/degraded/run-report.json": "b5894b63b8ebdf3a0e32bdd5dceb8e176840d0e40ce612229797111678e3abe6",
+    "feasibility-runs/pilot/candidate.onnx": "1f814c611ad7cf94729359879b4a3ad65084dab79f166119afc5a8ff8d36c8ba",
+    "feasibility-runs/pilot/candidate.probabilities.npy": "f0a09040d01828488d487ef85b7b8a140b9812279864a62b62ecc92e05f2975d",
+    "feasibility-runs/pilot/run-report.json": "41996e09afe085eea4a2d518034aae02166416e26f517e71f48d76a1b81498f2",
+    "feasibility-runs/real-only/candidate.onnx": "81e0bab77c86a01baf826439788606a6a2f9670b59c08318a126a0e57d8187c3",
+    "feasibility-runs/real-only/candidate.probabilities.npy": "0a08d756ce9ab5b283b7af8e5637e3f8a4c57fcbe6afb3f21a2a442f3ea46e76",
+    "feasibility-runs/real-only/run-report.json": "6844ba069ffc241fc29391ef55598813a5bfa159f1eb1411875ce81c6749e8eb",
+    "modern-sources.json": "28d5351e40fb2953a9dc7fca51a3109284dd824027c5a02260a37bda1527a1d1",
+    "pretraining-lock.json": "b24b5143e599ed0d1cb1cbd322e9052348de200da47fc110b529498a7c02c814",
+    "shipped-model.onnx": "883f6a8e639e6d6b6399b3fda0508ad772e3c6f9cefa2e678a13f27b9fa6248d"
+  },
+  "baseline": {
+    "boards": 22,
+    "byColor": {
+      "black": {
+        "correct": 269,
+        "total": 285
+      },
+      "occupied": {
+        "correct": 555,
+        "total": 577
+      },
+      "white": {
+        "correct": 286,
+        "total": 292
+      }
+    },
+    "byCondition": {
+      "clean-hatched-print": {
+        "boards": 12,
+        "exactBoards": 11
+      },
+      "colored-or-overlaid-print": {
+        "boards": 9,
+        "exactBoards": 4
+      },
+      "low-opacity-flat": {
+        "boards": 1,
+        "exactBoards": 0
+      }
+    },
+    "byDensity": {
+      "dense": {
+        "boards": 16,
+        "exact": 10
+      },
+      "medium": {
+        "boards": 2,
+        "exact": 2
+      },
+      "sparse": {
+        "boards": 4,
+        "exact": 3
+      }
+    },
+    "byFamily": {
+      "ctan-default": {
+        "boards": 17,
+        "exactBoards": 13,
+        "occupied": 417,
+        "occupiedCorrect": 412
+      },
+      "ctan-lsbc3": {
+        "boards": 2,
+        "exactBoards": 0,
+        "occupied": 64,
+        "occupiedCorrect": 52
+      },
+      "ctan-lsbc4": {
+        "boards": 2,
+        "exactBoards": 1,
+        "occupied": 64,
+        "occupiedCorrect": 59
+      },
+      "ctan-millennia": {
+        "boards": 1,
+        "exactBoards": 1,
+        "occupied": 32,
+        "occupiedCorrect": 32
+      }
+    },
+    "confidenceHistogram": {
+      "counts": [34, 22, 11, 28, 240, 1045, 28],
+      "edges": [0, 0.5, 0.7, 0.8, 0.9, 0.95, 0.99, 1]
+    },
+    "confidentCorrectSquares": 1340,
+    "confidentSquares": 1352,
+    "confidentWrongBoards": 1,
+    "confusion": [
+      [815, 0, 0, 0, 2, 1, 2, 0, 0, 7, 1, 3, 0],
+      [0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 33, 0, 0, 0, 0, 0, 3, 0, 0, 0],
+      [0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 1, 0, 0],
+      [0, 0, 0, 0, 1, 33, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 134, 0, 0, 0, 0, 0, 1],
+      [0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0],
+      [0, 0, 0, 2, 0, 0, 0, 0, 0, 36, 0, 0, 0],
+      [0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 35, 0, 1],
+      [0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 29, 0],
+      [1, 1, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 128]
+    ],
+    "occupied": 577,
+    "occupiedCorrect": 555,
+    "perClass": {
+      "1": {
+        "accuracy": 0.9807460890493381,
+        "correct": 815,
+        "total": 831
+      },
+      "B": {
+        "accuracy": 0.9705882352941176,
+        "correct": 33,
+        "total": 34
+      },
+      "K": {
+        "accuracy": 1.0,
+        "correct": 33,
+        "total": 33
+      },
+      "N": {
+        "accuracy": 0.9705882352941176,
+        "correct": 33,
+        "total": 34
+      },
+      "P": {
+        "accuracy": 0.9925925925925926,
+        "correct": 134,
+        "total": 135
+      },
+      "Q": {
+        "accuracy": 1.0,
+        "correct": 20,
+        "total": 20
+      },
+      "R": {
+        "accuracy": 0.9166666666666666,
+        "correct": 33,
+        "total": 36
+      },
+      "b": {
+        "accuracy": 0.9210526315789473,
+        "correct": 35,
+        "total": 38
+      },
+      "k": {
+        "accuracy": 1.0,
+        "correct": 21,
+        "total": 21
+      },
+      "n": {
+        "accuracy": 0.9354838709677419,
+        "correct": 29,
+        "total": 31
+      },
+      "p": {
+        "accuracy": 0.9343065693430657,
+        "correct": 128,
+        "total": 137
+      },
+      "q": {
+        "accuracy": 1.0,
+        "correct": 20,
+        "total": 20
+      },
+      "r": {
+        "accuracy": 0.9473684210526315,
+        "correct": 36,
+        "total": 38
+      }
+    },
+    "rawExactBoards": 15,
+    "reliableExactBoards": 14
+  },
+  "candidates": {
+    "degraded": {
+      "bestEpoch": 2,
+      "boards": 22,
+      "byColor": {
+        "black": {
+          "correct": 266,
+          "total": 285
+        },
+        "occupied": {
+          "correct": 552,
+          "total": 577
+        },
+        "white": {
+          "correct": 286,
+          "total": 292
+        }
+      },
+      "byCondition": {
+        "clean-hatched-print": {
+          "boards": 12,
+          "exactBoards": 11
+        },
+        "colored-or-overlaid-print": {
+          "boards": 9,
+          "exactBoards": 4
+        },
+        "low-opacity-flat": {
+          "boards": 1,
+          "exactBoards": 0
+        }
+      },
+      "byDensity": {
+        "dense": {
+          "boards": 16,
+          "exact": 10
+        },
+        "medium": {
+          "boards": 2,
+          "exact": 2
+        },
+        "sparse": {
+          "boards": 4,
+          "exact": 3
+        }
+      },
+      "byFamily": {
+        "ctan-default": {
+          "boards": 17,
+          "exactBoards": 13,
+          "occupied": 417,
+          "occupiedCorrect": 410
+        },
+        "ctan-lsbc3": {
+          "boards": 2,
+          "exactBoards": 0,
+          "occupied": 64,
+          "occupiedCorrect": 52
+        },
+        "ctan-lsbc4": {
+          "boards": 2,
+          "exactBoards": 1,
+          "occupied": 64,
+          "occupiedCorrect": 58
+        },
+        "ctan-millennia": {
+          "boards": 1,
+          "exactBoards": 1,
+          "occupied": 32,
+          "occupiedCorrect": 32
+        }
+      },
+      "confidenceHistogram": {
+        "counts": [26, 21, 16, 14, 18, 1162, 151],
+        "edges": [0, 0.5, 0.7, 0.8, 0.9, 0.95, 0.99, 1]
+      },
+      "confidentCorrectSquares": 1343,
+      "confidentSquares": 1361,
+      "confidentWrongBoards": 1,
+      "confusion": [
+        [814, 0, 0, 0, 0, 0, 3, 1, 0, 9, 1, 2, 1],
+        [0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 33, 0, 0, 0, 0, 0, 3, 0, 0, 0],
+        [0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 1, 33, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 134, 0, 0, 0, 0, 0, 1],
+        [0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0],
+        [0, 0, 0, 2, 0, 0, 0, 0, 0, 36, 0, 0, 0],
+        [0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 35, 0, 1],
+        [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 29, 0],
+        [1, 1, 0, 0, 0, 1, 7, 0, 0, 2, 0, 0, 125]
+      ],
+      "elapsedSeconds": 23.756248792167753,
+      "modelSha256": "655180e7b0b413329413cf20933f9659e0ddcf5d6dd2e5cadd320e2b4392b04b",
+      "occupied": 577,
+      "occupiedCorrect": 552,
+      "paired": {
+        "cleanBaselineCorrect": 11,
+        "cleanLosses": 0,
+        "degradedBoards": 1,
+        "degradedExactGainPercentagePoints": 0.0,
+        "positionDisjointBaselineExact": 9,
+        "positionDisjointBoards": 11,
+        "positionDisjointCandidateExact": 9
+      },
+      "perClass": {
+        "1": {
+          "accuracy": 0.9795427196149218,
+          "correct": 814,
+          "total": 831
+        },
+        "B": {
+          "accuracy": 0.9705882352941176,
+          "correct": 33,
+          "total": 34
+        },
+        "K": {
+          "accuracy": 1.0,
+          "correct": 33,
+          "total": 33
+        },
+        "N": {
+          "accuracy": 0.9705882352941176,
+          "correct": 33,
+          "total": 34
+        },
+        "P": {
+          "accuracy": 0.9925925925925926,
+          "correct": 134,
+          "total": 135
+        },
+        "Q": {
+          "accuracy": 1.0,
+          "correct": 20,
+          "total": 20
+        },
+        "R": {
+          "accuracy": 0.9166666666666666,
+          "correct": 33,
+          "total": 36
+        },
+        "b": {
+          "accuracy": 0.9210526315789473,
+          "correct": 35,
+          "total": 38
+        },
+        "k": {
+          "accuracy": 1.0,
+          "correct": 21,
+          "total": 21
+        },
+        "n": {
+          "accuracy": 0.9354838709677419,
+          "correct": 29,
+          "total": 31
+        },
+        "p": {
+          "accuracy": 0.9124087591240876,
+          "correct": 125,
+          "total": 137
+        },
+        "q": {
+          "accuracy": 1.0,
+          "correct": 20,
+          "total": 20
+        },
+        "r": {
+          "accuracy": 0.9473684210526315,
+          "correct": 36,
+          "total": 38
+        }
+      },
+      "rawExactBoards": 15,
+      "recommendationGatePassed": false,
+      "regressedOccupiedClasses": ["p"],
+      "reliableExactBoards": 14,
+      "updates": 840
+    },
+    "real-only": {
+      "bestEpoch": 2,
+      "boards": 22,
+      "byColor": {
+        "black": {
+          "correct": 267,
+          "total": 285
+        },
+        "occupied": {
+          "correct": 553,
+          "total": 577
+        },
+        "white": {
+          "correct": 286,
+          "total": 292
+        }
+      },
+      "byCondition": {
+        "clean-hatched-print": {
+          "boards": 12,
+          "exactBoards": 11
+        },
+        "colored-or-overlaid-print": {
+          "boards": 9,
+          "exactBoards": 4
+        },
+        "low-opacity-flat": {
+          "boards": 1,
+          "exactBoards": 0
+        }
+      },
+      "byDensity": {
+        "dense": {
+          "boards": 16,
+          "exact": 10
+        },
+        "medium": {
+          "boards": 2,
+          "exact": 2
+        },
+        "sparse": {
+          "boards": 4,
+          "exact": 3
+        }
+      },
+      "byFamily": {
+        "ctan-default": {
+          "boards": 17,
+          "exactBoards": 13,
+          "occupied": 417,
+          "occupiedCorrect": 411
+        },
+        "ctan-lsbc3": {
+          "boards": 2,
+          "exactBoards": 0,
+          "occupied": 64,
+          "occupiedCorrect": 52
+        },
+        "ctan-lsbc4": {
+          "boards": 2,
+          "exactBoards": 1,
+          "occupied": 64,
+          "occupiedCorrect": 58
+        },
+        "ctan-millennia": {
+          "boards": 1,
+          "exactBoards": 1,
+          "occupied": 32,
+          "occupiedCorrect": 32
+        }
+      },
+      "confidenceHistogram": {
+        "counts": [26, 21, 15, 15, 17, 1147, 167],
+        "edges": [0, 0.5, 0.7, 0.8, 0.9, 0.95, 0.99, 1]
+      },
+      "confidentCorrectSquares": 1344,
+      "confidentSquares": 1361,
+      "confidentWrongBoards": 1,
+      "confusion": [
+        [814, 0, 0, 0, 0, 0, 3, 1, 0, 9, 1, 2, 1],
+        [0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 33, 0, 0, 0, 0, 0, 3, 0, 0, 0],
+        [0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 1, 33, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 134, 0, 0, 0, 0, 0, 1],
+        [0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0],
+        [0, 0, 0, 2, 0, 0, 0, 0, 0, 36, 0, 0, 0],
+        [0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 35, 0, 1],
+        [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 29, 0],
+        [1, 1, 0, 0, 0, 1, 7, 0, 0, 1, 0, 0, 126]
+      ],
+      "elapsedSeconds": 23.560063363052905,
+      "modelSha256": "81e0bab77c86a01baf826439788606a6a2f9670b59c08318a126a0e57d8187c3",
+      "occupied": 577,
+      "occupiedCorrect": 553,
+      "paired": {
+        "cleanBaselineCorrect": 11,
+        "cleanLosses": 0,
+        "degradedBoards": 1,
+        "degradedExactGainPercentagePoints": 0.0,
+        "positionDisjointBaselineExact": 9,
+        "positionDisjointBoards": 11,
+        "positionDisjointCandidateExact": 9
+      },
+      "perClass": {
+        "1": {
+          "accuracy": 0.9795427196149218,
+          "correct": 814,
+          "total": 831
+        },
+        "B": {
+          "accuracy": 0.9705882352941176,
+          "correct": 33,
+          "total": 34
+        },
+        "K": {
+          "accuracy": 1.0,
+          "correct": 33,
+          "total": 33
+        },
+        "N": {
+          "accuracy": 0.9705882352941176,
+          "correct": 33,
+          "total": 34
+        },
+        "P": {
+          "accuracy": 0.9925925925925926,
+          "correct": 134,
+          "total": 135
+        },
+        "Q": {
+          "accuracy": 1.0,
+          "correct": 20,
+          "total": 20
+        },
+        "R": {
+          "accuracy": 0.9166666666666666,
+          "correct": 33,
+          "total": 36
+        },
+        "b": {
+          "accuracy": 0.9210526315789473,
+          "correct": 35,
+          "total": 38
+        },
+        "k": {
+          "accuracy": 1.0,
+          "correct": 21,
+          "total": 21
+        },
+        "n": {
+          "accuracy": 0.9354838709677419,
+          "correct": 29,
+          "total": 31
+        },
+        "p": {
+          "accuracy": 0.9197080291970803,
+          "correct": 126,
+          "total": 137
+        },
+        "q": {
+          "accuracy": 1.0,
+          "correct": 20,
+          "total": 20
+        },
+        "r": {
+          "accuracy": 0.9473684210526315,
+          "correct": 36,
+          "total": 38
+        }
+      },
+      "rawExactBoards": 15,
+      "recommendationGatePassed": false,
+      "regressedOccupiedClasses": ["p"],
+      "reliableExactBoards": 14,
+      "updates": 840
+    }
+  },
+  "commit": "c613aed15dfe4ec9e85b7557b01805c4fb3be187",
+  "curves": {
+    "csv": "learning-curves.csv",
+    "rows": 82
+  },
+  "data": {
+    "boards": 22,
+    "devTilesSha256": "05edb56749d21d7a343e06674e620c63c2a12f16b365e7e26e6f45959381fcaa",
+    "trainTilesSha256": "2651c4f95830d1fbd0bcb069684275bf083251af470bea1284663611cc3ba3dc"
+  },
+  "environment": {
+    "onnxruntime": "1.22.1",
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128"
+  },
+  "frozenInputsSha256": {
+    "experiments/recognition-dataset/assemble_feasibility.py": "8df9fa37757d9bec4386f97fe174dae4844eb4b3877a95584560ee7d55c13097",
+    "experiments/recognition-dataset/audit.py": "8b3eca1d68ba743f64feafd8974975759c73dc8fb57b1b604281dd92c97e195d",
+    "experiments/recognition-dataset/compare_feasibility.py": "8ff559100bee34989f296521c9005a02b0532a6192ddab5bd973170f184df335",
+    "experiments/recognition-dataset/degrade_real.py": "628c69d473d2cc7fb66715d7334ee98ae9d45199233bb7f41a26816be5068614",
+    "experiments/recognition-dataset/feasibility-protocol.json": "3043a8e822af7354ebf4bc286dae5a6e1aa5c16023e0476ddcbc70a27197eb4a",
+    "experiments/recognition-dataset/feasibility_train.py": "ee2d4bd17dbcca3f3eb34a23ef306bf249b04efdc6b782f4c2297a0ce1399b42",
+    "experiments/recognition-dataset/import_historic.py": "b088f0aaf1907bb44b62316ecbe9d915bb684e1496c3ec25acf9f45f37aca2fe",
+    "experiments/recognition-dataset/intake.py": "c060d6b2eda5d7b91824da77dae1e7db5a3a7acf61624c32606003af52b001e2",
+    "experiments/recognition-dataset/modern-pages.json": "cc3ec272713e33bfdf24239cc122228145459bfea7320732aed0da0c54e0fed6",
+    "experiments/recognition-dataset/modern-preprocess.mjs": "760ddf4cb15a32b91926704fe4721b5060f605771ae61d896029a11a27cf477e",
+    "experiments/recognition-dataset/modern-sources.json": "28d5351e40fb2953a9dc7fca51a3109284dd824027c5a02260a37bda1527a1d1",
+    "experiments/recognition-dataset/modern_extract.py": "bd52b773fcd7db50efe58b6cb4996193027d576c9f888173bb3fe1226d90c5a2",
+    "experiments/recognition-dataset/modern_intake.py": "25a530d98ab1beab714f79896c641e9d8100d4a6386127cc6754ea6ab865b4af",
+    "experiments/recognition-dataset/pack_augmentation.py": "287168470c14e925b0b2b8c8445e989ec7bc53c9c295217422476119862dbf26",
+    "experiments/recognition-dataset/pilot.py": "bb94fbc86cdc617917a373920351abf74cae95a5472c3251a1e622c27c87b0c2",
+    "experiments/recognition-dataset/preflight_feasibility.py": "78e990a87ba6ae40f0eb854f9eded20ca9ab9d80e807ff47d613e8c9ceb7ea3c",
+    "experiments/recognition-dataset/preprocess-core.mjs": "df816fdbd33300f45543e97efae8bec886699945cb91bf61ea6eb2c3d70685c3",
+    "experiments/recognition-dataset/recover_fenshot.py": "ec85325aaaf56b16b3234c8f85ed8bbfd7d50b50c29ded318606ea15ae08c64e",
+    "experiments/recognition-dataset/review_augmentation.py": "944acd68404a7a5c9b752d3240771547f258133b890d8115d446060536759d8e",
+    "experiments/recognition-dataset/review_proposals.py": "9516c173b178a34416dabba0204d26cdc8faa7afaaa3b2ea7910592916292553",
+    "experiments/recognition-dataset/wikibooks_proposals.py": "cf49d8f6afb4faef185fee5c407d3092dbe1b58efcf0c2da2bf869ac86483a00",
+    "experiments/recognition-dataset/work/modern/augmentation-v3/bank-lock.json": "94b17dd1ae163a9c2b1c8151854113e99c12c190e8f1091a3ea9774024104227",
+    "experiments/recognition-dataset/work/modern/augmentation-v3/bank.npz": "36fe015c99fb355307eb0610304fc71728bd8c967968030dacde97973d552938",
+    "experiments/recognition-dataset/work/modern/augmentation-v3/fidelity-review.json": "f3ed99887fdf31ecb04f964594372ae578d937989784791bbd97987b546c66ec",
+    "experiments/recognition-dataset/work/modern/augmentation-v3/manifest-reviewed.json": "dc4ba2ab0acf2b304c0f453878c4de386219fe4282c999f1c740a4fdd5fe0188",
+    "experiments/recognition-dataset/work/modern/augmentation-v3/preprocess-manifest.json": "456f4f7201bdd8aff4b929b8c124bf046f74ae7b665f58878fd17fc320263355",
+    "experiments/recognition-dataset/work/modern/base/fenshot-recovered.json": "e245ffc0ba7b0639e59a4375f7d0345d946b88bdcf5316eaa93b0859f16df524",
+    "experiments/recognition-dataset/work/modern/base/fenshot-recovered.pt": "e0e215b88cd0a927aa713953a1e6342ea19b1624d782a81a1ec843fa3882415f",
+    "experiments/recognition-dataset/work/modern/coverage.json": "c330cc8709918a2b4e438ad35829cded485f7ca5add61891ff4eaca024d4fc98",
+    "experiments/recognition-dataset/work/modern/dataset/dataset-lock.json": "da60b559e5c0ade0bbfdbf85eeab45256fd080bf5efb2c8f0cb5529e14c743e6",
+    "experiments/recognition-dataset/work/modern/dataset/dev.metadata.json": "6cfd9d55a5862217b7d0c0908e5e32f1b25daada85b4c6c956a6e1a40b40a361",
+    "experiments/recognition-dataset/work/modern/dataset/dev.npz": "05edb56749d21d7a343e06674e620c63c2a12f16b365e7e26e6f45959381fcaa",
+    "experiments/recognition-dataset/work/modern/dataset/train.metadata.json": "7fab949a5940073626695e4aac7f58b92fcddd2821f817d3523b25744124f27e",
+    "experiments/recognition-dataset/work/modern/dataset/train.npz": "2651c4f95830d1fbd0bcb069684275bf083251af470bea1284663611cc3ba3dc",
+    "experiments/recognition-dataset/work/modern/manifest.json": "662ebc763a6b8e2b3df706e5f6ba21f8f1d40ca28ccfec5345a7a8ebaed753f5",
+    "experiments/recognition-dataset/work/modern/preprocess-manifest.json": "61ce3c07f70cb2e2d303cf793171e44608edfe1808c933b2cdc60a923b319a19",
+    "experiments/recognition-dataset/work/modern/reserved/held-out.metadata.json": "f2782e96f731af2110e4f9e33c24eb37e0ee279338bcf73fdf3d7f2a0beb7819",
+    "experiments/recognition-dataset/work/modern/reserved/held-out.npz": "d3d41c879e35ba637c0d55e3d5b2a24fdd85e34762c8bc3a12f26c4c1e788dec",
+    "experiments/recognition-dataset/work/modern/review-decisions.json": "3f015593376bce3f0bfa73b32403b22c50c674441f436f38c50fd5b0f5cc6034",
+    "experiments/recognition-training/planning/reconstruct_parity.py": "412de92f96df0f3658d8ba59bc62a2ea0e8dbec8f7103fb953cfb93b24c0a352",
+    "experiments/recognition-training/v3/diagnostic.py": "4e445216564481755a73707a2ed6e6edd8d5c3937fa4e7478d4e064098e89f2a",
+    "experiments/recognition-training/v3/trainer.py": "cac5c9bb47b7d78a0f53e4c3aded8a82cd46ddca667f75745b1a2cdc22761538",
+    "packages/test-fixtures/node_modules/@scoriiu/fenshot/dist/tiles.js": "cc8f81d47423aee036c27c84656cea6c7a081fc461bda94f8abd4320fb68b2d9",
+    "packages/test-fixtures/node_modules/@scoriiu/fenshot/model/chess-tiles-v2.onnx": "883f6a8e639e6d6b6399b3fda0508ad772e3c6f9cefa2e678a13f27b9fa6248d"
+  },
+  "heldOutScored": false,
+  "pilot": {
+    "bestEpoch": 2,
+    "recoveryEquivalent": true,
+    "status": "completed",
+    "updates": 42
+  },
+  "qualificationPassed": false,
+  "resources": {
+    "actualElapsedSeconds": 51.519525195937604,
+    "aggregateChargedSeconds": 1254.078,
+    "priorChargedSeconds": 354.078,
+    "reservedNewSeconds": 900.0
+  },
+  "schema": 1,
+  "split": "source-held-out development only",
+  "status": "completed-artifacts-verified"
+}

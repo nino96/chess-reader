@@ -98,6 +98,16 @@ one PV; configuration and threaded/SIMD variants follow in #17.
 
 ## Recommended agent workflow
 
+Recognition research continues in
+[#42 Deliver generalized 2D printed-diagram recognition with representative real data](https://github.com/nino96/chess-reader/issues/42).
+It consolidates remaining #38/#40/#41 work; their failed experiments and bounded
+dataset increment remain historical evidence, not achieved recognition goals.
+Use the [checked-in research handoff](../experiments/recognition-dataset/handoff/README.md)
+and recovered base. Do not merge PR #39, close parent #24, restart unchanged
+evidence, or mark #42 complete at a downloader/training-pipeline milestone.
+The owner approved a new two-working-day acquisition/review, 4 GiB local data,
+30-minute aggregate GPU ceiling; freeze a new protocol and ledger before use.
+
 1. Assign one issue to one agent/task.
 2. Ask it to read `README.md`, `docs/architecture.md`,
    `docs/platform-limitations.md`, `docs/evaluation.md`, all accepted ADRs, and

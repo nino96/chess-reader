@@ -3,6 +3,12 @@ dist/
 coverage/
 test-results/
 playwright-report/
+experiments/recognition-dataset/cache/
+experiments/recognition-dataset/work/
+# Immutable, SHA-bound public annotation snapshots retain their original bytes.
+experiments/recognition-dataset/handoff/records/
+experiments/recognition-dataset/handoff/evidence/
+experiments/recognition-dataset/handoff/recovery/fenshot-recovered.json
 pnpm-lock.yaml
 *.png
 *.ico

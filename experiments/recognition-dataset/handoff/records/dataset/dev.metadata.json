@@ -1,0 +1,375 @@
+{
+  "boards": [
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "2d51900bc86b73876cd098026244cea5b6b24bc4e5044aec0a1e318f96f4aaf9",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0019-01",
+      "occupied": 40,
+      "placementSha256": "a886165770580f2f79ecc285b3903f840c6ffd8aabdae1ffd138e0dba3057d20",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "dense",
+        "notation-store-area"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "78879719e47b037350d27acf999bc09afed620032b62bc6638768c17676db5c8",
+      "density": "sparse",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0020-03",
+      "occupied": 8,
+      "placementSha256": "620cda2ed339c504a369b342389d44e276a79a2632ab3106ebff6822c9e4a068",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "sparse",
+        "custom-pieces",
+        "notation"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-or-overlaid-print",
+      "cropSha256": "01073234f3f6f8cc0380b67db380bcce54e18f7d83889bbece1d033e0559296d",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0032-06",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "colored-emphasis"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-or-overlaid-print",
+      "cropSha256": "98623da2d3fa0085653f4d3e668a8c391b0395f9db49d96998ecd4d6994f75a8",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-lsbc3",
+      "id": "ctan-chessboard-p0032-07",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "flat-dark",
+        "colored-pieces",
+        "colored-emphasis"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-or-overlaid-print",
+      "cropSha256": "9435f5933b017a8b32552d57a32b0d710b4b8afb5bf77966e8a70ac4e3bcb730",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-millennia",
+      "id": "ctan-chessboard-p0033-08",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "colored-pieces"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-or-overlaid-print",
+      "cropSha256": "61b99f6dd66603e136b8f47a8510dd5dbdaecb8de1f04f759bc3ca7dc10c6a68",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-lsbc3",
+      "id": "ctan-chessboard-p0033-09",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "flat-dark",
+        "colored-pieces"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-or-overlaid-print",
+      "cropSha256": "22f88fa6b2600e6bfee83added831f53ce7aef51e5e7e1728fb6dcab66e92f23",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-lsbc4",
+      "id": "ctan-chessboard-p0034-10",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "flat-dark",
+        "opacity",
+        "colored-pieces"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "low-opacity-flat",
+      "cropSha256": "baac98855767f5418c35cc756a6b67359949a9843e90dd4caefc69c44d9c614e",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-lsbc4",
+      "id": "ctan-chessboard-p0034-11",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "flat-dark",
+        "opacity",
+        "colored-pieces",
+        "translucent"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "9fcfa955aa0305446c6f82c6afcf92b70ede92ad8c07bcdb46fc5eff6a30e0f8",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0036-12",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "small-labels"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "af315ab35bef66ac9311a85eacfcdadf382bda8bd03895c359aa9cb87d145e32",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0037-13",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "custom-labels"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "55e18fde5a82e163ac30e36b0905af1c1f5828f3c6e58d942cec8f2066599476",
+      "density": "sparse",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0039-15",
+      "occupied": 2,
+      "placementSha256": "bd1be7783ec138563fa7ac662ef7798e4c467a4d4969c350b6bfb9b966ce368f",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "mover-offset",
+        "two-kings"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-or-overlaid-print",
+      "cropSha256": "dfe7f39f407da3a8942d49e2dcc06ad1eed5b7db6cda2d7bcabbb847c7000c16",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0048-16",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "mark-overlays",
+        "opening"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-or-overlaid-print",
+      "cropSha256": "843bffd17a88b8681b2ad2938db90a02711698d0bd3ab29095ce0a9bed21d521",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0048-17",
+      "occupied": 33,
+      "placementSha256": "898472d3114134feadca17cfaae2f7bb8a351189b2daa8888842ab1be877c3cc",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "mark-overlays",
+        "notation-opening"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-or-overlaid-print",
+      "cropSha256": "ab370743d4fe0b0f2b4582a673197821fff5566060ed04c1a9a32e2ccce7d5bb",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0049-18",
+      "occupied": 32,
+      "placementSha256": "badb63a3a58d550a824e623dda776e2243dbd3cfcc80c4d1f4c8e6c58475ebce",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "inverse-orientation",
+        "opening"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-or-overlaid-print",
+      "cropSha256": "161079ece3cdf0476b922bd30325be0954ec18581fc87567f76fc3442680e5a9",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0052-19",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "region-markers"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "6e5194e84224f7c59ac607832c4daa88e57a5c5207319fd7e5170060527f924e",
+      "density": "medium",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-v2-p0014-22",
+      "occupied": 17,
+      "placementSha256": "42a9e5cfbe7d66497452e8553ca91e1234471b0a0651379de7b2cdaf186b63f4",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "notation-clear-area",
+        "sparse"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "51ec9d924ea556fe8dfd36e96088f7a871e8a742ab973d1b273149282262dfe0",
+      "density": "sparse",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-v2-p0015-23",
+      "occupied": 6,
+      "placementSha256": "bae730d94d314c23c9ed6592b1004335293f16e2dd32ba51c2bcdc7c2e0b3c19",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "notation-add-pieces",
+        "sparse"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "cb8d91854a64729e25e19d24541c29a7b6721ea98192c1566055ab45849a3bd3",
+      "density": "sparse",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-v2-p0015-24",
+      "occupied": 7,
+      "placementSha256": "6ce4375be0676580809cec4ed0a3db3581e9414e8e08e4588dea903bced9dc82",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "notation-add-white-black",
+        "sparse"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "10d5caa888f36b42f9b120702b22c0a6a1a399987da45022fdcb816102bbf35d",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-v2-p0016-25",
+      "occupied": 34,
+      "placementSha256": "7548c6c8b0de417378b2dbfd8f1cb2cb61c78ecbe6051911677aee665346934a",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "notation-add-fen",
+        "extra-pieces"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "476f889bebcf22374d7c655a1fb9c0af17bb51eb46c64ab53ef626a75eff47b2",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-v2-p0016-26",
+      "occupied": 36,
+      "placementSha256": "e1c2253357306f552373492c711905520a6f5b4cc3e9e1cd678b792846c32d1d",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "notation-startfen",
+        "extra-pieces"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "91c03611970fc6126b5279bb720682764239ba3ef7c42f6000089dcb8a3e10a3",
+      "density": "medium",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-v2-p0016-27",
+      "occupied": 10,
+      "placementSha256": "aa4f4e08f82dc82781367c87bc22b93ac5bf65657dfddef83dd64b7ad15e7b61",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "notation-fill-area",
+        "sparse"
+      ]
+    },
+    {
+      "clean": true,
+      "condition": "clean-hatched-print",
+      "cropSha256": "40bb7e7c44d73c5d94bc1ad63bc87bafa7852c8c8903afe253b7f486ec115b71",
+      "density": "dense",
+      "exposed": false,
+      "family": "ctan-default",
+      "id": "ctan-chessboard-p0019-02",
+      "occupied": 32,
+      "placementSha256": "2cd1a14f7cf461f9fae2d3dd755a941819a045110bc2402e0634e6d30dd5b95b",
+      "sourceId": "ctan-chessboard",
+      "tags": [
+        "hatching",
+        "medium-density",
+        "notation-opening"
+      ]
+    }
+  ],
+  "schema": 1
+}

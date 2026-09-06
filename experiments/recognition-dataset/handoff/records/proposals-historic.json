@@ -1,0 +1,541 @@
+{
+  "records": [
+    {
+      "cropSha256": "c2b3f54dcae7c3948065a2ead01cd201368cdca2c768c271d16fce20246f21fa",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-01",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 19,
+      "pageSha256": "92451e35cf995536095cb4430f8161b9ab542857fb9a5f9b2adbba99823d0a36",
+      "placement": "7k/8/8/8/8/8/8/R6K",
+      "proposal": {
+        "evidence": "Example 1 caption and following descriptive move R-R7 support rook/king identities; all squares visually transcribed from original scan.",
+        "method": "notation"
+      },
+      "proposalSha256": "af02fed981e8a27486eaae106ad1cd061db981e46ccb24f50fb3ac6dc626ff31",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-a-01.png",
+        "originalId": "public-a-01"
+      },
+      "rect": [
+        351,
+        1150,
+        421,
+        417
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-a",
+      "sourceSha256": "e4c5693a3f3ee3d89c0321a4092557fca721b01351effee0f8bb7d6c8fde4a78",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "5b0684755b95b5a474ce6e47f83eab87483c400b88f384b5e4bebd57cea304db",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-02",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 21,
+      "pageSha256": "8a4348dfbcdd375b1c0350771b471f88008c6cdb7585a09ed468e5c367f394ae",
+      "placement": "8/8/8/4k3/8/8/8/4K2R",
+      "proposal": {
+        "evidence": "Example 2 identifies central Black king and White first move K-K2; visual all-square placement confirms identities.",
+        "method": "notation"
+      },
+      "proposalSha256": "15017180d28d7c469a589b444845573b3a667a8e14a0aaca729d72e8954c0ab1",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-a-02.png",
+        "originalId": "public-a-02"
+      },
+      "rect": [
+        365,
+        290,
+        421,
+        420
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-a",
+      "sourceSha256": "e4c5693a3f3ee3d89c0321a4092557fca721b01351effee0f8bb7d6c8fde4a78",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "0549937dcba7973e89fc171baa2c91146de34e97afede0810f9b704fff6f489e",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-03",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 22,
+      "pageSha256": "b21386f3e15054b8e3fde9fb371e73cff2a3c9c4b62f410499f40a372da1150c",
+      "placement": "7k/8/8/8/8/8/8/2B1KB2",
+      "proposal": {
+        "evidence": "Example 3 identifies two Bishops and King against King; adjacent B-Q3 continuation cross-checks bishop proposal; all squares visually transcribed.",
+        "method": "notation"
+      },
+      "proposalSha256": "6d736dfa74b30d21d4366099bf235442df70490c32352a3d6d48f5ff8cd96d37",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-a-03.png",
+        "originalId": "public-a-03"
+      },
+      "rect": [
+        454,
+        790,
+        423,
+        418
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-a",
+      "sourceSha256": "e4c5693a3f3ee3d89c0321a4092557fca721b01351effee0f8bb7d6c8fde4a78",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "ff6d0487188c2ea8804bcef92a5c0fc3505b0d07f11832300d1823d973a0546e",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-04",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 24,
+      "pageSha256": "91595e8696956ef02a18cc000384a447562879d4cae6702ec740c05eafdf21d8",
+      "placement": "8/8/8/4k3/8/8/8/4K2Q",
+      "proposal": {
+        "evidence": "Example 4 specifies Queen and King against King; all squares and color visually verified.",
+        "method": "notation"
+      },
+      "proposalSha256": "e01231acfd7b61194b404dba57ea4c04beb43616b2fb4f674f4b637dda9ce7bf",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-a-04.png",
+        "originalId": "public-a-04"
+      },
+      "rect": [
+        391,
+        594,
+        422,
+        416
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-a",
+      "sourceSha256": "e4c5693a3f3ee3d89c0321a4092557fca721b01351effee0f8bb7d6c8fde4a78",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "b8ffc1eb0b9e7404849898016eefb21ea7106b9c0c4c96c40b8a558d1325699a",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-05",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 25,
+      "pageSha256": "d8766d88db4959dcf6977f000bc1b7e4b41e655756e5ce835f9a7fba90698ad8",
+      "placement": "8/8/8/8/4k3/8/3KP3/8",
+      "proposal": {
+        "evidence": "Example 5: all squares visually transcribed, hollow white pawn and contrasting king styles inspected.",
+        "method": "manual-visual"
+      },
+      "proposalSha256": "b2f8da8efe1c10514c87c06db14371c9184e4132c5d89a81b06d29da649dec00",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-a-05.png",
+        "originalId": "public-a-05"
+      },
+      "rect": [
+        359,
+        1175,
+        422,
+        416
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-a",
+      "sourceSha256": "e4c5693a3f3ee3d89c0321a4092557fca721b01351effee0f8bb7d6c8fde4a78",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "f0073b5f8dd285f5a75165c53817a4297cfbd96081eb75de6fe2219cd2740c59",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-06",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 27,
+      "pageSha256": "5b97e1a374e89379a48786ef97e918e0ba0ad184aae23d80c69168fafde7690a",
+      "placement": "8/8/5k2/8/5K2/8/4P3/8",
+      "proposal": {
+        "evidence": "Example 6 describes White king ahead of pawn with an intervening square; all 64 squares visually transcribed.",
+        "method": "notation"
+      },
+      "proposalSha256": "10ed2e6ffb0e6762c300e95a46d2e44b7bb3d53288a45ce4101d22f0dac14216",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-a-06.png",
+        "originalId": "public-a-06"
+      },
+      "rect": [
+        365,
+        619,
+        423,
+        416
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-a",
+      "sourceSha256": "e4c5693a3f3ee3d89c0321a4092557fca721b01351effee0f8bb7d6c8fde4a78",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "ba078210f03973c633e786f36a479307cb00e7325ab3cfe1228902effc692341",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-01",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 18,
+      "pageSha256": "76e76eb98f1011ba0d1d8f0653e55b20d265d1efdf0ba5915d0423a4bb6da72a",
+      "placement": "8/8/3PPP2/3PnP2/3PPP2/8/8/8",
+      "proposal": {
+        "evidence": "All 64 squares reviewed. Initial quarantine resolved against PDF page 17: filled knight matches black exemplar; eight hollow pawns are white. White-bottom is printed explicitly. Original uncertain proposal retained.",
+        "method": "manual-visual"
+      },
+      "proposalSha256": "1ef96dc455fd0512a4fe0b833ac79289ecfcbcebd6067db7d67cd0bcb69007fc",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-b-01.png",
+        "originalId": "public-b-01"
+      },
+      "rect": [
+        164,
+        389,
+        734,
+        744
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-b",
+      "sourceSha256": "806c92594a9ff6d9e08c4b30c69f08c3f427cce0fe2e9283e4a52f7ff81b806e",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "ambiguous-piece-color",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "3e4b7aefbb66c48e1fef800930e04a51336ece49243b7960cbd60689f20117f6",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-02",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 20,
+      "pageSha256": "e603cfc7c7c95720a6e69c59a7e8034fb66a7a95e40e7ff9d467df5a0c5b3f44",
+      "placement": "8/8/2k5/2P5/5p2/5K2/8/8",
+      "proposal": {
+        "evidence": "Printed No. 3 board; filled king and pawn are at c6/f4, outlined pawn and king at c5/f3. Text states the king takes the adverse pawn.",
+        "method": "manual-visual"
+      },
+      "proposalSha256": "2e50527fe20e27370db3b5410342c40f6b19b9fc8e42e206ccd7c87a2b8f1912",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-b-02.png",
+        "originalId": "public-b-02"
+      },
+      "rect": [
+        164,
+        650,
+        730,
+        740
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-b",
+      "sourceSha256": "806c92594a9ff6d9e08c4b30c69f08c3f427cce0fe2e9283e4a52f7ff81b806e",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "sparse",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "b525413355612077b0b0ef10d16bcce6bcc7f1f665c41a1ff1c18925c34cd9e2",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-03",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 21,
+      "pageSha256": "b09bde886bda61c2ff17b3c3711d6ca195dbe7f3ffbd33f7d5873afd60f3301f",
+      "placement": "8/8/8/8/4q3/8/8/8",
+      "proposal": {
+        "evidence": "Printed No. 4 board; a single dark queen is centered at e4. The piece is visibly filled rather than outlined, so proposed as black; side-to-move is not represented.",
+        "method": "manual-visual"
+      },
+      "proposalSha256": "4f02b2b1c9ac27342e1e2b77b341980ea4d64c328fb1cb2b4382c942d06eafb5",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-b-03.png",
+        "originalId": "public-b-03"
+      },
+      "rect": [
+        162,
+        581,
+        729,
+        736
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-b",
+      "sourceSha256": "806c92594a9ff6d9e08c4b30c69f08c3f427cce0fe2e9283e4a52f7ff81b806e",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "single-piece",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "51de2b283c8af7ea0462558afffde95d8ffdfd361ba8bba10638d85395dd7354",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-04",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 22,
+      "pageSha256": "84685250a238dec7a2df6d530e97b170d650a16e1ed1fc1fdbc026cc8c2bd614",
+      "placement": "8/8/8/4r3/8/8/8/8",
+      "proposal": {
+        "evidence": "Lead and independent tie-break reviewer correct the proposal to black rook e5: fourth row from top, fifth file. Dark brick interiors with light mortar match the black exemplar on PDF page 17. Original white/e4 and intermediate white/e5 proposals retained in earlier manifests.",
+        "method": "manual-visual"
+      },
+      "proposalSha256": "4c14bbd9c219a35f6531b60a5857fd76c6a33e72570db63b8e77a40d572ada56",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-b-04.png",
+        "originalId": "public-b-04"
+      },
+      "rect": [
+        163,
+        546,
+        735,
+        749
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-b",
+      "sourceSha256": "806c92594a9ff6d9e08c4b30c69f08c3f427cce0fe2e9283e4a52f7ff81b806e",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "single-piece",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "85d8fbe20586c7df15d1b1a09261be9aaabb855e1bdb498b7ea6fb78f3d6f046",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-05",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 23,
+      "pageSha256": "c54957024fec7e80883975d8d53e5fe0797515f4ef331380dd1b80bbc6ab7c44",
+      "placement": "8/8/8/3b4/8/8/8/8",
+      "proposal": {
+        "evidence": "All 64 squares reviewed. Initial color quarantine resolved by PDF page 17: dark bishop with white cross matches black exemplar. Located d5. Caption was only a check, not truth.",
+        "method": "manual-visual"
+      },
+      "proposalSha256": "d22c735895608e9e469aba72016e88913090ceacf99776b76973b7f32c4ada81",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-b-05.png",
+        "originalId": "public-b-05"
+      },
+      "rect": [
+        127,
+        328,
+        733,
+        751
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-b",
+      "sourceSha256": "806c92594a9ff6d9e08c4b30c69f08c3f427cce0fe2e9283e4a52f7ff81b806e",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "ambiguous-piece-color",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "cropSha256": "0b0bd619b59ce574f7aa7a92d2f7c5174a00ce044f3390fadec664b2a19fd912",
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-06",
+      "kind": "board",
+      "orientation": "white-bottom",
+      "page": 24,
+      "pageSha256": "569a777ecf581b17b7b8fdd027e51ec166753fac5f2753930a1a9dd06f30051d",
+      "placement": "8/8/8/8/3n4/8/8/8",
+      "proposal": {
+        "evidence": "All 64 squares reviewed. Dark filled knight at d4 matches the black exemplar on PDF page 17; initial quarantine resolved from visual evidence. Numerals are annotations, not pieces.",
+        "method": "manual-visual"
+      },
+      "proposalSha256": "7c35df6f96d90801d8c1d7700d126d85f2bc5660c2e6f3f81e8e799f297ad0db",
+      "provenance": {
+        "manifest": "manifest-final.json",
+        "originalCrop": "public-b-06.png",
+        "originalId": "public-b-06"
+      },
+      "rect": [
+        177,
+        502,
+        729,
+        740
+      ],
+      "review": {
+        "all64": true,
+        "geometry": true,
+        "reviewer": "pilot-final-review",
+        "status": "accepted",
+        "type": "agent-assisted"
+      },
+      "sourceId": "historic-public-b",
+      "sourceSha256": "806c92594a9ff6d9e08c4b30c69f08c3f427cce0fe2e9283e4a52f7ff81b806e",
+      "split": "train",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "ambiguous-piece-color",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    }
+  ],
+  "role": "training-candidate",
+  "schema": 1,
+  "source": "frozen-public-pilot"
+}

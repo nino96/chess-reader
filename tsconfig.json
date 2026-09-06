@@ -24,6 +24,9 @@
     },
     {
       "path": "./experiments/recognition-training/v3"
+    },
+    {
+      "path": "./experiments/recognition-dataset"
     }
   ]
 }

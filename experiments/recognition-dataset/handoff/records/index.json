@@ -1,0 +1,85 @@
+{
+  "imagesPdfsTensorsWeights": false,
+  "kind": "public-metadata-only",
+  "records": [
+    {
+      "bytes": 87313,
+      "original": "work/modern/proposals-wikibooks.json",
+      "sha256": "c6085de33f027c9cb25d23ceee0a1ee12cde1c3f7edfa4c74a71c9bea6a1893f",
+      "snapshot": "proposals-wikibooks.json"
+    },
+    {
+      "bytes": 17768,
+      "original": "work/modern/proposals-historic.json",
+      "sha256": "10974f33f09fdd8eabe5b9001a570421b7d43355d0cb03c38975cb1826e06475",
+      "snapshot": "proposals-historic.json"
+    },
+    {
+      "bytes": 17105,
+      "original": "work/modern/proposals-ctan-v4.json",
+      "sha256": "d81a7fafc4e5458f28a73dc310737ff94a799cd2e710eb6db341f3129861b9ad",
+      "snapshot": "proposals-ctan-v4.json"
+    },
+    {
+      "bytes": 15530,
+      "original": "work/modern/proposals-mpchess-v6.json",
+      "sha256": "e2295c2d2c47f73ec41c2dd184ee7eefe12ebca4d323f514174d1fd514d6d3e8",
+      "snapshot": "proposals-mpchess-v6.json"
+    },
+    {
+      "bytes": 7511,
+      "original": "work/modern/review-decisions.json",
+      "sha256": "3f015593376bce3f0bfa73b32403b22c50c674441f436f38c50fd5b0f5cc6034",
+      "snapshot": "review-decisions.json"
+    },
+    {
+      "bytes": 260667,
+      "original": "work/modern/manifest.json",
+      "sha256": "662ebc763a6b8e2b3df706e5f6ba21f8f1d40ca28ccfec5345a7a8ebaed753f5",
+      "snapshot": "manifest.json"
+    },
+    {
+      "bytes": 44783,
+      "original": "work/modern/pages.json",
+      "sha256": "49173d74d1df829b8abf366d988e71d98e68b06487e1a8d7cc45ed89a8db5f50",
+      "snapshot": "pages.json"
+    },
+    {
+      "bytes": 184705,
+      "original": "work/modern/preprocess-manifest.json",
+      "sha256": "61ce3c07f70cb2e2d303cf793171e44608edfe1808c933b2cdc60a923b319a19",
+      "snapshot": "preprocess-manifest.json"
+    },
+    {
+      "bytes": 1574,
+      "original": "work/modern/coverage.json",
+      "sha256": "c330cc8709918a2b4e438ad35829cded485f7ca5add61891ff4eaca024d4fc98",
+      "snapshot": "coverage.json"
+    },
+    {
+      "bytes": 2376,
+      "original": "work/modern/dataset/dataset-lock.json",
+      "sha256": "da60b559e5c0ade0bbfdbf85eeab45256fd080bf5efb2c8f0cb5529e14c743e6",
+      "snapshot": "dataset/dataset-lock.json"
+    },
+    {
+      "bytes": 57935,
+      "original": "work/modern/dataset/train.metadata.json",
+      "sha256": "7fab949a5940073626695e4aac7f58b92fcddd2821f817d3523b25744124f27e",
+      "snapshot": "dataset/train.metadata.json"
+    },
+    {
+      "bytes": 11681,
+      "original": "work/modern/dataset/dev.metadata.json",
+      "sha256": "6cfd9d55a5862217b7d0c0908e5e32f1b25daada85b4c6c956a6e1a40b40a361",
+      "snapshot": "dataset/dev.metadata.json"
+    },
+    {
+      "bytes": 11119,
+      "original": "work/modern/reserved/held-out.metadata.json",
+      "sha256": "f2782e96f731af2110e4f9e33c24eb37e0ee279338bcf73fdf3d7f2a0beb7819",
+      "snapshot": "reserved/held-out.metadata.json"
+    }
+  ],
+  "schema": 1
+}

@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "reviewDate": "2026-09-06",
+  "repositoryTerms": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia",
+  "sources": [
+    {
+      "id": "wikibooks-chess",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Chess.pdf",
+      "rightsUrl": "https://commons.wikimedia.org/wiki/File:Chess.pdf",
+      "filename": "wikibooks-chess.pdf",
+      "rightsFilename": "wikibooks-chess.rights.html",
+      "attribution": "Wikibooks contributors, Chess; principal authors listed in the PDF; Wikibooks/Wikimedia Commons export.",
+      "workGroup": "wikibooks-chess",
+      "editionGroup": "wikibooks-chess-current-export",
+      "lineageGroup": "wikibooks-diagram-glyphs",
+      "expectedSha256": "64eefeb13bac466deab51c3bcea669efbae873ffa53b09e8419ac8e226254d86",
+      "expectedRightsSha256": "f07a201e5afaa6c39eb2b11674a92d39e32d8d05f4cd41c4278497af3cb716d9",
+      "rights": {
+        "acquisition": "approved",
+        "evaluation": "approved-with-attribution",
+        "training": "approved-with-license-obligations",
+        "cropRedistribution": "conditional-gfdl-or-gpl-notices",
+        "modelPublication": "review-required",
+        "basis": "PDF grants copying, distribution and modification under GNU FDL 1.2 or later with no invariant/front/back cover text; image credits identify chessboard pieces as GPL or GFDL. Cover photo has a separate GFDL credit. Use diagram pages only after image-credit review.",
+        "jurisdictions": ["worldwide under stated GFDL terms; verify individual image credits"]
+      }
+    },
+    {
+      "id": "chess-puzzles",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Chess_puzzles.pdf",
+      "rightsUrl": "https://commons.wikimedia.org/wiki/File:Chess_puzzles.pdf",
+      "filename": "chess-puzzles.pdf",
+      "rightsFilename": "chess-puzzles.rights.html",
+      "attribution": "Kiran G, Chess puzzles, 2021; Wikimedia Commons file record.",
+      "workGroup": "kiran-chess-puzzles",
+      "editionGroup": "kiran-chess-puzzles-2021",
+      "lineageGroup": "modern-self-published-diagrams",
+      "expectedSha256": "670bf873236ce8184e50a6b7f150224d3f6bd1a1594c7c06c390b11eb8828005",
+      "expectedRightsSha256": "c6a370d5926ba7800e8cf17e2170673710940deba6949bd08e743bc3f2008b15",
+      "rights": {
+        "acquisition": "approved",
+        "evaluation": "approved-with-attribution",
+        "training": "pending-content-and-credit-review",
+        "cropRedistribution": "pending-content-and-credit-review",
+        "modelPublication": "review-required-share-alike",
+        "basis": "Commons record identifies the uploader as author and declares CC BY-SA 4.0, but the PDF's embedded diagrams/screenshots and any reused artwork have not yet been individually credited. Do not train or redistribute crops until page-level visual/credit review confirms the declaration covers each diagram. If cleared, retain attribution, license link and indicate changes; assess whether a published model or dataset is an adaptation before distribution.",
+        "jurisdictions": [
+          "worldwide subject to CC BY-SA 4.0 and any third-party-content exclusions"
+        ]
+      }
+    },
+    {
+      "id": "ctan-chessboard",
+      "url": "https://ctan.math.illinois.edu/macros/latex/contrib/chessboard/chessboard.pdf",
+      "rightsUrl": "https://ctan.math.illinois.edu/macros/latex/contrib/chessboard/README.md",
+      "filename": "chessboard.pdf",
+      "rightsFilename": "chessboard.rights.html",
+      "attribution": "Ulrike Fischer, chessboard package documentation, CTAN package version 2.0 (2024-11-07).",
+      "workGroup": "ctan-chessboard",
+      "editionGroup": "ctan-chessboard-2.0",
+      "lineageGroup": "latex-chessboard-glyphs",
+      "expectedSha256": "114b0b86861489bb9d27531c289545f7d8ab85aed6b5bf91eaaa766507203857",
+      "expectedRightsSha256": "ae6c1f0205e862162cc4c544754a68028b2ce92e7a4da6aeab1edab7994711b1",
+      "rights": {
+        "acquisition": "approved",
+        "evaluation": "approved-with-attribution",
+        "training": "approved-with-license-obligations",
+        "cropRedistribution": "review-required-lppl",
+        "modelPublication": "review-required",
+        "basis": "CTAN primary package record identifies the LaTeX Project Public License 1.3 and copyright to Ulrike Fischer. This is rendered package documentation, not a historical book; use as modern rendered reference and preserve license/source notices.",
+        "jurisdictions": ["worldwide subject to LPPL 1.3 and package notices"]
+      }
+    },
+    {
+      "id": "ctan-mpchess",
+      "url": "https://ctan.math.illinois.edu/graphics/metapost/contrib/macros/mpchess/doc/mpchess-doc-en.pdf",
+      "rightsUrl": "https://ctan.math.illinois.edu/graphics/metapost/contrib/macros/mpchess/README.md",
+      "filename": "mpchess-doc-en.pdf",
+      "rightsFilename": "mpchess.rights.html",
+      "attribution": "Maxime Chupin, MPchess package documentation, CTAN version 0.9.",
+      "workGroup": "ctan-mpchess",
+      "editionGroup": "ctan-mpchess-0.9",
+      "lineageGroup": "metapost-mpchess-glyphs",
+      "expectedSha256": "4b28bab020ee24736353a73f3ffa621d66c626c24d044dd07bf893124d249d42",
+      "expectedRightsSha256": "aa8efdbce5774afc9a15cb420981ef2845a14c6783bafa69f773d7ab23a99d6c",
+      "rights": {
+        "acquisition": "approved",
+        "evaluation": "approved-with-attribution",
+        "training": "approved-with-license-obligations",
+        "cropRedistribution": "review-required-gpl-lppl",
+        "modelPublication": "review-required",
+        "basis": "CTAN primary package record identifies GNU GPL 2 or newer and LPPL 1.3c. This is generated package documentation and a modern glyph lineage; preserve package notices and distinguish it from real scanned-book reference data.",
+        "jurisdictions": ["worldwide subject to GPL-2-or-later, LPPL 1.3c and package notices"]
+      }
+    },
+    {
+      "id": "plos-optimal-forgetting",
+      "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371%2Fjournal.pcbi.1008367&type=printable",
+      "rightsUrl": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008367",
+      "filename": "plos-printable.pdf",
+      "rightsFilename": "plos-printable.rights.html",
+      "attribution": "David G. Nagy, Balázs Török and Gergő Orbán, Optimal forgetting: Semantic compression of episodic memories, PLOS Computational Biology 16(10), 2020, DOI 10.1371/journal.pcbi.1008367.",
+      "workGroup": "plos-optimal-forgetting",
+      "editionGroup": "plos-optimal-forgetting-2020",
+      "lineageGroup": "plos-author-figures",
+      "expectedSha256": "cc49abdaee5acc73983074e1a1a65ff3bec69c3808616fa28725991a80f99def",
+      "expectedRightsSha256": "d183a346bb64a1d486db12f6cfccae59209ec2040aba38616f6ff932574894be",
+      "rights": {
+        "acquisition": "approved",
+        "evaluation": "approved-with-attribution",
+        "training": "approved-author-created-content-only",
+        "cropRedistribution": "conditional-cc-by-4.0-and-figure-review",
+        "modelPublication": "review-required",
+        "basis": "PLOS article states CC BY and permits reuse with attribution. The article may contain third-party or separately credited material; only author-created chess figures may enter training after visual and credit review. The article is a scientific paper, not a book corpus substitute.",
+        "jurisdictions": ["worldwide subject to CC BY 4.0 and article-specific third-party notices"]
+      }
+    }
+  ]
+}

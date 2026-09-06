@@ -1,0 +1,1847 @@
+{
+  "boards": [
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "d6f2ac750b80e071e46d49638706997fc4b2f68dbf2004ce8d09e90a42caef98",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p006-000",
+      "occupied": 3,
+      "placementSha256": "6734cf9e9766d1a7bdee8932b08f4f0e6546e3619a401a6b556214446aa2fe7a",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "5e197ab4691779d80fcd63940aa24953b6a5d4bf6c318be4b00520c84fa30de5",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p006-001",
+      "occupied": 1,
+      "placementSha256": "dc635bdf1bad9172ce4dc0657f6e9e7699d89bc9ba1ae670541502391fb22821",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "db03b4f48168dbe8c192f77b53695f3c0228aacbbee0c7469fe0ef7c6b27bf1f",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p007-002",
+      "occupied": 1,
+      "placementSha256": "bae694e95f9bb15529426fe49ca254921967ba14152cde591f64de7c4ded16eb",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "dd262d78c5cf0fdc8e6e8ff528ea3ce001f15c8c545b16617fcc9ea7681fc3da",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p008-003",
+      "occupied": 1,
+      "placementSha256": "2e9d8882f1e4f8fed092f1b19e653f0bf2550e81a76a5e014d7fdcd367fbb863",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "18073e4707f6d3a9bea28bc9a71dd69d782bd84f2f92cbd6b31602ab2d7a4d80",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p008-004",
+      "occupied": 1,
+      "placementSha256": "e3131d8098ac8bec45359840fcb9bbc3b536e2dd2e3bea82a95c9533490d1921",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "d93699f206920d369d8dd0cf58df6c39b639adc25172ada9560b44ebacc1f1cd",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p009-005",
+      "occupied": 3,
+      "placementSha256": "591b351f329be1d59ef874adadabffab5b017852ca85c39075fd926f4c5cd622",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "63f5a7587fd58ef8ae52272c6620543b23e5345bacf6161588f0070d8e05f3c3",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p009-006",
+      "occupied": 2,
+      "placementSha256": "85b1cd6108e6d8add516fa75ca450bc7e2830eeb9f2676995a0066d93d9c2227",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "0a902fc6b9b53c9b90231593b006b55f20657e94904d9bcb6fbd900b3d91268d",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p011-007",
+      "occupied": 2,
+      "placementSha256": "f7038fd5e679ac60c634917a0e609e13d44f8a594eae07a56272a3e659b067a1",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "289c687096da9863b68811ec619f8d207fcd68d96f29e58d0c775255fa94925d",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p011-008",
+      "occupied": 2,
+      "placementSha256": "e873889fc3a375c084e11a2c651da2d69b9b822baf68d109e7fe541f822b940b",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "cb0bf54f1f10d1a092b26cdc032caf0cf7d92edb715443c8a7324166f1113606",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p011-009",
+      "occupied": 32,
+      "placementSha256": "2438bf3df818266ca0a7480991ca52daaeeec55a010185a367c51c6836d35047",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "8c79172057a86577fc2d947f3d9338f19ba3c1ee57fb8026180ba63eaa659efd",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p014-010",
+      "occupied": 4,
+      "placementSha256": "db081c647b41ef943702b529813099675560fc3e193de6bc6b8f7b20cf30717c",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "ad7a8cf45a3e3d8d4c1bc3f8e7f7c2f863d26593911d1abfbd352474bb201590",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p015-011",
+      "occupied": 4,
+      "placementSha256": "2238b85193a56acf524a568d58612fbba4f935a88641c9e7179e6cdce7e3b88e",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "d50571196c1458f9fd65329f677ff9d6127ef512c8405b555534107397390019",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p016-012",
+      "occupied": 3,
+      "placementSha256": "857a5e0cf2d2b279cdc18acc8297aeb368af3c8123b68bd35d41e82c1318dd67",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "16d7d6d82ff3747dcab9333594b1f01d4df0aca48f698dc884e5dc00fe691251",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p020-013",
+      "occupied": 30,
+      "placementSha256": "6a9a62efb8835f2ae23a463489804de2bc0e2fafed5ab65bf84d437956e3d1ef",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "84650e7d7ac99bd9de3c748be71a3fac5e5f741d5e7323377b43eeb6a9514825",
+      "density": "medium",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p021-014",
+      "occupied": 18,
+      "placementSha256": "2afe8d4c5d99e247468c18cb514274311d4193eaedf0034968554b11d291b7a1",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "336cb81a93e2a94b83becb48315b10ad2d4dbd86f206edd684765488e05bb10d",
+      "density": "medium",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p022-015",
+      "occupied": 17,
+      "placementSha256": "2c04f6063ecb75f3ec889372ce61460cecd9cb2c3b32c5431db12eec5695a8b8",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "71963f2efb17b8ebd56c8d775dbf3fd053aa4afd182f279bb762d8c9312ff199",
+      "density": "medium",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p023-016",
+      "occupied": 17,
+      "placementSha256": "5a36d72dd6d570d2058efcf1d5aa5585ae2e8403d3389c0a2ffa34216b717fe7",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "d83079ccecac9e4e280fe8816536681442308e3f7bb7d8475114b810badbfc48",
+      "density": "medium",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p023-017",
+      "occupied": 17,
+      "placementSha256": "5a8ab93800a580e06bed5f68d694d32e88afbfbc68436e43b1a1308a0d263799",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "2dc4129d5b961a8a78590684ee810196c1ae072cad2600f2c0b38fc68252b9b3",
+      "density": "medium",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p023-018",
+      "occupied": 16,
+      "placementSha256": "7d5dd7d67c0e8991bdbaa2f95cadc6ea83b4644361333f455f665774966622e8",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "16d1886ed4871a875a664c7f7778a76dfcb8955a16185333c4ae04ccb49b907a",
+      "density": "medium",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p024-019",
+      "occupied": 16,
+      "placementSha256": "75a7ee18834d82e165bbfeb217d37a86cad2eaa17607ce3fa75a7dd88f5eeef3",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "50a9dc850a90e79d282c18c448231b7881e2224bd4d6a828192ba3ec1519cc3b",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p025-020",
+      "occupied": 7,
+      "placementSha256": "4b2aa5f0a77f782d3137d855d8b2a9e643b117b63c5d3a89a455d417067794ea",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "4e485c9f49f0e62bea694d05421b33d036bff6b5e738cf8829b52fb7e3b29ec0",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p028-021",
+      "occupied": 32,
+      "placementSha256": "72b6d4cf4e21d39c7cded740b5ddd0ac30de85c76456ae55c337405d9ef430a1",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "db66bc2cc5de1ebd5a5eafb15b52ea2ffd7a414f562256f7788814a824a59e02",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p028-022",
+      "occupied": 30,
+      "placementSha256": "b98c21ee10de56a5ec82b32e5066e1235e0d2bceb4148e4bac0132d134b91b27",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "50c4d46a802288b50343cd6b9a374e3068aaf44a6bb5a089222cd4b123a79d13",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p029-023",
+      "occupied": 28,
+      "placementSha256": "02292645f2a6c32ae95fff7768c54c5a30868d5e4cec4b0502839b3fae71f0ac",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "39efd9b94b23021178ed82233a6fb0b623c0819fbb3a1dd4c8f4468bf64fabfb",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p031-024",
+      "occupied": 31,
+      "placementSha256": "03feda2d9364b808a0a679aab4088439264f54d1ef4db5e54851163882a422e7",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "050f050f9a3c9690bbb1b3c59cc5dc493563d43f16d6c015ddfeade0aeab9286",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p033-025",
+      "occupied": 5,
+      "placementSha256": "ecb6c1fcc208f66c609efbe0c43175b9aec21b08b1c7f4adad4a9c5fc552ad0e",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "49e3997b7e1057f3eef74756b73f5312f8281bbfe4d3939324dbe803e9af647d",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p033-026",
+      "occupied": 5,
+      "placementSha256": "6218bca327ca8d89dd17aafb3612bedfe8b3a9470a151907cdc00687cd1cab1a",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "68d7a624dc6bb58ac988624a3821d333de3e964bb42b2b0642c98870059842ab",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p034-027",
+      "occupied": 5,
+      "placementSha256": "3f2894803c529188ad20b62c44a50c5cf41becaedfa1520014fe228bc432011a",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "ba2cbadbffb836a85242c6be237cbd8d1efc2b7648a0ab0166fcd8fb1259966d",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p034-028",
+      "occupied": 5,
+      "placementSha256": "04907ee183f96d58a4161813df4bb29a6a8a34a186e5515241ce36f349351a0c",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "3763702cdd5090d9df7c1bb70ed1670ca31cd545bfe05a9492545e61c9713d7b",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p035-029",
+      "occupied": 5,
+      "placementSha256": "6030596a7d7988579de707462abd5a41c2d2d6a0712e94f3d83c794a53e3194a",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "6572478b92512fb91a396a3aba38b38bd0f581a8bb27c72a5ef0b24abbd96ee5",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p035-030",
+      "occupied": 5,
+      "placementSha256": "2736d66a846f61b4b1d6e8e7f780447c981ab80b3c59237d2f6df9f90a8abd5f",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "ca928e92c786c2487baffa993ad22a59c584b182bb4ab4b17afd924def447629",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p037-031",
+      "occupied": 32,
+      "placementSha256": "d504aa7c9a907ec6da4ca7279cc93e8cb267eaaebffb8d42465ffc1dc279ed91",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "a4c3b0d15b13f2aa93c9a42abc8989ce5ffde030d388a6f87a684a82370916bd",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p038-032",
+      "occupied": 32,
+      "placementSha256": "228ea8911df98c146936fbc43bf479e6b9ef01b5ed9752730d94b044c1d6dd11",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "d60a5802b624b3c207f7e1e394e16a93fe44ed465492e59e6c9603f55c5ad238",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p038-033",
+      "occupied": 32,
+      "placementSha256": "f352c870f94f7121035ad323433b3aa5dbd16ef93e82cf2e0bb8cc62defeae11",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "7cd61a4551df94a201354f513791504c3a8d117e441a9fa38b429b0a664d3dd8",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p039-034",
+      "occupied": 32,
+      "placementSha256": "9e3b38922dcb366d24a09a11c4bdc280285b18219cc4c4b86cc7a9245f2e4187",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "47ef366c0c8e8ac12bc0e20c2f3da71e769a79ebf1ed8aafe2483d2421fa8223",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p039-035",
+      "occupied": 32,
+      "placementSha256": "bc0ff435570437c1120ba2c8c6a7622bae5930aa38a09f6e7eb4977e17ecaa0b",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "4afc900941fd3de4b12d6016600309d9aa57eaa618790b6a7695376a4f3c5d52",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p040-036",
+      "occupied": 28,
+      "placementSha256": "0067dc9bb0a4d7a6ca04d6b7612ddcf9d81f8048ab82f6a9ba8a768dc0fed086",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "aded79ae14ffb2dceb7e5e6861d6bb2433702bd8a1855ee48f9c993b7ff8a750",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p040-037",
+      "occupied": 32,
+      "placementSha256": "4ea098da3e41c210276b99ca516e6db8ae68f55dc91a8159da1b31e8fe3dda4f",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "a6f98ce939f66f2d21cb0ecbee9695f4d4a5f3ead6adb374ee958c44c5fe093d",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p041-038",
+      "occupied": 31,
+      "placementSha256": "bb86044c70211cf1e1273b94f192ae9093edb52fecdb2c2cb399e874529737b7",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "01ed824c2cae870b057bab18272821d37493d9108e5df3176cdd4dbb8453d196",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p041-039",
+      "occupied": 32,
+      "placementSha256": "608e0abbee86709ba749433882b829e3e639d8c2740eda72c81acf4b8ae386a4",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "8bf8019dc8f7f9db131b22a9668795f8f2ccb47a520ed48636eca5adda8b951b",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p042-040",
+      "occupied": 32,
+      "placementSha256": "3902ac2ae9d85a73fa230fa1dd9c528aa7f79ae7735c3b68fcd8f0433482c3a6",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "fd41a40fb4c39e44d5e24bd3ef11fc8275894d159aadbe909425c63109643872",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p042-041",
+      "occupied": 32,
+      "placementSha256": "3832708a58dda5fd443c4f45eb938662551ea4ca9381ea7785dd28f42f924239",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "a29daab5830e17dc389d5f7ddf1049b22cec14171f7307692e8c663e5d79f000",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p043-042",
+      "occupied": 32,
+      "placementSha256": "38bb946b81dfd13822533ff3ae9bc589cc0766a624f20f6f1746ffa79a3b3077",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "7ce574d08662bccda28d3db87d4fe12b1c12eb121533640d3a0f8ea7c82dbd93",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p043-043",
+      "occupied": 32,
+      "placementSha256": "18c73d377756b454349493fd746ada1b6ba964a716f5b62ce57848aa2ac793bb",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "71a6f6e1a397818279951366ec868a09a77d3514a5173d6852756449150887e7",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p044-044",
+      "occupied": 32,
+      "placementSha256": "cfe30745eb4654c83a21ead30b384a933b5fced79fe0bbe005bb0d58d568c554",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "165f23e6be0de8c98de79552b01f4260f20bdf0bdf413667a79050ba19cfe2a6",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p044-045",
+      "occupied": 32,
+      "placementSha256": "c099e53196e634cac107e3c7a19c59f02f6485306291aa834db70fbf6d12e660",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "d50597310ce5cb7538eb52a3b1c667fdbb09dc556b97115ace4ba2b013f376e4",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p045-046",
+      "occupied": 30,
+      "placementSha256": "9d08d4c17a33466b03dc9f6bdfa9159718c5c94f36540d8ba611b940fddc8710",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "0cf1afc5545cfb6d1ec9e23db7eb45aee8f92bafc0bec90493b4f464a16a3ee0",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p046-047",
+      "occupied": 32,
+      "placementSha256": "36348d66812dc5a0221a2ac83bda6aa60932176e8fd094eeecdb6a8227cddde4",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "8aaeaf7ffc2d579352fb2677fa79c62cf89a46ee65c8689a944a9314da56eec3",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p046-048",
+      "occupied": 32,
+      "placementSha256": "6810ad228f73012cbf2fb24181f17f3ef14bb4b3cefd84e973e2df017a587ca1",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "0a173bc98a61961f9879e2d46b095848f44a0d2fefd3008c9f0bf42e988d1af0",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p047-049",
+      "occupied": 32,
+      "placementSha256": "cccc96c392bb6de22edd6b26fd86e689f9f015079cad9d33c006c8421c596bcf",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "58ab46a8c490b5c56253f007624223c05d679370550d91e2b8d871bbbb13e6d1",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p047-050",
+      "occupied": 32,
+      "placementSha256": "9d75bfb272fbccb364b9f92f77dc72c5a91d467f72b010fabf2e136c3cc808a6",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "1bf2783c22d51088e572b3b8006cb1520af8d185997724d253a35aac5f1abd23",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p048-051",
+      "occupied": 31,
+      "placementSha256": "87cd0f641bec5b159886d93923daeb01b26eac6110a754b2e9886a73de466e94",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "e0d619472163bc59bd022fe5f2886ca4fac5505f7ebda0673fb9de0cf745d531",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p048-052",
+      "occupied": 32,
+      "placementSha256": "1eda4253dc4706b4b47f6308e3dbfb694626e7b37c00e3587c76fadddfdea827",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "4542c15e6d0b00a1f029500918a1f2732bc6032571efeaf7ca454aa0b5c03f42",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p049-053",
+      "occupied": 32,
+      "placementSha256": "d3f4d29a87186e3647d073488941c6f216f94a96cecbbf38795a15fed2a99180",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "073a7a20f746ddcd2e37c5ce02e06791a7b66789905754c534720fba1a3543fb",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p049-054",
+      "occupied": 32,
+      "placementSha256": "9030a7af96b29276ca785e36b62df8a8298876510c4e0941c816d439117fde5d",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "e941a3f1d9adba781c9ab2d72ab044c973dd9b222e65000cdbe906258228bff1",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p049-055",
+      "occupied": 32,
+      "placementSha256": "00f0607683a0496f8d9efcf51ae0f23142ba32a3fab919ab9a3c8cb2b5c027e4",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "3f6f7bc11cc573383b27a6f5f51abf2904944aa2ff065c3d33b154160986627f",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p051-056",
+      "occupied": 32,
+      "placementSha256": "13f1e01e1009fb7c73c55dd5635809caa403feb72ea5e3437a663adf46d4aecb",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "3f3316e68843eba46071394a71d87df605cda63478a3adcb75e99c08e16f1a50",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p052-057",
+      "occupied": 32,
+      "placementSha256": "04f2772561dcd53815637f72f8af3d58b847cd6dc9f4bdece66973bc5157373c",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "fc38cb1cddd3f0a1224f49b9d5c75269c1e3221f7326f3673ccf88dce0424a33",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p052-058",
+      "occupied": 32,
+      "placementSha256": "2953b8c06a8ed36ebb22d64b0b1be5af004dc5e04332a97dbeba4a65d103f383",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "5972747972a964d9886689b244576dd4b5c19207632af32092e80d4c3ce0fda8",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p053-059",
+      "occupied": 32,
+      "placementSha256": "21fed30d99c3ee9c8b898bc493ad38a572cc0fcf6d8816b5d87dd72d764dde66",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "9b83bbd6be4d92249925cb04049462868c843512639f6d99b5e52fe88d6da436",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p054-060",
+      "occupied": 32,
+      "placementSha256": "6c98a2db56c9892517bb837fbe19cb0f74044da019cfb47234a7123e9ca3cb73",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "0a842478ce7a5d69144d5ea4e9b61fc057444431a8efaf7baf68c7685deb8ed4",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p055-061",
+      "occupied": 32,
+      "placementSha256": "628b10226d58b6787ddb5f4a2f4d937bf9845adefb13ae55227173ac64b8c8a2",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "69546e3bef170c3a6e9f3220aafadfe957e14e2e8a9bc4203a318e2be2aa7be5",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p056-062",
+      "occupied": 32,
+      "placementSha256": "0be5d838fe29ad2f832ac2ca6d0ef55c932cad9100210779b8e51fb01d7d2ccb",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "708f7a51d993e83f50464dd8fb465f0a464b4f2fe323dff9db18588fb17db11d",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p056-063",
+      "occupied": 32,
+      "placementSha256": "022f0566fe090272f324bd4237e193c0558dc5b4747e9b1ac714a0e99888031d",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "7b5e62bfe767acf8250fc3e546039caabd8de0762b888d9991ce0da5c339e7b9",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p057-064",
+      "occupied": 32,
+      "placementSha256": "b8b736e31a23122c81169bca2bbab73f4650c9ff059492cb691a7cb26cda447d",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "a642a98dd4bad3f4c0f1fefcdd926cb853e4a837e4aba1562d1673dae09a76f6",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p057-065",
+      "occupied": 32,
+      "placementSha256": "e545713a358a3e1fce0a7404d62b93a355800c40737649fa38c518fc8c691d73",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "6f42d4550fcb6f19d6fcc93c8a92b7b478caa7184fa0d1cb7913aea88b30c3f6",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p058-066",
+      "occupied": 32,
+      "placementSha256": "478292667e17153be5996886fc744aa62465bece5a54f8b4e44b1d76c937103b",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "d5e8f81a637069709a63bc1136f6f97247df3766474689e77ab451a9e93d1b17",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p058-067",
+      "occupied": 32,
+      "placementSha256": "5f1afdb5933649f3751c67136abdf1ea1d8e2672606a96f6a2205733fb04ea33",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "d096d4ebde89373f8b214578770abb6b9a0860d9423ba04b43910107ec83a8c1",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p059-068",
+      "occupied": 32,
+      "placementSha256": "bf24168e6e52909f9a780fb57a04792bd6f0675f20c3d7b959e274cbc541bf8f",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "ec5ac92f0df76467fd208e73653450542fdc681c486d1180222ca1d662b180f1",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p059-069",
+      "occupied": 32,
+      "placementSha256": "60736891e09d710df2d4118a3e81a32ef7678174894411d026201100e024c520",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "9c88048135c5632bdcfb6abdc17b812092ac5bbeb509d5e0b418f32107f93212",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p059-070",
+      "occupied": 32,
+      "placementSha256": "bc74bfc0a8e8384115fc4f2a458a02f0611a84831644715a5c0cb49f533e6b30",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "105d4dbf9444e85caf8a63a66321ab88c392dae357cd432be3b4c359b5c89762",
+      "density": "dense",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p060-071",
+      "occupied": 32,
+      "placementSha256": "90cb2c5333ba8c240a662378a662fc7c320052c21b6ed4d19e526d0385afdba8",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "d9672e9d9ff982cca6815355d4a9b70ba31811ecfbfd1b9d5074e15c78be8eee",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p061-072",
+      "occupied": 3,
+      "placementSha256": "2ad32cf4fcff6cb6aaeb36ff960e36fe2399db390edb1ab2d337c59dbbb0a108",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "7467a5a0852ae52dbf605afd5c4a5894315e5e5cc10b148fcd22a09ce875dc70",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p062-073",
+      "occupied": 3,
+      "placementSha256": "2633d7bfd529139afc13d36ad277efa44c0274f32eac198064bb508ce20c6a6e",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "2dbf3e144b3f598047a9f00089b6b726ea31f30aebdd38966c849348470fb0d3",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p062-074",
+      "occupied": 3,
+      "placementSha256": "42208fb8aac006fa7ac34f64197467525e92c6715abc52b05882ce4aa31607b5",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "06be5a6c0cdbdc17076584ec2757ba9c0b5514eca564c71aeb98c333400cfe8e",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p064-075",
+      "occupied": 3,
+      "placementSha256": "8a272dc84043afe0829d57262f1d519f9498e9d90fd7a985fca6f0abd470cdc8",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "7335493274b6231a963329a655a4f9d31629733817f7c8468afe60f181921608",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p065-076",
+      "occupied": 3,
+      "placementSha256": "14de141cf0c8136854011cce3d5ddc960db865872c7ae9260245b33f8f11ac1e",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "0c71a3ea47e38096585962a009c74dd29f25d3b994b402baa2d2b538a6ac7395",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p066-077",
+      "occupied": 3,
+      "placementSha256": "bb8033ce4d28cac47e05c8fcaecccf9bdc8e97b9d884c69346113ee064f25e9e",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "eda9b962422b2894f182924cc96f50886461c19970c968c64354d9fe677c0077",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p067-078",
+      "occupied": 4,
+      "placementSha256": "9bb15222f79e3a3c53696f5d42e081dcd0f2179197eed012e51fcac285328ef6",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "065654feb1bde6b8d3ac7d601884d834be5cb66e96080e7a3c72308eff4be753",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p067-079",
+      "occupied": 4,
+      "placementSha256": "99952608316892e776f88a9bb97eb7b8d1e99b600e834392b3d6aca238833c52",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "eda10f9d3c857be308a1aaf49638b0ec852856c10e40ff44630d14eb521fa205",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p068-080",
+      "occupied": 4,
+      "placementSha256": "66d1a0baa1fdae90df07f935ffaee23f1414b1f3f1f01f2eb26ee53bb684f220",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "unmarked"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "68b02581cf9f0a3a8836513316786cf8ce495d3cfc7fde541883d8429ab7f8e7",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p069-081",
+      "occupied": 3,
+      "placementSha256": "cc7e4492bbbfd96912eac89f387d11ebeb8dc8ee124a4b2204c3e63ca26e3370",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "1d69ae718a88de871e78b7a31f42859de413de52dc6fd2005c7ff7170ae69233",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p069-082",
+      "occupied": 4,
+      "placementSha256": "1d1deb06ee4ffaf9b5c4032e1ffdb73ee9bc2b5657d8b68bc5b2b73fe522828d",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "colored-flat-low-native-resolution",
+      "cropSha256": "9ba17d9e260e8cf80f0ed3d78bbd1f0127d2e4e8ab01b74d302074aaf4fc35fc",
+      "density": "sparse",
+      "exposed": true,
+      "family": "wikibooks-xboard",
+      "id": "wikibooks-p070-083",
+      "occupied": 5,
+      "placementSha256": "7c0df5361f5d784f2580da1dfa21ccb9b76017ec23836acc9f2865781643eac7",
+      "sourceId": "wikibooks-chess",
+      "tags": [
+        "external-document",
+        "flat",
+        "colored-board",
+        "low-resolution-original",
+        "annotated"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "c2b3f54dcae7c3948065a2ead01cd201368cdca2c768c271d16fce20246f21fa",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-01",
+      "occupied": 3,
+      "placementSha256": "3d511f4e992e4ac6c61cc7e224118a8e0208729a23ac934490659933a1452f87",
+      "sourceId": "historic-public-a",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "5b0684755b95b5a474ce6e47f83eab87483c400b88f384b5e4bebd57cea304db",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-02",
+      "occupied": 3,
+      "placementSha256": "08b66ccc832fce8875e2107addd38b5b9822b0b4a9e6a432f88f1156ddaa2f1b",
+      "sourceId": "historic-public-a",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "0549937dcba7973e89fc171baa2c91146de34e97afede0810f9b704fff6f489e",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-03",
+      "occupied": 4,
+      "placementSha256": "55ce8a327528052d7fc0da85a137727443438cb25652e7234752e5f8b3193818",
+      "sourceId": "historic-public-a",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "ff6d0487188c2ea8804bcef92a5c0fc3505b0d07f11832300d1823d973a0546e",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-04",
+      "occupied": 3,
+      "placementSha256": "984d7cb3a28106010be12d64eb87ae49e4d87b2acb732b9c30558775533b3a53",
+      "sourceId": "historic-public-a",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "b8ffc1eb0b9e7404849898016eefb21ea7106b9c0c4c96c40b8a558d1325699a",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-05",
+      "occupied": 3,
+      "placementSha256": "fc8499a0e9457635e91d049eddbe4e6ebb5f6999f65cb2dd89e02c4200b12dfb",
+      "sourceId": "historic-public-a",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "f0073b5f8dd285f5a75165c53817a4297cfbd96081eb75de6fe2219cd2740c59",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-a-06",
+      "occupied": 3,
+      "placementSha256": "2b9d7f73b9bfab8cd8229cb838f71527be8bf120800977c38ada31402b09ca3c",
+      "sourceId": "historic-public-a",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "scan-noise",
+        "sparse",
+        "endgame",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "ba078210f03973c633e786f36a479307cb00e7325ab3cfe1228902effc692341",
+      "density": "medium",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-01",
+      "occupied": 9,
+      "placementSha256": "9253309ae9836f96a3b01db89e71218fa46750d8806b4f80a1d175438fd2e9ea",
+      "sourceId": "historic-public-b",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "ambiguous-piece-color",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "3e4b7aefbb66c48e1fef800930e04a51336ece49243b7960cbd60689f20117f6",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-02",
+      "occupied": 4,
+      "placementSha256": "6cc8637ff592edaba6d5db24dc1ea2c4a2ffb9855ff8e47f1e96b09c92224607",
+      "sourceId": "historic-public-b",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "sparse",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "b525413355612077b0b0ef10d16bcce6bcc7f1f665c41a1ff1c18925c34cd9e2",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-03",
+      "occupied": 1,
+      "placementSha256": "6ab775dd117ede95d40fd69a1d07ae352106b51cd3715ec850625014546aa62e",
+      "sourceId": "historic-public-b",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "single-piece",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "51de2b283c8af7ea0462558afffde95d8ffdfd361ba8bba10638d85395dd7354",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-04",
+      "occupied": 1,
+      "placementSha256": "88ae8a3c8f0de33d41c9da328787dafe8ce1c540979730443f4f0cd26fa4193b",
+      "sourceId": "historic-public-b",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "single-piece",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "85d8fbe20586c7df15d1b1a09261be9aaabb855e1bdb498b7ea6fb78f3d6f046",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-05",
+      "occupied": 1,
+      "placementSha256": "9f29ffc821c15355b4e69561756f9bba8dfa56c40ddc51b34c7b8e462a966b18",
+      "sourceId": "historic-public-b",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "ambiguous-piece-color",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    },
+    {
+      "clean": false,
+      "condition": "historic-scan",
+      "cropSha256": "0b0bd619b59ce574f7aa7a92d2f7c5174a00ce044f3390fadec664b2a19fd912",
+      "density": "sparse",
+      "exposed": true,
+      "family": "historic-unresolved-typefoundry",
+      "id": "historic-public-b-06",
+      "occupied": 1,
+      "placementSha256": "95563e4f20bad51f59a1ccab78b888e913e6f6211aaed29c7eb10ae9439cbeef",
+      "sourceId": "historic-public-b",
+      "tags": [
+        "hatch",
+        "cream-paper",
+        "instructional",
+        "ambiguous-piece-color",
+        "historic-public-pilot",
+        "lineage-unresolved"
+      ]
+    }
+  ],
+  "schema": 1
+}

@@ -1,0 +1,7 @@
+# Historical evidence must retain its original SHA-256 on checkout.
+learning-curves.csv -text whitespace=cr-at-eol
+handoff/records/** -text
+handoff/evidence/** -text
+handoff/recovery/fenshot-recovered.json -text
+# This accepted raw proposal has a hash-bound extra EOF newline.
+handoff/records/proposals-mpchess-v6.json whitespace=-blank-at-eof

@@ -1,0 +1,22 @@
+{
+  "classOrder": "1KQRBNPkqrbnp",
+  "devMetadataSha256": "6cfd9d55a5862217b7d0c0908e5e32f1b25daada85b4c6c956a6e1a40b40a361",
+  "devTilesSha256": "05edb56749d21d7a343e06674e620c63c2a12f16b365e7e26e6f45959381fcaa",
+  "graph": {
+    "input": "tiles",
+    "opset": 17,
+    "output": "probs"
+  },
+  "parameterCount": 321485,
+  "parity": {
+    "atol": 1e-05,
+    "identicalArgmax": true,
+    "rtol": 1e-05
+  },
+  "reconstructSha256": "412de92f96df0f3658d8ba59bc62a2ea0e8dbec8f7103fb953cfb93b24c0a352",
+  "schema": 1,
+  "shippedSha256": "883f6a8e639e6d6b6399b3fda0508ad772e3c6f9cefa2e678a13f27b9fa6248d",
+  "stateSha256": "e0e215b88cd0a927aa713953a1e6342ea19b1624d782a81a1ec843fa3882415f",
+  "torchVersion": "2.10.0+cu128",
+  "trainerSha256": "cac5c9bb47b7d78a0f53e4c3aded8a82cd46ddca667f75745b1a2cdc22761538"
+}

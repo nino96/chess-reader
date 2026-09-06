@@ -1,0 +1,617 @@
+{
+  "acceptedBoards": 12,
+  "acceptedByPublicSource": {
+    "public-a": 6,
+    "public-b": 6
+  },
+  "acceptedTags": {
+    "ambiguous-piece-color": 3,
+    "cream-paper": 12,
+    "endgame": 6,
+    "hatch": 12,
+    "instructional": 6,
+    "scan-noise": 6,
+    "single-piece": 2,
+    "sparse": 7
+  },
+  "artifactSha256": {
+    "crops/public-a-01.png": "c2b3f54dcae7c3948065a2ead01cd201368cdca2c768c271d16fce20246f21fa",
+    "crops/public-a-02.png": "5b0684755b95b5a474ce6e47f83eab87483c400b88f384b5e4bebd57cea304db",
+    "crops/public-a-03.png": "0549937dcba7973e89fc171baa2c91146de34e97afede0810f9b704fff6f489e",
+    "crops/public-a-04.png": "ff6d0487188c2ea8804bcef92a5c0fc3505b0d07f11832300d1823d973a0546e",
+    "crops/public-a-05.png": "b8ffc1eb0b9e7404849898016eefb21ea7106b9c0c4c96c40b8a558d1325699a",
+    "crops/public-a-06.png": "f0073b5f8dd285f5a75165c53817a4297cfbd96081eb75de6fe2219cd2740c59",
+    "crops/public-a-partial.png": "301a65ea9f5ef6150f79417ef1d1316d4f4246eabc9b131013b3cefd738ddb7d",
+    "crops/public-b-01.png": "ba078210f03973c633e786f36a479307cb00e7325ab3cfe1228902effc692341",
+    "crops/public-b-02.png": "3e4b7aefbb66c48e1fef800930e04a51336ece49243b7960cbd60689f20117f6",
+    "crops/public-b-03.png": "b525413355612077b0b0ef10d16bcce6bcc7f1f665c41a1ff1c18925c34cd9e2",
+    "crops/public-b-04.png": "51de2b283c8af7ea0462558afffde95d8ffdfd361ba8bba10638d85395dd7354",
+    "crops/public-b-05.png": "85d8fbe20586c7df15d1b1a09261be9aaabb855e1bdb498b7ea6fb78f3d6f046",
+    "crops/public-b-06.png": "0b0bd619b59ce574f7aa7a92d2f7c5174a00ce044f3390fadec664b2a19fd912",
+    "crops/public-c-negative.png": "62950b147bc554e285385d72eb1ed0219c0511df824ea2a4217148c66b77d5b4",
+    "decisions-final/public-a-01-lead-visual.json": "4ff72cda212908e98fdf6c75fb046320dac77bf77440bc5eb6da348d50fa72da",
+    "decisions-final/public-a-02-lead-visual.json": "33aa31991eee02b74f1a2adc9d1246f0d7786da2f6b695ba40dccf743d88900e",
+    "decisions-final/public-a-03-lead-visual.json": "86667dac642afa04b5c4f3a9b12f40682ff5ec1554cac909c038ef468308886a",
+    "decisions-final/public-a-04-lead-visual.json": "dc1b1c0478a915c1a8ff120a51002ca96ccd44ce9ff290ce0c71fc8511190ba1",
+    "decisions-final/public-a-05-lead-visual.json": "813d86ee337bea8b34962f9117e8a8f346de062c2a3d23a32dff145f474637df",
+    "decisions-final/public-a-06-lead-visual.json": "a34938e37d0d3d37db6384c8051bac8d212775d2f2eae37d6b6ba3716e126903",
+    "decisions-final/public-a-partial-lead-visual.json": "d7b54e80cfe36a0a897683999b83c0b9b2eecf76a445bf5c8a37d960e57d5183",
+    "decisions-final/public-b-01-lead-visual.json": "dfde6cfc669198bf445bb542f65464fcd79f6bf75bc7db949a3075539fdeb2cd",
+    "decisions-final/public-b-02-lead-visual.json": "aa48c1cbb46ac4c6299ae4ed9418e723ab25b7a6da0d04bbdbf921ba50289bea",
+    "decisions-final/public-b-03-lead-visual.json": "899b36ce1d432c963d1289cc095e89bb1a4b6062af23ef143c1fd82141122ecd",
+    "decisions-final/public-b-04-lead-visual.json": "d56b698eb575d9f72193cc9798005d188e76e73c837a03d6dac7689305564c52",
+    "decisions-final/public-b-05-lead-visual.json": "f6f60d018a6401b864b9acfb75291c33c5fdc89a6434012e192b4e9ba1b350fc",
+    "decisions-final/public-b-06-lead-visual.json": "cc713045425016d3350786b098ff80adfe829b2f88924d07b60299437b4ea506",
+    "decisions-final/public-c-negative-lead-visual.json": "2999e11b5a147a62e17aedf6a8352ef09310432c6ea95511bcf297986f0a350d",
+    "degraded/public-a-01.png": "a9cf052ded59c13b2447d7a3831b225c62accf4ce75ea9633a9da6dc05827a07",
+    "degraded/public-a-02.png": "c27603ba831018b9223b729f5feace1e6dc6da0a21a9f12a6b91cb72e0a6e5d4",
+    "degraded/public-a-03.png": "d431bdd10cbd83c3ef0b7d00f7e674dc1024012145d44d0bde4db3b753abbe3e",
+    "degraded/public-a-04.png": "7492d9e5b34fdf8ca56171f9e72a73866bf1a2001f5b1d00657d9f8b0ed5bb6b",
+    "degraded/public-a-05.png": "ecd43d8a9846026901760237f1aea358e233f0a23a810df049ec7080a40f27d3",
+    "degraded/public-a-06.png": "59fe7e1582f077a808c4d515ec62547405df0c8abb0df98d22a662a6a93c9ca0",
+    "degraded/public-a-partial.png": "c2b82170bbf3fce0ce8e88880f819b4a17a95dedf673418d202d62a23568f046",
+    "degraded/public-b-01.png": "7898e6f479801de9cfb2d459fd2edb7790c576617ce1fd8a963dee9cef9e35d8",
+    "degraded/public-b-02.png": "cb069107ac5d7732484b25c909d1cf136215077ecd54bf50b0cbe1969b026cce",
+    "degraded/public-b-03.png": "400dbfdec861d31a53914d216681296935eab1cd8420622de786b5824fedb816",
+    "degraded/public-b-04.png": "14d7d5634ef6643394af87681bfb52046590e93f8fd81afef63ec7bab96d9131",
+    "degraded/public-b-05.png": "23941fa3306d511134c2423d32dadcd37a288a4c1892295610c3448c8abb46ca",
+    "degraded/public-b-06.png": "d80a0eef8e6f111cc5c7861151091d808b65ebf19f95df3261a201e546a0f565",
+    "degraded/public-c-negative.png": "451abf2d0dd6a00d976d4be620becf746d32102d78e8fe6e31be4e84c8feb7c2",
+    "manifest-final.json": "904973d7ca9a75f2090435c764114a57e5fe127d114f20e00dbef90cc6a9a9e5",
+    "pages.json": "ed1d28858f0690aa37da2e9ab5cae7df7472998461ba338c3ac53040f5d35af0",
+    "pages/public-a-p0007.png": "237576a38ac71907d9fcec436a76fbc65cadf1967a3e006a7fcb456eff7470d9",
+    "pages/public-a-p0008.png": "ee66fe426e266884cb44902a433fda67d2ab3c02f72510c6994e79da4182baca",
+    "pages/public-a-p0009.png": "b3132a35df47056c469046b790777bbce7b87b74286790b3b99f3466599b792e",
+    "pages/public-a-p0019.png": "92451e35cf995536095cb4430f8161b9ab542857fb9a5f9b2adbba99823d0a36",
+    "pages/public-a-p0020.png": "7c26c70c1a36a0898996d26c7a0aecfbab6ff06f05b680196c0c8828835305c1",
+    "pages/public-a-p0021.png": "8a4348dfbcdd375b1c0350771b471f88008c6cdb7585a09ed468e5c367f394ae",
+    "pages/public-a-p0022.png": "b21386f3e15054b8e3fde9fb371e73cff2a3c9c4b62f410499f40a372da1150c",
+    "pages/public-a-p0023.png": "c0f82d57709c2878b273cf08ced907dffc32a81bb9998ffd8f4eb1dcea6cdecd",
+    "pages/public-a-p0024.png": "91595e8696956ef02a18cc000384a447562879d4cae6702ec740c05eafdf21d8",
+    "pages/public-a-p0025.png": "d8766d88db4959dcf6977f000bc1b7e4b41e655756e5ce835f9a7fba90698ad8",
+    "pages/public-a-p0026.png": "7c6eb85d416f794cdd7739ac426951007a14dc0821485601536c43f967d4079d",
+    "pages/public-a-p0027.png": "5b97e1a374e89379a48786ef97e918e0ba0ad184aae23d80c69168fafde7690a",
+    "pages/public-b-p0005.png": "4291889ab268d52562be12e9c6b9dc220eaf778461888eb09e01f9280b75a689",
+    "pages/public-b-p0006.png": "cf5253b4bec14198478d6894e08399903bc868476169506fe62d407a2936ef96",
+    "pages/public-b-p0007.png": "087ff9b55c8a05d57ce299b2d022c2e77a91081a8910696883eb84b48d294dee",
+    "pages/public-b-p0016.png": "6e959fe9b5ed85f27d16a669a3256c5ac72bbc16be1bfb2c6ebfedb292abc335",
+    "pages/public-b-p0017.png": "e2860755be231746a09caac1e212502eadf3ecab9e6157ed8074e03376ca2f98",
+    "pages/public-b-p0018.png": "76e76eb98f1011ba0d1d8f0653e55b20d265d1efdf0ba5915d0423a4bb6da72a",
+    "pages/public-b-p0019.png": "554b0f6f2029a4ab4db7ceb403713f8f80d0de4550162de59fdda0c258b96b4d",
+    "pages/public-b-p0020.png": "e603cfc7c7c95720a6e69c59a7e8034fb66a7a95e40e7ff9d467df5a0c5b3f44",
+    "pages/public-b-p0021.png": "b09bde886bda61c2ff17b3c3711d6ca195dbe7f3ffbd33f7d5873afd60f3301f",
+    "pages/public-b-p0022.png": "84685250a238dec7a2df6d530e97b170d650a16e1ed1fc1fdbc026cc8c2bd614",
+    "pages/public-b-p0023.png": "c54957024fec7e80883975d8d53e5fe0797515f4ef331380dd1b80bbc6ab7c44",
+    "pages/public-b-p0024.png": "569a777ecf581b17b7b8fdd027e51ec166753fac5f2753930a1a9dd06f30051d",
+    "pages/public-c-p0005.png": "b29c298e003974357603e717f1bf1e5a7165b74cec707e78c1da7caff5eb6b03",
+    "pages/public-c-p0006.png": "8607ccd067501e25ce1a88931e14190802cbfe9f0ecbf77eead6284a5d4c23fe",
+    "pages/public-c-p0007.png": "03db3bcf3e843e531d5a524654403e8cd2a6a31caf40d92e2bc0245fad3e2623",
+    "pages/public-c-p0021.png": "62950b147bc554e285385d72eb1ed0219c0511df824ea2a4217148c66b77d5b4",
+    "pages/public-c-p0022.png": "76fce695a2303da2d371dbf4b0deab2cf4c704e98da1db9b350a5326de3c73bd",
+    "pages/public-c-p0023.png": "d51bf878f861249f7785a673e06cd0dfafbc4a7e54b0e5b073c142df3c6d3de7",
+    "pages/public-c-p0024.png": "0c0a9c0bc08f6e50c35863b5542dcc1ea35da1a7a41559a5b433d56cfffef80b",
+    "pages/public-c-p0025.png": "cdc8b636af6c7cc2aeb76e6c27675f1ee4365751b123d11b3dcfa7c0cf24530e",
+    "pages/public-c-p0026.png": "2d8c28722eb7c85b0779a405b697b7f7618cce69cee2fed04933caa565edd3c7",
+    "pages/public-c-p0027.png": "eb175193d9b8267dc2a1219e27442bdb9e4c8f21d2b860f3ae3f9af83837129c",
+    "pages/public-c-p0028.png": "c9baa431a94bf15010b8e54e51dcc667e80a9805917c4e43447a938760502eaa",
+    "pages/public-c-p0029.png": "5f4a490ead94b6f8cd52a35a9567d71648b1e73348fc4d68babddadee6a931bb",
+    "regions.json": "ff7931722ad449704f9e8070e2cb4492089ee47fe0b0bd2f78790e5a3e147a64",
+    "review-final.html": "0c345ee49d20dc82ecaa4dc0f88437e2d114eb800788901fcdc5f190574d0902",
+    "review-final/public-a-01.png": "92a97cbc5f9d052822ab60a3619f5c8b228685a8cbc1618a7de0740ce3ec5275",
+    "review-final/public-a-02.png": "b0c1f4a8755718a684d3cec5407c03ce45fba019c92cd5d6efb2977b6bf8b1de",
+    "review-final/public-a-03.png": "be28ed136070b64bf1e188b8b64e2553cb78be00597cac937a55f49f0a8c9022",
+    "review-final/public-a-04.png": "57cf09b75d3a3be027b32dab573f4f4d5c3f942d158fe29fa678394348200f7e",
+    "review-final/public-a-05.png": "13a1b50ebfe31ab24b71b2061595f6fcbf08f1341f5db25f973c5387182bfcf2",
+    "review-final/public-a-06.png": "cbfde8d4ec730587de464d376a86ec710559a327c494e72fbdcfdab430e9627d",
+    "review-final/public-a-partial.png": "ab910bbbb17711373444f6281ebcd382fb175d2165085a4cabbf469d05d15a51",
+    "review-final/public-b-01.png": "ae8d7834056cabf3d49c32963a13344b412b9069f448f223769e0d5b065d6a2f",
+    "review-final/public-b-02.png": "c4fb3d3494610e7c51ecba3ee717d3c0a4d1b90c560d95d9eff0416003a86980",
+    "review-final/public-b-03.png": "6a4a05d465ea415892fc0782929e748b562d723be4da300575c9c3abe4b0b3cc",
+    "review-final/public-b-04.png": "5fcbc715f1a13f1f0d182cafcc2d79260582d1352fa69f6154153f21ff84427d",
+    "review-final/public-b-05.png": "73d287292a1c423681a7c16bbae090d50886d39edcafed397b27bb27440cf721",
+    "review-final/public-b-06.png": "f61aef045d7dbcf980b7a5a6e5d84ca4282ad4edeb6736530d18d100078e7ce3",
+    "review-final/public-c-negative.png": "0c84e5b05bf2290c908c5667a14ebc3f58aeaa968b9acba8e8969234bfdacc9b",
+    "tensors/public-a-01.png": "c7a1ed495bbba3eb27cddbf4f5c2207de898ba8b6b71124add937f77073ecfb8",
+    "tensors/public-a-02.png": "f2e946dcd1652c58795ffd8349c7b3fdcf6e28a865317208cc631ca118851efe",
+    "tensors/public-a-03.png": "d98327fdfebdd56c51fa5a12858724928e0101ba0d2c750444bec2eb62b1e60c",
+    "tensors/public-a-04.png": "d3c879a635b7fe6bf6f847de6a7637a3dfe5ef65f5a42de46affb1223e69037d",
+    "tensors/public-a-05.png": "aafa90b1a428fb731ed0ce195a4751daa96cfeba0a810d8bf1a9684bb7acb67d",
+    "tensors/public-a-06.png": "150af5a120aaaaa60f7e99e247f6d35bc726dd107b56e7f2df507449d2c141cf",
+    "tensors/public-a-partial.png": "a2765224d56d9ce243414ab1c5e998d6ba2bed66154e743a5707cbc1816e75ca",
+    "tensors/public-b-01.png": "2f178e236b95016a16d87dc40ca2c63cc370c6b7cbbad21e2a4fc248619ce1eb",
+    "tensors/public-b-02.png": "0e317ff07609becddcd2c6bb3ad3b34401075851b25834f7cb1e8023c4ceaa3b",
+    "tensors/public-b-03.png": "839cfaf3ad1d1dc41f4468984deb9c055064a38983432a6f8d786385e28af4ac",
+    "tensors/public-b-04.png": "54fef132af523913b0cd9a13c9ae1d939faca6e0c16452935d90eb11f5facbc5",
+    "tensors/public-b-05.png": "f06bec6be492115b96b3a4591a3e1bedc31ea9ffe0bc4239b6a4102f5c12b756",
+    "tensors/public-b-06.png": "2b868cc5af5b623f6b60f6f48f21e98a92f1686966f2408cac5bcbbaad4279f6",
+    "tensors/public-c-negative.png": "980c94e9f33f7392c499f489b5449114c069f7450388a2bdf287190921559858"
+  },
+  "baseCommit": "c613aed15dfe4ec9e85b7557b01805c4fb3be187",
+  "classCounts": {
+    ".": 732,
+    "B": 2,
+    "K": 7,
+    "N": 0,
+    "P": 11,
+    "Q": 1,
+    "R": 2,
+    "b": 1,
+    "k": 7,
+    "n": 2,
+    "p": 1,
+    "q": 1,
+    "r": 1
+  },
+  "command": ["python3", "experiments/recognition-dataset/audit.py", "--revision", "final"],
+  "coverageGaps": [
+    "only two works yield boards in the 36-page pilot",
+    "design independence unresolved",
+    "no pristine flat/colored-board examples",
+    "no dense middlegames",
+    "incomplete class coverage",
+    "no real multiple-board page",
+    "no source-held-out dev or fresh qualification samples"
+  ],
+  "densityCounts": {
+    "medium-9-20": 1,
+    "single-piece": 4,
+    "sparse-2-8": 7
+  },
+  "environment": {
+    "browser": "not run; offline extraction only",
+    "device": "local host, no physical iPad",
+    "machine": "aarch64",
+    "pillow": "10.2.0",
+    "python": "3.12.3",
+    "system": "Linux",
+    "tools": {
+      "pdfinfo": {
+        "binarySha256": "ea5912b9469c43d6a4ce28439ce85ecea707350ce098e662d932602b70f1bcec",
+        "version": "pdfinfo version 24.02.0"
+      },
+      "pdftoppm": {
+        "binarySha256": "8f7ac21466faa61f10bc76b15de4034d8f473a6e045488a8b605f33aa4e3e782",
+        "version": "pdftoppm version 24.02.0"
+      }
+    }
+  },
+  "implementationSha256": {
+    "PLAN.md": "08b76ac89631ad8f5f4154fb779896eecf6144e81989467a499e4b0859a8992c",
+    "audit.py": "8b3eca1d68ba743f64feafd8974975759c73dc8fb57b1b604281dd92c97e195d",
+    "intake.py": "c060d6b2eda5d7b91824da77dae1e7db5a3a7acf61624c32606003af52b001e2",
+    "pilot-pages.json": "e7b37d65f87074244efd01d3901e1d1d36547c7e8d153374e5cb5b3b51661ba5",
+    "pilot.py": "bb94fbc86cdc617917a373920351abf74cae95a5472c3251a1e622c27c87b0c2",
+    "sources.json": "d2938328db7dabb5110d29218b8f17cca464d672452f137c02b7939d2d1e193b"
+  },
+  "issue": 41,
+  "kindCounts": {
+    "board": 12,
+    "negative": 1,
+    "partial": 1
+  },
+  "pageCounts": {
+    "public-a": 12,
+    "public-b": 12,
+    "public-c": 12
+  },
+  "perceptualDuplicateScreen": {
+    "crossSplitPairs": 0,
+    "method": "64-bit horizontal dHash, Hamming <=8; proposal only",
+    "pairs": [
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-a-01",
+        "right": "public-a-02"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-a-01",
+        "right": "public-a-03"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 3,
+        "left": "public-a-01",
+        "right": "public-a-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 8,
+        "left": "public-a-01",
+        "right": "public-a-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 8,
+        "left": "public-a-01",
+        "right": "public-a-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 3,
+        "left": "public-a-01",
+        "right": "public-b-01"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 7,
+        "left": "public-a-01",
+        "right": "public-b-02"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 3,
+        "left": "public-a-01",
+        "right": "public-b-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-a-01",
+        "right": "public-b-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 3,
+        "left": "public-a-01",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-a-02",
+        "right": "public-a-03"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 1,
+        "left": "public-a-02",
+        "right": "public-a-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 6,
+        "left": "public-a-02",
+        "right": "public-a-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 6,
+        "left": "public-a-02",
+        "right": "public-a-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 1,
+        "left": "public-a-02",
+        "right": "public-b-01"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-02",
+        "right": "public-b-02"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 7,
+        "left": "public-a-02",
+        "right": "public-b-03"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 1,
+        "left": "public-a-02",
+        "right": "public-b-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-a-02",
+        "right": "public-b-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 1,
+        "left": "public-a-02",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 3,
+        "left": "public-a-03",
+        "right": "public-a-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 8,
+        "left": "public-a-03",
+        "right": "public-a-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 8,
+        "left": "public-a-03",
+        "right": "public-a-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 3,
+        "left": "public-a-03",
+        "right": "public-b-01"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 7,
+        "left": "public-a-03",
+        "right": "public-b-02"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 3,
+        "left": "public-a-03",
+        "right": "public-b-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-a-03",
+        "right": "public-b-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 3,
+        "left": "public-a-03",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-04",
+        "right": "public-a-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-04",
+        "right": "public-a-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 0,
+        "left": "public-a-04",
+        "right": "public-b-01"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-a-04",
+        "right": "public-b-02"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 6,
+        "left": "public-a-04",
+        "right": "public-b-03"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 0,
+        "left": "public-a-04",
+        "right": "public-b-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-04",
+        "right": "public-b-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 0,
+        "left": "public-a-04",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-a-05",
+        "right": "public-a-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-05",
+        "right": "public-b-01"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 7,
+        "left": "public-a-05",
+        "right": "public-b-03"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-05",
+        "right": "public-b-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-05",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-06",
+        "right": "public-b-01"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-06",
+        "right": "public-b-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-a-06",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-b-01",
+        "right": "public-b-02"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 6,
+        "left": "public-b-01",
+        "right": "public-b-03"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 0,
+        "left": "public-b-01",
+        "right": "public-b-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-b-01",
+        "right": "public-b-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 0,
+        "left": "public-b-01",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 8,
+        "left": "public-b-02",
+        "right": "public-b-03"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-b-02",
+        "right": "public-b-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 4,
+        "left": "public-b-02",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 6,
+        "left": "public-b-03",
+        "right": "public-b-04"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 6,
+        "left": "public-b-03",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-b-04",
+        "right": "public-b-05"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 0,
+        "left": "public-b-04",
+        "right": "public-b-06"
+      },
+      {
+        "decision": "co-grouped diagnostic; similarity does not prove shared artwork",
+        "distance": 5,
+        "left": "public-b-05",
+        "right": "public-b-06"
+      }
+    ]
+  },
+  "preservation": {
+    "comparisonBase": "c613aed15dfe4ec9e85b7557b01805c4fb3be187",
+    "productionAndFrozenInputsUnchanged": true
+  },
+  "qualificationGate": {
+    "checks": {
+      "allClasses": false,
+      "cleanRegressionCount": false,
+      "devCount": false,
+      "independentComponents": false,
+      "qualificationCount": false,
+      "trainCount": false
+    },
+    "pass": false,
+    "reason": "All pilot records are exposed diagnostic inputs; coverage and lineage requirements are unmet",
+    "reviewedIndependentComponents": 0,
+    "splitCounts": {
+      "diagnostic": 14
+    }
+  },
+  "regions": 14,
+  "resources": {
+    "apiImageUploads": 0,
+    "gpuSeconds": 0,
+    "modelInferenceRuns": 0,
+    "pngCountIncludingSupersededReviews": 123,
+    "storageBytes": 135104544
+  },
+  "reusedEvidenceSha256": {
+    "docs/investigations/issue-24-localization.md": "7c45743bbe46dd49596a529b8445499376d2cd5e7c94f066c3ed7e9d6b294b57",
+    "experiments/recognition-training/planning/reconstruction-parity.json": "af00c26b3a2f4f902f0c92678c90e273f62504d0d257504d877436a4d88a1553",
+    "experiments/recognition-training/v2/FAILURE_ANALYSIS.md": "c5607e5154f5b62e96d1f91e8e62bd142508c07b8b1d4066d8e366bece6b4849",
+    "experiments/recognition-training/v2/reports/failure-diagnostic-dev.json": "b934325398ae8160e9f3e79e803d2825bd541956085384bace5525508c63d8d8",
+    "experiments/recognition-training/v3/REPORT.md": "4a0124f730b3eb2213d5f80a3a001210a4e2f0a39643a3b2420dfb367f14e27c",
+    "experiments/recognition-training/v3/reports/comparison.json": "947a28d5b285161223aa74c20cfbc2eb7e1226aa57ae4e9d28f29d76194266da"
+  },
+  "review": {
+    "acceptedRegions": 14,
+    "pendingRegions": 0,
+    "qualificationFrozen": false,
+    "quarantinedRegions": 0,
+    "reason": "Pilot exposed; source lineage and full coverage gates remain pending",
+    "schema": 1,
+    "trainingReady": false
+  },
+  "reviewDecisions": {
+    "public-a-01": "accepted",
+    "public-a-02": "accepted",
+    "public-a-03": "accepted",
+    "public-a-04": "accepted",
+    "public-a-05": "accepted",
+    "public-a-06": "accepted",
+    "public-a-partial": "accepted",
+    "public-b-01": "accepted",
+    "public-b-02": "accepted",
+    "public-b-03": "accepted",
+    "public-b-04": "accepted",
+    "public-b-05": "accepted",
+    "public-b-06": "accepted",
+    "public-c-negative": "accepted"
+  },
+  "schema": "recognition-dataset-preparation-1",
+  "sourceState": "uncommitted preparation files identified by hashes",
+  "sourceTerms": "See sources.json and provenance-lock.json; no universal distribution clearance",
+  "stages": {
+    "fullDataGate": "fail: insufficient coverage and unresolved lineage",
+    "physicalIpad": "deferred/unrun",
+    "preparationPilot": "executed",
+    "product": "not applicable: unchanged",
+    "qualification": "not reached",
+    "training": "not authorized/not run"
+  }
+}

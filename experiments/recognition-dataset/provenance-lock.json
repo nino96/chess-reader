@@ -1,0 +1,34 @@
+{
+  "catalogIdentitySha256": "af54adccd2661ff21da0267dc69be5fc469fa876a805e018c1f498981e272f37",
+  "schema": 1,
+  "sourceIds": ["public-a", "public-b", "public-c"],
+  "sources": {
+    "public-a": {
+      "bytes": 11941046,
+      "original": "public-a.pdf",
+      "originalSha256": "e4c5693a3f3ee3d89c0321a4092557fca721b01351effee0f8bb7d6c8fde4a78",
+      "retrievedAt": "2026-09-05T22:56:30Z",
+      "rights": "public-a.rights.html",
+      "rightsSha256": "0b0e58373f16fe1dc0d07b34a6aa77f40e37347216b35a700a60b2fe47ed9ced",
+      "timing": 3.296949
+    },
+    "public-b": {
+      "bytes": 33799670,
+      "original": "public-b.pdf",
+      "originalSha256": "806c92594a9ff6d9e08c4b30c69f08c3f427cce0fe2e9283e4a52f7ff81b806e",
+      "retrievedAt": "2026-09-05T22:56:39Z",
+      "rights": "public-b.rights.html",
+      "rightsSha256": "22532c6cb1cda4f44a7c9683583bd27cde0a0fd2dfedbb8d86236fca85469f36",
+      "timing": 8.852244
+    },
+    "public-c": {
+      "bytes": 24159462,
+      "original": "public-c.pdf",
+      "originalSha256": "0bb9ceb9dae0ce24279866d3dcdfa7c4500e8793e8716f6e4a5c5310574c3269",
+      "retrievedAt": "2026-09-05T22:56:46Z",
+      "rights": "public-c.rights.html",
+      "rightsSha256": "49d9c410d0eef4ea49cbb153fa2d6fa0241f4cb3f23706f7be13d87a7da392df",
+      "timing": 7.059999
+    }
+  }
+}

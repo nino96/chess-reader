@@ -1,0 +1,99 @@
+{
+  "audit": {
+    "boards": 140,
+    "classCounts": {
+      "dev": {
+        ".": 831,
+        "B": 34,
+        "K": 33,
+        "N": 34,
+        "P": 135,
+        "Q": 20,
+        "R": 36,
+        "b": 38,
+        "k": 21,
+        "n": 31,
+        "p": 137,
+        "q": 20,
+        "r": 38
+      },
+      "held-out": {
+        ".": 937,
+        "B": 29,
+        "K": 17,
+        "N": 30,
+        "P": 122,
+        "Q": 13,
+        "R": 28,
+        "b": 28,
+        "k": 16,
+        "n": 26,
+        "p": 121,
+        "q": 13,
+        "r": 28
+      },
+      "train": {
+        ".": 4414,
+        "B": 102,
+        "K": 83,
+        "N": 98,
+        "P": 431,
+        "Q": 53,
+        "R": 111,
+        "b": 97,
+        "k": 83,
+        "n": 100,
+        "p": 423,
+        "q": 54,
+        "r": 95
+      }
+    },
+    "componentsBySplit": {
+      "dev": [
+        "ctan-chessboard"
+      ],
+      "held-out": [
+        "ctan-mpchess"
+      ],
+      "train": [
+        "historic-unresolved-typefoundry",
+        "wikibooks-chess"
+      ]
+    },
+    "crossSplitRepeatedPositions": 1,
+    "familyConfidence": "provisional; not proven independent training lineage",
+    "positionDisjointDevIds": [
+      "ctan-chessboard-p0019-01",
+      "ctan-chessboard-p0020-03",
+      "ctan-chessboard-p0039-15",
+      "ctan-chessboard-p0048-17",
+      "ctan-chessboard-v2-p0014-22",
+      "ctan-chessboard-v2-p0015-23",
+      "ctan-chessboard-v2-p0015-24",
+      "ctan-chessboard-v2-p0016-25",
+      "ctan-chessboard-v2-p0016-26",
+      "ctan-chessboard-v2-p0016-27",
+      "ctan-chessboard-p0019-02"
+    ],
+    "qualified": false,
+    "splitCounts": {
+      "dev": 22,
+      "held-out": 22,
+      "train": 96
+    },
+    "uniqueOrientationNormalizedPlacements": 116
+  },
+  "manifestSha256": "662ebc763a6b8e2b3df706e5f6ba21f8f1d40ca28ccfec5345a7a8ebaed753f5",
+  "preprocessManifestSha256": "61ce3c07f70cb2e2d303cf793171e44608edfe1808c933b2cdc60a923b319a19",
+  "schema": 1,
+  "splits": {
+    "dev": {
+      "metadataSha256": "6cfd9d55a5862217b7d0c0908e5e32f1b25daada85b4c6c956a6e1a40b40a361",
+      "tilesSha256": "05edb56749d21d7a343e06674e620c63c2a12f16b365e7e26e6f45959381fcaa"
+    },
+    "train": {
+      "metadataSha256": "7fab949a5940073626695e4aac7f58b92fcddd2821f817d3523b25744124f27e",
+      "tilesSha256": "2651c4f95830d1fbd0bcb069684275bf083251af470bea1284663611cc3ba3dc"
+    }
+  }
+}
