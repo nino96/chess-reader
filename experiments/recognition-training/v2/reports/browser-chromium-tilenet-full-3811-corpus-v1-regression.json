@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "suite": "recognition-training-browser",
+  "command": {
+    "fromRepositoryRoot": "pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/v2/browser/playwright.config.ts",
+    "environment": {
+      "CHESS_READER_TRAINING_BROWSER_CONFIG": "../../experiments/recognition-training/v2/runs/browser-full.config.json"
+    },
+    "environmentPathBase": "apps/web (pnpm exec working directory)"
+  },
+  "commit": "be9fa313bee3f2f5bb1b70dd48873d78fa94fb18",
+  "date": "2026-09-05T20:10:44.436Z",
+  "environment": {
+    "os": "linux",
+    "release": "6.17.0-1021-nvidia",
+    "arch": "arm64",
+    "node": "v24.19.0",
+    "browser": {
+      "name": "chromium",
+      "version": "151.0.7922.34"
+    }
+  },
+  "freeze": {
+    "runKind": "full",
+    "protocolSha256": "242d07996ecab07a0b65402ea776317ecf23bbee246d975d3575003e392e1890",
+    "testManifestSha256": "bb238034a433e50345a0a06f377a658dc953e080fb674ccc77b23c354bb2408b"
+  },
+  "candidate": {
+    "id": "tilenet-full-3811",
+    "seed": 3811,
+    "modelSha256": "301bf92f3e723e1cc4f9572606d7e09fb677d7442d2657213ec9b65cfee70a02",
+    "modelBytes": 1288448
+  },
+  "vectors": {
+    "id": "corpus-v1-regression",
+    "role": "corpus-v1-regression",
+    "sha256": "7c2edc21aef5b2b1f9d994e31cd72f968f2b93aac6ed992a4a89062fc97e9974",
+    "bytes": 3670016,
+    "boards": 14
+  },
+  "contract": {
+    "input": {
+      "name": "tiles",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        1024
+      ]
+    },
+    "output": {
+      "name": "probs",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        13
+      ]
+    },
+    "classLabels": "1KQRBNPkqrbnp",
+    "reliabilityFloor": 0.7,
+    "executionProvider": "wasm",
+    "threads": 1
+  },
+  "runtime": {
+    "ortWasmSha256": "ec8580a9d7b9476ceee52e10a7f94124e4dc71a019d666ed6d4726697c109a4d",
+    "ortWasmBytes": 13961845,
+    "modelAndOrtWasmBytes": 15250293,
+    "deployedEvaluationBuildBytes": 14042258,
+    "totalEvaluationRuntimeBytes": 15330706,
+    "byteDefinition": "modelAndOrtWasmBytes is candidate ONNX plus pinned ORT WASM. totalEvaluationRuntimeBytes adds the candidate to deployed harness HTML/JS/WASM and excludes source maps/build metadata."
+  },
+  "timing": {
+    "coldInitializationMs": {
+      "count": 3,
+      "min": 532.0999999046326,
+      "p50": 548.3000001907349,
+      "p95": 595.1999998092651,
+      "max": 595.1999998092651
+    },
+    "firstBoardAfterFreshInitializationMs": {
+      "count": 3,
+      "min": 32.80000019073486,
+      "p50": 33.60000038146973,
+      "p95": 33.700000286102295,
+      "max": 33.700000286102295
+    },
+    "fullPassInferenceMs": {
+      "count": 14,
+      "min": 18.5,
+      "p50": 18.699999809265137,
+      "p95": 33.60000038146973,
+      "max": 33.60000038146973
+    },
+    "warmSubsetInferenceMs": {
+      "count": 12,
+      "min": 18.40000009536743,
+      "p50": 18.59999990463257,
+      "p95": 18.700000286102295,
+      "max": 18.700000286102295
+    },
+    "coldSessions": 3,
+    "warmRepeatsPerBoard": 3,
+    "warmBoardLimit": 4,
+    "fullPassMaximumBoardsPerRequest": 16,
+    "fullPassRequestCount": 1
+  },
+  "rawTiming": {
+    "coldInitializationMs": [
+      595.1999998092651,
+      532.0999999046326,
+      548.3000001907349
+    ],
+    "firstBoardAfterFreshInitializationMs": [
+      33.60000038146973,
+      32.80000019073486,
+      33.700000286102295
+    ],
+    "fullPassInferenceMs": [
+      33.60000038146973,
+      18.700000286102295,
+      18.699999809265137,
+      18.700000286102295,
+      18.59999990463257,
+      18.600000381469727,
+      18.5,
+      18.5,
+      18.700000286102295,
+      18.700000286102295,
+      18.600000381469727,
+      18.600000381469727,
+      18.700000286102295,
+      18.699999809265137
+    ],
+    "warmSubsetInferenceMs": [
+      18.699999809265137,
+      18.5,
+      18.600000381469727,
+      18.5,
+      18.5,
+      18.40000009536743,
+      18.40000009536743,
+      18.59999990463257,
+      18.699999809265137,
+      18.700000286102295,
+      18.700000286102295,
+      18.59999990463257
+    ]
+  },
+  "summary": {
+    "exactBoards": 12,
+    "totalBoards": 14,
+    "exactBoardAccuracy": 0.8571428571428571,
+    "correctSquares": 881,
+    "confidentCorrectSquares": 867,
+    "totalSquares": 896,
+    "squareAccuracy": 0.9832589285714286,
+    "confidenceQualifiedSquareAccuracy": 0.9676339285714286,
+    "reliableExact": 6,
+    "reliableWrong": 0,
+    "minimumConfidence": 0.39772823452949524,
+    "meanConfidence": 0.9218004372835692,
+    "perClassErrors": [
+      0,
+      2,
+      1,
+      3,
+      2,
+      2,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "confusion": [
+      [
+        596,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        12,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0,
+        19,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        12,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        16,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        71,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        74
+      ]
+    ]
+  },
+  "observations": [
+    {
+      "boardId": "v1-1b8957ff15091c95",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.7083078026771545,
+      "meanConfidence": 0.9302918082103133
+    },
+    {
+      "boardId": "v1-5187bf1833030b74",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.9028338193893433,
+      "meanConfidence": 0.9518137322738767
+    },
+    {
+      "boardId": "v1-02944e2bcda00047",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.8270099759101868,
+      "meanConfidence": 0.9277182649821043
+    },
+    {
+      "boardId": "v1-9ddf5b3c192ebd5d",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.7743681073188782,
+      "meanConfidence": 0.9371533384546638
+    },
+    {
+      "boardId": "v1-6077af891e893aed",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.6670104265213013,
+      "meanConfidence": 0.8669836055487394
+    },
+    {
+      "boardId": "v1-266c56ea80f5b6bb",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.7335413098335266,
+      "meanConfidence": 0.9453786415979266
+    },
+    {
+      "boardId": "v1-e5cbdff5c28ac53b",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.7896894216537476,
+      "meanConfidence": 0.942549005150795
+    },
+    {
+      "boardId": "v1-3c21c57642da432c",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.39772823452949524,
+      "meanConfidence": 0.9045419315807521
+    },
+    {
+      "boardId": "v1-a2ed37ed149f359d",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.5404347777366638,
+      "meanConfidence": 0.8711555628105998
+    },
+    {
+      "boardId": "v1-99ddbe5d70f4cfab",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.5931337475776672,
+      "meanConfidence": 0.9292528172954917
+    },
+    {
+      "boardId": "v1-729e60ff0d10aea4",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.6644461750984192,
+      "meanConfidence": 0.9065404459834099
+    },
+    {
+      "boardId": "v1-ea4917fb76f5c31e",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.5683804750442505,
+      "meanConfidence": 0.9233798626810312
+    },
+    {
+      "boardId": "v1-ba1d22971755d89f",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.6126208901405334,
+      "meanConfidence": 0.9387499932199717
+    },
+    {
+      "boardId": "v1-52f88b410451088a",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.6552104949951172,
+      "meanConfidence": 0.9296971121802926
+    }
+  ],
+  "nonSameOriginRequests": [],
+  "privacy": "No vectors, class sequences, FENs, source filenames or absolute paths are persisted in this report.",
+  "limitations": [
+    "Classifier-stage frozen-vector evidence only; it is not end-to-end recognition qualification.",
+    "Physical iPad deferred/unrun."
+  ]
+}

@@ -1,0 +1,2928 @@
+{
+  "schemaVersion": 1,
+  "suite": "recognition-training-browser",
+  "command": {
+    "fromRepositoryRoot": "pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts",
+    "environment": {
+      "CHESS_READER_TRAINING_BROWSER_CONFIG": "../../experiments/recognition-training/runs/browser-full.config.json"
+    },
+    "environmentPathBase": "apps/web (pnpm exec working directory)"
+  },
+  "commit": "e0303680548f6b461e4848aa72ca6c3903229e48",
+  "date": "2026-09-05T18:28:23.252Z",
+  "environment": {
+    "os": "linux",
+    "release": "6.17.0-1021-nvidia",
+    "arch": "arm64",
+    "node": "v24.19.0",
+    "browser": {
+      "name": "webkit",
+      "version": "26.5"
+    }
+  },
+  "freeze": {
+    "runKind": "full",
+    "protocolSha256": "bd24a5caaf61d0c37260d84665e0b910dff58aed3e34fc702e6d2e537d5900c5",
+    "testManifestSha256": "f94419e00fa787ef4b86490a9da1470bfc95b8644c3dacf0debe05ad6e61dc3a"
+  },
+  "candidate": {
+    "id": "tilenet-full-3802",
+    "seed": 3802,
+    "modelSha256": "91f176d32e3f351727bcb8989939129ee7015ed4caaac5e68c7eea36c4bfd14f",
+    "modelBytes": 1288448
+  },
+  "vectors": {
+    "id": "print-held-out-v1",
+    "role": "held-out-test",
+    "sha256": "a9a14d8a2f406d1e6d1a12cdaf35ab962f7aaff724dc694c0f398699888c9882",
+    "bytes": 67108864,
+    "boards": 256
+  },
+  "contract": {
+    "input": {
+      "name": "tiles",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        1024
+      ]
+    },
+    "output": {
+      "name": "probs",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        13
+      ]
+    },
+    "classLabels": "1KQRBNPkqrbnp",
+    "reliabilityFloor": 0.7,
+    "executionProvider": "wasm",
+    "threads": 1
+  },
+  "runtime": {
+    "ortWasmSha256": "ec8580a9d7b9476ceee52e10a7f94124e4dc71a019d666ed6d4726697c109a4d",
+    "ortWasmBytes": 13961845,
+    "modelAndOrtWasmBytes": 15250293,
+    "deployedEvaluationBuildBytes": 14042258,
+    "totalEvaluationRuntimeBytes": 15330706,
+    "byteDefinition": "modelAndOrtWasmBytes is candidate ONNX plus pinned ORT WASM. totalEvaluationRuntimeBytes adds the candidate to deployed harness HTML/JS/WASM and excludes source maps/build metadata."
+  },
+  "timing": {
+    "coldInitializationMs": {
+      "count": 3,
+      "min": 1825,
+      "p50": 1864,
+      "p95": 1882,
+      "max": 1882
+    },
+    "firstBoardAfterFreshInitializationMs": {
+      "count": 3,
+      "min": 50,
+      "p50": 56,
+      "p95": 65,
+      "max": 65
+    },
+    "fullPassInferenceMs": {
+      "count": 256,
+      "min": 17,
+      "p50": 18,
+      "p95": 18,
+      "max": 65
+    },
+    "warmSubsetInferenceMs": {
+      "count": 12,
+      "min": 17,
+      "p50": 17,
+      "p95": 18,
+      "max": 18
+    },
+    "coldSessions": 3,
+    "warmRepeatsPerBoard": 3,
+    "warmBoardLimit": 4,
+    "fullPassMaximumBoardsPerRequest": 16,
+    "fullPassRequestCount": 16
+  },
+  "rawTiming": {
+    "coldInitializationMs": [
+      1882,
+      1864,
+      1825
+    ],
+    "firstBoardAfterFreshInitializationMs": [
+      65,
+      56,
+      50
+    ],
+    "fullPassInferenceMs": [
+      65,
+      19,
+      18,
+      18,
+      19,
+      18,
+      18,
+      18,
+      19,
+      19,
+      19,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      17,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      17,
+      18,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      18,
+      17,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      17,
+      18,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      17,
+      18,
+      18,
+      17,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      17,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      17,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      18,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      17,
+      18,
+      17,
+      18,
+      18
+    ],
+    "warmSubsetInferenceMs": [
+      17,
+      17,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      17,
+      18,
+      17,
+      18
+    ]
+  },
+  "summary": {
+    "exactBoards": 0,
+    "totalBoards": 256,
+    "exactBoardAccuracy": 0,
+    "correctSquares": 13127,
+    "confidentCorrectSquares": 12530,
+    "totalSquares": 16384,
+    "squareAccuracy": 0.80120849609375,
+    "confidenceQualifiedSquareAccuracy": 0.7647705078125,
+    "reliableExact": 0,
+    "reliableWrong": 0,
+    "minimumConfidence": 0.14661070704460144,
+    "meanConfidence": 0.8427496535177852,
+    "perClassErrors": [
+      0,
+      0,
+      286,
+      0,
+      121,
+      0,
+      904,
+      256,
+      305,
+      266,
+      224,
+      146,
+      749
+    ],
+    "confusion": [
+      [
+        11756,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        256,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        286,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        299,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        33,
+        0,
+        0,
+        175,
+        0,
+        0,
+        1,
+        0,
+        0,
+        85,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        294,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        4,
+        24,
+        0,
+        826,
+        29,
+        4,
+        19
+      ],
+      [
+        0,
+        249,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        305,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        266,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        11,
+        0,
+        0,
+        121,
+        0,
+        0,
+        51,
+        92,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        5,
+        141,
+        0,
+        0,
+        0,
+        0,
+        0,
+        135,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        749,
+        0,
+        0,
+        157
+      ]
+    ]
+  },
+  "observations": [
+    {
+      "boardId": "synthetic-test-rhosgfx-00000",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22279039025306702,
+      "meanConfidence": 0.9222855092957616
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00001",
+      "exact": false,
+      "correctSquares": 48,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24042916297912598,
+      "meanConfidence": 0.7873865915462375
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00002",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20542345941066742,
+      "meanConfidence": 0.7759824527893215
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00003",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.17770074307918549,
+      "meanConfidence": 0.7600698659662157
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00004",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19544191658496857,
+      "meanConfidence": 0.8283507113810629
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00005",
+      "exact": false,
+      "correctSquares": 42,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20198087394237518,
+      "meanConfidence": 0.7718110370915383
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00006",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.17012354731559753,
+      "meanConfidence": 0.7612586270552129
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00007",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.15655401349067688,
+      "meanConfidence": 0.8015356445685029
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00008",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2185330092906952,
+      "meanConfidence": 0.7987611736170948
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00009",
+      "exact": false,
+      "correctSquares": 39,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16630840301513672,
+      "meanConfidence": 0.7178058887366205
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00010",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2105230987071991,
+      "meanConfidence": 0.7863354040309787
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00011",
+      "exact": false,
+      "correctSquares": 62,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24942417442798615,
+      "meanConfidence": 0.9369685787241906
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00012",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1965620368719101,
+      "meanConfidence": 0.7840388459153473
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00013",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.31743234395980835,
+      "meanConfidence": 0.8142816936597228
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00014",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2295643389225006,
+      "meanConfidence": 0.7966501777991652
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00015",
+      "exact": false,
+      "correctSquares": 41,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21737578511238098,
+      "meanConfidence": 0.7366531256120652
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00016",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2341391146183014,
+      "meanConfidence": 0.8695108625106514
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00017",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2120358943939209,
+      "meanConfidence": 0.8392920363694429
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00018",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2465861439704895,
+      "meanConfidence": 0.8833611090667546
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00019",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.14661070704460144,
+      "meanConfidence": 0.826729638967663
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00020",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1580037772655487,
+      "meanConfidence": 0.7545084725134075
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00021",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.277448445558548,
+      "meanConfidence": 0.895775259938091
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00022",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19728611409664154,
+      "meanConfidence": 0.8588911469560117
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00023",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16244252026081085,
+      "meanConfidence": 0.7730482844635844
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00024",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.17845726013183594,
+      "meanConfidence": 0.7736567764077336
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00025",
+      "exact": false,
+      "correctSquares": 42,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2240934669971466,
+      "meanConfidence": 0.7742339367978275
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00026",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23963811993598938,
+      "meanConfidence": 0.7839064868167043
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00027",
+      "exact": false,
+      "correctSquares": 54,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2543543875217438,
+      "meanConfidence": 0.8579293745569885
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00028",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20589762926101685,
+      "meanConfidence": 0.7493540176656097
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00029",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2656296193599701,
+      "meanConfidence": 0.9006299306638539
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00030",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23073098063468933,
+      "meanConfidence": 0.8583351103588939
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00031",
+      "exact": false,
+      "correctSquares": 50,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3225356340408325,
+      "meanConfidence": 0.8573089381679893
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00032",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3365444242954254,
+      "meanConfidence": 0.9085901132784784
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00033",
+      "exact": false,
+      "correctSquares": 62,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.25107496976852417,
+      "meanConfidence": 0.9329571649432182
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00034",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16052420437335968,
+      "meanConfidence": 0.8525678305886686
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00035",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2256840616464615,
+      "meanConfidence": 0.8726785501930863
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00036",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2588455080986023,
+      "meanConfidence": 0.8887732164002955
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00037",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2378852665424347,
+      "meanConfidence": 0.8967401217669249
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00038",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2118973582983017,
+      "meanConfidence": 0.8389416716527194
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00039",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2806464731693268,
+      "meanConfidence": 0.9177287626080215
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00040",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24603310227394104,
+      "meanConfidence": 0.9130194019526243
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00041",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2242986261844635,
+      "meanConfidence": 0.845424369443208
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00042",
+      "exact": false,
+      "correctSquares": 42,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2096259593963623,
+      "meanConfidence": 0.7600084182340652
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00043",
+      "exact": false,
+      "correctSquares": 48,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.18093904852867126,
+      "meanConfidence": 0.8493018276058137
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00044",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23705169558525085,
+      "meanConfidence": 0.8702688501216471
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00045",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.298257440328598,
+      "meanConfidence": 0.8901924551464617
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00046",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.18715718388557434,
+      "meanConfidence": 0.8878785406704992
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00047",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21011318266391754,
+      "meanConfidence": 0.8748802908230573
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00048",
+      "exact": false,
+      "correctSquares": 42,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2554980218410492,
+      "meanConfidence": 0.7558537209406495
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00049",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20834031701087952,
+      "meanConfidence": 0.8089725142344832
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00050",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22635385394096375,
+      "meanConfidence": 0.8325931692961603
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00051",
+      "exact": false,
+      "correctSquares": 50,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21719136834144592,
+      "meanConfidence": 0.8339203044306487
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00052",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22418178617954254,
+      "meanConfidence": 0.8116061282344162
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00053",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23016898334026337,
+      "meanConfidence": 0.8087420940864831
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00054",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19528107345104218,
+      "meanConfidence": 0.8254146457184106
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00055",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2081935703754425,
+      "meanConfidence": 0.8320407795254141
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00056",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3085712194442749,
+      "meanConfidence": 0.9096010914072394
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00057",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.35867324471473694,
+      "meanConfidence": 0.928639117628336
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00058",
+      "exact": false,
+      "correctSquares": 54,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2508541941642761,
+      "meanConfidence": 0.8667022958397865
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00059",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22156952321529388,
+      "meanConfidence": 0.877355087781325
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00060",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2301039844751358,
+      "meanConfidence": 0.8046832601539791
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00061",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.193871408700943,
+      "meanConfidence": 0.8450670873280615
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00062",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21447622776031494,
+      "meanConfidence": 0.8360431652981788
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00063",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2515355944633484,
+      "meanConfidence": 0.897627139929682
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00064",
+      "exact": false,
+      "correctSquares": 50,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24854236841201782,
+      "meanConfidence": 0.8655828386545181
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00065",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.15426389873027802,
+      "meanConfidence": 0.8456715147476643
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00066",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.237690269947052,
+      "meanConfidence": 0.8883651345968246
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00067",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22726789116859436,
+      "meanConfidence": 0.8049161429516971
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00068",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22037458419799805,
+      "meanConfidence": 0.8546142256818712
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00069",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.38798993825912476,
+      "meanConfidence": 0.9202795964665711
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00070",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1659199446439743,
+      "meanConfidence": 0.8468968919478357
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00071",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20513874292373657,
+      "meanConfidence": 0.7695658071897924
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00072",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20531749725341797,
+      "meanConfidence": 0.7937729242257774
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00073",
+      "exact": false,
+      "correctSquares": 62,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24298717081546783,
+      "meanConfidence": 0.9370172342751175
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00074",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.35571128129959106,
+      "meanConfidence": 0.9346551699563861
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00075",
+      "exact": false,
+      "correctSquares": 50,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23056858777999878,
+      "meanConfidence": 0.8251789002679288
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00076",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21678490936756134,
+      "meanConfidence": 0.7844621937256306
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00077",
+      "exact": false,
+      "correctSquares": 48,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22000540792942047,
+      "meanConfidence": 0.7783998250961304
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00078",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.25541913509368896,
+      "meanConfidence": 0.8387134750373662
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00079",
+      "exact": false,
+      "correctSquares": 36,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1957048773765564,
+      "meanConfidence": 0.7545506639871746
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00080",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19939783215522766,
+      "meanConfidence": 0.8948650262318552
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00081",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2500830888748169,
+      "meanConfidence": 0.7875397675670683
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00082",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24613024294376373,
+      "meanConfidence": 0.8974849523510784
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00083",
+      "exact": false,
+      "correctSquares": 50,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22461684048175812,
+      "meanConfidence": 0.8433147477917373
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00084",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.46829208731651306,
+      "meanConfidence": 0.9280790681950748
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00085",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19318966567516327,
+      "meanConfidence": 0.735319098457694
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00086",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20451533794403076,
+      "meanConfidence": 0.9149689599871635
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00087",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2615605592727661,
+      "meanConfidence": 0.8970495336689055
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00088",
+      "exact": false,
+      "correctSquares": 48,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1907620131969452,
+      "meanConfidence": 0.8038940476253629
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00089",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1691565215587616,
+      "meanConfidence": 0.917121454142034
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00090",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.18257814645767212,
+      "meanConfidence": 0.8239924567751586
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00091",
+      "exact": false,
+      "correctSquares": 39,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22238394618034363,
+      "meanConfidence": 0.7692203531041741
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00092",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2893699109554291,
+      "meanConfidence": 0.9095141431316733
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00093",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23608563840389252,
+      "meanConfidence": 0.9108471560757607
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00094",
+      "exact": false,
+      "correctSquares": 40,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20930790901184082,
+      "meanConfidence": 0.7358183145988733
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00095",
+      "exact": false,
+      "correctSquares": 54,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19286468625068665,
+      "meanConfidence": 0.843705051811412
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00096",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19259753823280334,
+      "meanConfidence": 0.7517390116117895
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00097",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22455227375030518,
+      "meanConfidence": 0.7990658071357757
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00098",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16172346472740173,
+      "meanConfidence": 0.7527541054878384
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00099",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23496690392494202,
+      "meanConfidence": 0.8584823927376419
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00100",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2004292905330658,
+      "meanConfidence": 0.7775807990692556
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00101",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22255083918571472,
+      "meanConfidence": 0.739171443041414
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00102",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21941594779491425,
+      "meanConfidence": 0.8886183048598468
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00103",
+      "exact": false,
+      "correctSquares": 37,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.25690290331840515,
+      "meanConfidence": 0.7568389046937227
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00104",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.33791792392730713,
+      "meanConfidence": 0.8660587235353887
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00105",
+      "exact": false,
+      "correctSquares": 40,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21238048374652863,
+      "meanConfidence": 0.7945193524938077
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00106",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2163112908601761,
+      "meanConfidence": 0.9185131418053061
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00107",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2551412284374237,
+      "meanConfidence": 0.9090404137969017
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00108",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2600316107273102,
+      "meanConfidence": 0.9281759606674314
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00109",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21298590302467346,
+      "meanConfidence": 0.817794413305819
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00110",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3945205807685852,
+      "meanConfidence": 0.9346607886254787
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00111",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2118377983570099,
+      "meanConfidence": 0.8224888585973531
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00112",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21609826385974884,
+      "meanConfidence": 0.7608837154693902
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00113",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24432751536369324,
+      "meanConfidence": 0.8036767863668501
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00114",
+      "exact": false,
+      "correctSquares": 54,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2247597873210907,
+      "meanConfidence": 0.8650296903215349
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00115",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21711783111095428,
+      "meanConfidence": 0.7891517092939466
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00116",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.26541730761528015,
+      "meanConfidence": 0.9099994455464184
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00117",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.17747282981872559,
+      "meanConfidence": 0.7546824249438941
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00118",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.27054068446159363,
+      "meanConfidence": 0.9144887668080628
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00119",
+      "exact": false,
+      "correctSquares": 38,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23021486401557922,
+      "meanConfidence": 0.7785330093465745
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00120",
+      "exact": false,
+      "correctSquares": 50,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.25130173563957214,
+      "meanConfidence": 0.8365287836641073
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00121",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21258507668972015,
+      "meanConfidence": 0.7788150869309902
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00122",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21576020121574402,
+      "meanConfidence": 0.8752035382203758
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00123",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16292054951190948,
+      "meanConfidence": 0.8195726494304836
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00124",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2521590292453766,
+      "meanConfidence": 0.8908302243798971
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00125",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19790612161159515,
+      "meanConfidence": 0.8803235259838402
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00126",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2131037563085556,
+      "meanConfidence": 0.7774352754931897
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00127",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2381724715232849,
+      "meanConfidence": 0.8456864135805517
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00128",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.237880140542984,
+      "meanConfidence": 0.842125513125211
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00129",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.17551346123218536,
+      "meanConfidence": 0.8511425859760493
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00130",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19292210042476654,
+      "meanConfidence": 0.9141621130984277
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00131",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19875672459602356,
+      "meanConfidence": 0.8364864110480994
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00132",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24239271879196167,
+      "meanConfidence": 0.8185278549790382
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00133",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1964220404624939,
+      "meanConfidence": 0.8326544985175133
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00134",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2691924571990967,
+      "meanConfidence": 0.8696664846502244
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00135",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.25563180446624756,
+      "meanConfidence": 0.7589419009163976
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00136",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.26999565958976746,
+      "meanConfidence": 0.8718267451040447
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00137",
+      "exact": false,
+      "correctSquares": 54,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2232917696237564,
+      "meanConfidence": 0.8625850181560963
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00138",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21946045756340027,
+      "meanConfidence": 0.854629318928346
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00139",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2260071486234665,
+      "meanConfidence": 0.8894628209527582
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00140",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23433567583560944,
+      "meanConfidence": 0.8953285936731845
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00141",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2232702523469925,
+      "meanConfidence": 0.9289363941643387
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00142",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3407953679561615,
+      "meanConfidence": 0.9091272810474038
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00143",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1951279193162918,
+      "meanConfidence": 0.8151270190719515
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00144",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16581758856773376,
+      "meanConfidence": 0.8514718627557158
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00145",
+      "exact": false,
+      "correctSquares": 42,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24229635298252106,
+      "meanConfidence": 0.7356486890930682
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00146",
+      "exact": false,
+      "correctSquares": 40,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20644652843475342,
+      "meanConfidence": 0.7433536637108773
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00147",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22263352572917938,
+      "meanConfidence": 0.8158485924359411
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00148",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.25884494185447693,
+      "meanConfidence": 0.7922414168715477
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00149",
+      "exact": false,
+      "correctSquares": 41,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20239326357841492,
+      "meanConfidence": 0.7296840399503708
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00150",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21907421946525574,
+      "meanConfidence": 0.80174430180341
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00151",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.46433785557746887,
+      "meanConfidence": 0.9378550839610398
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00152",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2725936472415924,
+      "meanConfidence": 0.8302944782190025
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00153",
+      "exact": false,
+      "correctSquares": 41,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20733484625816345,
+      "meanConfidence": 0.7186357071623206
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00154",
+      "exact": false,
+      "correctSquares": 54,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.30985575914382935,
+      "meanConfidence": 0.8798898821696639
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00155",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2174733430147171,
+      "meanConfidence": 0.8974870750680566
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00156",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.4111604690551758,
+      "meanConfidence": 0.9307424346916378
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00157",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2299489825963974,
+      "meanConfidence": 0.9105943490285426
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00158",
+      "exact": false,
+      "correctSquares": 48,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22594957053661346,
+      "meanConfidence": 0.8518597304355353
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00159",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1977062225341797,
+      "meanConfidence": 0.8834442934021354
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00160",
+      "exact": false,
+      "correctSquares": 40,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2133733630180359,
+      "meanConfidence": 0.7662242599762976
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00161",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.15979762375354767,
+      "meanConfidence": 0.879241714021191
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00162",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22880879044532776,
+      "meanConfidence": 0.8164049186743796
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00163",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2191489040851593,
+      "meanConfidence": 0.811634179437533
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00164",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19669276475906372,
+      "meanConfidence": 0.7769601317122579
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00165",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.241410493850708,
+      "meanConfidence": 0.9102095207199454
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00166",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16042745113372803,
+      "meanConfidence": 0.7809539451263845
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00167",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22589927911758423,
+      "meanConfidence": 0.8665734750684351
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00168",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23131847381591797,
+      "meanConfidence": 0.8933196025900543
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00169",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.18700619041919708,
+      "meanConfidence": 0.8206497626379132
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00170",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24166984856128693,
+      "meanConfidence": 0.8517139994073659
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00171",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20445917546749115,
+      "meanConfidence": 0.9079934924375266
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00172",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3118310570716858,
+      "meanConfidence": 0.895407838281244
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00173",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3106745779514313,
+      "meanConfidence": 0.9259421019814909
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00174",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19497130811214447,
+      "meanConfidence": 0.8442640060093254
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00175",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1911868304014206,
+      "meanConfidence": 0.8030629029963166
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00176",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2573311924934387,
+      "meanConfidence": 0.9145821370184422
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00177",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.34483474493026733,
+      "meanConfidence": 0.9395141312852502
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00178",
+      "exact": false,
+      "correctSquares": 54,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.17853711545467377,
+      "meanConfidence": 0.8602320377249271
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00179",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23032353818416595,
+      "meanConfidence": 0.9052059811074287
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00180",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2399321049451828,
+      "meanConfidence": 0.849489290965721
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00181",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.38523948192596436,
+      "meanConfidence": 0.9322601789608598
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00182",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.18078789114952087,
+      "meanConfidence": 0.8803442374337465
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00183",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.17536205053329468,
+      "meanConfidence": 0.9359231442213058
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00184",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2993566393852234,
+      "meanConfidence": 0.8989762584678829
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00185",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2092159241437912,
+      "meanConfidence": 0.7819272922351956
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00186",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.40664026141166687,
+      "meanConfidence": 0.9297903911210597
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00187",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23539577424526215,
+      "meanConfidence": 0.8009448742959648
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00188",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19794076681137085,
+      "meanConfidence": 0.8102167819160968
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00189",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.314115047454834,
+      "meanConfidence": 0.8910974245518446
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00190",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1991414725780487,
+      "meanConfidence": 0.8255555178038776
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00191",
+      "exact": false,
+      "correctSquares": 46,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19716531038284302,
+      "meanConfidence": 0.7762276921421289
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00192",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19393880665302277,
+      "meanConfidence": 0.8748001356143504
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00193",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22056078910827637,
+      "meanConfidence": 0.9369477368891239
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00194",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2144540399312973,
+      "meanConfidence": 0.7976848047692329
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00195",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2923615872859955,
+      "meanConfidence": 0.8934505302459002
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00196",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24684301018714905,
+      "meanConfidence": 0.9059954499825835
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00197",
+      "exact": false,
+      "correctSquares": 41,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2164185494184494,
+      "meanConfidence": 0.7543578075710684
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00198",
+      "exact": false,
+      "correctSquares": 40,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23912379145622253,
+      "meanConfidence": 0.7679152728524059
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00199",
+      "exact": false,
+      "correctSquares": 50,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2058044672012329,
+      "meanConfidence": 0.8313037257175893
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00200",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1959216147661209,
+      "meanConfidence": 0.8691930542699993
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00201",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2177646905183792,
+      "meanConfidence": 0.8383249042090029
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00202",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20684364438056946,
+      "meanConfidence": 0.8067346203606576
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00203",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.30055251717567444,
+      "meanConfidence": 0.9086880735121667
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00204",
+      "exact": false,
+      "correctSquares": 48,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19489125907421112,
+      "meanConfidence": 0.7900891937315464
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00205",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2525749206542969,
+      "meanConfidence": 0.8851952659897506
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00206",
+      "exact": false,
+      "correctSquares": 39,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1592739373445511,
+      "meanConfidence": 0.7465582571458071
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00207",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22870835661888123,
+      "meanConfidence": 0.9091938589699566
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00208",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21577657759189606,
+      "meanConfidence": 0.8945580658037215
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00209",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20420928299427032,
+      "meanConfidence": 0.8745293978136033
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00210",
+      "exact": false,
+      "correctSquares": 60,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2386375516653061,
+      "meanConfidence": 0.9097607189323753
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00211",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.256648987531662,
+      "meanConfidence": 0.8633448774926364
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00212",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24795109033584595,
+      "meanConfidence": 0.8880408187396824
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00213",
+      "exact": false,
+      "correctSquares": 62,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.31856927275657654,
+      "meanConfidence": 0.9398961989209056
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00214",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.25688499212265015,
+      "meanConfidence": 0.8213678537867963
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00215",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23239003121852875,
+      "meanConfidence": 0.8550456550437957
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00216",
+      "exact": false,
+      "correctSquares": 49,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20061616599559784,
+      "meanConfidence": 0.8081703276839107
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00217",
+      "exact": false,
+      "correctSquares": 48,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22220858931541443,
+      "meanConfidence": 0.802144184242934
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00218",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23094037175178528,
+      "meanConfidence": 0.844606721540913
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00219",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16734056174755096,
+      "meanConfidence": 0.9275471402797848
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00220",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24630557000637054,
+      "meanConfidence": 0.8038062972482294
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00221",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.18570339679718018,
+      "meanConfidence": 0.8152522055897862
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00222",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16738592088222504,
+      "meanConfidence": 0.8595417607575655
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00223",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2778235375881195,
+      "meanConfidence": 0.881578273139894
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00224",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2550468146800995,
+      "meanConfidence": 0.8718228274956346
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00225",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1968601495027542,
+      "meanConfidence": 0.7973050458822399
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00226",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.278920978307724,
+      "meanConfidence": 0.9043716513551772
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00227",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.16809196770191193,
+      "meanConfidence": 0.7695944074075669
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00228",
+      "exact": false,
+      "correctSquares": 40,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19543351233005524,
+      "meanConfidence": 0.7650044127367437
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00229",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22837203741073608,
+      "meanConfidence": 0.9041479541920125
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00230",
+      "exact": false,
+      "correctSquares": 54,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2250659316778183,
+      "meanConfidence": 0.8787332335487008
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00231",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2115112692117691,
+      "meanConfidence": 0.8630214366130531
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00232",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2262590527534485,
+      "meanConfidence": 0.902658358681947
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00233",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2827267348766327,
+      "meanConfidence": 0.9219083054922521
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00234",
+      "exact": false,
+      "correctSquares": 42,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.18916068971157074,
+      "meanConfidence": 0.7452271706424654
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00235",
+      "exact": false,
+      "correctSquares": 61,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.35614368319511414,
+      "meanConfidence": 0.9343586536124349
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00236",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.20681165158748627,
+      "meanConfidence": 0.8311813042964786
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00237",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1855720430612564,
+      "meanConfidence": 0.8029758657794446
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00238",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22035501897335052,
+      "meanConfidence": 0.903667455073446
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00239",
+      "exact": false,
+      "correctSquares": 48,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2109752744436264,
+      "meanConfidence": 0.7927053247112781
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00240",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3477902114391327,
+      "meanConfidence": 0.9217577669769526
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00241",
+      "exact": false,
+      "correctSquares": 48,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19481699168682098,
+      "meanConfidence": 0.7884939908981323
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00242",
+      "exact": false,
+      "correctSquares": 43,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22788603603839874,
+      "meanConfidence": 0.7597787918057293
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00243",
+      "exact": false,
+      "correctSquares": 40,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2069188505411148,
+      "meanConfidence": 0.7780375003349036
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00244",
+      "exact": false,
+      "correctSquares": 44,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2289455682039261,
+      "meanConfidence": 0.7874238844960928
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00245",
+      "exact": false,
+      "correctSquares": 42,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2072083055973053,
+      "meanConfidence": 0.7858982156030834
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00246",
+      "exact": false,
+      "correctSquares": 42,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22624719142913818,
+      "meanConfidence": 0.7874554472509772
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00247",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2709624171257019,
+      "meanConfidence": 0.9057988515123725
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00248",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2723231017589569,
+      "meanConfidence": 0.9051579018123448
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00249",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21010267734527588,
+      "meanConfidence": 0.8543526907451451
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00250",
+      "exact": false,
+      "correctSquares": 42,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.19419290125370026,
+      "meanConfidence": 0.7336491388268769
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00251",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.22622919082641602,
+      "meanConfidence": 0.7974723449442536
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00252",
+      "exact": false,
+      "correctSquares": 47,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.24365301430225372,
+      "meanConfidence": 0.8328541878145188
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00253",
+      "exact": false,
+      "correctSquares": 45,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.182390958070755,
+      "meanConfidence": 0.7618309957906604
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00254",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.23067687451839447,
+      "meanConfidence": 0.8631199449300766
+    },
+    {
+      "boardId": "synthetic-test-rhosgfx-00255",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.2234610915184021,
+      "meanConfidence": 0.8789736391045153
+    }
+  ],
+  "nonSameOriginRequests": [],
+  "privacy": "No vectors, class sequences, FENs, source filenames or absolute paths are persisted in this report.",
+  "limitations": [
+    "Classifier-stage frozen-vector evidence only; it is not end-to-end recognition qualification.",
+    "Physical iPad deferred/unrun."
+  ]
+}

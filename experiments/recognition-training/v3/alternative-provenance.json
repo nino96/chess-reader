@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "issue": 40,
+  "status": "static-preparation-only",
+  "scope": "Isolated local research; no product dependency, bundled model, inference result, or benchmark.",
+  "nativeSmokeBudget": { "maximumInputsEach": 24, "maximumWallSecondsEach": 120 },
+  "artifacts": [
+    {
+      "candidate": "Fenify",
+      "upstreamRevision": "e9a4fd252ea4be322c560a9b78a2b9da31f49735",
+      "release": "v2023-07-10",
+      "sourceUrl": "https://github.com/notnil/fenify/releases/download/v2023-07-10/models_2023-07-10-chessboard-2D-balanced-fen-cpu.pt",
+      "file": "cache/alternatives/fenify-cpu.pt",
+      "bytes": 127147094,
+      "sha256": "baafc27099f4b0948a5136ebd3860f986fa4b5b016c83c859efa7649adb8968b",
+      "publisherDigestAvailable": false,
+      "license": "MIT",
+      "licenseEvidence": "https://github.com/notnil/fenify/blob/e9a4fd252ea4be322c560a9b78a2b9da31f49735/LICENSE",
+      "rightsReview": {
+        "localResearchInference": "permitted: publisher exposes project and release weights under the repository MIT license",
+        "distribution": "unresolved: do not commit, rehost, bundle, or adopt; upstream describes unavailable personal copyrighted-book scans used for fine-tuning/test",
+        "datasetInventory": "not audited; this limits reproducibility and unseen-family claims but is not an inference prohibition"
+      },
+      "staticSchema": {
+        "input": "externally decoded/resized RGB uint8 300x300; grayscale replicated to RGB; float32 NCHW; ImageNet normalization",
+        "output": "TorchScript softmax float [1,64,13], native and repository-canonical A1..H8 square order",
+        "classes": [
+          "empty",
+          "white pawn",
+          "white knight",
+          "white bishop",
+          "white rook",
+          "white queen",
+          "white king",
+          "black pawn",
+          "black knight",
+          "black bishop",
+          "black rook",
+          "black queen",
+          "black king"
+        ]
+      },
+      "preExecutionBlockers": [
+        "supply frozen smoke inputs",
+        "reverify bytes and schema before load"
+      ],
+      "preprocessingEvidence": "Pinned source uses torchvision Grayscale(3), Resize((300,300)) with default Pillow bilinear, ToTensor and ImageNet normalization; the adapter reproduces the Pillow path with Pillow 11.3.0."
+    },
+    {
+      "candidate": "NAKSTStudio yolov8m chess piece detection",
+      "upstreamRevision": "3b2c734aeade4646ea313da333ee670a4869c46f",
+      "sourceUrl": "https://huggingface.co/NAKSTStudio/yolov8m-chess-piece-detection/resolve/3b2c734aeade4646ea313da333ee670a4869c46f/best.onnx",
+      "file": "cache/alternatives/nakst-best.onnx",
+      "bytes": 103737229,
+      "sha256": "6fdef8213ab818a71c69250e61e213a7b5471ffb05c0fae485e7d96040f9642c",
+      "publisherDigestAvailable": true,
+      "license": "AGPL-3.0",
+      "licenseEvidence": "https://huggingface.co/NAKSTStudio/yolov8m-chess-piece-detection/blob/3b2c734aeade4646ea313da333ee670a4869c46f/README.md",
+      "rightsReview": {
+        "localResearchInference": "permitted: private unmodified local execution does not convey the work or invoke AGPL section 13 remote-network interaction",
+        "distribution": "unresolved and review-required under repository policy; do not commit, rehost, bundle, or adopt",
+        "datasetInventory": "publisher reports counts but no source-level manifest; unaudited lineage limits reproducibility and unseen-family claims"
+      },
+      "staticSchema": {
+        "input": "images float32 [1,3,640,640], RGB/255 after aspect-preserving centered letterbox",
+        "output": "output0 float32 [1,17,8400], normalized xywh plus 13 sigmoid class scores; NMS not embedded; normalized coordinates are multiplied by 640 before undoing letterbox geometry",
+        "classes": [
+          "board",
+          "white king",
+          "white queen",
+          "white rook",
+          "white bishop",
+          "white knight",
+          "white pawn",
+          "black king",
+          "black queen",
+          "black rook",
+          "black bishop",
+          "black knight",
+          "black pawn"
+        ],
+        "thresholds": { "confidence": 0.25, "classAwareNmsIou": 0.7 },
+        "emptyConfidence": "absent; output uses optional A1-first cell labels/confidence and no canonical empty probability is manufactured",
+        "localization": "board bounds must come from class-0 detections; oracle bounds forbidden",
+        "orientation": "not inferred"
+      },
+      "preExecutionBlockers": [
+        "supply frozen full-page smoke inputs and negative policy",
+        "reverify bytes and schema before load"
+      ],
+      "preprocessingEvidence": "The card pins centered aspect-preserving 640 padding but no resize library. This experiment predeclares Pillow 11.3.0 bilinear, integer rounded dimensions and RGB 114 padding; it does not claim OpenCV pixel parity."
+    }
+  ],
+  "dependencies": {
+    "newProductionDependencies": [],
+    "researchPreprocessing": "Pillow==11.3.0, ARM64 wheel SHA-256 97f07ed9f56a3b9b5f49d3661dc9607484e85c67e27f3e8be2c7d28ca032fec7; exact hash lock; installed only to ignored v3/cache/python",
+    "policy": "Use existing pinned Torch, ONNX, ONNX Runtime, and NumPy plus the separate research-only Pillow lock. Never invoke torch hub or model-owned network code."
+  },
+  "execution": { "modelForwardRuns": 0, "benchmarks": 0, "qualificationClaim": false }
+}

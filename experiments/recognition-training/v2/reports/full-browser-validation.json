@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "attempt": 2,
+  "command": "CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/v2/runs/browser-full.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/v2/browser/playwright.config.ts",
+  "exitCode": 0,
+  "elapsedSeconds": 605.4823594749905,
+  "commit": "be9fa313bee3f2f5bb1b70dd48873d78fa94fb18",
+  "expectedTests": 30,
+  "log": {
+    "path": "runs/validation/full-browser.log",
+    "sha256": "46a34c04c42b5a91a01919c3e57740a11ab7a8a1b5974ebe16487c5d57ee8246"
+  },
+  "environment": {
+    "platform": "Linux-6.17.0-1021-nvidia-aarch64-with-glibc2.39",
+    "architecture": "aarch64",
+    "node": "v24.19.0"
+  },
+  "concurrency": "No training, CPU candidate evaluation or product evaluation concurrently; browser suite one worker, retries zero.",
+  "physicalIpad": "deferred/unrun",
+  "executedTests": 30,
+  "passedTests": 30,
+  "failedTests": 0,
+  "artifacts": {
+    "browser-chromium-tilenet-full-3812-print-held-out-v2.json": "66c981f3f3019a561c9bda7017202724e2bcee616ba909221f2496a409eac616",
+    "browser-firefox-tilenet-full-3811-print-held-out-v2.json": "a00eef9036808d680e1e11b96f8be17f5cdc296f710ebc696e361f0ab364176f",
+    "browser-faults-webkit-tilenet-full-3811.json": "c089bb77a38960599c299e420cd9ec6c6d4c3e9107b714999bd2ba91a1a832fb",
+    "browser-faults-webkit-tilenet-full-3812.json": "d28ffbc3ddd1c68cc9fc1e83c85cf9e93bbcd70ef91da31372927aec0f2fef62",
+    "browser-chromium-tilenet-full-3811-corpus-v1-regression.json": "2e5acb7e66052d9f9456e493413c91fffeac6dd4e8ddb322df1b3e5037552f03",
+    "browser-firefox-tilenet-full-3811-corpus-v1-regression.json": "aacc21d9d39536adfdbedf438aace3d4b20b69fe321d8a94741fd30d12b9f607",
+    "browser-faults-chromium-tilenet-full-3812.json": "3e8d20e10b4d2e4a8e5d244f399a5d09d845752df9b555cfc0cd37fa56763b5f",
+    "browser-firefox-shipped-corpus-v1-regression.json": "724d5901d29f1c038062e70e1cfdce3c778004c7df47af5edbd0c323b4f28691",
+    "browser-webkit-tilenet-full-3811-print-held-out-v2.json": "88820b2241384c044fad4f3f219f079b2817888b715b63c988266d8e09ec6a57",
+    "browser-firefox-tilenet-full-3812-print-held-out-v2.json": "0d7148b8ffd16604e5ec8429c374ac9237beb7993776d66e076a3b56d343667b",
+    "browser-chromium-shipped-corpus-v1-regression.json": "79722f3531da80facd978e3a867e469122bd3205309ef52c4838aaa4aa5b8bec",
+    "browser-firefox-shipped-print-held-out-v2.json": "c0825c9cca8e27a08ae37857e4b6e57ace916fed3a0b466a0f68469e6814f8c5",
+    "browser-faults-webkit-shipped.json": "1d1165369b554ca0042f530d8078e4796d451200129643e95bd7f1fb4628a0f3",
+    "browser-chromium-tilenet-full-3812-corpus-v1-regression.json": "c4d5f70180cfaab405151311b07195d1f72beb1a2c0fc26673221d8ac34e7335",
+    "browser-faults-firefox-tilenet-full-3811.json": "8536a8d28833e667667472e49d78c019e29bd55b23e4c09f1da88ddacd93a1f3",
+    "browser-faults-chromium-shipped.json": "fe6ae55918f298a2b18c58c3d128e1715b3f0d687640591d8a5650fbdd8ddc24",
+    "browser-webkit-shipped-print-held-out-v2.json": "b3c67154e5d5545394b3c90bcd569c0c75fabddaa4780ad5809624d7b190033b",
+    "browser-faults-firefox-tilenet-full-3812.json": "70088a237c22c50770fec27c5a6b40ca5a9ff78de11a4b6e62d148d500bb28e4",
+    "browser-faults-chromium-tilenet-full-3811.json": "c80107cfba9cbd6cb10e385180ed3a90dd7654cbd7d2dd83e7a115d60dd69e95",
+    "browser-chromium-shipped-print-held-out-v2.json": "ba90176cd7dc37cf8eae8300bf443b2939dc975b8a38d708ca24014e14d970ab",
+    "browser-webkit-tilenet-full-3812-corpus-v1-regression.json": "4c6e181c22a602e8a675ec6192f1f18a04e1d6e7c7d7d2e7ad3d1f4c26bb5136",
+    "browser-faults-firefox-shipped.json": "456585dbf711a6a018f2eb61ff30de93ca76fccbf6db2b877ca03acd6e094329",
+    "browser-webkit-tilenet-full-3811-corpus-v1-regression.json": "1529da9ee62e80d468a7bad3b8ff36a9628c2dc108f8f04a1e423d7ab06702b9",
+    "browser-firefox-tilenet-full-3812-corpus-v1-regression.json": "865b71546d52c5d588175b26f02f0b8fef4d4c62f62aeb7ca4559fadfe4afd9b",
+    "browser-chromium-tilenet-full-3811-print-held-out-v2.json": "ef663ac91f54543ec65e846f8f907d3de4bc68aee3d0eb812da3ee3b413c543f",
+    "browser-webkit-tilenet-full-3812-print-held-out-v2.json": "c51c58e4e190e6afa5a871914d0666cb00373b58f457b3b7833ff60c172aa84f",
+    "browser-webkit-shipped-corpus-v1-regression.json": "fc90801fc0fc3df52f61efdde7f9c2bb6bf137ecb50665b05036a018a41e0ce6"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "suite": "issue-38-product-regression-validation",
+  "status": "passed",
+  "commit": "e0303680548f6b461e4848aa72ca6c3903229e48",
+  "date": "2026-09-05T18:41:30Z",
+  "environment": {
+    "os": "Linux",
+    "kernel": "6.17.0-1021-nvidia",
+    "arch": "aarch64",
+    "node": "v24.19.0",
+    "pnpm": "11.11.0"
+  },
+  "commands": [
+    {
+      "command": "pnpm test:unit",
+      "status": "passed",
+      "testFiles": 29,
+      "tests": 386,
+      "durationSeconds": 6.13
+    },
+    {
+      "command": "pnpm check:licenses",
+      "status": "passed",
+      "productionPackages": 25
+    },
+    {
+      "command": "pnpm build",
+      "status": "passed",
+      "durationSeconds": 0.723
+    },
+    {
+      "command": "pnpm test:e2e",
+      "status": "passed",
+      "tests": 234,
+      "passed": 219,
+      "skipped": 15,
+      "durationSeconds": 120
+    },
+    {
+      "command": "pnpm eval:recognition",
+      "status": "passed",
+      "tests": 42,
+      "passed": 42,
+      "durationSeconds": 552
+    }
+  ],
+  "e2eProjects": [
+    "chromium",
+    "firefox",
+    "webkit",
+    "ipad-webkit",
+    "ipad-split-webkit",
+    "phone-chromium"
+  ],
+  "e2eSkips": {
+    "count": 15,
+    "reason": "Existing capability-scoped skips: two touch-only tests skip in each of three desktop projects; two keyboard tests and one keyboard-only selection test skip in each of three touch projects.",
+    "source": [
+      "apps/web/e2e/touch.spec.ts:5",
+      "apps/web/e2e/keyboard.spec.ts:6",
+      "apps/web/e2e/study.spec.ts:297"
+    ]
+  },
+  "rawArtifacts": [
+    "apps/web/test-results/.last-run.json",
+    "apps/web/eval-results/corpus-chromium.json",
+    "apps/web/eval-results/corpus-firefox.json",
+    "apps/web/eval-results/corpus-webkit.json",
+    "apps/web/eval-results/corpus-localized-chromium.json",
+    "apps/web/eval-results/corpus-localized-firefox.json",
+    "apps/web/eval-results/corpus-localized-webkit.json",
+    "apps/web/eval-results/corpus-comparison-chromium.json",
+    "apps/web/eval-results/corpus-comparison-firefox.json",
+    "apps/web/eval-results/corpus-comparison-webkit.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-diagram-01-chromium.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-diagram-01-firefox.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-diagram-01-webkit.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-hatched-01-chromium.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-hatched-01-firefox.json",
+    "apps/web/eval-results/issue-35-product-measurement-pdf-synthetic-hatched-01-webkit.json",
+    "apps/web/eval-results/recognition-chromium.json",
+    "apps/web/eval-results/recognition-firefox.json",
+    "apps/web/eval-results/recognition-webkit.json"
+  ],
+  "privacy": {
+    "externalRequests": 0,
+    "report": "This summary contains aggregate counts and repository-relative artifact paths only; raw recognition contents were not copied."
+  },
+  "executionNotes": [
+    "Initial sandboxed unit and license attempts could not spawn their read-only child processes; authorized host reruns passed.",
+    "The initial sandboxed E2E attempt could not start its local preview server; the authorized host rerun passed."
+  ],
+  "limitations": [
+    "Physical-iPad testing remains deferred and unrun.",
+    "Playwright iPad projects are browser emulation and do not replace physical-device evidence.",
+    "eval:recognition:qualify was outside this validation assignment and was not run.",
+    "Product regression success does not resolve the separate issue-38 source-SVG fidelity failure recorded in experiments/recognition-training/reports/svg-fidelity.json."
+  ],
+  "reviewableArchives": [
+    {
+      "path": "reports/product-regression/issue-35-product-measurement-pdf-synthetic-diagram-01-chromium.json",
+      "sha256": "cbf9971ae31c475e7f32d27da41bb558a0c0602ea924a4cb8fb433b5e5e8100e",
+      "redacted": false
+    },
+    {
+      "path": "reports/product-regression/issue-35-product-measurement-pdf-synthetic-diagram-01-firefox.json",
+      "sha256": "73df092e7656a851e0df848bd87c647760589024eb0096e0e8d6318aa1c6d7a3",
+      "redacted": false
+    },
+    {
+      "path": "reports/product-regression/issue-35-product-measurement-pdf-synthetic-diagram-01-webkit.json",
+      "sha256": "016f021b1858419928a3dbd2a3d3106da12ebd90c23962c5a530a7400e896ac0",
+      "redacted": false
+    },
+    {
+      "path": "reports/product-regression/issue-35-product-measurement-pdf-synthetic-hatched-01-chromium.json",
+      "sha256": "8ea821a651d74db7a20a856233affeed751aaf14e901e1a29dcc36d472391c14",
+      "redacted": false
+    },
+    {
+      "path": "reports/product-regression/issue-35-product-measurement-pdf-synthetic-hatched-01-firefox.json",
+      "sha256": "44d3696891db49d094fcc9e3bc8e0ae4564848ebf7e70e775bab838d63bfb06c",
+      "redacted": false
+    },
+    {
+      "path": "reports/product-regression/issue-35-product-measurement-pdf-synthetic-hatched-01-webkit.json",
+      "sha256": "6600dda85c419848d56b4844bd95d0f919177f5c56f00df8c5c9796fd571b7da",
+      "redacted": false
+    },
+    {
+      "path": "reports/product-regression/recognition-chromium.json",
+      "sha256": "120ce65e923db4b4b70c425aa66e02a4a4d99562cc4f74e2cc8b4b889c133da8",
+      "redacted": true
+    },
+    {
+      "path": "reports/product-regression/recognition-firefox.json",
+      "sha256": "06f4c7ea5e7ed0a0b80f862be94c6ea7c1cfaf1367ffaf26c884f28edec0c3be",
+      "redacted": true
+    },
+    {
+      "path": "reports/product-regression/recognition-webkit.json",
+      "sha256": "b8ddda7b59e6c851611c96a039ad13b7a1b36a3dbe40fa51afb86a4ed1558fe9",
+      "redacted": true
+    }
+  ]
+}

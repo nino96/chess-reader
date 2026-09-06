@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "suite": "recognition-training-browser",
+  "command": {
+    "fromRepositoryRoot": "pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts",
+    "environment": {
+      "CHESS_READER_TRAINING_BROWSER_CONFIG": "../../experiments/recognition-training/v2/runs/browser-pilot.config.json"
+    },
+    "environmentPathBase": "apps/web (pnpm exec working directory)"
+  },
+  "commit": "ac5bc3086375bf6a9a73de0367c94a5a83303756",
+  "date": "2026-09-05T19:45:58.976Z",
+  "environment": {
+    "os": "linux",
+    "release": "6.17.0-1021-nvidia",
+    "arch": "arm64",
+    "node": "v24.19.0",
+    "browser": {
+      "name": "webkit",
+      "version": "26.5"
+    }
+  },
+  "freeze": {
+    "runKind": "pilot",
+    "protocolSha256": "242d07996ecab07a0b65402ea776317ecf23bbee246d975d3575003e392e1890",
+    "testManifestSha256": null
+  },
+  "candidate": {
+    "id": "tilenet-pilot-381",
+    "seed": 381,
+    "modelSha256": "6348025a774929b436eeb2ef5df027d0c204747ae88323f49b6511b35e780a96",
+    "modelBytes": 1288448
+  },
+  "vectors": {
+    "id": "pilot-development",
+    "role": "development",
+    "sha256": "0e826bf5a879a8241b373af04806d8ea5d1aea84e29fb4a501bcdad41a9f793c",
+    "bytes": 4194304,
+    "boards": 16
+  },
+  "contract": {
+    "input": {
+      "name": "tiles",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        1024
+      ]
+    },
+    "output": {
+      "name": "probs",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        13
+      ]
+    },
+    "classLabels": "1KQRBNPkqrbnp",
+    "reliabilityFloor": 0.7,
+    "executionProvider": "wasm",
+    "threads": 1
+  },
+  "runtime": {
+    "ortWasmSha256": "ec8580a9d7b9476ceee52e10a7f94124e4dc71a019d666ed6d4726697c109a4d",
+    "ortWasmBytes": 13961845,
+    "modelAndOrtWasmBytes": 15250293,
+    "deployedEvaluationBuildBytes": 14042258,
+    "totalEvaluationRuntimeBytes": 15330706,
+    "byteDefinition": "modelAndOrtWasmBytes is candidate ONNX plus pinned ORT WASM. totalEvaluationRuntimeBytes adds the candidate to deployed harness HTML/JS/WASM and excludes source maps/build metadata."
+  },
+  "timing": {
+    "coldInitializationMs": {
+      "count": 3,
+      "min": 589,
+      "p50": 598,
+      "p95": 649,
+      "max": 649
+    },
+    "firstBoardAfterFreshInitializationMs": {
+      "count": 3,
+      "min": 47,
+      "p50": 59,
+      "p95": 62,
+      "max": 62
+    },
+    "fullPassInferenceMs": {
+      "count": 16,
+      "min": 17,
+      "p50": 18,
+      "p95": 62,
+      "max": 62
+    },
+    "warmSubsetInferenceMs": {
+      "count": 12,
+      "min": 17,
+      "p50": 17,
+      "p95": 18,
+      "max": 18
+    },
+    "coldSessions": 3,
+    "warmRepeatsPerBoard": 3,
+    "warmBoardLimit": 4,
+    "fullPassMaximumBoardsPerRequest": 16,
+    "fullPassRequestCount": 1
+  },
+  "rawTiming": {
+    "coldInitializationMs": [
+      649,
+      598,
+      589
+    ],
+    "firstBoardAfterFreshInitializationMs": [
+      62,
+      59,
+      47
+    ],
+    "fullPassInferenceMs": [
+      62,
+      19,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      17
+    ],
+    "warmSubsetInferenceMs": [
+      17,
+      17,
+      18,
+      17,
+      17,
+      17,
+      17,
+      17,
+      18,
+      17,
+      17,
+      17
+    ]
+  },
+  "summary": {
+    "exactBoards": 0,
+    "totalBoards": 16,
+    "exactBoardAccuracy": 0,
+    "correctSquares": 839,
+    "confidentCorrectSquares": 0,
+    "totalSquares": 1024,
+    "squareAccuracy": 0.8193359375,
+    "confidenceQualifiedSquareAccuracy": 0,
+    "reliableExact": 0,
+    "reliableWrong": 0,
+    "minimumConfidence": 0.11618927121162415,
+    "meanConfidence": 0.145152745397354,
+    "perClassErrors": [
+      0,
+      16,
+      20,
+      11,
+      8,
+      11,
+      34,
+      16,
+      10,
+      14,
+      10,
+      10,
+      25
+    ],
+    "confusion": [
+      [
+        839,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        11,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        11,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        34,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        16,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        25,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "observations": [
+    {
+      "boardId": "synthetic-v2-dev-firi-00000",
+      "exact": false,
+      "correctSquares": 37,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1337563842535019,
+      "meanConfidence": 0.14864415070042014
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00001",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.13611789047718048,
+      "meanConfidence": 0.14975106064230204
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00002",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.12380143254995346,
+      "meanConfidence": 0.14138356654439121
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00003",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.12277409434318542,
+      "meanConfidence": 0.14662904373835772
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00004",
+      "exact": false,
+      "correctSquares": 53,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.14010737836360931,
+      "meanConfidence": 0.14916716748848557
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00005",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.12512589991092682,
+      "meanConfidence": 0.14698539790697396
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00006",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.11714312434196472,
+      "meanConfidence": 0.14080505666788667
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00007",
+      "exact": false,
+      "correctSquares": 52,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.11618927121162415,
+      "meanConfidence": 0.14027550141327083
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00008",
+      "exact": false,
+      "correctSquares": 51,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1329192966222763,
+      "meanConfidence": 0.14903620560653508
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00009",
+      "exact": false,
+      "correctSquares": 58,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1295778900384903,
+      "meanConfidence": 0.1492864810861647
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00010",
+      "exact": false,
+      "correctSquares": 56,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.12282897531986237,
+      "meanConfidence": 0.14382543205283582
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00011",
+      "exact": false,
+      "correctSquares": 35,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.12276554852724075,
+      "meanConfidence": 0.14424347679596394
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00012",
+      "exact": false,
+      "correctSquares": 55,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.12434259802103043,
+      "meanConfidence": 0.14559781190473586
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00013",
+      "exact": false,
+      "correctSquares": 50,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.11979133635759354,
+      "meanConfidence": 0.13985796668566763
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00014",
+      "exact": false,
+      "correctSquares": 59,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.1251225769519806,
+      "meanConfidence": 0.1456149471923709
+    },
+    {
+      "boardId": "synthetic-v2-dev-firi-00015",
+      "exact": false,
+      "correctSquares": 57,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.12129898369312286,
+      "meanConfidence": 0.14134065993130207
+    }
+  ],
+  "nonSameOriginRequests": [],
+  "privacy": "No vectors, class sequences, FENs, source filenames or absolute paths are persisted in this report.",
+  "limitations": [
+    "Classifier-stage frozen-vector evidence only; it is not end-to-end recognition qualification.",
+    "Physical iPad deferred/unrun."
+  ]
+}

@@ -1,0 +1,396 @@
+{
+  "candidate": "nakst",
+  "command": "timeout 60s experiments/recognition-training/.venv/bin/python experiments/recognition-training/v3/nakst_development.py",
+  "commit": "c38ffb56076a1f4db1383ae56551b7229f6dba78",
+  "confidencePolicy": {
+    "classificationThreshold": 0.7,
+    "emptySquareConfidenceAvailable": false,
+    "fullSquareReliabilityGateAvailable": false,
+    "inventedEmptyConfidence": false,
+    "qualifiedCountsCover": "observed predicted pieces and board detection only"
+  },
+  "decision": {
+    "maximumNonExactBoards": 19,
+    "maximumWrongSquares": 122,
+    "rawExactUpperBound": 0.9557291666666666,
+    "rawSquareUpperBound": 0.994873046875,
+    "reason": "raw promotion target is mathematically unreachable",
+    "status": "STOP",
+    "thresholdTuning": "unneeded: raw upper bound already fails"
+  },
+  "elapsedSeconds": 9.46643037814647,
+  "environment": {
+    "machine": "aarch64",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.3",
+    "threads": 1
+  },
+  "input": {
+    "actualBoardsProcessed": 26,
+    "adapterSha256": "f2bb0a27464b84158d3f2eba6ea091882b45e2d4f3c58e33382ffd5739345455",
+    "datasetManifestSha256": "ddf18262d2e9d8cdbeec87442df78028fe517674e8f62d26c5a8126aa84550e6",
+    "denominatorBoards": 384,
+    "denominatorSquares": 24576,
+    "developmentLabelsSha256": "af604db705654cb906b86b276400f90eca987f5b46b8a4bbc2446e58d5bb2815",
+    "modelSha256": "6fdef8213ab818a71c69250e61e213a7b5471ffb05c0fae485e7d96040f9642c",
+    "reusedBoards": 12,
+    "smokeReuse": {
+      "compatible": true,
+      "rejection": null,
+      "reportSha256": "f78957ea6d455d6b2bb5ccd0817921066de4bdc8bbfbbf697c1f4d50195333c7"
+    },
+    "sourceLockSha256": "63470bdc752fb0a99793d44401ed3123af8d1865c93f1ed78327849f85d02592",
+    "split": "dev",
+    "testLoaded": false
+  },
+  "internalStopSeconds": 55,
+  "kind": "nakst-full-development-native-diagnostic",
+  "orientation": {
+    "assumption": "A1",
+    "inferred": false,
+    "input": "native"
+  },
+  "outerCeilingSeconds": 60,
+  "raw": {
+    "color": {
+      "black": {
+        "accuracy": 0.7783783783783784,
+        "correct": 144,
+        "errors": 41,
+        "total": 185
+      },
+      "empty": {
+        "accuracy": 0.9732620320855615,
+        "correct": 1274,
+        "errors": 35,
+        "total": 1309
+      },
+      "occupied": {
+        "accuracy": 0.7436619718309859,
+        "correct": 264,
+        "errors": 91,
+        "total": 355
+      },
+      "white": {
+        "accuracy": 0.7058823529411765,
+        "correct": 120,
+        "errors": 50,
+        "total": 170
+      }
+    },
+    "confusionActualRowsPredictedColumns": [
+      [
+        1274,
+        0,
+        34,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        18,
+        0,
+        0,
+        0,
+        1,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        0,
+        10,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        5,
+        2,
+        0,
+        0,
+        13,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        13,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        0,
+        0,
+        0,
+        1,
+        0,
+        49,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        18,
+        0,
+        0,
+        0,
+        0,
+        8,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        8,
+        0,
+        7,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        24,
+        0,
+        0
+      ],
+      [
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        62,
+        0
+      ]
+    ],
+    "correctSquares": 1538,
+    "detectedPieceConfidence": {
+      "count": 342,
+      "mean": 0.8555609300645471,
+      "minimum": 0.2565816044807434
+    },
+    "exactBoards": 9,
+    "missedBoardSquares": 0,
+    "nonExactBoards": 17,
+    "occupiedCorrect": 264,
+    "occupiedTotal": 355,
+    "perClass": {
+      "1": {
+        "accuracy": 0.9732620320855615,
+        "correct": 1274,
+        "errors": 35,
+        "total": 1309
+      },
+      "B": {
+        "accuracy": 0.5416666666666666,
+        "correct": 13,
+        "errors": 11,
+        "total": 24
+      },
+      "K": {
+        "accuracy": 0.6923076923076923,
+        "correct": 18,
+        "errors": 8,
+        "total": 26
+      },
+      "N": {
+        "accuracy": 1.0,
+        "correct": 13,
+        "errors": 0,
+        "total": 13
+      },
+      "P": {
+        "accuracy": 0.765625,
+        "correct": 49,
+        "errors": 15,
+        "total": 64
+      },
+      "Q": {
+        "accuracy": 0.8095238095238095,
+        "correct": 17,
+        "errors": 4,
+        "total": 21
+      },
+      "R": {
+        "accuracy": 0.45454545454545453,
+        "correct": 10,
+        "errors": 12,
+        "total": 22
+      },
+      "b": {
+        "accuracy": 0.5,
+        "correct": 8,
+        "errors": 8,
+        "total": 16
+      },
+      "k": {
+        "accuracy": 0.6923076923076923,
+        "correct": 18,
+        "errors": 8,
+        "total": 26
+      },
+      "n": {
+        "accuracy": 1.0,
+        "correct": 24,
+        "errors": 0,
+        "total": 24
+      },
+      "p": {
+        "accuracy": 0.8611111111111112,
+        "correct": 62,
+        "errors": 10,
+        "total": 72
+      },
+      "q": {
+        "accuracy": 0.7083333333333334,
+        "correct": 17,
+        "errors": 7,
+        "total": 24
+      },
+      "r": {
+        "accuracy": 0.6521739130434783,
+        "correct": 15,
+        "errors": 8,
+        "total": 23
+      }
+    },
+    "pieceAndBoardConfidenceQualifiedAtOrAbove0.7": {
+      "correctPredictedPieces": 151,
+      "observedPredictedPieces": 183,
+      "reliableExactBoards": 4,
+      "reliableWrongBoards": 0,
+      "wrongPredictedPieces": 32
+    },
+    "processedBoards": 26,
+    "reusedBoardsWithoutPerSquareConfidence": 12,
+    "wrongSquares": 126
+  },
+  "schemaVersion": 1,
+  "scriptSha256": "5407fcdf87ddbfa1b8378aadf8d042f178869b0c7bafad9622693737223f661d",
+  "status": "stopped"
+}

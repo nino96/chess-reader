@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "runKind": "full",
+  "frozenAt": "2026-09-05T18:01:34.379Z",
+  "protocolSha256": "bd24a5caaf61d0c37260d84665e0b910dff58aed3e34fc702e6d2e537d5900c5",
+  "testManifestSha256": "f94419e00fa787ef4b86490a9da1470bfc95b8644c3dacf0debe05ad6e61dc3a",
+  "candidates": [
+    {
+      "id": "shipped",
+      "seed": null,
+      "sha256": "883f6a8e639e6d6b6399b3fda0508ad772e3c6f9cefa2e678a13f27b9fa6248d",
+      "bytes": 1289483
+    },
+    {
+      "id": "tilenet-full-3801",
+      "seed": 3801,
+      "sha256": "1397e6f5dcf45ebb4a3111ba4de754df661bab343bdec560ffe675b917fdae2d",
+      "bytes": 1288448
+    },
+    {
+      "id": "tilenet-full-3802",
+      "seed": 3802,
+      "sha256": "91f176d32e3f351727bcb8989939129ee7015ed4caaac5e68c7eea36c4bfd14f",
+      "bytes": 1288448
+    }
+  ],
+  "datasetSha256": "10b347f5f88693fd18d63b49b4b2f81156cf673820145c82949e1d425743a401",
+  "pretrainingTestLockSha256": "403c413a58df489b3879fd386859a282d7497d3546b28a74fcef684f0ab7b414",
+  "reports": [
+    {
+      "seed": 3801,
+      "reportSha256": "3dc2590a8d5ce9a16a62e8c555abbf815731c421acb46c52edfc8b9880f2db9b",
+      "checkpointSha256": "903492c5ae5ec84c954135fbe9161de762d44c33498c816bf7785e01a4a2a39c",
+      "commit": "d838cf14c676a8cc0eb247f74d7f6faeba76679b"
+    },
+    {
+      "seed": 3802,
+      "reportSha256": "b127c3107e109bb3ce3a1d8918bacdead31cb11fadc33806e114c742a37df774",
+      "checkpointSha256": "098b094aefa1d0a357a8a6b8df47c2afecf17ada6d6d6f792899393c4b049b80",
+      "commit": "d838cf14c676a8cc0eb247f74d7f6faeba76679b"
+    }
+  ],
+  "freezeFileSha256": "b2c17973f19fb8a0e4e749595d01fd6ca03cb0cbb44f9458121be2797b0d2db7",
+  "heldOutVectorBytes": 67108864
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "protocolSha256": "22312551a3e2e845f61393b0e6e6852f746529cd3f354a5fb47953769935f3c4",
+  "datasetManifestSha256": "ddf18262d2e9d8cdbeec87442df78028fe517674e8f62d26c5a8126aa84550e6",
+  "sourceLockSha256": "63470bdc752fb0a99793d44401ed3123af8d1865c93f1ed78327849f85d02592",
+  "verificationReportSha256": "9d0ad3caa41822a4b6a42638c539cb1da938f42a7e712ecb4e2856d0c6f4eb15",
+  "checks": {
+    "sourceProvenanceAndHashes": true,
+    "artistGroupSplitIsolation": true,
+    "allThirteenClassesInAll36Groups": true,
+    "all4864BoardsReplayedByteIdentically": true,
+    "canonicalManifestLoaderCompatible": true,
+    "originalAndV2Frozen": true,
+    "corpusV1Excluded": true,
+    "strictDataToolChecks": true
+  },
+  "visualReview": {
+    "status": "passed",
+    "reviewer": "lead",
+    "scope": "12 source sheets and 12 all-class three-condition tensor sheets; glyph mapping, white/black distinction, compositor readability; no model predictions or qualification outcomes",
+    "artifactSha256": {
+      "data/preflight/cburnett.png": "fcbc907fc7f189516cef046c8f305f16d6405032d3fd9d151c5818ac30896eaa",
+      "data/preflight/chessnut.png": "7c2c4f9d792142cd94243e238ee59d9fbbe16a8ce2eda868a2a1499ac902692e",
+      "data/preflight/fantasy.png": "46f1d330e1681a2de89812e01a6ffed4ad81c510ce60fc675ccb5685b2fdaf0c",
+      "data/preflight/femrek.png": "506be710b914dd1184e3946d3520c49690ce08bc4548d4c8ae2ffd9338628ac6",
+      "data/preflight/kiwen-suwi.png": "66b01fcc668ee4c72116fb247dba2626dec20780801e3d810d18a5e4a32b20e2",
+      "data/preflight/livius.png": "30769547b6f8b43503b6ad0103a6906fc1a0089506e52b2e2d474fe6ff351968",
+      "data/preflight/lyricsz.png": "ebc7af495bff6cab29774f8ff1ff3aa2ed981fb94785fcebabed9c715b9374bc",
+      "data/preflight/merida.png": "9a14726c2dc2eb239de14766397db64a2aa1dda409ce261c2128739e021f6ad2",
+      "data/preflight/mpchess.png": "11e503797e7d2dbf4051bc6180655346b2c657e758d8a9f4fe8efe157c129d9a",
+      "data/preflight/papercut.png": "ee3ff2d395e61e7363d02058a49cc386255500e60982a694b78235d87313ac0f",
+      "data/preflight/pirouetti.png": "6c4bd45e5c5b670643674730ad498258fb949320b7ba59661103c707e0f15fc0",
+      "data/preflight/tensor-cburnett.png": "a7191fa912bcba36eb66102f4e86a0823867157d043aff016ac4f474847b94e3",
+      "data/preflight/tensor-chessnut.png": "12c732fa56df080f0a55df20cf400830f763b9d0c27c93b588160754774fb2d8",
+      "data/preflight/tensor-fantasy.png": "492a51c995dd2b7f2ba224bbc91cfe74d704819935531a1a71ed16be61784968",
+      "data/preflight/tensor-femrek.png": "42f2fa7cb92eb1339a1467ce8bbd549bf4180cc8bfcf8e45f209056021205519",
+      "data/preflight/tensor-kiwen-suwi.png": "0c20d246e9496974da2f11e2265a14074a428c397511f2386a5582fd4ea545db",
+      "data/preflight/tensor-livius.png": "d0dc2550540b1306e4f228dcc4bc91469233d63ff651915ff2c3fdbacab2e4b1",
+      "data/preflight/tensor-lyricsz.png": "a77789ed5f39dcb4012367c6eafd1ed077a5a4435273b68623676a5540b919f5",
+      "data/preflight/tensor-merida.png": "a178d3a21b13a56b364845430f7c3ddbf7be3f5a45c08973fb2f8f5fae6875e8",
+      "data/preflight/tensor-mpchess.png": "c2c79f654d38a128193d3b5fef022ecd43c3e4b8413e002385b78f80fa8f1925",
+      "data/preflight/tensor-papercut.png": "e5ef75ce75dd9a9a2c85d33e8e3f0f7ca70c293be4273635338c04a70643ab86",
+      "data/preflight/tensor-pirouetti.png": "6327a9e4678cf1bcf4f95035275056a72d9ffe5e8f2b7ebf67763434d909178a",
+      "data/preflight/tensor-totoy.png": "b76fd8d4b8ad4c68bbafc3587a39a59b7d42c2b920065a37f2d8e85830c4543c",
+      "data/preflight/totoy.png": "69c91e955faafa179fcb87e5b3a1c4dcf124edf45f73a53b268d7d9c9a815018"
+    }
+  },
+  "limitations": [
+    "Artist attribution groups do not prove absence of stylistic influence.",
+    "Two visually related training glyphs remain together in train.",
+    "Fresh qualification images are generated and validated but no model has been evaluated on them."
+  ]
+}

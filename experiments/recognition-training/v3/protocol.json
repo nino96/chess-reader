@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "issue": 40,
+  "architecture": "FENShot-fused-TileNet-no-BN",
+  "classes": "1KQRBNPkqrbnp",
+  "dtype": "float32",
+  "paths": {
+    "datasetDir": "data/full",
+    "shippedModel": "../../../node_modules/.pnpm/@scoriiu+fenshot@0.1.4_onnxruntime-web@1.29.0/node_modules/@scoriiu/fenshot/model/chess-tiles-v2.onnx",
+    "dataQualityManifest": "manifests/data-quality.json",
+    "pretrainingLock": "manifests/pretraining-lock.json",
+    "outputDir": "runs"
+  },
+  "training": {
+    "batchSize": 512,
+    "learningRate": 0.0001,
+    "minimumLearningRate": 1e-6,
+    "weightDecay": 0.0001,
+    "labelSmoothing": 0,
+    "scheduler": "cosine",
+    "sampling": "equal-family-condition-board",
+    "developmentSelection": "mean-per-class-cross-entropy-equally-averaged-per-family-earliest-tie",
+    "checkpointEveryBatches": 32
+  },
+  "runs": {
+    "pilot": {
+      "seed": 3820,
+      "trainBoards": 256,
+      "devBoards": 384,
+      "epochs": 1,
+      "maxGpuSeconds": 60
+    },
+    "full-3821": {
+      "seed": 3821,
+      "trainBoards": 4096,
+      "devBoards": 384,
+      "epochs": 12,
+      "maxGpuSeconds": 600
+    },
+    "full-3822": {
+      "seed": 3822,
+      "trainBoards": 4096,
+      "devBoards": 384,
+      "epochs": 12,
+      "maxGpuSeconds": 600
+    }
+  },
+  "aggregateMaxGpuSeconds": 1260,
+  "diagnostic": {
+    "confidenceFloor": 0.7,
+    "histogramEdges": [0, 0.5, 0.7, 0.8, 0.9, 0.95, 0.99, 1]
+  },
+  "export": {
+    "opset": 17,
+    "input": "tiles",
+    "output": "probs",
+    "atol": 1e-5,
+    "rtol": 1e-5,
+    "externalData": false
+  },
+  "testPolicy": "Training and development commands must never load the qualification split.",
+  "promotion": {
+    "minimumReliableExactBoardAccuracy": 0.95,
+    "minimumConfidentCorrectSquareAccuracy": 0.995,
+    "maximumReliableWrong": 0,
+    "lowConfidenceCountsAsFailure": true,
+    "minimumDegradedExactImprovement": 0.05,
+    "maximumPristineExactRegression": 0.01,
+    "maximumPristineOccupiedRegression": 0.01,
+    "bothSeedsRequiredToRecommendRecipe": true
+  },
+  "dataset": {
+    "trainBoards": 4096,
+    "devBoards": 384,
+    "testBoards": 384,
+    "splitSeeds": {
+      "train": 3830,
+      "dev": 3831,
+      "test": 3832
+    },
+    "minimumIndependentGroups": {
+      "train": 6,
+      "dev": 3,
+      "test": 3
+    }
+  },
+  "budgets": {
+    "dataGenerationSeconds": 600,
+    "alternativeSmokeSecondsEach": 120,
+    "alternativeSmokeMaximumInputsEach": 24,
+    "developmentDiagnosticSecondsEach": 60,
+    "developmentDiagnosticSecondsTotal": 300,
+    "qualificationSecondsEach": 120,
+    "qualificationSecondsTotal": 600,
+    "compatibilitySmokeSecondsPerEnginePerGraph": 60,
+    "compatibilitySmokeMaximumGraphs": 3
+  },
+  "physicalIpad": "deferred/unrun",
+  "productionAdoption": false
+}

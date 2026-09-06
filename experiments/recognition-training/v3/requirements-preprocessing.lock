@@ -1,0 +1,6 @@
+# Research-only CPython 3.12 Linux ARM64 preprocessing dependency. It is
+# installed into ignored v3/cache/python and never enters the PWA dependency graph.
+--index-url https://pypi.org/simple
+--only-binary=:all:
+
+Pillow==11.3.0 --hash=sha256:97f07ed9f56a3b9b5f49d3661dc9607484e85c67e27f3e8be2c7d28ca032fec7

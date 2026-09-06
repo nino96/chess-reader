@@ -6,3 +6,22 @@ playwright-report/
 pnpm-lock.yaml
 *.png
 *.ico
+experiments/recognition-training/.venv/
+experiments/recognition-training/.bootstrap/
+experiments/recognition-training/cache/
+experiments/recognition-training/data/
+experiments/recognition-training/runs/
+# Generated evidence is preserved byte-for-byte, including its hashes.
+experiments/recognition-training/manifests/*.json
+experiments/recognition-training/reports/**/*.json
+
+experiments/recognition-training/v2/data/
+experiments/recognition-training/v2/runs/
+experiments/recognition-training/v2/manifests/*.json
+experiments/recognition-training/v2/reports/**/*.json
+
+experiments/recognition-training/v3/cache/
+experiments/recognition-training/v3/data/
+experiments/recognition-training/v3/runs/
+experiments/recognition-training/v3/manifests/*.json
+experiments/recognition-training/v3/reports/**/*.json

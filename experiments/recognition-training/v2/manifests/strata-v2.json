@@ -1,0 +1,2310 @@
+{
+  "schemaVersion": 1,
+  "datasetManifestSha256": "509d7ebb604e02f23eb354d16bfead096c7b224d100c7d1a9213e102bf4f5544",
+  "boards": [
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00000",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "5ce2887c31b2fc57f614c3c57afdee552a5297b2c205eb126cbdc659dcccc38e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00001",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "a8e28683c13ba9bf36b77478b6dd8a080e2d5a0b7ad56351869c829f881151e0"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00002",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "727fe8a4bda078817f837fcb79b277421a0c4a0233bc23eb2db8fb385f17fe43"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00003",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "64f386542c2fefce97cbfb09dbf551a2e714ca6f471275b10754c9684839e699"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00004",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "421ef5a5912baaf6c7b5636da750762bb553f223643364422ea45eed7d41fd7c"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00005",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "9effd04160f43c9aa13bb658aaa57ad6f46ef6bf299077a81e4352ca48c7b93f"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00006",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "506a5b34c71c0753eae9588934f2870201bbc7e8dc849759b74446c75866b4f0"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00007",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "e38285d942ec70366ce659465b7a5d484697bb5ffd30e12fcc7417b4244ca2a5"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00008",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "b0459c3fa47a74a9f9fce988f9b6e2e76197a51b66b814c90748e743b13eebd8"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00009",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "1a600450a354110c7946d5fd213c6eaa41dfbd57057e342ff554b8d5695a851a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00010",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "ef7c18e78e14f391116870df4ca53e27763b25fb55c1e2dcdb0226160d4d6574"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00011",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "88070933dc2899ccd7e2f0223ae43d2421d795ec25a7b37db21d00430317d83e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00012",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "0e25c0aa6aa1c64a79444a0a0d1a874f82c328e22722d24e36886bb87147937b"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00013",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "b3735feca23943e40cc314a3907ed4a0fc27a39cdb9bd54576ccc5e362c8dced"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00014",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "31398d5a237262699811125479b95eb96adf23d417bd66aae8ed630ebe69a27e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00015",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "9f05b848b4d38a48a73fca12cd4323f92dd84251cdd68b32b4ced184c944163d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00016",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "9f9b17ce4ec9175efa9b45e4f8d0a01a64420539e5c68a4fbd1f112bba773f23"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00017",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "74102746d374d35e50b5662fe8ffe9199494ccf6e2f73fdb47610bdc002ea708"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00018",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "5abafe7ff7cb675817836c6e6395b8004d6697219984c3697ff47af13817122a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00019",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "404f7dc01e845c1f9f9b962291289fbff865c403e35484544dfcc05e2c45bdf8"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00020",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "529cbe157c7715f8bfa2e92e14339bf0b45a066f846512475d5c114364e78b9b"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00021",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "2f119e5b5e0864a3fed917ae50690cc4835b9e0c76708b5367670e9601c36427"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00022",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "aa1c85f34eb3c24b817cae77d5c8737e7e8f78995ce635c4d96319397ce48055"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00023",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "b6c335bc4167d53a67cd547603152fd308e451dbd2eb85b8565f5766d06c1685"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00024",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "98da72aa60435fc5e36c32ff2ee8e2506eaaa4fff2cb7b82c8f5538342524f84"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00025",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "aad7cc40921a55938a260a0c71c9135c2de50bc7a4050907f45df3a3068240b3"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00026",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "d2c3d0b78dd8fd3340ca4abe64b942f6a07135f212009d46815acd2c36110820"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00027",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "2aad0ac5226e83fe94cf2430421c18b9d3341f1a549b56eb752f973140a75157"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00028",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "ac56c6b06f449fb5d2b696588ba83dd4ef6c5f9a01b9094d163c0e855cd88e02"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00029",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "f60b631d583f1288fb93ed09482685c5b784e169f666eced529c6f5b3fa16987"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00030",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "4cef3deaad6e0d7c8cedda9086f30d70d3caf7f6b2c636d600e96a0ebf306ddb"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00031",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "b5c2f58364bb450b293246e4e5778149be22ebdff54a1d79af0030ddd7e959b7"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00032",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "e51846295baeb5de099d4a0da5fd6ed37506f8f7aa5226b40a216585b1a2c4e0"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00033",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "f5f0866c1ce42c08d97cf95b7beaa901938b439dd77492400352defed6ad99e6"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00034",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "2bf7bb566d86902cec02c3e9d40f01725acc7a4ef5b40f1936fd224e38396632"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00035",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "3fca3c86466206d7e91c5a4e445d51528fe546dce480cdcf24d17978c5b673ed"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00036",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "fc99806e8cf0b6296496b7ed08438bbf4d0da8582ed7c16a07621c9ff1ffef14"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00037",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "df4e53e7bd086edc0c5e34485199ac07e456edda28cefd810c6b3a2d0b6fcc97"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00038",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "1daaa0ce55bca13e0913bfc819fbc050160d5f359981e9f5061b3eadc26f9ee7"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00039",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "244e46e30f1e2727ed61666b5641cc673422a46018d50900eb503305dcc9501d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00040",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "785a90255ab3d9df59f3d033264f060f98f15b5df8493f4316637c5f23fab46d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00041",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "a10ca9ccaa71979e5d885b112abea8e98fa2f96b7cc3c7b692c9e4e43e62e369"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00042",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "b4474350095f5c5457fad25e989e4ca078d6e655d09d1a81613827b6147b0aca"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00043",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "b64f1da628661a5fdf1c1b9a3acae69237913f1c532b835fe1ef4525e9a73735"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00044",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "e1f53c84b6b9fa79dfc22b28538def0cf5cf93c579f4f33aaf4afc3b2f09d646"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00045",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "e46758431736f51d97d3289c966b0cf54929601a5c4ecaf350f8cc36627fdc93"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00046",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "7e21789600bb577c87281f2d6d3e7923c26a9e70ba13dc60b99eeb0bbbe0a104"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00047",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "7a2d966747b41fa031d62787892cb06f64359b31ad8dcebbf1809b139714fcad"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00048",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "d48df1c5459da89ffcbeabfafe9b47dbaa7d643294c8a843ec5ffbfb3dc7a8ed"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00049",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "3425ecbad078978bd98db3ffe93fd98575bbcb1f17e86f7cc21f95b9a11086e4"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00050",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "39c40824b9a29ac983705310129fe2b3143d4b1cdd617af19fa6d1300ca4b4cf"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00051",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "b797211ed3d44a34b5583121dc0e0e0e7d56a822f4c28317c7604e804240042a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00052",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "92dd6a17bf735ae2dd11b748bc89af5bd192f2e2e73d3b488b392b93cfc500c6"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00053",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "7ff4b601342b50119f2a5bef5e071c550ad526059e6b2dbad8f76abbe8f87e7f"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00054",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "4d980c662897ac316b50b2243ac031d166c1d32fd34060b64a141ea299c8a710"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00055",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "ac7fb605d6fb9eae373ae288b1327d1c40c14a816dfbfe635c439d94e4539db4"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00056",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "91b62cf959c1a83cb6a5bf5f81def4990c54754d6c956cd7088cabcdd52aa7d1"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00057",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "be59400ea49ab4058a6f01e4f774f9aef4cee5cf91d6dc809cdcacd0eec48b7e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00058",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "d779c870e99d2676e9512da0d7acc819be538b40c9202faa74f3897f39ec7456"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00059",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "34bd9029ec06eb114db798d3f4f3b0aff9032c4706c6dc157fa161d1a400bf11"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00060",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "b13ac32e34b032648eb302e398404676806af29600e126a45975ce822d2e403e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00061",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "895ed4da42a2f1ab42edab7a26056ad173c32828536b975739c9b9c4f7a142b4"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00062",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "66a43ac4f2abeca3ae2506ebfcf3a9c0360cef76c23b937e12eb27eecbed9a64"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00063",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "c9920245730f5e318fc9433e27e4c896baab5a8558dc0611cc23a456110b6610"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00064",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "b35ea7b43bf0f9f4d5afe9187586e319f6a472c1ab7acea842cd108cad5f3f99"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00065",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "54d0ead749a3da38aea617d7dfdb6990497e1d24744e88e39cd11034bcc2e15e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00066",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "55fec5d8d0e7036b84af76cbf9bc99922f5f9e44e00f4944114e54640c523356"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00067",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "a493cb84c3b1faec0da1339f83771eb92a537e153b1b77a95761cfead876ae31"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00068",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "b514f6b98464f30cfa2f45193a15c2e17e8fabb9a861eb82f7db1934ac7cd790"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00069",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "8ab878b9555154a9017512f8b9509720ce0e7c80c62e7afa169b5bdd6b795dc2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00070",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "60ab082110f2c2f40d5cdf27a3d8a3c149afdddff33319348b9693a06f55f3b0"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00071",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "513ddd53e8a52c364f02de5f89466eb00bca84ea184f5e8951ee043c8f6be5ac"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00072",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "93359895b0a62b55d0b867debd2ed5c6bf855753291dce7a51e645d2e4f5b8a2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00073",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "6a9696135e35a51d3300dc20fbf8db9f995b0396c532a5200adbe10f7b1418a5"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00074",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "43c0440202ed11337f1079027daf7a875c9f1b82458ff9b2fc4e309556e4b9f2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00075",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "20902cc72f87141569df1fed35d674a6dfb426a86252c1a89a28281cd1f0e4b9"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00076",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "5722857e932ea438f8cfa7fcf316f0b18dd80b64b927dbacb122794530120741"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00077",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "4444cadec53091d5786850ca13bb242774a587ddf038d42408e00bc29e8b8d05"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00078",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "ffd4e1869b172c0455d3102d5039b999204e918d24b42c5883536c9ed74c4112"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00079",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "04ef7e8c452d2dad4701c44b6a58141c90933198d7bc00ae6664fd7a4d73af66"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00080",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "6e80c5baf7cc9ed45da1aae4f9ecab6ff523066e7c6cdab697f0a6149f870093"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00081",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "a8958297e27baf10fedeb15faf705adb85e8cb7dd9d8cf09e95fcc18f0e604b2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00082",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "af454e3a15061d6e288f9626e4930dea32d26055ca35ec70cd335d790da58cb4"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00083",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "2a61709607640a14cd1092c253b96d35d2646a53ccd9cea53379bea42ba8e3eb"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00084",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "2487ac6831fa64cf067081c6d0439afcfc44675d2c36e168a4a4fa4ae66683dc"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00085",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "4ca0ccd47777281ae0c1438c4dc720098de18e6a27dba814d847b5408b09fab9"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00086",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "56ef2da15f1920105baf686f66d4559125bd7cacbf7a7fe8504438e6b1eff298"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00087",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "01239d1bef97a3109972b98f1325ae706dfc275850c36a5c96ce5558a1030032"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00088",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "ba4e09351a5e5e6279bec0dc854d2d3543892756327326c5e6fbabe7448711b6"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00089",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "013efa5e40ba6709f892f6cafa433e9e3fcb70b08701861cc4ea07a6c2991f8c"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00090",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "8016b8686423c28c744a9a3bea67155a0f1cfae53856a67ac8891e4acd624eee"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00091",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "108d8b60498389c6f29c4c8854470ef3a0c60aaf676b095482fa9b1ab07ada71"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00092",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "65db22292c8348c824bba4eca5640c3ee7cd806cdea95b37489036a87065dd18"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00093",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "19d3f061307bda78c785f9641324570c29d136c2214bec3cf7d76295d5be050f"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00094",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "6181a5274b9cb216462830093988918f197bb366290766bd79f2a4f408c1930a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00095",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "67f67aa396f8864d1045d5677c25b19f11ea18169bccacd187abdc8ffea0a24e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00096",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "a9457ca2b9ef8657d340b7d5527986b3f8d4876f3cc28315ec6f32d5f5080fd8"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00097",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "76a6f1d6d1263d68fa6e4b493e200514a7bea8d3fc121a4c243bb3cd4ae6afe2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00098",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "da2c21fa8fef46104fed6eeb94259788a4c718525b0fdceb761084e0997c383d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00099",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "21e8c89e015b39cb7abb0d038d840dca6fd94b7b10f94c56b6250381066834b6"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00100",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "6abd80bbec96cceae96ff849bf8286365ec8ba189b91926ebaf69cb1fde822ab"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00101",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "b430c6004af7a5c876a9717f02b6442bbb7d123ea2b3f8e276a473598385cc9e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00102",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "1d1ab56e53b877a331e9842b11915c7e92af73f3e00e44f181b4534bc6b13ccd"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00103",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "a2f7b024e34ea81fce4908c3c12654b9bd42f266bd5fd70288664cca80e4b44d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00104",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "c3ec4bf7715a6f8fb72298216291b7d6d88f8a280b8ed969089e7f480b5c5d0a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00105",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "dfcd29e0033f3ee5a995e93d67fbdab8b12517aa9249de72d136a44d14b1a53b"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00106",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "0ae276725e83e6b0867a71940661df75e2f06694a9963f5ec09009307c170b47"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00107",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "93035dfefe7ac994ff771ac0d5971a3fec81d61d0b55c6c2db5aade9c129a446"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00108",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "632650bf66c235a0ff89e40542b18d6b3d72dbed1d0387085583edeb9425ea2d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00109",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "496d893d41f7ed5c8d7a1cb9d4b49905dba2183c99544555017a367e04dd9ff5"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00110",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "166a29c44ee974d5b58f3bc5f171939bbdc3910f4eb40b6cea5921a7393a903b"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00111",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "758e9878b7877cebca6fda172cbdb48166886ac6f177cae26d6c0c044a54afbc"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00112",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "4690736c975abfa9d67ad1eb7f7c53d87f3cb53e1fa0bbdacdb1414cbe1cb7b0"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00113",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "defc92d62596c8db31225a53460158e86c60837c30a390880475dd2e99329f28"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00114",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "583b8dc7c26b14bdca22c65aa8ff2fe3dfe82f4ab29183fcba9fac7c8ad389e3"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00115",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "e76952bd4108fa41c236b5fb8ae805610f04850fd001ae2f508360c7eb611e77"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00116",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "a7a117f9d1bad28c4285ab7d8c2cda54120d109664d9825ea6cfe087797ed560"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00117",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "87fb063114c1d7622f6de59eacfe7ab16b876a262cf1180706914652ee30f707"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00118",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "d84c1bc1d901451caaf49ca551b32776c28b62a33de94f0be09a447d5cab1220"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00119",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "2ba6e0f16bd5a51e888cbdf7e7e35c788c011a6e1b94e35f5ca41f0ba4daca4d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00120",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "91deb2201221bda1855d99b2a301a418eaa972c76687048c221aa7540a921fc2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00121",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "d6b92d0515ace4a8f49755f547459fd2d5fcdbc7197b05929ab2a53514ef5d49"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00122",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "64018bf80f48d3221eb531eb257b196c0a52badcd9532ea6bf704af81127064f"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00123",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "fbe2a4f85408daca5df7581d88ac74a85a3f18a9f51e0864a2653e82a938844c"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00124",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "7077a294625cd36e9199bd0a316f2d006839d33ad8834c9c88d309eef3e76fd5"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00125",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "ee995264811372f3d72380d9803b2ed1ac516a5d3a26900b7da71a821a1b9fec"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00126",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "6dbd2fa4136542253a5609752570038b9772283cfbb7268af4b8fe84300bd560"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00127",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "f88062546266ecefaa88170766f9ec4f7bb931d24e43f3889cc0ac23f8d9c2e3"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00128",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "9dad4dfe4f52be21c56df9573bccdc3566ea7f2ff631b223c5bb2a7933ee0b10"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00129",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "d782e70d0512105afe6b36cb687b84f67b38fc766d2be2e2f447f45ae3d3cea9"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00130",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "5f4e2ddc5968eb2d6229dba51b580df200d2499af4dee734c0c41b0bfabc18dd"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00131",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "db2dcbf4d6f425d96731fe12d702b8cb69c3b50f0741a3c564636ee6998e0fa6"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00132",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "99e7a23bf721752780065b16052c0f86cf4d9102395a2e42667c3a1d547f90ab"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00133",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "e76dbe146f52352f64abbe96e7bf16cfaac7b88cfb23a2d33548563d8ea14cf0"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00134",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "163bdec14b67740abe0db89f15797728df3545adb08d8abd4761256cb45b30ec"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00135",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "a40f941353aa0d13dabdcc5bb7f22993b7a26440ca4ca569267a8ba6c345170e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00136",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "c7478d12ce7692217de7890cc7a368f4315d3cf1e884f9eac8bf3bc9efa0104d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00137",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "716f15fbe909f1782a551e1dee6908b611c83126df9cdc59fa0458a1f51d1df0"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00138",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "8de1a12b4fbdca9cdcd4bcb315fc2f5467111cc8bbc9eb0e651039dac0daf300"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00139",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "a6b46dc1c03e751e420c2a0c5b6d8e6fd9a5e72246e40df96cdcca6351e5c11d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00140",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "333dad090d3a2c70ec840cea0809e2d3cf92bcdac7d4facf7129f82659009c63"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00141",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "2e3f0b4f816fa0a72caed78781b1016e24f8582fbb10258b6454a2c2f2ff07fc"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00142",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "9436361decbd46f2b547d3c19b38b10432dd27e4422685819e7c5d0e5a707e0e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00143",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "db50ae90f9ce2246d9e4adbea88c6b4d643a4ec2b46875e2a5ad189a2e71ab39"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00144",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "3c1f1cb8ddf1d3cae3eef99de605d25637076d2cf152ead23e5b0fe09463c204"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00145",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "5b85c03fa7d563f7a2a302b9681077bd61e1128e4b8b1ae3c35787b2ba6c0634"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00146",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "12b6f64c4631573c45441a55ff403a22875832592395ed9bf9feea4dd2c13205"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00147",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "3e1e2d6d1d775bca6413f8df2f50c9743a376d94959444b40dab682286b978c9"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00148",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "9e64f68c946be6fbb2b08510b62a5626e0343ef61427b49385f4960a9175d306"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00149",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "fa859d9b8340b9366ea1c3f3de69cfb6f95654546571728ed88660f57d633abc"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00150",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "3b3606653656df7a8c77fc5e7c6b3cb7baaa9773fe747943d310b854ba47bbab"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00151",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "d1b1cfff7e19d64aa3656137b71d31166dc1ed0fcf48262f3631602122279cce"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00152",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "37a5d4b71af38c33557b9d9bb7967be41f2d542b9afc41801488d75ec2d7bb22"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00153",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "b8b4fbfed23772643044c58f6eb50738b6c618514ac44e3abf7f6ef88fa1c912"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00154",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "a706b975ebc4808511ae9b228822048d185a427431ed324e98d8f34d33782882"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00155",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "4b981429cb0c17d7b15a2694b9e77875e0843ad6c8d71bdf97c3ab8f974c4725"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00156",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "522e7941c03667cf6d7952f267a31ca712f6fc77b2225303ad8b6df326bab863"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00157",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "96d7ad299b29283c6be4abc926728973f7b9534fa92bd15ea2775e1e77966165"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00158",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "83dc314272546ed4c515376c60cafc24ae3d36e6bfa940d25c97c55508ba284a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00159",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "85de91a9953a41cc574a5a1e8c65182dd8e1629849ea35f6ee5f48f4303995de"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00160",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "e0f1a0a8658de135fd71795cc24576eda939d24e6e13e5fe93168f368a6739e7"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00161",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "81d7ec86046ad558757289edd90d78c17c2e712234aaa98fe3caa076a9c60ce2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00162",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "be4585700337a157e3a531800eea6fd656f8da5839ab41282eff38514938f9ef"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00163",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "79a14becde2ef77a16962b92415120c5672b33fad0f95d20cb8497bcd5ee627e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00164",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "4baf4602e992189d0ce967fcaf60b109e648468f83da59c7cd8d0aa98e1d358d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00165",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "b53372d51818012bdb7d130a7e262234e8a7924701d1f3f07892937d2b67c005"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00166",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "2cb58a4f91f977ef4b424879b463c90d3aad72e1338465e3194cfe7cb343b115"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00167",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "871313475e5f306554c82806cac97b0c075721ba6951635708033da88fa50a79"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00168",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "6811abeb869d08a544b08b2f614b81d16fa66988c38a30a228918cd2c2f94276"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00169",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "c2faa06c69e553fec4f768a64cf9132253c039f900fc698d0e2bf104b024981a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00170",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "7bda8bc85e94e93e077a401742673a6de30b9e2cc7e9451b74fd76ab6dace50e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00171",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "5094672d4b2d9de6506ef0c1c4b5b00ebfb372076db91e8bc7d081c9e0650740"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00172",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "33516575434fcce2a0c9d07f10e3e16a20f853a88886a9a4fc1a78d03805212a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00173",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "3c603980675ea5655657404af21279e967a671363009158401db019e81a3b3c6"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00174",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "45f35192c41453aff940ce047ca2a8d23ddda75d96f9940846451a693fd51331"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00175",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "55690a4d12794fa4ef22021444d701437bf0aa22fd7fc32853ce0601e1d05030"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00176",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "4dfe1aa3ee982911f4ee8041491ebcef91a43841aa53939a711d242d204b5ca6"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00177",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "4817c861ecf7ed4f313a8a0e3f9384cfc6eea63438d82e676d10fc2fee0be4ce"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00178",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "45129befdaf311a1297b7895a822f3da640d458a82bae224c3f3cd60bd73346d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00179",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "18f87ea119e63ca6e47828559d973fc4143b45e57f9454d2b489c4a6a8edac35"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00180",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "cc86d189488179085e58a748022385107aa24fe6eef1bcb1398a69c8c579be82"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00181",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "3e7476ec8af7eab945da8b62548993f7c548bdcb7da462a60f2a49d549694d4f"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00182",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "dc31fe8da7046dd6966c07f1ff4e9168eb48b3ab582dc7102737e21a1ea5929d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00183",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "e923f339c579321bb5cb0fa7f5a04a4b147853077154031f8c5933b0c9e1c837"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00184",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "1d12edf2d790504b050ee57c3d6a382b9525a1e80a9ee1117d04ce646fa26b52"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00185",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "0ad80673c9899dfa5749636ed35f3b67e0402745fe7450bfdf0dc766c9fd3015"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00186",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "9a19ec84a7485a502455413368c40cfb21ddd18519fb71cc289c342dd8386d19"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00187",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "0802f792e7018ca66b7a3575d339404b8f38734fcbab7e6b6464b7ec9f4f0741"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00188",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "1b9ed19e700362e3529f75c77018badb5dff1b66234f7fd6f6c4cf1b9e36283d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00189",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "0ffdb224f45b3bb941fb8527c4982b722586fb6d7cccfc0f1f12e26db58bb338"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00190",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "72152c144a246087d3cda2650523b28a2afc29d97f60a2af14df3a54b8bbff0d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00191",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "d9ed56ec0f62d26418d5b1f50468e0c99a37b6b29d2b30c7c1ceee44f5c6484a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00192",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "2154d7befddb2ec931433715ef621c2529598f9fae0928bc38fb58c19dfd3f67"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00193",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "7a6491a55f26952972e162727e71b843d87226885844b7bce8053b9cb0801480"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00194",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "2a5651148452536255307a94f8d45dc4891ea5ae4a53a80f6e7bde6691c2cf9b"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00195",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "686a2925696bbb2f406928a1c7189f5e2d81bcceeb2dcc2684b0e276dada4ba2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00196",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "519f3b03795f97071dede72a33016dd5ce35acdb2ee922379fbb8fecd5af6207"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00197",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "17b8a423ad0b083aad367a78a31244ae637171a0cbfefa8d962a6d5427e1153a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00198",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "5c4c8184e7c71fe11ac757552fc65f6ec12f11ce0612bcf6f73ca2d530cf0fd4"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00199",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "885c186430bf977110eea77d7e78d8fe25b30b702d70e30cfe2bc544b4d908e3"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00200",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "22ddd8e6001ad4a9b4dee68639bf95c00946caa38bac9fe431afb597c24ba31b"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00201",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "f7b40f4e039721ceef417d9b0ec28733e8b505cd7460acabdedcb4d3ded2eb2f"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00202",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "87bdba00f7cc174336c1aa6e32e77edb3b8adf38b630650e53925f30af820b67"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00203",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "15fad72eeacb595daf0bb7b59a6210a8a49983a3d5d2d1d87922adca8119c455"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00204",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "26a03e1f658e1631dbb2b50d62826d6034a32b8334efa8c2d623676f1590ab60"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00205",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "ddb883662fdbd869bf3c394ad2b250cee723a5ef635b000015257dd1187ad45d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00206",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "8450ff460f74df364628bc5d3963199e553be51886fe513a23565f9f3ecf2574"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00207",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "f2b25273f21c24fc611451dc69a4d4d666616be3a3162f14da43ca8ec783130b"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00208",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "7ce0ef4a4e2744bec3afd72a7dd834ff8fd4e3cb9082173df7690f1d4154f668"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00209",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "e61f599ace07ea2b5c32dacc982159b478503f972c7222ceda928c7cb2fc60d3"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00210",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "286c997d2e2da1c7b291fff5fafcc6b3f3665b38327fd2cdac62d2779ffbe0f8"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00211",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "dcb7ae9b7eac90bb8355865b8fd5e20f1f72f7c1773ebe827a57d3874c1a1351"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00212",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "448a535f445dbd74d1f904ebfbf441a310928c0385d650d847eba08037513ef2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00213",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "0beff9d234b5ab4ce0ff9dfae388b9cfff3a0fb60fddbed05234b58b23902004"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00214",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "1b2693e459bcd1f6b82d4da1fe2fe18406a4da3d09222de857e7a9d0a1c7223a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00215",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "15b38b6d7d0d2b2ef03bb90fbb112bd2d5adde88c292dd76fde3bb465d243fce"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00216",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "e6587ad1f13d87a72ac6143e964475ec1eada58fa6f5cc04588048a07f09223f"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00217",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "1a8392069ef9f64aa8cffeb5f758616cfb59dee0fb4de065ef44d0e38813a956"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00218",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "1d86170a87ae2d4e08582bab96b10a2b858118f503403f44a3638c51181a1a5a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00219",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "ea9a581948b3ac0fcaf806bd0dd3372e1daebd3b422fededcc471d6a2700b75f"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00220",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "cb783993086fe46b1ca5f573bd3a4d7352dc3942b2af0494c28c18e3c4d61bc5"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00221",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "a51862240927e039bdad88be7d4672c3f6b65c1b8850a3f540d8a1fae66406fc"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00222",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "22b89e571fbb47dff466da361e15d3d71ec2ac84029d434157eccc412670e447"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00223",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "19d882848c1a49fc9543a01e412c1c2c8bcf00d8a1369ed150a3d07e8928b691"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00224",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "bde2babf332c84fb8cfdcafb387ab41f82cbb2fd3c35b3144e7d007a9d9f4676"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00225",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "3cb430f1dcfe15a8d4281645c950fc16f42543a909c98462abc4ab0a4ca654ef"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00226",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "6d2f351fd7613fe968d5af0eabcd2b22903074cc76f920f96c1eb3882e21cd68"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00227",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "22db4d4c5f99e606f69fee71240b0131e780eadfcc83124ae5b1e0fdcb04f4c4"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00228",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "8370f59517fd410510f549bb4bc557b994f470012557e3f3eac8db501d16dd4c"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00229",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "80fb6928950ce4b9d09bd64304a9d1076164c51a8e20531fd9a91fd17d036017"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00230",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "8d4d36935f5920c0f0a45166ccd9243e04c1148f906ecf7c5feaf1ecc627fa9b"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00231",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "00b4549245c00f9a801dd8fd248ac87e92d9ff4e70a6994fce153a2973cf77af"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00232",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "c4b6abc656704f193af2c79b0dc1353b10574d01b107cae770fe791b9b7a760d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00233",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "9352bf4b3eac692c6b005f5181f2e0ca60c6fc76b3a948b30b691f986a5a9c19"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00234",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "22ac8af8810302d3c491dedaa45b53a67622a7767141eb21dfff50e72d44a7f8"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00235",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "2aacec5a9840ca2518c2f7079d90f52dcb5f361ec7f995dd545b6ede8ffa3596"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00236",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "24d49a3b3ce6224856f3c37f12c2875461ac3fddc648f6ef6bbfa9becbdb3b3a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00237",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "99c706a96b249e63341f0dd75f26ca62ae1f34ee6320a92c129f9848cc37435c"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00238",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "f1da16328fada98b2bebfeb555637779b66c594e720e353ab7fef689a3702e7d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00239",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "a6ca04396554e577ff9384bf9ce4e906f22faf057830e12d4ca7ffdf3dd588b3"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00240",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "13dcd2d6702531e46e1a41161bf3ac5a4a1d525c43d51aaae0c5b8974fccd9ae"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00241",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "0336ac9d5dab0616a2075eadf0194f6e4b59fb9910e81f24fc29d719c449a345"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00242",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "99b9475ce687b2150c3e4fce01af2493b2534f82352cbe87a1c5c4f3484d9a37"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00243",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "2866878ab724f79065484ca7bb5549e045f47935b18639aee11c3bffb87e267e"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00244",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "f97f774f965cfe389be338faa1a5223ba142e870402b1b8e0e5de1044c07d84c"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00245",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "aaff209e888e66bf8c563369472408f51853ed4de4bfb7b1fdd453217989dc1d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00246",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": true,
+      "vectorSha256": "35a58db93f3e7906ff08a4f34953608b214cf3c0ab33bb9f4058b73713a67fa5"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00247",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 1,
+      "speckled": true,
+      "vectorSha256": "222d1be02f579491caaf9b8969d5293872e446a958ad85517cd26f8bcb5c6f7d"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00248",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 1,
+      "speckled": false,
+      "vectorSha256": "f7b5da96993c7bc910bd4a71c89de7e35d7c13bbe60d0fa482202d7d92aa5ae2"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00249",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "f798ba4a37ae78c0f24da0bd8689f04a7b9c849b04b04bacf77bc49dce1775ec"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00250",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "1ce4691669a99bcdc771b70d4b6050d577740b21f650dcc5eb66bc1c38708041"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00251",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "7395dc896c744e01a193e57b2f6f2ab6fc13d05a4de57dde0c8023d5140185eb"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00252",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.82,
+      "speckled": false,
+      "vectorSha256": "52303a6f5a00b9c80103753b5aa7569e106267efde33ed5fc7c92704fd011b92"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00253",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "5f608888f57120867de731aeee35b6d11adca221d0ac20ed14f038700db0f087"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00254",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckled": false,
+      "vectorSha256": "de326b59dc22cfe940666c6a4009456c6062490c115f96da2b9d61b5552c8e1a"
+    },
+    {
+      "boardId": "synthetic-v2-test-rhosgfx-00255",
+      "role": "test",
+      "family": "rhosgfx",
+      "style": "flat",
+      "reduction": 0.82,
+      "speckled": true,
+      "vectorSha256": "b486dfb20c44003088be90107f31249074f4fcc0a8c549b92bd6f56b50db86a2"
+    }
+  ]
+}

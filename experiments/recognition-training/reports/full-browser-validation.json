@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "commit": "e0303680548f6b461e4848aa72ca6c3903229e48",
+  "status": "passed",
+  "passed": 30,
+  "failed": 0,
+  "reportedWallMinutes": 10.1,
+  "command": "CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/runs/browser-full.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts",
+  "browserProjects": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "measurements": 18,
+  "faultGroups": 9,
+  "metadataChecks": 3,
+  "fullPassMaximumBoardsPerRequest": 16,
+  "workerTimeoutMs": 60000,
+  "qualification": "Neither retrained seed meets held-out promotion targets; passing infrastructure is not candidate qualification.",
+  "physicalIpad": "deferred/unrun"
+}

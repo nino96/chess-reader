@@ -50,8 +50,11 @@ that is not implemented yet.
 - Do not implement attractive downstream features that the issue defers.
 - For a vertical-slice issue, preserve the complete user-visible path even when
   its internals are deliberately narrow.
-- For a focused infrastructure/evaluation issue, prove the result through the
-  nearest existing end-to-end product path, not only isolated mocks.
+- For focused infrastructure that changes a product path, prove the result
+  through the nearest existing end-to-end path, not only isolated mocks.
+  Isolated model experiments follow the staged research policy in
+  `docs/evaluation.md#staged-isolated-model-experiments`; failed offline
+  candidates do not require unchanged product or full browser reruns.
 - Prefer the smallest coherent change. Do not create empty packages or
   speculative abstraction layers merely to match the planned directory tree.
 - Keep volatile dependencies behind the adapter boundaries in the architecture.
@@ -217,6 +220,11 @@ unrun gate, and do not describe the issue as fully verified.
 
 ## Change-specific minimum verification
 
+- Isolated model experiments: follow the staged research policy in
+  `docs/evaluation.md#staged-isolated-model-experiments`. Declare affected inputs
+  and the next gate before execution; reuse valid evidence by hash. Do not run
+  full browser/product suites for every seed or rejected offline candidate.
+  Explicit issue-specific gates still apply unless explicitly amended.
 - Documentation-only: local link check, formatting/diff check, and consistency
   with live issue titles/ADRs.
 - Domain/storage logic: unit tests plus relevant property, migration, and

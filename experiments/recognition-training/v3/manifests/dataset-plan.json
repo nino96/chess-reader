@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "status": "pre-generation-lock",
+  "classOrder": "1KQRBNPkqrbnp",
+  "tileOrder": "A1..H8",
+  "splits": {
+    "train": {
+      "boards": 4096,
+      "seed": 3830,
+      "artistGroups": ["chessnut", "fantasy", "cburnett", "merida", "kiwen-suwi", "livius"]
+    },
+    "dev": { "boards": 384, "seed": 3831, "artistGroups": ["mpchess", "femrek", "lyricsz"] },
+    "test": { "boards": 384, "seed": 3832, "artistGroups": ["totoy", "papercut", "pirouetti"] }
+  },
+  "conditions": [
+    { "id": "pristine", "style": "flat", "reduction": 1, "speckle": false },
+    { "id": "hatch", "style": "hatch", "reduction": 0.82, "speckle": true },
+    { "id": "low-fidelity", "style": "halftone", "reduction": 0.64, "speckle": true }
+  ],
+  "preprocessing": "FENShot 0.1.4 rgbaToGray + extractTiles; A1..H8",
+  "sourcePolicy": "Artist groups are split-disjoint. Monge contributes only fantasy and counts once. Firi and RhosGFX are diagnostic only. Corpus v1 is excluded.",
+  "generationCeilingSeconds": 600,
+  "fullGenerationAuthorized": true,
+  "authorizationEvidence": "Lead reviewed all 12 source sheets after the 5.976-second preflight; full generation approved under the remaining 594.024-second CPU wall ceiling."
+}

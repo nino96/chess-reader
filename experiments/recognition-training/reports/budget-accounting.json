@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "kind": "conservative-wall-clock-reconstruction",
+  "command": "git show -s --format=%cI <commit>; read reports/full-3801.json and reports/full-3802.json",
+  "pilotWindow": {
+    "startCommit": "cb634597a314ad34574176b1885a57d1138be350",
+    "startCommitTime": "2026-09-05T20:44:21+03:00",
+    "endCommit": "d838cf14c676a8cc0eb247f74d7f6faeba76679b",
+    "endCommitTime": "2026-09-05T20:53:12+03:00",
+    "seconds": 531.0,
+    "basis": "All three serial pilot attempts began after the implementation commit; their completed evidence was committed by the end commit. Window deliberately includes debugging, tests and browser validation.",
+    "inference": true
+  },
+  "fullAttemptWallSeconds": [
+    231.9288519602269,
+    234.59433856373653
+  ],
+  "conservativeAllAttemptsUpperSeconds": 997.5231905239634,
+  "totalTrainingCeilingSeconds": 6000,
+  "pilotCeilingSeconds": 600,
+  "withinConservativeCeilings": true,
+  "limitations": [
+    "Exact wall durations for failed pilot attempts 1 and 2 are unavailable; original reports retain missing accounting.",
+    "Git commit timestamps supply a conservative workflow window, not a GPU profiler or monotonic elapsed measurement; inferred bound assumes the observed host wall clock did not change."
+  ]
+}

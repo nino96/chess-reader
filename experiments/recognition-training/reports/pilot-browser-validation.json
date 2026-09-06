@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "phase": "pilot-development-only",
+  "initialRun": {
+    "passed": 6,
+    "failed": 3,
+    "durationSeconds": 39,
+    "failure": "Metadata filename assertion expected candidates.freeze.json; preparer used pilot-browser.freeze.json.",
+    "inferenceAndFaultChecks": "passed in Chromium, Firefox and WebKit"
+  },
+  "correction": "Place the pilot freeze under pilot-browser/candidates.freeze.json; retain the filename assertion.",
+  "metadataRerun": {
+    "passed": 3,
+    "failed": 0,
+    "durationSeconds": 2.7,
+    "command": "CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/runs/browser-pilot.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts --grep 'frozen browser inputs'"
+  },
+  "heldOutInference": false,
+  "physicalIpad": "deferred/unrun"
+}

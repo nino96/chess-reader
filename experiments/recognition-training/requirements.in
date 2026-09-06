@@ -1,0 +1,9 @@
+--index-url https://pypi.org/simple
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+# The CUDA wheel is selected deliberately for the GB10 host.  Do not replace
+# this with PyPI's CPU-only torch distribution.
+torch==2.10.0+cu128
+numpy==2.2.6
+onnx==1.18.0
+onnxruntime==1.22.1

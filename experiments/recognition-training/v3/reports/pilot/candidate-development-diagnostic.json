@@ -1,0 +1,954 @@
+{
+  "color": {
+    "black": {
+      "accuracy": 0.8239231664726426,
+      "correct": 2831,
+      "errors": 605,
+      "meanConfidence": 0.9585327506065369,
+      "minimumConfidence": 0.3397490382194519,
+      "total": 3436
+    },
+    "empty": {
+      "accuracy": 0.9998308048051435,
+      "correct": 17728,
+      "errors": 3,
+      "meanConfidence": 0.9916585683822632,
+      "minimumConfidence": 0.3073064088821411,
+      "total": 17731
+    },
+    "occupied": {
+      "accuracy": 0.7922571219868517,
+      "correct": 5423,
+      "errors": 1422,
+      "meanConfidence": 0.9261760711669922,
+      "minimumConfidence": 0.20927761495113373,
+      "total": 6845
+    },
+    "white": {
+      "accuracy": 0.7603402757406864,
+      "correct": 2592,
+      "errors": 817,
+      "meanConfidence": 0.8935631513595581,
+      "minimumConfidence": 0.20927761495113373,
+      "total": 3409
+    }
+  },
+  "confidence": {
+    "histogram": {
+      "counts": [
+        269,
+        489,
+        273,
+        515,
+        679,
+        2889,
+        19462
+      ],
+      "edges": [
+        0.0,
+        0.5,
+        0.7,
+        0.8,
+        0.9,
+        0.95,
+        0.99,
+        1.0
+      ]
+    },
+    "mean": 0.9734201431274414,
+    "minimum": 0.20927761495113373,
+    "quantiles": {
+      "0": 0.20927761495113373,
+      "0.01": 0.4911757707595825,
+      "0.05": 0.8523650765419006,
+      "0.5": 0.9977670311927795,
+      "0.95": 0.9990803003311157,
+      "0.99": 0.9995238780975342,
+      "1": 0.999921441078186
+    }
+  },
+  "confidenceQualified": {
+    "acceptedBoards": 135,
+    "acceptedCorrectSquares": 22827,
+    "acceptedSquarePrecision": 0.9583928121588714,
+    "acceptedSquares": 23818,
+    "acceptedWrongSquares": 991,
+    "boardCoverage": 0.3515625,
+    "confidenceFloor": 0.7,
+    "confidenceQualifiedCorrectSquareAccuracy": 0.9288330078125,
+    "lowConfidenceBoards": 249,
+    "reliableExactBoards": 102,
+    "reliableWrongBoards": 33,
+    "squareCoverage": 0.9691569010416666
+  },
+  "confusion": {
+    "classOrder": "1KQRBNPkqrbnp",
+    "matrixActualRowsPredictedColumns": [
+      [
+        17728,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        250,
+        5,
+        0,
+        0,
+        0,
+        126,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        362,
+        45,
+        0,
+        4,
+        28,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        1,
+        0,
+        273,
+        0,
+        0,
+        136,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        26,
+        13,
+        0,
+        268,
+        0,
+        133,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        7,
+        411,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        43,
+        0,
+        9,
+        0,
+        221,
+        4,
+        1028,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        254,
+        0,
+        1,
+        0,
+        1,
+        128
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        286,
+        69,
+        0,
+        0,
+        88
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        272,
+        3,
+        0,
+        152
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        284,
+        0,
+        157
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        405,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1330
+      ]
+    ],
+    "offDiagonal": [
+      {
+        "actual": "1",
+        "count": 1,
+        "predicted": "K"
+      },
+      {
+        "actual": "1",
+        "count": 1,
+        "predicted": "B"
+      },
+      {
+        "actual": "1",
+        "count": 1,
+        "predicted": "P"
+      },
+      {
+        "actual": "K",
+        "count": 3,
+        "predicted": "1"
+      },
+      {
+        "actual": "K",
+        "count": 5,
+        "predicted": "Q"
+      },
+      {
+        "actual": "K",
+        "count": 126,
+        "predicted": "P"
+      },
+      {
+        "actual": "Q",
+        "count": 2,
+        "predicted": "1"
+      },
+      {
+        "actual": "Q",
+        "count": 45,
+        "predicted": "R"
+      },
+      {
+        "actual": "Q",
+        "count": 4,
+        "predicted": "N"
+      },
+      {
+        "actual": "Q",
+        "count": 28,
+        "predicted": "P"
+      },
+      {
+        "actual": "R",
+        "count": 10,
+        "predicted": "1"
+      },
+      {
+        "actual": "R",
+        "count": 1,
+        "predicted": "K"
+      },
+      {
+        "actual": "R",
+        "count": 136,
+        "predicted": "P"
+      },
+      {
+        "actual": "B",
+        "count": 1,
+        "predicted": "1"
+      },
+      {
+        "actual": "B",
+        "count": 26,
+        "predicted": "K"
+      },
+      {
+        "actual": "B",
+        "count": 13,
+        "predicted": "Q"
+      },
+      {
+        "actual": "B",
+        "count": 133,
+        "predicted": "P"
+      },
+      {
+        "actual": "N",
+        "count": 7,
+        "predicted": "B"
+      },
+      {
+        "actual": "P",
+        "count": 43,
+        "predicted": "1"
+      },
+      {
+        "actual": "P",
+        "count": 9,
+        "predicted": "Q"
+      },
+      {
+        "actual": "P",
+        "count": 221,
+        "predicted": "B"
+      },
+      {
+        "actual": "P",
+        "count": 4,
+        "predicted": "N"
+      },
+      {
+        "actual": "k",
+        "count": 1,
+        "predicted": "r"
+      },
+      {
+        "actual": "k",
+        "count": 1,
+        "predicted": "n"
+      },
+      {
+        "actual": "k",
+        "count": 128,
+        "predicted": "p"
+      },
+      {
+        "actual": "q",
+        "count": 69,
+        "predicted": "r"
+      },
+      {
+        "actual": "q",
+        "count": 88,
+        "predicted": "p"
+      },
+      {
+        "actual": "r",
+        "count": 3,
+        "predicted": "b"
+      },
+      {
+        "actual": "r",
+        "count": 152,
+        "predicted": "p"
+      },
+      {
+        "actual": "b",
+        "count": 2,
+        "predicted": "k"
+      },
+      {
+        "actual": "b",
+        "count": 157,
+        "predicted": "p"
+      },
+      {
+        "actual": "n",
+        "count": 1,
+        "predicted": "k"
+      },
+      {
+        "actual": "n",
+        "count": 1,
+        "predicted": "q"
+      },
+      {
+        "actual": "n",
+        "count": 1,
+        "predicted": "b"
+      },
+      {
+        "actual": "n",
+        "count": 1,
+        "predicted": "p"
+      }
+    ]
+  },
+  "crossColorErrors": {
+    "blackToEmpty": 0,
+    "blackToWhite": 0,
+    "emptyToBlack": 0,
+    "emptyToWhite": 3,
+    "whiteToBlack": 0,
+    "whiteToEmpty": 59
+  },
+  "dimensions": {
+    "condition": {
+      "degraded": {
+        "boards": 255,
+        "confidence": {
+          "mean": 0.9666059017181396,
+          "minimum": 0.20927761495113373
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 63,
+          "acceptedCorrectSquares": 15029,
+          "acceptedSquares": 15681,
+          "acceptedWrongSquares": 652,
+          "boardCoverage": 0.24705882352941178,
+          "reliableExactBoards": 52,
+          "reliableWrongBoards": 11,
+          "squareCoverage": 0.9608455882352941
+        },
+        "correctOccupiedSquares": 3566,
+        "correctSquares": 15311,
+        "exactBoardAccuracy": 0.33725490196078434,
+        "exactBoards": 86,
+        "occupiedSquareAccuracy": 0.7799650043744532,
+        "occupiedSquares": 4572,
+        "squareAccuracy": 0.9381740196078432,
+        "squares": 16320
+      },
+      "pristine": {
+        "boards": 129,
+        "confidence": {
+          "mean": 0.9868900179862976,
+          "minimum": 0.313262403011322
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 72,
+          "acceptedCorrectSquares": 7798,
+          "acceptedSquares": 8137,
+          "acceptedWrongSquares": 339,
+          "boardCoverage": 0.5581395348837209,
+          "reliableExactBoards": 50,
+          "reliableWrongBoards": 22,
+          "squareCoverage": 0.9855862403100775
+        },
+        "correctOccupiedSquares": 1857,
+        "correctSquares": 7840,
+        "exactBoardAccuracy": 0.40310077519379844,
+        "exactBoards": 52,
+        "occupiedSquareAccuracy": 0.8169819621645402,
+        "occupiedSquares": 2273,
+        "squareAccuracy": 0.9496124031007752,
+        "squares": 8256
+      }
+    },
+    "family": {
+      "femrek": {
+        "boards": 128,
+        "confidence": {
+          "mean": 0.9690157771110535,
+          "minimum": 0.20927761495113373
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 31,
+          "acceptedCorrectSquares": 7723,
+          "acceptedSquares": 7903,
+          "acceptedWrongSquares": 180,
+          "boardCoverage": 0.2421875,
+          "reliableExactBoards": 10,
+          "reliableWrongBoards": 21,
+          "squareCoverage": 0.9647216796875
+        },
+        "correctOccupiedSquares": 1920,
+        "correctSquares": 7856,
+        "exactBoardAccuracy": 0.140625,
+        "exactBoards": 18,
+        "occupiedSquareAccuracy": 0.851063829787234,
+        "occupiedSquares": 2256,
+        "squareAccuracy": 0.958984375,
+        "squares": 8192
+      },
+      "lyricsz": {
+        "boards": 128,
+        "confidence": {
+          "mean": 0.9614700078964233,
+          "minimum": 0.22415271401405334
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 12,
+          "acceptedCorrectSquares": 6969,
+          "acceptedSquares": 7780,
+          "acceptedWrongSquares": 811,
+          "boardCoverage": 0.09375,
+          "reliableExactBoards": 0,
+          "reliableWrongBoards": 12,
+          "squareCoverage": 0.94970703125
+        },
+        "correctOccupiedSquares": 1188,
+        "correctSquares": 7112,
+        "exactBoardAccuracy": 0.0,
+        "exactBoards": 0,
+        "occupiedSquareAccuracy": 0.5242718446601942,
+        "occupiedSquares": 2266,
+        "squareAccuracy": 0.8681640625,
+        "squares": 8192
+      },
+      "mpchess": {
+        "boards": 128,
+        "confidence": {
+          "mean": 0.9897747039794922,
+          "minimum": 0.3073064088821411
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 92,
+          "acceptedCorrectSquares": 8135,
+          "acceptedSquares": 8135,
+          "acceptedWrongSquares": 0,
+          "boardCoverage": 0.71875,
+          "reliableExactBoards": 92,
+          "reliableWrongBoards": 0,
+          "squareCoverage": 0.9930419921875
+        },
+        "correctOccupiedSquares": 2315,
+        "correctSquares": 8183,
+        "exactBoardAccuracy": 0.9375,
+        "exactBoards": 120,
+        "occupiedSquareAccuracy": 0.9965561773568661,
+        "occupiedSquares": 2323,
+        "squareAccuracy": 0.9989013671875,
+        "squares": 8192
+      }
+    },
+    "reduction": {
+      "0.64": {
+        "boards": 126,
+        "confidence": {
+          "mean": 0.9669432044029236,
+          "minimum": 0.20927761495113373
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 36,
+          "acceptedCorrectSquares": 7455,
+          "acceptedSquares": 7757,
+          "acceptedWrongSquares": 302,
+          "boardCoverage": 0.2857142857142857,
+          "reliableExactBoards": 32,
+          "reliableWrongBoards": 4,
+          "squareCoverage": 0.9619295634920635
+        },
+        "correctOccupiedSquares": 1725,
+        "correctSquares": 7571,
+        "exactBoardAccuracy": 0.35714285714285715,
+        "exactBoards": 45,
+        "occupiedSquareAccuracy": 0.7787810383747178,
+        "occupiedSquares": 2215,
+        "squareAccuracy": 0.9388640873015873,
+        "squares": 8064
+      },
+      "0.82": {
+        "boards": 129,
+        "confidence": {
+          "mean": 0.9662765264511108,
+          "minimum": 0.2195025086402893
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 27,
+          "acceptedCorrectSquares": 7574,
+          "acceptedSquares": 7924,
+          "acceptedWrongSquares": 350,
+          "boardCoverage": 0.20930232558139536,
+          "reliableExactBoards": 20,
+          "reliableWrongBoards": 7,
+          "squareCoverage": 0.9597868217054264
+        },
+        "correctOccupiedSquares": 1841,
+        "correctSquares": 7740,
+        "exactBoardAccuracy": 0.3178294573643411,
+        "exactBoards": 41,
+        "occupiedSquareAccuracy": 0.7810776410691557,
+        "occupiedSquares": 2357,
+        "squareAccuracy": 0.9375,
+        "squares": 8256
+      },
+      "1": {
+        "boards": 129,
+        "confidence": {
+          "mean": 0.9868900179862976,
+          "minimum": 0.313262403011322
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 72,
+          "acceptedCorrectSquares": 7798,
+          "acceptedSquares": 8137,
+          "acceptedWrongSquares": 339,
+          "boardCoverage": 0.5581395348837209,
+          "reliableExactBoards": 50,
+          "reliableWrongBoards": 22,
+          "squareCoverage": 0.9855862403100775
+        },
+        "correctOccupiedSquares": 1857,
+        "correctSquares": 7840,
+        "exactBoardAccuracy": 0.40310077519379844,
+        "exactBoards": 52,
+        "occupiedSquareAccuracy": 0.8169819621645402,
+        "occupiedSquares": 2273,
+        "squareAccuracy": 0.9496124031007752,
+        "squares": 8256
+      }
+    },
+    "speckles": {
+      "absent": {
+        "boards": 129,
+        "confidence": {
+          "mean": 0.9868900179862976,
+          "minimum": 0.313262403011322
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 72,
+          "acceptedCorrectSquares": 7798,
+          "acceptedSquares": 8137,
+          "acceptedWrongSquares": 339,
+          "boardCoverage": 0.5581395348837209,
+          "reliableExactBoards": 50,
+          "reliableWrongBoards": 22,
+          "squareCoverage": 0.9855862403100775
+        },
+        "correctOccupiedSquares": 1857,
+        "correctSquares": 7840,
+        "exactBoardAccuracy": 0.40310077519379844,
+        "exactBoards": 52,
+        "occupiedSquareAccuracy": 0.8169819621645402,
+        "occupiedSquares": 2273,
+        "squareAccuracy": 0.9496124031007752,
+        "squares": 8256
+      },
+      "present": {
+        "boards": 255,
+        "confidence": {
+          "mean": 0.9666059017181396,
+          "minimum": 0.20927761495113373
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 63,
+          "acceptedCorrectSquares": 15029,
+          "acceptedSquares": 15681,
+          "acceptedWrongSquares": 652,
+          "boardCoverage": 0.24705882352941178,
+          "reliableExactBoards": 52,
+          "reliableWrongBoards": 11,
+          "squareCoverage": 0.9608455882352941
+        },
+        "correctOccupiedSquares": 3566,
+        "correctSquares": 15311,
+        "exactBoardAccuracy": 0.33725490196078434,
+        "exactBoards": 86,
+        "occupiedSquareAccuracy": 0.7799650043744532,
+        "occupiedSquares": 4572,
+        "squareAccuracy": 0.9381740196078432,
+        "squares": 16320
+      }
+    },
+    "style": {
+      "flat": {
+        "boards": 129,
+        "confidence": {
+          "mean": 0.9868900179862976,
+          "minimum": 0.313262403011322
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 72,
+          "acceptedCorrectSquares": 7798,
+          "acceptedSquares": 8137,
+          "acceptedWrongSquares": 339,
+          "boardCoverage": 0.5581395348837209,
+          "reliableExactBoards": 50,
+          "reliableWrongBoards": 22,
+          "squareCoverage": 0.9855862403100775
+        },
+        "correctOccupiedSquares": 1857,
+        "correctSquares": 7840,
+        "exactBoardAccuracy": 0.40310077519379844,
+        "exactBoards": 52,
+        "occupiedSquareAccuracy": 0.8169819621645402,
+        "occupiedSquares": 2273,
+        "squareAccuracy": 0.9496124031007752,
+        "squares": 8256
+      },
+      "halftone": {
+        "boards": 126,
+        "confidence": {
+          "mean": 0.9669432044029236,
+          "minimum": 0.20927761495113373
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 36,
+          "acceptedCorrectSquares": 7455,
+          "acceptedSquares": 7757,
+          "acceptedWrongSquares": 302,
+          "boardCoverage": 0.2857142857142857,
+          "reliableExactBoards": 32,
+          "reliableWrongBoards": 4,
+          "squareCoverage": 0.9619295634920635
+        },
+        "correctOccupiedSquares": 1725,
+        "correctSquares": 7571,
+        "exactBoardAccuracy": 0.35714285714285715,
+        "exactBoards": 45,
+        "occupiedSquareAccuracy": 0.7787810383747178,
+        "occupiedSquares": 2215,
+        "squareAccuracy": 0.9388640873015873,
+        "squares": 8064
+      },
+      "hatch": {
+        "boards": 129,
+        "confidence": {
+          "mean": 0.9662765264511108,
+          "minimum": 0.2195025086402893
+        },
+        "confidenceQualified": {
+          "acceptedBoards": 27,
+          "acceptedCorrectSquares": 7574,
+          "acceptedSquares": 7924,
+          "acceptedWrongSquares": 350,
+          "boardCoverage": 0.20930232558139536,
+          "reliableExactBoards": 20,
+          "reliableWrongBoards": 7,
+          "squareCoverage": 0.9597868217054264
+        },
+        "correctOccupiedSquares": 1841,
+        "correctSquares": 7740,
+        "exactBoardAccuracy": 0.3178294573643411,
+        "exactBoards": 41,
+        "occupiedSquareAccuracy": 0.7810776410691557,
+        "occupiedSquares": 2357,
+        "squareAccuracy": 0.9375,
+        "squares": 8256
+      }
+    }
+  },
+  "orientation": {
+    "accuracy": null,
+    "assumption": "A1 orientation",
+    "inferred": false,
+    "input": "native"
+  },
+  "perClass": {
+    "1": {
+      "accuracy": 0.9998308048051435,
+      "correct": 17728,
+      "errors": 3,
+      "meanConfidence": 0.9916585683822632,
+      "meanCrossEntropy": 0.009401719085872173,
+      "minimumConfidence": 0.3073064088821411,
+      "total": 17731
+    },
+    "B": {
+      "accuracy": 0.6077097505668935,
+      "correct": 268,
+      "errors": 173,
+      "meanConfidence": 0.8813683986663818,
+      "meanCrossEntropy": 2.141533136367798,
+      "minimumConfidence": 0.28122562170028687,
+      "total": 441
+    },
+    "K": {
+      "accuracy": 0.6510416666666666,
+      "correct": 250,
+      "errors": 134,
+      "meanConfidence": 0.927872359752655,
+      "meanCrossEntropy": 1.2930229902267456,
+      "minimumConfidence": 0.2888054847717285,
+      "total": 384
+    },
+    "N": {
+      "accuracy": 0.9832535885167464,
+      "correct": 411,
+      "errors": 7,
+      "meanConfidence": 0.9259642362594604,
+      "meanCrossEntropy": 0.09777941554784775,
+      "minimumConfidence": 0.42130690813064575,
+      "total": 418
+    },
+    "P": {
+      "accuracy": 0.7877394636015326,
+      "correct": 1028,
+      "errors": 277,
+      "meanConfidence": 0.8914287090301514,
+      "meanCrossEntropy": 0.6520566940307617,
+      "minimumConfidence": 0.20927761495113373,
+      "total": 1305
+    },
+    "Q": {
+      "accuracy": 0.8208616780045351,
+      "correct": 362,
+      "errors": 79,
+      "meanConfidence": 0.8245733380317688,
+      "meanCrossEntropy": 0.45031529664993286,
+      "minimumConfidence": 0.22415271401405334,
+      "total": 441
+    },
+    "R": {
+      "accuracy": 0.65,
+      "correct": 273,
+      "errors": 147,
+      "meanConfidence": 0.921823263168335,
+      "meanCrossEntropy": 1.7393040657043457,
+      "minimumConfidence": 0.4419555962085724,
+      "total": 420
+    },
+    "b": {
+      "accuracy": 0.6410835214446953,
+      "correct": 284,
+      "errors": 159,
+      "meanConfidence": 0.9731854796409607,
+      "meanCrossEntropy": 2.735184669494629,
+      "minimumConfidence": 0.4274488687515259,
+      "total": 443
+    },
+    "k": {
+      "accuracy": 0.6614583333333334,
+      "correct": 254,
+      "errors": 130,
+      "meanConfidence": 0.9883685111999512,
+      "meanCrossEntropy": 2.3312082290649414,
+      "minimumConfidence": 0.453228622674942,
+      "total": 384
+    },
+    "n": {
+      "accuracy": 0.9902200488997555,
+      "correct": 405,
+      "errors": 4,
+      "meanConfidence": 0.9270514249801636,
+      "meanCrossEntropy": 0.0905345156788826,
+      "minimumConfidence": 0.3397490382194519,
+      "total": 409
+    },
+    "p": {
+      "accuracy": 1.0,
+      "correct": 1330,
+      "errors": 0,
+      "meanConfidence": 0.9941889047622681,
+      "meanCrossEntropy": 0.006166535429656506,
+      "minimumConfidence": 0.593785285949707,
+      "total": 1330
+    },
+    "q": {
+      "accuracy": 0.6455981941309256,
+      "correct": 286,
+      "errors": 157,
+      "meanConfidence": 0.8392912745475769,
+      "meanCrossEntropy": 1.2116241455078125,
+      "minimumConfidence": 0.3531487286090851,
+      "total": 443
+    },
+    "r": {
+      "accuracy": 0.6370023419203747,
+      "correct": 272,
+      "errors": 155,
+      "meanConfidence": 0.9593037962913513,
+      "meanCrossEntropy": 2.536107063293457,
+      "minimumConfidence": 0.3841060698032379,
+      "total": 427
+    }
+  },
+  "raw": {
+    "boards": 384,
+    "correctOccupiedSquares": 5423,
+    "correctSquares": 23151,
+    "exactBoardAccuracy": 0.359375,
+    "exactBoards": 138,
+    "occupiedSquareAccuracy": 0.7922571219868517,
+    "occupiedSquares": 6845,
+    "squareAccuracy": 0.9420166015625,
+    "squares": 24576
+  },
+  "schemaVersion": 1,
+  "status": "completed",
+  "stopGate": {
+    "maximumReliableWrongBoards": 0,
+    "minimumConfidenceQualifiedCorrectSquareAccuracy": 0.995,
+    "minimumReliableExactBoardAccuracy": 0.95,
+    "passed": false,
+    "zeroCorrectClasses": [],
+    "zeroExactFamilies": [
+      "lyricsz"
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "repository product automated gates after v2 orchestration changes",
+  "source": {
+    "workingHead": "9240d93d91487dcaedbff5f7108479a342dcd8d6",
+    "workingTree": "dirty; v2 implementation and supporting repository changes were uncommitted during validation",
+    "note": "The report binds the pre-commit source identities below; commit identity alone does not identify the tested v2 changes."
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "pnpm": "11.11.0",
+    "platform": "linux-arm64"
+  },
+  "results": [
+    {
+      "command": "pnpm check",
+      "exitCode": 0,
+      "log": "runs/validation/pnpm-check-final.log",
+      "logSha256": "021b74714505c1e657e673a946fce6a88b37ae3b7e3a9bddf5b42f55e837f78a"
+    },
+    {
+      "command": "pnpm test:unit",
+      "exitCode": 0,
+      "testFiles": 29,
+      "tests": 386,
+      "log": "runs/validation/pnpm-test-unit-final.log",
+      "logSha256": "1a7488006a1b2bc453337539dacc7f1053c6f8b51f92f55aefe68c6f9112dd82"
+    },
+    {
+      "command": "pnpm check:licenses",
+      "exitCode": 0,
+      "productionPackages": 25,
+      "log": "runs/validation/pnpm-check-licenses-final.log",
+      "logSha256": "98d468b674a33f239e2f638d155b8f0453dfc93dcb4c7d8fac785e8f4e1867ce"
+    },
+    {
+      "command": "pnpm build",
+      "exitCode": 0,
+      "log": "runs/validation/pnpm-build-final.log",
+      "logSha256": "1ef639c24f7998a6218a19b7a85c728cbc565727b623b4c38e65bac2caf0c1df"
+    },
+    {
+      "command": "PYTHONPATH=experiments/recognition-training/v2:experiments/recognition-training experiments/recognition-training/.venv/bin/python -m unittest discover -s experiments/recognition-training/v2/tests -v",
+      "exitCode": 0,
+      "tests": 7,
+      "log": "runs/validation/v2-orchestration-python-tests.log",
+      "logSha256": "4f76f602e6edb555d315bb2e43610417292e9b9a064035ba7728e0cb3b797879"
+    }
+  ],
+  "sandboxAttempts": [
+    {
+      "command": "pnpm test:unit",
+      "exitCode": 1,
+      "reason": "Sandbox blocked the localization diagnostic's git subprocess with EPERM; the final result above reran outside the sandbox.",
+      "log": "runs/validation/pnpm-test-unit.log"
+    },
+    {
+      "command": "pnpm check:licenses",
+      "exitCode": 1,
+      "reason": "Sandbox blocked the license script's nested pnpm subprocess with EPERM; the final result above reran outside the sandbox.",
+      "log": "runs/validation/pnpm-check-licenses.log"
+    }
+  ],
+  "v2CodeSha256": {
+    "trainer.py": "14ba05a9f6c77f6dcb47a971bb5751740684bcd26adff8a775f31e3843254cb0",
+    "evaluate_onnx.py": "daa12814fcbdf58a23df8f37f2fd5816becba17f5bf286a1f5415042ada13cd4",
+    "freeze.ts": "f95b4ffae107b46c1d9d0a436129f68af5895c0b1378cd3de75d00a8e81adf76",
+    "prepare-browser.ts": "aa7a41b833563438ca7a2b6a07b711204bcdcab71148ebd78d10b761a0f14e06",
+    "regression.ts": "c561721723dcc5d43b2df40795341518cfbe29f063e82a82594645e1c914d944",
+    "lock-test.ts": "5434cf8cac12ff708b916d1b4721cd5382aeee648defbbf4ddd46b800cca6b9b",
+    "summarize.py": "167090061ec35d42bd12fba0be7f3dcb7a2865dc0f8b50f48686078db682d12d",
+    "protocol.json": "242d07996ecab07a0b65402ea776317ecf23bbee246d975d3575003e392e1890",
+    "source-lock.mjs": "15a77ebc51c5b285c8e436baca3d344ff87b4bcb188f4bcee07108b7cd46b551",
+    "verify_quality.py": "cb23956bca925732b0eb58f8cd202e06c9b3783b1731ac2b582b83edbeca128d",
+    "scripts/generate-dataset.mjs": "9cadf99f8d12b20a7f8ef1b157959dcc09f9c2f4a07866ef7c87f45a639b8b01",
+    "scripts/protocol.mjs": "f44c3195e789c929b7c8358d77e58a71eed1336603d65cd24ef296a67a5105b2",
+    "scripts/recipe.mjs": "b3fafba2ea3d30e6b41b15feb9fa28a79a5dd98d5a7bc0d591172cbfee1c5cfc",
+    "scripts/sample-inventory.mjs": "2f19e4a8a5744073b61d86f28ab240c72f10df8d5ab0c4a1fcf70467923b3f6b",
+    "scripts/render-board.mjs": "77548481af62dda0d94ecc3dcb8dd65efbd36b4c55e1749c320ced7b257dd9bb",
+    "scripts/svg-renderer.mjs": "d5901e851f9089d577f73fbcad5474c0baedbd73b2e5f9014ba3eb1f3664670c",
+    "scripts/verify-svg.mjs": "3f82a03d5ae49d9a4ea50a0a405142c276f866e1def09771d342caadd222f92a",
+    "scripts/verify-dataset.mjs": "e8c360fbb77e5aadc457919d30de1cc4b3f112643994f6fffd44c9291c905f99",
+    "scripts/visual-review.mjs": "ab087be73b08d6ccf6f518299fa8bb3969839085f99c9d8ab9ffe6a9b1de14fb"
+  }
+}

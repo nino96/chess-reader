@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "stage": "bounded native development smoke only",
+  "reviewer": "lead",
+  "maximumInputsEach": 24,
+  "wallSecondsEach": 120,
+  "sourceAndTensorVisualReview": "12 source sheets and 12 all-class three-condition tensor sheets reviewed before native inference",
+  "sha256": {
+    "native_smoke.py": "409010f04165619d107ba75f497a63f7c596cf741e88729ff51aaa2cf84d5562",
+    "alternatives.py": "65429a594ba6b53268351e4ee836165b18a2c378c9a69f05ff9de5ec84fdf75f",
+    "alternative-provenance.json": "b3e9a3d8517d11f7b27251232c037fc86fac2ce7d05535481a970c00d3e711cf",
+    "requirements-preprocessing.lock": "525f917f52848666630b34f17e20e51b39d0d05266771be26ca1d251e53a7cd5",
+    "protocol.json": "22312551a3e2e845f61393b0e6e6852f746529cd3f354a5fb47953769935f3c4",
+    "data/full/smoke/manifest.json": "68a7c266d2b1dba564d793b7eeb9f068d60934a754ed7e36aa29c518f796b92e",
+    "data/full/dev.labels.json": "af604db705654cb906b86b276400f90eca987f5b46b8a4bbc2446e58d5bb2815"
+  },
+  "retry": {
+    "candidate": "nakst",
+    "reason": "bounded fp32 sigmoid drift handling; original failure retained",
+    "ceilingSeconds": 60,
+    "priorAttemptTiming": "not instrumented; conservatively reserve 60 seconds for first attempt completed before initial poll",
+    "maximumCombinedSeconds": 120,
+    "priorLock": "manifests/native-smoke-lock-attempt-1.json"
+  }
+}

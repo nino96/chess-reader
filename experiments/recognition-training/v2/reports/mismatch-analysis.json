@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "status": "completed",
+  "kind": "post-freeze-aggregate-mismatch-analysis",
+  "freezeCommit": "8998d9c2a389cbe66110b994346caa3efbec83be",
+  "classOrder": "1KQRBNPkqrbnp",
+  "scope": {
+    "split": "test",
+    "family": "rhosgfx",
+    "boards": 256,
+    "squares": 16384,
+    "emptySquares": 11704,
+    "nonemptySquares": 4680,
+    "whitePieceSquares": 2365,
+    "blackPieceSquares": 2315,
+    "policy": "Aggregate existing frozen CPU reports, locked labels, strata, and pretraining fidelity evidence only. No new inference, training, threshold change, or candidate selection."
+  },
+  "sourceArtifacts": {
+    "cpuShippedSha256": "71cdd904ffbcf29e1c9e16f5726acc1d3e0d65333aee225f1ce5f3c41faaa98b",
+    "cpu3811Sha256": "8a040bd9952fa2f8fbe76487cd06c6737f83d8e8d975450983cfadd0afab3e41",
+    "cpu3812Sha256": "d37d303184dbe0e9047a925b406db21fc763251c93e15b2399284cc4a0444d77",
+    "full3811Sha256": "15c6619f173815d93d5c3973c151f34fb09a17bebaf7e0055e7fa6c033070f4b",
+    "full3812Sha256": "7ef04d5714fe9e8538c1097d10e36de231155c87c8478076a1ff834e9faf18bb",
+    "candidateFreezeSha256": "b58d14a925a16206aad2b2a6a506cefc55cc8942602b61f6fcc1af633bad5a29",
+    "datasetManifestSha256": "509d7ebb604e02f23eb354d16bfead096c7b224d100c7d1a9213e102bf4f5544",
+    "strataManifestSha256": "67be11c4afaad0d4664cd789ea90309d38ecc3b4b7220efa308bad44afb60392",
+    "dataQualityManifestSha256": "a4ade8a8b2f9d1cb5e9a490c3e1fbe39ec20793aef8133711aaa2ee69add799b",
+    "svgFidelitySha256": "70bed7b2b136f3650b0bb3d35b8be65e1d2dca48f49b8d54ca47dc239c8b1ba9",
+    "testLabelsSha256": "4cfb1e6153bdd6b71f954415fe3d42ea6232fdd5b972c17bd594336c548a52b1"
+  },
+  "roleEvidence": {
+    "families": {
+      "train": ["chessnut", "fantasy", "spatial", "celtic"],
+      "development": ["firi"],
+      "test": ["rhosgfx"]
+    },
+    "trainPieceColorCounts": {
+      "white": 36663,
+      "black": 36856
+    },
+    "developmentPieceColorCounts": {
+      "white": 2242,
+      "black": 2334
+    },
+    "testPieceColorCounts": {
+      "white": 2365,
+      "black": 2315
+    },
+    "testConditions": {
+      "styleBoards": { "flat": 87, "hatch": 69, "halftone": 100 },
+      "reductionBoards": { "1": 86, "0.82": 77, "0.64": 93 },
+      "speckledBoards": 123,
+      "plainBoards": 133
+    },
+    "finding": "Black and white classes are approximately balanced within every role. The failure is not explained by absent black labels or an empty-square majority alone. The test source family is wholly absent from training and development."
+  },
+  "sourceRasterEvidence": {
+    "heldOutFamily": "rhosgfx",
+    "verifiedAssets": 12,
+    "allSourceAssetsPassedFidelityGate": true,
+    "allSerializedTensorVisualChecksPassed": true,
+    "pairedSourceSummaries": [
+      {
+        "piece": "K",
+        "nonTransparentPixels": 2389,
+        "alphaTotal": 583513,
+        "whiteDarkPixels": 845,
+        "whiteLightPixels": 1418,
+        "blackDarkPixels": 867,
+        "blackLightPixels": 0
+      },
+      {
+        "piece": "Q",
+        "nonTransparentPixels": 2568,
+        "alphaTotal": 626883,
+        "whiteDarkPixels": 811,
+        "whiteLightPixels": 1636,
+        "blackDarkPixels": 843,
+        "blackLightPixels": 0
+      },
+      {
+        "piece": "R",
+        "nonTransparentPixels": 2406,
+        "alphaTotal": 584242,
+        "whiteDarkPixels": 810,
+        "whiteLightPixels": 1264,
+        "blackDarkPixels": 864,
+        "blackLightPixels": 0
+      },
+      {
+        "piece": "B",
+        "nonTransparentPixels": 2128,
+        "alphaTotal": 516533,
+        "whiteDarkPixels": 760,
+        "whiteLightPixels": 1124,
+        "blackDarkPixels": 787,
+        "blackLightPixels": 0
+      },
+      {
+        "piece": "N",
+        "nonTransparentPixels": 2368,
+        "alphaTotal": 576367,
+        "whiteDarkPixels": 820,
+        "whiteLightPixels": 1411,
+        "blackDarkPixels": 885,
+        "blackLightPixels": 0
+      },
+      {
+        "piece": "P",
+        "nonTransparentPixels": 1465,
+        "alphaTotal": 353529,
+        "whiteDarkPixels": 599,
+        "whiteLightPixels": 776,
+        "blackDarkPixels": 618,
+        "blackLightPixels": 0
+      }
+    ],
+    "finding": "For each held-out piece type, the white and black source summaries have the same nontransparent count and alpha total, while light-pixel counts differ sharply. These aggregate summaries are consistent with shared color-pair geometry whose color is carried mainly by fill luminance after grayscale conversion. They do not prove pixelwise-identical alpha masks or identify which board condition removes a cue."
+  },
+  "models": {
+    "shipped": {
+      "raw": {
+        "correctSquares": 16136,
+        "squareAccuracy": 0.98486328125,
+        "exactBoards": 134,
+        "exactBoardAccuracy": 0.5234375
+      },
+      "confidenceQualified": {
+        "confidentCorrectSquares": 15108,
+        "confidentSquareAccuracy": 0.922119140625,
+        "reliableExactBoards": 25,
+        "reliableWrongBoards": 3,
+        "lowConfidenceBoards": 228
+      },
+      "colorAggregates": {
+        "emptyCorrect": 11647,
+        "nonemptyCorrect": 4489,
+        "nonemptyAccuracy": 0.9591880341880342,
+        "whiteCorrect": 2250,
+        "whiteAccuracy": 0.9513742071881607,
+        "blackCorrect": 2239,
+        "blackAccuracy": 0.967170626349892
+      },
+      "perClass": {
+        "1": { "correct": 11647, "total": 11704 },
+        "K": { "correct": 250, "total": 256 },
+        "Q": { "correct": 294, "total": 295 },
+        "R": { "correct": 262, "total": 273 },
+        "B": { "correct": 284, "total": 290 },
+        "N": { "correct": 283, "total": 293 },
+        "P": { "correct": 877, "total": 958 },
+        "k": { "correct": 222, "total": 256 },
+        "q": { "correct": 328, "total": 332 },
+        "r": { "correct": 292, "total": 295 },
+        "b": { "correct": 277, "total": 299 },
+        "n": { "correct": 262, "total": 266 },
+        "p": { "correct": 858, "total": 867 }
+      }
+    },
+    "tilenet-full-3811": {
+      "selectedDevelopment": { "epoch": 9, "meanCrossEntropy": 0.27340719290077686 },
+      "raw": {
+        "correctSquares": 13736,
+        "squareAccuracy": 0.83837890625,
+        "exactBoards": 0,
+        "exactBoardAccuracy": 0.0
+      },
+      "confidenceQualified": {
+        "confidentCorrectSquares": 12804,
+        "confidentSquareAccuracy": 0.781494140625,
+        "reliableExactBoards": 0,
+        "reliableWrongBoards": 6,
+        "lowConfidenceBoards": 250
+      },
+      "colorAggregates": {
+        "emptyCorrect": 11704,
+        "nonemptyCorrect": 2032,
+        "nonemptyAccuracy": 0.4341880341880342,
+        "whiteCorrect": 1888,
+        "whiteAccuracy": 0.7983086680761099,
+        "blackCorrect": 144,
+        "blackAccuracy": 0.06220302375809935,
+        "blackToWhite": 2169,
+        "blackToWhiteShareOfAllBlack": 0.9369330453563715,
+        "blackToWhiteShareOfBlackErrors": 0.9990787655458314,
+        "blackToSamePieceWhiteCounterpart": 1693,
+        "whiteToBlack": 0,
+        "totalPredictedBlack": 146
+      },
+      "perClass": {
+        "1": { "correct": 11704, "total": 11704 },
+        "K": { "correct": 256, "total": 256 },
+        "Q": { "correct": 0, "total": 295 },
+        "R": { "correct": 273, "total": 273 },
+        "B": { "correct": 281, "total": 290 },
+        "N": { "correct": 293, "total": 293 },
+        "P": { "correct": 785, "total": 958 },
+        "k": { "correct": 0, "total": 256 },
+        "q": { "correct": 0, "total": 332 },
+        "r": { "correct": 0, "total": 295 },
+        "b": { "correct": 2, "total": 299 },
+        "n": { "correct": 142, "total": 266 },
+        "p": { "correct": 0, "total": 867 }
+      },
+      "offDiagonalConfusions": [
+        { "actual": "p", "predicted": "P", "count": 867 },
+        { "actual": "q", "predicted": "K", "count": 332 },
+        { "actual": "Q", "predicted": "K", "count": 295 },
+        { "actual": "r", "predicted": "R", "count": 295 },
+        { "actual": "k", "predicted": "K", "count": 256 },
+        { "actual": "P", "predicted": "R", "count": 173 },
+        { "actual": "b", "predicted": "B", "count": 164 },
+        { "actual": "n", "predicted": "N", "count": 111 },
+        { "actual": "b", "predicted": "R", "count": 68 },
+        { "actual": "b", "predicted": "K", "count": 62 },
+        { "actual": "n", "predicted": "R", "count": 13 },
+        { "actual": "B", "predicted": "R", "count": 8 },
+        { "actual": "b", "predicted": "k", "count": 2 },
+        { "actual": "B", "predicted": "K", "count": 1 },
+        { "actual": "b", "predicted": "P", "count": 1 }
+      ],
+      "nonemptyAccuracyByCondition": {
+        "style": { "flat": 0.42337976983646275, "hatch": 0.42048293089092426, "halftone": 0.4529540481400438 },
+        "reduction": { "1": 0.4199160167966407, "0.82": 0.45194986072423393, "0.64": 0.4331008243500317 },
+        "speckled": { "true": 0.4312633832976446, "false": 0.43710021321961623 }
+      }
+    },
+    "tilenet-full-3812": {
+      "selectedDevelopment": { "epoch": 7, "meanCrossEntropy": 0.30237048491835594 },
+      "raw": {
+        "correctSquares": 13871,
+        "squareAccuracy": 0.84661865234375,
+        "exactBoards": 0,
+        "exactBoardAccuracy": 0.0
+      },
+      "confidenceQualified": {
+        "confidentCorrectSquares": 12879,
+        "confidentSquareAccuracy": 0.78607177734375,
+        "reliableExactBoards": 0,
+        "reliableWrongBoards": 1,
+        "lowConfidenceBoards": 255
+      },
+      "colorAggregates": {
+        "emptyCorrect": 11704,
+        "nonemptyCorrect": 2167,
+        "nonemptyAccuracy": 0.46303418803418805,
+        "whiteCorrect": 1944,
+        "whiteAccuracy": 0.8219873150105709,
+        "blackCorrect": 223,
+        "blackAccuracy": 0.09632829373650108,
+        "blackToWhite": 2091,
+        "blackToWhiteShareOfAllBlack": 0.9032397408207343,
+        "blackToWhiteShareOfBlackErrors": 0.9995219885277247,
+        "blackToSamePieceWhiteCounterpart": 1628,
+        "whiteToBlack": 0,
+        "totalPredictedBlack": 224
+      },
+      "perClass": {
+        "1": { "correct": 11704, "total": 11704 },
+        "K": { "correct": 255, "total": 256 },
+        "Q": { "correct": 0, "total": 295 },
+        "R": { "correct": 273, "total": 273 },
+        "B": { "correct": 178, "total": 290 },
+        "N": { "correct": 293, "total": 293 },
+        "P": { "correct": 945, "total": 958 },
+        "k": { "correct": 0, "total": 256 },
+        "q": { "correct": 0, "total": 332 },
+        "r": { "correct": 1, "total": 295 },
+        "b": { "correct": 31, "total": 299 },
+        "n": { "correct": 191, "total": 266 },
+        "p": { "correct": 0, "total": 867 }
+      },
+      "offDiagonalConfusions": [
+        { "actual": "p", "predicted": "P", "count": 867 },
+        { "actual": "q", "predicted": "K", "count": 332 },
+        { "actual": "Q", "predicted": "K", "count": 295 },
+        { "actual": "r", "predicted": "R", "count": 294 },
+        { "actual": "k", "predicted": "K", "count": 256 },
+        { "actual": "b", "predicted": "B", "count": 143 },
+        { "actual": "b", "predicted": "K", "count": 117 },
+        { "actual": "B", "predicted": "K", "count": 112 },
+        { "actual": "n", "predicted": "N", "count": 68 },
+        { "actual": "P", "predicted": "R", "count": 13 },
+        { "actual": "n", "predicted": "R", "count": 7 },
+        { "actual": "b", "predicted": "R", "count": 4 },
+        { "actual": "b", "predicted": "P", "count": 3 },
+        { "actual": "K", "predicted": "N", "count": 1 },
+        { "actual": "b", "predicted": "k", "count": 1 }
+      ],
+      "nonemptyAccuracyByCondition": {
+        "style": { "flat": 0.4657783161720169, "hatch": 0.4429641965029142, "halftone": 0.47374179431072205 },
+        "reduction": { "1": 0.4355128974205159, "0.82": 0.49442896935933145, "0.64": 0.4635383639822448 },
+        "speckled": { "true": 0.4689507494646681, "false": 0.4571428571428572 }
+      }
+    }
+  },
+  "interpretation": {
+    "rendererBugRecurrence": "Not observed. All 72 source glyphs passed independent fidelity checks, generated tensors replayed exactly, preview pixels matched training pixels, and visual review found labels, colors, ordering, and glyphs intact. These checks do not prove that every possible rendered board is semantically ideal, but there is no evidence here for recurrence of the v1 CSS-rendering defect.",
+    "dominantFailure": "Both seeds show a severe held-out RhosGFX color/domain-transfer failure. Seed 3811 sends 2169 of 2171 black-piece errors to white classes; seed 3812 sends 2091 of 2092. All 867 black pawns become P in both seeds, all 256 black kings become K, 295/294 black rooks become R, and all 332 black queens become K. White Q also becomes K 295/295 in both seeds, so the failure includes held-out glyph geometry confusion as well as color collapse.",
+    "degradationFinding": "Failure is present in every texture, reduction, and speckle stratum. Candidate nonempty accuracy ranges only from 42.05% to 45.30% across styles for seed 3811 and 44.30% to 47.37% for seed 3812; speckled versus plain differs by less than 1.2 percentage points. Per-class confusion is not available by condition, so this does not rule out condition interactions.",
+    "coverageAssessment": "The evidence supports missing held-out grayscale/glyph coverage as the leading explanation. Training contains nearly equal black and white counts, but no RhosGFX examples. RhosGFX color-pair summaries have matching silhouette totals and sharply different light-pixel counts, so grayscale fill luminance must carry color information that shape alone cannot provide. The two independently seeded candidates repeat nearly the same black-to-white and Q-to-K collapses.",
+    "architectureAssessment": "No architecture limitation is proven. The shipped TileNet control classifies the identical frozen vectors at 98.49% raw-square and 95.92% nonempty accuracy, with every piece class above 86.7%, showing that this inference surface can represent the held-out distinctions under a different learned parameter set. The shipped control still fails the experiment's confidence-qualified promotion gates, and its different training corpus prevents attributing the candidate gap to one specific missing family or augmentation.",
+    "developmentEvidenceLimit": "Selected Firi development cross-entropy is 0.2734 and 0.3024, but no development per-class confusion report exists. Mean loss is dominated partly by empty squares and cannot establish that black/white transfer was sound on development.",
+    "conclusion": "Both retrained candidates fail promotion and must stop. The aggregates justify a separately predeclared coverage/photometric investigation, not post-test tuning of these runs and not a whole-board architecture conclusion. These data cannot choose among adding source families, changing grayscale-aware augmentation, altering optimization, or changing architecture."
+  }
+}

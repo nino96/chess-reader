@@ -1,0 +1,33 @@
+{
+  "aggregateCeilingSeconds": 1260,
+  "attempts": [
+    {
+      "ceilingSeconds": 60.0,
+      "chargedSeconds": 7.726413555908948,
+      "elapsedSeconds": 7.726413555908948,
+      "reservedSeconds": 60.0,
+      "run": "pilot",
+      "startedUnixSeconds": 1788646347.130798,
+      "status": "completed"
+    },
+    {
+      "ceilingSeconds": 600.0,
+      "chargedSeconds": 170.50261869188398,
+      "elapsedSeconds": 170.50261869188398,
+      "reservedSeconds": 600.0,
+      "run": "full-3821",
+      "startedUnixSeconds": 1788646396.1569748,
+      "status": "completed"
+    },
+    {
+      "ceilingSeconds": 600.0,
+      "chargedSeconds": 175.84894178714603,
+      "elapsedSeconds": 175.84894178714603,
+      "reservedSeconds": 600.0,
+      "run": "full-3822",
+      "startedUnixSeconds": 1788646677.1364074,
+      "status": "completed"
+    }
+  ],
+  "schemaVersion": 1
+}

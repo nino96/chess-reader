@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "stage": "bounded native development smoke only",
+  "reviewer": "lead",
+  "maximumInputsEach": 24,
+  "wallSecondsEach": 120,
+  "sourceAndTensorVisualReview": "12 source sheets and 12 all-class three-condition tensor sheets reviewed before native inference",
+  "sha256": {
+    "native_smoke.py": "bfabf17676f5ac0cf6066846413827e33c8784ac980c1a3a10f567e50281276a",
+    "alternatives.py": "f2bb0a27464b84158d3f2eba6ea091882b45e2d4f3c58e33382ffd5739345455",
+    "alternative-provenance.json": "3410dcb29929a16eb4ac410a2c25c8edb51b9fd22be274a37ed9576258fbd60c",
+    "requirements-preprocessing.lock": "525f917f52848666630b34f17e20e51b39d0d05266771be26ca1d251e53a7cd5",
+    "protocol.json": "22312551a3e2e845f61393b0e6e6852f746529cd3f354a5fb47953769935f3c4",
+    "data/full/smoke/manifest.json": "68a7c266d2b1dba564d793b7eeb9f068d60934a754ed7e36aa29c518f796b92e",
+    "data/full/dev.labels.json": "af604db705654cb906b86b276400f90eca987f5b46b8a4bbc2446e58d5bb2815"
+  },
+  "retry": {
+    "candidate": "nakst",
+    "reason": "normalized-coordinate decoder correction proven by static ONNX graph; previous geometry evidence superseded",
+    "ceilingSeconds": 44,
+    "priorSecondsConservativelyCharged": 75.34335419815034,
+    "maximumCombinedSeconds": 120,
+    "priorLock": "manifests/native-smoke-lock-attempt-2.json"
+  }
+}

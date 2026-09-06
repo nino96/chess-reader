@@ -1,0 +1,150 @@
+{
+  "attemptWallSeconds": 3.3905890360474586,
+  "candidate": {
+    "bytes": 1288448,
+    "id": "tilenet-pilot-381",
+    "modelPath": "candidate.onnx",
+    "seed": 381,
+    "sha256": "6348025a774929b436eeb2ef5df027d0c204747ae88323f49b6511b35e780a96"
+  },
+  "checkpoint": {
+    "selectedDevLoss": 2.046724796295166,
+    "selectedEpoch": 2,
+    "sha256": "cfcd0885d1d5f841378ef5bb7af3978e339fa1174aabb17a5c9445b2993ef497"
+  },
+  "command": [
+    "python",
+    "trainer.py",
+    "--protocol",
+    "<protocol>",
+    "--data-dir",
+    "<data-dir>",
+    "--run-dir",
+    "<run-dir>",
+    "--mode",
+    "pilot",
+    "--seed",
+    "381",
+    "--device",
+    "cuda",
+    "--verify-resume"
+  ],
+  "commit": "ac5bc3086375bf6a9a73de0367c94a5a83303756",
+  "data": {
+    "dev": {
+      "boards": 16,
+      "datasetManifestSha256": "509d7ebb604e02f23eb354d16bfead096c7b224d100c7d1a9213e102bf4f5544",
+      "familyCount": 1,
+      "generatorSha256": "9cadf99f8d12b20a7f8ef1b157959dcc09f9c2f4a07866ef7c87f45a639b8b01",
+      "labelsSha256": "4cdf7df0d63ac5788dd676a460592822849955ebdc9a5a30f06f720cb8a83ce8",
+      "sourceLockSha256": "15a77ebc51c5b285c8e436baca3d344ff87b4bcb188f4bcee07108b7cd46b551",
+      "vectorSha256": "0e826bf5a879a8241b373af04806d8ea5d1aea84e29fb4a501bcdad41a9f793c"
+    },
+    "train": {
+      "boards": 38,
+      "datasetManifestSha256": "509d7ebb604e02f23eb354d16bfead096c7b224d100c7d1a9213e102bf4f5544",
+      "familyCount": 4,
+      "generatorSha256": "9cadf99f8d12b20a7f8ef1b157959dcc09f9c2f4a07866ef7c87f45a639b8b01",
+      "labelsSha256": "7e3e244bc7e0ee05e8ae250c71ae3144dc5ba3f13403c192d93406087352ac96",
+      "sourceLockSha256": "15a77ebc51c5b285c8e436baca3d344ff87b4bcb188f4bcee07108b7cd46b551",
+      "vectorSha256": "bba0038fb464b8c034618b91404d5865833b53dd4e326096a3754f0894b2741d"
+    }
+  },
+  "dataQualitySha256": "a4ade8a8b2f9d1cb5e9a490c3e1fbe39ec20793aef8133711aaa2ee69add799b",
+  "elapsedSeconds": 1.9963210350833833,
+  "environment": {
+    "cudaAvailable": true,
+    "cudaDevice": "NVIDIA GB10",
+    "device": "cuda",
+    "machine": "aarch64",
+    "nvidiaSmi": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version",
+        "--format=csv,noheader"
+      ],
+      "hostCuda": "13.0",
+      "result": "NVIDIA GB10, 580.159.03"
+    },
+    "onnx": "1.18.0",
+    "onnxruntime": "1.22.1",
+    "platform": "Linux-6.17.0-1021-nvidia-aarch64-with-glibc2.39",
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "torchCuda": "12.8"
+  },
+  "implementationSha256": {
+    "shared/dataset.py": "c735d38f887a443af76a117d1a8fbecafdc5bfa558a98f11850f01e74ad593ba",
+    "shared/requirements.lock": "ed509ea41b0d5a754dd774024f284ffd63ebd037babd959c611ee477e103f0c9",
+    "shared/tilenet_model.py": "bcaf25a8bcf95c5342f15c8b8197c3101890657d17a08d6d7b00b3384547e213",
+    "trainer.py": "14ba05a9f6c77f6dcb47a971bb5751740684bcd26adff8a775f31e3843254cb0"
+  },
+  "losses": [
+    {
+      "devMeanCrossEntropy": 2.060206413269043,
+      "epoch": 1.0,
+      "trainMeanCrossEntropy": 2.5479572070272347
+    },
+    {
+      "devMeanCrossEntropy": 2.046724796295166,
+      "epoch": 2.0,
+      "trainMeanCrossEntropy": 1.2468506976177818
+    }
+  ],
+  "measuredTrainingTiles": 9728,
+  "measuredTrainingTilesPerSecond": 4872.963731303706,
+  "model": {
+    "bytes": 1288448,
+    "cpuOnnxRuntime": "passed",
+    "externalData": false,
+    "modelPath": "candidate.onnx",
+    "onnxChecker": "passed",
+    "onnxParity": {
+      "atol": 1e-05,
+      "maximumAbsoluteError": 5.960464477539063e-08,
+      "passed": true,
+      "rtol": 0.0001,
+      "vectors": 64,
+      "vectorsSha256": "fa8e3b69d5fd22e87b88e2fd5285e54c7ae858b68d2b53be217c64c5b9be67a6"
+    },
+    "operators": [
+      "Constant",
+      "Conv",
+      "Flatten",
+      "Gemm",
+      "MaxPool",
+      "Relu",
+      "Reshape",
+      "Softmax"
+    ],
+    "sha256": "6348025a774929b436eeb2ef5df027d0c204747ae88323f49b6511b35e780a96"
+  },
+  "protocolSha256": "242d07996ecab07a0b65402ea776317ecf23bbee246d975d3575003e392e1890",
+  "recovery": {
+    "aggregateElapsedSeconds": 1.9371129530481994,
+    "checkpointEpoch": 1,
+    "comparisons": {
+      "augmentationRng": true,
+      "epoch": true,
+      "lastModel": true,
+      "losses": true,
+      "optimizer": true,
+      "rng": true,
+      "scheduler": true,
+      "selectedDevLoss": true,
+      "selectedEpoch": true,
+      "selectedModel": true
+    },
+    "equivalent": true,
+    "performed": true
+  },
+  "run": {
+    "batchSize": 2048,
+    "epochs": 2,
+    "mode": "pilot",
+    "seed": 381,
+    "wallSeconds": 600
+  },
+  "schemaVersion": 1,
+  "status": "completed"
+}

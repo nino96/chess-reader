@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "suite": "recognition-training-browser",
+  "command": {
+    "fromRepositoryRoot": "pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts",
+    "environment": {
+      "CHESS_READER_TRAINING_BROWSER_CONFIG": "../../experiments/recognition-training/runs/browser-full.config.json"
+    },
+    "environmentPathBase": "apps/web (pnpm exec working directory)"
+  },
+  "commit": "89a0448b4643e40b3f0ae3d0454582aeb9abbc84",
+  "date": "2026-09-05T18:15:35.097Z",
+  "environment": {
+    "os": "linux",
+    "release": "6.17.0-1021-nvidia",
+    "arch": "arm64",
+    "node": "v24.19.0",
+    "browser": {
+      "name": "webkit",
+      "version": "26.5"
+    }
+  },
+  "freeze": {
+    "runKind": "full",
+    "protocolSha256": "bd24a5caaf61d0c37260d84665e0b910dff58aed3e34fc702e6d2e537d5900c5",
+    "testManifestSha256": "f94419e00fa787ef4b86490a9da1470bfc95b8644c3dacf0debe05ad6e61dc3a"
+  },
+  "candidate": {
+    "id": "tilenet-full-3802",
+    "seed": 3802,
+    "modelSha256": "91f176d32e3f351727bcb8989939129ee7015ed4caaac5e68c7eea36c4bfd14f",
+    "modelBytes": 1288448
+  },
+  "vectors": {
+    "id": "corpus-v1-regression",
+    "role": "corpus-v1-regression",
+    "sha256": "7c2edc21aef5b2b1f9d994e31cd72f968f2b93aac6ed992a4a89062fc97e9974",
+    "bytes": 3670016,
+    "boards": 14
+  },
+  "contract": {
+    "input": {
+      "name": "tiles",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        1024
+      ]
+    },
+    "output": {
+      "name": "probs",
+      "dtype": "float32",
+      "shapePerBoard": [
+        64,
+        13
+      ]
+    },
+    "classLabels": "1KQRBNPkqrbnp",
+    "reliabilityFloor": 0.7,
+    "executionProvider": "wasm",
+    "threads": 1
+  },
+  "runtime": {
+    "ortWasmSha256": "ec8580a9d7b9476ceee52e10a7f94124e4dc71a019d666ed6d4726697c109a4d",
+    "ortWasmBytes": 13961845,
+    "modelAndOrtWasmBytes": 15250293,
+    "deployedEvaluationBuildBytes": 14042258,
+    "totalEvaluationRuntimeBytes": 15330706,
+    "byteDefinition": "modelAndOrtWasmBytes is candidate ONNX plus pinned ORT WASM. totalEvaluationRuntimeBytes adds the candidate to deployed harness HTML/JS/WASM and excludes source maps/build metadata."
+  },
+  "timing": {
+    "coldInitializationMs": {
+      "count": 3,
+      "min": 449,
+      "p50": 598,
+      "p95": 697,
+      "max": 697
+    },
+    "firstBoardAfterFreshInitializationMs": {
+      "count": 3,
+      "min": 34,
+      "p50": 45,
+      "p95": 64,
+      "max": 64
+    },
+    "fullPassInferenceMs": {
+      "count": 14,
+      "min": 17,
+      "p50": 18,
+      "p95": 45,
+      "max": 45
+    },
+    "warmSubsetInferenceMs": {
+      "count": 12,
+      "min": 17,
+      "p50": 18,
+      "p95": 18,
+      "max": 18
+    },
+    "coldSessions": 3,
+    "warmRepeatsPerBoard": 3,
+    "warmBoardLimit": 4
+  },
+  "rawTiming": {
+    "coldInitializationMs": [
+      697,
+      598,
+      449
+    ],
+    "firstBoardAfterFreshInitializationMs": [
+      45,
+      34,
+      64
+    ],
+    "fullPassInferenceMs": [
+      45,
+      18,
+      18,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    "warmSubsetInferenceMs": [
+      17,
+      17,
+      18,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17,
+      18,
+      18,
+      17
+    ]
+  },
+  "summary": {
+    "exactBoards": 12,
+    "totalBoards": 14,
+    "exactBoardAccuracy": 0.8571428571428571,
+    "correctSquares": 894,
+    "confidentCorrectSquares": 813,
+    "totalSquares": 896,
+    "squareAccuracy": 0.9977678571428571,
+    "confidenceQualifiedSquareAccuracy": 0.9073660714285714,
+    "reliableExact": 8,
+    "reliableWrong": 0,
+    "minimumConfidence": 0.21268679201602936,
+    "meanConfidence": 0.9087927377383623,
+    "perClassErrors": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "confusion": [
+      [
+        596,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        13,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        21,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        18,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        76,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        74
+      ]
+    ]
+  },
+  "observations": [
+    {
+      "boardId": "v1-1b8957ff15091c95",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.8817085027694702,
+      "meanConfidence": 0.9550479836761951
+    },
+    {
+      "boardId": "v1-5187bf1833030b74",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.8968073129653931,
+      "meanConfidence": 0.9616385735571384
+    },
+    {
+      "boardId": "v1-02944e2bcda00047",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21882487833499908,
+      "meanConfidence": 0.7565534899476916
+    },
+    {
+      "boardId": "v1-9ddf5b3c192ebd5d",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.881876528263092,
+      "meanConfidence": 0.9576415903866291
+    },
+    {
+      "boardId": "v1-6077af891e893aed",
+      "exact": false,
+      "correctSquares": 63,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.3079405426979065,
+      "meanConfidence": 0.7824611314572394
+    },
+    {
+      "boardId": "v1-266c56ea80f5b6bb",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.8703094124794006,
+      "meanConfidence": 0.9590204199776053
+    },
+    {
+      "boardId": "v1-e5cbdff5c28ac53b",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.870166540145874,
+      "meanConfidence": 0.955705045722425
+    },
+    {
+      "boardId": "v1-3c21c57642da432c",
+      "exact": false,
+      "correctSquares": 63,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.21268679201602936,
+      "meanConfidence": 0.8891095358412713
+    },
+    {
+      "boardId": "v1-a2ed37ed149f359d",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.6836102604866028,
+      "meanConfidence": 0.922323802486062
+    },
+    {
+      "boardId": "v1-99ddbe5d70f4cfab",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.8759518265724182,
+      "meanConfidence": 0.9614030700176954
+    },
+    {
+      "boardId": "v1-729e60ff0d10aea4",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.43585845828056335,
+      "meanConfidence": 0.7679464188404381
+    },
+    {
+      "boardId": "v1-ea4917fb76f5c31e",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": false,
+      "reliableWrong": false,
+      "minConfidence": 0.6601182222366333,
+      "meanConfidence": 0.940141661092639
+    },
+    {
+      "boardId": "v1-ba1d22971755d89f",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.8497824668884277,
+      "meanConfidence": 0.9587979698553681
+    },
+    {
+      "boardId": "v1-52f88b410451088a",
+      "exact": true,
+      "correctSquares": 64,
+      "reliable": true,
+      "reliableWrong": false,
+      "minConfidence": 0.8793240189552307,
+      "meanConfidence": 0.9553076354786754
+    }
+  ],
+  "nonSameOriginRequests": [],
+  "privacy": "No vectors, class sequences, FENs, source filenames or absolute paths are persisted in this report.",
+  "limitations": [
+    "Classifier-stage frozen-vector evidence only; it is not end-to-end recognition qualification.",
+    "Physical iPad deferred/unrun."
+  ]
+}

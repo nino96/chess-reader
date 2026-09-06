@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "stage": "bounded native development smoke only",
+  "reviewer": "lead",
+  "maximumInputsEach": 24,
+  "wallSecondsEach": 120,
+  "sourceAndTensorVisualReview": "12 source sheets and 12 all-class three-condition tensor sheets reviewed before native inference",
+  "sha256": {
+    "native_smoke.py": "30c552d84a6ed6956158611eaa73be26c61fac98ee38fa7b6b7485756fcd847e",
+    "alternatives.py": "09919a8a90a1d33715de2745b919b5c501753e818a8eecf36ea1a3407a8b0719",
+    "alternative-provenance.json": "b3e9a3d8517d11f7b27251232c037fc86fac2ce7d05535481a970c00d3e711cf",
+    "requirements-preprocessing.lock": "525f917f52848666630b34f17e20e51b39d0d05266771be26ca1d251e53a7cd5",
+    "protocol.json": "22312551a3e2e845f61393b0e6e6852f746529cd3f354a5fb47953769935f3c4",
+    "data/full/smoke/manifest.json": "68a7c266d2b1dba564d793b7eeb9f068d60934a754ed7e36aa29c518f796b92e",
+    "data/full/dev.labels.json": "af604db705654cb906b86b276400f90eca987f5b46b8a4bbc2446e58d5bb2815"
+  }
+}

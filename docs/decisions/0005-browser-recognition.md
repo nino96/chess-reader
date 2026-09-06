@@ -114,3 +114,69 @@ revise a numeric threshold, the frozen candidate, corpus v1 or any historical
 baseline. The original 25-pass/two-failure run is retained unchanged, with the
 new contract and its validation recorded separately in the comparison report.
 #24 remains open; physical-iPad testing is deferred/unrun.
+
+## Issue #38 bounded classifier training (2026-09-05)
+
+The [synthetic-first TileNet experiment](../../experiments/recognition-training/REPORT.md)
+completed the bounded local GB10 CUDA pilot and both predeclared full seeds.
+Neither retrained classifier produced an exact board on the locked held-out
+source family (0/256 each; raw square accuracy 79.72%/80.12%). Improvements on
+public corpus v1 do not establish generalization or permit production adoption.
+The STOP recommendation remains in force.
+
+A post-freeze diagnostic confirmed that the pinned native SVG renderer ignores
+embedded CSS fills, affecting source appearance in training and held-out data.
+This confounds the generalization interpretation; the results cannot establish
+a TileNet architecture limit. Correct and verify rendering under a new
+predeclared test lock before further training or architecture comparison.
+Neither the learned-localizer nor whole-board context trigger is supported.
+The original corpus and failed diagnostic remain intact; no second architecture
+is trained here.
+
+Reaffirm dedicated browser-worker/WASM inference, pinned self-hosted assets,
+unchanged production recognition, and all existing confidence, accuracy,
+privacy, offline and device gates. Experiment tooling and weights remain
+separate from the PWA runtime. #24 stays open; physical-iPad testing remains
+deferred/unrun. This evidence note changes no architectural decision or gate.
+
+## Issue #38 corrected-renderer replication (2026-09-05)
+
+The [versioned v2 experiment](../../experiments/recognition-training/v2/REPORT.md)
+uses fidelity-verified SVG/PNG rendering and a new predeclared board/test lock.
+Both full seeds completed but still produced zero exact held-out boards, with
+systematic glyph/color transfer errors across plain and degraded conditions.
+Source fidelity and full-data replay now pass. The original failed experiment
+and corpus v1 remain unchanged; the test source family was previously exposed
+and is explicitly not presented as blind independent validation.
+
+Retain STOP production adoption. The shipped TileNet reads the identical inputs
+substantially better, so these failures do not prove an architecture limit or
+justify a whole-board model by themselves. Further licensed grayscale/glyph
+coverage research needs a new independent test design. The heuristic localizer
+remains unqualified; learned localization, including multiple-board pages,
+remains a separate experiment. Dedicated worker/WASM inference, all existing
+gates, unchanged production recognition and #24's deferred physical-iPad
+requirement remain in force. No architectural decision or threshold changes.
+
+## Staged isolated research evaluation (2026-09-05)
+
+At the owner's explicit request, adopt the [staged research policy](../evaluation.md#staged-isolated-model-experiments)
+for subsequent isolated experiments and analysis. This revises when full
+research browser/product gates apply, not their assertions or promotion targets.
+Issue #38's explicit completed gates and historical records remain unchanged.
+
+Measured rationale: v2 CPU inference already found 0/256 exact boards for both
+candidates. The subsequent full browser matrix took 605.48 seconds for 30 checks
+and reproduced all CPU confusion matrices and aggregate accuracy counts exactly.
+The product E2E run took 214 seconds and recognition measurement 567 seconds;
+those checked unchanged product behavior. These durations are individual runs,
+not a measured hour-long sequential total; some work overlapped. They did not
+resolve the cause of the training failure. See the [v2 report](../../experiments/recognition-training/v2/REPORT.md).
+
+Reject offline accuracy failures before full browser qualification; require a
+small compatibility smoke when the architecture/export/runtime changes. Reuse
+hash-matched data, runtime and product evidence. Full product gates attach to
+integration or affected product changes, not every research seed. Explicit
+issue-specific requirements must still be satisfied or explicitly amended.
+All model qualification, provenance, privacy, offline and physical-device
+requirements remain unchanged. #24 stays open and iPad testing remains unrun.

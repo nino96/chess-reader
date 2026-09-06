@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "suite": "recognition-training-browser-faults",
+  "commit": "6aa6fe9d5e688e7053cdd685cd54fe75a8042460",
+  "date": "2026-09-05T17:50:47.227Z",
+  "browser": "chromium",
+  "candidate": {
+    "id": "tilenet-pilot-38",
+    "seed": 38,
+    "sha256": "b9c638f9adcf6e4f9d150330bc15d971b0a40ec4180f12c123dd25632b40a845"
+  },
+  "vectorSet": {
+    "id": "pilot-development",
+    "sha256": "a69d1e26d72cd179eb94608847fc6ae538175dcf203ac0ec1dbd93f2c9d6211b"
+  },
+  "cancellation": {
+    "passed": true,
+    "completedBoards": 2,
+    "plannedBoards": 32
+  },
+  "timeoutTerminationAndRecovery": {
+    "passed": true,
+    "timeoutMs": 250
+  },
+  "modelIntegrityFailureBeforeInference": {
+    "passed": true
+  },
+  "warmOfflineInference": {
+    "passed": true
+  },
+  "nonSameOriginRequests": [],
+  "limitations": [
+    "Warm offline means model, vectors, worker and ORT were initialized before network was disabled.",
+    "Cold offline reload/readiness is not claimed; it belongs to the service-worker/offline issue.",
+    "Physical iPad deferred/unrun."
+  ]
+}

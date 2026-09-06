@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "command": "CHESS_READER_TRAINING_BROWSER_CONFIG=../../experiments/recognition-training/v2/runs/browser-full.config.json pnpm --dir apps/web exec playwright test --config ../../experiments/recognition-training/browser/playwright.config.ts",
+  "exitCode": 1,
+  "elapsedSeconds": 2.4720437829382718,
+  "commit": "8998d9c2a389cbe66110b994346caa3efbec83be",
+  "expectedTests": 30,
+  "log": {
+    "path": "runs/validation/full-browser-attempt-1.log",
+    "sha256": "96be5bc7b1537e345fafe2cb52f39a4bfd2dd64d9133b63f5e73a0c5a10d5689"
+  },
+  "environment": {
+    "platform": "Linux-6.17.0-1021-nvidia-aarch64-with-glibc2.39",
+    "architecture": "aarch64",
+    "node": "v24.19.0"
+  },
+  "concurrency": "No training, CPU candidate evaluation or product evaluation concurrently; browser suite one worker, retries zero.",
+  "physicalIpad": "deferred/unrun",
+  "executedTests": 0,
+  "failure": "Original frozen browser config allowed only seeds3801/3802; new3811/3812 rejected at test collection, before browser inference."
+}

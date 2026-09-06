@@ -1,0 +1,15 @@
+# Generated inputs, source caches, checkpoints and working run artifacts are local-only.
+# Deliberately reviewed metric evidence is copied into tracked reports/.
+data/
+cache/
+runs/
+.venv/
+.bootstrap/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.onnx
+*.pt
+*.pth
+*.tsbuildinfo
+local-config.json

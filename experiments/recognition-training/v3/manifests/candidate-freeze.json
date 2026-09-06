@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-offline-rejected",
+  "protocolSha256": "22312551a3e2e845f61393b0e6e6852f746529cd3f354a5fb47953769935f3c4",
+  "pretrainingLockSha256": "5d1df809d27e7b3d5ae0cfc8e8ede20839634017da1e3c4cf8e62f83cc2be996",
+  "datasetManifestSha256": "ddf18262d2e9d8cdbeec87442df78028fe517674e8f62d26c5a8126aa84550e6",
+  "freshQualificationEvaluated": false,
+  "productionAdoption": false,
+  "candidates": {
+    "pilot": {
+      "onnxSha256": "ca266bf9086b304a9c2d4d07644998e002e8eeb9d5015d94b428b858107023f7",
+      "selectedEpoch": 1,
+      "selectedWeightsSha256": "dda20a44bbef3cef46f69c606f2df1e32cdde9b7174097bbbc3ff38b309027e4",
+      "lastRecoveryCheckpointSha256": "73c418d62b533561afe4ba36b686ddeb8e1321bcce55f9bbeef8b803cf837ae6",
+      "selectedCheckpointContents": "weights and selection metadata only",
+      "recoveryCheckpointContents": "final trajectory model/optimizer/scheduler/RNG/input identity/history; recovery tested at minibatch interruption in pilot",
+      "developmentGatePassed": false,
+      "reportSha256": "50b04aa71f7b77d0e86c2810b93597d18e98bc13c0e2c1601bbea44d76a6e36c"
+    },
+    "full-3821": {
+      "onnxSha256": "b9b348eb2aeac86edd7d20f34612a37ab4afbdd2925e75b858b70f089511e071",
+      "selectedEpoch": 1,
+      "selectedWeightsSha256": "e7e18984b2456a86c51568988b40d8be20d0b50d698a35c6056b07a5af5978c1",
+      "lastRecoveryCheckpointSha256": "cfd8a724802265a06fdbbe09fc77797fd5aa542c2996902188788b8f6c1871ab",
+      "selectedCheckpointContents": "weights and selection metadata only",
+      "recoveryCheckpointContents": "final trajectory model/optimizer/scheduler/RNG/input identity/history; recovery tested at minibatch interruption in pilot",
+      "developmentGatePassed": false,
+      "reportSha256": "c632f99f85c7f8b14fb6f4025e2498ddd13446c9b7b1cd5b8649407b80b8b671"
+    },
+    "full-3822": {
+      "onnxSha256": "0b95ae3ef8a17470acdf4b30ce2fd2a24d4d1a8380c199d62cd45302b15e8f4d",
+      "selectedEpoch": 1,
+      "selectedWeightsSha256": "aff29f480cac56368b207c1d92d8d24e84e08403a0e0ff84f5d0e6050e41eb86",
+      "lastRecoveryCheckpointSha256": "d3493766e59cfa4eaee0f86b9fb989dcbc5d9d538aa112b828dc5bccc43f90fc",
+      "selectedCheckpointContents": "weights and selection metadata only",
+      "recoveryCheckpointContents": "final trajectory model/optimizer/scheduler/RNG/input identity/history; recovery tested at minibatch interruption in pilot",
+      "developmentGatePassed": false,
+      "reportSha256": "cfd3889575beafcb5552c5f11ca8bc5682ebf1ad5cce593418507aa3729155c6"
+    }
+  }
+}

@@ -9,6 +9,21 @@
     },
     {
       "path": "./packages/test-fixtures"
+    },
+    {
+      "path": "./experiments/recognition-training"
+    },
+    {
+      "path": "./experiments/recognition-training/browser"
+    },
+    {
+      "path": "./experiments/recognition-training/v2"
+    },
+    {
+      "path": "./experiments/recognition-training/v2/browser"
+    },
+    {
+      "path": "./experiments/recognition-training/v3"
     }
   ]
 }

@@ -337,6 +337,7 @@ Accessibility is part of the implementation rather than a later cleanup:
 |       |-- styles/           Global responsive/accessibility CSS
 |       `-- test/             Shared Vitest DOM setup
 |-- packages/test-fixtures/   Synthetic fixture PDF, generator, provenance manifest
+|-- experiments/recognition-training/  Isolated TileNet data, CUDA runs and browser evaluation
 |-- docs/                     Architecture, constraints, issue plan, evidence
 `-- types/                    Narrow declarations for otherwise untyped tools
 ```
@@ -344,6 +345,13 @@ Accessibility is part of the implementation rather than a later cleanup:
 `apps/web/eval/` holds the recognition evaluation that `pnpm eval:recognition`
 runs, with its own Playwright config (`playwright.eval.config.ts`) so the
 ordinary browser suite stays fast and deterministic.
+
+`experiments/recognition-training/` is issue #38's synthetic training experiment.
+It uses an isolated, hash-locked Python environment for CUDA training and the
+existing pinned JavaScript dependencies for generation and a separate browser
+evaluation build. Its data, caches and candidate weights are ignored; recipes,
+source identities and reviewable metric reports are retained. It is outside
+the PWA dependency graph and never replaces the production model.
 
 The architecture lists future `packages/*` directories for core models,
 storage, readers, recognition, chess rules, the engine, and fixtures. They do
@@ -471,6 +479,20 @@ qualification JSON under `eval-results/qualification/` and traces under
 `eval-results/playwright-qualification/`. CI measures all three browser engines.
 See the [candidate protocol and evidence](investigations/issue-35-comparison.md)
 and [gate policy](evaluation.md#issue-35-research-measurement-and-qualification).
+
+The [TileNet experiment](../experiments/recognition-training/README.md) adds
+family-disjoint synthetic training/development/test data and CUDA recovery,
+ONNX parity and three-browser classifier checks. Both training seeds freeze
+before held-out inference; corpus v1 is used only afterward for regression.
+These classifier checks supplement the unchanged PDF-to-editable-board eval.
+The experiment's TypeScript/JavaScript sources join `pnpm check`; Python and
+browser execution use the commands documented inside the experiment. The
+[completed report](../experiments/recognition-training/REPORT.md) retains both
+failed promotion results; `freeze.ts --verify-only` audits immutable inputs and
+checkpoint selection, and `summarize.py` derives the decision from raw reports.
+The isolated `svg:fidelity` diagnostic records the native SVG CSS-fill failure;
+its nonzero result is retained and requires a new data-quality/test-lock
+experiment before further training.
 
 Layout screenshots attached by `layout.spec.ts` are evidence for human review,
 not auto-approved pixel snapshots. Playwright's WebKit engine is useful early
@@ -636,3 +658,46 @@ Maintenance checklist for agents:
 - **ADR:** an architecture decision record under `docs/decisions`.
 - **Fixture:** controlled test input with recorded provenance and expected
   behavior.
+
+### Renderer-corrected training replication (#38)
+
+[`experiments/recognition-training/v2/`](../experiments/recognition-training/v2/README.md)
+contains the new, separately locked synthetic experiment. Its pinned browser SVG
+renderer feeds PNGs to the native compositor. Pretraining gates verify every source,
+class and tile order, exact full-data replay, all hatch/halftone/degradation combinations,
+and reviewed source/actual-tensor images. Its trainer and freeze bind those reports
+and image hashes before allowing CUDA runs. The original experiment remains intact.
+The model/data loader, Python environment and isolated ORT-Web browser harness are
+shared; production recognition is unaffected. See the v2 README for exact commands,
+repeat-family test limitations and the separate learned-localizer decision trigger.
+
+### Staged research validation
+
+Isolated model experiments follow [the staged evaluation policy](evaluation.md#staged-isolated-model-experiments):
+verify data, screen offline, smoke-test changed export/runtime compatibility,
+and run full browser qualification only for qualifying frozen candidates.
+Unchanged product checks are reused by relevant input hashes; integration still
+requires the product gates. Analysis-only changes use documentation checks.
+
+The [post-freeze failure analysis](../experiments/recognition-training/v2/FAILURE_ANALYSIS.md)
+records the scratch-training limitation, development-only CPU diagnostic and
+proposed shipped-weight adaptation comparison. Its diagnostic command is in
+`experiments/recognition-training/v2/analysis/dev_color_diagnostic.py`; it reads
+existing Firi development vectors only and is not a promotion or product eval.
+
+The [bounded comparison preparation](../experiments/recognition-training/planning/COMPARISON.md)
+records the requested shipped-weight adaptation arm, retained scratch controls,
+two pretrained shortlist entries, provenance blockers and proposed compute/stop
+rules. The separate `planning/` directory keeps reconstruction feasibility work
+outside the frozen experiments. It adds no product command or runtime behavior;
+training requires a separately scoped experiment under #24 and a fresh data lock.
+
+The executable follow-up [#40](https://github.com/nino96/chess-reader/issues/40)
+is isolated in [`experiments/recognition-training/v3/`](../experiments/recognition-training/v3/README.md).
+It adds source-locked synthetic data tooling, shipped-weight fine-tuning with
+recovery and export checks, detailed development diagnostics, and native smoke
+adapters for the two pretrained alternatives. Its JavaScript tools participate
+in the root TypeScript/ESLint checks; generated data, caches and run artifacts
+are excluded from source formatting. The v3 protocol and pretraining manifests
+bind each run. Failed offline candidates stop before browser qualification;
+production, frozen experiments and corpus v1 remain unchanged.

@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "classOrder": "1KQRBNPkqrbnp",
+  "pieceCodes": ["wK", "wQ", "wR", "wB", "wN", "wP", "bK", "bQ", "bR", "bB", "bN", "bP"],
+  "splitSeeds": {
+    "train": 3830,
+    "dev": 3831,
+    "test": 3832
+  },
+  "splitSizes": {
+    "train": 4096,
+    "dev": 384,
+    "test": 384
+  },
+  "conditions": [
+    {
+      "id": "pristine",
+      "style": "flat",
+      "reduction": 1,
+      "speckle": false
+    },
+    {
+      "id": "hatch",
+      "style": "hatch",
+      "reduction": 0.82,
+      "speckle": true
+    },
+    {
+      "id": "low-fidelity",
+      "style": "halftone",
+      "reduction": 0.64,
+      "speckle": true
+    }
+  ],
+  "archiveLimits": {
+    "maxDownloadBytes": 8388608,
+    "maxEntries": 16,
+    "maxExpandedBytes": 16384,
+    "forbidAbsoluteOrTraversal": true
+  },
+  "evidenceFiles": {
+    "femrek-page.html": "88e99a2e5993172a4b1947bc24f8f456d3a4c0c9efd5c3c0528d0bbec75164ff",
+    "lila-COPYING.md": "d5b0b45dd3dc8430e5b826ba788e62137eae938319a16d4ed5c9e4d5b2899da9",
+    "livius-LICENSE": "ce370b6e6d250544b2a59325f446dbdee192f888d07d147abd714ba31949856c",
+    "livius-README.md": "dcc9aa22d377aeec106b3102ff988a5438e3a04fa77969604de55fa2f54bbc10",
+    "lyricsz-page.html": "365a3cdd900ea0e1814096e6f9a92c04f2523cf059a83af634ffbe079c45ab97"
+  },
+  "externalSources": {
+    "femrekFiles": {
+      "B": "https://opengameart.org/sites/default/files/bishop_0.svg",
+      "K": "https://opengameart.org/sites/default/files/king_1.svg",
+      "N": "https://opengameart.org/sites/default/files/knight_3.svg",
+      "P": "https://opengameart.org/sites/default/files/pawn.svg",
+      "Q": "https://opengameart.org/sites/default/files/queen.svg",
+      "R": "https://opengameart.org/sites/default/files/rok.svg"
+    },
+    "lyricszArchive": {
+      "url": "https://opengameart.org/sites/default/files/chess_4.zip",
+      "sha256": "d1b2845ce0d03d1ab924550f6804daafd0c358244f308636761f0454ce3d6309",
+      "entries": ["chess.png", "chess1.png", "chess2.png"]
+    }
+  },
+  "families": {
+    "chessnut": {
+      "split": "train",
+      "artistGroup": "Alexis Luengas",
+      "license": "Apache-2.0",
+      "kind": "lila-svg",
+      "revision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+      "sourcePage": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/chessnut",
+      "path": "chessnut",
+      "files": {
+        "bB.svg": "1660d01f51eea3bd4a7677920b8f261481e5d5758b372ce062a508c8a1026175",
+        "bK.svg": "b0fd61530fb2ea35f10ff59456b18b845a306110d9ba3220ce7d0b7f68167eab",
+        "bN.svg": "078ef9a73782e35deea380a11e9918ee1bc38f1302c384bab9354bbe89a9e338",
+        "bP.svg": "b3a9c2a3d949c74a5dbe0882631086fdcf02309ed8ba941718b91d550ca35c8e",
+        "bQ.svg": "c3973c41730ae03038501329b84d061040fc8c72b0ce24940ada07a3e8379c18",
+        "bR.svg": "c40f0c10b21635703b050d2996d4cbfe3b443e2573304ee91ed29fd7be61caa1",
+        "wB.svg": "fdac5e5848b67aed513416d347c6b6479dbf86a2be3f6fdd44555d724ae1b7a7",
+        "wK.svg": "31bffcebab6aedc808680824571641625ecd263804bd6a6963be78d5962a7935",
+        "wN.svg": "73a4860e4f73034ca1579e952240e8cce57affec677e87b7e1dd8cf9c3dbcdd1",
+        "wP.svg": "423f9a04ff6a18ed129d90269e15b7a0d5390ac775e8d3468d09feb33f92ea0e",
+        "wQ.svg": "21d84a10b2d0f7ebeff93bc452a12e66dd6928b35d7db21d20b59fcc520584fb",
+        "wR.svg": "0bb5bc1be4100f5f3158cc568df44ae16b5f9110a342c4186aba007729a65052"
+      },
+      "sourceSha256": "569456b1ccd41a5f5787101ca05f622e65e1435485d490d1bf5c357c90cc02fb"
+    },
+    "fantasy": {
+      "split": "train",
+      "artistGroup": "Maurizio Monge",
+      "license": "MIT",
+      "kind": "lila-svg",
+      "revision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+      "sourcePage": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/fantasy",
+      "path": "fantasy",
+      "group": "Monge",
+      "files": {
+        "bB.svg": "39788f0768af3955015b67e2fb9a8cac1412f12a173cfe055afdaa06b652cc8b",
+        "bK.svg": "63ac211b7584a80739ac0ce4788f5b6421dfc854216d4950cae7015947d5e3d0",
+        "bN.svg": "6068614e192901fa8b65ce78d5b604bddb901688278f65569ebf9ff86ef9fc93",
+        "bP.svg": "cb86603c9036bc5d64561fa909df80e27888e1716f73c5ebe61035e3ecb3a266",
+        "bQ.svg": "89dfc276f1336c44b5fc260803cad7beb2bc3e5e0faea3395c0118312ab53052",
+        "bR.svg": "e2ffb1b77780e2a744c4f9b00d4a1feff7da52e39bad0d357fc0b695856be9f8",
+        "wB.svg": "793d3de1262d36f1dcf2d298c3924fca6976cd2337583f41480dadcfb2afc18e",
+        "wK.svg": "b5f2e7efce1f40a6733c6e22b7016e8699ddb89807a9e9539f837e4c4b7b4d1d",
+        "wN.svg": "84b5e7701b6d8fca62b610380620042e9737b8276cf17f829a64f6c8645ea38d",
+        "wP.svg": "ed5080fc4cd1d5b14d6acc77afabcdd99c225f3ce5c082015490394ea0676831",
+        "wQ.svg": "f97490b5b60a6978a15c40d86b69ce06df36bf3869b2bd82382819a724fd84a4",
+        "wR.svg": "957efd4929507a4e3230912cab678baa2c308e6c4714cc094052543438458ab8"
+      },
+      "sourceSha256": "4053a01a604fa643a35a7a9fb5d97e4f917e624ca5020c26f40b0841b7c47be7"
+    },
+    "cburnett": {
+      "split": "train",
+      "artistGroup": "Colin M.L. Burnett",
+      "license": "GPL-2.0-or-later",
+      "kind": "lila-svg",
+      "revision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+      "sourcePage": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/cburnett",
+      "path": "cburnett",
+      "files": {
+        "bB.svg": "77e9debfa5cb8052a096affd49d5d4d842313ccd5194d5a85e38b8a7831885bf",
+        "bK.svg": "b83f0a15002eefcd30137d17042894f2ed821f6a85bd6eb41b5c85ce733359ed",
+        "bN.svg": "28c70309f34653625d8d1aa40b82387a5aa3a68cd55dbacee438a3d0c74269ea",
+        "bP.svg": "09539f32260765e6626c4653978aeeb166c7107854a03de37cd23c77f5ec6e6a",
+        "bQ.svg": "b60573d7b225da00537368c9e20ff8d725f4edf3d5e3f93ce87e7d119aae8922",
+        "bR.svg": "7b4fa825748a9f9a19580353b4a57f57ed66b829f6aecd745d9e9752991dc843",
+        "wB.svg": "b7d1a118f4cfa74190ebf7f68dd88f4020072821e2c49236b0796766b34e159d",
+        "wK.svg": "6a015951fb9ec986212164038e03008ae36d3438c2d4550d3ec1da76b172fa04",
+        "wN.svg": "ef4cde0a7b40914c436b8966767cbfa960a6a4ed2d3bfbe9aa9986a9214cb8e0",
+        "wP.svg": "0596b7ce6f71517800b5103f4ab0370d479e6d66e69c1411f27490d20772e8d6",
+        "wQ.svg": "c3dc7fceb7ac157dda1fbcafbc2fcc58911a0a392cb671cbe50dbd4ea099e6c0",
+        "wR.svg": "53013fc8920647f3f3d0509f22ca16a67a8f320e6a6a55f2f05b30b9940566d9"
+      },
+      "sourceSha256": "eb23ed7931804a6a1cead0e5361c917e93e447b8cb9db9fc38807c7136a48af8"
+    },
+    "merida": {
+      "split": "train",
+      "artistGroup": "Armando Hernandez Marroquin",
+      "license": "GPL-2.0-or-later",
+      "kind": "lila-svg",
+      "revision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+      "sourcePage": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/merida",
+      "path": "merida",
+      "files": {
+        "bB.svg": "a5d2ee9100f3b0b74beb3c95f88e3b43a46a790a00d41aa1db8ca9a0905568f1",
+        "bK.svg": "d74cd8e5e49ca921e765c6c0c3a87ce7f5f437ca95bca44948b92771f7bdd65c",
+        "bN.svg": "f1f4e2a1eed37dd366b61b38f857ea8fd0b890b8f02215ceb99f0e710a7950fa",
+        "bP.svg": "d0e48e03ec340c39e9fde73d0ae0c8b251d42a32c13381ad0664edce77ce7eb3",
+        "bQ.svg": "8ad433fa5876894ca03b9412e9e39b8d770e90bf1c59428ee8e06bf6bc472098",
+        "bR.svg": "32c8ae60d594e037839cb2f0815ee1739b58d1aea09b5df8b96fec62a6868884",
+        "wB.svg": "b9db43162732aae75cd51b6f071185b000c514cd1b8a93a134bd8c6676351f9d",
+        "wK.svg": "e1dc9b6358585210119b92c389551fc70fa6566316089b3eba017142153fd3f4",
+        "wN.svg": "25c6f4d7446b9f99d6b62239bf0cd0abcf2ebb902e96aa93a73b7816d8431b7d",
+        "wP.svg": "0c77297b4870b95653edaf7514d3b8f36816d1a7f05c718f4c0f7f0dff016d50",
+        "wQ.svg": "b05f4b8902f333d4e7eeb5475af4c6015a91fb7fdd3266bdd0adc84ad1f7076c",
+        "wR.svg": "494fff9b13a24122b4fa6df1fd1070b0470a7cf8d603ac14f4290d00a149bec3"
+      },
+      "sourceSha256": "72950b296fbc7f8632c2cffa4d2735f9265af42d0770b163b97b946bc6720e9b"
+    },
+    "kiwen-suwi": {
+      "split": "train",
+      "artistGroup": "neverRare",
+      "license": "CC-BY-4.0",
+      "kind": "lila-svg",
+      "revision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+      "sourcePage": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/kiwen-suwi",
+      "path": "kiwen-suwi",
+      "files": {
+        "bB.svg": "e1480ccc1ad1782458174872fa4fcdd4f556551cd1233434a59f6c796b827e93",
+        "bK.svg": "8d4c0baf7b7d3f956ce347b286eed6ae42ee2059b9c9d94d38d7af9804fb8b4a",
+        "bN.svg": "926fd7585845a3ad35cad1dcc7593c0163c2e889bec93682b18059243a0f0103",
+        "bP.svg": "a9e90dd75d5c57b1a3a541bfc082725d6684cb6ce7efecce829003cce3ff4ae1",
+        "bQ.svg": "06c650f2b8141109366f670f6772175fcc82ea9036efc893d699043027efc35f",
+        "bR.svg": "586265ecdbe52c8c9c7095f14db92196ed220397511cde5f88f2e0f0b098b356",
+        "wB.svg": "629ec6b4accebf51ea9785189ec37e6ee0b902a5aaab2dd71fd2a393fc26d683",
+        "wK.svg": "b77fa950985fa104dd9992d513bc79ce99cac3fba62928fdf38dade9bdbbf72c",
+        "wN.svg": "84d13e5626ad5c08fcdd46a4858e30142c6655cb2f627ca3d2fdc800cfae81f5",
+        "wP.svg": "ceb6ae497a5d63064f2cbcfce2d0e17b0cb2d433ab1bccfdd2227a8eb128538a",
+        "wQ.svg": "536b978b0f0edef02ce227af356a66786ba9cc35cec0b3ad5fcaab8e62b13a83",
+        "wR.svg": "d49a7925b408a2d9240d4e8ed7af230faffaaba4d8513891dbed3a2a2fa1998a"
+      },
+      "sourceSha256": "4a85950e09b4bbef087305a5c1ef53f8ee905a030c54f1bb2dc246e3b87f1f9f"
+    },
+    "livius": {
+      "split": "train",
+      "artistGroup": "Martin Sedlák",
+      "license": "CC0-1.0",
+      "kind": "github-svg",
+      "revision": "af40ea51e87eddee1ae7ee35ae312893a1271233",
+      "sourcePage": "https://github.com/kmar/chess_svg_piece_sets/tree/af40ea51e87eddee1ae7ee35ae312893a1271233/livius",
+      "files": {
+        "bB.svg": "d049d290b62edff7a2c45ee9f5c64da97851d72c71ad3b48693d22c8951a2e3f",
+        "bK.svg": "c78fd321b18a151e0a01e59bcd6043eb3d73ae4e3f80c6e2074e7763316ba607",
+        "bN.svg": "9ea4ca9398b3479146bad78a1151f98784183d2eb8a677a2987cc06b9164dd33",
+        "bP.svg": "fd94a745b9fa60c20163dff89ae8eedf131b5264c5fb4fd89f186e7f4d9ebb65",
+        "bQ.svg": "edeee70030dac37a915b982cb1cad7112c9c467228dcc29c846d0984985a3330",
+        "bR.svg": "fa8e53b5a1e7ebf211cc5e1ec1681292f31ecd97854010afd6430bb6bdc03747",
+        "wB.svg": "3b948d7a594be5a3b9c239b80ed99bbd428829ba9e9622c186c898a161e4088c",
+        "wK.svg": "78f45c5ec3bfbd507e75a7f48480dd7d2b3cedd466b80c2c645915235139f9e4",
+        "wN.svg": "c392243fb0549a2d64b5c32904df8a3dfc4fb5da508b572562d0458ae909fed7",
+        "wP.svg": "cbff11223709d419494ecc49c254126a49fe237b46773d23282b3a891a00ff52",
+        "wQ.svg": "e9fba3c8d04853c07a9b76b3ec4f8d70ad602eb75e9a0014162a6ea30d10f760",
+        "wR.svg": "e6a05e313646a1b1fe2008cbcd23a5c0ad79e655469f3b9fb7d8337865f46441"
+      },
+      "sourceSha256": "28170f4f0cce7bc37f00bfdf79a099901ca905ea659e6a42684379a0063fde76"
+    },
+    "mpchess": {
+      "split": "dev",
+      "artistGroup": "Maxime Chupin",
+      "license": "GPL-3.0-or-later",
+      "kind": "lila-svg",
+      "revision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+      "sourcePage": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/mpchess",
+      "path": "mpchess",
+      "files": {
+        "bB.svg": "74bb566cc53880feca5cfd623ceefdd1ae3178f6f89792393f0c7c41d04bcf1f",
+        "bK.svg": "4675cea6742b8f8c3f82e1897c7b4489cec5fb3ca6d1982906147bcff6488c69",
+        "bN.svg": "b4906f9373d359812ae06032fd0e5c2dfd3b6d33eb5e69d0cc489ae19c6fb214",
+        "bP.svg": "b9ad95133aecc2316b2b057604e6cc18adadb87a18bc84346dab4541253fc24f",
+        "bQ.svg": "88019af7c844fb900db6379fa6bd9ba01a0c3f11a8c1418e2db1f3eec22e127d",
+        "bR.svg": "a8dfcacd6c27c22172d8ad28b1af7de1d97afd5217bbda55ac0970e496961122",
+        "wB.svg": "c00a8b005dbee2a89c0233ed0d1cf86e274b1e969ebf8b72de4071cb8c4e9f9f",
+        "wK.svg": "ab35351dd78616e8ac1f0381fcde11fa3155a3c418154cdceeb3820e397c3704",
+        "wN.svg": "a805db956c750c6c3150dd3e488e8d3fed04a5d2aab0fc56d08f703da00dc6f2",
+        "wP.svg": "71fec5ee43154321a28793832cb787206569e9723f821fd408708faa9a1af6a2",
+        "wQ.svg": "0a3489267d6e4cf165584eee8635783be358a378ebeb43798b65e0c989b55cda",
+        "wR.svg": "0bdc0d50681457fcb1e84335c21fd5ae587145c3d33ab48216a0a476e80ad0da"
+      },
+      "sourceSha256": "34d26b6e0619b589881b4c8797d172dc15606c0e2ecfac15d8dec2a82e808a68"
+    },
+    "femrek": {
+      "split": "dev",
+      "artistGroup": "femrek",
+      "license": "CC0-1.0",
+      "kind": "oga-single-color-svg",
+      "revision": "page-published-2024-03-18; bytes locked by sha256",
+      "sourcePage": "https://opengameart.org/content/chess-pieces-in-svg-format",
+      "files": {
+        "B.svg": "3692af995e449c61e9aedf1a42487f40177b85f7ac40e1be1b4f4a7a824f94c8",
+        "K.svg": "d2c3c81c0dec55d0c4d72ec3c55c46691d23fcd1471ad83986f43e6bd5aaafc0",
+        "N.svg": "ee68af37ac97dd559173572698a1a5d85e791eeec824071651d22e9e1e594343",
+        "P.svg": "b4439b5bbf93d1246eb0b1ce55469f2675cd383fef5ab601b2c5ca3e410775c6",
+        "Q.svg": "017337ca249636b999fec682a6c5bea646291600979ae93724282909f22b43fd",
+        "R.svg": "533930b2b7b6752bb3441c8859c7e6e63dd70d7a2e1545f8c90ddda5b74ec866"
+      },
+      "sourceSha256": "8bc44d662b34a066e62f30973aca1a93e396cf1ce202f0abbbce708ca7fe96c2"
+    },
+    "lyricsz": {
+      "split": "dev",
+      "artistGroup": "Lyricsz",
+      "license": "CC0-1.0",
+      "kind": "oga-png-archive",
+      "revision": "page-published-2025-09-05; archive locked by sha256",
+      "sourcePage": "https://opengameart.org/content/2d-chess",
+      "files": {
+        "chess1.png": "9c27242ab7c541b4d30aab03f84e098978431acd94422068a4a87c38de6884f9",
+        "chess2.png": "ef0867f75ff33a60919046f037d31a74fdd0fdfcdcee178feab578d77af44157"
+      },
+      "sourceSha256": "5b39cf8b0a88ade1dab728b692a41726015bf42801d682522b5389e8c2f6b174"
+    },
+    "totoy": {
+      "split": "test",
+      "artistGroup": "Kosal Sen",
+      "license": "CC-BY-4.0",
+      "kind": "lila-svg",
+      "revision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+      "sourcePage": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/totoy",
+      "path": "totoy",
+      "caveat": "Lila lists this CC-BY-4.0 row under Exceptions (non-free); preserve that caveat.",
+      "files": {
+        "bB.svg": "7d4f00f352412510994238bedf85503e7dcbfaf63980dec14486ebefa7cc06f2",
+        "bK.svg": "04a0a3b3370fc3c0738f2d68d805fbe8b36dc60eaaab856422a8676ae2ed2ee7",
+        "bN.svg": "7443000aa07987c41d6551c94dc44ed4577a47df865567c7d69fbc423fbcea95",
+        "bP.svg": "432e29ddf75d28d3da1eb0091aa0c663387a203ac19a4c946e3f77904bf3201f",
+        "bQ.svg": "e6555a19691396862f4394267203d1b200dc905bc76edb4670f59edc2c90968e",
+        "bR.svg": "96f222c90a608ad23d6bf254fc5b1edf8496a8657fdc9462b185cbbd873c94ae",
+        "wB.svg": "fed002321be1f985e26a1a0e921e546b8c8224ab8bc11ccc3950bb00a70b9c98",
+        "wK.svg": "712ac629eade4c2c0a1d01060df76df9b278cf6e86c96549e2912858cc74600a",
+        "wN.svg": "41251b51c211fa4a0192d7e30fcbc5bde4d77e7bb9d518719d84d527a24f665a",
+        "wP.svg": "6cf44ee5e3fdfe53d6139633c53744475870961fd1469b220c39a2a33c42abdb",
+        "wQ.svg": "2f5a84e4a0a34fda5a957fe493a362d2e079d4783c8a3b6c750aed4214c893d9",
+        "wR.svg": "286c25db321004856096c45f78684199694019f451ae562bf07e946b58d830a8"
+      },
+      "sourceSha256": "3d6f762ad40ecbfd0b65808092cc2f2d0db080b9fec19c93a8ccf4f9adf4e26f"
+    },
+    "papercut": {
+      "split": "test",
+      "artistGroup": "Nikolay Anzarov",
+      "license": "CC-BY-4.0",
+      "kind": "lila-svg",
+      "revision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+      "sourcePage": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/papercut",
+      "path": "papercut",
+      "caveat": "Lila lists this CC-BY-4.0 row under Exceptions (non-free); preserve that caveat.",
+      "files": {
+        "bB.svg": "71e0ef196078284ea127e0cab0bdabea4a861bdd8d43607ff25c7eaa8d466436",
+        "bK.svg": "e6cc920c6f919cbbbfbe43e254370a830b573f9b96a1e3280b969a9a8db49fb1",
+        "bN.svg": "6d508a11578ff1b3b307fc93219ec125652580935ed4d9e65bea7e6006a4623f",
+        "bP.svg": "86b0a67182f5f3b9859aadeef605043e10637593186704d89a137a9e822fa804",
+        "bQ.svg": "a57ebfb93d042c728900f3237af5f461fa136528609bd0116d29d42b2506799f",
+        "bR.svg": "e1ee7429ceae724d8d7aa8ede4b510311d73fb1d82e8cd0b8012d3fff8fab7ec",
+        "wB.svg": "0601067c90b05d3bae91ad441b8f25cdd958fadbec02940be9c4578c97e2ef1f",
+        "wK.svg": "8e5162175cec49195e959dc9e550d9faa1b5d95abe5b6c399c39badcd03f1161",
+        "wN.svg": "6fec1f73254da7b118a82dcdadcbe72c97f7e6a868733b9c84137a9a70900fc7",
+        "wP.svg": "40f9091126b0ef6c9b6f2bcc23b2eb8cd3f01b4774dd4324ba1554c4632d8ce5",
+        "wQ.svg": "11986af7b83214f5fa5736bc43882a896336b362e4b5fc5755c0cc5fc0ff37f1",
+        "wR.svg": "517db0adc625753386e00e57e2ef0723866516286d6e162096f44c616b87a661"
+      },
+      "sourceSha256": "9903b7c72be838fd5176e20b5b56fe123f288a921c72789589272b04105d1cb8"
+    },
+    "pirouetti": {
+      "split": "test",
+      "artistGroup": "pirouetti",
+      "license": "AGPL-3.0-or-later",
+      "kind": "lila-svg",
+      "revision": "2e48c25007bc3344411811a24cd6cab666c67cbf",
+      "sourcePage": "https://github.com/lichess-org/lila/tree/2e48c25007bc3344411811a24cd6cab666c67cbf/public/piece/pirouetti",
+      "path": "pirouetti",
+      "files": {
+        "bB.svg": "65f96dd43ee1e8886471d6da447ef2d718184e8240c1c4bf20a5a31a04fa1a60",
+        "bK.svg": "576bcfe09abe04f4cab5b40afa246b70103d62d58e45a8efa70c24f3c587fb56",
+        "bN.svg": "69f889f022b23f2fccff5c4553c982ff00bde3a1ad321bc256363e50593ce6ef",
+        "bP.svg": "341b8ad7678f9419f57cf7d5aafb1b5b8b3318c1fe86642b36e09d83feb81b18",
+        "bQ.svg": "0608511c4009544e25f50d0e66b486723a48b05fe48b7d9dc22077d1dc3ac989",
+        "bR.svg": "6061dec90fd244c50e5901cf1def24b66b633b26c33a9187879e4bab314f9700",
+        "wB.svg": "e5565ec6d21fa740170546cb0c22ac074e7d757f81914e471b860e6ddc9cd292",
+        "wK.svg": "e6a9e94efcfb35255668914a8492c802ef446c30701edc0ae3d2fc695d5e3c1d",
+        "wN.svg": "6881ce950906a5252ca6b2f734aaaa842f5260ed42a055e81da2eaa62892eaf5",
+        "wP.svg": "fac9974846f58d876fc7ce475088c09823f7c07b156587ae293581c06395b899",
+        "wQ.svg": "2df04dff96ca761021f0264e8bdc553c7f620ab36f0413c3f8ce567b180b93c8",
+        "wR.svg": "0a500aeaa02cd427f3a576aa4e8456349d7115a8c9b20ce220fad2016fa4847b"
+      },
+      "sourceSha256": "6b4f386a13703ac723ef3430bf3f57f4d2ff406d965406a6d0c388458c2c3a7c"
+    }
+  },
+  "exclusions": {
+    "corpusV1": "excluded from generation/training/dev/test/calibration/selection",
+    "firi": "diagnostic only",
+    "rhosgfx": "diagnostic only"
+  },
+  "distributionReview": "Copyleft/share-alike artwork is cleared only for this local research; resulting-model distribution remains unresolved."
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "freezeManifestPath": "../runs/candidates.freeze.json",
+  "vectorSets": [
+    {
+      "manifestPath": "../runs/test.vectors.manifest.json",
+      "vectorsPath": "../runs/test.vectors.f32"
+    },
+    {
+      "manifestPath": "../runs/corpus-v1-regression.vectors.manifest.json",
+      "vectorsPath": "../runs/corpus-v1-regression.vectors.f32"
+    }
+  ],
+  "outputDirectory": "../runs/browser-results",
+  "coldSessions": 3,
+  "warmRepeats": 3,
+  "timeoutMs": 60000
+}
