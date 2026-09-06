@@ -238,6 +238,10 @@ unrun gate, and do not describe the issue as fully verified.
   release builds or test artifacts.
 - Do not commit secrets, signing keys, personal paths, downloaded user books,
   or generated build artifacts.
+- Respect Git ignore rules; do not force-add ignored files. Keep GitHub issues,
+  pull requests, comments, and attachments limited to repository-relevant
+  information. Omit private local workspace details and review text and
+  artifacts for accidental disclosure before publishing.
 - A bundled model, engine, NNUE, font, binary, or fixture needs exact provenance,
   license compatibility, hashes, and any required notices/source offer.
 
